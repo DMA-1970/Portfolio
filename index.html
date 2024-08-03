@@ -8,26 +8,23 @@
         body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
             font-family: Arial, sans-serif;
-        }
-        .header {
-            position: relative;
-            height: 50vh;
-            background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
-            color: white;
-            text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 3em;
+            background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
         }
         .content {
+            background: rgba(0, 0, 0, 0.5);
             padding: 20px;
-            text-align: center;
+            border-radius: 10px;
+        }
+        .content h1 {
+            margin: 0 0 20px 0;
+            font-size: 3em;
         }
         .content a {
             display: inline-block;
@@ -45,10 +42,8 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>David Abiodun</h1>
-    </div>
     <div class="content">
+        <h1>David Abiodun</h1>
         <a href="cv.md">CV</a>
         <a href="university-of-essex.md">University of Essex</a>
     </div>
