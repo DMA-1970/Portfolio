@@ -8,7 +8,7 @@ Dynamic and results-driven professional with hands-on experience in information 
 **Email:** david@abiodun.co.uk  
 **Phone:** (+44) 7932 732435  
 **Driving license:** Full UK Driver’s License  
-**LinkedIn:** [LinkedIn Profile](#) (Add your LinkedIn profile link here)
+**LinkedIn:** [LinkedIn Profile](https://www.linkedin.com/in/david-abiodun-17912a21/)
 
 ## Employment History
 ### Enterprise Technology Manager at MillTechFX
