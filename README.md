@@ -13,8 +13,8 @@
 - Microsoft
 
 ## Education
-### [University of Essex](university-of-essex.md)
-MSc Enterprise IT Management
+### University of Essex
+[MSc Enterprise IT Management](university-of-essex.md)
 
 ## Projects
 - **"The adoption of Enterprise IT is the single most significant change that can happen to any company/SME".**
