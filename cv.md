@@ -1,5 +1,3 @@
-# David Abiodun
-
 ## Profile
 Dynamic and results-driven professional with hands-on experience in information protection and compliance in the finance industry. Leveraging recent Microsoft certification, adept at implementing robust security measures and ensuring regulatory compliance in alignment with industry standards. Proven track record in overseeing all aspects of IT infrastructure, staff management, and project execution, with a keen eye for optimising efficiency and driving continuous improvement initiatives. Skilled in managing server farms, network infrastructure, and desktop support, with expertise in hardware and software configurations and maintenance. Recognised for providing exceptional user support and fostering collaboration across teams.
 
