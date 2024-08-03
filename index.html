@@ -10,21 +10,40 @@
             padding: 0;
             height: 100%;
             font-family: Arial, sans-serif;
+            background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
-            color: white;
             text-align: center;
         }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
         .content {
-            background: rgba(0, 0, 0, 0.5);
+            max-width: 800px;
             padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
         }
         .content h1 {
-            margin: 0 0 20px 0;
+            margin-bottom: 20px;
             font-size: 3em;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section p {
+            margin: 10px 0;
         }
         .content a {
             display: inline-block;
@@ -42,10 +61,19 @@
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>David Abiodun</h1>
-        <a href="cv.md">CV</a>
-        <a href="university-of-essex.md">University of Essex</a>
+    <div class="overlay">
+        <div class="content">
+            <h1>David Abiodun</h1>
+            <div class="section">
+                <p>Dynamic and results-driven professional with hands-on experience in information protection and compliance in finance industry. Leveraging recent Microsoft certification, adept at implementing robust security measures and ensuring regulatory compliance in alignment with industry standards.</p>
+                <p>Proven track record in overseeing all aspects of IT infrastructure, staff management, and project execution, with a keen eye for optimising efficiency and driving continuous improvement initiatives. Skilled in managing server farms, network infrastructure, and desktop support, with expertise in hardware and software configurations and maintenance. Recognised for providing exceptional user support and fostering collaboration across teams.</p>
+                <p>In my spare time, I cycle and I am an avid drone pilot. A father and grandfather, I enjoy spending time with family.</p>
+            </div>
+            <div class="section">
+                <a href="cv.md">CV</a>
+                <a href="university-of-essex.md">University of Essex</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
