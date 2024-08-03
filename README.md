@@ -3,7 +3,9 @@
 ## Work Experience
 ### Enterprise Technology Manager @ MillTechFX, 
 Previously IT Manager Bank of Singapore Wealth Management Europe SA.
+
 Infrastructure Analyst JA Kemp Patent and Trade Mark Attorneys
+
 Network & Desktop Analyst Covington & Burling LLP
 
 ## Certification
