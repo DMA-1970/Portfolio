@@ -1,4 +1,4 @@
-# David Mobolaji Abiodun <img src="assets/050324-3.578-2.jpg" alt="David Mobolaji Abiodun" width="50" style="vertical-align:middle;"/>
+# David Mobolaji Abiodun <img src="assets/050324-3.578-2.jpg" alt="David Mobolaji Abiodun" width="100" style="vertical-align:middle;"/>
 
 ## Work Experience
 ### Enterprise Technology Manager @ MillTechFX
@@ -15,3 +15,4 @@ MSc Enterprise IT Management
 ## Projects
 ### DMA-1970/Portfolio
 This is my GitHub portfolio.
+
