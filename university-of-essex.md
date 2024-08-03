@@ -1,6 +1,6 @@
 ## MSc Enterprise IT Management
 
-### Research Subjects (First Module)
+### First Module Research Subjects
 - **An Introduction to Enterprise IT**
 - **Enterprise IT vs. Shadow IT**
 - **Enterprise IT and Automation**
