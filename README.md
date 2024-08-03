@@ -13,7 +13,7 @@
 - Microsoft
 
 ## Education
-### [**University of Essex**  MSc Enterprise IT Management](university-of-essex.md)
+### [**University of Essex**       MSc Enterprise IT Management](university-of-essex.md)
 
 
 ## Projects
