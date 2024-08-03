@@ -1,6 +1,6 @@
 # David Mobolaji Abiodun <img src="assets/050324-3.578-2.jpg" alt="David Mobolaji Abiodun" width="100" style="vertical-align:middle;"/>
 
-## Work Experience
+## [Work Experience].(David_Abiodun_CV.docx)
 ### Enterprise Technology Manager @ MillTechFX
 *Previously:*
 - **IT Manager** @ Bank of Singapore Wealth Management Europe SA
