@@ -1,6 +1,4 @@
-# David Mobolaji Abiodun
-
-<img src="assets/050324-3.578-2.jpg" alt="David Mobolaji Abiodun" width="200" />
+# David Mobolaji Abiodun <img src="assets/050324-3.578-2.jpg" alt="David Mobolaji Abiodun" width="50" style="vertical-align:middle;"/>
 
 ## Work Experience
 ### Enterprise Technology Manager @ MillTechFX
