@@ -10,40 +10,22 @@
             padding: 0;
             height: 100%;
             font-family: Arial, sans-serif;
-            background: u<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launching into Enterprise IT Management - David Abiodun</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            background: url('assets/DJI_0733.jpg') no-repeat center center/cover;
+            background: url('assets/DJI_0733.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow-y: hidden; /* Prevent extra white space from scrolling */
+            overflow-y: auto;
         }
 
         .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background: rgba(0, 0, 0, 0.7);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             padding: 20px;
             box-sizing: border-box;
+            width: 100%;
         }
 
         .content {
@@ -51,7 +33,6 @@
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            margin: 0;
             box-sizing: border-box;
         }
 
@@ -64,134 +45,7 @@
             margin: 20px 0;
         }
 
-        .section p {
-            margin: 10px 0;
-        }
-
-        .content a {
-            display: inline-block;
-            margin: 10px 20px;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .content a:hover {
-            background-color: #0056b3;
-        }
-
-        .projects {
-            margin-top: 20px;
-        }
-
-        .project {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        ul {
-            text-align: left;
-            padding-left: 20px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-</head>
-<body>
-    <div class="overlay">
-        <div class="content">
-            <h1>Launching into Enterprise IT Management</h1>
-            <div class="section">
-                <h3>First Module Research Subjects</h3>
-                <ul>
-                    <li>An Introduction to Enterprise IT</li>
-                    <li>Enterprise IT vs. Shadow IT</li>
-                    <li>Enterprise IT and Automation</li>
-                    <li>A Comparative Study: Practical Automation Exercises using C and Python</li>
-                    <li>Business Systems, Outsourcing and the Cloud</li>
-                    <li>A Cost Comparison Between On-premise, Private and Public Cloud Hosting</li>
-                    <li>Software Licensing: Commercial vs. Open Source</li>
-                    <li>A Case Study: Investigating Business and Technical Innovations of Large Corporations and SMEs</li>
-                    <li>Communications and Digital Transformation</li>
-                    <li>The Digital Transformation Process</li>
-                    <li>Future Trends</li>
-                </ul>
-            </div>
-            <div class="projects">
-                <h3>Projects</h3>
-                <div class="project">
-                    <p>"The adoption of Enterprise IT is the single most significant change that can happen to any company/SME".</p>
-                    <p><strong>Grade:</strong> Distinction ***</p>
-                </div>
-                <div class="project">
-                    <p><strong>Create a Sort Algorithm in Python:</strong> Modify a simple Python program to replace the basic sort algorithm with one of your choice to sort a provided set of integers.</p>
-                    <p><strong>Grade:</strong> Distinction ***</p>
-                </div>
-                <div class="project">
-                    <p><strong>Develop a PowerPoint Presentation on Future Technology:</strong> Create a 10-slide presentation and a 20-minute recorded reflection (with transcript) on future technology/techniques and learning styles.</p>
-                    <p><strong>Grade:</strong> Pass *</p>
-                </div>
-                <div class="project">
-                    <p><strong>Overall Grade:</strong> Merit **</p>
-                </div>
-            </div>
-            <div class="section">
-                <a href="index.html">Back to Home</a>
-                <a href="university-of-essex.html">Back to University of Essex</a>
-                <a href="EITMJournal.html">View EITM Journal</a>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-rl('assets/DJI_0733.jpg') no-repeat center center/cover;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow-y: hidden; /* Prevent extra white space from scrolling */
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .content {
-            max-width: 800px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        .content h1 {
-            margin-bottom: 20px;
-            font-size: 2.5em;
-        }
-
-        .section {
-            margin: 20px 0;
-        }
-
-        .section p {
+        .section p, .section ul {
             margin: 10px 0;
         }
 
