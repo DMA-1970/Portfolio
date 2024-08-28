@@ -12,143 +12,132 @@
             font-family: Arial, sans-serif;
             background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
             color: white;
-            overflow-y: scroll;
+            overflow-y: auto;
         }
         .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            text-align: left;
+            overflow-y: auto;
         }
         .content {
-            max-width: 900px;
+            max-width: 800px;
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 1s ease-in-out;
+            margin: 0 auto;
+            position: relative;
         }
-        h1 {
+        .content h1 {
             text-align: center;
-            margin-bottom: 20px;
             font-size: 2.5em;
-            background: linear-gradient(90deg, #007BFF, #FFD700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
         }
-        h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #007BFF;
-            padding-bottom: 5px;
+        .section {
+            margin: 20px 0;
         }
-        h3 {
-            font-size: 1.5em;
-            margin-top: 15px;
-            margin-bottom: 10px;
-            color: #FFD700;
+        .section p, .section ul {
+            margin: 10px 0;
         }
-        p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-            font-size: 1.1em;
-        }
-        .links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-        .links a {
+        .content a {
+            display: inline-block;
+            margin: 10px 20px;
             padding: 10px 20px;
             background-color: #007BFF;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-            display: inline-block;
-        }
-        .links a:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-        #scrollTopBtn {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 30px;
-            z-index: 99;
-            font-size: 18px;
-            border: none;
-            outline: none;
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 50%;
             transition: background-color 0.3s;
         }
-        #scrollTopBtn:hover {
-            background-color: #555;
+        .content a:hover {
+            background-color: #0056b3;
         }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translate3d(0, 20px, 0);
-            }
-            to {
-                opacity: 1;
-                transform: none;
-            }
+        .top-right-image {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background: url('assets/050324-3.578-2.jpg') no-repeat center center/cover;
+            border-radius: 50%;
+            border: 2px solid white;
         }
-        html {
-            scroll-behavior: smooth;
+        .hover-link {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px 0 0 5px;
+            transition: background-color 0.3s;
+        }
+        .hover-link:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <div class="overlay">
         <div class="content">
+            <div class="top-right-image"></div>
             <h1>David Abiodun</h1>
             <div class="section">
                 <h2>Profile</h2>
-                <p>Dynamic and results-driven professional with hands-on experience in information protection and compliance in the finance industry...</p>
-                <!-- Continue the rest of your CV content in a similar format -->
+                <p>Dynamic and results-driven professional with hands-on experience in information protection and compliance in finance industry. Leveraging recent Microsoft certification, adept at implementing robust security measures and ensuring regulatory compliance in alignment with industry standards. Proven track record in overseeing all aspects of IT infrastructure, staff management, and project execution, with a keen eye for optimising efficiency and driving continuous improvement initiatives. Skilled in managing server farms, network infrastructure, and desktop support, with expertise in hardware and software configurations and maintenance. Recognised for providing exceptional user support and fostering collaboration across teams.</p>
+                <p><strong>Address:</strong> Edmonton, UK N9 7JA</p>
+                <p><strong>Email:</strong> david@abiodun.co.uk</p>
+                <p><strong>Phone:</strong> (+44) 7932 732435</p>
+                <p><strong>Driving license:</strong> Full UK Driver’s License</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/david-abiodun-17912a21/" target="_blank">LinkedIn Profile</a></p>
             </div>
             <div class="section">
                 <h2>Employment History</h2>
                 <h3>Enterprise Technology Manager at MillTechFX</h3>
                 <p><strong>July 2024 - Present</strong></p>
-                <!-- Continue listing responsibilities and roles -->
-            </div>
-            <!-- Add additional sections for education, skills, etc. -->
-        </div>
-        <div class="links">
-            <a href="index.html">Back to Home</a>
-            <a href="university-of-essex.html">University of Essex</a>
-            <a href="javascript:history.back()">Go Back</a>
-        </div>
-    </div>
-    <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">Top</button>
-    <script>
-        let mybutton = document.getElementById("scrollTopBtn");
-        window.onscroll = function() {scrollFunction();};
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-        function topFunction() {
-            document.body.scrollTop = 0; 
-            document.documentElement.scrollTop = 0; 
-        }
-    </script>
-</body>
-</html>
+                <p>Responsibilities:</p>
+                <ul>
+                    <li>Provide high-level desktop support to teams, enhancing and expanding the enterprise support model to ensure efficient and reliable technology services.</li>
+                    <li>Lead and deliver technology improvement projects across the enterprise, focusing on enhancing user experience and operational efficiency.</li>
+                    <li>Automate key processes to improve workflow and reduce manual intervention, increasing productivity and accuracy.</li>
+                    <li>Manage the joiners and leavers process, ensuring smooth onboarding and offboarding of employees.</li>
+                    <li>Collaborate closely with the Chief Information Security Officer (CISO) to maintain and enhance the enterprise's security, protecting it from potential threats.</li>
+                    <li>Support audit and regulatory activities, ensuring compliance with industry standards and regulations.</li>
+                    <li>Own enterprise technology systems, including Office 365, Active Directory, office networks, Hubspot CRM, and the Power Platform.</li>
+                    <li>Lead the desktop support service, ensuring timely and effective resolution of technical issues.</li>
+                    <li>Manage the purchasing of equipment, ensuring cost-effectiveness and meeting the technological needs of the organization.</li>
+                    <li>Supervise and manage IT staff, providing guidance, training, and performance evaluations.</li>
+                    <li>Manage relationships with suppliers, ensuring quality service and negotiating contracts.</li>
+                    <li>Engage with stakeholders to understand their needs and ensure technology solutions align with business objectives.</li>
+                </ul>
+                <h3>UK IT Manager at BOS Wealth Management Europe, City of London</h3>
+                <p><strong>Oct 2019 - June 2024</strong></p>
+                <p>Administered IT compliance, implementing risk and compliance controls via Microsoft Purview compliance portal to ensure adherence to local regulatory requirements. Identified vulnerabilities, recommended strategic solutions, and proposed system upgrades, enhancing overall security and efficiency. Managed financial budgets and performance reports, whilst optimising technology environments for cost efficiency. Engaged in office relocation project and delinking process, driving smooth transitions and operational continuity. Spearheaded IT operations, managing staff and infrastructure for London Branch, improving efficiency and performance. Collaborated with internal and external auditors to rectify audit findings and evaluate risk awareness in alignment with management's risk appetite.</p>
+                <ul>
+                    <li>Developed, executed, and assessed IT projects aligned with organisational objectives, fostering collaboration between the London branch and parent company in Singapore and other international branches.</li>
+                    <li>Served as Local Information Security Officer, identifying and mitigating cybersecurity risks and collaborating with global security team and CISO.</li>
+                    <li>Ensured alignment with UK and Singapore regulations (ongoing), facilitating internal audits and collaborating with external auditors and Luxembourg IT Manager to meet regulatory requirements.</li>
+                    <li>Reviewed contracts with suppliers, ensured 3rd party support, and tested Business Continuity/Disaster Recovery solutions for optimal readiness.</li>
+                    <li>Implemented security measures, such as separate door access systems, CCTV, and alarms to meet regulatory standards.</li>
+                    <li>Successfully delivered IT solutions during challenging circumstances, such as the COVID-19 pandemic, including remote work setups and laptop rollouts.</li>
+                    <li>Executed Follow-Me printing solutions and office Wi-Fi networks, adhering to regulatory requirements for network segregation.</li>
+                    <li>Managed negotiations and upgrades for the company's mobile phone solutions, enhancing cost-effectiveness and functionality.</li>
+                </ul>
+                <h3>Infrastructure Analyst at JA Kemp LLP, City of London</h3>
+                <p><strong>Aug 2016 - Sept 2019</strong></p>
+                <p>Conducted continual reviews of VMWare infrastructure across all sites to ensure alignment with the firm's current and future requirements. Created and maintained Citrix 7.15 XenDesktop and XenApp environments, optimising performance and user experience. Implemented improved Business Continuity solution, enhancing resilience and minimising downtime. Steered firm's Security Suite, utilising Sophos Endpoint for Anti-Virus and Sophos Safeguard for device encryption. Assisted in administration and maintenance of iManage Document Management System, ensuring efficient document handling. Reviewed Mobile Working technologies to optimise remote work capabilities, whilst maintaining security standards.</p>
+                <ul>
+                    <li>Successfully executed wireless installations, including Wi-Fi site design, configuration, and ongoing monitoring.</li>
+                    <li>Planned, tested, and installed Mimecast Email Protection, enhancing email security and resilience.</li>
+                    <li>Conducted security review, implementing Sophos Anti-virus and encryption solutions for Endpoints\ mobile devices.</li>
+                    <li>Upgraded ESXi hosts to improve virtualisation performance and capabilities.</li>
+                    <li>Managed upgrade of telephone system from Splicecom to Cisco CUCM, enhancing communication capabilities.</li>
+                    <li>Conducted best practices reviews for Windows Servers, PCs, and SQL servers, optimising system performance and security.</li>
+                    <li>Collaborated on the opening of the New Paris office and assisted with office relocation in the Cambridge office.</li>
+                    <li>Upgraded Backup Exec from version
