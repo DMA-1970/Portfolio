@@ -17,6 +17,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            overflow-y: hidden; /* Prevent extra white space at the bottom */
         }
         .overlay {
             position: absolute;
@@ -37,6 +38,7 @@
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
+            box-sizing: border-box;
         }
         .content h1 {
             margin-bottom: 20px;
@@ -107,6 +109,9 @@
                 <div class="project">
                     <p><strong>Development Team Project:</strong> <a href="Risk.html">Risk Identification Report</a></p>
                     <p><strong>Grade:</strong> </p>
+                </div>
+                <div class="project">
+                    <p><strong>GDPR Case Study:</strong> <a href="projects/GDPR_Case_Study.html">View GDPR Case Study</a></p>
                 </div>
                 <div class="project">
                     <p><strong>Individual Project:</strong> <a href="M2Projects.html">Executive Summary</a></p>
