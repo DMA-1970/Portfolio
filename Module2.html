@@ -13,11 +13,10 @@
             font-family: Arial, sans-serif;
             background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
             color: white;
+            overflow-y: hidden; /* Ensure no additional scrolling from body */
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            overflow-y: hidden; /* Prevent extra white space at the bottom */
         }
         .overlay {
             position: absolute;
@@ -29,12 +28,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             padding: 20px;
             box-sizing: border-box;
+            overflow-y: auto; /* Allow scrolling within the overlay */
         }
         .content {
             max-width: 800px;
+            width: 100%;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
@@ -111,7 +111,7 @@
                     <p><strong>Grade:</strong> </p>
                 </div>
                 <div class="project">
-                    <p><strong>GDPR Case Study:</strong> <a href="projects/GDPR_Case_Study.html">View GDPR Case Study</a></p>
+                    <p><strong>GDPR Case Study:</strong> <a href="Use of CCTV footage in a disciplinary process.pdf" target="_blank">View GDPR Case Study</a></p>
                 </div>
                 <div class="project">
                     <p><strong>Individual Project:</strong> <a href="M2Projects.html">Executive Summary</a></p>
