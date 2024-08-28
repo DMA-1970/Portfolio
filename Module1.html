@@ -14,18 +14,21 @@
             background-size: cover;
             color: white;
             overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .overlay {
             background: rgba(0, 0, 0, 0.7);
+            width: 100%;
             min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            padding: 20px;
-            box-sizing: border-box;
-            width: 100%;
         }
 
         .content {
@@ -34,9 +37,10 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-sizing: border-box;
+            text-align: center;
         }
 
-        .content h1 {
+        h1 {
             margin-bottom: 20px;
             font-size: 2.5em;
         }
@@ -49,7 +53,12 @@
             margin: 10px 0;
         }
 
-        .content a {
+        ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        a {
             display: inline-block;
             margin: 10px 20px;
             padding: 10px 20px;
@@ -60,7 +69,7 @@
             transition: background-color 0.3s;
         }
 
-        .content a:hover {
+        a:hover {
             background-color: #0056b3;
         }
 
@@ -71,11 +80,6 @@
         .project {
             margin-bottom: 20px;
             text-align: left;
-        }
-
-        ul {
-            text-align: left;
-            padding-left: 20px;
         }
 
         html {
