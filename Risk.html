@@ -48,13 +48,15 @@
         }
         .content a {
             display: inline-block;
-            margin: 10px 20px;
+            margin: 10px;
             padding: 10px 20px;
             background-color: #007BFF;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s;
+            width: 200px; /* Ensuring all links have the same width */
+            text-align: center;
         }
         .content a:hover {
             background-color: #0056b3;
@@ -62,6 +64,11 @@
         .content h2 {
             margin-top: 40px;
             font-size: 2em;
+        }
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
@@ -74,9 +81,11 @@
             </div>
             <div class="section">
                 <h2>Team Meetings</h2>
-                <a href="Risk/Team Meeting 2024-08-12.pdf">Team Meeting 2024-08-12</a>
-                <a href="Risk/Team Meeting 2024-08-19.pdf">Team Meeting 2024-08-19</a>
-                <a href="Risk/Team Meeting 2024-08-27.pdf">Team Meeting 2024-08-27</a>
+                <div class="link-container">
+                    <a href="Risk/Team Meeting 2024-08-12.pdf">Team Meeting 2024-08-12</a>
+                    <a href="Risk/Team Meeting 2024-08-19.pdf">Team Meeting 2024-08-19</a>
+                    <a href="Risk/Team Meeting 2024-08-27.pdf">Team Meeting 2024-08-27</a>
+                </div>
             </div>
             <div class="section">
                 <a href="index.html">Home</a>
