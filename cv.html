@@ -14,15 +14,21 @@
             box-sizing: border-box;
         }
 
-        /* Styling for the body and html elements */
-        body, html {
+        /* Ensure the background image fills the entire screen and no white space appears */
+        html, body {
             height: 100%;
             font-family: Arial, sans-serif;
-            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Styling for the body and html elements */
+        body {
             background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: flex-start;
+            min-height: 100%;
             overflow-y: auto;
         }
 
@@ -35,7 +41,7 @@
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
-            flex-grow: 1; /* Ensures the overlay stretches to fill the remaining space */
+            flex-grow: 1;
         }
 
         /* Styling for the content area */
@@ -106,17 +112,6 @@
             border: 2px solid white;
         }
 
-        /* Ensure body and overlay stretch to the full height */
-        html, body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100%;
-        }
-
-        /* Remove space at the bottom by making sure .overlay grows to full height */
-        body {
-            flex-grow: 1;
-        }
     </style>
 </head>
 <body>
@@ -152,7 +147,7 @@
                 <p><strong>Oct 2019 - June 2024</strong></p>
                 <ul>
                     <li>Implemented IT compliance controls via Microsoft Purview for regulatory adherence.</li>
-                    <li>Led office relocation, and oversaw IT operations for London Branch.</li>
+                    <li>Led office relocation and oversaw IT operations for London Branch.</li>
                     <li>Collaborated with auditors for regulatory alignment and security improvements.</li>
                     <li>Implemented security measures like door access systems, CCTV, and device encryption.</li>
                 </ul>
