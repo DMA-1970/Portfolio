@@ -16,6 +16,9 @@ body, html {
     align-items: center;
     text-align: center;
     background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* Parallax effect */
+    background-size: cover; /* Ensure background covers entire screen */
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 /* Overlay styling */
@@ -38,12 +41,27 @@ body, html {
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle box shadow for 3D effect */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+/* Adding fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Heading styling */
 .content h1 {
     margin-bottom: 20px;
     font-size: 3em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+    font-family: 'Montserrat', sans-serif; /* Use custom Google Font */
+    font-weight: 700;
 }
 
 /* Section spacing */
@@ -65,10 +83,36 @@ body, html {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition and scale effect */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Box shadow for buttons */
 }
 
 /* Button hover effect */
 .content a:hover {
-    background-color: #0056b3;
+    background-color: #ff7f50; /* Change color on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Adding custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive design: Make sure the content adjusts on smaller screens */
+@media (max-width: 768px) {
+    .content {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .content h1 {
+        font-size: 2.5em;
+    }
+
+    .content a {
+        padding: 8px 15px;
+        margin: 8px 10px;
+    }
 }
