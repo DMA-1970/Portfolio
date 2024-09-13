@@ -1,19 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 2 Projects - David Abiodun</title>
+    <style>
+        /* Resetting all margins, paddings, and borders for a clean slate */
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        /* Ensuring the background image fills the entire page */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            color: white; /* Make all text white */
+        }
+
+        /* Overlay that covers the entire viewport */
+        .overlay {
+            width: 100%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            min-height: 100vh; /* Ensures the overlay covers the entire viewport height */
+            display: flex;
+            justify-content: center;
+            flex-grow: 1; /* Ensures the overlay grows to remove the gap at the bottom */
+        }
+
+        /* Styling for the content area */
+        .content {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            color: white; /* Ensures all text in the content is white */
+        }
+
+        /* Heading styling */
+        .content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Section styling */
+        .section {
+            margin: 20px 0;
+        }
+
+        .section h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .section h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .section p, .section ul {
+            margin: 10px 0;
+        }
+
+        .section ul {
+            list-style: inside;
+            padding-left: 20px;
+        }
+
+        /* Styling for links */
+        .content a {
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .content a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styling for the top-right image */
+        .top-right-image {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background: url('assets/050324-3.578-2.jpg') no-repeat center center/cover;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+    </style>
 </head>
 <body>
-    <!-- Top-right image based on your CSS -->
-    <div class="top-right-image"></div>
-
-    <!-- Overlay that covers the entire viewport -->
     <div class="overlay">
         <div class="content">
             <h1>Security and Risk Management</h1>
+            
             <div class="section">
                 <h3>Second Module Research Subjects</h3>
                 <ul>
@@ -31,6 +127,7 @@
                     <li>What will be the most influential trend in SRM in the next 5 years?</li>
                 </ul>
             </div>
+
             <div class="section">
                 <h2>Collaborative Discussion 1</h2>
                 <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310" target="_blank">Initial post</a></p>
@@ -38,10 +135,12 @@
                 <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580" target="_blank">Tutor Response</a></p>
                 <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629" target="_blank">Thoughtful Reflection on Ilyas Demirtas Post</a></p>
             </div>
+
             <div class="section">
                 <h2>Collaborative Discussion 2</h2>
                 <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p470013" target="_blank">Initial post</a></p>
             </div>
+
             <div class="projects">
                 <h3>Projects</h3>
                 <div class="project">
@@ -49,23 +148,24 @@
                 </div>
                 <div class="project">
                     <p><strong>Development Team Project:</strong> <a href="Risk.html">Risk Identification Report</a></p>
-                    <p><strong>Grade:</strong> </p>
+                    <p><strong>Grade:</strong></p>
                 </div>
                 <div class="project">
                     <p><strong>GDPR Case Study:</strong> <a href="GDPR.html" target="_blank">GDPR Case Study</a></p>
                 </div>
                 <div class="project">
                     <p><strong>Individual Project:</strong> <a href="M2Projects.html">Executive Summary</a></p>
-                    <p><strong>Grade:</strong> </p>
+                    <p><strong>Grade:</strong></p>
                 </div>
                 <div class="project">
                     <p><strong>Individual Module e-Portfolio:</strong></p>
-                    <p><strong>Grade:</strong> </p>
+                    <p><strong>Grade:</strong></p>
                 </div>
                 <div class="project">
-                    <p><strong>Overall Grade:</strong> </p>
+                    <p><strong>Overall Grade:</strong></p>
                 </div>
             </div>
+
             <div class="section">
                 <a href="index.html">Back to Home</a>
                 <a href="university-of-essex.html">Back to University of Essex</a>
@@ -73,5 +173,7 @@
             </div>
         </div>
     </div>
+    
+    <div class="top-right-image"></div>
 </body>
 </html>
