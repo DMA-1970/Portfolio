@@ -22,7 +22,6 @@
             display: flex;
             justify-content: center;
             align-items: stretch;
-            flex-direction: column;
             color: white;
         }
 
@@ -78,6 +77,17 @@
             padding-left: 20px;
         }
 
+        /* Flexbox to display both discussions side by side */
+        .discussions-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .discussion {
+            width: 48%; /* Each discussion takes half the width */
+        }
+
         /* Remove margin from the last element to prevent bottom gap */
         .section:last-child {
             margin-bottom: 0;
@@ -86,7 +96,7 @@
         /* Styling for links */
         .content a {
             display: inline-block;
-            margin: 10px 20px;
+            margin: 10px 0;
             padding: 10px 20px;
             background-color: #007BFF;
             color: white;
@@ -135,17 +145,19 @@
                 </ul>
             </div>
 
-            <div class="section">
-                <h2>Collaborative Discussion 1</h2>
-                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310" target="_blank">Initial post</a></p>
-                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452572" target="_blank">Peer Response</a></p>
-                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580" target="_blank">Tutor Response</a></p>
-                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629" target="_blank">Thoughtful Reflection on Ilyas Demirtas Post</a></p>
-            </div>
+            <div class="discussions-container">
+                <div class="discussion">
+                    <h2>Collaborative Discussion 1</h2>
+                    <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310" target="_blank">Initial post</a></p>
+                    <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452572" target="_blank">Peer Response</a></p>
+                    <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580" target="_blank">Tutor Response</a></p>
+                    <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629" target="_blank">Thoughtful Reflection on Ilyas Demirtas Post</a></p>
+                </div>
 
-            <div class="section">
-                <h2>Collaborative Discussion 2</h2>
-                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p470013" target="_blank">Initial post</a></p>
+                <div class="discussion">
+                    <h2>Collaborative Discussion 2</h2>
+                    <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p470013" target="_blank">Initial post</a></p>
+                </div>
             </div>
 
             <div class="projects">
