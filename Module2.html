@@ -31,10 +31,11 @@
             width: 100%;
             padding: 20px;
             background: rgba(0, 0, 0, 0.7);
-            flex-grow: 1; /* Make the overlay expand to fill the viewport */
+            min-height: 100vh; /* Ensures the overlay fills the entire viewport height */
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            justify-content: flex-start; /* Align content to the top */
+            flex-direction: column;
+            flex-grow: 1; /* Ensures it stretches to fill the space */
         }
 
         /* Styling for the content area */
@@ -75,6 +76,11 @@
         .section ul {
             list-style: inside;
             padding-left: 20px;
+        }
+
+        /* Remove margin from the last element to prevent bottom gap */
+        .section:last-child {
+            margin-bottom: 0;
         }
 
         /* Styling for links */
@@ -168,4 +174,13 @@
             </div>
 
             <div class="section">
-                <a href="
+                <a href="index.html">Back to Home</a>
+                <a href="university-of-essex.html">Back to University of Essex</a>
+                <a href="Module1.html">Go to Module 1</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="top-right-image"></div>
+</body>
+</html>
