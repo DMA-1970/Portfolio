@@ -21,8 +21,9 @@
             background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            color: white; /* Make all text white */
+            align-items: stretch;
+            flex-direction: column;
+            color: white;
         }
 
         /* Overlay that covers the entire viewport */
@@ -30,10 +31,10 @@
             width: 100%;
             padding: 20px;
             background: rgba(0, 0, 0, 0.7);
-            min-height: 100vh; /* Ensures the overlay covers the entire viewport height */
+            flex-grow: 1; /* Make the overlay expand to fill the viewport */
             display: flex;
             justify-content: center;
-            flex-grow: 1; /* Ensures the overlay grows to remove the gap at the bottom */
+            align-items: flex-start;
         }
 
         /* Styling for the content area */
@@ -167,13 +168,4 @@
             </div>
 
             <div class="section">
-                <a href="index.html">Back to Home</a>
-                <a href="university-of-essex.html">Back to University of Essex</a>
-                <a href="Module1.html">Go to Module 1</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="top-right-image"></div>
-</body>
-</html>
+                <a href="
