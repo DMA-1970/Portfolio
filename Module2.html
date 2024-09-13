@@ -1,45 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 2 Projects - David Abiodun</title>
-    <style>
-        /* ... (existing styles) ... */
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2 Projects - David Abiodun</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
+            color: white;
+            overflow-y: auto;
+            text-align: left; /* Align all text to the left */
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.7);
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start; /* Align content to the left */
+            align-items: flex-start;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .content {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-top: 20px; /* Ensures there's space at the top */
+            text-align: left; /* Align content within the box to the left */
+        }
+        .content h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .section {
+            margin: 15px 0;
+        }
+        .section p {
+            margin: 5px 0;
+        }
+        .content a {
+            display: inline-block;
+            margin: 5px 10px;
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 0.85em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .content a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .projects {
+            margin-top: 15px;
+        }
+        .project {
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 15px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-    <div class="overlay">
-        <div class="content">
-            <h1>Security and Risk Management</h1>
-            <div class="section">
-                <h3>Second Module Research Subjects</h3>
-                <ul>
-                    </ul>
-            </div>
-            <div class="section">
-                <h2>Collaborative Discussion 1</h2>
-                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310" target="_blank">Initial post</a></p>
-                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452572" target="_blank">Peer Response</a></p>
-                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580" target="_blank">Tutor Response</a></p>
-                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629" target="_blank">Thoughtful Reflection on Ilyas Demirtas Post</a></p>
-            </div>
-
-            <div class="section">
-                <h2>Collaborative Discussion 2</h2>
-                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p470013" target="_blank">Initial post</a></p> 
-            </div>
-
-            <div class="projects">
-                <h3>Projects</h3>
-                </div>
-            <div class="section">
-                <a href="index.html">Back to Home</a>
-                <a href="university-of-essex.html">Back to University of Essex</a>
-                <a href="Module1.html">Go to Module 1</a>
-            </div>
-        </div>
-    </div>
+    <div class="overlay">
+        <div class="content">
+            <h1>Security and Risk Management</h1>
+            <div class="section">
+                <h3>Second Module Research Subjects</h3>
+                <ul>
+                    <li>An Introduction to Security and Risk Management</li>
+                    <li>Users, Assessments and the Risk Management Process</li>
+                    <li>Introduction to Threat Modelling and Management</li>
+                    <li>Application of Threat Modelling and Management Techniques</li>
+                    <li>An Introduction to Security and Risk Standards in Industry and the Enterprise</li>
+                    <li>The Practical Implications of Security and Risk Standards</li>
+                    <li>An Introduction to the Concepts of Quantitative Risk Modelling</li>
+                    <li>Implementing Quantitative Risk Models</li>
+                    <li>Risk, Business Continuity and Disaster Recovery</li>
+                    <li>Practical Applications and Issues in DR Implementations</li>
+                    <li>Future Trends in Security and Risk Management</li>
+                    <li>What will be the most influential trend in SRM in the next 5 years?</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Collaborative Discussion 1</h2>
+                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310" target="_blank">Initial post</a></p>
+                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452572" target="_blank">Peer Response</a></p>
+                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580" target="_blank">Tutor Response</a></p>
+                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629" target="_blank">Thoughtful Reflection on Ilyas Demirtas Post</a></p>
+            </div>
+            <div class="section">
+                <h2>Collaborative Discussion 2</h2>
+                <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p470013" target="_blank">Initial post</a></p>
+            </div>
+            <div class="projects">
+                <h3>Projects</h3>
+                <div class="project">
+                    <p><strong>Threat Modelling Exercise:</strong> <a href="projects/Risk Modelling/BA.jpeg">View Threat Model</a></p>
+                </div>
+                <div class="project">
+                    <p><strong>Development Team Project:</strong> <a href="Risk.html">Risk Identification Report</a></p>
+                    <p><strong>Grade:</strong> </p>
+                </div>
+                <div class="project">
+                    <p><strong>GDPR Case Study:</strong> <a href="GDPR.html" target="_blank">GDPR Case Study</a></p>
+                </div>
+                <div class="project">
+                    <p><strong>Individual Project:</strong> <a href="M2Projects.html">Executive Summary</a></p>
+                    <p><strong>Grade:</strong> </p>
+                </div>
+                <div class="project">
+                    <p><strong>Individual Module e-Portfolio:</strong></p>
+                    <p><strong>Grade:</strong> </p>
+                </div>
+                <div class="project">
+                    <p><strong>Overall Grade:</strong> </p>
+                </div>
+            </div>
+            <div class="section">
+                <a href="index.html">Back to Home</a>
+                <a href="university-of-essex.html">Back to University of Essex</a>
+                <a href="Module1.html">Go to Module 1</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
