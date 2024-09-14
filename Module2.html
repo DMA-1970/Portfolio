@@ -4,145 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 2 Projects - David Abiodun</title>
-    <style>
-        /* Resetting all margins, paddings, and borders for a clean slate */
-        * {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            box-sizing: border-box;
-        }
-
-        /* Ensuring the background image fills the entire page */
-        html, body {
-            height: 100%;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            flex-direction: column;
-            color: white;
-            overflow: hidden; /* Prevent any overflow */
-        }
-
-        /* Overlay that covers the entire viewport */
-        .overlay {
-            width: 100%;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            height: 100vh; /* Ensures the overlay fills the entire viewport height */
-            display: flex;
-            justify-content: space-between; /* Ensure content is spaced correctly */
-            flex-direction: column;
-        }
-
-        /* Styling for the content area */
-        .content {
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: left;
-            color: white; /* Ensures all text in the content is white */
-            flex-grow: 1; /* Ensures the content stretches fully */
-        }
-
-        /* Heading styling */
-        .content h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        /* Section styling */
-        .section {
-            margin: 20px 0;
-        }
-
-        .section h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .section h3 {
-            font-size: 1.2em;
-            margin-bottom: 5px;
-        }
-
-        .section p, .section ul {
-            margin: 10px 0;
-        }
-
-        .section ul {
-            list-style: inside;
-            padding-left: 20px;
-        }
-
-        /* Flexbox to display both discussions side by side */
-        .discussions-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .discussion {
-            width: 48%; /* Each discussion takes half the width */
-        }
-
-        /* Remove margin from the last element to prevent bottom gap */
-        .section:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Styling for links */
-        .content a {
-            display: inline-block;
-            margin: 10px 0;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .content a:hover {
-            background-color: #0056b3;
-        }
-
-        /* Styling for buttons at the bottom */
-        .bottom-buttons {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .bottom-buttons a {
-            margin: 5px;
-            padding: 10px 15px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .bottom-buttons a:hover {
-            background-color: #0056b3;
-        }
-
-        /* Styling for the top-right image */
-        .top-right-image {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 100px;
-            height: 100px;
-            background: url('assets/050324-3.578-2.jpg') no-repeat center center/cover;
-            border-radius: 50%;
-            border: 2px solid white;
-        }
-    </style>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="overlay">
@@ -167,19 +30,10 @@
                 </ul>
             </div>
 
-            <div class="discussions-container">
-                <div class="discussion">
-                    <h2>Collaborative Discussion 1</h2>
-                    <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310" target="_blank">Initial post</a></p>
-                    <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452572" target="_blank">Peer Response</a></p>
-                    <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580" target="_blank">Tutor Response</a></p>
-                    <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629" target="_blank">Thoughtful Reflection on Ilyas Demirtas Post</a></p>
-                </div>
-
-                <div class="discussion">
-                    <h2>Collaborative Discussion 2</h2>
-                    <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p470013" target="_blank">Initial post</a></p>
-                </div>
+            <!-- Collaborative Discussions link -->
+            <div class="section">
+                <h2>Collaborative Discussions</h2>
+                <p><a href="SRMCollab.html">Go to Collaborative Discussions</a></p>
             </div>
 
             <div class="projects">
