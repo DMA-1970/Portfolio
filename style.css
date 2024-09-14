@@ -35,13 +35,17 @@ html, body {
     padding: 20px;
     border-radius: 10px;
     text-align: left; /* Aligning all text to the left */
+    color: white; /* Ensures all text inside the content area is white */
 }
 
 /* Heading styling */
-.content h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: white; /* Ensure heading is visible against dark background */
+.content h1, .content h2, .content h3 {
+    color: white; /* Ensures all headings are white */
+}
+
+/* Paragraphs and list items */
+.content p, .content ul {
+    color: white; /* Ensures all paragraphs and list items are white */
 }
 
 /* Section styling */
@@ -52,18 +56,15 @@ html, body {
 .section h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: white; /* Ensure text is visible */
 }
 
 .section h3 {
     font-size: 1.2em;
     margin-bottom: 5px;
-    color: white; /* Ensure text is visible */
 }
 
 .section p, .section ul {
     margin: 10px 0;
-    color: white; /* Ensure paragraphs are readable */
 }
 
 .section ul {
