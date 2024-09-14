@@ -11,116 +11,70 @@ html, body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: stretch;
     flex-direction: column;
-    color: white;
-    overflow: hidden; /* Prevent any overflow */
+    color: #333;
 }
 
 /* Overlay that covers the entire viewport */
 .overlay {
     width: 100%;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    height: 100vh; /* Ensures the overlay fills the entire viewport height */
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    justify-content: space-between; /* Ensure content is spaced correctly */
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Styling for the content area */
 .content {
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    background-color: white;
+    padding: 30px;
     border-radius: 10px;
+    max-width: 700px;
     text-align: left;
-    color: white; /* Ensures all text in the content is white */
-    flex-grow: 1; /* Ensures the content stretches fully */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Heading styling */
 .content h1 {
     font-size: 2.5em;
+    color: #333;
     margin-bottom: 20px;
 }
 
-/* Section styling */
-.section {
-    margin: 20px 0;
+/* Section and paragraph styling */
+.content h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #444;
 }
 
-.section h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+.content p, .content ul {
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #555;
 }
 
-.section h3 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-}
-
-.section p, .section ul {
-    margin: 10px 0;
-}
-
-.section ul {
-    list-style: inside;
+.content ul {
     padding-left: 20px;
 }
 
-/* Remove margin from the last element to prevent bottom gap */
-.section:last-child {
-    margin-bottom: 0;
-}
-
-/* Styling for links */
+/* Styling for links (buttons) */
 .content a {
     display: inline-block;
-    margin: 10px 0;
+    margin-top: 10px;
     padding: 10px 20px;
     background-color: #007BFF;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .content a:hover {
     background-color: #0056b3;
-}
-
-/* Styling for buttons at the bottom */
-.bottom-buttons {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.bottom-buttons a {
-    margin: 5px;
-    padding: 10px 15px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.bottom-buttons a:hover {
-    background-color: #0056b3;
-}
-
-/* Styling for the top-right image */
-.top-right-image {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 100px;
-    height: 100px;
-    background: url('assets/050324-3.578-2.jpg') no-repeat center center/cover;
-    border-radius: 50%;
-    border: 2px solid white;
 }
