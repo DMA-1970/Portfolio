@@ -1,57 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collaborative Discussion 1</title>
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="overlay">
-        <div class="content">
-            <h1>Collaborative Discussion 1</h1>
-            <p>This discussion will last for 3 weeks covering units 1, 2, and 3. Ensure you include appropriate citations and references in all your posts (this is not included in the word count for each week's post/submission).</p>
+/* Resetting all margins, paddings, and borders for a clean slate */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
 
-            <h2>Discussion Topic</h2>
-            <p>Based on your reading of the case study (Kovaitė and Stankevičienė, 2019), answer the following questions in the discussion forum:</p>
-            <ul>
-                <li>What do the authors mean by the term ‘Industry 4.0’? Give two examples.</li>
-                <li>Give two real-world examples of risks that fit into the authors' categories.</li>
-                <li>Find another journal article that either supports or contradicts the points made in the cited study.</li>
-            </ul>
+/* Ensuring the background image fills the entire page */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    color: #333;
+}
 
-            <h2>Instructions</h2>
-            <p>You should demonstrate that you understand the topic covered and ensure you use references to academic literature (including journals, books, and reports). This activity will provide evidence of your personal growth and is a component of the e-portfolio, which you will submit at the end of the module.</p>
+/* Overlay that covers the entire viewport */
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-            <h2>Discussion Guidance</h2>
-            <ul>
-                <li>Your initial posting should respond to the question and be at least 200 words long. Label this post as "Initial Post".</li>
-                <li>You will then respond to at least two of your peers' posts in unit 2. Label each response as "Peer Response".</li>
-                <li>In Unit 3, provide a summary post of your initial post, feedback from peers, and the content of the three units. Label this post as "Summary Post" (300 words).</li>
-                <li>When referencing other authors' thoughts, ideas, or opinions in your posts, use UoEO Harvard referencing style.</li>
-                <li>This activity forms a part of your e-portfolio, which you will submit in unit 12.</li>
-            </ul>
+/* Styling for the content area */
+.content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 700px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
 
-            <h2>Important Links</h2>
-            <ul>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310" target="_blank">My Initial Post</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p451427" target="_blank">Response from Tobias Zeier</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p451906" target="_blank">Tutor's Response</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452572" target="_blank">Response to Tobias</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580" target="_blank">Response to Tutor</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p457852" target="_blank">Summary</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245614#p451961" target="_blank">Response to Lutero's Post</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629" target="_blank">Response on Ilyas Demirtas Post</a></li>
-            </ul>
+/* Heading styling */
+.content h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
 
-            <h2>Discussion Guidelines</h2>
-            <p>Your initial posting should respond to the question and be at least 200 words long. It should be labelled as "Initial Post".</p>
-            <p>Respond to at least 2 peers' posts in unit 2, each labelled as "Peer Response". Limit your response posts to 200-300 words maximum.</p>
-            <p>In Unit 3, provide a summary post labelled as "Summary Post" (300 words), reflecting on feedback from peers and unit content.</p>
+/* Section and paragraph styling */
+.content h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #444;
+}
 
-            <p><strong>Referencing:</strong> Use the UoEO Harvard reference style for all citations.</p>
-        </div>
-    </div>
-</body>
-</html>
+.content p, .content ul {
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #555;
+}
+
+.content ul {
+    padding-left: 20px;
+}
+
+/* Making the links smaller so they all fit */
+ul.link-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.link-list li {
+    margin-bottom: 10px;
+}
+
+ul.link-list a {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+    max-width: 300px;
+}
+
+ul.link-list a:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for the back buttons */
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button-container .button {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.button-container .button:hover {
+    background-color: #218838;
+}
+
+/* Small adjustments for mobile responsiveness */
+@media (max-width: 768px) {
+    .content {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    ul.link-list a {
+        font-size: 0.8em;
+        padding: 7px 10px;
+    }
+
+    .button-container .button {
+        font-size: 0.8em;
+        padding: 7px 10px;
+    }
+}
