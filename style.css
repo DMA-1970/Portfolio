@@ -25,6 +25,7 @@ html, body {
     min-height: 100%;
     display: flex;
     justify-content: center;
+    align-items: flex-start; /* Ensures content starts at the top */
 }
 
 /* Styling for the content area */
@@ -40,6 +41,7 @@ html, body {
 .content h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    color: white; /* Ensure heading is visible against dark background */
 }
 
 /* Section styling */
@@ -50,15 +52,18 @@ html, body {
 .section h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
+    color: white; /* Ensure text is visible */
 }
 
 .section h3 {
     font-size: 1.2em;
     margin-bottom: 5px;
+    color: white; /* Ensure text is visible */
 }
 
 .section p, .section ul {
     margin: 10px 0;
+    color: white; /* Ensure paragraphs are readable */
 }
 
 .section ul {
