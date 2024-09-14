@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-/* Ensuring the background image fills the entire page without white space */
+/* Ensuring the background image fills the entire page */
 html, body {
     height: 100%;
     margin: 0;
@@ -41,14 +41,9 @@ html, body {
     color: white; /* Ensures all text inside the content area is white */
 }
 
-/* Heading styling */
-.content h1, .content h2, .content h3 {
-    color: white; /* Ensures all headings are white */
-}
-
-/* Paragraphs and list items */
-.content p, .content ul {
-    color: white; /* Ensures all paragraphs and list items are white */
+/* Ensure all headings, paragraphs, and lists are white */
+.content h1, .content h2, .content h3, .content p, .content ul, .content li {
+    color: white; /* Ensures all text elements are white */
 }
 
 /* Section styling */
