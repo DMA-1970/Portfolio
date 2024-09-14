@@ -27,25 +27,25 @@ html, body {
     background: rgba(0, 0, 0, 0.7);
     height: 100vh; /* Ensures the overlay fills the entire viewport height */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between; /* Ensure content is spaced correctly */
     flex-direction: column;
 }
 
 /* Styling for the content area */
 .content {
-    max-width: 600px;
+    max-width: 800px;
     background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adding shadow */
+    text-align: left;
+    color: white; /* Ensures all text in the content is white */
+    flex-grow: 1; /* Ensures the content stretches fully */
 }
 
 /* Heading styling */
 .content h1 {
     font-size: 2.5em;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 /* Section styling */
@@ -54,40 +54,73 @@ html, body {
 }
 
 .section h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-/* Styling for links (buttons) */
+.section h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.section p, .section ul {
+    margin: 10px 0;
+}
+
+.section ul {
+    list-style: inside;
+    padding-left: 20px;
+}
+
+/* Remove margin from the last element to prevent bottom gap */
+.section:last-child {
+    margin-bottom: 0;
+}
+
+/* Styling for links */
 .content a {
     display: inline-block;
     margin: 10px 0;
-    padding: 15px 25px;
+    padding: 10px 20px;
     background-color: #007BFF;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s;
 }
 
 .content a:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Slightly enlarges button on hover */
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .content {
-        padding: 20px;
-        max-width: 90%;
-    }
+/* Styling for buttons at the bottom */
+.bottom-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
 
-    .content h1 {
-        font-size: 2em;
-    }
+.bottom-buttons a {
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
 
-    .content a {
-        padding: 12px 20px;
-        font-size: 1em;
-    }
+.bottom-buttons a:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for the top-right image */
+.top-right-image {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background: url('assets/050324-3.578-2.jpg') no-repeat center center/cover;
+    border-radius: 50%;
+    border: 2px solid white;
 }
