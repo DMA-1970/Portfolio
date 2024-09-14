@@ -6,20 +6,18 @@
     box-sizing: border-box;
 }
 
-/* Adding smooth scroll behavior */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Ensuring the background image fills the entire page with a gradient overlay */
+/* Ensuring the background image fills the entire page */
 html, body {
     height: 100%;
     margin: 0;
-    font-family: 'Roboto', Arial, sans-serif;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+    background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    color: white;
+    overflow: hidden; /* Prevent any overflow */
 }
 
 /* Overlay that covers the entire viewport */
@@ -27,72 +25,45 @@ html, body {
     width: 100%;
     padding: 20px;
     background: rgba(0, 0, 0, 0.7);
-    min-height: 100%;
+    height: 100vh; /* Ensures the overlay fills the entire viewport height */
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* Styling for the content area */
 .content {
-    max-width: 800px;
+    max-width: 600px;
     background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adding shadow */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
-}
-
-.content:hover {
-    transform: translateY(-10px); /* Move up on hover */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Darker shadow */
 }
 
 /* Heading styling */
 .content h1 {
     font-size: 2.5em;
-    margin-bottom: 20px;
-    letter-spacing: 1px; /* Adding space between letters */
-    color: #fff; /* Bright white for the heading */
-}
-
-.content h2, .content h3 {
-    color: #f8f9fa; /* Lighter shade of white for subheadings */
+    margin-bottom: 30px;
 }
 
 /* Section styling */
 .section {
     margin: 20px 0;
-    opacity: 0; /* Initially invisible */
-    animation: fadeIn 0.6s ease-in-out forwards; /* Fade in animation */
 }
 
-/* Adding delay to each section for a staggered effect */
-.section:nth-child(1) {
-    animation-delay: 0.2s;
-}
-.section:nth-child(2) {
-    animation-delay: 0.4s;
-}
-.section:nth-child(3) {
-    animation-delay: 0.6s;
+.section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
 }
 
-.section p, .section ul {
-    margin: 10px 0;
-}
-
-.section ul {
-    list-style: inside;
-    padding-left: 20px;
-}
-
-/* Styling for links (buttons) with gradient background */
+/* Styling for links (buttons) */
 .content a {
     display: inline-block;
-    margin: 10px 20px;
-    padding: 10px 20px;
-    background: linear-gradient(45deg, #007BFF, #0056b3);
+    margin: 10px 0;
+    padding: 15px 25px;
+    background-color: #007BFF;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -100,68 +71,23 @@ html, body {
 }
 
 .content a:hover {
-    background: linear-gradient(45deg, #0056b3, #003b7a); /* Darker gradient on hover */
+    background-color: #0056b3;
     transform: scale(1.05); /* Slightly enlarges button on hover */
-}
-
-/* Styling for the top-right image */
-.top-right-image {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 100px;
-    height: 100px;
-    background: url('assets/050324-3.578-2.jpg') no-repeat center center/cover;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glow effect */
-    animation: pulse 2s infinite; /* Pulsing effect */
-}
-
-/* Pulse animation for the glow */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    }
-    50% {
-        box-shadow: 0 0 25px rgba(255, 255, 255, 1);
-    }
-    100% {
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    }
-}
-
-/* Keyframe animation for fading in */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .content {
-        padding: 15px;
+        padding: 20px;
         max-width: 90%;
     }
 
-    .top-right-image {
-        top: 10px;
-        right: 10px;
-        width: 80px;
-        height: 80px;
+    .content h1 {
+        font-size: 2em;
     }
 
     .content a {
-        margin: 10px 0;
-        padding: 8px 16px;
+        padding: 12px 20px;
+        font-size: 1em;
     }
 }
-
-/* Importing Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
