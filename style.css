@@ -6,15 +6,18 @@
     box-sizing: border-box;
 }
 
-/* Ensuring the background image fills the entire page */
+/* Ensuring the background image fills the entire page without white space */
 html, body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
     background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
+    background-size: cover; /* Ensure the background image covers the entire area */
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 /* Overlay that covers the entire viewport */
@@ -25,7 +28,7 @@ html, body {
     min-height: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Ensures content starts at the top */
+    align-items: flex-start;
 }
 
 /* Styling for the content area */
@@ -34,7 +37,7 @@ html, body {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
-    text-align: left; /* Aligning all text to the left */
+    text-align: left;
     color: white; /* Ensures all text inside the content area is white */
 }
 
@@ -88,6 +91,22 @@ html, body {
     background-color: #0056b3;
 }
 
+/* Home button styling */
+.home-button {
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #218838;
+}
+
 /* Styling for the top-right image */
 .top-right-image {
     position: absolute;
@@ -98,4 +117,46 @@ html, body {
     background: url('assets/050324-3.578-2.jpg') no-repeat center center/cover;
     border-radius: 50%;
     border: 2px solid white;
+}
+
+/* Slider styling */
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    animation: slide 9s infinite;
+}
+
+.slide {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    33% {
+        transform: translateX(-100%);
+    }
+    66% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* Adjust slider image sizes */
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
