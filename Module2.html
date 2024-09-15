@@ -15,14 +15,16 @@
             font-family: Arial, sans-serif;
             background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
             background-size: cover; /* Ensure background covers the full viewport */
+            overflow: hidden; /* Prevent extra scrollbars */
         }
 
-        /* Ensure the overlay centers the content both vertically and horizontally */
+        /* Ensure the overlay covers the full viewport height */
         .overlay {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content at the top */
             align-items: center;
-            min-height: 100vh; /* Minimum height of 100% of the viewport */
+            height: 100vh; /* Full height of the viewport */
             width: 100vw;  /* Full width of the viewport */
             padding: 20px;
             box-sizing: border-box;
@@ -32,13 +34,12 @@
         /* Content box styling */
         .content {
             max-width: 800px;
-            width: 80%; /* Ensure it doesn't take up too much space */
+            width: 100%; /* Ensure it doesn't take up too much space */
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             text-align: left; /* Align text to the left for readability */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for focus */
-            flex-grow: 1; /* Ensure the content expands if needed */
         }
 
         /* Center align headings */
