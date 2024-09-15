@@ -15,14 +15,14 @@
             font-family: Arial, sans-serif;
             background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
             background-size: cover; /* Ensure background covers the full viewport */
-            overflow: hidden; /* Prevent extra scrollbars */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         /* Ensure the overlay covers the full viewport height */
         .overlay {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Align content at the top */
+            justify-content: space-between; /* Keep content spaced out from top to bottom */
             align-items: center;
             height: 100vh; /* Full height of the viewport */
             width: 100vw;  /* Full width of the viewport */
@@ -40,6 +40,8 @@
             border-radius: 10px;
             text-align: left; /* Align text to the left for readability */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for focus */
+            flex-grow: 1; /* Allow the content to grow */
+            overflow-y: auto; /* Allow vertical scrolling inside the content if needed */
         }
 
         /* Center align headings */
@@ -138,13 +140,13 @@
                     <p><strong>Overall Grade:</strong></p>
                 </div>
             </div>
+        </div>
 
-            <!-- Text links aligned at the bottom, within the content box -->
-            <div class="bottom-links">
-                <a href="index.html">Back to Home</a>
-                <a href="university-of-essex.html">Back to University of Essex</a>
-                <a href="Module1.html">Go to Module 1</a>
-            </div>
+        <!-- Text links aligned at the bottom of the viewport -->
+        <div class="bottom-links">
+            <a href="index.html">Back to Home</a>
+            <a href="university-of-essex.html">Back to University of Essex</a>
+            <a href="Module1.html">Go to Module 1</a>
         </div>
     </div>
 </body>
