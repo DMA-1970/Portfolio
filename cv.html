@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - David Abiodun</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Resetting all margins, paddings, and borders for a clean slate */
         * {
@@ -19,7 +19,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            min-height: 100vh; /* Ensure the page fills the full viewport height */
+            min-height: 100vh; /* Full viewport height */
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -32,7 +32,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow-y: hidden; /* Prevent vertical overflow that causes white space */
+            min-height: 100vh;
+            overflow-y: auto; /* Allow vertical scrolling for smaller screens */
         }
 
         /* Overlay styling */
@@ -44,17 +45,20 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 100vh; /* Ensure it covers full screen */
+            box-sizing: border-box;
         }
 
         /* Styling for the content area */
         .content {
             max-width: 800px;
+            width: 90%; /* Responsive width */
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
-            text-align: center; /* Center the text */
+            text-align: center;
             color: white;
+            overflow: auto; /* Ensure content fits within its container */
         }
 
         /* Heading styling */
@@ -100,6 +104,21 @@
         .home-link:hover {
             color: #FFD700; /* Yellow color on hover */
             text-decoration: underline;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .content h1 {
+                font-size: 2em; /* Smaller heading */
+            }
+
+            .content h2, .content h3 {
+                font-size: 1.2em; /* Adjust font size */
+            }
+
+            .content {
+                padding: 15px; /* Adjust padding for smaller screens */
+            }
         }
     </style>
 </head>
