@@ -11,7 +11,7 @@
         html, body {
             margin: 0;
             padding: 0;
-            min-height: 100%; /* Full height to handle scrolling */
+            height: 100%; /* Full viewport height */
             font-family: Arial, sans-serif;
             background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
             background-size: cover; /* Ensure background covers the full viewport */
@@ -22,7 +22,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Minimum height for scrolling if needed */
+            min-height: 100vh; /* Minimum height of 100% of the viewport */
             width: 100vw;  /* Full width of the viewport */
             padding: 20px;
             box-sizing: border-box;
@@ -38,6 +38,7 @@
             border-radius: 10px;
             text-align: left; /* Align text to the left for readability */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for focus */
+            flex-grow: 1; /* Ensure the content expands if needed */
         }
 
         /* Center align headings */
