@@ -7,34 +7,57 @@
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Add consistent styling for all the buttons/links */
-        .button {
-            display: inline-block;
-            margin: 10px 10px;
-            padding: 10px 20px;
-            background-color: #007BFF; /* Button background color */
-            color: white; /* Text color */
-            text-decoration: none; /* No underline for links */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s; /* Smooth transition */
+        /* Body styling to ensure it takes up full height and centers content */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Full viewport height */
+            font-family: Arial, sans-serif;
+            background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
+            background-size: cover; /* Ensure background covers the full viewport */
         }
 
-        /* Button hover effect */
-        .button:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+        /* Overlay to cover full viewport and center content */
+        .overlay {
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Full viewport height */
+            width: 100vw; /* Full viewport width */
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay for contrast */
+        }
+
+        /* Styling for the content box */
+        .content {
+            text-align: center; /* Center text horizontally */
+        }
+
+        /* Styling for the text-based links */
+        .text-link {
+            color: white; /* White text */
+            text-decoration: none; /* Remove underline by default */
+            font-size: 1.2em; /* Adjust font size */
+            margin: 10px 0; /* Spacing between links */
+            display: block; /* Make each link block-level for spacing */
+        }
+
+        /* Hover effect for links */
+        .text-link:hover {
+            text-decoration: underline; /* Underline on hover */
+            color: #FFD700; /* Yellow color on hover */
         }
     </style>
 </head>
 <body>
     <div class="overlay">
         <div class="content">
-            <!-- Discussion buttons -->
-            <a href="SRMCB1.html" class="button">Collaborative Discussion 1</a>
-            <a href="SRMCB2.html" class="button">Collaborative Discussion 2</a>
+            <!-- Collaborative Discussion links, one per line -->
+            <a href="SRMCB1.html" class="text-link">Collaborative Discussion 1</a>
+            <a href="SRMCB2.html" class="text-link">Collaborative Discussion 2</a>
 
-            <!-- New buttons for Home and Security and Risk Management -->
-            <a href="index.html" class="button">Home</a>
-            <a href="Module2.html" class="button">Security and Risk Management</a>
+            <!-- Home and Security and Risk Management links -->
+            <a href="index.html" class="text-link">Home</a>
+            <a href="Module2.html" class="text-link">Security and Risk Management</a>
         </div>
     </div>
 </body>
