@@ -6,6 +6,55 @@
     <title>Module 2 Projects - David Abiodun</title>
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensure the overlay centers the content both vertically and horizontally */
+        .overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        /* Content box styling */
+        .content {
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: left; /* Align text to the left for readability */
+        }
+
+        /* Center align headings */
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        /* Project section styling */
+        .project p {
+            margin-bottom: 15px;
+        }
+
+        /* Bottom buttons styling */
+        .bottom-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Styling for the buttons */
+        .bottom-buttons a {
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .bottom-buttons a:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="overlay">
@@ -41,7 +90,7 @@
                 <div class="project">
                     <p><strong>Threat Modelling Exercise:</strong> 
                         <a href="projects/Risk Modelling/BA.jpeg">View Threat Model</a> |
-                        <a href="Bank Threats.adt">ADT Threat Model</a> <!-- Added new link -->
+                        <a href="Bank Threats.adt">ADT Threat Model</a>
                     </p>
                 </div>
                 <div class="project">
@@ -72,7 +121,5 @@
             </div>
         </div>
     </div>
-    
-    <div class="top-right-image"></div>
 </body>
 </html>
