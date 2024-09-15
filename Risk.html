@@ -12,12 +12,13 @@
             margin: 12px 0; /* Adds vertical spacing between links */
         }
         
-        /* Centering the content box vertically and horizontally */
+        /* Centering the content box both vertically and horizontally */
         .overlay {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh; /* Full viewport height to center vertically */
+            width: 100vw;  /* Full viewport width to center horizontally */
         }
         
         .content {
@@ -25,6 +26,7 @@
             padding: 15px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
+            text-align: center; /* Centers text within the content box */
         }
     </style>
 </head>
