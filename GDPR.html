@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GDPR Case Study - David Abiodun</title>
     <style>
+        /* General body settings */
         body, html {
             margin: 0;
             padding: 0;
@@ -13,8 +14,12 @@
             font-family: Arial, sans-serif;
             background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
             color: white;
-            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
+        /* Dark overlay and centering the content */
         .overlay {
             background: rgba(0, 0, 0, 0.7);
             min-height: 100vh;
@@ -24,8 +29,9 @@
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
-            overflow-y: auto;
         }
+
+        /* Content box settings */
         .content {
             max-width: 600px;
             width: 100%;
@@ -33,26 +39,28 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-sizing: border-box;
-            text-align: center;
+            text-align: left; /* Align the text to the left */
         }
+
+        /* Heading */
         .content h1 {
             margin-bottom: 20px;
             font-size: 2em;
+            text-align: center; /* Keep heading centered */
         }
+
+        /* Simple white text links */
         .content a {
-            display: block;
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #007BFF;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            margin-bottom: 10px;
+            display: block;
             font-size: 1em;
-            transition: background-color 0.3s, transform 0.3s;
         }
+
+        /* Underline on hover for links */
         .content a:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -66,4 +74,3 @@
     </div>
 </body>
 </html>
-
