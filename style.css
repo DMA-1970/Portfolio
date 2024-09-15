@@ -39,22 +39,31 @@ html, body {
     color: white; /* Ensure all text is visible */
 }
 
-/* Basic button styling - yellow background, white text */
+/* Button styling for links - yellow background, white text */
 .button {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
     background-color: #FFD700; /* Yellow background */
-    color: white !important; /* White text */
+    color: white !important; /* White text for all states */
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
     transition: background-color 0.3s ease;
 }
 
+/* Override all link states to prevent purple visited links */
+.button:link,
+.button:visited,
+.button:hover,
+.button:active {
+    color: white !important; /* Always white text */
+    text-decoration: none; /* No underline */
+    background-color: #FFD700; /* Yellow background */
+}
+
 .button:hover {
     background-color: #FFC300; /* Slightly darker yellow on hover */
-    color: white !important; /* Ensure text remains white on hover */
 }
 
 /* Bottom buttons styling */
