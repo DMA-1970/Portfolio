@@ -7,13 +7,27 @@
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Ensure body and html fill the entire height */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Full viewport height */
+            font-family: Arial, sans-serif;
+            background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
+            background-attachment: fixed; /* Fix the background so it doesn't scroll */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
         /* Ensure the overlay centers the content both vertically and horizontally */
         .overlay {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full viewport height */
-            width: 100vw;  /* Full viewport width */
+            min-height: 100vh; /* Ensures it stretches to fit the viewport */
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay for better text contrast */
         }
 
         /* Content box styling */
