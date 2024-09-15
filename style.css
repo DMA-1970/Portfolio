@@ -39,76 +39,13 @@ html, body {
     color: white; /* Ensure all text is visible */
 }
 
-/* Basic button styling */
-.button {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #0056b3;
-}
-
-/* Bottom buttons styling */
-.bottom-buttons {
-    text-align: center;
-    padding: 20px 0;
-}
-/* Resetting all margins, paddings, and borders for a clean slate */
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-}
-
-/* Ensuring the background image fills the entire page */
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-/* Overlay that covers the entire viewport */
-.overlay {
-    width: 100%;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Ensures the bottom buttons stay at the bottom */
-}
-
-/* Styling for the content area */
-.content {
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    color: white; /* Ensure all text is visible */
-}
-
-/* Basic button styling - yellow links */
+/* Basic button styling - yellow background, white text */
 .button {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
     background-color: #FFD700; /* Yellow background */
-    color: white;
+    color: white !important; /* White text */
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
@@ -117,6 +54,7 @@ html, body {
 
 .button:hover {
     background-color: #FFC300; /* Slightly darker yellow on hover */
+    color: white !important; /* Ensure text remains white on hover */
 }
 
 /* Bottom buttons styling */
