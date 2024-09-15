@@ -1,75 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GDPR Case Study - David Abiodun</title>
+    <title>GDPR Activity - David Abiodun</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
     <style>
-        /* General body settings */
-        body, html {
+        /* General body and html settings */
+        html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             font-family: Arial, sans-serif;
             background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
+            background-size: cover; /* Ensure background covers the full viewport */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        /* Dark overlay and centering the content */
+        /* Ensure the overlay covers the full viewport height */
         .overlay {
-            background: rgba(0, 0, 0, 0.7);
-            min-height: 100vh;
-            width: 100%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between; /* Keep content spaced out from top to bottom */
             align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            width: 100vw;  /* Full width of the viewport */
             padding: 20px;
             box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay for better text contrast */
         }
 
-        /* Content box settings */
+        /* Content box styling */
         .content {
-            max-width: 600px;
-            width: 100%;
+            max-width: 800px;
+            width: 100%; /* Ensure it doesn't take up too much space */
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-sizing: border-box;
-            text-align: left; /* Align the text to the left */
+            text-align: left; /* Align text to the left for readability */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for focus */
+            flex-grow: 1; /* Allow the content to grow */
+            overflow-y: auto; /* Allow vertical scrolling inside the content if needed */
         }
 
-        /* Heading */
-        .content h1 {
-            margin-bottom: 20px;
-            font-size: 2em;
-            text-align: center; /* Keep heading centered */
+        /* Center align headings */
+        h1, h2, h3 {
+            text-align: center;
         }
 
-        /* Simple white text links */
-        .content a {
-            color: white;
-            text-decoration: none;
-            margin-bottom: 10px;
-            display: block;
-            font-size: 1em;
+        /* Reduce font size and increase line height for readability */
+        body, .content p, .content ul {
+            font-size: 0.95em; /* Slightly smaller font size */
+            line-height: 1.6; /* Increase line height for better readability */
         }
 
-        /* Underline on hover for links */
-        .content a:hover {
-            text-decoration: underline;
+        /* Add more spacing between sections */
+        .section {
+            margin-bottom: 25px; /* Increase space between sections */
+        }
+
+        /* Bottom links styling within the content box */
+        .bottom-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Styling for the text links */
+        .bottom-links a {
+            color: white; /* White text for links */
+            text-decoration: none; /* No underline by default */
+            margin: 0 10px;
+            font-size: 0.9em; /* Adjust font size if needed */
+        }
+
+        .bottom-links a:hover {
+            text-decoration: underline; /* Underline on hover */
         }
     </style>
 </head>
 <body>
     <div class="overlay">
         <div class="content">
-            <h1>GDPR Case Study</h1>
-            <a href="Use of CCTV footage in a disciplinary process_Original.pdf" target="_blank">Original Complaint</a>
-            <a href="Use of CCTV footage in a disciplinary process_Response.pdf" target="_blank">Assessment & Reflection</a>
+            <h1>GDPR Activity</h1>
+            <p>Please carry out this activity before joining the seminar this week. Your answers will be discussed during the seminar.</p>
+
+            <h2>Activity</h2>
+
+            <p>Review the following links/ websites and answer the questions below:</p>
+            <ul>
+                <li><strong>ICO (2020)</strong> - Guide to the General Data Protection Regulation (GDPR).</li>
+                <li><strong>PCI Security Standards.org (2020)</strong> - Official PCI Security Standards Council Site - PCI Security Standards Overview.</li>
+                <li><strong>HIPAA (2020)</strong> - HIPAA For Dummies – HIPAA Guide.</li>
+            </ul>
+
+            <h3>Questions</h3>
+            <ul>
+                <li>Which of the standards discussed in the sources above would apply to the organisation discussed in the assessment? For example, a company providing services to anyone living in Europe or a European-based company or public body would most likely be subject to GDPR. A company handling online payments would most likely need to meet PCI-DSS standards.</li>
+                <li>Evaluate the company against the appropriate standards and decide how would you check if standards were being met?</li>
+                <li>What would your recommendations be to meet those standards?</li>
+                <li>What assumptions have you made?</li>
+            </ul>
+
+            <p>We will be discussing these articles and the wiki in this week’s seminar. After the seminar, review your initial response as well as those of your colleagues. There will also be an opportunity to review your team’s progress during the seminar.</p>
+        </div>
+
+        <!-- Bottom links aligned in the content box -->
+        <div class="bottom-links">
+            <a href="index.html">Home</a>
+            <a href="university-of-essex.html">Back to University of Essex</a>
         </div>
     </div>
 </body>
