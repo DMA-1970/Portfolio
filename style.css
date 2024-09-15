@@ -12,12 +12,10 @@ html, body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
-    background-size: cover; /* Ensure the background image covers the entire area */
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    min-height: 100vh;
-    overflow: hidden;
+    flex-direction: column;
 }
 
 /* Overlay that covers the entire viewport */
@@ -25,10 +23,10 @@ html, body {
     width: 100%;
     padding: 20px;
     background: rgba(0, 0, 0, 0.7);
-    min-height: 100%;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the bottom buttons stay at the bottom */
 }
 
 /* Styling for the content area */
@@ -37,124 +35,10 @@ html, body {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
-    text-align: left;
-    color: white; /* Ensures all text inside the content area is white */
+    text-align: center;
+    color: white; /* Ensure all text is visible */
 }
 
-/* Ensure all headings, paragraphs, and lists are white */
-.content h1, .content h2, .content h3, .content p, .content ul, .content li {
-    color: white; /* Ensures all text elements are white */
-}
-
-/* Section styling */
-.section {
-    margin: 20px 0;
-}
-
-.section h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.section h3 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-}
-
-.section p, .section ul {
-    margin: 10px 0;
-}
-
-.section ul {
-    list-style: inside;
-    padding-left: 20px;
-}
-
-/* Styling for links */
-.content a {
-    display: inline-block;
-    margin: 10px 20px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.content a:hover {
-    background-color: #0056b3;
-}
-
-/* Home button styling */
-.home-button {
-    display: inline-block;
-    margin: 10px 20px;
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.home-button:hover {
-    background-color: #218838;
-}
-
-/* Styling for the top-right image */
-.top-right-image {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 100px;
-    height: 100px;
-    background: url('assets/050324-3.578-2.jpg') no-repeat center center/cover;
-    border-radius: 50%;
-    border: 2px solid white;
-}
-
-/* Slider styling */
-.slider {
-    position: relative;
-    max-width: 100%;
-    margin: 20px auto;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    width: 300%;
-    animation: slide 9s infinite;
-}
-
-.slide {
-    width: 100%;
-    transition: transform 0.5s ease;
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(0%);
-    }
-    33% {
-        transform: translateX(-100%);
-    }
-    66% {
-        transform: translateX(-200%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
-}
-
-/* Adjust slider image sizes */
-.slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
 /* Basic button styling */
 .button {
     display: inline-block;
@@ -170,4 +54,10 @@ html, body {
 
 .button:hover {
     background-color: #0056b3;
+}
+
+/* Bottom buttons styling */
+.bottom-buttons {
+    text-align: center;
+    padding: 20px 0;
 }
