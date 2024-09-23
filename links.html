@@ -13,13 +13,15 @@
             padding: 20px;
             display: flex;
             justify-content: center; /* Centers content horizontally */
-            align-items: center; /* Centers content vertically */
-            height: 100vh; /* Ensures the content takes up the full viewport height */
+            align-items: flex-start; /* Aligns content to the top */
+            min-height: 100vh; /* Minimum height to ensure it takes up the full viewport */
+            flex-direction: column; /* Makes sure content flows vertically */
         }
 
         .content {
             text-align: left; /* Aligns text to the left */
             width: 60%; /* Optional: set a width for the content */
+            margin: 0 auto; /* Centers the content horizontally */
         }
 
         h1 {
