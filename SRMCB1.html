@@ -1,49 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collaborative Discussion 1</title>
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="overlay">
-        <div class="content">
-            <h1>Collaborative Discussion 1</h1>
-            <p>This discussion will last for 3 weeks covering units 1, 2, and 3. Ensure you include appropriate citations and references in all your posts (this is not included in the word count for each week's post/submission).</p>
+/* Ensure the page takes up full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-            <h2>Discussion Topic</h2>
-            <p>Based on your reading of the case study (Kovaitė and Stankevičienė, 2019), answer the following questions in the discussion forum:</p>
-            <ul>
-                <li>What do the authors mean by the term ‘Industry 4.0’? Give two examples.</li>
-                <li>Give two real-world examples of risks that fit into the authors' categories.</li>
-                <li>Find another journal article that either supports or contradicts the points made in the cited study.</li>
-            </ul>
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f0f0f0; /* Light background color */
+}
 
-            <h2>Discussion Guidance</h2>
-            <ul>
-                <li>Your initial posting should respond to the question and be at least 200 words long. Label this post as "Initial Post".</li>
-                <li>Respond to at least two of your peers' posts in unit 2. Label each response as "Peer Response".</li>
-                <li>In Unit 3, provide a summary post of your initial post, feedback from peers, and the content of the three units. Label this post as "Summary Post" (300 words).</li>
-                <li>When referencing other authors' thoughts, ideas, or opinions in your posts, use UoEO Harvard referencing style.</li>
-                <li>This activity forms a part of your e-portfolio, which you will submit in unit 12.</li>
-            </ul>
+.content {
+    text-align: center; /* Center the text */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Control content width */
+    width: 100%;
+}
 
-            <h2>Important Links</h2>
-            <ul class="link-list">
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310" target="_blank">My Initial Post</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p451427" target="_blank">Response from Tobias Zeier</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p451906" target="_blank">Tutor's Response</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452572" target="_blank">Response to Tobias</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580" target="_blank">Response to Tutor</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p457852" target="_blank">Summary</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245614#p451961" target="_blank">Response to Lutero's Post</a></li>
-                <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629" target="_blank">Response on Ilyas Demirtas Post</a></li>
-            </ul>
+h1 {
+    margin-bottom: 20px;
+}
 
-            <a href="index.html" class="home-button">Go to Home</a>
-        </div>
-    </div>
-</body>
-</html>
+p {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.link-list li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.link-list li a:hover {
+    text-decoration: underline;
+}
+
+.home-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
