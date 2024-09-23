@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collaborative Discussion 1</title>
+    <title>Module 2 Projects - David Abiodun</title>
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Full viewport height for body and html */
+        /* Ensure body and html fill the entire height */
         html, body {
             margin: 0;
             padding: 0;
@@ -15,96 +16,177 @@
             font-family: Arial, sans-serif;
             background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
             background-size: cover; /* Ensure background covers the full viewport */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-        /* Overlay to center the content both horizontally and vertically */
+        /* Ensure the overlay covers the full viewport height */
         .overlay {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between; /* Keep content spaced out from top to bottom */
             align-items: center;
-            height: 100vh; /* Full viewport height */
-            width: 100vw; /* Full viewport width */
-            background: rgba(0, 0, 0, 0.7); /* Dark overlay for better readability */
+            height: 100vh; /* Full height of the viewport */
+            width: 100vw;  /* Full width of the viewport */
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay for better text contrast */
         }
 
-        /* Styling for the content box */
+        /* Content box styling */
         .content {
             max-width: 800px;
-            width: 80%; /* Set a reasonable width */
+            width: 100%; /* Ensure it doesn't take up too much space */
             padding: 20px;
-            background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for focus */
-            text-align: left; /* Align text to the left for neatness */
-            color: white; /* White text for readability */
+            text-align: left; /* Align text to the left for readability */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for focus */
+            flex-grow: 1; /* Allow the content to grow */
+            overflow-y: auto; /* Allow vertical scrolling inside the content if needed */
         }
 
-        /* Styling for the links */
-        .link-list a {
-            color: white; /* White text for links */
-            text-decoration: none; /* Remove underline */
-            display: block; /* One link per line */
-            margin: 5px 0; /* Add spacing between links */
+        /* Center align headings */
+        h1, h2, h3 {
+            text-align: center;
         }
 
-        /* Hover effect for links */
-        .link-list a:hover {
-            text-decoration: underline; /* Underline on hover */
-            color: #FFD700; /* Yellow color on hover */
+        /* Reduce font size and increase line height for readability */
+        body, .content p, .content ul {
+            font-size: 0.95em; /* Slightly smaller font size */
+            line-height: 1.6; /* Increase line height for better readability */
         }
 
-        /* Styling for the home link */
-        .home-button {
-            color: white;
-            text-decoration: none;
+        /* Add more spacing between sections */
+        .section {
+            margin-bottom: 25px; /* Increase space between sections */
+        }
+
+        /* Project section styling */
+        .project p {
+            margin-bottom: 15px;
+        }
+
+        /* Bottom links styling within the content box */
+        .bottom-links {
+            text-align: center;
             margin-top: 20px;
-            display: inline-block;
         }
 
-        .home-button:hover {
-            text-decoration: underline;
-            color: #FFD700;
+        /* Styling for the text links */
+        .bottom-links a {
+            color: white; /* White text for links */
+            text-decoration: none; /* No underline by default */
+            margin: 0 10px;
+            font-size: 0.9em; /* Adjust font size if needed */
+        }
+
+        .bottom-links a:hover {
+            text-decoration: underline; /* Underline on hover */
         }
     </style>
 </head>
+
 <body>
     <div class="overlay">
         <div class="content">
-            <h1>Collaborative Discussion 1</h1>
-            <p>This discussion will last for 3 weeks covering units 1, 2, and 3. Ensure you include appropriate citations and references in all your posts (this is not included in the word count for each week's post/submission).</p>
+            <h1>Security and Risk Management</h1>
 
-            <h2>Discussion Topic</h2>
-            <p>Based on your reading of the case study (Kovaitė and Stankevičienė, 2019), answer the following questions in the discussion forum:</p>
-            <ul>
-                <li>What do the authors mean by the term ‘Industry 4.0’? Give two examples.</li>
-                <li>Give two real-world examples of risks that fit into the authors' categories.</li>
-                <li>Find another journal article that either supports or contradicts the points made in the cited study.</li>
-            </ul>
-
-            <h2>Discussion Guidance</h2>
-            <ul>
-                <li>Your initial posting should respond to the question and be at least 200 words long. Label this post as "Initial Post".</li>
-                <li>Respond to at least two of your peers' posts in unit 2. Label each response as "Peer Response".</li>
-                <li>In Unit 3, provide a summary post of your initial post, feedback from peers, and the content of the three units. Label this post as "Summary Post" (300 words).</li>
-                <li>When referencing other authors' thoughts, ideas, or opinions in your posts, use UoEO Harvard referencing style.</li>
-                <li>This activity forms a part of your e-portfolio, which you will submit in unit 12.</li>
-            </ul>
-
-            <h2>Important Links</h2>
-            <div class="link-list">
-                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310" target="_blank">My Initial Post</a>
-                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p451427" target="_blank">Response from Tobias Zeier</a>
-                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p451906" target="_blank">Tutor's Response</a>
-                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452572" target="_blank">Response to Tobias</a>
-                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580" target="_blank">Response to Tutor</a>
-                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p457852" target="_blank">Summary</a>
-                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245614#p451961" target="_blank">Response to Lutero's Post</a>
-                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629" target="_blank">Response on Ilyas Demirtas Post</a>
+            <div class="section">
+                <h3>Second Module Research Subjects</h3>
+                <p>Unit 1: An Introduction to Security and Risk Management</p>
+                <p><a href="/Portfolio/SRMCB1.html">Collaborative Learning Discussion</a></p>
+                <p>Unit 2: User Participation in the Risk Management Process</p>
+                <p>Unit 3: Introduction to Threat Modelling and Management</p>
+                <p>Unit 4: Application of Threat Modelling and Management Techniques</p>
+                <p>Unit 5: An Introduction to Security and Risk Standards in Industry and the Enterprise</p>
+                <p>Unit 6: The Practical Implications of Security and Risk Standards</p>
+                <p>Unit 7: An Introduction to the Concepts of Quantitative Risk Modelling</p>
+                <p>Unit 8: Implementing Quantitative Risk Models</p>
+                <p>Unit 9: Risk, Business Continuity and Disaster Recovery</p>
+                <p>Unit 10: Practical Applications and Issues in DR Implementations</p>
+                <p>Unit 11: Future Trends in Security and Risk Management</p>
+                <p>Unit 12: What will be the most influential trend in SRM in the next 5 years?</p>
             </div>
 
-            <!-- Home button styled similarly to links -->
-            <a href="index.html" class="home-button">Go to Home</a>
+            <!-- Collaborative Discussions link -->
+            <div class="section">
+                <h2>Collaborative Discussions</h2>
+                <p><a href="SRMCollab.html">Go to Collaborative Discussions</a></p>
+            </div>
+
+            <div class="projects">
+                <h3>Projects</h3>
+
+                <div class="project">
+                    <p><strong>User Participation in the Risk Management Process:</strong> 
+                        <a href="projects/User Participation in the Risk Management Process.pdf">Coursework</a>
+                    </p>
+                </div>
+
+                <div class="project">
+                    <p><strong>Threat Modelling Exercise:</strong> 
+                        <a href="projects/Risk Modelling/BA.jpeg">View Threat Model</a> |
+                        <a href="Bank Threats.adt">ADT Threat Model</a>
+                    </p>
+                </div>
+
+                <div class="project">
+                    <p><strong>Security Standards:</strong> 
+                        <a href="projects/projects/Pampered Pets_Assumptions.pdf">Assumptions</a> |
+                        <a href="projects/Recommendations for Pampered Pets Standards_Short.pdf">Short</a> |
+                        <a href="projects/Recommendations for Pampered Pets Standards_Detailed.pdf">Detailed Report</a>
+                    </p>
+                </div>
+
+                <!-- Think Bayes Project link (on its own line) -->
+                <div class="project">
+                    <p><strong>Think Bayes Project:</strong> 
+                        <a href="projects/Think Bayes/TB.html">Think Bayes Project</a>
+                    </p>
+                </div>
+
+                <div class="project">
+                    <p><strong>Development Team Project:</strong> 
+                        <a href="Risk.html">Risk Identification Report</a> | 
+                        <strong>Grade:</strong> Distinction ***
+                    </p>
+                </div>
+
+                <div class="project">
+                    <p><strong>GDPR Case Study:</strong> 
+                        <a href="GDPR.html" target="_blank">GDPR Case Study</a>
+                    </p>
+                </div>
+
+                <div class="project">
+                    <p><strong>Individual Project:</strong> 
+                        <a href="M2Projects.html">Executive Summary</a>
+                    </p>
+                </div>
+
+                <div class="project">
+                    <p><strong>QRM Activity:</strong> 
+                        <a href="projects/QRM.html">QRM</a>
+                    </p>
+                </div>
+
+                <div class="project">
+                    <p><strong>Individual Module e-Portfolio:</strong></p>
+                </div>
+
+                <div class="project">
+                    <p><strong>Overall Grade:</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text links aligned at the bottom of the viewport -->
+        <div class="bottom-links">
+            <a href="index.html">Back to Home</a>
+            <a href="university-of-essex.html">Back to University of Essex</a>
+            <a href="Module1.html">Go to Module 1</a>
         </div>
     </div>
 </body>
+
 </html>
