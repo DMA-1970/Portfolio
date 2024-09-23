@@ -1,69 +1,71 @@
-/* Ensure the page takes up full height */
+/* Resetting all margins, paddings, and borders for a clean slate */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Ensuring the background image fills the entire page */
 html, body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-}
-
-.overlay {
+    background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    background-color: #f0f0f0; /* Light background color */
+    align-items: flex-start;
+    flex-direction: column;
 }
 
+/* Overlay that covers the entire viewport */
+.overlay {
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the bottom buttons stay at the bottom */
+}
+
+/* Styling for the content area */
 .content {
-    text-align: center; /* Center the text */
-    background-color: white;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Control content width */
-    width: 100%;
+    text-align: center;
+    color: white; /* Ensure all text is visible */
 }
 
-h1 {
-    margin-bottom: 20px;
-}
-
-p {
-    margin-bottom: 20px;
-}
-
-h2 {
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-ul {
-    list-style-type: none; /* Remove default bullets */
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-.link-list li a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.link-list li a:hover {
-    text-decoration: underline;
-}
-
-.home-button {
+/* Basic button styling - yellow background, white text */
+.button {
     display: inline-block;
-    margin-top: 20px;
+    margin: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    background-color: #FFD700; /* Yellow background */
+    color: white; /* White text */
     text-decoration: none;
     border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
-.home-button:hover {
-    background-color: #0056b3;
+/* Ensure link styles are controlled by the .button class */
+a:link, a:visited, a:hover, a:active {
+    color: inherit; /* Inherit color from the .button class */
+    text-decoration: none; /* No underline */
+}
+
+/* Hover state for button */
+.button:hover {
+    background-color: #FFC300; /* Slightly darker yellow on hover */
+    color: white; /* Ensure text remains white */
+}
+
+/* Bottom buttons styling */
+.bottom-buttons {
+    text-align: center;
+    padding: 20px 0;
 }
