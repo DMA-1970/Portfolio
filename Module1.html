@@ -1,134 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launching into Enterprise IT Management - David Abiodun</title>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Launching into Enterprise IT Management - David Abiodun</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
     <style>
-        body, html {
+        /* Ensure body and html fill the entire height */
+        html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
+            height: 100%; /* Full viewport height */
             font-family: Arial, sans-serif;
-            background: url('assets/DJI_0733.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            overflow-y: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: url('assets/DJI_0733.jpg') no-repeat center center/cover;
+            background-size: cover; /* Ensure background covers the full viewport */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
+        /* Ensure the overlay covers the full viewport height */
         .overlay {
-            background: rgba(0, 0, 0, 0.7);
-            width: 100%;
-            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Keep content spaced out from top to bottom */
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            width: 100vw;  /* Full width of the viewport */
             padding: 20px;
             box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay for better text contrast */
         }
 
+        /* Content box styling */
         .content {
             max-width: 800px;
+            width: 100%; /* Ensure it doesn't take up too much space */
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-sizing: border-box;
-            text-align: left; /* Align text to the left */
+            text-align: left; /* Align text to the left for readability */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for focus */
+            flex-grow: 1; /* Allow the content to grow */
+            overflow-y: auto; /* Allow vertical scrolling inside the content if needed */
         }
 
-        h1 {
-            margin-bottom: 20px;
-            font-size: 2.5em;
-            text-align: center; /* Center the main heading */
+        /* Center align headings */
+        h1, h2, h3 {
+            text-align: center;
         }
 
+        /* Reduce font size and increase line height for readability */
+        body, .content p, .content ul {
+            font-size: 0.85em; /* Slightly smaller font size for all content */
+            line-height: 1.6; /* Increase line height for better readability */
+        }
+
+        /* Add more spacing between sections */
         .section {
-            margin: 20px 0;
+            margin-bottom: 25px; /* Increase space between sections */
         }
 
-        .section p, .section ul {
-            margin: 10px 0;
+        /* Bold, increase the size, and set Unit titles to yellow */
+        .unit-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: yellow;
         }
 
-        ul {
-            padding-left: 20px;
+        /* Required and Additional Reading titles */
+        .reading-title {
+            font-size: 0.85em; /* Slightly smaller font size for reading titles */
+            text-decoration: underline;
+            color: white;
         }
 
-        /* Text-based link styling */
-        .section a {
-            color: white; /* White text color */
-            text-decoration: none; /* No underline by default */
-            display: block; /* Display links as block-level elements */
-            margin: 5px 0; /* Add spacing between the links */
+        /* Activity links styling */
+        .activity {
+            color: orange;
         }
 
-        .section a:hover {
-            text-decoration: underline; /* Underline on hover */
-            color: #FFD700; /* Yellow color on hover */
-        }
-
-        .projects {
+        /* Bottom links styling within the content box */
+        .bottom-links {
+            text-align: center;
             margin-top: 20px;
         }
 
-        .project {
-            margin-bottom: 20px;
+        /* Styling for the text links */
+        .bottom-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9em; /* Adjust font size if needed */
         }
 
-        html {
-            scroll-behavior: smooth;
+        .bottom-links a:hover {
+            text-decoration: underline; /* Underline on hover */
         }
     </style>
 </head>
+
 <body>
     <div class="overlay">
         <div class="content">
             <h1>Launching into Enterprise IT Management</h1>
+
+            <!-- All units and activities -->
             <div class="section">
                 <h3>First Module Research Subjects</h3>
-                <ul>
-                    <li>An Introduction to Enterprise IT</li>
-                    <li>Enterprise IT vs. Shadow IT</li>
-                    <li>Enterprise IT and Automation</li>
-                    <li>A Comparative Study: Practical Automation Exercises using C and Python</li>
-                    <li>Business Systems, Outsourcing and the Cloud</li>
-                    <li>A Cost Comparison Between On-premise, Private and Public Cloud Hosting</li>
-                    <li>Software Licensing: Commercial vs. Open Source</li>
-                    <li>A Case Study: Investigating Business and Technical Innovations of Large Corporations and SMEs</li>
-                    <li>Communications and Digital Transformation</li>
-                    <li>The Digital Transformation Process</li>
-                    <li>Future Trends</li>
-                </ul>
+
+                <p class="unit-title">Unit 1: An Introduction to Enterprise IT Management</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add Required Reading Here]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add Additional Reading Here]</p>
+
+                <!-- Activity for Unit 1 -->
+                <h4 class="activity">Activity:</h4>
+                <p><a class="activity" href="#">Collaborative Learning Discussion</a></p>
+                <p><a class="activity" href="#">Introductory Seminar</a></p>
+
+                <p class="unit-title">Unit 2: Enterprise IT vs. Shadow IT</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add Required Reading Here]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add Additional Reading Here]</p>
+
+                <!-- Activity for Unit 2 -->
+                <h4 class="activity">Activity:</h4>
+                <p><a class="activity" href="#">Collaborative Discussion</a></p>
+                <p><a class="activity" href="#">Seminar</a></p>
+
+                <p class="unit-title">Unit 3: Enterprise IT and Automation</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add Required Reading Here]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add Additional Reading Here]</p>
+
+                <!-- Activity for Unit 3 -->
+                <h4 class="activity">Activity:</h4>
+                <p><a class="activity" href="#">Collaborative Discussion</a></p>
+                <p><a class="activity" href="#">Seminar</a></p>
+
+                <p class="unit-title">Unit 4: Business Systems, Outsourcing and the Cloud</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add Required Reading Here]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add Additional Reading Here]</p>
+
+                <!-- Activity for Unit 4 -->
+                <h4 class="activity">Activity:</h4>
+                <p><a class="activity" href="#">Collaborative Discussion</a></p>
+                <p><a class="activity" href="#">Seminar</a></p>
+
+                <!-- Continue adding more units as needed -->
+
             </div>
-            <div class="projects">
-                <h3>Projects</h3>
-                <div class="project">
-                    <p>"The adoption of Enterprise IT is the single most significant change that can happen to any company/SME".</p>
-                    <p><strong>Grade:</strong> Distinction ***</p>
-                </div>
-                <div class="project">
-                    <p><strong>Create a Sort Algorithm in Python:</strong> Modify a simple Python program to replace the basic sort algorithm with one of your choice to sort a provided set of integers.</p>
-                    <p><strong>Grade:</strong> Distinction ***</p>
-                </div>
-                <div class="project">
-                    <p><strong>Develop a PowerPoint Presentation on Future Technology:</strong> Create a 10-slide presentation and a 20-minute recorded reflection (with transcript) on future technology/techniques and learning styles.</p>
-                    <p><strong>Grade:</strong> Pass *</p>
-                </div>
-                <div class="project">
-                    <p><strong>Overall Grade:</strong> Merit **</p>
-                </div>
-            </div>
-            <!-- Converted links to text links with hover effect -->
+
+            <!-- Add Links section -->
             <div class="section">
+                <h2>Links</h2>
+                <p><a href="links.html">Go to Links Page</a></p>
+            </div>
+
+            <!-- Bottom links aligned at the bottom of the viewport -->
+            <div class="bottom-links">
                 <a href="index.html">Back to Home</a>
                 <a href="university-of-essex.html">Back to University of Essex</a>
-                <a href="EITMJournal.html">View EITM Journal</a>
+                <a href="Module2.html">Go to Module 2</a>
             </div>
         </div>
     </div>
 </body>
+
 </html>
