@@ -32,11 +32,13 @@
 
         .content {
             max-width: 800px;
+            width: 100%; /* Ensure it takes up the available width */
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-sizing: border-box;
             text-align: left;
+            overflow-y: auto;
         }
 
         h1 {
@@ -71,10 +73,19 @@
         }
 
         .images-container img {
-            max-width: 100%;
+            max-width: 150px; /* Make the images smaller */
             height: auto;
             border-radius: 10px;
+            margin: 0 auto; /* Center the images */
         }
+
+        /* Adjust the content box height to fit all text */
+        .content {
+            height: 100%;
+            max-height: 100vh;
+            overflow-y: auto; /* Add scrolling if necessary */
+        }
+
     </style>
 </head>
 <body>
@@ -110,6 +121,7 @@
             <div class="footer-links">
                 <p><a href="../index.html">Home</a></p>
                 <p><a href="../university-of-essex.html">Go to MSc</a></p>
+                <p><a href="../Module2.html">Back to Module 2</a></p> <!-- Added the link to Module 2 -->
             </div>
         </div>
     </div>
