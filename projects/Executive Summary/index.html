@@ -6,87 +6,6 @@
     <title>Executive Summary - David Abiodun</title>
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="../style.css">
-    <style>
-        /* Set black background for the entire page */
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            background-color: black; /* Set black background */
-            color: white; /* Set font color to white */
-            overflow-x: hidden;
-        }
-
-        /* Ensure the overlay covers the full viewport height */
-        .overlay {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        /* Content box styling */
-        .content {
-            max-width: 800px;
-            width: 100%;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            text-align: left; /* Align text to the left */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            flex-grow: 1;
-            overflow-y: auto;
-        }
-
-        /* Center align headings */
-        h1, h2, h3 {
-            text-align: center;
-        }
-
-        /* Set all fonts and links to white */
-        body, .content p, .content ul, .content a {
-            font-size: 0.85em;
-            line-height: 1.6;
-            color: white; /* Font color to white */
-        }
-
-        /* Align links to the left */
-        .content a {
-            color: white; /* Set links to white */
-            text-decoration: none;
-        }
-
-        .content a:hover {
-            text-decoration: underline; /* Underline on hover */
-        }
-
-        /* Add spacing between sections */
-        .section {
-            margin-bottom: 25px;
-        }
-
-        /* Bottom links styling */
-        .bottom-links {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .bottom-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.9em;
-        }
-
-        .bottom-links a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 
 <body>
@@ -97,24 +16,24 @@
             <!-- Links to the requested files -->
             <div class="section">
                 <h3>Executive Summary</h3>
-                <p><a href="DAbiodun_12696259 Executive summary.pdf" target="_blank">Executive Summary</a></p>
+                <a href="DAbiodun_12696259 Executive summary.pdf" class="button" target="_blank">Executive Summary</a>
             </div>
 
             <div class="section">
                 <h3>Pampered Pets Attack Tree</h3>
-                <p><a href="Pampered Pets Attack Tree.pdf" target="_blank">PDF File</a></p>
-                <p><a href="Pampered Pets.adt" target="_blank">ADT File</a></p>
+                <a href="Pampered Pets Attack Tree.pdf" class="button" target="_blank">PDF File</a>
+                <a href="Pampered Pets.adt" class="button" target="_blank">ADT File</a>
             </div>
 
             <div class="section">
                 <h3>Monte Carlo Simulations (Jupyter Zip Files)</h3>
-                <p><a href="Monte Carlo Simulations.zip" target="_blank">Monte Carlo Simulations</a></p>
+                <a href="Monte Carlo Simulations.zip" class="button" target="_blank">Monte Carlo Simulations</a>
             </div>
 
             <!-- Bottom links aligned at the bottom of the viewport -->
-            <div class="bottom-links">
-                <a href="../index.html">Back to Home</a>
-                <a href="../module2.html">Back to Module 2</a>
+            <div class="bottom-buttons">
+                <a href="../index.html" class="button">Back to Home</a>
+                <a href="../module2.html" class="button">Back to Module 2</a>
             </div>
         </div>
     </div>
