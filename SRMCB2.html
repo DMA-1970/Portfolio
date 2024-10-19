@@ -7,7 +7,7 @@
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Full viewport height for body and html */
+        /* Ensure body and html fill the entire height */
         html, body {
             margin: 0;
             padding: 0;
@@ -15,48 +15,80 @@
             font-family: Arial, sans-serif;
             background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
             background-size: cover; /* Ensure background covers the full viewport */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-        /* Overlay to center the content both horizontally and vertically */
+        /* Ensure the overlay covers the full viewport height */
         .overlay {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full viewport height */
-            width: 100vw; /* Full viewport width */
-            background: rgba(0, 0, 0, 0.7); /* Dark overlay for better readability */
+            min-height: 100vh; /* Full height of the viewport */
+            width: 100vw;  /* Full width of the viewport */
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay for better text contrast */
         }
 
-        /* Styling for the content box */
+        /* Content box styling */
         .content {
             max-width: 800px;
-            width: 80%; /* Set a reasonable width */
+            width: 100%; /* Ensure it doesn't take up too much space */
             padding: 20px;
-            background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for focus */
-            text-align: left; /* Align text to the left for neatness */
-            color: white; /* White text for readability */
+            text-align: left; /* Align text to the left for readability */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for focus */
+            overflow-y: auto; /* Allow vertical scrolling inside the content if needed */
         }
 
-        /* Smaller text with increased line height */
-        .content p, .content ul, .content h1, .content h2 {
-            font-size: 0.9em; /* Smaller font size */
-            line-height: 1.5; /* Increase line height for spacing */
+        /* Smaller font size for headings */
+        h1, h2 {
+            text-align: left;
+            color: white;
+            font-size: 1.2em; /* Smaller font size for headings */
         }
 
-        /* Styling for the links */
-        .link-list a {
-            color: white; /* White text for links */
-            text-decoration: none; /* Remove underline */
-            display: block; /* One link per line */
-            margin: 5px 0; /* Add spacing between links */
+        /* Ensure text is aligned to the left */
+        p {
+            text-align: left;
+            color: white;
+            font-size: 0.8em; /* Smaller font size for paragraphs */
         }
 
-        /* Hover effect for links */
-        .link-list a:hover {
-            text-decoration: underline; /* Underline on hover */
-            color: #FFD700; /* Yellow color on hover */
+        /* Remove list-style but maintain text alignment */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 0.8em; /* Smaller font size for list items */
+        }
+
+        /* Styling for links */
+        a {
+            color: orange;
+            text-decoration: none;
+            font-size: 0.8em; /* Smaller font size for links */
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Bottom links styling (simple text link) */
+        .bottom-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .bottom-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.8em; /* Smaller font size for bottom links */
+        }
+
+        .bottom-links a:hover {
+            text-decoration: underline;
         }
 
         /* Styling for the home link */
@@ -103,7 +135,10 @@
                 <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p470013" target="_blank">Initial Post</a>
             </div>
 
-            <a href="index.html" class="home-button">Go to Home</a>
+            <div class="bottom-links">
+                <a href="index.html">Back to Home</a>
+                <a href="Module2.html">Go to Module 2</a>
+            </div>
         </div>
     </div>
 </body>
