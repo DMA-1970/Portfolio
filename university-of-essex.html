@@ -1,95 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Technology Service Management October 2024</title>
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>University of Essex - David Abiodun</title>
     <style>
-        /* Set the body and background */
-        body, html {
+        /* Ensure body and html fill the entire height */
+        html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
+            height: 100%; /* Full viewport height */
             font-family: Arial, sans-serif;
-            background: url('assets/DJI_0734.jpg') no-repeat center center/cover;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: left; /* Align text to the left */
+            background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
+            background-size: cover; /* Ensure background covers the full viewport */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-        /* Dark overlay to enhance text visibility */
+        /* Ensure the overlay covers the full viewport height */
         .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
+            justify-content: space-between; /* Keep content spaced out from top to bottom */
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            width: 100vw;  /* Full width of the viewport */
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay for better text contrast */
         }
 
         /* Content box styling */
         .content {
             max-width: 800px;
+            width: 100%; /* Ensure it doesn't take up too much space */
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            text-align: left; /* Left-align text */
+            text-align: left; /* Align text to the left for readability */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for focus */
+            flex-grow: 1; /* Allow the content to grow */
+            overflow-y: auto; /* Allow vertical scrolling inside the content if needed */
         }
 
-        /* Center the main heading */
-        .content h1 {
-            margin-bottom: 20px;
-            font-size: 2.5em;
+        /* Center align headings */
+        h1, h2, h3 {
             text-align: center;
         }
 
-        /* Section margins */
+        /* Reduce font size and increase line height for readability */
+        body, .content p, .content ul {
+            font-size: 0.85em; /* Slightly smaller font size for all content */
+            line-height: 1.6; /* Increase line height for better readability */
+        }
+
+        /* Add more spacing between sections */
         .section {
-            margin: 20px 0;
+            margin-bottom: 25px; /* Increase space between sections */
         }
 
-        .section p {
-            margin: 10px 0;
+        /* Bold, increase the size, and set Unit titles to yellow */
+        .unit-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: yellow;
         }
 
-        /* Simple white text links */
-        .content a {
+        /* Required and Additional Reading titles */
+        .reading-title {
+            font-size: 0.85em; /* Slightly smaller font size for reading titles */
+            text-decoration: underline;
+            color: white;
+        }
+
+        /* Activity links styling */
+        .activity {
+            color: orange;
+        }
+
+        /* Bottom links styling within the content box */
+        .bottom-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Styling for the text links */
+        .bottom-links a {
             color: white;
             text-decoration: none;
-            margin-bottom: 10px;
-            display: block;
-            font-size: 1em; /* Adjust font size as needed */
+            margin: 0 10px;
+            font-size: 0.9em; /* Adjust font size if needed */
         }
 
-        /* Underline on hover for text links */
-        .content a:hover {
-            text-decoration: underline;
+        .bottom-links a:hover {
+            text-decoration: underline; /* Underline on hover */
         }
     </style>
 </head>
+
 <body>
     <div class="overlay">
         <div class="content">
-            <h1>University of Essex</h1>
-            <div class="section">
-                <p>I have decided to formalise my extensive years of experience by pursuing an MSc in Enterprise IT Management. This academic endeavor is intended to bridge any gaps between my practical, on-the-job experience and the theoretical foundations necessary to establish myself as an expert in Enterprise IT.</p>
-                <p>I am pleased to share that I have been selected to serve as a student representative, a role I am eager to commence in October. I look forward to contributing to the academic community and leveraging this opportunity to enhance my professional expertise.</p>
-            </div>
-            <div class="section">
-                <a href="Module1.html">Launching into Enterprise IT Management April 2024 (Module 1)</a>
-                <a href="Module2.html">Security and Risk Management July 2024 (Module 2)</a>
-            </div>
-            <div class="section">
+            <h1>Information Technology Service Management October 2024</h1>
+
+            <!-- Content goes here -->
+
+            <!-- Bottom links aligned at the bottom of the viewport -->
+            <div class="bottom-links">
                 <a href="index.html">Back to Home</a>
+                <a href="university-of-essex.html">Back to University of Essex</a>
+                <a href="Module1.html">Go to Module 1</a>
+                <a href="Module3.html">Information Technology Service Management October 2024</a>
+                <a href="links.html">Links</a>
+                <a href="SRMCollab.html">Collaborative Discussions</a>
             </div>
         </div>
     </div>
 </body>
+
 </html>
