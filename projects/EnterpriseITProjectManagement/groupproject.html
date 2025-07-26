@@ -1,1 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Project - Enterprise IT Project Management</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        .overlay {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .content {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        body, .content p, .content ul {
+            font-size: 0.85em;
+            line-height: 1.6;
+            color: white;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .unit-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ffff00 !important;
+        }
+
+        .reading-title {
+            font-size: 0.85em;
+            text-decoration: underline;
+            color: white;
+        }
+
+        .activity {
+            color: orange;
+        }
+
+        .bottom-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .bottom-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9em;
+        }
+
+        .bottom-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="content">
+            <h1>Part 1: Coursework: Group Report</h1>
+
+            <p>Internet Musician, DJ, aspiring producer and YouTube influencer DJ Ascentia (current followers 1M) has been approached by two companies to endorse and promote their new products.</p>
+
+            <p class="unit-title">ARMband Product</p>
+            <p>The first product from Band of Bros is called ARMband – marketed as a "Band in a Box" it is based on the successful, Raspberry-Pi based Zynthian open-source product (Rogerson, 2023), but it has its own branded Sequencer, Sampler and Instruments forked from open-source alternatives. Its USP is a new 4-in, 4 -out AD/ DA card that makes the instrument much more flexible – however this board does not currently have Linux compatible drivers. The company has a small but dedicated development team that are tasked with the UI rebranding. Other software developments (such as the new driver) will need to be developed by the community. The owners of the Armband product are intending to differentiate themselves from their obvious competitor (i.e. Zynthian) in two ways: first by offering a fully built, tested and warrantied product at a lower price than the Zynthian kit due to a cheaper case and simpler build (ARMband will have a recommended retail price (RRP) of £400). Secondly, the development team have plans to license and port a number of shareware applications (known as Virtual Studio Technology (VST) effects and instruments) to their platform to further differentiate their product from the competition. The company require DJ Ascentia to invest £10,000 towards the case tooling and manufacture, and they are offering a 15% share of the profits as payback.</p>
+
+            <p class="unit-title">Runi Product</p>
+            <p>The second product is known as Runi (Risc-V Unix-native instrument) from a company called The Runes. Runi is based on the idea of Norns from Monome. The Norns is based around community contributed scripts written in a language called Lua, and the Supercollider engine (Rothwell, 2020). Unlike the Norns product, Runi is designed to be based on a RISC-V development board (The Vision5 from Starfive). The development board is relatively new, and it does not have the wide level of software support of common ARM boards – for example, Supercollider and the Lua engine need to be ported and the sound driver needs some development work. The team behind Runi is a 2-person unit, and while one is a software developer, they have decided to use common open-source community development resources to help them develop their product. They have also decided to use mostly commercial off-the-shelf (COTS) components for their product. The only exception is the case which they have decided will be a 3-D printed component. The unique selling points (USPs) of the Runi over the standard Monome Norns is the price, which will be £150 for a self-assembly kit (consisting of the case, documentation/ instructions, and a screen – the purchaser will supply their own RISC-V board) or £400 for a fully built, tested and warrantied unit. The other advantage will be a standardised user interface (UI) to make it easier to use and quicker to learn. The team have decided to develop the UI in-house, but will need the community to help develop and test the drivers for the hardware as well as help with porting the Supercollider engine, the Lua interpreter, and the scripts from the original Norns. The Runes team are not asking for investment, just product placement, promotion and marketing and in return they are offering a 7% share of the gross profit.</p>
+
+            <p>Both companies will only accept an exclusive deal (i.e. they will not accept DJ Ascentia pursuing both options). DJ Ascentia would like to start promoting the most lucrative option as soon as possible, to maximise his income/ earnings. His management company have recruited your company to produce independent plans and estimates for both products. Which option would you recommend that the influencer should take?</p>
+
+            <h4 class="activity">Summary</h4>
+            <p><strong>Product</strong> | <strong>Predicted Sales (no DJ)</strong> | <strong>Predicted Sales (DJ)</strong> | <strong>Gross Margin</strong><br>
+            ARMband | 800 /yr | 1500 /yr | 20%<br>
+            Runi (kit) | 1000 /yr | 2750 /yr | 40%<br>
+            Runi (assembled) | 500 /yr | 950 /yr | 35%</p>
+
+            <h4 class="activity">Components - ARMband</h4>
+            <p><strong>Component</strong> | <strong>Quantity</strong> | <strong>Cost</strong><br>
+            Raspberry Pi 5, 8 GB RAM | 1 | £77<br>
+            4 Way ADA Card | 1 | £55<br>
+            4" TFT screen | 1 | £35<br>
+            Custom case | 1 | £55 (per unit)<br>
+            Wires, screws, etc. | 1 (kit) | £5<br>
+            Assembly | 1 (3 hours/ unit) | £45</p>
+
+            <h4 class="activity">Components – Runi (Complete System)</h4>
+            <p><strong>Component</strong> | <strong>Quantity</strong> | <strong>Cost</strong><br>
+            Vision 5 board | 1 | £105<br>
+            *3" E-ink display | 1 | £15<br>
+            *Case | 1 | £15<br>
+            *Wires, screws, etc. | 1 (kit) | £5<br>
+            Assembly | 1 (2 hours/ unit) | £30</p>
+
+            <p class="reading-title">Table Notes:</p>
+            <p>The (no DJ) column is predicted sales without DJ marketing; the (DJ) column is the total sales predicted with a DJ influencer lift.</p>
+            <p>The Gross Margin column is the estimated gross profit % on each product – before deduction of commission, taxes, etc.</p>
+
+            <h4 class="activity">Your Group Report Requirements:</h4>
+            <p>You need to extract the pertinent requirements from the description given above. In addition, you are required to recommend the best project management methodology for each project, with appropriate justifications for each. You should enumerate the 5 key requirements for each product in the form of gherkin statements.</p>
+            <p>You are also tasked with creating a WBS/Project Network diagram that enumerates the "work packages" that are required by each project. You are also required to create a detailed project plan (using a Gantt Chart) that shows how the work packages would run in parallel, and the duration of each package.</p>
+            <p>Do not forget to include work packages for software development and the various testing stages – including unit, integration, and user acceptance. Remember that even "free" packages (for example development or testing provided by community resources) still takes time and must be included to provide a fair comparison in the elapsed time calculations.</p>
+            <p>You are required to estimate the time required for software development (including porting), testing, and any required documentation. You should justify the estimates you have made. Bear in mind every package you created for the WBS needs an estimate and should appear on your plan. You also need to create an estimate of the total cost to bring these products to market (excluding advertising and promotion which is what DJ Ascentia is needed for!).</p>
+            <p>You need to ensure that your report is carefully formatted and checked to a level suitable for a business presentation.</p>
+            <p>You also need to ensure that you have included suitable references, and that all the illustrations and figures you have included are appropriately cited.</p>
+
+            <p class="reading-title">Please Note:</p>
+            <p>One key part of the exercises in this module is the need to be able to express ideas succinctly, concisely and with necessary brevity. The submission must include all core contents redressing the above requirements. Appendices should be used only if needed and include supplementary and/or supporting details. The marking will use the Grading Criteria listed under the Module Resources.</p>
+
+            <h4 class="activity">Typical Rates for a Selection of Resources</h4>
+            <p><strong>Role</strong> | <strong>Daily Rate</strong> | <strong>Responsibilities</strong><br>
+            Project Manager | £600 | Planning, resourcing, reporting.<br>
+            Project Analyst | £250 | WBS code mgmt., costing, allocation.<br>
+            Test Manager | £450 | Test planning, organising, reporting.<br>
+            Test Architect | £500 | Test design, co-planning, scripting.<br>
+            Test Analyst | £400 | Test execution, recording, reporting.<br>
+            Solution Architect | £500 | Software/System Design, Integration.<br>
+            Developer | £400 | Software coding and Implementation.<br>
+            Product Owner | £400 | UAT, Stakeholder representation.<br>
+            Requirements Manager | £450 | Requirements gathering and analysis.<br>
+            Business Analyst | £350 | Requirements analysis, business design.</p>
+
+            <h4 class="activity">Useful Equations</h4>
+            <p>Gross Profit (GP) = Total Income – Total Costs.</p>
+            <p>Total Income = Unit Price * No of Units Sold.</p>
+            <p>Total Costs = Component Costs + Labour Costs (PM + design + testing + manufacturing).</p>
+
+            <h4 class="activity">Learning Outcomes</h4>
+            <p>Identify and critically analyse ITPM challenges and processes in business systems, accounting for the current enterprise landscape.</p>
+            <p>Gather and synthesise information from multiple sources (including internet resources and business publications) to aid in the systematic analysis of IT project management issues.</p>
+            <p>Critically evaluate appropriate methodologies, tools and techniques to mitigate and/or solve IT project management issues and their business impact.</p>
+
+            <h4 class="activity">Turnitin Originality Check</h4>
+            <p>Before submitting your assignment, it is important to check the originality of your work by submitting your assignment to Turnitin.</p>
+            <p>By submitting your assignment to this tool you will receive an originality report which can be used to check that you have not included other authors work without correct citation. It is important to note that submitting your work to the Turnitin Originality Check tool does not count as a submission of your final work. You must still submit your assignment below.</p>
+
+            <h4 class="activity">Academic Integrity and Plagiarism</h4>
+            <p>We take academic integrity very seriously. Academic integrity means acting with fairness and honesty, giving credit to others where you are referring to their ideas or research and respecting the work of others. Plagiarism is defined as: 'Using or copying the work of others (whether written, printed or in any other form) without proper acknowledgement'. Before you finalise your assignment take time to check that all your statements are backed up with supporting evidence, that all sources you use - whether referring to their ideas, quoting directly or paraphrasing - are correctly referenced in the text. Correct use of referencing acknowledges the academic whose work has informed yours, enables the reader to find the sources you have used and demonstrates your ability to find and analyse relevant information.</p>
+            <p>Failure to properly acknowledge the work of others is an academic offence and may result in your work incurring a penalty or, in the most serious cases, you being removed from the course for academic dishonesty.</p>
+            <p>If you are unsure about referencing or plagiarism there are useful resources available in the Study Skills Hub which is accessible from the menu on the left-hand side. If you are still experiencing difficulties with academic integrity then you can contact the Study Skills Team for individualised support.</p>
+            <p>Please note, a word count penalty applies to this assessment.</p>
+            <p>If your assessment exceeds the word count limit or range by more than 10% then your awarded grade will be reduced by 10% grade points. For more information please see your student handbook.</p>
+            <p>Not meeting the word count.</p>
+            <p>There is no grade reduction applied if your assignment does not meet the word count range or limit, but to maximise your opportunity to achieve the highest grade possible, you should aim to meet the word count or range as closely as possible.</p>
+
+            <h4 class="activity">Submission Instructions</h4>
+            <p>Submit your saved document below before the end of Unit 3.</p>
+            <p>Use Harvard for all citations and referencing.</p>
+            <p>After the deadline, the submission page will be locked.</p>
+
+            <div class="bottom-links">
+                <a href="index.html">Back to Home</a>
+                <a href="university-of-essex.html">Back to University of Essex</a>
+                <a href="Module1.html">Go to Module 1</a>
+                <a href="Module2.html">Go to Module 2</a>
+                <a href="Module3.html">Go to Module 3</a>
+                <a href="Module4.html">Go to Module 4</a>
+                <a href="Module5.html">Go to Module 5</a>
+                <a href="links.html">Links</a>
+                <a href="SRMCollab.html">Collaborative Discussions</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
