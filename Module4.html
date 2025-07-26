@@ -1,3 +1,6 @@
+I can see the issue! In Module 3, the activities are styled with `<h4 class="activity">Activity:</h4>` which makes them orange, but in Module 4, they're styled as `<p class="activity">Activity:</p>` which doesn't have the same visual impact. Let me fix the Module 4 code to match Module 3's styling exactly:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,7 +70,6 @@
         }
 
         .activity {
-            font-weight: bold;
             color: orange;
         }
 
@@ -104,7 +106,7 @@
             Eggen, D. and Witte, G. (2006) 'The FBI's Upgrade That Wasn't', The Washington Post, 18 August, p.1.</p>
             <p class="reading-title">Seminar:</p>
             <p>Introductory Seminar – Wednesday 29th January 2025 (18:00 GMT)</p>
-            <p class="activity">Activity:</p>
+            <h4 class="activity">Activity:</h4>
             <p>Explore the fundamentals of IT project management and reflect on personal project experience.</p>
 
             <p class="unit-title">Unit 2: Requirements Management and Stakeholder Engagement</p>
@@ -117,7 +119,7 @@
             <p>Benno, R., Richard, J. and Jens, E. (2017) Behave Tutorial.</p>
             <p class="reading-title">Seminar:</p>
             <p>Requirements Management: Using the Gherkin Language – Wednesday 5th February 2025 (18:00 GMT)</p>
-            <p class="activity">Activity:</p>
+            <h4 class="activity">Activity:</h4>
             <p>Analyse stakeholder requirements and practice writing user stories using Gherkin syntax.</p>
 
             <p class="unit-title">Unit 3: Work Breakdown Structures and Scheduling</p>
@@ -128,7 +130,7 @@
             Levitt, R.E. (2011) 'Towards project management 2.0'.</p>
             <p class="reading-title">Additional Reading:</p>
             <p></p>
-            <p class="activity">Activity:</p>
+            <h4 class="activity">Activity:</h4>
             <p>Develop a detailed WBS and Gantt chart for a given IT project.</p>
 
             <p class="unit-title">Unit 4: Forecasting and Estimation</p>
@@ -139,7 +141,7 @@
             <p>George, C. (2020) 'The essence of risk identification in project risk management'.</p>
             <p class="reading-title">Seminar:</p>
             <p>Project Forecasting and Estimating – Wednesday 19th February 2025 (18:00 GMT)</p>
-            <p class="activity">Activity:</p>
+            <h4 class="activity">Activity:</h4>
             <p>Use estimation techniques (e.g., three-point estimating) to assess cost and schedule risks.</p>
 
             <p class="unit-title">Unit 5: Governance and Risk Management</p>
@@ -149,7 +151,7 @@
             <p class="reading-title">Additional Reading:</p>
             <p>Guo, K. and Zhang, L. (2022) 'Multi-objective optimization for improved project management'.<br>
             El Khatib, M. et al. (2021) 'The impact of blockchain on project management'.</p>
-            <p class="activity">Activity:</p>
+            <h4 class="activity">Activity:</h4>
             <p>Critically evaluate a project risk register and apply a governance framework (e.g., PRINCE2).</p>
 
             <p class="unit-title">Unit 6: Emerging Trends and Capstone Presentations</p>
@@ -159,7 +161,7 @@
             <p></p>
             <p class="reading-title">Seminar:</p>
             <p>The Future of Project Management – Wednesday 5th March 2025 (18:00 GMT)</p>
-            <p class="activity">Activity:</p>
+            <h4 class="activity">Activity:</h4>
             <p>Submit and present a reflective capstone project demonstrating project planning and control skills.</p>
 
             <div class="bottom-links">
@@ -177,3 +179,11 @@
 </body>
 
 </html>
+```
+
+The key changes made:
+1. Changed all `<p class="activity">Activity:</p>` to `<h4 class="activity">Activity:</h4>` to match Module 3's styling
+2. This will make the "Activity:" headers appear in orange color just like in Module 3
+3. The unit titles remain yellow as they should be
+
+Now Module 4 will have the same visual styling as Module 3 with yellow unit headers and orange activity headers.
