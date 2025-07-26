@@ -1,1 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Presentation - Enterprise IT Project Management</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        .overlay {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .content {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        body, .content p, .content ul {
+            font-size: 0.85em;
+            line-height: 1.6;
+            color: white;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .unit-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ffff00 !important;
+        }
+
+        .reading-title {
+            font-size: 0.85em;
+            text-decoration: underline;
+            color: white;
+        }
+
+        .activity {
+            color: orange;
+        }
+
+        .bottom-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .bottom-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9em;
+        }
+
+        .bottom-links a:hover {
+            text-decoration: underline;
+        }
+
+        .group-report-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .group-report-links {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .group-report-column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .group-report-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .group-report-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="content">
+            <h1>Individual Presentation: ARMband vs Runi Analysis</h1>
+
+            <p>This is an individual submission. The word count is 1,500 words equivalent/20 minutes.</p>
+
+            <p>For this assignment, you are required to record a video 20-minute presentation, along with a transcript of the video file. Your slides should not be wordy or repeat, verbatim, the oral presentation. Visuals, illustration, statistics, charts, tables and indication of key pointers are welcome. In assessing the presentation for marking, emphasis will be place on the oral content. However, clarity of the visual presentation will also be taken into account.</p>
+
+            <p>Please submit all 3 aspects (the PowerPoint, video recording and transcript) to the submission portal below.</p>
+
+            <h4 class="activity">Brief</h4>
+            <p class="unit-title">ARMband Update</p>
+            <p>ARMband have seen how successful DJ Ascentia influencing/marketing is and have decided to change their offer to the influencer. They no longer require an investment and are offering an 8% share of the gross profit. Additionally, they are happy to accept a non-exclusive deal with the influencer. The ARMband is a fully working and tested system, but so far the company has only sold 750 systems in the first year.</p>
+
+            <p class="unit-title">Runi Challenges</p>
+            <p>The Runes, however, are less happy. The actual sales of their Runi kit have only been 1750 rather than the predicted 2750. They have not sold any of the complete systems. This is down to several factors:</p>
+
+            <p>Firstly, the porting of the Norns software to the Runi has not gone well. As part of the process it transpires that one of the UI components is NOT open source and there is no design for it. The Runes engineers are working to reverse-engineer the component, but until this is complete a working system will not be available. The estimate for the development of this fix is 6 weeks (excluding testing).</p>
+            <p>Secondly, and because of the above, DJ Ascentia has not been able to create any working demos of the Runi – which has also affected sales.</p>
+            <p>Thirdly, because Runi is Risc-V based, there is no other alternative software available that can use the hardware – limiting its usefulness without the ported software.</p>
+            <p>The influencer reckons that it will take him 4 weeks to create the demos once the fix has been applied.</p>
+
+            <p>Additionally, there is a 50% chance that the Runes will withdraw their business if the influencer takes on the ARMband. The Band of Bros have said if this happens they will increase the influencer's payment to 11% of gross profit.</p>
+
+            <h4 class="activity">Instructions</h4>
+            <p>You are tasked with developing a PowerPoint presentation (of up to 10 slides) that addresses the client's concerns and explains how they will be mitigated – including explaining when the new solution will be available, what they will cost, and any deviations from expectations. In addition to your PowerPoint, you should also create an video recording of the delivery of your PowerPoint with a 'business-ready' report/transcript.</p>
+
+            <p>It is strongly recommended that, in order to record your presentation, you use a headset with a microphone.</p>
+
+            <p>Note that an average speech rate for a comfortable and clearly orally paced presentation is about 100-150 words per minute.</p>
+
+            <p class="reading-title">Please Note:</p>
+            <p>Appendices should not be used to extend the core report as reports should stand alone, complete and concise, without the appendices. They should really only be used if required, and only for supplementary and/or supporting information. One key part of the exercises in this module is the need to be to be able to express ideas succinctly, concisely and with necessary brevity.</p>
+
+            <p>Please ensure that your citations and list of references are included in the slides and citations mentioned in your transcript.</p>
+
+            <h4 class="activity">Your Individual Presentation and Reflection should also include the answers (and artefacts) created by the activities below:</h4>
+
+            <p>1. Individually, you are required to create updated WBS codes and a Gantt chart/project plan to allow for the changes to the Runes planning and system – this should include the time to create the fix, any required testing and the time for DJ Ascentia to create the required demos for marketing purposes. Assuming no other problems, when can the influencer start his demos, and when can he expect to start making income again?</p>
+
+            <p>2. Assuming that the original predictions are accurate, how much will the influencer make (per year) if he takes on the ARMband marketing at the new rate?</p>
+
+            <p>3. Is it worth taking on ARMband – even if the Runes withdraw their business – assuming that the ARMband is ready to go now and there will be a delay before the Runi can be successfully demonstrated? You can assume that DJ Ascentia already has demos he created for the original Zynthian and these demos can be ported without changes to the ARMband (although DJ Ascentia will need to do 2 weeks testing on the ARMband just to check this).</p>
+
+            <p>4. Your presentation should also include your recommendations to the influencer – should he take on ARMband marketing or not? Does it make a difference to your recommendation if the Runes withdraw their business?</p>
+
+            <p>5. You also need to ensure that you have included suitable references, and that all the illustrations and figures you have included are appropriately cited.</p>
+
+            <p class="reading-title">Please Note:</p>
+            <p>The submission must include all core contents redressing the above requirements. Appendices should be used only if needed and include supplementary and/or supporting details. The marking will use the Grading Criteria listed under the Module Resources.</p>
+
+            <h4 class="activity">Video Recording</h4>
+            <p>You should submit a video recording of your response based on your PowerPoint presentation. You will need a webcam/camera for this assessment. There are lots of free video recording options, such as this video recorder or Microsoft Clipchamp. Alternatively, you can use your phone.</p>
+
+            <h4 class="activity">Learning Outcomes</h4>
+            <p>Identify and critically analyse ITPM challenges and processes in business systems, accounting for the current enterprise landscape.</p>
+            <p>Gather and synthesise information from multiple sources (including internet resources and business publications) to aid in the systematic analysis of IT project management issues.</p>
+            <p>Critically evaluate appropriate methodologies, tools and techniques to mitigate and/or solve IT project management issues and their business impact.</p>
+            <p>Articulate the legal, social, ethical, and professional issues faced by ITPM professionals.</p>
+
+            <h4 class="activity">Turnitin Originality Check</h4>
+            <p>Before submitting your assignment, it is important to check the originality of your work by submitting your assignment to Turnitin.</p>
+            <p>By submitting your assignment to this tool you will receive an originality report which can be used to check that you have not included other authors work without correct citation. It is important to note that submitting your work to the Turnitin Originality Check tool does not count as a submission of your final work. You must still submit your assignment below.</p>
+
+            <h4 class="activity">Academic Integrity and Plagiarism</h4>
+            <p>We take academic integrity very seriously. Academic integrity means acting with fairness and honesty, giving credit to others where you are referring to their ideas or research and respecting the work of others. Plagiarism is defined as: 'Using or copying the work of others (whether written, printed or in any other form) without proper acknowledgement'. Before you finalise your assignment take time to check that all your statements are backed up with supporting evidence, that all sources you use - whether referring to their ideas, quoting directly or paraphrasing - are correctly referenced in the text. Correct use of referencing acknowledges the academic whose work has informed yours, enables the reader to find the sources you have used and demonstrates your ability to find and analyse relevant information.</p>
+            <p>Failure to properly acknowledge the work of others is an academic offence and may result in your work incurring a penalty or, in the most serious cases, you being removed from the course for academic dishonesty.</p>
+            <p>If you are unsure about referencing or plagiarism there are useful resources available in the Study Skills Hub which is accessible from the menu on the left hand side. If you are still experiencing difficulties with academic integrity then you can contact the Study Skills Team for individualised support.</p>
+            <p>Please note, a word count penalty applies to this assessment.</p>
+            <p>If your assessment exceeds the word count limit or range by more than 10% then your awarded grade will be reduced by 10% grade points. For more information please see your student handbook.</p>
+            <p>Not meeting the word count.</p>
+            <p>There is no grade reduction applied if your assignment does not meet the word count range or limit, but to maximise your opportunity to achieve the highest grade possible, you should aim to meet the word count or range as closely as possible.</p>
+
+            <h4 class="activity">Submission Instructions</h4>
+            <p>Submit your saved document below before the end of Unit 6.</p>
+            <p>After the deadline, the submission page will be locked.</p>
+            <p>If you need to apply for Late Submission, please complete the late submission of coursework form.</p>
+
+            <div class="bottom-links">
+                <a href="../../../index.html">Back to Home</a>
+                <a href="../../../university-of-essex.html">Back to University of Essex</a>
+                <a href="../../../Module1.html">Go to Module 1</a>
+                <a href="../../../Module2.html">Go to Module 2</a>
+                <a href="../../../Module3.html">Go to Module 3</a>
+                <a href="../../../Module4.html">Go to Module 4</a>
+                <a href="../../../Module5.html">Go to Module 5</a>
+                <a href="../../../links.html">Links</a>
+                <a href="../../../SRMCollab.html">Collaborative Discussions</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
