@@ -1,6 +1,3 @@
-I can see the issue! In Module 3, the activities are styled with `<h4 class="activity">Activity:</h4>` which makes them orange, but in Module 4, they're styled as `<p class="activity">Activity:</p>` which doesn't have the same visual impact. Let me fix the Module 4 code to match Module 3's styling exactly:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,9 +55,9 @@ I can see the issue! In Module 3, the activities are styled with `<h4 class="act
         }
 
         .unit-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: yellow;
+            font-size: 1.1em !important;
+            font-weight: bold !important;
+            color: #ffff00 !important;
         }
 
         .reading-title {
@@ -179,11 +176,3 @@ I can see the issue! In Module 3, the activities are styled with `<h4 class="act
 </body>
 
 </html>
-```
-
-The key changes made:
-1. Changed all `<p class="activity">Activity:</p>` to `<h4 class="activity">Activity:</h4>` to match Module 3's styling
-2. This will make the "Activity:" headers appear in orange color just like in Module 3
-3. The unit titles remain yellow as they should be
-
-Now Module 4 will have the same visual styling as Module 3 with yellow unit headers and orange activity headers.
