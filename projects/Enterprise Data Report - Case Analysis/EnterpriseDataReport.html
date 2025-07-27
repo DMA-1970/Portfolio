@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Data Report - Case Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        .overlay {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .content {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        body, .content p, .content ul {
+            font-size: 0.85em;
+            line-height: 1.6;
+            color: white;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .unit-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ffff00 !important;
+        }
+
+        .reading-title {
+            font-size: 0.85em;
+            text-decoration: underline;
+            color: white;
+        }
+
+        .activity {
+            color: orange;
+        }
+
+        .bottom-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .bottom-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9em;
+        }
+
+        .bottom-links a:hover {
+            text-decoration: underline;
+        }
+
+        .assignment-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .assignment-links {
+            margin-top: 15px;
+        }
+
+        .assignment-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .assignment-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="content">
+            <h1>Summative Assignment: Enterprise Data Report - Case Analysis</h1>
+
+            <p>Word count is 1,500 words. The assignment is worth 40%.</p>
+
+            <h4 class="activity">Assignment Description and Instructions</h4>
+            <p>Read the Road Traffic statistics in the London region report below.</p>
+
+            <p>Department of Transport. (2023) Road traffic statistics: London.</p>
+
+            <p>Critically evaluate the Road Traffic statistics and design an enterprise data analysis strategy for deploying an EDA model for managing the data of road traffic in the London region.</p>
+
+            <p>This report should evaluate Datawarehouse, lakes, cloud and analytics tools and the role these play in the development of Business Intelligence Systems. The report should provide a rationale for your design choice (i.e., which tables to choose and/or concatenate, and why)</p>
+
+            <p>Your report (1500 words) should contain the following aspects:</p>
+
+            <ul>
+                <li>Use of an EDA model or framework for designing your strategy.</li>
+                <li>Use of data representation strategies (i.e., what type of EDA Model adopted and why).</li>
+                <li>A description of Road Traffic statistics, focusing primarily on congestion and current issues. This section should reflect your knowledge and understanding on the Road Traffic System (15% weight).</li>
+                <li>An overview of your selected data architecture and models. This section should reflect your knowledge and understanding on the dataset (25% weight).</li>
+                <li>A critical discussion on data analysis design choice and methodology (30% weight).</li>
+                <li>A critical discussion on data representation choices (10% weight).</li>
+                <li>Detailed discussion on the strengths and limitations of different choices (20% weight).</li>
+            </ul>
+
+            <h4 class="activity">Learning Outcomes</h4>
+            <p>Critically analyse architecture, design, development methodology, querying, and the lifecycle of managing large-scale datasets.</p>
+            <p>Understand the application and management of enterprise-based systems through digitalisation.</p>
+            <p>Optimise the use of limited resources to enable Businesses stay competitive and efficient.</p>
+
+            <h4 class="activity">Turnitin Originality Check</h4>
+            <p>Before submitting your assignment, it is important to check the originality of your work by submitting your assignment to Turnitin.</p>
+
+            <p>By submitting your assignment to this tool you will receive an originality report which can be used to check that you have not included other authors' work without correct citation. It is important to note that submitting your work to the Turnitin Originality Check tool does not count as a submission of your final work. You must still submit your assignment below.</p>
+
+            <h4 class="activity">Academic Integrity and Plagiarism</h4>
+            <p>We take academic integrity very seriously. Academic integrity means acting with fairness and honesty, giving credit to others where you are referring to their ideas or research and respecting the work of others. Plagiarism is defined as: 'Using or copying the work of others (whether written, printed or in any other form) without proper acknowledgement'. Before you finalise your assignment, take time to check that all your statements, including lines of code, are backed up with supporting evidence, that all sources you use - whether referring to their ideas, quoting directly or paraphrasing - are correctly referenced in the text or in the code comments. Correct use of referencing acknowledges the academic/source whose work has informed yours, enables the reader to find the sources you have used and demonstrates your ability to find and analyse relevant information.</p>
+
+            <p>Failure to properly acknowledge the work of others is an academic offense and may result in your work incurring a penalty or, in the most serious cases, you being removed from the course for academic dishonesty.</p>
+
+            <p>If you are unsure about referencing or plagiarism there are useful resources available in the Study Skills Hub which is accessible from the menu on the left-hand side. If you are still experiencing difficulties with academic integrity then you can contact the Study Skills Team for individualised support.</p>
+
+            <p>Please note, a word count penalty applies to this assessment.</p>
+
+            <p>If your assessment exceeds the word count limit or range by more than 10% then your awarded grade will be reduced by 10% grade points. For more information please see your student handbook.</p>
+
+            <p>Not meeting the word count</p>
+
+            <p>There is no grade reduction applied if your assignment does not meet the word count range or limit, but to maximise your opportunity to achieve the highest grade possible, you should aim to meet the word count or range as closely as possible.</p>
+
+            <div class="assignment-section">
+                <h4 class="activity">Assignment Documents</h4>
+                <div class="assignment-links">
+                    <a href="projects/Enterprise Data Report - Case Analysis/EDR Case Analysis.pdf">EDR Case Analysis</a>
+                </div>
+            </div>
+
+            <div class="bottom-links">
+                <a href="../../../index.html">Back to Home</a>
+                <a href="../../../university-of-essex.html">Back to University of Essex</a>
+                <a href="../../../Module1.html">Go to Module 1</a>
+                <a href="../../../Module2.html">Go to Module 2</a>
+                <a href="../../../Module3.html">Go to Module 3</a>
+                <a href="../../../Module4.html">Go to Module 4</a>
+                <a href="../../../Module5.html">Go to Module 5</a>
+                <a href="../../../links.html">Links</a>
+                <a href="../../../SRMCollab.html">Collaborative Discussions</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
