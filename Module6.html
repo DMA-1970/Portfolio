@@ -21,7 +21,7 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             width: 100vw;
             padding: 20px;
             box-sizing: border-box;
@@ -29,7 +29,7 @@
         }
 
         .content {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
@@ -40,9 +40,7 @@
             overflow-y: auto;
         }
 
-        h1, h2, h3 {
-            text-align: center;
-        }
+        h1, h2, h3 { text-align: center; }
 
         body, .content p, .content ul {
             font-size: 0.85em;
@@ -50,38 +48,24 @@
             color: white;
         }
 
-        .section {
-            margin-bottom: 25px;
-        }
-
         .unit-title {
             font-size: 1.1em;
             font-weight: bold;
             color: #ffff00 !important;
+            margin-top: 28px;
         }
 
         .reading-title {
             font-size: 0.85em;
             text-decoration: underline;
             color: white;
+            margin-top: 6px;
         }
 
-        .activity {
-            color: orange;
-        }
-
-        .grade {
-            color: #00ff00 !important;
-            font-weight: bold;
-        }
-
-        .coursework {
-            color: orange !important;
-        }
-
-        .lecturecast {
-            color: white;
-        }
+        .activity { color: orange; }
+        .lecturecast { color: white; }
+        .coursework { color: orange !important; }
+        .grade { color: #00ff00 !important; font-weight: bold; }
 
         .module-grade {
             color: #00ff00 !important;
@@ -91,21 +75,12 @@
             margin-bottom: 20px;
         }
 
-        .bottom-links {
-            text-align: center;
-            margin-top: 20px;
-        }
+        .bottom-links { text-align: center; margin-top: 20px; }
+        .bottom-links a { color: white; text-decoration: none; margin: 0 10px; font-size: 0.9em; }
+        .bottom-links a:hover { text-decoration: underline; }
 
-        .bottom-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.9em;
-        }
-
-        .bottom-links a:hover {
-            text-decoration: underline;
-        }
+        .unit { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 16px; }
+        .unit:first-of-type { border-top: 0; padding-top: 0; }
     </style>
 </head>
 
@@ -113,76 +88,211 @@
     <div class="overlay">
         <div class="content">
             <h1>Cloud Operations and Management</h1>
-            
             <p class="module-grade">Overall Module Grade: [Grade to be added]</p>
 
-            <p class="unit-title">Unit 1: Introduction to Cloud Fundamentals and Services</p>
-           <p class="reading-title">Required Reading:</p>
-<p>Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.<br>
-Gupta, D. (2024) The Cloud Computing Journey. Packt Publishing.<br>
-Part 1<br>
-Part 2<br>
-Part 3 (Sections 6 and 7)<br>
-Part 4 (Section 10)</p>
-<p class="reading-title">Recommended Reading:</p>
-<p>Amongst these readings are any readings that are needed for your formative tasks. Please choose out of these which readings/tasks you would like to work on, depending on what you would like to include in your e-Portfolio.<br>
-Hamed, A. (2024) 'Load balancing in cloud computing – A hierarchical taxonomical classification', Journal of Cloud Computing, 13(1), pp. 1-25.<br>
-Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.</p>
-<p class="reading-title">Additional Reading:</p>
-<p>Rajkumar, B., Broberg, J. and Andrzej, G. (2011) Cloud Computing: Principles and Paradigms.</p>
-            <h4 class="activity">Activity:</h4>
-            <p>Lecturecast: Introduction to Cloud Fundamentals and Services</p>
-            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=311234#p609044" style="color: orange; text-decoration: none;">Formative Discussion: AWS vs Google Cloud</a></p>
+            <!-- Unit 1 -->
+            <div class="unit">
+                <p class="unit-title">Unit 1: Introduction to Cloud Fundamentals and Services</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>As an Enterprise Technology Manager, I was already familiar with many of the foundational concepts introduced in Week 1. However, I found it valuable to revisit the evolution of cloud computing and compare the service models across AWS, Google Cloud, and Azure. Exploring the differences in their offerings helped me appreciate the strategic decisions behind multi-cloud adoption. This week has set a solid base for the module, and I’m particularly looking forward to delving deeper into cloud security, automation, and hybrid deployment strategies in the weeks ahead.</p>
+            </div>
 
-            <p class="unit-title">Unit 2: Cloud Infrastructure and Architecture</p>
-            <p class="reading-title">Required Reading:</p>
-            <p>[Add required reading materials]</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>[Add additional reading materials]</p>
-            <p class="reading-title">Seminar:</p>
-            <p>[Add seminar details]</p>
-            <h4 class="activity">Activity:</h4>
-            <p>[Add activity description]</p>
+            <!-- Unit 2 -->
+            <div class="unit">
+                <p class="unit-title">Unit 2: Understanding Cloud Architecture and Implementing Different Frameworks</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>[Which reference architecture or framework (e.g., AWS, Azure, GCP, NIST) seems most appropriate and why?]</p>
+            </div>
 
-            <p class="unit-title">Unit 3: Cloud Security and Compliance</p>
-            <p class="reading-title">Required Reading:</p>
-            <p>[Add required reading materials]</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>[Add additional reading materials]</p>
-            <p class="reading-title">Seminar:</p>
-            <p>[Add seminar details]</p>
-            <h4 class="activity">Activity:</h4>
-            <p>[Add activity description]</p>
+            <!-- Unit 3 -->
+            <div class="unit">
+                <p class="unit-title">Unit 3: Cloud Design Tools</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>[Which tooling (e.g., Terraform, CloudFormation, diagrams.net, Lucid) best supports your workflow and why?]</p>
+            </div>
 
-            <p class="unit-title">Unit 4: Cloud Monitoring and Observability</p>
-            <p class="reading-title">Required Reading:</p>
-            <p>[Add required reading materials]</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>[Add additional reading materials]</p>
-            <p class="reading-title">Seminar:</p>
-            <p>[Add seminar details]</p>
-            <h4 class="activity">Activity:</h4>
-            <p>[Add activity description]</p>
+            <!-- Unit 4 -->
+            <div class="unit">
+                <p class="unit-title">Unit 4: Cloud Native Technology Part 1</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>[How do containers, microservices, and service meshes change your approach to design and operations?]</p>
+            </div>
 
-            <p class="unit-title">Unit 5: DevOps and CI/CD in Cloud</p>
-            <p class="reading-title">Required Reading:</p>
-            <p>[Add required reading materials]</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>[Add additional reading materials]</p>
-            <p class="reading-title">Seminar:</p>
-            <p>[Add seminar details]</p>
-            <h4 class="activity">Activity:</h4>
-            <p>[Add activity description]</p>
+            <!-- Unit 5 -->
+            <div class="unit">
+                <p class="unit-title">Unit 5: Cloud Native Technology Part 2</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>[What trade-offs did you see between orchestration complexity and developer velocity?]</p>
+            </div>
 
-            <p class="unit-title">Unit 6: Cloud Cost Management and Optimization</p>
-            <p class="reading-title">Required Reading:</p>
-            <p>[Add required reading materials]</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>[Add additional reading materials]</p>
-            <p class="reading-title">Seminar:</p>
-            <p>[Add seminar details]</p>
-            <h4 class="activity">Activity:</h4>
-            <p>[Add activity description]</p>
+            <!-- Unit 6 -->
+            <div class="unit">
+                <p class="unit-title">Unit 6: Hybrid Cloud Solutions (Hybrid, Fog, Edge Computing)</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>[Which workloads belong at the edge vs. cloud? Consider latency, data gravity, security, and cost.]</p>
+            </div>
+
+            <!-- Unit 7 -->
+            <div class="unit">
+                <p class="unit-title">Unit 7: Cloud Security and Compliance</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>[How do your cloud controls map to ISO 27001, NIST, PCI DSS, or GDPR obligations?]</p>
+            </div>
+
+            <!-- Unit 8 -->
+            <div class="unit">
+                <p class="unit-title">Unit 8: Disaster Recovery and Business Continuity</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>[What RTO/RPO targets are realistic for your org and how do cloud patterns help you achieve them?]</p>
+            </div>
+
+            <!-- Unit 9 -->
+            <div class="unit">
+                <p class="unit-title">Unit 9: Cloud Migration and Integration Strategies</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>[Which migration pattern (rehost, replatform, refactor, retire, retain) suits your portfolio and why?]</p>
+            </div>
+
+            <!-- Unit 10 -->
+            <div class="unit">
+                <p class="unit-title">Unit 10: Advanced Cloud Technologies (Serverless Computing)</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>[Where could serverless reduce operational overheads in your stack, and what are the limits (cold starts, state, vendor lock‑in)?]</p>
+            </div>
+
+            <!-- Unit 11 -->
+            <div class="unit">
+                <p class="unit-title">Unit 11: AI and Cloud Computing</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>[What cloud-native AI services/models would you adopt, and how would you address data governance and cost control?]</p>
+            </div>
+
+            <!-- Unit 12 -->
+            <div class="unit">
+                <p class="unit-title">Unit 12: Future Trends in Cloud Computing</p>
+                <p class="reading-title">Required Reading:</p>
+                <p>[Add required reading materials]</p>
+                <p class="reading-title">Additional Reading:</p>
+                <p>[Add additional reading materials]</p>
+                <p class="reading-title">Seminar:</p>
+                <p>[Add seminar details]</p>
+                <h4 class="activity">Activity:</h4>
+                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
+                <p>[Add activity description]</p>
+                <p class="coursework">Coursework: [Add coursework brief]</p>
+                <h4 class="activity">Reflective Thinking:</h4>
+                <p>[Which trends (FinOps automation, sovereign cloud, confidential computing, platform engineering) are most relevant to your roadmap?]</p>
+            </div>
 
             <div class="bottom-links">
                 <a href="index.html">Back to Home</a>
@@ -192,8 +302,14 @@ Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Dep
                 <a href="Module3.html">Module 3</a>
                 <a href="Module4.html">Module 4</a>
                 <a href="Module5.html">Module 5</a>
+                <a href="Module6.html">Module 6</a>
+                <a href="Module7.html">Module 7</a>
+                <a href="Module8.html">Module 8</a>
+                <a href="Module9.html">Module 9</a>
+                <a href="Module10.html">Module 10</a>
+                <a href="Module11.html">Module 11</a>
+                <a href="Module12.html">Module 12</a>
                 <a href="links.html">Links</a>
-            
             </div>
         </div>
     </div>
