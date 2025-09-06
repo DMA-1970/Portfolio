@@ -1,72 +1,125 @@
-/* Resetting all margins, paddings, and borders for a clean slate */
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
+/* ========== Reset ========== */
+* { margin: 0; padding: 0; border: 0; box-sizing: border-box; }
+
+/* ========== Theme (easy swap background here) ========== */
+:root {
+  /* Switch the background by changing this line */
+  --bg-img: url('assets/Eko Atlantic -13.jpg');
+  /* e.g. alternative: url('assets/DJI_20240318131045_0091_D.JPG'); */
+  --text: #ffffff;
+  --accent: #ffa500;   /* orange for activity headings & special links */
+  --highlight: #ffff00;/* yellow for unit titles and <strong> in reflections */
+  --success: #00ff00;  /* green for grades */
+  --card-bg: rgba(255,255,255,0.1);
+  --overlay: rgba(0,0,0,0.7);
+  --rule: rgba(255,255,255,0.15);
 }
 
-/* Ensuring the background image fills the entire page */
+/* ========== Base layout ========== */
 html, body {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: var(--bg-img) no-repeat center center / cover;
+  overflow-x: hidden;
 }
 
-/* Overlay that covers the entire viewport */
 .overlay {
-    width: 100%;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Ensures the bottom buttons stay at the bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  box-sizing: border-box;
+  background: var(--overlay);
 }
 
-/* Styling for the content area */
 .content {
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    color: white; /* Ensure all text is visible */
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
-/* Basic button styling - yellow background, white text */
+/* ========== Typography ========== */
+h1, h2, h3 { text-align: center; }
+body, .content p, .content ul { font-size: 0.85em; line-height: 1.6; color: var(--text); }
+
+/* ========== Units & headings ========== */
+.unit { border-top: 1px solid var(--rule); padding-top: 16px; }
+.unit:first-of-type { border-top: 0; padding-top: 0; }
+
+.unit-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--highlight) !important;
+  margin-top: 28px;
+}
+
+.reading-title {
+  font-size: 0.85em;
+  text-decoration: underline;
+  color: var(--text);
+  margin-top: 6px;
+}
+
+/* Unified activity headings: Summary / Reflection / Application / Forward Planning / References */
+.activity {
+  color: var(--accent);
+  font-size: 0.95em;
+  margin: 14px 0 6px;
+}
+
+/* Reflection body text */
+.reflection {
+  color: var(--text);
+  font-size: 0.85em;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 0 10px;
+}
+.reflection strong { color: var(--highlight); font-weight: bold; }
+
+/* ========== Links ========== */
+a { color: var(--text); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Special link colours where needed */
+.reflection a { color: var(--accent); font-weight: bold; }
+.coursework { color: var(--accent) !important; font-size: 0.85em; }
+.coursework a { color: var(--accent); font-weight: bold; }
+.lecturecast { color: var(--text); font-size: 0.85em; }
+
+/* ========== Buttons (your yellow button preserved) ========== */
 .button {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #FFD700; /* Yellow background */
-    color: white; /* White text */
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #FFD700; /* Yellow */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
+.button:hover { background-color: #FFC300; color: #ffffff; }
 
-/* Ensure link styles are controlled by the .button class */
-a:link, a:visited, a:hover, a:active {
-    color: inherit; /* Inherit color from the .button class */
-    text-decoration: none; /* No underline */
-}
+/* ========== Grades ========== */
+.grade, .module-grade { color: var(--success) !important; font-weight: bold; }
+.module-grade { font-size: 1.2em; text-align: center; margin-bottom: 20px; }
 
-/* Hover state for button */
-.button:hover {
-    background-color: #FFC300; /* Slightly darker yellow on hover */
-    color: white; /* Ensure text remains white */
-}
+/* ========== Bottom navigation ========== */
+.bottom-links, .bottom-buttons { text-align: center; margin-top: 20px; }
+.bottom-links a, .bottom-buttons a { color: var(--text); text-decoration: none; margin: 0 10px; font-size: 0.9em; }
+.bottom-links a:hover, .bottom-buttons a:hover { text-decoration: underline; }
 
-/* Bottom buttons styling */
-.bottom-buttons {
-    text-align: center;
-    padding: 20px 0;
-}
-html,body{margin:0;padding:0;height:100%;font-family:Arial,sans-serif;background:url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;background-size:cover;overflow-x:hidden}.overlay{display:flex;flex-direction:column;justify-content:space-between;align-items:center;min-height:100vh;width:100vw;padding:20px;box-sizing:border-box;background:rgba(0,0,0,.7)}.content{max-width:900px;width:100%;padding:20px;background:rgba(255,255,255,.1);border-radius:10px;text-align:left;box-shadow:0 4px 10px rgba(0,0,0,.3);flex-grow:1;overflow-y:auto}h1,h2,h3{text-align:center}body,.content p,.content ul{font-size:.85em;line-height:1.6;color:#fff}.unit{border-top:1px solid rgba(255,255,255,.15);padding-top:16px}.unit:first-of-type{border-top:0;padding-top:0}.unit-title{font-size:1.1em;font-weight:700;color:#ff0!important;margin-top:28px}.reading-title{font-size:.85em;text-decoration:underline;color:#fff;margin-top:6px}.activity{color:#ffa500;font-size:.95em;margin:14px 0 6px}.reflection{color:#fff;font-size:.85em;line-height:1.6;font-style:italic;margin:0 0 10px}.reflection strong{color:#ff0;font-weight:700}a{color:#fff;text-decoration:none}a:hover{text-decoration:underline}.reflection a{color:#ffa500;font-weight:700}.coursework{color:#ffa500!important;font-size:.85em}.coursework a{color:#ffa500;font-weight:700}.lecturecast{color:#fff;font-size:.85em}.grade,.module-grade{color:#0f0!important;font-weight:700}.module-grade{font-size:1.2em;text-align:center;margin-bottom:20px}.bottom-links{text-align:center;margin-top:20px}.bottom-links a{color:#fff;text-decoration:none;margin:0 10px;font-size:.9em}.bottom-links a:hover{text-decoration:underline}ul.references,.content ul{padding-left:18px}ul.references li,.content ul li{margin:4px 0}.reading-title+ul li{color:#fff}
+/* ========== Lists (readings & references) ========== */
+ul.references, .content ul { padding-left: 18px; }
+ul.references li, .content ul li { margin: 4px 0; }
+.reading-title + ul li { color: var(--text); }
