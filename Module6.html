@@ -62,10 +62,25 @@
             margin-top: 6px;
         }
 
-        .activity { color: orange; }
-        .lecturecast { color: white; }
-        .coursework { color: orange !important; }
-        .grade { color: #00ff00 !important; font-weight: bold; }
+        .activity { 
+            color: orange; 
+            font-size: 0.85em;
+        }
+        
+        .lecturecast { 
+            color: white; 
+            font-size: 0.85em;
+        }
+        
+        .coursework { 
+            color: orange !important; 
+            font-size: 0.85em;
+        }
+        
+        .grade { 
+            color: #00ff00 !important; 
+            font-weight: bold; 
+        }
 
         .module-grade {
             color: #00ff00 !important;
@@ -81,6 +96,28 @@
 
         .unit { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 16px; }
         .unit:first-of-type { border-top: 0; padding-top: 0; }
+
+        .reflection {
+            color: white;
+            font-size: 0.85em;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .reflection strong {
+            color: #ffff00;
+            font-weight: bold;
+        }
+
+        .reflection a {
+            color: orange;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .reflection a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -94,57 +131,57 @@
             <div class="unit">
                 <p class="unit-title">Unit 1: Introduction to Cloud Fundamentals and Services</p>
                 <p class="reading-title">Required Reading:</p>
-                <p>Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.
-Gupta, D. (2024) The Cloud Computing Journey. Packt Publishing.
-Part 1. Part 2, Part 3 (Sections 6 and 7), Part 4 (Section 10)</p>
-                 <p class="reading-title">Recommended Reading:</p>
-                <p>Hamed, A. (2024) 'Load balancing in cloud computing – A hierarchical taxonomical classification', Journal of Cloud Computing, 13(1), pp. 1-25.
-Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.</p>
+                <p>Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.<br>
+                Gupta, D. (2024) The Cloud Computing Journey. Packt Publishing.<br>
+                Part 1, Part 2, Part 3 (Sections 6 and 7), Part 4 (Section 10)</p>
+                <p class="reading-title">Recommended Reading:</p>
+                <p>Hamed, A. (2024) 'Load balancing in cloud computing – A hierarchical taxonomical classification', Journal of Cloud Computing, 13(1), pp. 1-25.<br>
+                Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.</p>
                 <p class="reading-title">Additional Reading:</p>
                 <p>Rajkumar, B., Broberg, J. and Andrzej, G. (2011) Cloud Computing: Principles and Paradigms</p>
                 <p class="reading-title">Seminar:</p>
                 <p>Introduction to Cloud Computing and Reflection on Learning Goals</p>
                 <h4 class="activity">Activity:</h4>
                 <p class="coursework">
-        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=311234#p609044" target="_blank">Formative Discussion: AWS vs Google Cloud</a>
-
+                    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=311234#p609044" target="_blank">Formative Discussion: AWS vs Google Cloud</a>
+                </p>
                 <h4 class="activity">Reflective Thinking:</h4>
                 <p class="reflection">
-    <em><strong>Summary:</strong>
-Week 1 introduced the evolution of cloud computing, from early virtualisation technologies to modern multi-cloud ecosystems. It covered the three core service models — IaaS, PaaS, SaaS — and examined deployment models such as public, private, hybrid, and community cloud. Comparisons between AWS, Google Cloud, and Microsoft Azure highlighted service portfolios, scalability options, and pricing structures.<br>
-<strong>Reflection:</strong>
-As an Enterprise Technology Manager, I had a working knowledge of these foundational concepts, but revisiting them in a comparative context helped me identify subtle provider distinctions that influence strategic decision-making. In my current role, we use AWS S3 buckets for data storage and analytics workloads, while Azure Active Directory underpins enterprise identity management. My cross-platform expertise, supported by certifications such as Microsoft 365 Fundamentals and Microsoft Information Protection and Compliance Administrator Associate, enables me to navigate both ecosystems effectively and ensure security, governance, and compliance alignment. A critical takeaway this week was recognising that while multi-cloud adoption offers resilience and vendor flexibility, it can also create governance challenges and increase the demand for skilled personnel capable of managing multiple platforms.<br>
-<strong>Application:</strong>
-This understanding directly informs workload placement and procurement decisions, allowing me to balance performance, compliance, and cost efficiency when advising on enterprise cloud strategy.<br>
-<strong>Forward Planning:</strong>
-I intend to explore further vendor management tools such as AWS Organizations and Azure Lighthouse to strengthen cross-platform governance and streamline policy enforcement across multi-cloud environments.</em>
-</p>
+                    <strong>Summary:</strong>
+                    Week 1 introduced the evolution of cloud computing, from early virtualisation technologies to modern multi-cloud ecosystems. It covered the three core service models — IaaS, PaaS, SaaS — and examined deployment models such as public, private, hybrid, and community cloud. Comparisons between AWS, Google Cloud, and Microsoft Azure highlighted service portfolios, scalability options, and pricing structures.<br><br>
+                    <strong>Reflection:</strong>
+                    As an Enterprise Technology Manager, I had a working knowledge of these foundational concepts, but revisiting them in a comparative context helped me identify subtle provider distinctions that influence strategic decision-making. In my current role, we use AWS S3 buckets for data storage and analytics workloads, while Azure Active Directory underpins enterprise identity management. My cross-platform expertise, supported by certifications such as Microsoft 365 Fundamentals and Microsoft Information Protection and Compliance Administrator Associate, enables me to navigate both ecosystems effectively and ensure security, governance, and compliance alignment. A critical takeaway this week was recognising that while multi-cloud adoption offers resilience and vendor flexibility, it can also create governance challenges and increase the demand for skilled personnel capable of managing multiple platforms.<br><br>
+                    <strong>Application:</strong>
+                    This understanding directly informs workload placement and procurement decisions, allowing me to balance performance, compliance, and cost efficiency when advising on enterprise cloud strategy.<br><br>
+                    <strong>Forward Planning:</strong>
+                    I intend to explore further vendor management tools such as AWS Organizations and Azure Lighthouse to strengthen cross-platform governance and streamline policy enforcement across multi-cloud environments.
+                </p>
             </div>
 
             <!-- Unit 2 -->
             <div class="unit">
                 <p class="unit-title">Unit 2: Understanding Cloud Architecture and Implementing Different Frameworks</p>
                 <p class="reading-title">Required Reading:</p>
-                <p>Alshamaila, A. (2023) 'MicroServices-driven enterprise architecture model for infrastructure migration to cloud', Future Business Journal, 9(1), pp. 1-15.
-Anggraini N., Binariswanto and Legowo, N. (2019) 'Cloud Computing Adoption Strategic Planning Using ROCCA and TOGAF 9.2: A Study in Government Agency', Procedia Computer Science.</p>
+                <p>Alshamaila, A. (2023) 'MicroServices-driven enterprise architecture model for infrastructure migration to cloud', Future Business Journal, 9(1), pp. 1-15.<br>
+                Anggraini N., Binariswanto and Legowo, N. (2019) 'Cloud Computing Adoption Strategic Planning Using ROCCA and TOGAF 9.2: A Study in Government Agency', Procedia Computer Science.</p>
                 <p class="reading-title">Additional Reading:</p>
                 <p>Sreekanth, I. and Nagaratnam, N. (2022) Hybrid Cloud Security Patterns: Leverage Modern Repeatable Architecture Patterns to Secure Your Workloads on the Cloud. Birmingham: Packt Publishing, Limited.</p>
                 
                 <h4 class="activity">Activity:</h4>
                 <p class="coursework">
-                 Coursework: <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=312915#p611909" target="_blank">Formative Discussion: ROCCA and TOGAF</a>
-</p>
+                    Coursework: <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=312915#p611909" target="_blank">Formative Discussion: ROCCA and TOGAF</a>
+                </p>
                 <h4 class="activity">Reflective Thinking:</h4>
                 <p class="reflection">
-                <p> Cloud-Native Tools & Architectures<br/>
-<strong>Summary:</strong>
-This week focused on frameworks that guide cloud architecture. TOGAF offered a structured method for aligning IT with business strategy, the Software Development Life Cycle (SDLC) reinforced disciplined processes in cloud solution delivery, and Infrastructure as Code (IaC) highlighted how automation improves consistency, scalability, and compliance. Collectively, these approaches help ensure cloud deployments are strategic, controlled, and repeatable.<br>
-<strong>Reflection:</strong>
-TOGAF is particularly relevant because it encourages a business-first approach to cloud architecture. In practice, I have often seen technical teams prioritise tool implementation without aligning outcomes to business needs. TOGAF’s phased Architecture Development Method provides a reminder that strategy and governance should guide deployment choices. SDLC similarly resonated, as cloud environments still require traditional structure for planning, testing, and stakeholder engagement. IaC struck a strong chord with me; having experienced the operational inefficiencies of manual deployments, I see how IaC reduces configuration drift and enforces auditability, which is vital in regulated industries.<br>
-<strong>Application:</strong>
-Applying TOGAF in my environment could help ensure our AWS and Azure architectures remain strategically aligned and compliant. Embedding SDLC principles into cloud change management would improve testing and rollback, reducing production risk. IaC is already present in Azure deployments for compliance monitoring, but scaling it across both AWS and Azure would improve efficiency while strengthening adherence to frameworks such as GDPR and FCA guidelines.<br>
-<strong>Forward Planning:</strong>
-I intend to explore how TOGAF ADM can be tailored to hybrid and multi-cloud strategies, and how policy-as-code can complement IaC to improve governance. Embedding SDLC checkpoints into IaC pipelines will also be a priority, ensuring automation remains aligned with compliance and testing requirements.</p>
+                    <strong>Summary:</strong>
+                    This week focused on frameworks that guide cloud architecture. TOGAF offered a structured method for aligning IT with business strategy, the Software Development Life Cycle (SDLC) reinforced disciplined processes in cloud solution delivery, and Infrastructure as Code (IaC) highlighted how automation improves consistency, scalability, and compliance. Collectively, these approaches help ensure cloud deployments are strategic, controlled, and repeatable.<br><br>
+                    <strong>Reflection:</strong>
+                    TOGAF is particularly relevant because it encourages a business-first approach to cloud architecture. In practice, I have often seen technical teams prioritise tool implementation without aligning outcomes to business needs. TOGAF's phased Architecture Development Method provides a reminder that strategy and governance should guide deployment choices. SDLC similarly resonated, as cloud environments still require traditional structure for planning, testing, and stakeholder engagement. IaC struck a strong chord with me; having experienced the operational inefficiencies of manual deployments, I see how IaC reduces configuration drift and enforces auditability, which is vital in regulated industries.<br><br>
+                    <strong>Application:</strong>
+                    Applying TOGAF in my environment could help ensure our AWS and Azure architectures remain strategically aligned and compliant. Embedding SDLC principles into cloud change management would improve testing and rollback, reducing production risk. IaC is already present in Azure deployments for compliance monitoring, but scaling it across both AWS and Azure would improve efficiency while strengthening adherence to frameworks such as GDPR and FCA guidelines.<br><br>
+                    <strong>Forward Planning:</strong>
+                    I intend to explore how TOGAF ADM can be tailored to hybrid and multi-cloud strategies, and how policy-as-code can complement IaC to improve governance. Embedding SDLC checkpoints into IaC pipelines will also be a priority, ensuring automation remains aligned with compliance and testing requirements.
+                </p>
             </div>
 
             <!-- Unit 3 -->
@@ -155,26 +192,23 @@ I intend to explore how TOGAF ADM can be tailored to hybrid and multi-cloud stra
                 <p class="reading-title">Recommended Reading:</p>
                 <p>Feitosa, D. et al. (2023) Mining for Cost Awareness in the Infrastructure as Code Artifacts of Cloud-based Applications: an Exploratory Study.</p>
                 <p class="reading-title">Additional Reading:</p>
-                <p>Natarajan, S. and Jeveen, J. (2024) Multi-Cloud Handbook for Developers: Learn How to Design and Manage Cloud-Native Applications in AWS, Azure, GCP, and More. Birmingham: Packt Publishing.
-Chapters 1-5</p>
+                <p>Natarajan, S. and Jeveen, J. (2024) Multi-Cloud Handbook for Developers: Learn How to Design and Manage Cloud-Native Applications in AWS, Azure, GCP, and More. Birmingham: Packt Publishing. Chapters 1-5</p>
                 <h4 class="activity">Activity:</h4>
                 <p class="lecturecast">Lecturecast: Cloud Architecture Frameworks and Infrastructure as Code (IaC)</p>
-                <p>[Add activity description]</p>
-                <p class="coursework">Coursework: Post a discussion summary on a cloud design tool of your choice. <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=313725#p613967" target="_blank">Cloud Design Tool</a>
-<br><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=314289#p616083" target="_blank">Response to peers' posts</a>
-
-                    
-</p>
+                <p class="coursework">Coursework: Post a discussion summary on a cloud design tool of your choice.<br>
+                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=313725#p613967" target="_blank">Cloud Design Tool</a><br>
+                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=314289#p616083" target="_blank">Response to peers' posts</a></p>
                 <h4 class="activity">Reflective Thinking:</h4>
                 <p class="reflection">
-                <p><strong>Summary:</strong>
-This week, we examined hybrid cloud strategies, which integrate on-premises infrastructure with public or private cloud services. We explored patterns such as cloud bursting for peak demand, maintaining data sovereignty for compliance, and segmenting workloads according to security and performance requirements.<br>
-<strong>Reflection:</strong>
-While I have managed both cloud and on-premises environments in the past, studying structured hybrid models provided a deeper understanding of integration strategies. In my current role, we operate a multi-cloud architecture divided by function: AWS S3 buckets store and manage our data workloads, while Azure Active Directory supports enterprise identity management. Microsoft Purview is used to enforce compliance, and Microsoft Defender safeguards enterprise assets. This arrangement reinforces the need for consistent governance, interoperability, and cross-platform policy alignment — areas where my cross-platform skills and Microsoft certifications have been invaluable. One critical insight is that although multi-cloud enhances resilience and vendor flexibility, it also increases administrative overhead and the need for standardised processes across platforms.<br>
-<strong>Application:</strong>
-In the financial services sector, hybrid and multi-cloud approaches enable sensitive workloads to remain in controlled environments while using cloud elasticity for analytics and high-volume processing. Our AWS–Azure split not only optimises performance but also mitigates single-vendor dependency and maintains compliance with frameworks such as GDPR and PCI DSS.<br>
-<strong>Forward Planning:</strong>
-I intend to explore AWS Outposts and Azure Arc to extend hybrid capabilities, enabling unified policy management and more seamless compliance enforcement across both platforms.</p>
+                    <strong>Summary:</strong>
+                    This week, we examined hybrid cloud strategies, which integrate on-premises infrastructure with public or private cloud services. We explored patterns such as cloud bursting for peak demand, maintaining data sovereignty for compliance, and segmenting workloads according to security and performance requirements.<br><br>
+                    <strong>Reflection:</strong>
+                    While I have managed both cloud and on-premises environments in the past, studying structured hybrid models provided a deeper understanding of integration strategies. In my current role, we operate a multi-cloud architecture divided by function: AWS S3 buckets store and manage our data workloads, while Azure Active Directory supports enterprise identity management. Microsoft Purview is used to enforce compliance, and Microsoft Defender safeguards enterprise assets. This arrangement reinforces the need for consistent governance, interoperability, and cross-platform policy alignment — areas where my cross-platform skills and Microsoft certifications have been invaluable. One critical insight is that although multi-cloud enhances resilience and vendor flexibility, it also increases administrative overhead and the need for standardised processes across platforms.<br><br>
+                    <strong>Application:</strong>
+                    In the financial services sector, hybrid and multi-cloud approaches enable sensitive workloads to remain in controlled environments while using cloud elasticity for analytics and high-volume processing. Our AWS–Azure split not only optimises performance but also mitigates single-vendor dependency and maintains compliance with frameworks such as GDPR and PCI DSS.<br><br>
+                    <strong>Forward Planning:</strong>
+                    I intend to explore AWS Outposts and Azure Arc to extend hybrid capabilities, enabling unified policy management and more seamless compliance enforcement across both platforms.
+                </p>
             </div>
 
             <!-- Unit 4 -->
@@ -183,31 +217,32 @@ I intend to explore AWS Outposts and Azure Arc to extend hybrid capabilities, en
                 <p class="reading-title">Required Reading:</p>
                 <p>Wiggins, A. (2017) The Twelve-Factor App.</p>
                 <p class="reading-title">Additional Reading:</p>
-                <p>Mungoli, N. (2023) Scalable, Distributed AI Frameworks: Leveraging Cloud Computing for Enhanced Deep Learning Performance and Efficiency.
+                <p>Mungoli, N. (2023) Scalable, Distributed AI Frameworks: Leveraging Cloud Computing for Enhanced Deep Learning Performance and Efficiency.<br>
                 Oliveira, R. and Hugo, F. (2021) Practical event-driven microservices architecture. Apress.</p>
                 <p class="reading-title">Seminar:</p>
                 <p>Title: Cloud Architecture Frameworks and Infrastructure as Code (IaC)</p>
                 <h4 class="activity">Activity:</h4>
-                <p class="coursework">Coursework: Develop and execute a Bash script on OpenStack
-<br>Submit a 500-word explanantion of what the script achieves.
-<br>You can use Shell Scripting for Beginners, Automating Server Configuration with Bash Scripts, and Write Your Own Bash Scripts for Automation for support.</p><br>
-                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265" target="_blank">Deploying a 12-Factor App to Kubernetes with Minikube (Step-by-Step)</a>
+                <p class="coursework">Coursework: Develop and execute a Bash script on OpenStack<br>
+                Submit a 500-word explanation of what the script achieves.<br>
+                You can use Shell Scripting for Beginners, Automating Server Configuration with Bash Scripts, and Write Your Own Bash Scripts for Automation for support.<br>
+                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265" target="_blank">Deploying a 12-Factor App to Kubernetes with Minikube (Step-by-Step)</a></p>
                 <h4 class="activity">Reflective Thinking:</h4>
-               <p><strong>Summary:</strong>
-This week focused on Infrastructure as Code (IaC) and its importance in cloud environments. TOGAF was introduced as a governance framework for structuring architecture, while IaC enables automation, repeatability, and auditability in deployments. The key activity involved creating and executing a Bash script on OpenStack to automate server setup, reinforcing how automation reduces manual effort and supports scalability. These principles connect closely to Wiggins’ (2017) Twelve-Factor App model, which emphasises consistency and automation in cloud-native design.<br>
-<strong>Reflection:</strong>
-The scripting exercise was practical and insightful. While I am more experienced with PowerShell and Azure automation, Bash on OpenStack demonstrated the universality of scripting across platforms. IaC emerged as vital for addressing configuration drift, a recurring challenge in multi-cloud operations. The seminar highlighted benefits such as scalability and resilience (Mungoli, 2023), but also the risks of unchecked automation, where errors can propagate rapidly. TOGAF’s phased approach provided a reminder that automation must sit within a strategic governance framework.<br>
-<strong>Application:</strong>
-In my role, IaC can strengthen compliance by embedding security policies, audit logging, and monitoring directly into code. This is particularly important in financial services, where FCA and GDPR obligations demand consistency. The scripting exercise demonstrated how automation reduces operational overhead while improving standardisation. Oliveira and Hugo (2021) also reminded me that combining IaC with event-driven microservices architectures could further optimise responsiveness and efficiency in cloud deployments.<br>
-<strong>Forward Planning:</strong>
-I plan to explore policy-as-code tools to embed compliance rules into IaC workflows and extend my scripting skills across OpenStack and multi-cloud platforms. I also aim to connect TOGAF principles with IaC and microservices, ensuring automation is not only efficient but also strategically aligned with enterprise goals.</p>
- <br> References  <p><strong>Summary:</strong>
-Mungoli, N. (2023) Scalable, distributed AI frameworks: leveraging cloud computing for enhanced deep learning performance and efficiency. [Online]. Available at: https://arxiv.org/abs/2306.XXXXX
- (Accessed: 6 September 2025).
-Oliveira, R. and Hugo, F. (2021) Practical event-driven microservices architecture. Berkeley, CA: Apress.
-Wiggins, A. (2017) The twelve-factor app. [Online]. Available at: https://12factor.net
- (Accessed: 6 September 2025).<br>
+                <p class="reflection">
+                    <strong>Summary:</strong>
+                    This week focused on Infrastructure as Code (IaC) and its importance in cloud environments. TOGAF was introduced as a governance framework for structuring architecture, while IaC enables automation, repeatability, and auditability in deployments. The key activity involved creating and executing a Bash script on OpenStack to automate server setup, reinforcing how automation reduces manual effort and supports scalability. These principles connect closely to Wiggins' (2017) Twelve-Factor App model, which emphasises consistency and automation in cloud-native design.<br><br>
+                    <strong>Reflection:</strong>
+                    The scripting exercise was practical and insightful. While I am more experienced with PowerShell and Azure automation, Bash on OpenStack demonstrated the universality of scripting across platforms. IaC emerged as vital for addressing configuration drift, a recurring challenge in multi-cloud operations. The seminar highlighted benefits such as scalability and resilience (Mungoli, 2023), but also the risks of unchecked automation, where errors can propagate rapidly. TOGAF's phased approach provided a reminder that automation must sit within a strategic governance framework.<br><br>
+                    <strong>Application:</strong>
+                    In my role, IaC can strengthen compliance by embedding security policies, audit logging, and monitoring directly into code. This is particularly important in financial services, where FCA and GDPR obligations demand consistency. The scripting exercise demonstrated how automation reduces operational overhead while improving standardisation. Oliveira and Hugo (2021) also reminded me that combining IaC with event-driven microservices architectures could further optimise responsiveness and efficiency in cloud deployments.<br><br>
+                    <strong>Forward Planning:</strong>
+                    I plan to explore policy-as-code tools to embed compliance rules into IaC workflows and extend my scripting skills across OpenStack and multi-cloud platforms. I also aim to connect TOGAF principles with IaC and microservices, ensuring automation is not only efficient but also strategically aligned with enterprise goals.<br><br>
+                    <strong>References:</strong><br>
+                    Mungoli, N. (2023) Scalable, distributed AI frameworks: leveraging cloud computing for enhanced deep learning performance and efficiency. [Online]. Available at: https://arxiv.org/abs/2306.XXXXX (Accessed: 6 September 2025).<br>
+                    Oliveira, R. and Hugo, F. (2021) Practical event-driven microservices architecture. Berkeley, CA: Apress.<br>
+                    Wiggins, A. (2017) The twelve-factor app. [Online]. Available at: https://12factor.net (Accessed: 6 September 2025).
+                </p>
             </div>
+
             <!-- Unit 5 -->
             <div class="unit">
                 <p class="unit-title">Unit 5: Cloud Native Technology Part 2</p>
@@ -219,15 +254,12 @@ Wiggins, A. (2017) The twelve-factor app. [Online]. Available at: https://12fact
                 <p>Flavio, B. et al. (2014) Fog Computing and Its Role in the Internet of Things. Cisco Systems Inc.</p>
                 <h4 class="activity">Activity:</h4>
                 <p class="lecturecast">Lecturecast: AI-Driven Cloud Computing</p>
-                <p class="coursework">Coursework: Set up a Kubernetes cluster using Minikubecluster.
-Describe in a 500-word discussion post how it was deployed.
-You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster with Minikube to support you.
-                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265" target="_blank" rel="noopener">
-  Deploying a 12-Factor App to Kubernetes with Minikube (Step-by-Step)
-</a>
-</p>
+                <p class="coursework">Coursework: Set up a Kubernetes cluster using Minikube cluster.<br>
+                Describe in a 500-word discussion post how it was deployed.<br>
+                You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster with Minikube to support you.<br>
+                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265" target="_blank">Deploying a 12-Factor App to Kubernetes with Minikube (Step-by-Step)</a></p>
                 <h4 class="activity">Reflective Thinking:</h4>
-                <p>[What trade-offs did you see between orchestration complexity and developer velocity?]</p>
+                <p class="reflection">[What trade-offs did you see between orchestration complexity and developer velocity?]</p>
             </div>
 
             <!-- Unit 6 -->
@@ -244,7 +276,7 @@ You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster
                 <p>[Add activity description]</p>
                 <p class="coursework">Coursework: [Add coursework brief]</p>
                 <h4 class="activity">Reflective Thinking:</h4>
-                <p>[Which workloads belong at the edge vs. cloud? Consider latency, data gravity, security, and cost.]</p>
+                <p class="reflection">[Which workloads belong at the edge vs. cloud? Consider latency, data gravity, security, and cost.]</p>
             </div>
 
             <!-- Unit 7 -->
@@ -261,7 +293,7 @@ You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster
                 <p>[Add activity description]</p>
                 <p class="coursework">Coursework: [Add coursework brief]</p>
                 <h4 class="activity">Reflective Thinking:</h4>
-                <p>[How do your cloud controls map to ISO 27001, NIST, PCI DSS, or GDPR obligations?]</p>
+                <p class="reflection">[How do your cloud controls map to ISO 27001, NIST, PCI DSS, or GDPR obligations?]</p>
             </div>
 
             <!-- Unit 8 -->
@@ -278,7 +310,7 @@ You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster
                 <p>[Add activity description]</p>
                 <p class="coursework">Coursework: [Add coursework brief]</p>
                 <h4 class="activity">Reflective Thinking:</h4>
-                <p>[What RTO/RPO targets are realistic for your org and how do cloud patterns help you achieve them?]</p>
+                <p class="reflection">[What RTO/RPO targets are realistic for your org and how do cloud patterns help you achieve them?]</p>
             </div>
 
             <!-- Unit 9 -->
@@ -295,7 +327,7 @@ You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster
                 <p>[Add activity description]</p>
                 <p class="coursework">Coursework: [Add coursework brief]</p>
                 <h4 class="activity">Reflective Thinking:</h4>
-                <p>[Which migration pattern (rehost, replatform, refactor, retire, retain) suits your portfolio and why?]</p>
+                <p class="reflection">[Which migration pattern (rehost, replatform, refactor, retire, retain) suits your portfolio and why?]</p>
             </div>
 
             <!-- Unit 10 -->
@@ -312,7 +344,7 @@ You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster
                 <p>[Add activity description]</p>
                 <p class="coursework">Coursework: [Add coursework brief]</p>
                 <h4 class="activity">Reflective Thinking:</h4>
-                <p>[Where could serverless reduce operational overheads in your stack, and what are the limits (cold starts, state, vendor lock‑in)?]</p>
+                <p class="reflection">[Where could serverless reduce operational overheads in your stack, and what are the limits (cold starts, state, vendor lock‑in)?]</p>
             </div>
 
             <!-- Unit 11 -->
@@ -329,7 +361,7 @@ You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster
                 <p>[Add activity description]</p>
                 <p class="coursework">Coursework: [Add coursework brief]</p>
                 <h4 class="activity">Reflective Thinking:</h4>
-                <p>[What cloud-native AI services/models would you adopt, and how would you address data governance and cost control?]</p>
+                <p class="reflection">[What cloud-native AI services/models would you adopt, and how would you address data governance and cost control?]</p>
             </div>
 
             <!-- Unit 12 -->
@@ -346,7 +378,7 @@ You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster
                 <p>[Add activity description]</p>
                 <p class="coursework">Coursework: [Add coursework brief]</p>
                 <h4 class="activity">Reflective Thinking:</h4>
-                <p>[Which trends (FinOps automation, sovereign cloud, confidential computing, platform engineering) are most relevant to your roadmap?]</p>
+                <p class="reflection">[Which trends (FinOps automation, sovereign cloud, confidential computing, platform engineering) are most relevant to your roadmap?]</p>
             </div>
 
             <div class="bottom-links">
@@ -360,7 +392,7 @@ You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster
                 <a href="Module6.html">Module 6</a>
                 <a href="Module7.html">Module 7</a>
                 <a href="Module8.html">Module 8</a>
-                                <a href="links.html">Links</a>
+                <a href="links.html">Links</a>
             </div>
         </div>
     </div>
