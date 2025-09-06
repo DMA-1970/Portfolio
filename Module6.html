@@ -258,9 +258,23 @@
                 Describe in a 500-word discussion post how it was deployed.<br>
                 You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster with Minikube to support you.<br>
                 <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265" target="_blank">Deploying a 12-Factor App to Kubernetes with Minikube (Step-by-Step)</a></p>
-                <h4 class="activity">Reflective Thinking:</h4>
-                <p class="reflection">[What trade-offs did you see between orchestration complexity and developer velocity?]</p>
-            </div>
+               <h4 class="activity">Reflective Thinking:</h4>
+<p class="reflection"><strong>Summary:</strong> This week explored cloud-native technologies, focusing on the Twelve-Factor App methodology (Wiggins, 2017) and Kubernetes as a container orchestration tool. The content emphasised how cloud-native design principles ensure scalability, resilience, and agility in application development. The lecturecast on AI-driven cloud computing further demonstrated how automation and intelligent orchestration are transforming deployment and management of containerised workloads.</p>
+
+<p class="reflection"><strong>Reflection:</strong> The 12-Factor methodology resonated with me as it provides a practical checklist for building applications that are portable and cloud-ready. In practice, I have observed how ignoring principles such as strict separation of config from code can create fragility when scaling services. Kubernetes was equally significant, as it operationalises these principles through automated scaling, load balancing, and self-healing. Academic insights reinforce these ideas: Hamzaoui et al. (2024) highlight that containers deliver lightweight, portable environments that outperform traditional hypervisors, while Bonomi et al. (2012) and Gupta et al. (2016) illustrate how fog and edge computing extend cloud-native benefits closer to users, reducing latency for IoT and real-time applications. The integration of AI into orchestration workflows also sparked reflection on how predictive scaling and policy enforcement could further reduce operational overheads.</p>
+
+<p class="reflection"><strong>Application:</strong> In financial services, these principles directly apply to scaling transaction-processing systems and analytics platforms. For example, containerising microservices that handle compliance checks could improve resilience while Kubernetes ensures they are dynamically scaled based on demand. AI-driven orchestration adds further value by anticipating workload spikes, which is critical for trading platforms where milliseconds matter.</p>
+
+<p class="reflection"><strong>Forward Planning:</strong> I plan to experiment with Kubernetes deployments that integrate policy-as-code to enforce compliance while leveraging AI models for predictive scaling. Additionally, I aim to apply 12-Factor principles when reviewing internal applications, ensuring portability and resilience remain embedded in future cloud-native solutions.</p>
+
+<h4 class="activity">References:</h4>
+<ul class="references">
+  <li>Bonomi, F., Milito, R., Zhu, J. and Addepalli, S. (2012) ‘Fog computing and its role in the internet of things’, <em>Proceedings of the First Edition of the MCC Workshop on Mobile Cloud Computing</em>, Helsinki, 17 August. New York: ACM, pp. 13–16. doi:10.1145/2342509.2342513.</li>
+  <li>Gupta, H., Dastjerdi, A.V., Ghosh, S.K. and Buyya, R. (2016) ‘iFogSim: A toolkit for modeling and simulation of resource management techniques in internet of things, edge and fog computing environments’, <em>Software: Practice and Experience</em>, 47(9), pp. 1275–1296. doi:10.1002/spe.2509.</li>
+  <li>Hamzaoui, I., Duthil, B., Courboulay, V. and Medromi, H. (2024) ‘A topical review on container-based cloud revolution: multi-directional challenges, and future trends’, <em>SN Computer Science</em>, 5(416). doi:10.1007/s42979-024-02763-y.</li>
+  <li>Wiggins, A. (2017) <em>The twelve-factor app</em>. Available at: <a href="https://12factor.net" target="_blank">https://12factor.net</a> (Accessed: 6 September 2025).</li>
+</ul>
+
 
             <!-- Unit 6 -->
             <div class="unit">
