@@ -276,22 +276,58 @@
 </ul>
 
 
-            <!-- Unit 6 -->
-            <div class="unit">
-                <p class="unit-title">Unit 6: Hybrid Cloud Solutions (Hybrid, Fog, Edge Computing)</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>[Add required reading materials]</p>
-                <p class="reading-title">Additional Reading:</p>
-                <p>[Add additional reading materials]</p>
-                <p class="reading-title">Seminar:</p>
-                <p>[Add seminar details]</p>
-                <h4 class="activity">Activity:</h4>
-                <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
-                <p>[Add activity description]</p>
-                <p class="coursework">Coursework: [Add coursework brief]</p>
-                <h4 class="activity">Reflective Thinking:</h4>
-                <p class="reflection">[Which workloads belong at the edge vs. cloud? Consider latency, data gravity, security, and cost.]</p>
-            </div>
+           <!-- Unit 6 -->
+<div class="unit">
+  <p class="unit-title">Unit 6: Hybrid Cloud Solutions (Hybrid, Fog, Edge Computing)</p>
+
+  <p class="reading-title">Required Reading:</p>
+  <ul>
+    <li>Cybersecurity Framework (NIST) — Website (Essential)</li>
+    <li>Bonomi, F. et al. (2012) Fog Computing and its Role in the Internet of Things — MCC Workshop.</li>
+    <li>Gupta, H. et al. (2016) iFogSim: A Toolkit for Modelling Resource Management in IoT, Edge and Fog.</li>
+  </ul>
+
+  <p class="reading-title">Recommended Reading:</p>
+  <ul>
+    <li>Toward Security Quantification of Serverless Computing — Article (Digital copy available online)</li>
+    <li>Hamzaoui, I. et al. (2024) A Topical Review on Container-Based Cloud: Challenges and Trends — SN Computer Science.</li>
+  </ul>
+
+  <p class="reading-title">Additional Reading:</p>
+  <ul>
+    <li><em>Cloud Security and Privacy</em> — Book (O’Reilly)</li>
+  </ul>
+
+  <p class="reading-title">Seminar:</p>
+  <ul>
+    <li>Theme: Designing a hybrid model with Fog/Edge tiers</li>
+    <li>Focus: Latency, data-gravity, security & compliance, vendor lock-in mitigation</li>
+    <li>Hands-on talk track: Where AWS integrates with OpenStack (identity, networking, storage replication)</li>
+  </ul>
+
+  <h4 class="activity">Activity:</h4>
+  <p class="lecturecast">Lecturecast: Hybrid, Fog & Edge in Practice</p>
+  <p>Workshop: Draft a reference architecture where OpenStack runs on-prem for regulated/low-latency workloads, while AWS handles elastic analytics and global distribution. Map trust zones, data flows, and control planes. Identify lock-in risks and propose controls.</p>
+
+  <p class="coursework">Coursework: 400–500 words + one diagram. Explain your AWS↔OpenStack hybrid design, justifying (1) data-placement, (2) identity/zero-trust boundaries, (3) observability, (4) portability (e.g., Terraform/TOSCA), and (5) vendor lock-in mitigations.</p>
+
+  <h4 class="activity">Summary:</h4>
+  <p class="reflection">This week examines how hybrid architectures combine public cloud elasticity with on-prem (OpenStack) control, and how Fog/Edge tiers reduce latency for real-time or data-gravity-heavy workloads. We connect design choices to security and compliance (NIST CSF), and address vendor lock-in through open standards, portable artefacts (e.g., containers/IaC), and multi-cloud governance.</p>
+
+  <h4 class="activity">Reflective Thinking:</h4>
+  <p class="reflection"><strong>Which workloads belong at the edge vs. the cloud?</strong> Place time-critical, bandwidth-intensive, or locality-aware functions at the edge/Fog (e.g., telemetry pre-processing, PII redaction, fraud feature extraction). Keep bursty analytics, model training, batch ETL, and global services in the cloud to exploit scale. Use a policy of “process near creation; aggregate in cloud.” <strong>Vendor lock-in mitigation:</strong> standardise on containers and IaC (Terraform), abstract data with open formats, separate identity (OIDC/SAML), and design for pluggable services (e.g., object storage via S3 API on OpenStack + AWS S3). <strong>Cost & security:</strong> push filtering to the edge to cut egress; enforce zero-trust across tiers; log and observe consistently end-to-end.</p>
+
+  <h4 class="activity">Reading focus for this unit:</h4>
+  <ul>
+    <li>Bonomi et al. — justifies pushing latency-sensitive logic to Fog/Edge.</li>
+    <li>Gupta et al. (iFogSim) — frames placement trade-offs (latency, cost, energy) you’ll reference in your design.</li>
+    <li>Hamzaoui et al. — container portability/orchestration considerations for hybrid/multi-cloud.</li>
+  </ul>
+
+  <h4 class="activity">Tip:</h4>
+  <p class="reflection">For the diagram, show: Edge devices → OpenStack (on-prem) → AWS. Annotate data classifications, encryption boundaries (KMS/HSM), CI/CD paths, and failover flows. Call out where portability controls live (container registry, Terraform modules, TOSCA templates).</p>
+</div>
+
 
             <!-- Unit 7 -->
             <div class="unit">
