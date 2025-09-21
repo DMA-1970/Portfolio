@@ -12,10 +12,10 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
-      background-size: cover;
+      background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center / cover;
       overflow-x: hidden;
     }
+
     .overlay {
       display: flex;
       flex-direction: column;
@@ -27,6 +27,7 @@
       box-sizing: border-box;
       background: rgba(0, 0, 0, 0.7);
     }
+
     .content {
       max-width: 900px;
       width: 100%;
@@ -40,12 +41,29 @@
     }
 
     /* Typography */
-    h1, h2, h3 { text-align: center; }
-    body, .content p, .content ul { font-size: 0.85em; line-height: 1.6; color: white; }
+    h1, h2, h3 {
+      text-align: center;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    body, .content p, .content ul, .content li {
+      font-size: 0.85em;
+      line-height: 1.6;
+      color: #ffffff;
+    }
 
     /* Units */
-    .unit { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 16px; }
-    .unit:first-of-type { border-top: 0; padding-top: 0; }
+    .unit {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 16px;
+      margin-top: 16px;
+    }
+    .unit:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+      margin-top: 0;
+    }
 
     /* Titles & headings */
     .unit-title {
@@ -54,50 +72,96 @@
       color: #ffff00 !important; /* yellow */
       margin-top: 28px;
     }
+
     .reading-title {
       font-size: 0.85em;
       text-decoration: underline;
-      color: white;
+      color: #ffffff;
       margin-top: 6px;
     }
+
     /* Unified activity headings for Summary / Reflection / Application / Forward Planning / References */
     .activity {
       color: #ffa500;             /* orange */
       font-size: 0.95em;
       margin: 14px 0 6px;
+      font-weight: bold;
     }
 
     /* Reflection body */
     .reflection {
-      color: white;
+      color: #ffffff;
       font-size: 0.85em;
       line-height: 1.6;
       font-style: italic;
       margin: 0 0 10px;
     }
-    .reflection strong { color: #ffff00; font-weight: bold; }
+    .reflection strong {
+      color: #ffff00;
+      font-weight: bold;
+      font-style: normal;
+    }
 
     /* Links */
-    a { color: #ffffff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .reflection a { color: #ffa500; font-weight: bold; } /* orange links in reflections */
-    .coursework { color: #ffa500 !important; font-size: 0.85em; }
-    .coursework a { color: #ffa500; font-weight: bold; }
-    .lecturecast { color: white; font-size: 0.85em; }
+    a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .reflection a,
+    .coursework a {
+      color: #ffa500;
+      font-weight: bold;
+    }
+
+    .coursework {
+      color: #ffa500 !important;
+      font-size: 0.85em;
+    }
+
+    .lecturecast {
+      color: #ffffff;
+      font-size: 0.85em;
+    }
 
     /* Grades */
-    .grade, .module-grade { color: #00ff00 !important; font-weight: bold; }
-    .module-grade { font-size: 1.2em; text-align: center; margin-bottom: 20px; }
+    .grade, .module-grade {
+      color: #00ff00 !important;
+      font-weight: bold;
+    }
+    .module-grade {
+      font-size: 1.2em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
     /* Bottom nav */
-    .bottom-links { text-align: center; margin-top: 20px; }
-    .bottom-links a { color: white; text-decoration: none; margin: 0 10px; font-size: 0.9em; }
-    .bottom-links a:hover { text-decoration: underline; }
+    .bottom-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .bottom-links a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.9em;
+    }
+    .bottom-links a:hover {
+      text-decoration: underline;
+    }
 
     /* Lists */
-    ul.references, .content ul { padding-left: 18px; }
-    ul.references li, .content ul li { margin: 4px 0; }
-    .reading-title + ul li { color: white; }
+    ul.references, .content ul {
+      padding-left: 18px;
+    }
+    ul.references li, .content ul li {
+      margin: 4px 0;
+    }
+    .reading-title + ul li {
+      color: #ffffff;
+    }
   </style>
 </head>
 
@@ -111,20 +175,26 @@
       <div class="unit">
         <p class="unit-title">Unit 1: Introduction to Cloud Fundamentals and Services</p>
         <p class="reading-title">Required Reading:</p>
-        <p>Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.<br>
-        Gupta, D. (2024) The Cloud Computing Journey. Packt Publishing.<br>
-        Part 1, Part 2, Part 3 (Sections 6 and 7), Part 4 (Section 10)</p>
+        <p>
+          Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.<br>
+          Gupta, D. (2024) The Cloud Computing Journey. Packt Publishing.<br>
+          Part 1, Part 2, Part 3 (Sections 6 and 7), Part 4 (Section 10)
+        </p>
         <p class="reading-title">Recommended Reading:</p>
-        <p>Hamed, A. (2024) 'Load balancing in cloud computing – A hierarchical taxonomical classification', Journal of Cloud Computing, 13(1), pp. 1-25.<br>
-        Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.</p>
+        <p>
+          Hamed, A. (2024) 'Load balancing in cloud computing – A hierarchical taxonomical classification', Journal of Cloud Computing, 13(1), pp. 1-25.<br>
+          Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.
+        </p>
         <p class="reading-title">Additional Reading:</p>
         <p>Rajkumar, B., Broberg, J. and Andrzej, G. (2011) Cloud Computing: Principles and Paradigms</p>
         <p class="reading-title">Seminar:</p>
         <p>Introduction to Cloud Computing and Reflection on Learning Goals</p>
+
         <h4 class="activity">Activity:</h4>
         <p class="coursework">
-          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=311234#p609044" target="_blank">Formative Discussion: AWS vs Google Cloud</a>
+          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=311234#p609044" target="_blank" rel="noopener noreferrer">Formative Discussion: AWS vs Google Cloud</a>
         </p>
+
         <h4 class="activity">Reflective Thinking:</h4>
         <p class="reflection">
           <strong>Summary:</strong>
@@ -142,15 +212,18 @@
       <div class="unit">
         <p class="unit-title">Unit 2: Understanding Cloud Architecture and Implementing Different Frameworks</p>
         <p class="reading-title">Required Reading:</p>
-        <p>Alshamaila, A. (2023) 'MicroServices-driven enterprise architecture model for infrastructure migration to cloud', Future Business Journal, 9(1), pp. 1-15.<br>
-        Anggraini N., Binariswanto and Legowo, N. (2019) 'Cloud Computing Adoption Strategic Planning Using ROCCA and TOGAF 9.2: A Study in Government Agency', Procedia Computer Science.</p>
+        <p>
+          Alshamaila, A. (2023) 'MicroServices-driven enterprise architecture model for infrastructure migration to cloud', Future Business Journal, 9(1), pp. 1-15.<br>
+          Anggraini N., Binariswanto and Legowo, N. (2019) 'Cloud Computing Adoption Strategic Planning Using ROCCA and TOGAF 9.2: A Study in Government Agency', Procedia Computer Science.
+        </p>
         <p class="reading-title">Additional Reading:</p>
         <p>Sreekanth, I. and Nagaratnam, N. (2022) Hybrid Cloud Security Patterns: Leverage Modern Repeatable Architecture Patterns to Secure Your Workloads on the Cloud. Birmingham: Packt Publishing, Limited.</p>
 
         <h4 class="activity">Activity:</h4>
         <p class="coursework">
-          Coursework: <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=312915#p611909" target="_blank">Formative Discussion: ROCCA and TOGAF</a>
+          Coursework: <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=312915#p611909" target="_blank" rel="noopener noreferrer">Formative Discussion: ROCCA and TOGAF</a>
         </p>
+
         <h4 class="activity">Reflective Thinking:</h4>
         <p class="reflection">
           <strong>Summary:</strong>
@@ -173,12 +246,15 @@
         <p>Feitosa, D. et al. (2023) Mining for Cost Awareness in the Infrastructure as Code Artifacts of Cloud-based Applications: an Exploratory Study.</p>
         <p class="reading-title">Additional Reading:</p>
         <p>Natarajan, S. and Jeveen, J. (2024) Multi-Cloud Handbook for Developers: Learn How to Design and Manage Cloud-Native Applications in AWS, Azure, GCP, and More. Birmingham: Packt Publishing. Chapters 1-5</p>
+
         <h4 class="activity">Activity:</h4>
         <p class="lecturecast">Lecturecast: Cloud Architecture Frameworks and Infrastructure as Code (IaC)</p>
-        <p class="coursework">Coursework: Post a discussion summary on a cloud design tool of your choice.<br>
-          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=313725#p613967" target="_blank">Cloud Design Tool</a><br>
-          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=314289#p616083" target="_blank">Response to peers' posts</a>
+        <p class="coursework">
+          Coursework: Post a discussion summary on a cloud design tool of your choice.<br>
+          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=313725#p613967" target="_blank" rel="noopener noreferrer">Cloud Design Tool</a><br>
+          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=314289#p616083" target="_blank" rel="noopener noreferrer">Response to peers' posts</a>
         </p>
+
         <h4 class="activity">Reflective Thinking:</h4>
         <p class="reflection">
           <strong>Summary:</strong>
@@ -198,16 +274,21 @@
         <p class="reading-title">Required Reading:</p>
         <p>Wiggins, A. (2017) The Twelve-Factor App.</p>
         <p class="reading-title">Additional Reading:</p>
-        <p>Mungoli, N. (2023) Scalable, Distributed AI Frameworks: Leveraging Cloud Computing for Enhanced Deep Learning Performance and Efficiency.<br>
-        Oliveira, R. and Hugo, F. (2021) Practical event-driven microservices architecture. Apress.</p>
+        <p>
+          Mungoli, N. (2023) Scalable, Distributed AI Frameworks: Leveraging Cloud Computing for Enhanced Deep Learning Performance and Efficiency.<br>
+          Oliveira, R. and Hugo, F. (2021) Practical event-driven microservices architecture. Apress.
+        </p>
         <p class="reading-title">Seminar:</p>
         <p>Title: Cloud Architecture Frameworks and Infrastructure as Code (IaC)</p>
+
         <h4 class="activity">Activity:</h4>
-        <p class="coursework">Coursework: Develop and execute a Bash script on OpenStack<br>
+        <p class="coursework">
+          Coursework: Develop and execute a Bash script on OpenStack<br>
           Submit a 500-word explanation of what the script achieves.<br>
-          You can use Shell Scripting for Beginners, Automating Server Configuration with Bash Scripts, and Write Your Own Bash Scripts for Automation for support.<br>
-          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265" target="_blank">Deploying a 12-Factor App to Kubernetes with Minikube (Step-by-Step)</a>
+          You can use <em>Shell Scripting for Beginners</em>, <em>Automating Server Configuration with Bash Scripts</em>, and <em>Write Your Own Bash Scripts for Automation</em> for support.<br>
+          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265" target="_blank" rel="noopener noreferrer">Deploying a 12-Factor App to Kubernetes with Minikube (Step-by-Step)</a>
         </p>
+
         <h4 class="activity">Reflective Thinking:</h4>
         <p class="reflection">
           <strong>Summary:</strong>
@@ -221,7 +302,7 @@
           <strong>References:</strong><br>
           Mungoli, N. (2023) Scalable, distributed AI frameworks: leveraging cloud computing for enhanced deep learning performance and efficiency. [Online]. Available at: https://arxiv.org/abs/2306.XXXXX (Accessed: 6 September 2025).<br>
           Oliveira, R. and Hugo, F. (2021) Practical event-driven microservices architecture. Berkeley, CA: Apress.<br>
-          Wiggins, A. (2017) The twelve-factor app. [Online]. Available at: https://12factor.net (Accessed: 6 September 2025).
+          Wiggins, A. (2017) The twelve-factor app. [Online]. Available at: <a href="https://12factor.net" target="_blank" rel="noopener noreferrer">https://12factor.net</a> (Accessed: 6 September 2025).
         </p>
       </div>
 
@@ -234,13 +315,16 @@
         <p>Hamzaoui, I. et al. (2024) 'A Topical Review on Container-Based Cloud Revolution: Multi-Directional Challenges, and Future Trends', SN Computer Science, 5(1), pp. 1-20.</p>
         <p class="reading-title">Additional Reading:</p>
         <p>Flavio, B. et al. (2014) Fog Computing and Its Role in the Internet of Things. Cisco Systems Inc.</p>
+
         <h4 class="activity">Activity:</h4>
         <p class="lecturecast">Lecturecast: AI-Driven Cloud Computing</p>
-        <p class="coursework">Coursework: Set up a Kubernetes cluster using Minikube cluster.<br>
+        <p class="coursework">
+          Coursework: Set up a Kubernetes cluster using Minikube cluster.<br>
           Describe in a 500-word discussion post how it was deployed.<br>
-          You can use Using Minikube to Create a Cluster and Creating a Kubernetes Cluster with Minikube to support you.<br>
-          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265" target="_blank">Deploying a 12-Factor App to Kubernetes with Minikube (Step-by-Step)</a>
+          You can use <em>Using Minikube to Create a Cluster</em> and <em>Creating a Kubernetes Cluster with Minikube</em> to support you.<br>
+          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265" target="_blank" rel="noopener noreferrer">Deploying a 12-Factor App to Kubernetes with Minikube (Step-by-Step)</a>
         </p>
+
         <h4 class="activity">Reflective Thinking:</h4>
         <p class="reflection"><strong>Summary:</strong> This week explored cloud-native technologies, focusing on the Twelve-Factor App methodology (Wiggins, 2017) and Kubernetes as a container orchestration tool. The content emphasised how cloud-native design principles ensure scalability, resilience, and agility in application development. The lecturecast on AI-driven cloud computing further demonstrated how automation and intelligent orchestration are transforming deployment and management of containerised workloads.</p>
         <p class="reflection"><strong>Reflection:</strong> The 12-Factor methodology resonated with me as it provides a practical checklist for building applications that are portable and cloud-ready. In practice, I have observed how ignoring principles such as strict separation of config from code can create fragility when scaling services. Kubernetes was equally significant, as it operationalises these principles through automated scaling, load balancing, and self-healing. Academic insights reinforce these ideas: Hamzaoui et al. (2024) highlight that containers deliver lightweight, portable environments that outperform traditional hypervisors, while Bonomi et al. (2012) and Gupta et al. (2016) illustrate how fog and edge computing extend cloud-native benefits closer to users, reducing latency for IoT and real-time applications. The integration of AI into orchestration workflows also sparked reflection on how predictive scaling and policy enforcement could further reduce operational overheads.</p>
@@ -252,7 +336,7 @@
           <li>Bonomi, F., Milito, R., Zhu, J. and Addepalli, S. (2012) ‘Fog computing and its role in the internet of things’, <em>Proceedings of the First Edition of the MCC Workshop on Mobile Cloud Computing</em>, Helsinki, 17 August. New York: ACM, pp. 13–16. doi:10.1145/2342509.2342513.</li>
           <li>Gupta, H., Dastjerdi, A.V., Ghosh, S.K. and Buyya, R. (2016) ‘iFogSim: A toolkit for modeling and simulation of resource management techniques in internet of things, edge and fog computing environments’, <em>Software: Practice and Experience</em>, 47(9), pp. 1275–1296. doi:10.1002/spe.2509.</li>
           <li>Hamzaoui, I., Duthil, B., Courboulay, V. and Medromi, H. (2024) ‘A topical review on container-based cloud revolution: multi-directional challenges, and future trends’, <em>SN Computer Science</em>, 5(416). doi:10.1007/s42979-024-02763-y.</li>
-          <li>Wiggins, A. (2017) <em>The twelve-factor app</em>. Available at: <a href="https://12factor.net" target="_blank">https://12factor.net</a> (Accessed: 6 September 2025).</li>
+          <li>Wiggins, A. (2017) <em>The twelve-factor app</em>. Available at: <a href="https://12factor.net" target="_blank" rel="noopener noreferrer">https://12factor.net</a> (Accessed: 6 September 2025).</li>
         </ul>
       </div>
 
@@ -281,18 +365,16 @@
         <p class="reading-title">Seminar:</p>
         <ul>
           <li>Theme: Designing a hybrid model with Fog/Edge tiers</li>
-          <li>Focus: Latency, data-gravity, security & compliance, vendor lock-in mitigation</li>
+          <li>Focus: Latency, data-gravity, security &amp; compliance, vendor lock-in mitigation</li>
           <li>Hands-on talk track: Where AWS integrates with OpenStack (identity, networking, storage replication)</li>
         </ul>
 
         <h4 class="activity">Activity:</h4>
-        <p class="lecturecast">Lecturecast: Hybrid, Fog & Edge in Practice</p>
+        <p class="lecturecast">Lecturecast: Hybrid, Fog &amp; Edge in Practice</p>
         <p>Workshop: Draft a reference architecture where OpenStack runs on-prem for regulated/low-latency workloads, while AWS handles elastic analytics and global distribution. Map trust zones, data flows, and control planes. Identify lock-in risks and propose controls.</p>
 
         <p class="coursework">
-          <a href="projects/Module%206/Development%20Team%20Project.html">
-            Development Team Project: Cloud Infrastructure and Framework Report
-          </a>
+          <a href="projects/Module%206/Development%20Team%20Project.html">Development Team Project: Cloud Infrastructure and Framework Report</a>
         </p>
 
         <h4 class="activity">Summary:</h4>
@@ -312,7 +394,7 @@
           <li>Bonomi, F., Milito, R., Zhu, J. and Addepalli, S. (2012) ‘Fog computing and its role in the internet of things’, <em>Proceedings of the MCC Workshop on Mobile Cloud Computing</em>, pp. 13–16. doi:10.1145/2342509.2342513.</li>
           <li>Gupta, H., Dastjerdi, A.V., Ghosh, S.K. and Buyya, R. (2016) ‘iFogSim: A toolkit for modeling and simulation of resource management techniques in internet of things, edge and fog computing environments’, <em>Software: Practice and Experience</em>, 47(9), pp. 1275–1296. doi:10.1002/spe.2509.</li>
           <li>Hamzaoui, I., Duthil, B., Courboulay, V. and Medromi, H. (2024) ‘A topical review on container-based cloud revolution: multi-directional challenges, and future trends’, <em>SN Computer Science</em>, 5(416). doi:10.1007/s42979-024-02763-y.</li>
-          <li>NIST (2018) <em>Framework for improving critical infrastructure cybersecurity</em>. National Institute of Standards and Technology. Available at: https://www.nist.gov/cyberframework (Accessed: 6 September 2025).</li>
+          <li>NIST (2018) <em>Framework for improving critical infrastructure cybersecurity</em>. National Institute of Standards and Technology. Available at: <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">https://www.nist.gov/cyberframework</a> (Accessed: 6 September 2025).</li>
         </ul>
 
         <h4 class="activity">Reading focus for this unit:</h4>
@@ -330,61 +412,72 @@
       <div class="unit">
         <p class="unit-title">Unit 7: Cloud Security and Compliance</p>
         <p class="reading-title">Required Reading:</p>
-        <p>Baldini, I., Castro, P., Chang, K., Cheng, P., Fink, S., Ishakian, V., Mitchell, N., Muthusamy, V., Rabbah, R., Slominski, A., and Suter, P. (2017). Serverless Computing: Current Trends and Open Problems. arXiv. Available at: https://arxiv.org/abs/1706.03178v1 [Accessed 10 Jun. 2017].</p>
+        <p>Baldini, I., Castro, P., Chang, K., Cheng, P., Fink, S., Ishakian, V., Mitchell, N., Muthusamy, V., Rabbah, R., Slominski, A., and Suter, P. (2017). Serverless Computing: Current Trends and Open Problems. arXiv. Available at: <a href="https://arxiv.org/abs/1706.03178v1" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1706.03178v1</a> [Accessed 10 Jun. 2017].</p>
         <p class="reading-title">Additional Reading:</p>
-        <p>Gundu, S.R., Panem, C.A., & Thimmapuram, A. ​ (2020). Hybrid IT and Multi Cloud an Emerging Trend and Improved Performance in Cloud Computing. ​ SN Computer Science, 1(256). https://doi.org/10.1007/s42979-020-00277-x</p>
+        <p>Gundu, S.R., Panem, C.A., &amp; Thimmapuram, A. ​ (2020). Hybrid IT and Multi Cloud an Emerging Trend and Improved Performance in Cloud Computing. ​ SN Computer Science, 1(256). <a href="https://doi.org/10.1007/s42979-020-00277-x" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/s42979-020-00277-x</a></p>
+
         <h4 class="activity">Activity:</h4>
         <p class="lecturecast">Lecturecast: Cloud-Native Technology and Containerisation</p>
-        <p></p>
         <p class="coursework">Coursework: Perform a security audit of a cloud application deployed on OpenStack using OpenVAS (an open-source vulnerability scanner). Identify security risks and suggest mitigations based on industry standards such as ISO/IEC 27001.</p>
-        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=322914#p636946" target="_blank" rel="noopener noreferrer">Disaster Recovery (DR) Design for OpenStack</a>
-       <h4 class="activity">Summary:</h4>
-<p class="reflection">This week focused on cloud security and compliance, particularly how cloud controls map to frameworks such as ISO 27001, NIST SP 800-53, PCI DSS, and GDPR. The lecturecast explored cloud-native technologies and containerisation, while the coursework involved performing a security audit of an OpenStack deployment using OpenVAS. This highlighted risks such as unpatched services and weak authentication, and how they align with industry standards (ISO, 2022; NIST, 2020; PCI SSC, 2022; European Union, 2016).</p>
+        <p class="coursework">
+          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=322914#p636946" target="_blank" rel="noopener noreferrer">Disaster Recovery (DR) Design for OpenStack</a>
+        </p>
 
-<h4 class="activity">Reflection:</h4>
-<p class="reflection">The OpenVAS audit made me reflect on how technical vulnerabilities directly connect to compliance obligations. ISO/IEC 27001 Annex A.12.6 emphasises vulnerability management, while GDPR Article 32 highlights secure data processing (ISO, 2022; European Union, 2016). NIST SP 800-53 controls such as SI-2 (Flaw Remediation) and AC-2 (Account Management) provided guidance on structured remediation (NIST, 2020). PCI DSS reinforced the need for continuous patching and monitoring to protect cardholder data (PCI SSC, 2022). Overall, the activity showed that audits must not stop at technical fixes, but be interpreted within governance and regulatory frameworks.</p>
+        <h4 class="activity">Summary:</h4>
+        <p class="reflection">This week focused on cloud security and compliance, particularly how cloud controls map to frameworks such as ISO 27001, NIST SP 800-53, PCI DSS, and GDPR. The lecturecast explored cloud-native technologies and containerisation, while the coursework involved performing a security audit of an OpenStack deployment using OpenVAS. This highlighted risks such as unpatched services and weak authentication, and how they align with industry standards (ISO, 2022; NIST, 2020; PCI SSC, 2022; European Union, 2016).</p>
 
-<h4 class="activity">Application:</h4>
-<p class="reflection">In FinTech, where sensitive financial data is at stake, these insights are highly relevant. Regulators expect evidence that vulnerabilities are addressed and compliance demonstrated. Linking cloud controls to ISO 27001, NIST, PCI DSS, and GDPR provides assurance of due diligence. Similarly, the disaster recovery design exercise reinforced how RPO and RTO targets map to ISO 22301, ensuring both resilience and compliance (ISO, 2019). This mapping directly informs operational practices in my role, where audits, compliance reviews, and regulator expectations converge.</p>
+        <h4 class="activity">Reflection:</h4>
+        <p class="reflection">The OpenVAS audit made me reflect on how technical vulnerabilities directly connect to compliance obligations. ISO/IEC 27001 Annex A.12.6 emphasises vulnerability management, while GDPR Article 32 highlights secure data processing (ISO, 2022; European Union, 2016). NIST SP 800-53 controls such as SI-2 (Flaw Remediation) and AC-2 (Account Management) provided guidance on structured remediation (NIST, 2020). PCI DSS reinforced the need for continuous patching and monitoring to protect cardholder data (PCI SSC, 2022). Overall, the activity showed that audits must not stop at technical fixes, but be interpreted within governance and regulatory frameworks.</p>
 
-<h4 class="activity">Forward Planning:</h4>
-<p class="reflection">I plan to deepen my knowledge of cloud compliance by experimenting with automated compliance monitoring tools, such as AWS Config and Azure Policy, to map controls continuously against ISO 27001 and GDPR. Developing stronger skills in OpenVAS and other vulnerability management tools will allow me to connect technical findings with compliance requirements more effectively. This will prepare me for governance-driven roles where bridging technical risk and regulatory obligations is critical.</p>
+        <h4 class="activity">Application:</h4>
+        <p class="reflection">In FinTech, where sensitive financial data is at stake, these insights are highly relevant. Regulators expect evidence that vulnerabilities are addressed and compliance demonstrated. Linking cloud controls to ISO 27001, NIST, PCI DSS, and GDPR provides assurance of due diligence. Similarly, the disaster recovery design exercise reinforced how RPO and RTO targets map to ISO 22301, ensuring both resilience and compliance (ISO, 2019). This mapping directly informs operational practices in my role, where audits, compliance reviews, and regulator expectations converge.</p>
 
-<h4 class="activity">References:</h4>
-<p class="reflection">
-European Union (2016) <i>Regulation (EU) 2016/679 of the European Parliament and of the Council (General Data Protection Regulation)</i>. Official Journal of the European Union, L119, pp. 1–88.<br>
-International Organization for Standardization (ISO) (2019) <i>ISO 22301:2019 Security and resilience – Business continuity management systems – Requirements</i>. Geneva: ISO.<br>
-International Organization for Standardization (ISO) (2022) <i>ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection – Information security management systems – Requirements</i>. Geneva: ISO.<br>
-National Institute of Standards and Technology (NIST) (2020) <i>Security and Privacy Controls for Information Systems and Organizations (NIST SP 800-53, Rev. 5)</i>. Gaithersburg: U.S. Department of Commerce.<br>
-PCI Security Standards Council (PCI SSC) (2022) <i>Payment Card Industry Data Security Standard: Requirements and Security Assessment Procedures (v4.0)</i>. Wakefield, MA: PCI SSC.
-</p>
+        <h4 class="activity">Forward Planning:</h4>
+        <p class="reflection">I plan to deepen my knowledge of cloud compliance by experimenting with automated compliance monitoring tools, such as AWS Config and Azure Policy, to map controls continuously against ISO 27001 and GDPR. Developing stronger skills in OpenVAS and other vulnerability management tools will allow me to connect technical findings with compliance requirements more effectively. This will prepare me for governance-driven roles where bridging technical risk and regulatory obligations is critical.</p>
 
+        <h4 class="activity">References:</h4>
+        <p class="reflection">
+          European Union (2016) <i>Regulation (EU) 2016/679 of the European Parliament and of the Council (General Data Protection Regulation)</i>. Official Journal of the European Union, L119, pp. 1–88.<br>
+          International Organization for Standardization (ISO) (2019) <i>ISO 22301:2019 Security and resilience – Business continuity management systems – Requirements</i>. Geneva: ISO.<br>
+          International Organization for Standardization (ISO) (2022) <i>ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection – Information security management systems – Requirements</i>. Geneva: ISO.<br>
+          National Institute of Standards and Technology (NIST) (2020) <i>Security and Privacy Controls for Information Systems and Organizations (NIST SP 800-53, Rev. 5)</i>. Gaithersburg: U.S. Department of Commerce.<br>
+          PCI Security Standards Council (PCI SSC) (2022) <i>Payment Card Industry Data Security Standard: Requirements and Security Assessment Procedures (v4.0)</i>. Wakefield, MA: PCI SSC.
+        </p>
       </div>
 
       <!-- Unit 8 -->
       <div class="unit">
         <p class="unit-title">Unit 8: Disaster Recovery and Business Continuity</p>
+
         <p class="reading-title">Required Reading:</p>
-        <p>Carson, R. and Rodrick, M. (2024) Business Continuity and Disaster Recovery. Packt Publishing.
-Chapter 2
-Chapter 3.</p>
-        </p>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments,' Journal of Cloud Computing, (13), pp.1-15.</p>
+        <p>Carson, R. and Rodrick, M. (2024) <em>Business Continuity and Disaster Recovery</em>. Packt Publishing. Chapters 2–3.</p>
+        <p>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments,' <em>Journal of Cloud Computing</em>, 13, pp. 1–15.</p>
+
         <p class="reading-title">Additional Reading:</p>
         <p>[Add additional reading materials]</p>
+
         <p class="reading-title">Seminar:</p>
         <p>Cloud-Native Technologies and Hybrid Cloud Solutions</p>
+
         <h4 class="activity">Activity:</h4>
         <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
         <p>[Add activity description]</p>
-        <p class="coursework">Coursework: Design and implement a Disaster Recovery (DR) plan for a cloud-based infrastructure on OpenStack. Simulate a failure scenario and perform a recovery operation using open-source backup tools such as Bacula or Duplicity.</p>
-          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=322914#p636946" class="reflection" target="_blank" rel="noopener noreferrer">
-    Disaster Recovery (DR) Design for OpenStack
-</a>
-      </p>Seminar Questions</p>
-</p>How does the 12-Factor App methodology support cloud-native development?</p>
-</p>In what situations would a business benefit from using Kubernetes for container orchestration?</p>
-</p>What are the main advantages and challenges of hybrid cloud and edge computing?</p>
-</p>How can organisations address the issue of data sovereignty in hybrid cloud environments?</p>
+
+        <p class="coursework">
+          Coursework: Design and implement a Disaster Recovery (DR) plan for a cloud-based infrastructure on OpenStack. Simulate a failure scenario and perform a recovery operation using open-source backup tools such as Bacula or Duplicity.
+        </p>
+        <p class="coursework">
+          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=322914#p636946" class="reflection" target="_blank" rel="noopener noreferrer">Disaster Recovery (DR) Design for OpenStack</a>
+        </p>
+
+        <p class="reading-title">Seminar Questions</p>
+        <ul>
+          <li>How does the 12-Factor App methodology support cloud-native development?</li>
+          <li>In what situations would a business benefit from using Kubernetes for container orchestration?</li>
+          <li>What are the main advantages and challenges of hybrid cloud and edge computing?</li>
+          <li>How can organisations address the issue of data sovereignty in hybrid cloud environments?</li>
+        </ul>
+
         <h4 class="activity">Reflective Thinking:</h4>
         <p class="reflection">[What RTO/RPO targets are realistic for your org and how do cloud patterns help you achieve them?]</p>
       </div>
@@ -398,10 +491,12 @@ Chapter 3.</p>
         <p>[Add additional reading materials]</p>
         <p class="reading-title">Seminar:</p>
         <p>[Add seminar details]</p>
+
         <h4 class="activity">Activity:</h4>
         <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
         <p>[Add activity description]</p>
         <p class="coursework">Coursework: [Add coursework brief]</p>
+
         <h4 class="activity">Reflective Thinking:</h4>
         <p class="reflection">[Which migration pattern (rehost, replatform, refactor, retire, retain) suits your portfolio and why?]</p>
       </div>
@@ -415,10 +510,12 @@ Chapter 3.</p>
         <p>[Add additional reading materials]</p>
         <p class="reading-title">Seminar:</p>
         <p>[Add seminar details]</p>
+
         <h4 class="activity">Activity:</h4>
         <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
         <p>[Add activity description]</p>
         <p class="coursework">Coursework: [Add coursework brief]</p>
+
         <h4 class="activity">Reflective Thinking:</h4>
         <p class="reflection">[Where could serverless reduce operational overheads in your stack, and what are the limits (cold starts, state, vendor lock-in)?]</p>
       </div>
@@ -432,10 +529,12 @@ Chapter 3.</p>
         <p>[Add additional reading materials]</p>
         <p class="reading-title">Seminar:</p>
         <p>[Add seminar details]</p>
+
         <h4 class="activity">Activity:</h4>
         <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
         <p>[Add activity description]</p>
         <p class="coursework">Coursework: [Add coursework brief]</p>
+
         <h4 class="activity">Reflective Thinking:</h4>
         <p class="reflection">[What cloud-native AI services/models would you adopt, and how would you address data governance and cost control?]</p>
       </div>
@@ -449,10 +548,12 @@ Chapter 3.</p>
         <p>[Add additional reading materials]</p>
         <p class="reading-title">Seminar:</p>
         <p>[Add seminar details]</p>
+
         <h4 class="activity">Activity:</h4>
         <p class="lecturecast">Lecturecast: [Add lecturecast title]</p>
         <p>[Add activity description]</p>
         <p class="coursework">Coursework: [Add coursework brief]</p>
+
         <h4 class="activity">Reflective Thinking:</h4>
         <p class="reflection">[Which trends (FinOps automation, sovereign cloud, confidential computing, platform engineering) are most relevant to your roadmap?]</p>
       </div>
