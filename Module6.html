@@ -516,17 +516,31 @@ Zheng, Y. et al. (2024) ‘Optimization model for vehicular network data queries
   <a href="projects/Module%206/DB_Migration_Discussion_Post.pdf" target="_blank" rel="noopener noreferrer">
     Migrate a database from a local machine to an OpenStack cloud environment using MySQL and Percona XtraBackup
   </a>
+          <img src="assets/Unit9_HybridCloud_Migration.png" 
+     alt="Hybrid Cloud Architecture – OpenStack to Azure/AWS with Percona XtraBackup" 
+     style="max-width:100%; border:1px solid #ccc; border-radius:8px;">
 </p>
 
 <h4 class="activity">Reflection:</h4>
 <p class="reflection">
-  Think and reflect about the migration, including the steps, tools, and challenges faced during the migration process.
+ <h4 class="activity">Summary:</h4>
+<p class="reflection">This week focused on hybrid cloud solutions and practical migration exercises. The lecturecast on Hybrid Cloud highlighted design patterns where OpenStack integrates with public clouds for elasticity and compliance (Maurer, 2021). The formative coursework involved migrating a MySQL database to OpenStack using Percona XtraBackup. Attempting this on Windows exposed constraints with tooling support, requiring workarounds such as staging backups through Linux-based environments to achieve minimal downtime. The readings further explored cloud security through deep learning (Zhou et al., 2023) and the strategic trade-offs between cloud-agnostic and vendor-locked DevOps approaches (Dunbar, 2024).</p>
+
+<h4 class="activity">Reflection:</h4>
+<p class="reflection">I reflected on how hybrid cloud design requires balancing control and flexibility. Maurer (2021) emphasised governance and workload placement, while the migration exercise reinforced that technical constraints—like limited Windows support for Percona tools—can shape architecture choices. The workaround demonstrated resilience but also highlighted risks of misconfiguration. The article on machine learning in cloud security showed how predictive models can strengthen proactive defence, while the vendor lock-in piece illustrated that even cloud-agnostic aspirations come with trade-offs, often requiring more expertise and cost (Dunbar, 2024). This reminded me that migrations and hybrid strategies must align with both compliance and operational realities.</p>
+
+<h4 class="activity">Application:</h4>
+<p class="reflection">In financial services, migrating core databases demands both data consistency and near-zero downtime. Using tools like Percona XtraBackup is relevant, but production environments would require clustering, replication, and automated failover. Hybrid solutions also provide opportunities to isolate sensitive workloads on OpenStack while leveraging cloud elasticity for analytics. AI-driven monitoring, as described by Zhou et al. (2023), could further secure these deployments. At the same time, vendor-locked tooling such as Azure DevOps may accelerate pipelines but needs conscious governance to prevent strategic dependency.</p>
+
+<h4 class="activity">Forward Planning:</h4>
+<p class="reflection">I plan to test database migrations using Linux-native environments to minimise workarounds and experiment with hybrid models that blend OpenStack with AWS or Azure. I also intend to explore AIOps platforms for predictive security and evaluate cloud-agnostic orchestration tools like Kubernetes against vendor-locked CI/CD to balance flexibility and integration. Building these skills will prepare me for architecting resilient, compliant, and strategically balanced hybrid environments.</p>
+
+<h4 class="activity">References:</h4>
+<p class="reflection">
+Dunbar, W. (2024) ‘Vendor-Locked DevOps Strategies’, <i>Communications of the ACM</i>. Available at: https://cacm.acm.org/opinion/vendor-locked-devops-strategies/ (Accessed: 23 September 2025).<br>
+Maurer, T. (2021) <i>How to create Azure Hybrid Cloud Architectures</i>. Microsoft. Available at: https://thomasmaurer.ch/ (Accessed: 23 September 2025).<br>
+Zhou, Z., Wu, J., Yan, X., and Lin, Y. (2023) ‘Research trends in deep learning and machine learning for cloud computing security’, <i>Journal of Cloud Computing</i>, 12(1), pp. 1–18.
 </p>
-
-
-        <h4 class="activity">Reflective Thinking:</h4>
-        <p class="reflection">[Which migration pattern (rehost, replatform, refactor, retire, retain) suits your portfolio and why?]</p>
-      </div>
 
       <!-- Unit 10 -->
       <div class="unit">
