@@ -541,31 +541,69 @@ Maurer, T. (2021) <i>How to create Azure Hybrid Cloud Architectures</i>. Microso
 Zhou, Z., Wu, J., Yan, X., and Lin, Y. (2023) ‘Research trends in deep learning and machine learning for cloud computing security’, <i>Journal of Cloud Computing</i>, 12(1), pp. 1–18.
 </p>
 
-      <!-- Unit 10 -->
-<div class="unit" style="margin-bottom: 40px;">
+      <!-- Unit 10 (revised, with local styles) -->
+<style>
+  /* Local styles scoped to Unit 10 only */
+  #unit10 { 
+    margin-bottom: 40px;
+    padding: 18px 20px;
+    background: rgba(0,0,0,0.55);       /* improves contrast over bg image */
+    border-radius: 8px;
+  }
+  #unit10 .unit-title{
+    margin: 0 0 10px 0;
+    color: #ffcc00;
+    font-weight: 800;
+    font-size: 1.35rem;
+    text-align: center;
+  }
+  #unit10 .divider{
+    border: 0;
+    border-top: 2px solid #ffcc00;
+    margin: 12px 0 18px;
+    opacity: 1;
+  }
+  #unit10 p, #unit10 li {
+    color: #f1f1f1;                      /* consistent readable body text */
+    line-height: 1.55;
+    margin: 6px 0;
+  }
+  #unit10 .reading-title,
+  #unit10 .activity-label {
+    color: #ffffff;
+    font-weight: 700;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  #unit10 a { color: #77b7ff; text-decoration: none; }
+  #unit10 a:hover { text-decoration: underline; }
+  #unit10 ul { padding-left: 20px; margin-top: 6px; }
+</style>
 
-  <h3 class="unit-title" style="color: #ffcc00; font-weight: 700; border-bottom: 2px solid #ffcc00; padding-bottom: 5px;">
-    Unit 10: Advanced Cloud Technologies (Serverless Computing)
-  </h3>
+<div id="unit10" class="unit">
+  <h3 class="unit-title">Unit 10: Advanced Cloud Technologies (Serverless Computing)</h3>
+  <hr class="divider">
 
-  <p class="reading-title" style="font-weight: 600;">Required Reading:</p>
+  <p class="reading-title">Required Reading:</p>
   <p>
-    Toosi, A.N. et al. (2025) 'Serverless Computing for Next-Generation Application Development', 
-    <i>Future Generation Computer Systems</i>, 164, p.107573.
+    Toosi, A.N. et al. (2025) ‘Serverless Computing for Next-Generation Application Development’, 
+    <i>Future Generation Computer Systems</i>, 164, p. 107573.
   </p>
 
-  <p class="reading-title" style="font-weight: 600;">Recommended Reading:</p>
+  <p class="reading-title">Recommended Reading:</p>
   <p>
-    Ahmad, S.G. et al. (2023) 'Cost optimization in cloud environment based on task deadline', 
-    <i>Journal of Cloud Computing</i>, 12(1), p.9.
+    Ahmad, S.G. et al. (2023) ‘Cost optimization in cloud environment based on task deadline’, 
+    <i>Journal of Cloud Computing</i>, 12(1), p. 9.
   </p>
 
-  <p class="reading-title" style="font-weight: 600;">Additional Reading:</p>
+  <p class="reading-title">Additional Reading:</p>
   <p>None specified for this unit.</p>
 
-  <hr style="border: 1px solid #ffcc00; margin: 20px 0;">
+  <hr class="divider">
 
-  <p class="reading-title" style="font-weight: 600;">Seminar:</p>
+  <p class="reading-title">Seminar:</p>
   <p><strong>Seminar Questions:</strong></p>
   <ul>
     <li>What are the biggest security threats to cloud environments today?</li>
@@ -574,46 +612,40 @@ Zhou, Z., Wu, J., Yan, X., and Lin, Y. (2023) ‘Research trends in deep learnin
     <li>How would you design a basic DR plan for a small business using cloud services?</li>
   </ul>
 
-  <h4 class="activity" style="color: #ffcc00; font-weight: 700;">Activity:</h4>
-  <p class="lecturecast"><strong>Lecturecast:</strong> <i>Serverless Computing and Disaster Recovery in Cloud Operations</i></p>
+  <p class="activity-label">Activity:</p>
+  <p><strong>Lecturecast:</strong> <i>Serverless Computing and Disaster Recovery in Cloud Operations</i></p>
   <p>
-    During this week, I carried out an independent analysis of the Jaguar Land Rover (JLR) and Marks & Spencer (M&S) 
+    During this week, I carried out an independent analysis of the Jaguar Land Rover (JLR) and Marks & Spencer (M&amp;S) 
     cloud incidents to explore the relationship between identity compromise, misconfiguration, and operational disruption. 
-    This individual work supported the seminar focus on balancing compliance and security through automation, 
-    leveraging cloud-native tools such as Azure Policy, AWS Config, and CSPM/CNAPP frameworks. 
-    I also designed a tiered disaster recovery (DR) plan suitable for small and medium-sized enterprises (SMEs), 
-    highlighting the trade-off between cost and resilience, and the importance of regularly tested recovery procedures.
+    This individual work supported the seminar focus on balancing compliance and security through automation, leveraging 
+    cloud-native tools such as Azure Policy, AWS Config, and CSPM/CNAPP frameworks. I also designed a tiered disaster 
+    recovery (DR) plan suitable for SMEs, highlighting the cost–resilience trade-off and the importance of regularly 
+    tested recovery procedures.
   </p>
 
-  <p class="coursework">
-    <strong>Coursework:</strong> Discussion Forum – 
-    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=323361#p637949" target="_blank" style="color: #0078d7;">
-      OpenFaaS
-    </a>
+  <p><strong>Coursework:</strong> Discussion Forum – 
+    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=323361#p637949" target="_blank">OpenFaaS</a>
   </p>
 
-  <h4 class="activity" style="color: #ffcc00; font-weight: 700;">Reflective Thinking:</h4>
-  <p class="reflection">
-    This unit reinforced that cloud security depends less on traditional perimeter defences and more on 
-    automation, continuous posture management, and identity governance. My personal analysis of JLR and M&S showed 
-    that even compliant organisations can suffer operational outages without tested recovery orchestration. 
-    Serverless computing, as discussed in Toosi et al. (2025), offers opportunities to reduce operational overhead 
-    by abstracting infrastructure management and improving scalability. However, limitations such as cold-start delays, 
-    state handling, and vendor lock-in must be carefully managed. Integrating serverless functions with managed DR 
-    services like AWS Backup and Azure Recovery Vault could strengthen recoverability and operational resilience.
+  <p class="activity-label">Reflective Thinking:</p>
+  <p>
+    This unit reinforced that cloud security depends less on traditional perimeter defences and more on automation, 
+    continuous posture management, and identity governance. My personal analysis of JLR and M&amp;S showed that even 
+    compliant organisations can suffer operational outages without tested recovery orchestration. Serverless computing, 
+    as discussed in Toosi et&nbsp;al. (2025), reduces operational overhead by abstracting infrastructure management, but 
+    limitations such as cold starts, state handling, and vendor lock-in must be managed. Integrating serverless functions 
+    with managed DR services like AWS Backup and Azure Recovery Vault can strengthen recoverability and operational resilience.
   </p>
 
-  <h4 class="activity" style="color: #ffcc00; font-weight: 700;">Summary Connection:</h4>
-  <p class="reflection">
-    The work in Unit 10 built directly on the security automation and cloud resilience themes explored in Units 8 and 9. 
-    It expanded my understanding of how modern architectures, including serverless and Function-as-a-Service (FaaS) models, 
-    can complement traditional DR strategies through event-driven recovery and policy-as-code enforcement. 
-    The critical insight gained was that resilience must be designed end-to-end — from secure configuration and compliance 
-    monitoring to automated failover — ensuring operational continuity even in multi-cloud or hybrid environments. 
-    This integrated perspective is essential for designing future-ready FinTech infrastructures that are both agile and secure.
+  <p class="activity-label">Summary Connection:</p>
+  <p>
+    Unit 10 builds on the security automation and cloud resilience themes from Units 8 and 9. It shows how modern 
+    architectures—including serverless and FaaS—can complement DR through event-driven recovery and policy-as-code. 
+    The key insight is end-to-end resilience: secure configuration, continuous compliance monitoring, and automated 
+    failover to maintain continuity across multi-cloud/hybrid environments—vital for future-ready FinTech platforms.
   </p>
-
 </div>
+
 
 
       <!-- Unit 11 -->
