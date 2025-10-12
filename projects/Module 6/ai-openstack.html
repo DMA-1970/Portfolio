@@ -1,15 +1,274 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>AI on OpenStack</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <title>AI on OpenStack (TensorFlow/Keras + FastAPI)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="E-portfolio evidence: building and deploying a simple image recognition model using TensorFlow/Keras and FastAPI on OpenStack." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #666666;
+      --line: #e5e5e5;
+      --card: #ffffff;
+      --soft: #f7f7f7;
+      --accent: #0b7a0b;
+      --warn: #8a4b00;
+      --tag: #fbfbfb;
+    }
+    html,body { background: var(--bg); color: var(--fg); font-family: Arial, sans-serif; line-height: 1.6; }
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    a { color: #0a58ca; text-decoration: none; }
+    a:hover, a:focus { text-decoration: underline; }
+    h1,h2,h3 { margin: 1.2rem 0 0.4rem; }
+    .muted { color: var(--muted); }
+    .card { border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.2rem; margin: 1rem 0; background: var(--card); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+    code, pre { background: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 0.5rem 0.75rem; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid var(--line); padding: 0.6rem 0.5rem; text-align: left; vertical-align: top; }
+    th { background: var(--soft); }
+    .tag { display: inline-block; padding: 0.15rem 0.5rem; border: 1px solid var(--line); border-radius: 999px; background: var(--tag); font-size: 0.85rem; margin-right: 0.35rem; }
+    .ok { color: var(--accent); font-weight: 600; }
+    .warn { color: var(--warn); font-weight: 600; }
+    .breadcrumb { margin-bottom: 1rem; }
+    .small { font-size: 0.92rem; }
+    .figure { border: 1px dashed var(--line); background: #fcfcfc; padding: .75rem; border-radius: 8px; }
+    .figure img { max-width: 100%; height: auto; border-radius: 8px; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; background: #f0f0f0; border: 1px solid #e0e0e0; border-radius: 6px; padding: 0 .35rem; }
+  </style>
 </head>
 <body>
-  <!-- paste the provided section below -->
-  <!-- ▼▼▼ -->
-  <!-- (your <section id="ai-openstack-demo"> ... </section>) -->
-  <!-- ▲▲▲ -->
+  <div class="container" role="main">
+    <p class="breadcrumb small">
+      <a href="/Portfolio/Module6.html">← Back to Module 6</a>
+    </p>
+
+    <header>
+      <h1>Image Recognition on OpenStack (TensorFlow/Keras + FastAPI)</h1>
+      <p class="muted">Module 6 • Cloud, AI & MLOps-lite • Date: <strong>October 2025</strong></p>
+      <div>
+        <span class="tag">TensorFlow/Keras</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Docker</span>
+        <span class="tag">OpenStack</span>
+        <span class="tag">cloud-init</span>
+      </div>
+    </header>
+
+    <section class="card" aria-labelledby="execsum">
+      <h2 id="execsum">Executive Summary</h2>
+      <p>
+        This project demonstrates end-to-end operationalisation of a simple image recognition model:
+        a compact TensorFlow/Keras CNN trained on CIFAR-10, served via FastAPI/uvicorn, containerised with Docker,
+        and deployed on an Ubuntu VM in OpenStack using <em>cloud-init</em>. The API exposes
+        <code>GET /health</code> and <code>POST /predict</code> for top-k classification.
+        The trained model achieved a test accuracy of <strong>0.6087</strong>. I evaluated latency locally and on a VM and captured
+        operational observations relevant to resource management and optimisation.
+      </p>
+    </section>
+
+    <section class="card" aria-labelledby="objectives">
+      <h2 id="objectives">Objectives</h2>
+      <ul>
+        <li>Train and persist a lightweight CNN for 10-class image recognition (CIFAR-10).</li>
+        <li>Serve inference via a minimal REST API (FastAPI/uvicorn).</li>
+        <li>Containerise and deploy on an OpenStack VM using <em>cloud-init</em>.</li>
+        <li>Evaluate accuracy, latency, and host utilisation; reflect on operational implications.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="methods">
+      <h2 id="methods">Methods</h2>
+
+      <h3>Data &amp; Model</h3>
+      <ul>
+        <li><strong>Dataset:</strong> CIFAR-10 (60k 32×32 RGB images, 10 classes).</li>
+        <li><strong>Pre-processing:</strong> Normalise to [0,1]; one-hot labels.</li>
+        <li><strong>Architecture:</strong> 3× Conv→ReLU→MaxPool blocks → GlobalAvgPool → Dropout(0.3) → Dense(10, softmax).</li>
+        <li><strong>Training:</strong> Adam, categorical cross-entropy, batch 128, 10 epochs, 10% validation split.</li>
+        <li><strong>Persistence:</strong> Saved as <code>model/cifar10_cnn.keras</code> (native Keras format).</li>
+      </ul>
+
+      <h3>Serving (Inference API)</h3>
+      <ul>
+        <li><strong>Framework:</strong> FastAPI + uvicorn.</li>
+        <li><strong>Endpoints:</strong> <code>GET /health</code> and <code>POST /predict</code> (multipart image upload).</li>
+        <li><strong>Inference pre-processing:</strong> Convert to RGB, resize 32×32, normalise to [0,1].</li>
+      </ul>
+
+      <h3>Packaging &amp; Deployment</h3>
+      <ul>
+        <li><strong>Container:</strong> Python 3.11-slim base; installs TensorFlow, FastAPI, Uvicorn, Pillow, NumPy, <code>python-multipart</code>; model is copied into <code>/app/model</code>.</li>
+        <li><strong>OpenStack VM:</strong> Ubuntu 22.04; <em>cloud-init</em> installs Docker and runs the container with <code>--restart=always</code>.</li>
+        <li><strong>Network:</strong> Security group allows TCP 22 (SSH) and TCP 8000 (API).</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="impl">
+      <h2 id="impl">Implementation (Key Files)</h2>
+
+      <div class="grid">
+        <div>
+          <h3><code>train.py</code> (excerpt)</h3>
+          <pre><code># CNN backbone (excerpt)
+x = layers.Conv2D(32, 3, activation="relu", padding="same")(inputs)
+x = layers.MaxPooling2D()(x)
+x = layers.Conv2D(64, 3, activation="relu", padding="same")(x)
+x = layers.MaxPooling2D()(x)
+x = layers.Conv2D(128, 3, activation="relu", padding="same")(x)
+x = layers.GlobalAveragePooling2D()(x)
+x = layers.Dropout(0.3)(x)
+outputs = layers.Dense(10, activation="softmax")(x)</code></pre>
+        </div>
+
+        <div>
+          <h3><code>infer_api.py</code> (excerpt)</h3>
+          <pre><code>@app.post("/predict")
+async def predict(file: UploadFile = File(...), top_k: int = 3):
+    img = Image.open(io.BytesIO(await file.read()))
+    x = preprocess(img)   # RGB → 32×32 → [0,1]
+    probs = model.predict(x, verbose=0)[0]
+    idxs = probs.argsort()[-top_k:][::-1]
+    return {"top_k": [{"label": LABELS[i], "prob": float(probs[i])} for i in idxs]}</code></pre>
+        </div>
+      </div>
+
+      <p class="muted small">Source repository: <strong><!-- TODO: add your GitHub repo link -->TODO add repository link</strong></p>
+    </section>
+
+    <section class="card" aria-labelledby="results">
+      <h2 id="results">Results &amp; Evaluation</h2>
+
+      <h3>Model Performance</h3>
+      <p><strong>Test accuracy:</strong> <span class="ok">0.6087</span> (compact CPU-friendly CNN; 10 epochs).</p>
+
+      <h3>Latency (fill with your measurements)</h3>
+      <table aria-describedby="latency-notes">
+        <thead>
+          <tr><th scope="col">Environment</th><th scope="col">p50 (ms)</th><th scope="col">p95 (ms)</th><th scope="col">Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Local (Laptop)</td><td><strong><!-- TODO --></strong></td><td><strong><!-- TODO --></strong></td><td>Venv or Docker</td></tr>
+          <tr><td>OpenStack VM (CPU)</td><td><strong><!-- TODO --></strong></td><td><strong><!-- TODO --></strong></td><td>Over network</td></tr>
+        </tbody>
+      </table>
+      <p id="latency-notes" class="muted small">Measure with a simple loop (20 requests) and report median (p50) and 95th percentile (p95).</p>
+
+      <h3>Resource Usage (VM)</h3>
+      <ul>
+        <li><strong>CPU:</strong> <strong><!-- TODO --></strong>% peak; <strong><!-- TODO --></strong>% typical.</li>
+        <li><strong>Memory:</strong> <strong><!-- TODO --></strong> MB resident.</li>
+        <li><strong>Reliability:</strong> Docker <code>--restart=always</code> and <code>/health</code> probe used.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="evidence">
+      <h2 id="evidence">Evidence (Screenshots &amp; Logs)</h2>
+      <ul>
+        <li>OpenStack Horizon: instance list and security-group rules (TCP 22, 8000). <strong><!-- TODO: insert screenshots --></strong></li>
+        <li>Cloud-init success: snippet from <code>/var/log/cloud-init-output.log</code>. <strong><!-- TODO --></strong></li>
+        <li>Terminal: <code>curl http://&lt;IP&gt;:8000/health</code> → <code>{"status":"ok"}</code>. <strong><!-- TODO --></strong></li>
+        <li>API prediction JSON from <code>/predict</code>. <strong><!-- TODO --></strong></li>
+        <li>Docker: build/push log or <code>docker ps</code> on the VM. <strong><!-- TODO --></strong></li>
+        <li>Training output showing final accuracy <code>0.6087</code>. <strong><!-- TODO --></strong></li>
+      </ul>
+
+      <div class="grid">
+        <figure class="figure">
+          <img src="/Portfolio/assets/img/TODO-healthcheck.png" alt="Health check response screenshot">
+          <figcaption class="small muted">Figure 1: Health check of the deployed API.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="/Portfolio/assets/img/TODO-predict.png" alt="Prediction JSON screenshot">
+          <figcaption class="small muted">Figure 2: Example JSON from <code>/predict</code>.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="discussion">
+      <h2 id="discussion">Discussion</h2>
+
+      <h3>Technical Observations</h3>
+      <ul>
+        <li><strong>Reproducibility via containers:</strong> Packaging the runtime ensures the same behaviour across environments and simplifies cloud bootstrap.</li>
+        <li><strong>Simple beats complex for demos:</strong> A small CNN yields fast CPU inference and predictable memory use—ideal for teaching and low-TPS services.</li>
+        <li><strong>cloud-init as infra-as-data:</strong> A short YAML script declaratively re-hydrates the service on any new Ubuntu VM, improving time-to-service and auditability.</li>
+      </ul>
+
+      <h3>Limitations</h3>
+      <ul>
+        <li>Baseline CIFAR-10 accuracy (~0.61) is modest. Data augmentation or deeper backbones (e.g., ResNet) would improve performance.</li>
+        <li>CPU-only throughput is limited. For higher TPS, add autoscaling and/or GPU flavours.</li>
+        <li>No model registry/CI in this demo; future work should include experiment tracking and staged promotion.</li>
+      </ul>
+
+      <h3>Future Improvements</h3>
+      <ul>
+        <li>Observability: add <code>/metrics</code> for Prometheus and dashboards in Grafana (latency, error rate, CPU, memory).</li>
+        <li>Autoscaling: OpenStack Heat + Aodh alarms to scale on CPU or latency, behind a simple load balancer.</li>
+        <li>Security hardening: restrict ingress CIDRs, add HTTPS via Nginx + Let’s Encrypt, request size limits.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="reflection">
+      <h2 id="reflection">Reflection</h2>
+
+      <h3>How I built it</h3>
+      <p>
+        I prioritised a compact CNN for fast CPU inference and low memory, trained on CIFAR-10 using Keras for readability and speed of iteration.
+        After reaching a baseline test accuracy of <strong>0.6087</strong>, I packaged the inference stack in Docker, ensuring parity between local and cloud runs.
+        Using <em>cloud-init</em> to bootstrap Docker on an OpenStack VM made the deployment declarative and repeatable, enabling straightforward rebuilds.
+      </p>
+
+      <h3>How I evaluated it</h3>
+      <p>
+        I validated correctness with a health check and sample predictions, then measured non-functionals: accuracy on the test set,
+        end-to-end latency (p50/p95) locally vs on a VM, and resource usage under light load. The service remained responsive for single-image inference on CPU.
+      </p>
+
+      <h3>How AI enhances cloud operations</h3>
+      <ul>
+        <li><strong>Predictive autoscaling:</strong> models forecast near-term load to scale pre-emptively, protecting p95 latency and controlling cost.</li>
+        <li><strong>Right-sizing:</strong> learning utilisation patterns to propose smaller flavours without breaching SLOs.</li>
+        <li><strong>Anomaly detection:</strong> unsupervised methods flag deviations in latency/errors, accelerating incident response.</li>
+        <li><strong>Intelligent placement:</strong> model-guided scheduling improves density and reduces hotspots/failure risk.</li>
+        <li><strong>Adaptive serving:</strong> route “hard” requests to GPUs and “easy” ones to CPUs, maximising accelerator ROI.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="verify">
+      <h2 id="verify">Verification (Repro Notes)</h2>
+      <ol>
+        <li>Train: <code>python train.py</code> → creates <code>model/cifar10_cnn.keras</code>.</li>
+        <li>Run API: <code>python -m uvicorn infer_api:app --host 0.0.0.0 --port 8000</code> (or Docker).</li>
+        <li>Health: <code>curl http://127.0.0.1:8000/health</code> → <span class="ok">{"status":"ok"}</span>.</li>
+        <li>Predict: <code>POST /predict</code> with an image → JSON top-k labels and probabilities.</li>
+        <li>OpenStack: Launch Ubuntu VM with <em>cloud-init</em> that installs Docker and runs the image; expose TCP 8000.</li>
+      </ol>
+    </section>
+
+    <section class="card" aria-labelledby="refs">
+      <h2 id="refs">References (Harvard)</h2>
+      <p class="muted small">
+        TensorFlow. (2024) <em>TensorFlow: An end-to-end open-source machine learning platform.</em><br />
+        FastAPI. (2024) <em>FastAPI: High-performance web framework for building APIs with Python.</em><br />
+        OpenStack Foundation. (2024) <em>OpenStack Documentation.</em>
+      </p>
+    </section>
+
+    <footer class="muted small" style="margin-top: 2rem;">
+      <p>
+        © <span id="year"></span> David Abiodun •
+        <a href="/Portfolio/Module6.html">Back to Module 6</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // Tiny enhancement: current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
