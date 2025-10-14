@@ -1,197 +1,567 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise IT Project Management January 2025</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4: Enterprise IT Project Management - David Abiodun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-        html, body {
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
-            background-size: cover;
-            overflow-x: hidden;
-        }
-
-        .overlay {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-            padding: 20px;
             box-sizing: border-box;
-            background: rgba(0, 0, 0, 0.7);
         }
 
-        .content {
-            max-width: 800px;
+        body, html {
+            height: 100%;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Blurred background with dark overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/Module4.jpg') no-repeat center center/cover;
+            filter: blur(3px);
+            -webkit-filter: blur(3px);
+            transform: scale(1.05);
+            z-index: -2;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+
+        /* Back button styling */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #d4dff5;
+            font-size: 0.95em;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.11);
+            border-color: rgba(21, 87, 36, 0.4);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25),
+                        0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Transparent overlay container */
+        .overlay {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 80px 20px 40px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1000px;
             width: 100%;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            text-align: left;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            flex-grow: 1;
-            overflow-y: auto;
+            animation: slideUp 0.8s ease-out;
         }
 
-        h1, h2, h3 {
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
+        .header {
             text-align: center;
+            margin-bottom: 40px;
         }
 
-        body, .content p, .content ul {
-            font-size: 0.85em;
-            line-height: 1.6;
-            color: white;
-        }
-
-        .section {
-            margin-bottom: 25px;
-        }
-
-        .unit-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #ffff00 !important;
-        }
-
-        .reading-title {
-            font-size: 0.85em;
-            text-decoration: underline;
-            color: white;
-        }
-
-        .activity {
-            color: orange;
-        }
-
-        .grade {
-            color: #00ff00 !important;
-            font-weight: bold;
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
         }
 
         .module-grade {
-            color: #00ff00 !important;
-            font-weight: bold;
             font-size: 1.2em;
-            text-align: center;
+            font-weight: 600;
+            color: #a8b8d8;
             margin-bottom: 20px;
         }
 
-        .bottom-links {
-            text-align: center;
-            margin-top: 20px;
+        /* Content cards */
+        .content-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px) saturate(100%);
+            -webkit-backdrop-filter: blur(8px) saturate(100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 35px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                        0 0 20px rgba(255, 255, 255, 0.05) inset;
+            transition: all 0.3s ease;
         }
 
-        .bottom-links a {
-            color: white;
+        .content-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(21, 87, 36, 0.25),
+                        0 8px 32px rgba(0, 0, 0, 0.2);
+            border-color: rgba(21, 87, 36, 0.3);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Unit styling */
+        .unit {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .unit:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .unit-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .reading-section {
+            margin-bottom: 20px;
+        }
+
+        .reading-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: #d4dff5;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+
+        .reading-list p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #b8c5e0;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            text-align: justify;
+        }
+
+        .reading-list p:before {
+            content: '•';
+            color: #64748b;
+            position: absolute;
+            left: 0;
+        }
+
+        .activity-section {
+            margin-top: 25px;
+        }
+
+        .activity-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .activity-item {
+            margin-bottom: 8px;
+        }
+
+        .activity-item a {
+            color: #d4dff5;
             text-decoration: none;
-            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .activity-item a:hover {
+            color: #f97316;
+            text-decoration: underline;
+        }
+
+        .activity-item p {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .grade {
+            color: #a8b8d8 !important;
+            font-weight: 600;
             font-size: 0.9em;
         }
 
-        .bottom-links a:hover {
-            text-decoration: underline;
+        .summary {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #64748b;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #b8c5e0;
+            font-size: 0.9em;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .summary ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .summary li {
+            margin-bottom: 5px;
+        }
+
+        /* Navigation links */
+        .bottom-navigation {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .nav-link {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #d4dff5;
+            font-size: 0.9em;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.11);
+            border-color: rgba(21, 87, 36, 0.4);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25),
+                        0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .content-card {
+                padding: 25px 30px;
+            }
+
+            .unit-title {
+                font-size: 1.2em;
+            }
+
+            .overlay {
+                padding: 70px 15px 30px;
+            }
+
+            .back-btn {
+                top: 15px;
+                left: 15px;
+                padding: 10px 16px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content-card {
+                padding: 20px 25px;
+            }
+
+            .nav-link {
+                font-size: 0.9em;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- Back button -->
+    <a href="index.html" class="back-btn">
+        ← Back to Home
+    </a>
+
     <div class="overlay">
-        <div class="content">
-            <h1>Enterprise IT Project Management January 2025</h1>
-            
-            <p class="module-grade">Overall Module Grade: Distinction</p>
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <h1>Enterprise IT Project Management</h1>
+                <p class="module-grade">Overall Module Grade: Distinction</p>
+            </div>
 
-            <p class="unit-title">Unit 1: Introduction to IT Project Management</p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Hughes, B. et al. (2019) Project Management for IT-Related Projects. 3rd edn. Swindon: BCS Learning and Development Ltd. Chapter 1<br>
-            Lehtinen, A. et al. (2014) 'Perceived causes of software project failures – An analysis of their relationships', Information and Software Technology, 56(6), pp. 623–643.<br>
-            <em>Recommended Reading:</em> Goatham, R. (2020) Why Projects Fail.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>McRae, H. (1993) 'Comment: Taking the bull by the horns', The Independent, 12 March, p.1.<br>
-            Eggen, D. and Witte, G. (2006) 'The FBI's Upgrade That Wasn't', The Washington Post, 18 August, p.1.</p>
-            <p class="reading-title">Seminar:</p>
-            <p>Introductory Seminar </p>
-            <h4 class="activity">Activity:</h4>
-            <p>Explore the fundamentals of IT project management and reflect on personal project experience.</p>
+            <!-- Module Content Card -->
+            <div class="content-card">
 
-            <p class="unit-title">Unit 2: Requirements Management and Stakeholder Engagement</p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Hughes, B. et al. (2019) Project Management for IT-Related Projects. 3rd edn. Swindon: BCS Learning and Development Ltd. Chapters 2, 3 and 6<br>
-            Sun, J. and Sun, M. (2018) 'Formal Methods and Software Engineering', ICFEM 2018, 11232(1), pp. 1-480.<br>
-            <em>Recommended Reading:</em> Villadsen, K. et al. (2022) 'Bridging the Requirements-Specification Gap using Behaviour-Driven Development', pp. 19-33.<br>
-            Lenka, R.K., Kumar, S. and Mamgain, S. (2018) 'Behavior driven development: Tools and challenges', pp. 1032-1037.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>Benno, R., Richard, J. and Jens, E. (2017) Behave Tutorial.</p>
-            <p class="reading-title">Seminar:</p>
-            <p>Requirements Management: Using the Gherkin Language</p>
-            <h4 class="activity">Activity:</h4>
-            <p>Analyse stakeholder requirements and practice writing user stories using Gherkin syntax.</p>
+                <div class="unit">
+                    <h3 class="unit-title">Unit 1: Introduction to IT Project Management</h3>
 
-            <p class="unit-title">Unit 3: Work Breakdown Structures and Scheduling</p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Akindote, O.J. et al. (2024) 'Evaluating the effectiveness of it project management in healthcare digitalisation: a review'.<br>
-            Miranda, D. and Watts, R. (2024) 'What is a RACI Chart?'<br>
-            Flyvbjerg, B. (2021) 'Top ten behavioural biases in project management'.<br>
-            Levitt, R.E. (2011) 'Towards project management 2.0'.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p></p>
-            <h4 class="activity">Activity:</h4>
-            <p>Develop a detailed WBS and Gantt chart for a given IT project.<br>
-            Lecturecast: Project Management Tasks, Tools, and Techniques.<br>
-            Continue with Forum Discussion<br>
-            <a href="projects/EnterpriseITProjectManagement/groupproject.html" style="color: orange; text-decoration: none;">Part 1: Coursework: Group Report</a> <span class="grade">(Grade: Distinction)</span></p>
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Hughes, B. et al. (2019) Project Management for IT-Related Projects. 3rd edn. Swindon: BCS Learning and Development Ltd. Chapter 1</p>
+                            <p>Lehtinen, A. et al. (2014) 'Perceived causes of software project failures – An analysis of their relationships', Information and Software Technology, 56(6), pp. 623–643.</p>
+                            <p><em>Recommended Reading:</em> Goatham, R. (2020) Why Projects Fail.</p>
+                        </div>
+                    </div>
 
-            <p class="unit-title">Unit 4: Forecasting and Estimation</p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Alves, J.L., Ferreira, E.A. and de Nadae, J. (2021) 'Crisis and risks in engineering project management: a review'.<br>
-            Ferreira de Araújo Lima, P., Marcelino-Sadaba, S. and Verbano, C. (2021) 'Successful implementation of project risk management'.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>George, C. (2020) 'The essence of risk identification in project risk management'.</p>
-            <p class="reading-title">Seminar:</p>
-            <p>Project Forecasting and Estimating<p>
-            <p>Create a demo/prototype of an estimating application in Python.<br>
-            Project Forecasting and Estimating </p>
-            <h4 class="activity">Activity:</h4>
-            <p>Use estimation techniques (e.g., three-point estimating) to assess cost and schedule risks.</p>
+                    <div class="reading-section">
+                        <p class="reading-title">Additional Reading:</p>
+                        <div class="reading-list">
+                            <p>McRae, H. (1993) 'Comment: Taking the bull by the horns', The Independent, 12 March, p.1.</p>
+                            <p>Eggen, D. and Witte, G. (2006) 'The FBI's Upgrade That Wasn't', The Washington Post, 18 August, p.1.</p>
+                        </div>
+                    </div>
 
-            <p class="unit-title">Unit 5: Governance and Risk Management</p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Khang, A. et al. (2023) Designing Workforce Management Systems for Industry 4.0.<br>
-            Odejide, O.A. and Edunjobi, T.E. (2024) 'AI in project management'.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>Guo, K. and Zhang, L. (2022) 'Multi-objective optimisation for improved project management'.<br>
-            El Khatib, M. et al. (2021) 'The impact of blockchain on project management'.</p>
-            <h4 class="activity">Activity:</h4>
-            <p>Critically evaluate a project risk register and apply a governance framework (e.g., PRINCE2).<br>
-            Lecturecast: Future Trends.</p>
+                    <div class="reading-section">
+                        <p class="reading-title">Seminar:</p>
+                        <div class="reading-list">
+                            <p>Introductory Seminar</p>
+                        </div>
+                    </div>
 
-            <p class="unit-title">Unit 6: Emerging Trends and Capstone Presentations</p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Alghail, A., Yao, L. and Abbas, M. (2024) 'Will knowledge infrastructure capabilities elevate the project management maturity?'</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p class="reading-title">Seminar:</p>
-            <p>The Future of Project Management</p>
-            <h4 class="activity">Activity:</h4>
-            <p>Submit and present a reflective capstone project demonstrating project planning and control skills.<br>
-            <a href="projects/Module4/IndividualPresentation.html" style="color: orange; text-decoration: none;">Coursework: Individual Presentation and Reflection</a> <span class="grade">(Grade: Distinction)</span></p>
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Explore the fundamentals of IT project management and reflect on personal project experience.</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="bottom-links">
-                <a href="index.html">Back to Home</a>
-                <a href="university-of-essex.html">Back to University of Essex</a>
-                <a href="Module1.html">Module 1</a>
-                <a href="Module2.html">Module 2</a>
-                <a href="Module3.html">Module 3</a>
-                <a href="Module5.html">Module 5</a>
-                <a href="Module6.html">Module 6</a>
-                <a href="links.html">Links</a>
-          
+                <div class="unit">
+                    <h3 class="unit-title">Unit 2: Requirements Management and Stakeholder Engagement</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Hughes, B. et al. (2019) Project Management for IT-Related Projects. 3rd edn. Swindon: BCS Learning and Development Ltd. Chapters 2, 3 and 6</p>
+                            <p>Sun, J. and Sun, M. (2018) 'Formal Methods and Software Engineering', ICFEM 2018, 11232(1), pp. 1-480.</p>
+                            <p><em>Recommended Reading:</em> Villadsen, K. et al. (2022) 'Bridging the Requirements-Specification Gap using Behaviour-Driven Development', pp. 19-33.</p>
+                            <p>Lenka, R.K., Kumar, S. and Mamgain, S. (2018) 'Behavior driven development: Tools and challenges', pp. 1032-1037.</p>
+                        </div>
+                    </div>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Additional Reading:</p>
+                        <div class="reading-list">
+                            <p>Benno, R., Richard, J. and Jens, E. (2017) Behave Tutorial.</p>
+                        </div>
+                    </div>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Seminar:</p>
+                        <div class="reading-list">
+                            <p>Requirements Management: Using the Gherkin Language</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Analyse stakeholder requirements and practice writing user stories using Gherkin syntax.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 3: Work Breakdown Structures and Scheduling</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Akindote, O.J. et al. (2024) 'Evaluating the effectiveness of it project management in healthcare digitalisation: a review'.</p>
+                            <p>Miranda, D. and Watts, R. (2024) 'What is a RACI Chart?'</p>
+                            <p>Flyvbjerg, B. (2021) 'Top ten behavioural biases in project management'.</p>
+                            <p>Levitt, R.E. (2011) 'Towards project management 2.0'.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Develop a detailed WBS and Gantt chart for a given IT project.</p>
+                            <p>Lecturecast: Project Management Tasks, Tools, and Techniques.</p>
+                            <p>Continue with Forum Discussion</p>
+                            <p><a href="projects/EnterpriseITProjectManagement/groupproject.html" target="_blank">Part 1: Coursework: Group Report</a> <span class="grade">(Grade: Distinction)</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 4: Forecasting and Estimation</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Alves, J.L., Ferreira, E.A. and de Nadae, J. (2021) 'Crisis and risks in engineering project management: a review'.</p>
+                            <p>Ferreira de Araújo Lima, P., Marcelino-Sadaba, S. and Verbano, C. (2021) 'Successful implementation of project risk management'.</p>
+                        </div>
+                    </div>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Additional Reading:</p>
+                        <div class="reading-list">
+                            <p>George, C. (2020) 'The essence of risk identification in project risk management'.</p>
+                        </div>
+                    </div>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Seminar:</p>
+                        <div class="reading-list">
+                            <p>Project Forecasting and Estimating</p>
+                            <p>Create a demo/prototype of an estimating application in Python.</p>
+                            <p>Project Forecasting and Estimating</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Use estimation techniques (e.g., three-point estimating) to assess cost and schedule risks.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 5: Governance and Risk Management</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Khang, A. et al. (2023) Designing Workforce Management Systems for Industry 4.0.</p>
+                            <p>Odejide, O.A. and Edunjobi, T.E. (2024) 'AI in project management'.</p>
+                        </div>
+                    </div>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Additional Reading:</p>
+                        <div class="reading-list">
+                            <p>Guo, K. and Zhang, L. (2022) 'Multi-objective optimisation for improved project management'.</p>
+                            <p>El Khatib, M. et al. (2021) 'The impact of blockchain on project management'.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Critically evaluate a project risk register and apply a governance framework (e.g., PRINCE2).</p>
+                            <p>Lecturecast: Future Trends.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 6: Emerging Trends and Capstone Presentations</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Alghail, A., Yao, L. and Abbas, M. (2024) 'Will knowledge infrastructure capabilities elevate the project management maturity?'</p>
+                        </div>
+                    </div>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Seminar:</p>
+                        <div class="reading-list">
+                            <p>The Future of Project Management</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Submit and present a reflective capstone project demonstrating project planning and control skills.</p>
+                            <p><a href="projects/Module4/IndividualPresentation.html" target="_blank">Coursework: Individual Presentation and Reflection</a> <span class="grade">(Grade: Distinction)</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="bottom-navigation">
+                <a href="index.html" class="nav-link">Back to Home</a>
+                <a href="university-of-essex.html" class="nav-link">University of Essex</a>
+                <a href="Module1.html" class="nav-link">Module 1</a>
+                <a href="Module2.html" class="nav-link">Module 2</a>
+                <a href="Module3.html" class="nav-link">Module 3</a>
+                <a href="Module5.html" class="nav-link">Module 5</a>
+                <a href="Module6.html" class="nav-link">Module 6</a>
+                <a href="links.html" class="nav-link">All Links</a>
             </div>
         </div>
     </div>

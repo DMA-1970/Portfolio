@@ -1,294 +1,658 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 1: Launching into Enterprise IT Management - David Abiodun</title>
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Ensure body and html fill the entire height */
-        html, body {
+        * {
             margin: 0;
             padding: 0;
-            height: 100%; /* Full viewport height */
-            font-family: Arial, sans-serif;
-            background: url('assets/DJI_0733.jpg') no-repeat center center/cover;
-            background-size: cover; /* Ensure background covers the full viewport */
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
-
-        /* Ensure the overlay covers the full viewport height */
-        .overlay {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Keep content spaced out from top to bottom */
-            align-items: center;
-            height: 100vh; /* Full height of the viewport */
-            width: 100vw;  /* Full width of the viewport */
-            padding: 20px;
             box-sizing: border-box;
-            background: rgba(0, 0, 0, 0.7); /* Dark overlay for better text contrast */
         }
 
-        /* Content box styling */
-        .content {
-            max-width: 800px;
-            width: 100%; /* Ensure it doesn't take up too much space */
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            text-align: left; /* Align text to the left for readability */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for focus */
-            flex-grow: 1; /* Allow the content to grow */
-            overflow-y: auto; /* Allow vertical scrolling inside the content if needed */
+        body, html {
+            height: 100%;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* Center align headings */
-        h1, h2, h3 {
+        /* Blurred background with dark overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/Module1.jpg') no-repeat center center/cover;
+            filter: blur(3px);
+            -webkit-filter: blur(3px);
+            transform: scale(1.05);
+            z-index: -2;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+
+        /* Back button styling */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #d4dff5;
+            font-size: 0.95em;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.11);
+            border-color: rgba(21, 87, 36, 0.4);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25),
+                        0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Transparent overlay container */
+        .overlay {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 80px 20px 40px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
+        .header {
             text-align: center;
+            margin-bottom: 40px;
         }
 
-        /* Reduce font size and increase line height for readability */
-        body, .content p, .content ul {
-            font-size: 0.85em; /* Slightly smaller font size for all content */
-            line-height: 1.6; /* Increase line height for better readability */
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
         }
 
-        /* Add more spacing between sections */
-        .section {
-            margin-bottom: 25px; /* Increase space between sections */
-        }
-
-        /* Bold, increase the size, and set Unit titles to yellow */
-        .unit-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: yellow;
-        }
-
-        /* Required and Additional Reading titles */
-        .reading-title {
-            font-size: 0.85em; /* Slightly smaller font size for reading titles */
-            text-decoration: underline;
-            color: white;
-        }
-
-        /* Activity links styling */
-        .activity {
-            color: orange;
-        }
-
-        /* Grade styling */
-        .grade {
-            color: #00ff00 !important;
-            font-weight: bold;
-        }
-
-        /* Module grade styling */
         .module-grade {
-            color: #00ff00 !important;
-            font-weight: bold;
             font-size: 1.2em;
-            text-align: center;
+            font-weight: 600;
+            color: #a8b8d8;
             margin-bottom: 20px;
         }
 
-        /* Bottom links styling within the content box */
-        .bottom-links {
-            text-align: center;
-            margin-top: 20px;
+        /* Content cards - matching homepage bio style */
+        .content-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 35px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
-        /* Styling for the text links */
-        .bottom-links a {
-            color: white;
+        .content-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(21, 87, 36, 0.25),
+                        0 8px 32px rgba(0, 0, 0, 0.2);
+            border-color: rgba(21, 87, 36, 0.3);
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+        /* Unit styling */
+        .unit {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .unit:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .unit-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .reading-section {
+            margin-bottom: 20px;
+        }
+
+        .reading-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: #d4dff5;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+
+        .reading-list p {
+            font-size: 0.95em;
+            line-height: 1.8;
+            color: #b8c5e0;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            text-align: justify;
+        }
+
+        .reading-list p:before {
+            content: '•';
+            color: #8095b8;
+            position: absolute;
+            left: 0;
+        }
+
+        .activity-section {
+            margin-top: 25px;
+        }
+
+        .activity-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .activity-item {
+            margin-bottom: 8px;
+        }
+
+        .activity-item a {
+            color: #d4dff5;
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.9em; /* Adjust font size if needed */
+            transition: all 0.3s ease;
         }
 
-        .bottom-links a:hover {
-            text-decoration: underline; /* Underline on hover */
+        .activity-item a:hover {
+            color: #ffffff;
+            text-decoration: underline;
         }
 
-        /* Smaller italic font for summaries */
+        .activity-item p {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .grade {
+            color: #a8b8d8 !important;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
         .summary {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
             font-style: italic;
-            font-size: 0.8em;
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .summary ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .summary li {
+            margin-bottom: 5px;
+            color: #b8c5e0;
+        }
+
+        /* General paragraph styling for text justification */
+        p {
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* Navigation links */
+        .bottom-navigation {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .nav-link {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #d4dff5;
+            font-size: 0.9em;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.11);
+            border-color: rgba(21, 87, 36, 0.4);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25),
+                        0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .content-card {
+                padding: 25px 30px;
+            }
+
+            .unit-title {
+                font-size: 1.2em;
+            }
+
+            .overlay {
+                padding: 70px 15px 30px;
+            }
+
+            .back-btn {
+                top: 15px;
+                left: 15px;
+                padding: 10px 16px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content-card {
+                padding: 20px 25px;
+            }
+
+            .nav-link {
+                font-size: 0.9em;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- Back button -->
+    <a href="index.html" class="back-btn">
+        ← Back to Home
+    </a>
+
     <div class="overlay">
-        <div class="content">
-            <h1>Launching into Enterprise IT Management</h1>
-            
-            <p class="module-grade">Overall Module Grade: Merit</p>
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <h1>Launching into Enterprise IT Management</h1>
+                <p class="module-grade">Overall Module Grade: Merit</p>
+            </div>
 
-            <!-- All units and activities -->
-            <div class="section">
-                <h3>First Module Research Subjects</h3>
+            <!-- Module Content Card -->
+            <div class="content-card">
+                <div class="unit">
+                    <h3 class="unit-title">Unit 1: An Introduction to EIT</h3>
 
-                <p class="unit-title">Unit 1: An Introduction to EIT</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>SFIA. (n.d) List of bodies of knowledge.</p>
-                <p>Ziemann, J. (2022) Fundamentals of enterprise architecture management: foundations for steering the enterprise-wide digital system. Cham, Switzerland: Springer International Publishing.</p>
-                <p>EITBOK. (n.d) Guide to the Enterprise IT Body of Knowledge.</p>
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>SFIA. (n.d) List of bodies of knowledge.</p>
+                            <p>Ziemann, J. (2022) Fundamentals of enterprise architecture management: foundations for steering the enterprise-wide digital system. Cham, Switzerland: Springer International Publishing.</p>
+                            <p>EITBOK. (n.d) Guide to the Enterprise IT Body of Knowledge.</p>
+                        </div>
+                    </div>
 
-                <p class="reading-title">Additional Reading:</p>
-                <p>Philippe Desfray, G. R. (2014) Modeling Enterprise Architecture with TOGAF: A Practical Guide Using UML and BPMN. 1st ed. San Diego: Elsevier Science.</p>
+                    <div class="reading-section">
+                        <p class="reading-title">Additional Reading:</p>
+                        <div class="reading-list">
+                            <p>Philippe Desfray, G. R. (2014) Modeling Enterprise Architecture with TOGAF: A Practical Guide Using UML and BPMN. 1st ed. San Diego: Elsevier Science.</p>
+                        </div>
+                    </div>
 
-                <!-- Activity for Unit 1 -->
-                <h4 class="activity">Activity:</h4>
-                <p><a class="activity" href="https://www.my-course.co.uk/mod/forum/discuss.php?d=228967#p409630" target="_blank">Collaborative Learning Discussion</a></p>
-                <p>Introductory Seminar</p>
-
-                <p class="unit-title">Unit 2: EIT vs. Shadow IT</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>Mallmann, G. L., Montesdioca Zimmermann, G. P. & Percio, G. (2019) The Social Side of Shadow IT and its Impacts: Investigating the Relationship with Social Influence and Social Presence. Proceedings of the Annual Hawaii International Conference on System Sciences.</p>
-
-                <p class="reading-title">Additional Reading:</p>
-                <p>Huber, M., Zimmermann, S., Rentrop, C. & Felden, C. (2017) Integration of Shadow IT Systems with Enterprise Systems. A Literature Review. PACIS 2017 Proceedings 134.</p>
-                <p>Godefroid, M., Plattfaut, R. & Niehaves, B. (2021) IT Outside of the IT Department: Reviewing Lightweight IT in Times of Shadow IT and IT Consumerization. Innovation Through Information Systems 554–571.</p>
-
-                <!-- Activity for Unit 2 -->
-                <h4 class="activity">Activity:</h4>
-                <p><a class="activity" href="https://www.my-course.co.uk/mod/forum/discuss.php?d=228967#p413194" target="_blank">Collaborative Discussion</a></p>
-                <p>Seminar: The Integration of EIT and SITS</p>
-
-                <p class="unit-title">Unit 3: EIT and Automation</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>Xu, X., Lu, Y., Vogel-Heuser, B. & Wang, L. (2021) Industry 4.0 and Industry 5.0. Inception, conception and perception. Journal of Manufacturing Systems 61(1): 530–535.</p>
-                <p>Akundi, A., Euresti, D., Luna, S., Ankobiah, W., Lopes, A. & Edinbarough, I. (2022) State of Industry 5.0. Analysis and identification of current research trends. Applied System Innovation 5(1): 27.</p>
-                <p>Downey, A., Meyer, C. & Elkner, J. (2008) How to Think Like a Computer Scientist: Learning with Python. Green Tea Press.</p>
-                <p>EITBOK. (n.d) Guide to the Enterprise IT Body of Knowledge.</p>
-
-                <!-- Activity for Unit 3 -->
-                <h4 class="activity">Activity:</h4>
-                <p><a class="activity" href="https://www.my-course.co.uk/mod/forum/discuss.php?d=228967#p416340" target="_blank">Collaborative Discussion</a> <span class="grade">(Grade: Distinction)</span></p>
-                <p>Lecturecast: Computer Automation</p>
-
-                <p class="unit-title">Unit 4: A Comparative Study: Practical Automation Exercises using C and Python</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>Bellard,F. (2018) Tiny C Compiler Reference Documentation.</p>
-                <p>Downey, A., Meyer, C. & Elkner, J. (2020) How to think like a computer scientist: Learning with Python 2e. Wellsley, Ma: Green Tea Press.</p>
-                <p>FreeCodeCamp. (2019) Sorting Algorithms Explained with Examples in JavaScript, Python, Java, and C++.</p>
-                <p>GCC Manual. (n.d) Using the GNU Compiler Collection.</p>
-
-                <!-- Activity for Unit 4 -->
-                <h4 class="activity">Activity:</h4>
-                <p>Seminar: Programming Exercises</p>
-
-                <p class="summary">
-                    Preparation for this week's seminar: <br>
-                    If you have never tried programming before, attempt the exercises in chapters 1 - 3 of Downey et al (2020). If you are a more experienced developer, attempt the exercises in chapters 4 and 5. Be prepared to demonstrate your solutions in this week's seminar.<br><be>
-                    Ensure you attend or watch the recording of this week's seminar, as your tutor will be demonstrating a sort algorithm in two different languages as preparation for your Individual Programming Exercise, due in Unit 7.<br><br>
-                    Also this week, explore the likes of Python and C in more detail by making use of the following resources:
-                    <ul>
-                        <li>Python Tutorial (w3schools.com)</li>
-                        <li>C Tutorial (w3schools.com)</li>
-                        <li>Use Jupyter Notebook to write and run Python scripts. Download the latest version of Anaconda.</li>
-                    </ul>
-                </p>
-
-                <p class="unit-title">Unit 5: Business Systems, Outsourcing and the Cloud</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>Desfray, P. & Raymond, G. (2014) Modeling Enterprise Architecture with TOGAF®: A Practical Guide Using UML and BPMN. Elsevier Science & Technology.</p>
-                <p>Novicio, T. (2021) 15 Biggest Outsourcing Companies in the World.</p>
-
-                <!-- Activity for Unit 5 -->
-                <h4 class="activity">Activity:</h4>
-                <p>Lecturecast: Business Computing, Outsourcing and the Cloud</p>
-
-                <p class="unit-title">Unit 6: A Cost Comparison Between On-premise, Private and Public Cloud Hosting</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>Hryb, D. (2021) Application migration: a step-by-step guide.</p>
-                <p>Korzeniowski, P. (2017) Build an application migration plan step by step.</p>
-
-                <!-- Activity for Unit 6 -->
-                <h4 class="activity">Activity:</h4>
-                <p>Collaborative Discussion</p>
-                <p>Seminar: Improving a Company's Operations</p>
-                <p><a class="activity" href="projects/Module 1/AWS costings.pptx">AWS Costings</a></p>
-
-                <p class="unit-title">Unit 7: Software Licensing: Commercial vs. Open Source</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>Perzanowski, A. & Schultz, J. M. (2016) The End of Ownership: Personal Property in the Digital Economy. Cambridge: MIT Press.</p>
-                <p>GNU. (2007) GNU GENERAL PUBLIC LICENSE.</p>
-                <p>Open Source Initiative. (n.d) The 3-Clause BSD License.</p>
-
-                <!-- Activity for Unit 7 -->
-                <h4 class="activity">Activity:</h4>
-                <p>Lecturecast: Software Licensing and Open Source</p>
-                <p><a class="activity" href="https://github.com/DMA-1970/Portfolio/tree/main/projects/Module%201/Program">Assessment: Individual Programming Exercise</a> <span class="grade">(Grade: Distinction)</span></p>
-
-                <p class="unit-title">Unit 8: A Case Study: Investigating Business and Technical Innovations of Large Corporations and SMEs</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>CORTADA, J. (2021) How the IBM PC Won, Then Lost, the Personal Computer Market.</p>
-                <p>Torchinsky, J. (2020) How an obscure British PC maker invented ARM and changed the world.</p>
-
-                <!-- Activity for Unit 8 -->
-                <h4 class="activity">Activity:</h4>
-                <p>Collaborative Discussion</p>
-                <p>Seminar: Technical Innovations</p>
-                <p><a class="activity" href="projects/Module 1/Unit 8 Seminar Grid Template.docx">Unit 8 Seminar Grid Template</a></p>
-
-                <p class="unit-title">Unit 9: Communications and Digital Transformation</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>Philippe Desfray, G. R. (2014) Modeling Enterprise Architecture with TOGAF: A Practical Guide Using UML and BPMN. 1st ed. San Diego: Elsevier Science.</p>
-
-                <!-- Activity for Unit 9 -->
-                <h4 class="activity">Activity:</h4>
-                <p>Lecturecast: EIT Communications and Digital Transformation</p>
-
-                <p class="unit-title">Unit 10: The Digital Transformation Process</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>Marabelli, M. & Galliers, R. D. (2017) A reflection on information systems strategizing: the role of power and everyday practices. Information Systems Journal 27(3): 347–366.</p>
-
-                <!-- Activity for Unit 10 -->
-                <h4 class="activity">Activity:</h4>
-                <p>Seminar: Strategy and Digital Transformation</p>
-                <p>Using BPMN/UML as the name of the Seminar</p>
-                <p><a class="activity" href="projects/Module 1/Introducing a digital process using BPMN.pdf">Introducing a digital process using BPMN</a></p>
-                <p><a class="activity" href="projects/Module 1/BPMN.png">Represent your digitalised process, using BPMN/UML notation</a></p>
-
-                <p class="unit-title">Unit 11: Future Trends</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>Acemoglu, D. & Restrepo, P. (2018) Demographics and Automation. MIT Department of Economics Working Paper No. 18-05.</p>
-                <p>Pan, Y. & Zhang, L. (2021) Roles of artificial intelligence in construction engineering and management: A critical review and future trends. Automation in construction 122103517-.</p>
-                <p>Siderska, J. (2020) Robotic Process Automation — a driver of digital transformation? Engineering management in production and services 12(2): 21–31.</p>
-                <p>Anwar, A. A. (2022) A survey of semantic web (Web 3.0), its applications, challenges, future and its relation with Internet of things (IoT). Web Intelligence 20(3): 173–202.</p>
-                <p>Kaur, J. & Ramkumar, K. R. (2022) The recent trends in cyber security: A review. Journal of King Saud University - Computer and information sciences 34(8): 5766–5781.</p>
-
-                <!-- Activity for Unit 11 -->
-                <h4 class="activity">Activity:</h4>
-                <p>Lecturecast: EIT Emerging Trends</p>
-
-                <p class="unit-title">Unit 12: The Great Debate</p>
-                <p class="reading-title">Required Reading:</p>
-                <p>Hause, M. (2020) Integrating Security into Enterprise Architecture with UAF and PLE. Insight (International Council on Systems Engineering) 23(3): 44–50.</p>
-                <p>Wewerka, J. & Reichert, M. (2023) Robotic process automation - a systematic mapping study and classification framework. Enterprise information systems 17(2).</p>
-                <p>Dong, C., Saxena, A., Bick, M. & Sabia, A. (2023) On the Journey to AI Maturity. Understanding the Role of Enterprise Artificial Intelligence Service. AIS Transactions on Enterprise Systems 6(1).</p>
-                <p>Baresi, L. & Garriga, M. (2019) Microservices: The Evolution and Extinction of Web Services?. Cham: Springer International Publishing. 3–28.</p>
-
-                <!-- Activity for Unit 12 -->
-                <h4 class="activity">Activity:</h4>
-                <p>The Great Debate Seminar</p>
-                <p><a class="activity" href="projects/Module 1/Individual Presentation.html">Individual Presentation</a> <span class="grade">(Grade: Pass)</span></p>
-
-                <!-- Bottom links aligned at the bottom of the viewport -->
-                <div class="bottom-links">
-                    <a href="index.html">Back to Home</a>
-                    <a href="university-of-essex.html">Back to University of Essex</a>
-                    <a href="Module2.html">Module 2</a>
-                    <a href="Module3.html">Module 3</a>
-                    <a href="Module4.html">Module 4</a>
-                    <a href="Module5.html">Module 5</a>
-                    <a href="Module6.html">Module 6</a>
-                    <a href="links.html">Links</a>
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=228967#p409630" target="_blank">Collaborative Learning Discussion</a></p>
+                            <p>Introductory Seminar</p>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 2: EIT vs. Shadow IT</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Mallmann, G. L., Montesdioca Zimmermann, G. P. & Percio, G. (2019) The Social Side of Shadow IT and its Impacts: Investigating the Relationship with Social Influence and Social Presence. Proceedings of the Annual Hawaii International Conference on System Sciences.</p>
+                        </div>
+                    </div>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Additional Reading:</p>
+                        <div class="reading-list">
+                            <p>Huber, M., Zimmermann, S., Rentrop, C. & Felden, C. (2017) Integration of Shadow IT Systems with Enterprise Systems. A Literature Review. PACIS 2017 Proceedings 134.</p>
+                            <p>Godefroid, M., Plattfaut, R. & Niehaves, B. (2021) IT Outside of the IT Department: Reviewing Lightweight IT in Times of Shadow IT and IT Consumerization. Innovation Through Information Systems 554–571.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=228967#p413194" target="_blank">Collaborative Discussion</a></p>
+                            <p>Seminar: The Integration of EIT and SITS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 3: EIT and Automation</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Xu, X., Lu, Y., Vogel-Heuser, B. & Wang, L. (2021) Industry 4.0 and Industry 5.0. Inception, conception and perception. Journal of Manufacturing Systems 61(1): 530–535.</p>
+                            <p>Akundi, A., Euresti, D., Luna, S., Ankobiah, W., Lopes, A. & Edinbarough, I. (2022) State of Industry 5.0. Analysis and identification of current research trends. Applied System Innovation 5(1): 27.</p>
+                            <p>Downey, A., Meyer, C. & Elkner, J. (2008) How to Think Like a Computer Scientist: Learning with Python. Green Tea Press.</p>
+                            <p>EITBOK. (n.d) Guide to the Enterprise IT Body of Knowledge.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=228967#p416340" target="_blank">Collaborative Discussion</a> <span class="grade">(Grade: Distinction)</span></p>
+                            <p>Lecturecast: Computer Automation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 4: A Comparative Study: Practical Automation Exercises using C and Python</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Bellard,F. (2018) Tiny C Compiler Reference Documentation.</p>
+                            <p>Downey, A., Meyer, C. & Elkner, J. (2020) How to think like a computer scientist: Learning with Python 2e. Wellsley, Ma: Green Tea Press.</p>
+                            <p>FreeCodeCamp. (2019) Sorting Algorithms Explained with Examples in JavaScript, Python, Java, and C++.</p>
+                            <p>GCC Manual. (n.d) Using the GNU Compiler Collection.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Seminar: Programming Exercises</p>
+                        </div>
+                    </div>
+
+                    <div class="summary">
+                        Preparation for this week's seminar:<br>
+                        If you have never tried programming before, attempt the exercises in chapters 1 - 3 of Downey et al (2020). If you are a more experienced developer, attempt the exercises in chapters 4 and 5. Be prepared to demonstrate your solutions in this week's seminar.<br><br>
+                        Ensure you attend or watch the recording of this week's seminar, as your tutor will be demonstrating a sort algorithm in two different languages as preparation for your Individual Programming Exercise, due in Unit 7.<br><br>
+                        Also this week, explore the likes of Python and C in more detail by making use of the following resources:
+                        <ul>
+                            <li>Python Tutorial (w3schools.com)</li>
+                            <li>C Tutorial (w3schools.com)</li>
+                            <li>Use Jupyter Notebook to write and run Python scripts. Download the latest version of Anaconda.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 5: Business Systems, Outsourcing and the Cloud</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Desfray, P. & Raymond, G. (2014) Modeling Enterprise Architecture with TOGAF®: A Practical Guide Using UML and BPMN. Elsevier Science & Technology.</p>
+                            <p>Novicio, T. (2021) 15 Biggest Outsourcing Companies in the World.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Lecturecast: Business Computing, Outsourcing and the Cloud</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 6: A Cost Comparison Between On-premise, Private and Public Cloud Hosting</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Hryb, D. (2021) Application migration: a step-by-step guide.</p>
+                            <p>Korzeniowski, P. (2017) Build an application migration plan step by step.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Collaborative Discussion</p>
+                            <p>Seminar: Improving a Company's Operations</p>
+                            <p><a href="projects/Module 1/AWS costings.pptx">AWS Costings</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 7: Software Licensing: Commercial vs. Open Source</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Perzanowski, A. & Schultz, J. M. (2016) The End of Ownership: Personal Property in the Digital Economy. Cambridge: MIT Press.</p>
+                            <p>GNU. (2007) GNU GENERAL PUBLIC LICENSE.</p>
+                            <p>Open Source Initiative. (n.d) The 3-Clause BSD License.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Lecturecast: Software Licensing and Open Source</p>
+                            <p><a href="https://github.com/DMA-1970/Portfolio/tree/main/projects/Module%201/Program">Assessment: Individual Programming Exercise</a> <span class="grade">(Grade: Distinction)</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 8: A Case Study: Investigating Business and Technical Innovations of Large Corporations and SMEs</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>CORTADA, J. (2021) How the IBM PC Won, Then Lost, the Personal Computer Market.</p>
+                            <p>Torchinsky, J. (2020) How an obscure British PC maker invented ARM and changed the world.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Collaborative Discussion</p>
+                            <p>Seminar: Technical Innovations</p>
+                            <p><a href="projects/Module 1/Unit 8 Seminar Grid Template.docx">Unit 8 Seminar Grid Template</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 9: Communications and Digital Transformation</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Philippe Desfray, G. R. (2014) Modeling Enterprise Architecture with TOGAF: A Practical Guide Using UML and BPMN. 1st ed. San Diego: Elsevier Science.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Lecturecast: EIT Communications and Digital Transformation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 10: The Digital Transformation Process</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Marabelli, M. & Galliers, R. D. (2017) A reflection on information systems strategizing: the role of power and everyday practices. Information Systems Journal 27(3): 347–366.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Seminar: Strategy and Digital Transformation</p>
+                            <p>Using BPMN/UML as the name of the Seminar</p>
+                            <p><a href="projects/Module 1/Introducing a digital process using BPMN.pdf">Introducing a digital process using BPMN</a></p>
+                            <p><a href="projects/Module 1/BPMN.png">Represent your digitalised process, using BPMN/UML notation</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 11: Future Trends</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Acemoglu, D. & Restrepo, P. (2018) Demographics and Automation. MIT Department of Economics Working Paper No. 18-05.</p>
+                            <p>Pan, Y. & Zhang, L. (2021) Roles of artificial intelligence in construction engineering and management: A critical review and future trends. Automation in construction 122103517-.</p>
+                            <p>Siderska, J. (2020) Robotic Process Automation — a driver of digital transformation? Engineering management in production and services 12(2): 21–31.</p>
+                            <p>Anwar, A. A. (2022) A survey of semantic web (Web 3.0), its applications, challenges, future and its relation with Internet of things (IoT). Web Intelligence 20(3): 173–202.</p>
+                            <p>Kaur, J. & Ramkumar, K. R. (2022) The recent trends in cyber security: A review. Journal of King Saud University - Computer and information sciences 34(8): 5766–5781.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Lecturecast: EIT Emerging Trends</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 12: The Great Debate</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Hause, M. (2020) Integrating Security into Enterprise Architecture with UAF and PLE. Insight (International Council on Systems Engineering) 23(3): 44–50.</p>
+                            <p>Wewerka, J. & Reichert, M. (2023) Robotic process automation - a systematic mapping study and classification framework. Enterprise information systems 17(2).</p>
+                            <p>Dong, C., Saxena, A., Bick, M. & Sabia, A. (2023) On the Journey to AI Maturity. Understanding the Role of Enterprise Artificial Intelligence Service. AIS Transactions on Enterprise Systems 6(1).</p>
+                            <p>Baresi, L. & Garriga, M. (2019) Microservices: The Evolution and Extinction of Web Services?. Cham: Springer International Publishing. 3–28.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>The Great Debate Seminar</p>
+                            <p><a href="projects/Module 1/Individual Presentation.html">Individual Presentation</a> <span class="grade">(Grade: Pass)</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="bottom-navigation">
+                <a href="index.html" class="nav-link">Back to Home</a>
+                <a href="university-of-essex.html" class="nav-link">University of Essex</a>
+                <a href="Module2.html" class="nav-link">Module 2</a>
+                <a href="Module3.html" class="nav-link">Module 3</a>
+                <a href="Module4.html" class="nav-link">Module 4</a>
+                <a href="Module5.html" class="nav-link">Module 5</a>
+                <a href="Module6.html" class="nav-link">Module 6</a>
+                <a href="links.html" class="nav-link">All Links</a>
             </div>
         </div>
     </div>

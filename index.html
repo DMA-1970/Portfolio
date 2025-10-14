@@ -3,85 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Abiodun's Portfolio</title>
-    <link rel="stylesheet" href="style.css"> <!-- Ensure your external CSS is linked properly -->
+    <title>David Abiodun - Enterprise IT Professional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
             height: 100%;
-            font-family: Arial, sans-serif;
-            background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
-            color: white;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Blurred background with dark overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/trees.jpg') no-repeat center center/cover;
+            filter: blur(3px);
+            -webkit-filter: blur(3px);
+            transform: scale(1.05);
+            z-index: -2;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+
+        /* Transparent overlay container */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
+            animation: fadeIn 1s ease-in;
         }
 
-        .overlay {
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header with profile */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+        }
+
+        .header-text {
+            text-align: left;
+        }
+
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            font-weight: 300;
+            color: #a8b8d8;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .header .credentials {
+            font-size: 0.95em;
+            color: #8095b8;
+            font-weight: 400;
+            margin-top: 8px;
+        }
+
+        /* Bio section */
+        .bio {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 35px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .bio:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(21, 87, 36, 0.25),
+                        0 8px 32px rgba(0, 0, 0, 0.2);
+            border-color: rgba(21, 87, 36, 0.3);
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+        .bio p {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #d4dff5;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Navigation cards grid */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .nav-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 16px;
+            padding: 30px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                        0 0 20px rgba(255, 255, 255, 0.05) inset;
+        }
+
+        .nav-card::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-card:hover::before {
+            opacity: 1;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.11);
+            box-shadow: 0 0 20px rgba(21, 87, 36, 0.3),
+                        0 12px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(21, 87, 36, 0.35);
+        }
+
+        .nav-card-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-card-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-card-desc {
+            font-size: 0.95em;
+            color: #b8c5e0;
+            font-weight: 300;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Additional links section */
+        .quick-links {
             display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
             justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            margin-top: 35px;
         }
 
-        .content {
-            max-width: 800px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            text-align: left; /* Align text to the left */
+        .quick-link {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #d4dff5;
+            font-size: 0.95em;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        .content h1 {
-            margin-bottom: 20px;
-            font-size: 3em;
-            text-align: center; /* Center the main heading */
+        .quick-link:hover {
+            background: rgba(255, 255, 255, 0.11);
+            border-color: rgba(21, 87, 36, 0.4);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25),
+                        0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        .section {
-            margin: 20px 0;
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-text {
+                text-align: center;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .header .subtitle {
+                font-size: 1.1em;
+            }
+
+            .bio {
+                padding: 25px 30px;
+            }
+
+            .bio p {
+                font-size: 1em;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .nav-card {
+                padding: 25px;
+            }
+
+            .quick-links {
+                gap: 10px;
+            }
+
+            .quick-link {
+                font-size: 0.9em;
+                padding: 10px 20px;
+            }
         }
 
-        .section p {
-            margin: 10px 0;
-        }
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2em;
+            }
 
-        /* Text-based link styling */
-        .section a {
-            color: white; /* White text color */
-            text-decoration: none; /* No underline by default */
-            display: block; /* Display links as block-level elements */
-            margin: 5px 0; /* Add spacing between the links */
-        }
+            .header .subtitle {
+                font-size: 1em;
+            }
 
-        .section a:hover {
-            text-decoration: underline; /* Underline on hover */
-            color: #FFD700; /* Yellow color on hover */
+            .bio {
+                padding: 20px 25px;
+            }
+
+            .nav-card-icon {
+                font-size: 2em;
+            }
+
+            .nav-card-title {
+                font-size: 1.15em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="overlay">
-        <div class="content">
-            <h1>David Abiodun</h1>
-            <div class="section">
-                <p>Welcome to my E-Portfolio. I am a dynamic and results-driven professional with hands-on experience in information protection and compliance in the finance industry. Currently an M365 Associate, I am also Azure and ITIL certified. </p>
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <img src="assets/050324-3.578-2.jpg" alt="David Abiodun" class="profile-img">
+                <div class="header-text">
+                    <h1>David Abiodun</h1>
+                    <div class="subtitle">Enterprise Technology Manager</div>
+                    <div class="credentials">M365 Associate | Azure & ITIL Certified | MSc Enterprise IT Management</div>
+                </div>
+            </div>
+
+            <!-- Bio Section -->
+            <div class="bio">
+                <p>Welcome to my E-Portfolio. I am a dynamic and results-driven professional with hands-on experience in information protection and compliance in the finance industry.</p>
                 <p>Proven track record in overseeing all aspects of IT infrastructure, staff management, and project execution, with a keen eye for optimising efficiency and driving continuous improvement initiatives. Skilled in managing cloud infrastructure and desktop support. Recognised for providing exceptional user support and fostering collaboration across teams.</p>
                 <p>In my spare time, I cycle, and I am a certified drone pilot. I enjoy spending time with family.</p>
             </div>
 
-            <!-- Converted buttons to text-based links -->
-            <div class="section">
-                <a href="cv.html">CV</a>
-                <a href="university-of-essex.html">MSc Enterprise IT Management</a>
-                <a href="continuous-development.html">Continuous Development</a>
+            <!-- Main Navigation Cards -->
+            <div class="nav-grid">
+                <a href="university-of-essex.html" class="nav-card">
+                    <span class="nav-card-icon">🎓</span>
+                    <div class="nav-card-title">MSc Enterprise IT Management</div>
+                    <div class="nav-card-desc">Academic portfolio showcasing 6 modules of advanced IT management studies at University of Essex</div>
+                </a>
+
+                <a href="cv.html" class="nav-card">
+                    <span class="nav-card-icon">📄</span>
+                    <div class="nav-card-title">Professional CV</div>
+                    <div class="nav-card-desc">Comprehensive career history, skills, and professional experience in enterprise IT</div>
+                </a>
+
+                <a href="continuous-development.html" class="nav-card">
+                    <span class="nav-card-icon">📚</span>
+                    <div class="nav-card-title">Continuous Development</div>
+                    <div class="nav-card-desc">Ongoing learning, certifications, and professional development journey</div>
+                </a>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <a href="links.html" class="quick-link">All Project Links</a>
+                <a href="Module1.html" class="quick-link">Module 1</a>
+                <a href="Module2.html" class="quick-link">Module 2</a>
+                <a href="Module3.html" class="quick-link">Module 3</a>
+                <a href="Module4.html" class="quick-link">Module 4</a>
+                <a href="Module5.html" class="quick-link">Module 5</a>
+                <a href="Module6.html" class="quick-link">Module 6</a>
             </div>
         </div>
     </div>

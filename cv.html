@@ -3,174 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - David Abiodun</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Professional CV - David Abiodun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Resetting all margins, paddings, and borders for a clean slate */
         * {
             margin: 0;
             padding: 0;
-            border: 0;
             box-sizing: border-box;
         }
 
-        /* Ensure the background image fills the entire screen and no white space appears */
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            min-height: 100vh; /* Full viewport height */
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Styling for the body and html */
         body {
-            background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f5f5f5;
             min-height: 100vh;
-            overflow-y: auto; /* Allow vertical scrolling for smaller screens */
-        }
-
-        /* Overlay styling */
-        .overlay {
-            width: 100%;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
+            margin: 0;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .cv-container {
+            background: #ffffff;
+            max-width: 1000px;
+            width: 100%;
+            min-height: 1200px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 35%;
+            background: #2c3e50;
+            color: #ffffff;
+            padding: 50px 40px;
+            display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensure it covers full screen */
-            box-sizing: border-box;
-        }
-
-        /* Styling for the content area */
-        .content {
-            max-width: 800px;
-            width: 90%; /* Responsive width */
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
+            align-items: center;
             text-align: center;
-            color: white;
-            overflow: auto; /* Ensure content fits within its container */
         }
 
-        /* Heading styling */
-        .content h1 {
-            font-size: 2.5em;
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .name-info h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .name-info .title {
+            font-size: 14px;
+            color: #bdc3c7;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            width: 100%;
+            text-align: left;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
             margin-bottom: 20px;
+            font-size: 14px;
         }
 
-        /* Section styling */
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        .contact-item a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #ffffff;
+        }
+
+        /* Main Content */
+        .content {
+            width: 65%;
+            padding: 50px 60px;
+            background: #ffffff;
+            position: relative;
+        }
+
+        /* Leaf decoration */
+        .leaf-decoration {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            opacity: 0.1;
+        }
+
+        /* Summary Section */
+        .summary {
+            margin-bottom: 40px;
+            color: #2c3e50;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Section Styling */
         .section {
-            margin: 20px 0;
+            margin-bottom: 40px;
         }
 
-        .section h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2c3e50;
         }
 
-        .section h3 {
-            font-size: 1.2em;
+        /* Experience Items */
+        .experience-item {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
             margin-bottom: 5px;
         }
 
-        .section p, .section ul {
-            margin: 10px 0;
-            text-align: left; /* Align lists and text to the left */
+        .job-company {
+            font-size: 15px;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+            font-weight: 500;
         }
 
-        .section ul {
-            list-style: inside;
-            padding-left: 20px;
+        .job-duration {
+            font-size: 14px;
+            color: #95a5a6;
+            font-style: italic;
+            font-weight: 500;
         }
 
-        /* Styling for the home link */
-        .home-link {
-            display: block;
-            margin-top: 30px;
-            color: white;
+        .job-achievements {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .job-achievements li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: #34495e;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .job-achievements li:before {
+            content: '▸';
+            color: #2c3e50;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Education Items */
+        .education-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .degree {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .institution {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 2px;
+        }
+
+        .graduation-year {
+            font-size: 13px;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .skill-item {
+            font-size: 14px;
+            color: #475569;
+            padding: 6px 0;
+        }
+
+        /* Awards */
+        .award-item {
+            margin-bottom: 15px;
+        }
+
+        .award-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 2px;
+        }
+
+        .award-organization {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 2px;
+        }
+
+        .award-year {
+            font-size: 12px;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        /* Back button */
+        .back-btn {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 12px 20px;
             text-decoration: none;
-            font-size: 1.2em;
+            color: #1e293b;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .home-link:hover {
-            color: #FFD700; /* Yellow color on hover */
-            text-decoration: underline;
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 600px) {
-            .content h1 {
-                font-size: 2em; /* Smaller heading */
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
             }
 
-            .content h2, .content h3 {
-                font-size: 1.2em; /* Adjust font size */
+            .cv-container {
+                max-width: 100%;
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 40px 30px;
             }
 
             .content {
-                padding: 15px; /* Adjust padding for smaller screens */
+                width: 100%;
+                padding: 40px 30px;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .name-info h1 {
+                font-size: 24px;
+                letter-spacing: 2px;
+            }
+
+            .leaf-decoration {
+                width: 60px;
+                height: 60px;
+                top: 20px;
+                right: 20px;
+            }
+
+            .back-btn {
+                top: 15px;
+                left: 15px;
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                max-width: none;
+                width: 100%;
+            }
+
+            .back-btn {
+                display: none;
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="overlay">
+    <a href="index.html" class="back-btn">← Back to Home</a>
+
+    <div class="cv-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="assets/050324-3.578-2.jpg" alt="David Abiodun" class="profile-image">
+
+            <div class="name-info">
+                <h1>David Abiodun</h1>
+                <div class="title">Enterprise Technology Manager</div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <span>(+44) 7932 732435</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <span>david@abiodun.co.uk</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <span><a href="https://www.linkedin.com/in/david-abiodun-17912a21/" target="_blank">LinkedIn Profile</a></span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span>Edmonton, UK N9 7JA</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🚗</div>
+                    <span>Full UK Driver's License</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
         <div class="content">
-            <h1>David Abiodun</h1>
-            <div class="section">
-                <h2>Profile</h2>
-                <p>Dynamic and results-driven professional with hands-on experience in information protection and compliance in the finance industry. Leveraging recent Microsoft certification, adept at implementing robust security measures and ensuring regulatory compliance in alignment with industry standards. Proven track record in overseeing IT infrastructure, staff management, and project execution, with a keen eye for optimizing efficiency and driving continuous improvement initiatives.</p>
-                <p><strong>Address:</strong> Edmonton, UK N9 7JA</p>
-                <p><strong>Email:</strong> david@abiodun.co.uk</p>
-                <p><strong>Phone:</strong> (+44) 7932 732435</p>
-                <p><strong>Driving license:</strong> Full UK Driver’s License</p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/david-abiodun-17912a21/" target="_blank">LinkedIn Profile</a></p>
-            </div>
-            
-            <div class="section">
-                <h2>Employment History</h2>
-                
-                <h3>Enterprise Technology Manager, MillTechFX</h3>
-                <p><strong>July 2024 - Present</strong></p>
-                <ul>
-                    <li>Provide high-level desktop support to teams, enhancing and expanding enterprise support models.</li>
-                    <li>Lead technology improvement projects to enhance user experience and operational efficiency.</li>
-                    <li>Automate key processes to increase productivity and accuracy.</li>
-                    <li>Collaborate with CISO to maintain and enhance enterprise security.</li>
-                    <li>Manage Office 365, Active Directory, HubSpot CRM, and more enterprise technologies.</li>
-                    <li>Supervise IT staff and manage supplier relationships and procurement.</li>
-                </ul>
+            <!-- Leaf decoration -->
+            <svg class="leaf-decoration" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10 C20 20, 10 50, 50 90 C90 50, 80 20, 50 10 Z" fill="#27ae60" opacity="0.6"/>
+                <path d="M50 10 L50 90" stroke="#2c3e50" stroke-width="2" opacity="0.8"/>
+                <path d="M30 35 Q50 40, 50 90" stroke="#2c3e50" stroke-width="1" opacity="0.6" fill="none"/>
+                <path d="M70 35 Q50 40, 50 90" stroke="#2c3e50" stroke-width="1" opacity="0.6" fill="none"/>
+            </svg>
 
-                <h3>UK IT Manager, BOS Wealth Management Europe, City of London</h3>
-                <p><strong>Oct 2019 - June 2024</strong></p>
-                <ul>
-                    <li>Implemented IT compliance controls via Microsoft Purview for regulatory adherence.</li>
-                    <li>Led office relocation and oversaw IT operations for London Branch.</li>
-                    <li>Collaborated with auditors for regulatory alignment and security improvements.</li>
-                    <li>Implemented security measures like door access systems, CCTV, and device encryption.</li>
-                </ul>
-                
-                <h3>Infrastructure Analyst, JA Kemp LLP, City of London</h3>
-                <p><strong>Aug 2016 - Sept 2019</strong></p>
-                <ul>
-                    <li>Reviewed and optimised VMWare infrastructure.</li>
-                    <li>Created and maintained Citrix 7.15 XenDesktop and XenApp environments.</li>
-                    <li>Managed firm's security suite and improved business continuity solutions.</li>
-                    <li>Collaborated on opening new offices in Paris and Cambridge.</li>
-                </ul>
+            <div class="summary">
+                Dynamic and results-driven professional with hands-on experience in information protection and compliance in the finance industry. Leveraging recent Microsoft certification, adept at implementing robust security measures and ensuring regulatory compliance in alignment with industry standards. Proven track record in overseeing IT infrastructure, staff management, and project execution, with a keen eye for optimizing efficiency and driving continuous improvement initiatives.
             </div>
+            <!-- Experience Section -->
+            <div class="section">
+                <h2 class="section-title">Employment History</h2>
 
-            <!-- Home link at the bottom -->
-            <a href="index.html" class="home-link">Go to Home</a>
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title">Enterprise Technology Manager</div>
+                            <div class="job-company">MillTechFX</div>
+                            <div class="job-duration">July 2024 - Present</div>
+                        </div>
+                        <ul class="job-achievements">
+                            <li>Provide high-level desktop support to teams, enhancing and expanding enterprise support models.</li>
+                            <li>Lead technology improvement projects to enhance user experience and operational efficiency.</li>
+                            <li>Automate key processes to increase productivity and accuracy.</li>
+                            <li>Collaborate with CISO to maintain and enhance enterprise security.</li>
+                            <li>Manage Office 365, Active Directory, HubSpot CRM, and more enterprise technologies.</li>
+                            <li>Supervise IT staff and manage supplier relationships and procurement.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title">UK IT Manager</div>
+                            <div class="job-company">BOS Wealth Management Europe, City of London</div>
+                            <div class="job-duration">Oct 2019 - June 2024</div>
+                        </div>
+                        <ul class="job-achievements">
+                            <li>Implemented IT compliance controls via Microsoft Purview for regulatory adherence.</li>
+                            <li>Led office relocation and oversaw IT operations for London Branch.</li>
+                            <li>Collaborated with auditors for regulatory alignment and security improvements.</li>
+                            <li>Implemented security measures like door access systems, CCTV, and device encryption.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div class="job-title">Infrastructure Analyst</div>
+                            <div class="job-company">JA Kemp LLP, City of London</div>
+                            <div class="job-duration">Aug 2016 - Sept 2019</div>
+                        </div>
+                        <ul class="job-achievements">
+                            <li>Reviewed and optimised VMWare infrastructure.</li>
+                            <li>Created and maintained Citrix 7.15 XenDesktop and XenApp environments.</li>
+                            <li>Managed firm's security suite and improved business continuity solutions.</li>
+                            <li>Collaborated on opening new offices in Paris and Cambridge.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </body>

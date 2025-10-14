@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - David Abiodun</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Resetting all margins, paddings, and borders for a clean slate */
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        /* Ensure the background image fills the entire screen and no white space appears */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            min-height: 100vh; /* Full viewport height */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Styling for the body and html */
+        body {
+            background: url('assets/Eko Atlantic -13.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto; /* Allow vertical scrolling for smaller screens */
+        }
+
+        /* Overlay styling */
+        .overlay {
+            width: 100%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure it covers full screen */
+            box-sizing: border-box;
+        }
+
+        /* Styling for the content area */
+        .content {
+            max-width: 800px;
+            width: 90%; /* Responsive width */
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            overflow: auto; /* Ensure content fits within its container */
+        }
+
+        /* Heading styling */
+        .content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Section styling */
+        .section {
+            margin: 20px 0;
+        }
+
+        .section h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .section h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .section p, .section ul {
+            margin: 10px 0;
+            text-align: left; /* Align lists and text to the left */
+        }
+
+        .section ul {
+            list-style: inside;
+            padding-left: 20px;
+        }
+
+        /* Styling for the home link */
+        .home-link {
+            display: block;
+            margin-top: 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .home-link:hover {
+            color: #FFD700; /* Yellow color on hover */
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .content h1 {
+                font-size: 2em; /* Smaller heading */
+            }
+
+            .content h2, .content h3 {
+                font-size: 1.2em; /* Adjust font size */
+            }
+
+            .content {
+                padding: 15px; /* Adjust padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="content">
+            <h1>David Abiodun</h1>
+            <div class="section">
+                <h2>Profile</h2>
+                <p>Dynamic and results-driven professional with hands-on experience in information protection and compliance in the finance industry. Leveraging recent Microsoft certification, adept at implementing robust security measures and ensuring regulatory compliance in alignment with industry standards. Proven track record in overseeing IT infrastructure, staff management, and project execution, with a keen eye for optimizing efficiency and driving continuous improvement initiatives.</p>
+                <p><strong>Address:</strong> Edmonton, UK N9 7JA</p>
+                <p><strong>Email:</strong> david@abiodun.co.uk</p>
+                <p><strong>Phone:</strong> (+44) 7932 732435</p>
+                <p><strong>Driving license:</strong> Full UK Driver’s License</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/david-abiodun-17912a21/" target="_blank">LinkedIn Profile</a></p>
+            </div>
+            
+            <div class="section">
+                <h2>Employment History</h2>
+                
+                <h3>Enterprise Technology Manager, MillTechFX</h3>
+                <p><strong>July 2024 - Present</strong></p>
+                <ul>
+                    <li>Provide high-level desktop support to teams, enhancing and expanding enterprise support models.</li>
+                    <li>Lead technology improvement projects to enhance user experience and operational efficiency.</li>
+                    <li>Automate key processes to increase productivity and accuracy.</li>
+                    <li>Collaborate with CISO to maintain and enhance enterprise security.</li>
+                    <li>Manage Office 365, Active Directory, HubSpot CRM, and more enterprise technologies.</li>
+                    <li>Supervise IT staff and manage supplier relationships and procurement.</li>
+                </ul>
+
+                <h3>UK IT Manager, BOS Wealth Management Europe, City of London</h3>
+                <p><strong>Oct 2019 - June 2024</strong></p>
+                <ul>
+                    <li>Implemented IT compliance controls via Microsoft Purview for regulatory adherence.</li>
+                    <li>Led office relocation and oversaw IT operations for London Branch.</li>
+                    <li>Collaborated with auditors for regulatory alignment and security improvements.</li>
+                    <li>Implemented security measures like door access systems, CCTV, and device encryption.</li>
+                </ul>
+                
+                <h3>Infrastructure Analyst, JA Kemp LLP, City of London</h3>
+                <p><strong>Aug 2016 - Sept 2019</strong></p>
+                <ul>
+                    <li>Reviewed and optimised VMWare infrastructure.</li>
+                    <li>Created and maintained Citrix 7.15 XenDesktop and XenApp environments.</li>
+                    <li>Managed firm's security suite and improved business continuity solutions.</li>
+                    <li>Collaborated on opening new offices in Paris and Cambridge.</li>
+                </ul>
+            </div>
+
+            <!-- Home link at the bottom -->
+            <a href="index.html" class="home-link">Go to Home</a>
+        </div>
+    </div>
+</body>
+</html>
