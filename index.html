@@ -57,8 +57,9 @@
             height: 100%;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
+            padding: 40px 20px;
+            overflow-y: auto;
             animation: fadeIn 1s ease-in;
         }
 
@@ -71,6 +72,7 @@
         .container {
             max-width: 1000px;
             width: 100%;
+            margin-bottom: 40px;
             animation: slideUp 0.8s ease-out;
         }
 
@@ -272,6 +274,95 @@
         }
 
         /* Responsive design */
+
+        /* Laptop screens (13-15 inch) */
+        @media (max-height: 900px) {
+            .overlay {
+                padding: 30px 20px;
+            }
+
+            .header {
+                margin-bottom: 35px;
+            }
+
+            .header h1 {
+                font-size: 3em;
+            }
+
+            .bio {
+                padding: 30px 35px;
+                margin-bottom: 30px;
+            }
+
+            .nav-grid {
+                margin-bottom: 25px;
+            }
+        }
+
+        /* Small laptop screens */
+        @media (max-height: 768px) {
+            .overlay {
+                padding: 20px;
+            }
+
+            .header {
+                margin-bottom: 30px;
+                gap: 25px;
+            }
+
+            .profile-img {
+                width: 130px;
+                height: 130px;
+            }
+
+            .header h1 {
+                font-size: 2.8em;
+                margin-bottom: 10px;
+            }
+
+            .header .subtitle {
+                font-size: 1.2em;
+            }
+
+            .header .credentials {
+                font-size: 0.9em;
+            }
+
+            .bio {
+                padding: 25px 30px;
+                margin-bottom: 25px;
+            }
+
+            .bio p {
+                font-size: 1em;
+                margin-bottom: 12px;
+            }
+
+            .nav-grid {
+                gap: 18px;
+                margin-bottom: 20px;
+            }
+
+            .nav-card {
+                padding: 25px;
+            }
+
+            .nav-card-icon {
+                font-size: 2.2em;
+                margin-bottom: 12px;
+            }
+
+            .nav-card-title {
+                font-size: 1.2em;
+                margin-bottom: 8px;
+            }
+
+            .quick-links {
+                margin-top: 25px;
+            }
+        }
+
+        /* Tablets and mobile landscape */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
