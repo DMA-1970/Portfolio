@@ -1,300 +1,592 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Into Data Science April 2025</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5: Into Data Science - David Abiodun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-        html, body {
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            background: url('assets/DJI_20240318131045_0091_D.JPG') no-repeat center center/cover;
-            background-size: cover;
-            overflow-x: hidden;
-        }
-
-        .overlay {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-            padding: 20px;
             box-sizing: border-box;
-            background: rgba(0, 0, 0, 0.7);
         }
 
-        .content {
-            max-width: 800px;
+        body, html {
+            height: 100%;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Blurred background with dark overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/Module5.jpg') no-repeat center center/cover;
+            filter: blur(3px);
+            -webkit-filter: blur(3px);
+            transform: scale(1.05);
+            z-index: -2;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+
+        /* Back button styling */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #d4dff5;
+            font-size: 0.95em;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.11);
+            border-color: rgba(21, 87, 36, 0.4);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25),
+                        0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Transparent overlay container */
+        .overlay {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 80px 20px 40px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1000px;
             width: 100%;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            text-align: left;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            flex-grow: 1;
-            overflow-y: auto;
+            animation: slideUp 0.8s ease-out;
         }
 
-        h1, h2, h3 {
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
+        .header {
             text-align: center;
+            margin-bottom: 40px;
         }
 
-        body, .content p, .content ul {
-            font-size: 0.85em;
-            line-height: 1.6;
-            color: white;
-        }
-
-        .section {
-            margin-bottom: 25px;
-        }
-
-        .unit-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #ffff00 !important;
-        }
-
-        .reading-title {
-            font-size: 0.85em;
-            text-decoration: underline;
-            color: white;
-        }
-
-        .activity {
-            color: orange;
-        }
-
-        .grade {
-            color: #00ff00 !important;
-            font-weight: bold;
-        }
-
-        .coursework {
-            color: orange !important;
-        }
-
-        .lecturecast {
-            color: white;
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
         }
 
         .module-grade {
-            color: #00ff00 !important;
-            font-weight: bold;
             font-size: 1.2em;
-            text-align: center;
+            font-weight: 600;
+            color: #a8b8d8;
             margin-bottom: 20px;
         }
 
-        .bottom-links {
-            text-align: center;
-            margin-top: 20px;
+        /* Content cards */
+        .content-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px) saturate(100%);
+            -webkit-backdrop-filter: blur(8px) saturate(100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 35px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                        0 0 20px rgba(255, 255, 255, 0.05) inset;
+            transition: all 0.3s ease;
         }
 
-        .bottom-links a {
-            color: white;
+        .content-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(21, 87, 36, 0.25),
+                        0 8px 32px rgba(0, 0, 0, 0.2);
+            border-color: rgba(21, 87, 36, 0.3);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Unit styling */
+        .unit {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .unit:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .unit-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .reading-section {
+            margin-bottom: 20px;
+        }
+
+        .reading-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: #d4dff5;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+
+        .reading-list p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #b8c5e0;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            text-align: justify;
+        }
+
+        .reading-list p:before {
+            content: '•';
+            color: #64748b;
+            position: absolute;
+            left: 0;
+        }
+
+        .activity-section {
+            margin-top: 25px;
+        }
+
+        .activity-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .activity-item {
+            margin-bottom: 8px;
+        }
+
+        .activity-item a {
+            color: #d4dff5;
             text-decoration: none;
-            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .activity-item a:hover {
+            color: #f97316;
+            text-decoration: underline;
+        }
+
+        .activity-item p {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .grade {
+            color: #a8b8d8 !important;
+            font-weight: 600;
             font-size: 0.9em;
         }
 
-        .bottom-links a:hover {
-            text-decoration: underline;
+        .summary {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #64748b;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #b8c5e0;
+            font-size: 0.9em;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .summary ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .summary li {
+            margin-bottom: 5px;
+        }
+
+        /* Navigation links */
+        .bottom-navigation {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .nav-link {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #d4dff5;
+            font-size: 0.9em;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.11);
+            border-color: rgba(21, 87, 36, 0.4);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25),
+                        0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .content-card {
+                padding: 25px 30px;
+            }
+
+            .unit-title {
+                font-size: 1.2em;
+            }
+
+            .overlay {
+                padding: 70px 15px 30px;
+            }
+
+            .back-btn {
+                top: 15px;
+                left: 15px;
+                padding: 10px 16px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content-card {
+                padding: 20px 25px;
+            }
+
+            .nav-link {
+                font-size: 0.9em;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- Back button -->
+    <a href="index.html" class="back-btn">
+        ← Back to Home
+    </a>
+
     <div class="overlay">
-        <div class="content">
-            <h1>Into Data Science April 2025</h1>
-            
-            <p class="module-grade">Overall Module Grade: Distinction</p>
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <h1>Into Data Science</h1>
+                <p class="module-grade">Overall Module Grade: Distinction</p>
+            </div>
 
-            <p class="unit-title">Unit 1: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Janssens, J. (2021) Data Science at the Command Line. O'Reilly Media. Chapter 1<br>
-            Hero, A., Kar, S., Moura, J., Neil, J., Poor, H. V., Turcotte, M. & Xi, B. (2023) Statistics and Data Science for Cybersecurity. Harvard Data Science Review.<br>
-            Tebout, B. (2021) The challenges of the convergence of Data, AI, Cloud, Blockchain, IoT and Cybersecurity. European Scientist.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>EITBOK. (n.d) Guide to the Enterprise IT Body of Knowledge.</p>
-            <p class="reading-title">Seminar:</p>
-            <p>Into Data Science - Overview</p>
-            <h4 class="activity">Activity:</h4>
-            <p class="lecturecast">Lecturecast: Theoretical and Fundamental Concepts</p>
-            <p>Summative Collaborative Discussion</p>
-            <p class="coursework">Coursework: List the 4Vs that characterise Big Data and describe 2 (two) example scenarios for each of the Vs. Use references.</p>
+            <!-- Module Content Card -->
+            <div class="content-card">
 
-            <p class="unit-title">Unit 2: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Mallmann, G.L., Maçada, A.C.G. & Zimmermann Montesdioca, G.P. (2019) The Social Side of Shadow It and its Impacts. Investigating the Relationship with Social Influence and Social Presence.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>Godefroid, M., Plattfaut, R. & Niehaves, B. (2021) IT outside of the IT Department: Reviewing Lightweight IT in Times of Shadow IT and IT Consumerization. Wirtschaftsinformatik 2021 Proceedings.<br>
-            Huber, M., Zimmermann, S., Rentrop, C. & Felden, C. (2017) Integration of Shadow IT Systems with Enterprise Systems: A Literature Review. PACIS 2017 Proceedings.</p>
-            <p class="reading-title">Seminar:</p>
-            <p>Enterprise Data Architecture</p>
-            <h4 class="activity">Activity:</h4>
-            <p>Summative Collaborative Discussion</p>
+                <div class="unit">
+                    <h3 class="unit-title">Unit 1: Introduction to Data Science</h3>
 
-            <p class="unit-title">Unit 3: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Janssens, J. (2021) Data Science at the Command Line. O'Reilly Media. Chapters 1, 3, and 7<br>
-            Jager, E. (2023) Getting Started with Enterprise Architecture - A Practical and Pragmatic Approach to Learning the Basics of Enterprise Architecture. Apress. Pages 1-3, Pages 23-26<br>
-            Downey, A., Meyer, C. & Elkner, J. (2002) How to think like a computer scientist. Learning with Python. Green Tea Press.<br>
-            Xu, X., Lu, Y., Vogel-Heuser, B. & Wang, L. (2021) Industry 4.0 and Industry 5.0: Inception, conception and perception. Journal of Manufacturing Systems 61(1): 530–535.<br>
-            Akundi, A., Euresti, D., Luna, S., Ankobiah, W., Lopes, A. & Edinbarough, I. (2022) State of Industry 5.0: Analysis and identification of current research trends. Applied System Innovation 5(1): 27.<br>
-            Sinha, R. (2019) Analytical Study of Datawarehouse. International Journal of Management, IT & Engineering 8(11).</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>IAENG (2011) Proceedings of the World Congress on Engineering and Computer Science 2011 11. WCECS 2011.<br>
-            Jefts, R. (2023) Advancing digital transformation in financial services. Harvard Business Review Publishing.</p>
-            <p class="reading-title">Seminar:</p>
-            <p>Digital Transformation</p>
-            <h4 class="activity">Activity:</h4>
-            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=295963#p571798">Summative Collaborative Discussion</a> <span class="grade">(Grade: Merit)</span></p>
-            <p class="lecturecast">Lecturecast: Enterprise Data Architecture</p>
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Janssens, J. (2021) Data Science at the Command Line. O'Reilly Media. Chapter 1</p>
+                            <p>Hero, A., Kar, S., Moura, J., Neil, J., Poor, H. V., Turcotte, M. & Xi, B. (2023) Statistics and Data Science for Cybersecurity. Harvard Data Science Review.</p>
+                            <p>Tebout, B. (2021) The challenges of the convergence of Data, AI, Cloud, Blockchain, IoT and Cybersecurity. European Scientist.</p>
+                        </div>
+                    </div>
 
-            <p class="unit-title">Unit 4: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Jager, E. (2023) Getting Started with Enterprise Architecture - A Practical and Pragmatic Approach to Learning the Basics of Enterprise Architecture. Apress. Pages 1-3, Pages 27-33<br>
-            Minelli, M., Chambers, M. & Dhiraj, A. (2013) Big Data Analytics – Emerging Business Intelligence and Analytics Trends for Today's Businesses. John Wiley & Sons Inc.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>Downey, A., Meyer, C. & Elkner, J. (2020) How to think like a computer scientist. Learning with Python. Green Tea Press.<br>
-            Bellard, F. (2018) Tiny C Compiler Reference Documentation.<br>
-            GCC Manual. (n.d) Using the GNU Compiler Collection.<br>
-            FreeCodeCamp. (2019) Sorting Algorithms Explained with Examples in JavaScript, Python, Java, and C++.</p>
-            <p class="reading-title">Seminar:</p>
-            <p>Data Analytics Tools (Unified Modelling Language)</p>
-            <h4 class="activity">Activity:</h4>
-            <p class="lecturecast">Lecturecast: Digital Transformation</p>
+                    <div class="reading-section">
+                        <p class="reading-title">Additional Reading:</p>
+                        <div class="reading-list">
+                            <p>EITBOK. (n.d) Guide to the Enterprise IT Body of Knowledge.</p>
+                        </div>
+                    </div>
 
-            <p class="unit-title">Unit 5: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Janssens, J. (2021) Data Science at the Command Line. O'Reilly Media. Chapters 3, 4, and 8<br>
-            Minelli, M., Chambers, M. & Dhiraj, A. (2013) Big Data Analytics – Emerging Business Intelligence and Analytics Trends for Today's Businesses. John Wiley & Sons Inc.<br>
-            Novicio, T. (2021) 15 Biggest Outsourcing Companies in the World.<br>
-            Harvard Business Review. (2023) Advancing digital transformation in financial services.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p></p>
-            <p class="reading-title">Seminar:</p>
-            <p>Business Analysis (Value of Data/IP Strategy)</p>
-            <h4 class="activity">Activity:</h4>
-            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=300317#p583370">Collaborative Discussion 2</a></p>
-            <p class="coursework">Coursework: Using the (OSEMN) Model analyse the value of data in respect of the 4Vs (Volume, Veracity, Velocity and Variety) of Data for a Business or your organisation.</p>
+                    <div class="reading-section">
+                        <p class="reading-title">Seminar:</p>
+                        <div class="reading-list">
+                            <p>Into Data Science - Overview</p>
+                        </div>
+                    </div>
 
-            <p class="unit-title">Unit 6: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Fleckenstein, M., Obaidi, A, & Tryfona N. (2023) A Review of Data Valuation Approaches and Building nd Scoring a Data Valuation Model.<br>
-            GOV UK. (2023) Road Traffic statistics in the London region.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>Hryb, D. (2021) Application migration: a step-by-step guide.<br>
-            Korzeniowski, P. (2017) Build an application migration plan step by step.</p>
-            <p class="reading-title">Seminar:</p>
-            <p>Emerging Technologies – Digital Conversion and Transformation</p>
-            <h4 class="activity">Activity:</h4>
-            <p><a href="projects/Enterprise Data Report - Case Analysis/EnterpriseDataReport.html">Summative Assignment: Enterprise Data Report - Case Analysis</a> <span class="grade">(Grade: Distinction)</span></p>
-            <p><a href="projects/Module5/DAbiodun_12696259.docx">Emerging Technologies – Digital Conversion and Transformation</a></p>
-            <p class="coursework">Coursework: Evaluate the article Fleckenstein, M., Obaidi, A,& Tryfona, N. (2023) A Review of Data Valuation Approaches and Building and Scoring a Data Valuation Model, and present a summary of what you consider to be the advantages and disadvantages of the data valuation model. The word count limit is 1,000 words. Submit your work to the portal.</p>
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Lecturecast: Theoretical and Fundamental Concepts</p>
+                            <p>Summative Collaborative Discussion</p>
+                            <p>Coursework: List the 4Vs that characterise Big Data and describe 2 (two) example scenarios for each of the Vs. Use references.</p>
+                        </div>
+                    </div>
+                </div>
 
-            <p class="unit-title">Unit 7: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p></p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>GNU. (n.d) GNU general public license. Open Source Initiative. (n.d) The 3-Clause BSD License.</p>
-            <p class="reading-title">Seminar:</p>
-            <p>Compliance, Governance, Ethics and Regulatory Frameworks</p>
-            <h4 class="activity">Activity:</h4>
-            <p>Seminar Task: List 2 (two) ways/strategies data as Intellectual Property (IP) could be monetised by providing examples to support choice.</p>
-            <p class="lecturecast">Lecturecast: Unified Modelling Language</p>
+                <div class="unit">
+                    <h3 class="unit-title">Unit 2: Enterprise Data Architecture</h3>
 
-            <p class="unit-title">Unit 8: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Janssens, J. (2021) Data Science at the Command Line. O'Reilly Media. Chapters 3, 5, 7, and 9</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>Cortada, J. (2021) How the IBM PC Won, Then Lost, the Personal Computer Market.<br>
-            Torchinsky, J. (2020) How an obscure British PC maker invented ARM and changed the world.</p>
-            <p class="reading-title">Seminar:</p>
-            <p>Business Intelligence and Enterprise Resource Planning</p>
-            <h4 class="activity">Activity:</h4>
-            <p class="coursework">Coursework: Summarise the main points in the Jefts, R. (2023) article 'Advancing digital transformation in financial services', which is available in this week's reading.</p>
-            <p class="lecturecast">Lecturecast: Data Pre-processing</p>
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Mallmann, G.L., Maçada, A.C.G. & Zimmermann Montesdioca, G.P. (2019) The Social Side of Shadow It and its Impacts. Investigating the Relationship with Social Influence and Social Presence.</p>
+                        </div>
+                    </div>
 
-            <p class="unit-title">Unit 9: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p>European Union. (2016) General Data Protection Regulation (GDPR): Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016.</p>
-            <p>ASEAN. (2021) Data Management Framework – Data governance and protection throughout the Data Lifecycle.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p></p>
-            <p class="reading-title">Seminar:</p>
-            <p></p>
-            <h4 class="activity">Activity:</h4>
-            <p class="coursework">Coursework: Provide an example for each of the following principles of GDPR at your workplace or any scenario you are familiar with:<br>
-            Lawfulness.<br>
-            Fairness and Transparency.<br>
-            Purpose Limitation.<br>
-            Data Minimisation.<br>
-            Accuracy.<br>
-            Storage Limitation.<br>
-            Integrity and Confidentiality.<br>
-            Accountability.</p>
+                    <div class="reading-section">
+                        <p class="reading-title">Additional Reading:</p>
+                        <div class="reading-list">
+                            <p>Godefroid, M., Plattfaut, R. & Niehaves, B. (2021) IT outside of the IT Department: Reviewing Lightweight IT in Times of Shadow IT and IT Consumerization. Wirtschaftsinformatik 2021 Proceedings.</p>
+                            <p>Huber, M., Zimmermann, S., Rentrop, C. & Felden, C. (2017) Integration of Shadow IT Systems with Enterprise Systems: A Literature Review. PACIS 2017 Proceedings.</p>
+                        </div>
+                    </div>
 
-            <p class="unit-title">Unit 10: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p>TSO. (2020) ITIL Foundation ITIL 4 Edition and HM Government.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>Marabelli, M. & Galliers, R.D. (2016) A reflection on information systems strategising: The role of power and everyday practices. Information Systems Journal 27(3): 347–366.</p>
-            <p>Grube M. (2018) The impact of SAP on the utilisation of Business Process Management (BPN) maturity models in ERP projects. PhD Thesis, University of Gloucestershire.</p>
-            <p class="reading-title">Seminar:</p>
-            <p></p>
-            <h4 class="activity">Activity:</h4>
-            <p class="lecturecast">Lecturecast: Business Analysis</p>
-            <p class="coursework">Coursework: Your task is to investigate how an organisation could apply these ITIL principles on EDA. Focus on value, think and work holistically, and optimise and automate.</p>
+                    <div class="reading-section">
+                        <p class="reading-title">Seminar:</p>
+                        <div class="reading-list">
+                            <p>Enterprise Data Architecture</p>
+                        </div>
+                    </div>
 
-            <p class="unit-title">Unit 11: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Minelli, M., Chambers, M. & Dhiraj, A. (2013) Big Data Analytics – Emerging Business Intelligence and Analytics Trends for Today's Businesses. John Wiley & Sons Inc.<br>
-            Pan, Y. & Zhang, L. (2021) Roles of artificial intelligence in construction engineering and management: A critical review and future trends. Automation in Construction 122(1): 103-517<br>
-            Siderska, J. (2020) Robotic Process Automation. A driver of digital transformation? Engineering Management in Production and Services 12(2): 21-31</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p></p>
-            <p class="reading-title">Seminar:</p>
-            <p></p>
-            <h4 class="activity">Activity:</h4>
-            <p><a href="projects/Module5/Summative Assignment/ESIR.html">Summative Assignment: Enterprise Data Executive Summary and Implementation Report</a> <span class="grade">(Grade: Distinction)</span></p>
-            <p class="coursework">Coursework: Compare and contrast the key characteristics of Clouds, Data Warehouse and Lakes.</p>
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Summative Collaborative Discussion</p>
+                        </div>
+                    </div>
+                </div>
 
-            <p class="unit-title">Unit 12: </p>
-            <p class="reading-title">Required Reading:</p>
-            <p>Jager, E. (2023) Getting Started with Enterprise Architecture - A Practical and Pragmatic Approach to Learning the Basics of Enterprise Architecture. Apress.<br>
-            Pages 47-60<br>
-            Minelli, M., Chambers, M. & Dhiraj, A. (2013) Big Data Analytics – Emerging Business Intelligence and Analytics Trends for Today's Businesses. John Wiley & Sons Inc.<br>
-            Wewerka, J. & Reichert, M. (2023) Robotic process automation: A systematic mapping study and classification framework. Enterprise Information Systems 17(2).<br>
-            Dong, C., Saxena, A., Bick, M. & Sabia, A. (2023) On the Journey to AI Maturity. Understanding the Role of Enterprise Artificial Intelligence Service. AIS Transactions on Enterprise Systems.</p>
-            <p class="reading-title">Additional Reading:</p>
-            <p>Williams, G. (2024) Artificial Intelligence. Existing & Emerging ideas Revised Edition.<br>
-            Services, EMC E. (2015) Data Science and Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data.<br>
-            Addo-Tenkorang. R. & Helo, P. (2011) Enterprise Resource Planning (ERP): A Review Literature Report.<br>
-            Services, EMC E. (2015) Data Science and Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data.</p>
-            <p class="reading-title">Seminar:</p>
-            <p></p>
-            <h4 class="activity">Activity:</h4>
-            <p class="lecturecast">Lecturecast: Blockchain: Emergent Technology in Data Management</p>
-            <p class="coursework">Coursework: <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309291#p605511">Create an ERP Conceptual Model/Diagram. Briefly describe the features of your model and share this on the Discussion Forum. 
-                <p class="coursework">Coursework: <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309152#p605525">Make sure you respond to at least one of the posts made by your peers.</a></p>
+                <div class="unit">
+                    <h3 class="unit-title">Unit 3: Digital Transformation and Enterprise Architecture</h3>
 
-            <div class="bottom-links">
-                <a href="index.html">Back to Home</a>
-                <a href="university-of-essex.html">Back to University of Essex</a>
-                <a href="Module1.html">Module 1</a>
-                <a href="Module2.html">Module 2</a>
-                <a href="Module3.html">Module 3</a>
-                <a href="Module4.html">Module 4</a>
-                <a href="Module6.html">Module 6</a>
-                <a href="links.html">Links</a>
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Janssens, J. (2021) Data Science at the Command Line. O'Reilly Media. Chapters 1, 3, and 7</p>
+                            <p>Jager, E. (2023) Getting Started with Enterprise Architecture - A Practical and Pragmatic Approach to Learning the Basics of Enterprise Architecture. Apress. Pages 1-3, Pages 23-26</p>
+                            <p>Downey, A., Meyer, C. & Elkner, J. (2002) How to think like a computer scientist. Learning with Python. Green Tea Press.</p>
+                            <p>Xu, X., Lu, Y., Vogel-Heuser, B. & Wang, L. (2021) Industry 4.0 and Industry 5.0: Inception, conception and perception. Journal of Manufacturing Systems 61(1): 530–535.</p>
+                            <p>Akundi, A., Euresti, D., Luna, S., Ankobiah, W., Lopes, A. & Edinbarough, I. (2022) State of Industry 5.0: Analysis and identification of current research trends. Applied System Innovation 5(1): 27.</p>
+                            <p>Sinha, R. (2019) Analytical Study of Datawarehouse. International Journal of Management, IT & Engineering 8(11).</p>
+                        </div>
+                    </div>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Additional Reading:</p>
+                        <div class="reading-list">
+                            <p>IAENG (2011) Proceedings of the World Congress on Engineering and Computer Science 2011 11. WCECS 2011.</p>
+                            <p>Jefts, R. (2023) Advancing digital transformation in financial services. Harvard Business Review Publishing.</p>
+                        </div>
+                    </div>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Seminar:</p>
+                        <div class="reading-list">
+                            <p>Digital Transformation</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=295963#p571798" target="_blank">Summative Collaborative Discussion</a> <span class="grade">(Grade: Merit)</span></p>
+                            <p>Lecturecast: Enterprise Data Architecture</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 6: Emerging Technologies and Data Valuation</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Fleckenstein, M., Obaidi, A, & Tryfona N. (2023) A Review of Data Valuation Approaches and Building nd Scoring a Data Valuation Model.</p>
+                            <p>GOV UK. (2023) Road Traffic statistics in the London region.</p>
+                        </div>
+                    </div>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Additional Reading:</p>
+                        <div class="reading-list">
+                            <p>Hryb, D. (2021) Application migration: a step-by-step guide.</p>
+                            <p>Korzeniowski, P. (2017) Build an application migration plan step by step.</p>
+                        </div>
+                    </div>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Seminar:</p>
+                        <div class="reading-list">
+                            <p>Emerging Technologies – Digital Conversion and Transformation</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p><a href="projects/Enterprise Data Report - Case Analysis/EnterpriseDataReport.html" target="_blank">Summative Assignment: Enterprise Data Report - Case Analysis</a> <span class="grade">(Grade: Distinction)</span></p>
+                            <p><a href="projects/Module5/DAbiodun_12696259.docx" target="_blank">Emerging Technologies – Digital Conversion and Transformation</a></p>
+                            <p>Coursework: Evaluate the article Fleckenstein, M., Obaidi, A,& Tryfona, N. (2023) A Review of Data Valuation Approaches and Building and Scoring a Data Valuation Model, and present a summary of what you consider to be the advantages and disadvantages of the data valuation model. The word count limit is 1,000 words. Submit your work to the portal.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 11: Big Data Analytics and AI Trends</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Minelli, M., Chambers, M. & Dhiraj, A. (2013) Big Data Analytics – Emerging Business Intelligence and Analytics Trends for Today's Businesses. John Wiley & Sons Inc.</p>
+                            <p>Pan, Y. & Zhang, L. (2021) Roles of artificial intelligence in construction engineering and management: A critical review and future trends. Automation in Construction 122(1): 103-517</p>
+                            <p>Siderska, J. (2020) Robotic Process Automation. A driver of digital transformation? Engineering Management in Production and Services 12(2): 21-31</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p><a href="projects/Module5/Summative Assignment/ESIR.html" target="_blank">Summative Assignment: Enterprise Data Executive Summary and Implementation Report</a> <span class="grade">(Grade: Distinction)</span></p>
+                            <p>Coursework: Compare and contrast the key characteristics of Clouds, Data Warehouse and Lakes.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="unit">
+                    <h3 class="unit-title">Units 4-10: Data Analytics and GDPR Compliance</h3>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Key Topics Covered:</h4>
+                        <div class="activity-item">
+                            <p>Data Analytics Tools (Unified Modelling Language)</p>
+                            <p>Business Analysis (Value of Data/IP Strategy)</p>
+                            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=300317#p583370" target="_blank">Collaborative Discussion 2</a></p>
+                            <p>Compliance, Governance, Ethics and Regulatory Frameworks</p>
+                            <p>Business Intelligence and Enterprise Resource Planning</p>
+                            <p>GDPR Principles and Implementation</p>
+                            <p>ITIL Framework Application to Enterprise Data Architecture</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unit">
+                    <h3 class="unit-title">Unit 12: AI Maturity and Enterprise Systems</h3>
+
+                    <div class="reading-section">
+                        <p class="reading-title">Required Reading:</p>
+                        <div class="reading-list">
+                            <p>Jager, E. (2023) Getting Started with Enterprise Architecture - A Practical and Pragmatic Approach to Learning the Basics of Enterprise Architecture. Apress. Pages 47-60</p>
+                            <p>Minelli, M., Chambers, M. & Dhiraj, A. (2013) Big Data Analytics – Emerging Business Intelligence and Analytics Trends for Today's Businesses. John Wiley & Sons Inc.</p>
+                            <p>Wewerka, J. & Reichert, M. (2023) Robotic process automation: A systematic mapping study and classification framework. Enterprise Information Systems 17(2).</p>
+                            <p>Dong, C., Saxena, A., Bick, M. & Sabia, A. (2023) On the Journey to AI Maturity. Understanding the Role of Enterprise Artificial Intelligence Service. AIS Transactions on Enterprise Systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h4 class="activity-title">Activity:</h4>
+                        <div class="activity-item">
+                            <p>Lecturecast: Blockchain: Emergent Technology in Data Management</p>
+                            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309291#p605511" target="_blank">Create an ERP Conceptual Model/Diagram</a></p>
+                            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309152#p605525" target="_blank">Respond to peers' posts</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="bottom-navigation">
+                <a href="index.html" class="nav-link">Back to Home</a>
+                <a href="university-of-essex.html" class="nav-link">University of Essex</a>
+                <a href="Module1.html" class="nav-link">Module 1</a>
+                <a href="Module2.html" class="nav-link">Module 2</a>
+                <a href="Module3.html" class="nav-link">Module 3</a>
+                <a href="Module4.html" class="nav-link">Module 4</a>
+                <a href="Module6.html" class="nav-link">Module 6</a>
+                <a href="links.html" class="nav-link">All Links</a>
             </div>
         </div>
     </div>
