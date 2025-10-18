@@ -710,18 +710,20 @@
   </ul>
 </div>
       <!-- Unit 7 -->
-      <div class="unit">
-        <p class="unit-title">Unit 7: Cloud Security and Compliance</p>
+<div class="unit">
+  <p class="unit-title">Unit 7: Cloud Security and Compliance</p>
+  
   <p class="reading-title">Required Reading:</p>
-<p>Ioana, B. et al. (2017) Survey of Serverless Computing: Current Trends and Open Problems.</p>
+  <p>Ioana, B. et al. (2017) Survey of Serverless Computing: Current Trends and Open Problems.</p>
   
   <p class="reading-title">Recommended Reading:</p>
-  <p>Sharma, S.K. and Kumar, P.B.S. (2024) 'Hybrid IT and Multi-Cloud: An Emerging Trend and Improved Deployment Model', SN Computer Science, 5(1), pp. 1-15.</a></p>
+  <p>Sharma, S.K. and Kumar, P.B.S. (2024) 'Hybrid IT and Multi-Cloud: An Emerging Trend and Improved Deployment Model', SN Computer Science, 5(1), pp. 1-15.</p>
 
   <h4 class="activity">Activity:</h4>
   <p class="lecturecast">Lecturecast: Cloud-Native Technology and Containerisation</p>
-  <p class="coursework">Coursework: Perform a security audit of a cloud application deployed on OpenStack using OpenVAS (an open-source vulnerability scanner). Identify security risks and suggest mitigations based on industry standards such as ISO/IEC 27001.</p>
   <p class="coursework">
+    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">🔒 Security Audit Project</h5>
+    <p style="margin: 5px 0;">Perform a security audit of a cloud application deployed on OpenStack using OpenVAS (an open-source vulnerability scanner). Identify security risks and suggest mitigations based on industry standards such as ISO/IEC 27001.</p>
     <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=321918#p634665" target="_blank" rel="noopener noreferrer">Security Audit of OpenStack Cloud Applications Using OpenVAS</a>
   </p>
 
@@ -744,120 +746,106 @@
   </ul>
 </div>
 
-      <!-- Unit 8 -->
-      <div class="unit">
-        <p class="unit-title">Unit 8: Disaster Recovery and Business Continuity</p>
+<!-- Unit 8 -->
+<div class="unit">
+  <p class="unit-title">Unit 8: Disaster Recovery and Business Continuity</p>
+  
+  <p class="reading-title">Required Reading:</p>
+  <p>Carson, R. and Rodrick, M. (2024) <em>Business Continuity and Disaster Recovery</em>. Packt Publishing. Chapters 2–3.</p>
+  <p>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments,' <em>Journal of Cloud Computing</em>, 13, pp. 1–15.</p>
+  
+  <p class="reading-title">Recommended Reading:</p>
+  <p>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments,' Journal of Cloud Computing, (13), pp.1-15.</p>
+  
+  <p class="reading-title">Seminar: Cloud-Native Technologies and Hybrid Cloud Solutions</p>
 
-        <p class="reading-title">Required Reading:</p>
-        <p>Carson, R. and Rodrick, M. (2024) <em>Business Continuity and Disaster Recovery</em>. Packt Publishing. Chapters 2–3.</p>
-        <p>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments,' <em>Journal of Cloud Computing</em>, 13, pp. 1–15.</p>
+  <h4 class="activity">Activity:</h4>
+  <p class="coursework">
+    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">🔄 Disaster Recovery Plan</h5>
+    <p style="margin: 5px 0;">Design and implement a Disaster Recovery (DR) plan for a cloud-based infrastructure on OpenStack. Simulate a failure scenario and perform a recovery operation using open-source backup tools such as Bacula or Duplicity.</p>
+    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=322914#p636946" target="_blank" rel="noopener noreferrer">Disaster Recovery (DR) Design for OpenStack</a>
+  </p>
 
-        <p class="reading-title">Recommended Reading:</p>
-        <p>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments,' Journal of Cloud Computing, (13), pp.1-15.</p>
+  <div class="seminar-preparation">
+    <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Seminar Preparation</h5>
+    <ul style="margin: 5px 0; padding-left: 20px;">
+      <li>How does the 12-Factor App methodology support cloud-native development?</li>
+      <li>In what situations would a business benefit from using Kubernetes for container orchestration?</li>
+      <li>What are the main advantages and challenges of hybrid cloud and edge computing?</li>
+      <li>How can organisations address the issue of data sovereignty in hybrid cloud environments?</li>
+    </ul>
+  </div>
 
-        <p class="reading-title">Seminar: Cloud-Native Technologies and Hybrid Cloud Solutions</p>
-                <h4 class="activity">Activity:</h4>
+  <h4 class="activity">Reflective Thinking:</h4>
+  <p class="reflection"><strong>Summary:</strong> This week focused on disaster recovery (DR) and business continuity, highlighting how cloud-based strategies can achieve resilience objectives. The readings (Carson and Rodrick, 2024; Zheng et al., 2024) emphasised the need to define Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO), then design DR solutions that balance cost, performance, and compliance. The coursework activity reinforced this by simulating recovery on OpenStack using open-source tools such as Bacula or Duplicity.</p>
+  
+  <p class="reflection"><strong>Reflection:</strong> I reflected on how DR is not only a technical requirement but also a governance obligation. ISO 22301 provides a framework for business continuity management, while ISO/IEC 27001 and GDPR require demonstrable resilience and data protection (ISO, 2019; ISO, 2022; European Union, 2016). In practice, I recognised that achieving a low RTO/RPO involves trade-offs: tighter objectives improve resilience but increase cost and complexity. The OpenStack exercise showed how open-source tools can provide flexibility, but they also demand strong operational discipline to avoid misconfiguration risks.</p>
+  
+  <p class="reflection"><strong>Application:</strong> In the FinTech sector, regulators such as the FCA require firms to demonstrate robust DR and continuity strategies. For example, ensuring payment processing systems can recover within 1 hour (RTO) and limiting data loss to minutes (RPO) is vital to customer trust and compliance. Using multi-cloud patterns, such as active-active replication between AWS and Azure, could enhance resilience while mitigating vendor lock-in. The activity also showed that DR must integrate with broader compliance frameworks, linking directly to audits and governance reporting.</p>
+  
+  <p class="reflection"><strong>Forward Planning:</strong> I plan to expand my knowledge of DRaaS (Disaster Recovery as a Service) providers such as Zerto and Veeam, while also exploring how policy-as-code can embed RTO/RPO objectives into infrastructure-as-code pipelines. This will prepare me to design DR strategies that are not only technically effective but also compliant, auditable, and aligned with ISO 22301 standards.</p>
 
-        <p class="coursework">
-          Coursework: Design and implement a Disaster Recovery (DR) plan for a cloud-based infrastructure on OpenStack. Simulate a failure scenario and perform a recovery operation using open-source backup tools such as Bacula or Duplicity.
-        </p>
-        <p class="coursework">
-          <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=322914#p636946" class="reflection" target="_blank" rel="noopener noreferrer">Disaster Recovery (DR) Design for OpenStack</a>
-        </p>
+  <h4 class="activity">References:</h4>
+  <ul class="references">
+    <li>Carson, R. and Rodrick, M. (2024) <em>Business Continuity and Disaster Recovery</em>. Packt Publishing.</li>
+    <li>European Union (2016) <em>Regulation (EU) 2016/679 (GDPR)</em>. Official Journal of the European Union, L119, pp. 1–88.</li>
+    <li>International Organization for Standardization (ISO) (2019) <em>ISO 22301:2019 Security and resilience – Business continuity management systems – Requirements</em>. Geneva: ISO.</li>
+    <li>International Organization for Standardization (ISO) (2022) <em>ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection – Information security management systems – Requirements</em>. Geneva: ISO.</li>
+    <li>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments', <em>Journal of Cloud Computing</em>, 13, pp. 1–15.</li>
+  </ul>
+</div>
 
-        <p class="seminar-preparation">Seminar Preparation</p>
-        <ul>
-          <li>How does the 12-Factor App methodology support cloud-native development?</li>
-          <li>In what situations would a business benefit from using Kubernetes for container orchestration?</li>
-          <li>What are the main advantages and challenges of hybrid cloud and edge computing?</li>
-          <li>How can organisations address the issue of data sovereignty in hybrid cloud environments?</li>
-        </ul>
+<!-- Unit 9 -->
+<div class="unit">
+  <p class="unit-title">Unit 9: Cloud Migration and Integration Strategies</p>
+  
+  <p class="reading-title">Required Reading:</p>
+  <p>Dunbar, W. (2024) Vendor-Locked DevOps Strategies. Association for Computing Machinery.</p>
+  
+  <p class="reading-title">Recommended Reading:</p>
+  <p>Ferrag, M. A. and Maglaras, L. (2024) 'Research trends in deep learning and machine learning for cloud computing security: a systematic review', Artificial Intelligence Review, 57(1), pp. 1-66.</p>
 
-        <h4 class="activity">Reflective Thinking:</h4>
-        <p class="reflection"><h4 class="activity">Summary:</h4>
-<p class="reflection">This week focused on disaster recovery (DR) and business continuity, highlighting how cloud-based strategies can achieve resilience objectives. The readings (Carson and Rodrick, 2024; Zheng et al., 2024) emphasised the need to define Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO), then design DR solutions that balance cost, performance, and compliance. The coursework activity reinforced this by simulating recovery on OpenStack using open-source tools such as Bacula or Duplicity.</p>
+  <h4 class="activity">Activity:</h4>
+  <p class="lecturecast">Lecturecast: Hybrid Cloud Solutions</p>
+  <p class="coursework">
+    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">📊 Database Migration Project</h5>
+    <p style="margin: 5px 0;">Migrate a database from a local machine to an OpenStack cloud environment using MySQL and Percona XtraBackup</p>
+    <a href="projects/Module%206/DB_Migration_Discussion_Post.pdf" target="_blank" rel="noopener noreferrer">Database Migration Discussion Post</a>
+  </p>
+  <p class="coursework">
+    <a href="assets/Unit9_HybridCloud_Migration_Large.png" target="_blank" rel="noopener noreferrer">View Hybrid Cloud Architecture Diagram (OpenStack → Azure/AWS with Percona XtraBackup)</a>
+  </p>
 
-<h4 class="activity">Reflection:</h4>
-<p class="reflection">I reflected on how DR is not only a technical requirement but also a governance obligation. ISO 22301 provides a framework for business continuity management, while ISO/IEC 27001 and GDPR require demonstrable resilience and data protection (ISO, 2019; ISO, 2022; European Union, 2016). In practice, I recognised that achieving a low RTO/RPO involves trade-offs: tighter objectives improve resilience but increase cost and complexity. The OpenStack exercise showed how open-source tools can provide flexibility, but they also demand strong operational discipline to avoid misconfiguration risks.</p>
+  <h4 class="activity">Reflective Thinking:</h4>
+  <p class="reflection"><strong>Summary:</strong> This week focused on hybrid cloud solutions and practical migration exercises. The lecturecast on Hybrid Cloud highlighted design patterns where OpenStack integrates with public clouds for elasticity and compliance (Maurer, 2021). The formative coursework involved migrating a MySQL database to OpenStack using Percona XtraBackup. Attempting this on Windows exposed constraints with tooling support, requiring workarounds such as staging backups through Linux-based environments to achieve minimal downtime. The readings further explored cloud security through deep learning (Zhou et al., 2023) and the strategic trade-offs between cloud-agnostic and vendor-locked DevOps approaches (Dunbar, 2024).</p>
+  
+  <p class="reflection"><strong>Reflection:</strong> I reflected on how hybrid cloud design requires balancing control and flexibility. Maurer (2021) emphasised governance and workload placement, while the migration exercise reinforced that technical constraints—like limited Windows support for Percona tools—can shape architecture choices. The workaround demonstrated resilience but also highlighted risks of misconfiguration. The article on machine learning in cloud security showed how predictive models can strengthen proactive defence, while the vendor lock-in piece illustrated that even cloud-agnostic aspirations come with trade-offs, often requiring more expertise and cost (Dunbar, 2024). This reminded me that migrations and hybrid strategies must align with both compliance and operational realities.</p>
+  
+  <p class="reflection"><strong>Application:</strong> In financial services, migrating core databases demands both data consistency and near-zero downtime. Using tools like Percona XtraBackup is relevant, but production environments would require clustering, replication, and automated failover. Hybrid solutions also provide opportunities to isolate sensitive workloads on OpenStack while leveraging cloud elasticity for analytics. AI-driven monitoring, as described by Zhou et al. (2023), could further secure these deployments. At the same time, vendor-locked tooling such as Azure DevOps may accelerate pipelines but needs conscious governance to prevent strategic dependency.</p>
+  
+  <p class="reflection"><strong>Forward Planning:</strong> I plan to test database migrations using Linux-native environments to minimise workarounds and experiment with hybrid models that blend OpenStack with AWS or Azure. I also intend to explore AIOps platforms for predictive security and evaluate cloud-agnostic orchestration tools like Kubernetes against vendor-locked CI/CD to balance flexibility and integration. Building these skills will prepare me for architecting resilient, compliant, and strategically balanced hybrid environments.</p>
 
-<h4 class="activity">Application:</h4>
-<p class="reflection">In the FinTech sector, regulators such as the FCA require firms to demonstrate robust DR and continuity strategies. For example, ensuring payment processing systems can recover within 1 hour (RTO) and limiting data loss to minutes (RPO) is vital to customer trust and compliance. Using multi-cloud patterns, such as active-active replication between AWS and Azure, could enhance resilience while mitigating vendor lock-in. The activity also showed that DR must integrate with broader compliance frameworks, linking directly to audits and governance reporting.</p>
+  <h4 class="activity">References:</h4>
+  <ul class="references">
+    <li>Dunbar, W. (2024) 'Vendor-Locked DevOps Strategies', <em>Communications of the ACM</em>. Available at: https://cacm.acm.org/opinion/vendor-locked-devops-strategies/ (Accessed: 23 September 2025).</li>
+    <li>Maurer, T. (2021) <em>How to create Azure Hybrid Cloud Architectures</em>. Microsoft. Available at: https://thomasmaurer.ch/ (Accessed: 23 September 2025).</li>
+    <li>Zhou, Z., Wu, J., Yan, X., and Lin, Y. (2023) 'Research trends in deep learning and machine learning for cloud computing security', <em>Journal of Cloud Computing</em>, 12(1), pp. 1–18.</li>
+  </ul>
+</div>
 
-<h4 class="activity">Forward Planning:</h4>
-<p class="reflection">I plan to expand my knowledge of DRaaS (Disaster Recovery as a Service) providers such as Zerto and Veeam, while also exploring how policy-as-code can embed RTO/RPO objectives into infrastructure-as-code pipelines. This will prepare me to design DR strategies that are not only technically effective but also compliant, auditable, and aligned with ISO 22301 standards.</p>
-
-<h4 class="activity">References:</h4>
-<p class="reflection">
-Carson, R. and Rodrick, M. (2024) <i>Business Continuity and Disaster Recovery</i>. Packt Publishing.<br>
-European Union (2016) <i>Regulation (EU) 2016/679 (GDPR)</i>. Official Journal of the European Union, L119, pp. 1–88.<br>
-International Organization for Standardization (ISO) (2019) <i>ISO 22301:2019 Security and resilience – Business continuity management systems – Requirements</i>. Geneva: ISO.<br>
-International Organization for Standardization (ISO) (2022) <i>ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection – Information security management systems – Requirements</i>. Geneva: ISO.<br>
-Zheng, Y. et al. (2024) ‘Optimization model for vehicular network data queries in edge environments’, <i>Journal of Cloud Computing</i>, 13, pp. 1–15.
-</p></p>
-      </div>
-
-      <!-- Unit 9 -->
-      <div class="unit">
-        <p class="unit-title">Unit 9: Cloud Migration and Integration Strategies</p>
-        <p class="reading-title">Required Reading:</p>
-        <p>Dunbar, W. (2024) Vendor-Locked DevOps Strategies. Association for Computing Machinery.</p>
-        <p class="reading-title">Recommended Reading:</p>
-        <p>Ferrag , M. A. and Maglaras, L. (2024) 'Research trends in deep learning and machine learning for cloud computing security: a systematic review', Artificial Intelligence Review, 57(1), pp. 1-66.</p>
-               <h4 class="activity">Activity:</h4>
-        <p class="lecturecast">Lecturecast: Hybrid Cloud Solutions</p>
-        <p class="coursework">
-  Formative Activity: 
-  <a href="projects/Module%206/DB_Migration_Discussion_Post.pdf" target="_blank" rel="noopener noreferrer">
-    Migrate a database from a local machine to an OpenStack cloud environment using MySQL and Percona XtraBackup
-  </a>
-        <p class="coursework">
-  <a href="assets/Unit9_HybridCloud_Migration_Large.png" target="_blank" rel="noopener noreferrer">
-    View Hybrid Cloud Architecture Diagram (OpenStack → Azure/AWS with Percona XtraBackup)
-  </a>
-</p>
-</p>
-
-<h4 class="activity">Reflection:</h4>
-<p class="reflection">
- <h4 class="activity">Summary:</h4>
-<p class="reflection">This week focused on hybrid cloud solutions and practical migration exercises. The lecturecast on Hybrid Cloud highlighted design patterns where OpenStack integrates with public clouds for elasticity and compliance (Maurer, 2021). The formative coursework involved migrating a MySQL database to OpenStack using Percona XtraBackup. Attempting this on Windows exposed constraints with tooling support, requiring workarounds such as staging backups through Linux-based environments to achieve minimal downtime. The readings further explored cloud security through deep learning (Zhou et al., 2023) and the strategic trade-offs between cloud-agnostic and vendor-locked DevOps approaches (Dunbar, 2024).</p>
-
-<h4 class="activity">Reflection:</h4>
-<p class="reflection">I reflected on how hybrid cloud design requires balancing control and flexibility. Maurer (2021) emphasised governance and workload placement, while the migration exercise reinforced that technical constraints—like limited Windows support for Percona tools—can shape architecture choices. The workaround demonstrated resilience but also highlighted risks of misconfiguration. The article on machine learning in cloud security showed how predictive models can strengthen proactive defence, while the vendor lock-in piece illustrated that even cloud-agnostic aspirations come with trade-offs, often requiring more expertise and cost (Dunbar, 2024). This reminded me that migrations and hybrid strategies must align with both compliance and operational realities.</p>
-
-<h4 class="activity">Application:</h4>
-<p class="reflection">In financial services, migrating core databases demands both data consistency and near-zero downtime. Using tools like Percona XtraBackup is relevant, but production environments would require clustering, replication, and automated failover. Hybrid solutions also provide opportunities to isolate sensitive workloads on OpenStack while leveraging cloud elasticity for analytics. AI-driven monitoring, as described by Zhou et al. (2023), could further secure these deployments. At the same time, vendor-locked tooling such as Azure DevOps may accelerate pipelines but needs conscious governance to prevent strategic dependency.</p>
-
-<h4 class="activity">Forward Planning:</h4>
-<p class="reflection">I plan to test database migrations using Linux-native environments to minimise workarounds and experiment with hybrid models that blend OpenStack with AWS or Azure. I also intend to explore AIOps platforms for predictive security and evaluate cloud-agnostic orchestration tools like Kubernetes against vendor-locked CI/CD to balance flexibility and integration. Building these skills will prepare me for architecting resilient, compliant, and strategically balanced hybrid environments.</p>
-
-<h4 class="activity">References:</h4>
-<p class="reflection">
-Dunbar, W. (2024) ‘Vendor-Locked DevOps Strategies’, <i>Communications of the ACM</i>. Available at: https://cacm.acm.org/opinion/vendor-locked-devops-strategies/ (Accessed: 23 September 2025).<br>
-Maurer, T. (2021) <i>How to create Azure Hybrid Cloud Architectures</i>. Microsoft. Available at: https://thomasmaurer.ch/ (Accessed: 23 September 2025).<br>
-Zhou, Z., Wu, J., Yan, X., and Lin, Y. (2023) ‘Research trends in deep learning and machine learning for cloud computing security’, <i>Journal of Cloud Computing</i>, 12(1), pp. 1–18.
-</p>
-
-      <!-- Unit 10 -->
+<!-- Unit 10 -->
 <div class="unit">
   <p class="unit-title">Unit 10: Advanced Cloud Technologies (Serverless Computing)</p>
-
+  
   <p class="reading-title">Required Reading:</p>
-  <p>
-    Toosi, A.N. et al. (2025) ‘Serverless Computing for Next-Generation Application Development’,
-    <i>Future Generation Computer Systems</i>, 164, p. 107573.
-  </p>
-
+  <p>Toosi, A.N. et al. (2025) 'Serverless Computing for Next-Generation Application Development', <em>Future Generation Computer Systems</em>, 164, p. 107573.</p>
+  
   <p class="reading-title">Recommended Reading:</p>
-  <p>
-    Ahmad, S.G. et al. (2023) ‘Cost optimization in cloud environment based on task deadline’,
-    <i>Journal of Cloud Computing</i>, 12(1), p. 9.
-  </p>
-
-
+  <p>Ahmad, S.G. et al. (2023) 'Cost optimization in cloud environment based on task deadline', <em>Journal of Cloud Computing</em>, 12(1), p. 9.</p>
+  
   <p class="reading-title">Seminar: Cloud Security and Disaster Recovery</p>
   <p><strong>Seminar Questions:</strong></p>
-  <ul>
+  <ul style="margin: 5px 0; padding-left: 20px;">
     <li>What are the biggest security threats to cloud environments today?</li>
     <li>How can organisations balance security and compliance in cloud operations?</li>
     <li>Why is a disaster recovery plan essential for cloud-based applications?</li>
@@ -865,43 +853,28 @@ Zhou, Z., Wu, J., Yan, X., and Lin, Y. (2023) ‘Research trends in deep learnin
   </ul>
 
   <h4 class="activity">Activity:</h4>
-  <p class="lecturecast">Lecturecast: <i>Future Trends in AI and Cloud Computing</i></p>
-  <p>
-    During this week, I carried out an independent analysis of the Jaguar Land Rover (JLR) and Marks &amp; Spencer (M&amp;S)
-    cloud incidents to explore the relationship between identity compromise, misconfiguration, and operational disruption.
-    This individual work supported the seminar focus on balancing compliance and security through automation,
-    leveraging cloud-native tools such as Azure Policy, AWS Config, and CSPM/CNAPP frameworks. I also designed a
-    tiered disaster recovery (DR) plan suitable for SMEs, highlighting the trade-off between cost and resilience,
-    and the importance of regularly tested recovery procedures.
-  </p>
-
+  <p class="lecturecast">Lecturecast: <em>Future Trends in AI and Cloud Computing</em></p>
   <p class="coursework">
-    Coursework: Discussion Forum Implement a serverless function using OpenFaaS (an open-source serverless platform). Develop and deploy a simple function (e.g., a greeting service or a calculator) and explore how serverless architecture optimises cloud operations.
-Deliverable: A technical discussion of how you deployed the serverless function using OpenFaaS, along with the function code.– 
-    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=323361#p637949" target="_blank" rel="noopener noreferrer">OpenFaaS</a>
+    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">⚡ Serverless Function Development</h5>
+    <p style="margin: 5px 0;">Implement a serverless function using OpenFaaS (an open-source serverless platform). Develop and deploy a simple function (e.g., a greeting service or a calculator) and explore how serverless architecture optimises cloud operations.</p>
+    <p style="margin: 5px 0;">Deliverable: A technical discussion of how you deployed the serverless function using OpenFaaS, along with the function code.</p>
+    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=323361#p637949" target="_blank" rel="noopener noreferrer">OpenFaaS Discussion</a>
+  </p>
+  
+  <p class="coursework">
+    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">🔍 JLR & M&S Cloud Incident Analysis</h5>
+    <p style="margin: 5px 0;">During this week, I carried out an independent analysis of the Jaguar Land Rover (JLR) and Marks & Spencer (M&S) cloud incidents to explore the relationship between identity compromise, misconfiguration, and operational disruption. This individual work supported the seminar focus on balancing compliance and security through automation, leveraging cloud-native tools such as Azure Policy, AWS Config, and CSPM/CNAPP frameworks. I also designed a tiered disaster recovery (DR) plan suitable for SMEs, highlighting the trade-off between cost and resilience, and the importance of regularly tested recovery procedures.</p>
   </p>
 
   <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection">
-    This unit reinforced that cloud security depends less on traditional perimeter defences and more on automation,
-    continuous posture management, and identity governance. My personal analysis of JLR and M&amp;S showed that even
-    compliant organisations can suffer operational outages without tested recovery orchestration. Serverless computing,
-    as discussed in Toosi et&nbsp;al. (2025), reduces operational overhead by abstracting infrastructure management,
-    but limitations such as cold starts, state handling, and vendor lock-in must be managed. Integrating serverless
-    functions with managed DR services like AWS Backup and Azure Recovery Vault can strengthen recoverability and
-    operational resilience.
-  </p>
-
-  <h4 class="activity">Summary Connection:</h4>
-  <p class="reflection">
-    Unit 10 builds on the security automation and cloud resilience themes from Units 8 and 9. It shows how modern
-    architectures — including serverless and Function-as-a-Service (FaaS) — can complement traditional DR through
-    event-driven recovery and policy-as-code. The key insight is end-to-end resilience: secure configuration,
-    continuous compliance monitoring, and automated failover to maintain continuity across multi-cloud/hybrid
-    environments — vital for future-ready FinTech platforms.
-  </p>
+  <p class="reflection"><strong>Summary:</strong> This unit reinforced that cloud security depends less on traditional perimeter defences and more on automation, continuous posture management, and identity governance. My personal analysis of JLR and M&S showed that even compliant organisations can suffer operational outages without tested recovery orchestration. Serverless computing, as discussed in Toosi et al. (2025), reduces operational overhead by abstracting infrastructure management, but limitations such as cold starts, state handling, and vendor lock-in must be managed. Integrating serverless functions with managed DR services like AWS Backup and Azure Recovery Vault can strengthen recoverability and operational resilience.</p>
+  
+  <p class="reflection"><strong>Reflection:</strong> The serverless function development provided hands-on experience with event-driven architectures and their implications for cloud operations. The JLR and M&S case studies highlighted how misconfigurations and identity compromises can cascade into operational disruptions, even in well-governed environments. This reinforced the importance of continuous monitoring and automated remediation in modern cloud architectures.</p>
+  
+  <p class="reflection"><strong>Application:</strong> In financial services, serverless architectures can provide cost-effective solutions for event processing and API endpoints while maintaining compliance requirements. The case study analysis demonstrated how proper governance frameworks and automated security controls can prevent similar incidents in regulated environments.</p>
+  
+  <p class="reflection"><strong>Forward Planning:</strong> Unit 10 builds on the security automation and cloud resilience themes from Units 8 and 9. It shows how modern architectures — including serverless and Function-as-a-Service (FaaS) — can complement traditional DR through event-driven recovery and policy-as-code. The key insight is end-to-end resilience: secure configuration, continuous compliance monitoring, and automated failover to maintain continuity across multi-cloud/hybrid environments — vital for future-ready FinTech platforms.</p>
 </div>
-
 
 
    <!-- Unit 11 -->
