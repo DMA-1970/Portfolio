@@ -249,6 +249,98 @@
             font-size: 0.9em;
         }
 
+        /* Enhanced project styling */
+        .project-highlight {
+            background: rgba(30, 144, 255, 0.1);
+            border: 1px solid rgba(30, 144, 255, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-highlight:hover {
+            background: rgba(30, 144, 255, 0.15);
+            border-color: rgba(30, 144, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+        }
+
+        .project-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1e90ff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .project-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+
+        /* Enhanced assessment styling */
+        .assessment-highlight {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-highlight:hover {
+            background: rgba(255, 107, 53, 0.15);
+            border-color: rgba(255, 107, 53, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+        }
+
+        .assessment-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .assessment-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .assessment-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-link:hover {
+            color: #ff6b35;
+            text-decoration: underline;
+        }
+
         .summary {
             background: rgba(255, 255, 255, 0.05);
             border-left: 3px solid #64748b;
@@ -442,7 +534,12 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p><a href="projects/Module 3/Assignment 1/DAbiodun_12696259 ITSM Assignment 1_Submission.pdf" target="_blank">Assignment 1: Designing Content Management Databases</a> <span class="grade">(Grade: Distinction)</span></p>
+                            <div class="assessment-highlight">
+                                <div class="assessment-title">📊 Assignment 1: Designing Content Management Databases</div>
+                                <div class="assessment-description">Comprehensive assignment on designing content management databases for ITSM frameworks</div>
+                                <a href="projects/Module 3/Assignment 1/DAbiodun_12696259 ITSM Assignment 1_Submission.pdf" target="_blank" class="assessment-link">View Assignment 1 Submission</a>
+                                <span class="grade">(Grade: Distinction)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -498,8 +595,17 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p><a href="projects/Module 3/Assignment 2/DAbiodun_12696259 CMDB_Schema_Attributes.xlsm" target="_blank">Assignment 2: Schema Attributes</a></p>
-                            <p><a href="projects/Module 3/Assignment 2/DAbiodun_12696259_Implementation and Demonstration of CMDB.pdf" target="_blank">Assignment 2: Implementation and Demonstration of CMDB</a> <span class="grade">(Grade: Distinction)</span></p>
+                            <div class="project-highlight">
+                                <div class="project-title">🗄️ Assignment 2: Schema Attributes</div>
+                                <div class="project-description">Detailed schema attributes for CMDB implementation</div>
+                                <a href="projects/Module 3/Assignment 2/DAbiodun_12696259 CMDB_Schema_Attributes.xlsm" target="_blank" class="project-link">Download Schema Attributes (Excel)</a>
+                            </div>
+                            <div class="assessment-highlight">
+                                <div class="assessment-title">🏗️ Assignment 2: Implementation and Demonstration of CMDB</div>
+                                <div class="assessment-description">Comprehensive implementation and demonstration of Configuration Management Database</div>
+                                <a href="projects/Module 3/Assignment 2/DAbiodun_12696259_Implementation and Demonstration of CMDB.pdf" target="_blank" class="assessment-link">View CMDB Implementation</a>
+                                <span class="grade">(Grade: Distinction)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
