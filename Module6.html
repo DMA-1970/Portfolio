@@ -674,92 +674,52 @@
       </div>
 
       <!-- Unit 6 -->
-      <div class="unit">
-        <p class="unit-title">Unit 6: Hybrid Cloud Solutions (Hybrid, Fog, Edge Computing)</p>
+<div class="unit">
+  <p class="unit-title">Unit 6: Hybrid Cloud Solutions (Hybrid, Fog, Edge Computing)</p>
+  
+  <p class="reading-title">Required Reading:</p>
+  <p>Cybersecurity Framework (NIST) — Website (Essential)</p>
+  <p>Bonomi, F. et al. (2012) Fog Computing and its Role in the Internet of Things — MCC Workshop.</p>
+  <p>Gupta, H. et al. (2016) iFogSim: A Toolkit for Modelling Resource Management in IoT, Edge and Fog.</p>
+  
+  <p class="reading-title">Recommended Reading:</p>
+  <p>Toward Security Quantification of Serverless Computing — Article (Digital copy available online)</p>
+  <p>Hamzaoui, I. et al. (2024) A Topical Review on Container-Based Cloud: Challenges and Trends — SN Computer Science.</p>
+  
+  <p class="reading-title">Additional Reading:</p>
+  <p><em>Cloud Security and Privacy</em> — Book (O'Reilly)</p>
 
-        <p class="reading-title">Required Reading:</p>
-        <ul>
-          <li>Cybersecurity Framework (NIST) — Website (Essential)</li>
-          <li>Bonomi, F. et al. (2012) Fog Computing and its Role in the Internet of Things — MCC Workshop.</li>
-          <li>Gupta, H. et al. (2016) iFogSim: A Toolkit for Modelling Resource Management in IoT, Edge and Fog.</li>
-        </ul>
-
-        <p class="reading-title">Recommended Reading:</p>
-        <ul>
-          <li>Toward Security Quantification of Serverless Computing — Article (Digital copy available online)</li>
-          <li>Hamzaoui, I. et al. (2024) A Topical Review on Container-Based Cloud: Challenges and Trends — SN Computer Science.</li>
-        </ul>
-
-        <p class="reading-title">Additional Reading:</p>
-        <ul>
-          <li><em>Cloud Security and Privacy</em> — Book (O’Reilly)</li>
-        </ul>
-
-        <p class="reading-title">Seminar: AI-Driven Cloud Computing and Cloud Design Tools</p>
-        <ul>
-          <li>Theme: Designing a hybrid model with Fog/Edge tiers</li>
-          <li>Focus: Latency, data-gravity, security &amp; compliance, vendor lock-in mitigation</li>
-          <li>Hands-on talk track: Where AWS integrates with OpenStack (identity, networking, storage replication)</li>
-        </ul>
-      <p></p>
-<p class="reading-title">
- <li><strong>Team Project</strong><br>
-
-  <p>
+  <h4 class="activity">Activity:</h4>
+  <p class="lecturecast">Seminar: AI-Driven Cloud Computing and Cloud Design Tools</p>
+  <p class="coursework">
+    <strong>Team Project:</strong> Cloud Infrastructure and Framework Report<br>
     This team-based project assessed understanding of foundational cloud computing concepts, 
     service models, deployment types, and infrastructure design, as introduced in weeks 1–6. 
     The task required collaboration to evaluate a cloud infrastructure framework, focusing 
-    on both theoretical understanding and applied design.
+    on both theoretical understanding and applied design.<br>
+    <a href="projects/Module%206/Development%20Team%20Project.html">Development Team Project: Cloud Infrastructure and Framework Report (Distinction)</a>
   </p>
-    <li><strong>Overview:</strong> Describe the selected cloud framework (e.g., AWS CloudFormation, Azure Resource Manager, or Google Cloud Deployment Manager), highlighting its core features and purpose.</li>
-    <li><strong>Service Model Analysis:</strong> Explain how the framework supports various cloud service models such as IaaS, PaaS, and SaaS.</li>
-    <li><strong>Deployment Types:</strong> Discuss the framework’s application across public, private, and hybrid environments.</li>
-    <li><strong>Infrastructure Design:</strong> Outline the design steps for building a basic infrastructure, including compute, storage, and networking components.</li>
-    <li><strong>Case Study or Real-World Example:</strong> Present a real-world implementation and evaluate its effect on organisational efficiency and cost optimisation.</li>
+  <p class="coursework">
+    <strong>Workshop:</strong> Draft a reference architecture where OpenStack runs on-prem for regulated/low-latency workloads, while AWS handles elastic analytics and global distribution. Map trust zones, data flows, and control planes. Identify lock-in risks and propose controls.
+  </p>
+
+  <h4 class="activity">Reflective Thinking:</h4>
+  <p class="reflection"><strong>Summary:</strong> This week focused on AI-driven cloud computing and cloud design tools. The lecturecast explored how AI enhances automation, security, and cost optimisation across cloud environments. We examined practical applications such as dynamic resource allocation, predictive fault detection, and compliance monitoring. The seminar also compared scripting approaches (Bash, Python, Terraform) with GUI-based tools (Azure Portal, AWS Console), weighing flexibility against accessibility. Finally, we discussed how AI-driven automation is reshaping administrator roles, shifting emphasis towards governance, strategy, and architecture (Bonomi et al., 2012; Hamzaoui et al., 2024).</p>
+  
+  <p class="reflection"><strong>Reflection:</strong> I found AI's role in proactive fault detection particularly valuable, as predictive analytics can prevent downtime in financial services where resilience is critical (Gupta et al., 2016). Similarly, AI-driven security tools such as Microsoft Sentinel strengthen incident response and support compliance with ISO 27001. Reflecting on scripting versus GUI tools, I realised that while GUIs remain useful for troubleshooting, scripting and Infrastructure-as-Code pipelines are indispensable for standardisation at scale. The shift in administrator responsibilities stood out: rather than reducing demand, AI expands the skill set required, emphasising governance, AIOps, and cross-team collaboration (NIST, 2018).</p>
+  
+  <p class="reflection"><strong>Application:</strong> In my current role, AI-based cost optimisation tools like AWS Compute Optimizer could directly reduce cloud expenditure, while self-healing Kubernetes clusters would strengthen service continuity. Continuous compliance monitoring would support regulatory obligations such as FCA and GDPR. By combining scripting for automation with GUI tools for ad-hoc use, our team can balance efficiency with accessibility for less technical colleagues.</p>
+  
+  <p class="reflection"><strong>Forward Planning:</strong> I plan to develop stronger scripting expertise in Python and Terraform to extend automation and integrate CI/CD pipelines. I also aim to experiment with AIOps platforms that embed AI into observability and compliance monitoring, ensuring greater resilience and governance in multi-cloud deployments. Building these skills will prepare me for hybrid roles that combine technical architecture, automation, and AI-driven governance.</p>
+
+  <h4 class="activity">References:</h4>
+  <ul class="references">
+    <li>Bonomi, F., Milito, R., Zhu, J. and Addepalli, S. (2012) 'Fog computing and its role in the internet of things', <em>Proceedings of the MCC Workshop on Mobile Cloud Computing</em>, pp. 13–16. doi:10.1145/2342509.2342513.</li>
+    <li>Gupta, H., Dastjerdi, A.V., Ghosh, S.K. and Buyya, R. (2016) 'iFogSim: A toolkit for modeling and simulation of resource management techniques in internet of things, edge and fog computing environments', <em>Software: Practice and Experience</em>, 47(9), pp. 1275–1296. doi:10.1002/spe.2509.</li>
+    <li>Hamzaoui, I., Duthil, B., Courboulay, V. and Medromi, H. (2024) 'A topical review on container-based cloud revolution: multi-directional challenges, and future trends', <em>SN Computer Science</em>, 5(416). doi:10.1007/s42979-024-02763-y.</li>
+    <li>NIST (2018) <em>Framework for improving critical infrastructure cybersecurity</em>. National Institute of Standards and Technology. Available at: <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">https://www.nist.gov/cyberframework</a> (Accessed: 6 September 2025).</li>
   </ul>
-
-  <p><strong>Grade Achieved:</strong> <span style="color:#1e90ff; font-weight:600;">Distinction</span></p>
 </div>
-
-
-        <h4 class="activity">Activity:</h4>Hybrid, Fog &amp; Edge in Practice</p>
-        <p>Workshop: Draft a reference architecture where OpenStack runs on-prem for regulated/low-latency workloads, while AWS handles elastic analytics and global distribution. Map trust zones, data flows, and control planes. Identify lock-in risks and propose controls.</p>
-
-        <p class="coursework">
-          <a href="projects/Module%206/Development%20Team%20Project.html">Development Team Project: Cloud Infrastructure and Framework Report (Distinction)</a>
-        </p>
-
-        <h4 class="activity">Summary:</h4>
-        <p class="reflection">This week focused on AI-driven cloud computing and cloud design tools. The lecturecast explored how AI enhances automation, security, and cost optimisation across cloud environments. We examined practical applications such as dynamic resource allocation, predictive fault detection, and compliance monitoring. The seminar also compared scripting approaches (Bash, Python, Terraform) with GUI-based tools (Azure Portal, AWS Console), weighing flexibility against accessibility. Finally, we discussed how AI-driven automation is reshaping administrator roles, shifting emphasis towards governance, strategy, and architecture (Bonomi et al., 2012; Hamzaoui et al., 2024).</p>
-
-        <h4 class="activity">Reflection:</h4>
-        <p class="reflection">I found AI’s role in proactive fault detection particularly valuable, as predictive analytics can prevent downtime in financial services where resilience is critical (Gupta et al., 2016). Similarly, AI-driven security tools such as Microsoft Sentinel strengthen incident response and support compliance with ISO 27001. Reflecting on scripting versus GUI tools, I realised that while GUIs remain useful for troubleshooting, scripting and Infrastructure-as-Code pipelines are indispensable for standardisation at scale. The shift in administrator responsibilities stood out: rather than reducing demand, AI expands the skill set required, emphasising governance, AIOps, and cross-team collaboration (NIST, 2018).</p>
-
-        <h4 class="activity">Application:</h4>
-        <p class="reflection">In my current role, AI-based cost optimisation tools like AWS Compute Optimizer could directly reduce cloud expenditure, while self-healing Kubernetes clusters would strengthen service continuity. Continuous compliance monitoring would support regulatory obligations such as FCA and GDPR. By combining scripting for automation with GUI tools for ad-hoc use, our team can balance efficiency with accessibility for less technical colleagues.</p>
-
-        <h4 class="activity">Forward Planning:</h4>
-        <p class="reflection">I plan to develop stronger scripting expertise in Python and Terraform to extend automation and integrate CI/CD pipelines. I also aim to experiment with AIOps platforms that embed AI into observability and compliance monitoring, ensuring greater resilience and governance in multi-cloud deployments. Building these skills will prepare me for hybrid roles that combine technical architecture, automation, and AI-driven governance.</p>
-
-        <h4 class="activity">References:</h4>
-        <ul class="references">
-          <li>Bonomi, F., Milito, R., Zhu, J. and Addepalli, S. (2012) ‘Fog computing and its role in the internet of things’, <em>Proceedings of the MCC Workshop on Mobile Cloud Computing</em>, pp. 13–16. doi:10.1145/2342509.2342513.</li>
-          <li>Gupta, H., Dastjerdi, A.V., Ghosh, S.K. and Buyya, R. (2016) ‘iFogSim: A toolkit for modeling and simulation of resource management techniques in internet of things, edge and fog computing environments’, <em>Software: Practice and Experience</em>, 47(9), pp. 1275–1296. doi:10.1002/spe.2509.</li>
-          <li>Hamzaoui, I., Duthil, B., Courboulay, V. and Medromi, H. (2024) ‘A topical review on container-based cloud revolution: multi-directional challenges, and future trends’, <em>SN Computer Science</em>, 5(416). doi:10.1007/s42979-024-02763-y.</li>
-          <li>NIST (2018) <em>Framework for improving critical infrastructure cybersecurity</em>. National Institute of Standards and Technology. Available at: <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">https://www.nist.gov/cyberframework</a> (Accessed: 6 September 2025).</li>
-        </ul>
-
-        <h4 class="activity">Reading focus for this unit:</h4>
-        <ul>
-          <li>Bonomi et al. — justifies pushing latency-sensitive logic to Fog/Edge.</li>
-          <li>Gupta et al. (iFogSim) — frames placement trade-offs (latency, cost, energy) you’ll reference in your design.</li>
-          <li>Hamzaoui et al. — container portability/orchestration considerations for hybrid/multi-cloud.</li>
-        </ul>
-
-        <h4 class="activity">Tip:</h4>
-        <p class="reflection">For the diagram, show: Edge devices → OpenStack (on-prem) → AWS. Annotate data classifications, encryption boundaries (KMS/HSM), CI/CD paths, and failover flows. Call out where portability controls live (container registry, Terraform modules, TOSCA templates).</p>
-      </div>
-
       <!-- Unit 7 -->
       <div class="unit">
         <p class="unit-title">Unit 7: Cloud Security and Compliance</p>
