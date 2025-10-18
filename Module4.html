@@ -249,6 +249,98 @@
             font-size: 0.9em;
         }
 
+        /* Enhanced project styling */
+        .project-highlight {
+            background: rgba(30, 144, 255, 0.1);
+            border: 1px solid rgba(30, 144, 255, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-highlight:hover {
+            background: rgba(30, 144, 255, 0.15);
+            border-color: rgba(30, 144, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+        }
+
+        .project-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1e90ff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .project-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+
+        /* Enhanced assessment styling */
+        .assessment-highlight {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-highlight:hover {
+            background: rgba(255, 107, 53, 0.15);
+            border-color: rgba(255, 107, 53, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+        }
+
+        .assessment-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .assessment-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .assessment-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-link:hover {
+            color: #ff6b35;
+            text-decoration: underline;
+        }
+
         .summary {
             background: rgba(255, 255, 255, 0.05);
             border-left: 3px solid #64748b;
@@ -457,7 +549,12 @@
                             <p>Develop a detailed WBS and Gantt chart for a given IT project.</p>
                             <p>Lecturecast: Project Management Tasks, Tools, and Techniques.</p>
                             <p>Continue with Forum Discussion</p>
-                            <p><a href="projects/EnterpriseITProjectManagement/groupproject.html" target="_blank">Part 1: Coursework: Group Report</a> <span class="grade">(Grade: Distinction)</span></p>
+                            <div class="assessment-highlight">
+                                <div class="assessment-title">📊 Part 1: Coursework: Group Report</div>
+                                <div class="assessment-description">Comprehensive group report on IT project management</div>
+                                <a href="projects/EnterpriseITProjectManagement/groupproject.html" target="_blank" class="assessment-link">View Group Report</a>
+                                <span class="grade">(Grade: Distinction)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -546,7 +643,12 @@
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
                             <p>Submit and present a reflective capstone project demonstrating project planning and control skills.</p>
-                            <p><a href="projects/Module4/IndividualPresentation.html" target="_blank">Coursework: Individual Presentation and Reflection</a> <span class="grade">(Grade: Distinction)</span></p>
+                            <div class="assessment-highlight">
+                                <div class="assessment-title">🎤 Coursework: Individual Presentation and Reflection</div>
+                                <div class="assessment-description">Comprehensive individual presentation and reflection on project management skills</div>
+                                <a href="projects/Module4/IndividualPresentation.html" target="_blank" class="assessment-link">View Individual Presentation</a>
+                                <span class="grade">(Grade: Distinction)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
