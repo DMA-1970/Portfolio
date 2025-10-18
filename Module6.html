@@ -249,6 +249,98 @@
             font-size: 0.9em;
         }
 
+        /* Enhanced project styling */
+        .project-highlight {
+            background: rgba(30, 144, 255, 0.1);
+            border: 1px solid rgba(30, 144, 255, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-highlight:hover {
+            background: rgba(30, 144, 255, 0.15);
+            border-color: rgba(30, 144, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+        }
+
+        .project-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1e90ff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .project-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+
+        /* Enhanced assessment styling */
+        .assessment-highlight {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-highlight:hover {
+            background: rgba(255, 107, 53, 0.15);
+            border-color: rgba(255, 107, 53, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+        }
+
+        .assessment-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .assessment-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .assessment-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-link:hover {
+            color: #ff6b35;
+            text-decoration: underline;
+        }
+
         .summary {
             background: rgba(255, 255, 255, 0.05);
             border-left: 3px solid rgba(255, 255, 255, 0.2);
@@ -330,11 +422,9 @@
             font-style: normal;
         }
 
-.coursework {
-    color: #d4dff5 !important;
-    font-size: 0.90em;   /* around 15% smaller */
-}
-
+        .coursework {
+            color: #d4dff5 !important;
+            font-size: 0.90em;
         }
 
         .lecturecast {
@@ -357,6 +447,64 @@
         p {
             text-align: justify;
             line-height: 1.8;
+        }
+
+        /* Assessment Brief styling */
+        .assessment-brief {
+            font-size: 0.85rem;
+            line-height: 1.45;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-brief:hover {
+            background: rgba(255, 107, 53, 0.15);
+            border-color: rgba(255, 107, 53, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+        }
+
+        .assessment-brief h2 {
+            font-size: 1.35rem;
+            margin-bottom: 0.5em;
+        }
+
+        .assessment-brief h3 {
+            font-size: 1.05rem;
+            margin-top: 1em;
+        }
+
+        .assessment-brief ul {
+            margin-left: 1.2em;
+        }
+
+        .assessment-brief li {
+            margin-bottom: 0.4em;
+        }
+
+        /* Seminar preparation styling */
+        .seminar-preparation {
+            font-size: 0.9rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #1e90ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .seminar-preparation h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .seminar-preparation h3 {
+            font-size: 1.1rem;
+            margin-top: 1rem;
         }
 
         /* Responsive design */
@@ -400,58 +548,6 @@
             }
         }
     </style>
-    <style>
-  /* Slightly smaller font for Assessment Brief (≈15% reduction) */
-  .assessment-brief {
-    font-size: 0.85rem;  /* about 15% smaller than standard 1rem */
-    line-height: 1.45;
-  }
-
-  /* Headings remain clear and proportionate */
-  .assessment-brief h2 {
-    font-size: 1.35rem;
-    margin-bottom: 0.5em;
-  }
-
-  .assessment-brief h3 {
-    font-size: 1.05rem;
-    margin-top: 1em;
-  }
-
-  /* Clean spacing for list elements */
-  .assessment-brief ul {
-    margin-left: 1.2em;
-  }
-
-  .assessment-brief li {
-    margin-bottom: 0.4em;
-  }
-  <style>
-  .seminar-preparation {
-    font-size: 0.9rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-left: 3px solid #1e90ff;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1.5rem;
-    line-height: 1.5;
-  }
-  .seminar-preparation h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.6rem;
-  }
-  .seminar-preparation h3 {
-    font-size: 1.1rem;
-    margin-top: 1rem;
-  }
-</style>
-
-</style>
-
-</style>
-
-
-</style>
 </head>
 
 <body>
@@ -471,531 +567,529 @@
             <!-- Module Content Card -->
             <div class="content-card">
 
-      <!-- Unit 1 -->
-<div class="unit">
-  <p class="unit-title">Unit 1: Introduction to Cloud Fundamentals and Services</p>
-  
-  <p class="reading-title">Required Reading:</p>
-  <p>Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.</p>
-  <p>Gupta, D. (2024) The Cloud Computing Journey. Packt Publishing. Part 1, Part 2, Part 3 (Sections 6 and 7), Part 4 (Section 10)</p>
-  
-  <p class="reading-title">Recommended Reading:</p>
-  <p>Hamed, A. (2024) 'Load balancing in cloud computing – A hierarchical taxonomical classification', Journal of Cloud Computing, 13(1), pp. 1-25.</p>
-  <p>Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.</p>
-  
-  <p class="reading-title">Additional Reading:</p>
-  <p>Rajkumar, B., Broberg, J. and Andrzej, G. (2011) Cloud Computing: Principles and Paradigms</p>
-  
-  <p class="reading-title">Seminar: Introduction to Cloud Computing and Reflection on Learning Goals</p>
+                <!-- Unit 1 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 1: Introduction to Cloud Fundamentals and Services</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.</p>
+                    <p>Gupta, D. (2024) The Cloud Computing Journey. Packt Publishing. Part 1, Part 2, Part 3 (Sections 6 and 7), Part 4 (Section 10)</p>
+                    
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p>Hamed, A. (2024) 'Load balancing in cloud computing – A hierarchical taxonomical classification', Journal of Cloud Computing, 13(1), pp. 1-25.</p>
+                    <p>Mell, P. and Timothy, G. (2011) The NIST Definition of Cloud Computing. U.S. Department of Commerce.</p>
+                    
+                    <p class="reading-title">Additional Reading:</p>
+                    <p>Rajkumar, B., Broberg, J. and Andrzej, G. (2011) Cloud Computing: Principles and Paradigms</p>
+                    
+                    <p class="reading-title">Seminar: Introduction to Cloud Computing and Reflection on Learning Goals</p>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">💬 Formative Discussion: AWS vs Google Cloud</h5>
-    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=311234#p609044" target="_blank" rel="noopener noreferrer">Formative Discussion: AWS vs Google Cloud</a>
-  </p>
+                    <h4 class="activity">Activity:</h4>
+                    <div class="project-highlight">
+                        <div class="project-title">💬 Formative Discussion: AWS vs Google Cloud</div>
+                        <div class="project-description">Comparative analysis of cloud service providers</div>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=311234#p609044" target="_blank" rel="noopener noreferrer" class="project-link">View Discussion</a>
+                    </div>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> Week 1 introduced the evolution of cloud computing, from early virtualisation technologies to modern multi-cloud ecosystems. It covered the three core service models — IaaS, PaaS, SaaS — and examined deployment models such as public, private, hybrid, and community cloud. Comparisons between AWS, Google Cloud, and Microsoft Azure highlighted service portfolios, scalability options, and pricing structures.</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> As an Enterprise Technology Manager, I had a working knowledge of these foundational concepts, but revisiting them in a comparative context helped me identify subtle provider distinctions that influence strategic decision-making. In my current role, we use AWS S3 buckets for data storage and analytics workloads, while Azure Active Directory underpins enterprise identity management. My cross-platform expertise, supported by certifications such as Microsoft 365 Fundamentals and Microsoft Information Protection and Compliance Administrator Associate, enables me to navigate both ecosystems effectively and ensure security, governance, and compliance alignment. A critical takeaway this week was recognising that while multi-cloud adoption offers resilience and vendor flexibility, it can also create governance challenges and increase the demand for skilled personnel capable of managing multiple platforms.</p>
-  
-  <p class="reflection"><strong>Application:</strong> This understanding directly informs workload placement and procurement decisions, allowing me to balance performance, compliance, and cost efficiency when advising on enterprise cloud strategy.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> I intend to explore further vendor management tools such as AWS Organizations and Azure Lighthouse to strengthen cross-platform governance and streamline policy enforcement across multi-cloud environments.</p>
-</div>
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> Week 1 introduced the evolution of cloud computing, from early virtualisation technologies to modern multi-cloud ecosystems. It covered the three core service models — IaaS, PaaS, SaaS — and examined deployment models such as public, private, hybrid, and community cloud. Comparisons between AWS, Google Cloud, and Microsoft Azure highlighted service portfolios, scalability options, and pricing structures.</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> As an Enterprise Technology Manager, I had a working knowledge of these foundational concepts, but revisiting them in a comparative context helped me identify subtle provider distinctions that influence strategic decision-making. In my current role, we use AWS S3 buckets for data storage and analytics workloads, while Azure Active Directory underpins enterprise identity management. My cross-platform expertise, supported by certifications such as Microsoft 365 Fundamentals and Microsoft Information Protection and Compliance Administrator Associate, enables me to navigate both ecosystems effectively and ensure security, governance, and compliance alignment. A critical takeaway this week was recognising that while multi-cloud adoption offers resilience and vendor flexibility, it can also create governance challenges and increase the demand for skilled personnel capable of managing multiple platforms.</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> This understanding directly informs workload placement and procurement decisions, allowing me to balance performance, compliance, and cost efficiency when advising on enterprise cloud strategy.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> I intend to explore further vendor management tools such as AWS Organizations and Azure Lighthouse to strengthen cross-platform governance and streamline policy enforcement across multi-cloud environments.</p>
+                </div>
 
-<!-- Unit 2 -->
-<div class="unit">
-  <p class="unit-title">Unit 2: Understanding Cloud Architecture and Implementing Different Frameworks</p>
-  
-  <p class="reading-title">Required Reading:</p>
-  <p>Haren, V. (2011) TOGAF® Version 9.1. The Open Group.</p>
-  
-  <p class="reading-title">Recommended Reading:</p>
-  <p>Alshamaila, A. (2023) 'MicroServices-driven enterprise architecture model for infrastructure migration to cloud', Future Business Journal, 9(1), pp. 1-15.</p>
-  <p>Anggraini N., Binariswanto and Legowo, N. (2019) 'Cloud Computing Adoption Strategic Planning Using ROCCA and TOGAF 9.2: A Study in Government Agency', Procedia Computer Science.</p>
-  
-  <p class="reading-title">Additional Reading:</p>
-  <p>Sreekanth, I. and Nagaratnam, N. (2022) Hybrid Cloud Security Patterns: Leverage Modern Repeatable Architecture Patterns to Secure Your Workloads on the Cloud. Birmingham: Packt Publishing, Limited.</p>
+                <!-- Unit 2 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 2: Understanding Cloud Architecture and Implementing Different Frameworks</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Haren, V. (2011) TOGAF® Version 9.1. The Open Group.</p>
+                    
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p>Alshamaila, A. (2023) 'MicroServices-driven enterprise architecture model for infrastructure migration to cloud', Future Business Journal, 9(1), pp. 1-15.</p>
+                    <p>Anggraini N., Binariswanto and Legowo, N. (2019) 'Cloud Computing Adoption Strategic Planning Using ROCCA and TOGAF 9.2: A Study in Government Agency', Procedia Computer Science.</p>
+                    
+                    <p class="reading-title">Additional Reading:</p>
+                    <p>Sreekanth, I. and Nagaratnam, N. (2022) Hybrid Cloud Security Patterns: Leverage Modern Repeatable Architecture Patterns to Secure Your Workloads on the Cloud. Birmingham: Packt Publishing, Limited.</p>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">🏗️ Formative Discussion: ROCCA and TOGAF</h5>
-    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=312915#p611909" target="_blank" rel="noopener noreferrer">Formative Discussion: ROCCA and TOGAF</a>
-  </p>
+                    <h4 class="activity">Activity:</h4>
+                    <div class="project-highlight">
+                        <div class="project-title">🏗️ Formative Discussion: ROCCA and TOGAF</div>
+                        <div class="project-description">Analysis of enterprise architecture frameworks</div>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=312915#p611909" target="_blank" rel="noopener noreferrer" class="project-link">View Discussion</a>
+                    </div>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> This week focused on frameworks that guide cloud architecture. TOGAF offered a structured method for aligning IT with business strategy, the Software Development Life Cycle (SDLC) reinforced disciplined processes in cloud solution delivery, and Infrastructure as Code (IaC) highlighted how automation improves consistency, scalability, and compliance. Collectively, these approaches help ensure cloud deployments are strategic, controlled, and repeatable.</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> TOGAF is particularly relevant because it encourages a business-first approach to cloud architecture. In practice, I have often seen technical teams prioritise tool implementation without aligning outcomes to business needs. TOGAF's phased Architecture Development Method provides a reminder that strategy and governance should guide deployment choices. SDLC similarly resonated, as cloud environments still require traditional structure for planning, testing, and stakeholder engagement. IaC struck a strong chord with me; having experienced the operational inefficiencies of manual deployments, I see how IaC reduces configuration drift and enforces auditability, which is vital in regulated industries.</p>
-  
-  <p class="reflection"><strong>Application:</strong> Applying TOGAF in my environment could help ensure our AWS and Azure architectures remain strategically aligned and compliant. Embedding SDLC principles into cloud change management would improve testing and rollback, reducing production risk. IaC is already present in Azure deployments for compliance monitoring, but scaling it across both AWS and Azure would improve efficiency while strengthening adherence to frameworks such as GDPR and FCA guidelines.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> I intend to explore how TOGAF ADM can be tailored to hybrid and multi-cloud strategies, and how policy-as-code can complement IaC to improve governance. Embedding SDLC checkpoints into IaC pipelines will also be a priority, ensuring automation remains aligned with compliance and testing requirements.</p>
-</div>
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> This week focused on frameworks that guide cloud architecture. TOGAF offered a structured method for aligning IT with business strategy, the Software Development Life Cycle (SDLC) reinforced disciplined processes in cloud solution delivery, and Infrastructure as Code (IaC) highlighted how automation improves consistency, scalability, and compliance. Collectively, these approaches help ensure cloud deployments are strategic, controlled, and repeatable.</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> TOGAF is particularly relevant because it encourages a business-first approach to cloud architecture. In practice, I have often seen technical teams prioritise tool implementation without aligning outcomes to business needs. TOGAF's phased Architecture Development Method provides a reminder that strategy and governance should guide deployment choices. SDLC similarly resonated, as cloud environments still require traditional structure for planning, testing, and stakeholder engagement. IaC struck a strong chord with me; having experienced the operational inefficiencies of manual deployments, I see how IaC reduces configuration drift and enforces auditability, which is vital in regulated industries.</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> Applying TOGAF in my environment could help ensure our AWS and Azure architectures remain strategically aligned and compliant. Embedding SDLC principles into cloud change management would improve testing and rollback, reducing production risk. IaC is already present in Azure deployments for compliance monitoring, but scaling it across both AWS and Azure would improve efficiency while strengthening adherence to frameworks such as GDPR and FCA guidelines.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> I intend to explore how TOGAF ADM can be tailored to hybrid and multi-cloud strategies, and how policy-as-code can complement IaC to improve governance. Embedding SDLC checkpoints into IaC pipelines will also be a priority, ensuring automation remains aligned with compliance and testing requirements.</p>
+                </div>
 
-<!-- Unit 3 -->
-<div class="unit">
-  <p class="unit-title">Unit 3: Cloud Design Tools</p>
-  
-  <p class="reading-title">Required Reading:</p>
-  <p>Nigel, P. and Pushkar, J. (2017) The Kubernetes Book. Leanpub.</p>
-  
-  <p class="reading-title">Recommended Reading:</p>
-  <p>Feitosa, D. et al. (2023) Mining for Cost Awareness in the Infrastructure as Code Artifacts of Cloud-based Applications: an Exploratory Study.</p>
-  
-  <p class="reading-title">Additional Reading:</p>
-  <p>Natarajan, S. and Jeveen, J. (2024) Multi-Cloud Handbook for Developers: Learn How to Design and Manage Cloud-Native Applications in AWS, Azure, GCP, and More. Birmingham: Packt Publishing. Chapters 1-5</p>
+                <!-- Unit 3 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 3: Cloud Design Tools</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Nigel, P. and Pushkar, J. (2017) The Kubernetes Book. Leanpub.</p>
+                    
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p>Feitosa, D. et al. (2023) Mining for Cost Awareness in the Infrastructure as Code Artifacts of Cloud-based Applications: an Exploratory Study.</p>
+                    
+                    <p class="reading-title">Additional Reading:</p>
+                    <p>Natarajan, S. and Jeveen, J. (2024) Multi-Cloud Handbook for Developers: Learn How to Design and Manage Cloud-Native Applications in AWS, Azure, GCP, and More. Birmingham: Packt Publishing. Chapters 1-5</p>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="lecturecast">Lecturecast: Cloud Architecture Frameworks and Infrastructure as Code (IaC)</p>
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">🛠️ Cloud Design Tool Discussion</h5>
-    <p style="margin: 5px 0;">Post a discussion summary on a cloud design tool of your choice.</p>
-    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=313725#p613967" target="_blank" rel="noopener noreferrer">Cloud Design Tool</a><br>
-    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=314289#p616083" target="_blank" rel="noopener noreferrer">Response to peers' posts</a>
-  </p>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Lecturecast: Cloud Architecture Frameworks and Infrastructure as Code (IaC)</p>
+                    <div class="project-highlight">
+                        <div class="project-title">🛠️ Cloud Design Tool Discussion</div>
+                        <div class="project-description">Analysis and discussion of cloud design tools</div>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=313725#p613967" target="_blank" rel="noopener noreferrer" class="project-link">Cloud Design Tool</a><br>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=314289#p616083" target="_blank" rel="noopener noreferrer" class="project-link">Response to peers' posts</a>
+                    </div>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> This week, we examined hybrid cloud strategies, which integrate on-premises infrastructure with public or private cloud services. We explored patterns such as cloud bursting for peak demand, maintaining data sovereignty for compliance, and segmenting workloads according to security and performance requirements.</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> While I have managed both cloud and on-premises environments in the past, studying structured hybrid models provided a deeper understanding of integration strategies. In my current role, we operate a multi-cloud architecture divided by function: AWS S3 buckets store and manage our data workloads, while Azure Active Directory supports enterprise identity management. Microsoft Purview is used to enforce compliance, and Microsoft Defender safeguards enterprise assets. This arrangement reinforces the need for consistent governance, interoperability, and cross-platform policy alignment — areas where my cross-platform skills and Microsoft certifications have been invaluable. One critical insight is that although multi-cloud enhances resilience and vendor flexibility, it also increases administrative overhead and the need for standardised processes across platforms.</p>
-  
-  <p class="reflection"><strong>Application:</strong> In the financial services sector, hybrid and multi-cloud approaches enable sensitive workloads to remain in controlled environments while using cloud elasticity for analytics and high-volume processing. Our AWS–Azure split not only optimises performance but also mitigates single-vendor dependency and maintains compliance with frameworks such as GDPR and PCI DSS.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> I intend to explore AWS Outposts and Azure Arc to extend hybrid capabilities, enabling unified policy management and more seamless compliance enforcement across both platforms.</p>
-</div>
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> This week, we examined hybrid cloud strategies, which integrate on-premises infrastructure with public or private cloud services. We explored patterns such as cloud bursting for peak demand, maintaining data sovereignty for compliance, and segmenting workloads according to security and performance requirements.</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> While I have managed both cloud and on-premises environments in the past, studying structured hybrid models provided a deeper understanding of integration strategies. In my current role, we operate a multi-cloud architecture divided by function: AWS S3 buckets store and manage our data workloads, while Azure Active Directory supports enterprise identity management. Microsoft Purview is used to enforce compliance, and Microsoft Defender safeguards enterprise assets. This arrangement reinforces the need for consistent governance, interoperability, and cross-platform policy alignment — areas where my cross-platform skills and Microsoft certifications have been invaluable. One critical insight is that although multi-cloud enhances resilience and vendor flexibility, it also increases administrative overhead and the need for standardised processes across platforms.</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> In the financial services sector, hybrid and multi-cloud approaches enable sensitive workloads to remain in controlled environments while using cloud elasticity for analytics and high-volume processing. Our AWS–Azure split not only optimises performance but also mitigates single-vendor dependency and maintains compliance with frameworks such as GDPR and PCI DSS.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> I intend to explore AWS Outposts and Azure Arc to extend hybrid capabilities, enabling unified policy management and more seamless compliance enforcement across both platforms.</p>
+                </div>
 
-<!-- Unit 4 -->
-<div class="unit">
-  <p class="unit-title">Unit 4: Cloud Native Technology Part 1</p>
-  
-  <p class="reading-title">Required Reading:</p>
-  <p>Wiggins, A. (2017) The Twelve-Factor App.</p>
-  
-  <p class="reading-title">Recommended Reading:</p>
-  <p>Mungoli, N. (2023) Scalable, Distributed AI Frameworks: Leveraging Cloud Computing for Enhanced Deep Learning Performance and Efficiency.</p>
-  
-  <p class="reading-title">Additional Reading:</p>
-  <p>Oliveira, R. and Hugo, F. (2021) Practical event-driven microservices architecture. Apress.</p>
-  
-  <p class="reading-title">Seminar: Cloud Architecture Frameworks and Infrastructure as Code (IaC)</p>
+                <!-- Unit 4 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 4: Cloud Native Technology Part 1</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Wiggins, A. (2017) The Twelve-Factor App.</p>
+                    
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p>Mungoli, N. (2023) Scalable, Distributed AI Frameworks: Leveraging Cloud Computing for Enhanced Deep Learning Performance and Efficiency.</p>
+                    
+                    <p class="reading-title">Additional Reading:</p>
+                    <p>Oliveira, R. and Hugo, F. (2021) Practical event-driven microservices architecture. Apress.</p>
+                    
+                    <p class="reading-title">Seminar: Cloud Architecture Frameworks and Infrastructure as Code (IaC)</p>
 
-  <div class="seminar-preparation">
-    <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Seminar Preparation – Cloud Architecture and Automation</h5>
-    <p style="margin: 5px 0;">This section summarises key seminar preparation questions exploring cloud architecture frameworks, Infrastructure as Code (IaC), and the role of automation in scalability and reliability. These questions guided pre-seminar research and reflection for class discussion.</p>
-    
-    <h6 style="color: #333; font-weight: bold; margin: 10px 0 5px 0;">Seminar Questions:</h6>
-    <ul style="margin: 5px 0; padding-left: 20px;">
-      <li><strong>How does TOGAF help in planning and structuring cloud architecture?</strong></li>
-      <li><strong>What are the benefits of using Infrastructure as Code (IaC) in cloud environments?</strong></li>
-      <li><strong>What challenges have you encountered or anticipate when implementing IaC?</strong></li>
-      <li><strong>In your view, how can automation tools impact the scalability and reliability of cloud systems?</strong></li>
-    </ul>
-    
-    <p style="margin: 5px 0; font-style: italic;">Preparation involved reviewing TOGAF's architectural development methodology (ADM), examining IaC tools such as Terraform and Ansible, and analysing automation's impact on high-availability deployments within hybrid and multi-cloud environments.</p>
-  </div>
+                    <div class="seminar-preparation">
+                        <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Seminar Preparation – Cloud Architecture and Automation</h5>
+                        <p style="margin: 5px 0;">This section summarises key seminar preparation questions exploring cloud architecture frameworks, Infrastructure as Code (IaC), and the role of automation in scalability and reliability. These questions guided pre-seminar research and reflection for class discussion.</p>
+                        
+                        <h6 style="color: #333; font-weight: bold; margin: 10px 0 5px 0;">Seminar Questions:</h6>
+                        <ul style="margin: 5px 0; padding-left: 20px;">
+                            <li><strong>How does TOGAF help in planning and structuring cloud architecture?</strong></li>
+                            <li><strong>What are the benefits of using Infrastructure as Code (IaC) in cloud environments?</strong></li>
+                            <li><strong>What challenges have you encountered or anticipate when implementing IaC?</strong></li>
+                            <li><strong>In your view, how can automation tools impact the scalability and reliability of cloud systems?</strong></li>
+                        </ul>
+                        
+                        <p style="margin: 5px 0; font-style: italic;">Preparation involved reviewing TOGAF's architectural development methodology (ADM), examining IaC tools such as Terraform and Ansible, and analysing automation's impact on high-availability deployments within hybrid and multi-cloud environments.</p>
+                    </div>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">⚙️ Bash Script and Report</h5>
-    <p style="margin: 5px 0;">Develop and execute a Bash script on OpenStack. Submit a 500-word explanation of what the script achieves.</p>
-    <p style="margin: 5px 0;">You can use <em>Shell Scripting for Beginners</em>, <em>Automating Server Configuration with Bash Scripts</em>, and <em>Write Your Own Bash Scripts for Automation</em> for support.</p>
-    <a href="projects/Module 6/How scripting automation helps cloud operations.docx" target="_blank"><strong>Formative Activity: Bash Script and Report</strong></a>
-  </p>
+                    <h4 class="activity">Activity:</h4>
+                    <div class="project-highlight">
+                        <div class="project-title">⚙️ Bash Script and Report</div>
+                        <div class="project-description">Develop and execute a Bash script on OpenStack. Submit a 500-word explanation of what the script achieves.</div>
+                        <p style="margin: 5px 0;">You can use <em>Shell Scripting for Beginners</em>, <em>Automating Server Configuration with Bash Scripts</em>, and <em>Write Your Own Bash Scripts for Automation</em> for support.</p>
+                        <a href="projects/Module 6/How scripting automation helps cloud operations.docx" target="_blank" class="project-link"><strong>Formative Activity: Bash Script and Report</strong></a>
+                    </div>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> This week focused on Infrastructure as Code (IaC) and its importance in cloud environments. TOGAF was introduced as a governance framework for structuring architecture, while IaC enables automation, repeatability, and auditability in deployments. The key activity involved creating and executing a Bash script on OpenStack to automate server setup, reinforcing how automation reduces manual effort and supports scalability. These principles connect closely to Wiggins' (2017) Twelve-Factor App model, which emphasises consistency and automation in cloud-native design.</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> The scripting exercise was practical and insightful. While I am more experienced with PowerShell and Azure automation, Bash on OpenStack demonstrated the universality of scripting across platforms. IaC emerged as vital for addressing configuration drift, a recurring challenge in multi-cloud operations. The seminar highlighted benefits such as scalability and resilience (Mungoli, 2023), but also the risks of unchecked automation, where errors can propagate rapidly. TOGAF's phased approach provided a reminder that automation must sit within a strategic governance framework.</p>
-  
-  <p class="reflection"><strong>Application:</strong> In my role, IaC can strengthen compliance by embedding security policies, audit logging, and monitoring directly into code. This is particularly important in financial services, where FCA and GDPR obligations demand consistency. The scripting exercise demonstrated how automation reduces operational overhead while improving standardisation. Oliveira and Hugo (2021) also reminded me that combining IaC with event-driven microservices architectures could further optimise responsiveness and efficiency in cloud deployments.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> I plan to explore policy-as-code tools to embed compliance rules into IaC workflows and extend my scripting skills across OpenStack and multi-cloud platforms. I also aim to connect TOGAF principles with IaC and microservices, ensuring automation is not only efficient but also strategically aligned with enterprise goals.</p>
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> This week focused on Infrastructure as Code (IaC) and its importance in cloud environments. TOGAF was introduced as a governance framework for structuring architecture, while IaC enables automation, repeatability, and auditability in deployments. The key activity involved creating and executing a Bash script on OpenStack to automate server setup, reinforcing how automation reduces manual effort and supports scalability. These principles connect closely to Wiggins' (2017) Twelve-Factor App model, which emphasises consistency and automation in cloud-native design.</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> The scripting exercise was practical and insightful. While I am more experienced with PowerShell and Azure automation, Bash on OpenStack demonstrated the universality of scripting across platforms. IaC emerged as vital for addressing configuration drift, a recurring challenge in multi-cloud operations. The seminar highlighted benefits such as scalability and resilience (Mungoli, 2023), but also the risks of unchecked automation, where errors can propagate rapidly. TOGAF's phased approach provided a reminder that automation must sit within a strategic governance framework.</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> In my role, IaC can strengthen compliance by embedding security policies, audit logging, and monitoring directly into code. This is particularly important in financial services, where FCA and GDPR obligations demand consistency. The scripting exercise demonstrated how automation reduces operational overhead while improving standardisation. Oliveira and Hugo (2021) also reminded me that combining IaC with event-driven microservices architectures could further optimise responsiveness and efficiency in cloud deployments.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> I plan to explore policy-as-code tools to embed compliance rules into IaC workflows and extend my scripting skills across OpenStack and multi-cloud platforms. I also aim to connect TOGAF principles with IaC and microservices, ensuring automation is not only efficient but also strategically aligned with enterprise goals.</p>
 
-  <h4 class="activity">References:</h4>
-  <ul class="references">
-    <li>Mungoli, N. (2023) Scalable, distributed AI frameworks: leveraging cloud computing for enhanced deep learning performance and efficiency. [Online]. Available at: https://arxiv.org/abs/2306.XXXXX (Accessed: 6 September 2025).</li>
-    <li>Oliveira, R. and Hugo, F. (2021) Practical event-driven microservices architecture. Berkeley, CA: Apress.</li>
-    <li>Wiggins, A. (2017) The twelve-factor app. [Online]. Available at: <a href="https://12factor.net" target="_blank" rel="noopener noreferrer">https://12factor.net</a> (Accessed: 6 September 2025).</li>
-  </ul>
-</div>
+                    <h4 class="activity">References:</h4>
+                    <ul class="references">
+                        <li>Mungoli, N. (2023) Scalable, distributed AI frameworks: leveraging cloud computing for enhanced deep learning performance and efficiency. [Online]. Available at: https://arxiv.org/abs/2306.XXXXX (Accessed: 6 September 2025).</li>
+                        <li>Oliveira, R. and Hugo, F. (2021) Practical event-driven microservices architecture. Berkeley, CA: Apress.</li>
+                        <li>Wiggins, A. (2017) The twelve-factor app. [Online]. Available at: <a href="https://12factor.net" target="_blank" rel="noopener noreferrer">https://12factor.net</a> (Accessed: 6 September 2025).</li>
+                    </ul>
+                </div>
 
-<!-- Unit 5 -->
-<div class="unit">
-  <p class="unit-title">Unit 5: Cloud Native Technology Part 2</p>
-  
-  <p class="reading-title">Required Reading:</p>
-  <p>Harshit, G. et al. (2016) iFogSim: A Toolkit for Modeling and Simulation of Resource Management Techniques in Internet of Things, Edge and Fog Computing Environments.</p>
-  
-  <p class="reading-title">Recommended Reading:</p>
-  <p>Hamzaoui, I. et al. (2024) 'A Topical Review on Container-Based Cloud Revolution: Multi-Directional Challenges, and Future Trends', SN Computer Science, 5(1), pp. 1-20.</p>
-  
-  <p class="reading-title">Additional Reading:</p>
-  <p>Flavio, B. et al. (2014) Fog Computing and Its Role in the Internet of Things. Cisco Systems Inc.</p>
+                <!-- Unit 5 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 5: Cloud Native Technology Part 2</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Harshit, G. et al. (2016) iFogSim: A Toolkit for Modeling and Simulation of Resource Management Techniques in Internet of Things, Edge and Fog Computing Environments.</p>
+                    
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p>Hamzaoui, I. et al. (2024) 'A Topical Review on Container-Based Cloud Revolution: Multi-Directional Challenges, and Future Trends', SN Computer Science, 5(1), pp. 1-20.</p>
+                    
+                    <p class="reading-title">Additional Reading:</p>
+                    <p>Flavio, B. et al. (2014) Fog Computing and Its Role in the Internet of Things. Cisco Systems Inc.</p>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="lecturecast">Lecturecast: AI-Driven Cloud Computing</p>
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">🐳 Kubernetes Cluster Setup</h5>
-    <p style="margin: 5px 0;">Set up a Kubernetes cluster using Minikube cluster. Describe in a 500-word discussion post how it was deployed.</p>
-    <p style="margin: 5px 0;">You can use <em>Using Minikube to Create a Cluster</em> and <em>Creating a Kubernetes Cluster with Minikube</em> to support you.</p>
-    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265" target="_blank" rel="noopener noreferrer">Deploying a 12-Factor App to Kubernetes with Minikube (Step-by-Step)</a>
-  </p>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Lecturecast: AI-Driven Cloud Computing</p>
+                    <div class="project-highlight">
+                        <div class="project-title">🐳 Kubernetes Cluster Setup</div>
+                        <div class="project-description">Set up a Kubernetes cluster using Minikube cluster. Describe in a 500-word discussion post how it was deployed.</div>
+                        <p style="margin: 5px 0;">You can use <em>Using Minikube to Create a Cluster</em> and <em>Creating a Kubernetes Cluster with Minikube</em> to support you.</p>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265" target="_blank" rel="noopener noreferrer" class="project-link">Deploying a 12-Factor App to Kubernetes with Minikube (Step-by-Step)</a>
+                    </div>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> This week explored cloud-native technologies, focusing on the Twelve-Factor App methodology (Wiggins, 2017) and Kubernetes as a container orchestration tool. The content emphasised how cloud-native design principles ensure scalability, resilience, and agility in application development. The lecturecast on AI-driven cloud computing further demonstrated how automation and intelligent orchestration are transforming deployment and management of containerised workloads.</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> The 12-Factor methodology resonated with me as it provides a practical checklist for building applications that are portable and cloud-ready. In practice, I have observed how ignoring principles such as strict separation of config from code can create fragility when scaling services. Kubernetes was equally significant, as it operationalises these principles through automated scaling, load balancing, and self-healing. Academic insights reinforce these ideas: Hamzaoui et al. (2024) highlight that containers deliver lightweight, portable environments that outperform traditional hypervisors, while Bonomi et al. (2012) and Gupta et al. (2016) illustrate how fog and edge computing extend cloud-native benefits closer to users, reducing latency for IoT and real-time applications. The integration of AI into orchestration workflows also sparked reflection on how predictive scaling and policy enforcement could further reduce operational overheads.</p>
-  
-  <p class="reflection"><strong>Application:</strong> In financial services, these principles directly apply to scaling transaction-processing systems and analytics platforms. For example, containerising microservices that handle compliance checks could improve resilience while Kubernetes ensures they are dynamically scaled based on demand. AI-driven orchestration adds further value by anticipating workload spikes, which is critical for trading platforms where milliseconds matter.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> I plan to experiment with Kubernetes deployments that integrate policy-as-code to enforce compliance while leveraging AI models for predictive scaling. Additionally, I aim to apply 12-Factor principles when reviewing internal applications, ensuring portability and resilience remain embedded in future cloud-native solutions.</p>
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> This week explored cloud-native technologies, focusing on the Twelve-Factor App methodology (Wiggins, 2017) and Kubernetes as a container orchestration tool. The content emphasised how cloud-native design principles ensure scalability, resilience, and agility in application development. The lecturecast on AI-driven cloud computing further demonstrated how automation and intelligent orchestration are transforming deployment and management of containerised workloads.</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> The 12-Factor methodology resonated with me as it provides a practical checklist for building applications that are portable and cloud-ready. In practice, I have observed how ignoring principles such as strict separation of config from code can create fragility when scaling services. Kubernetes was equally significant, as it operationalises these principles through automated scaling, load balancing, and self-healing. Academic insights reinforce these ideas: Hamzaoui et al. (2024) highlight that containers deliver lightweight, portable environments that outperform traditional hypervisors, while Bonomi et al. (2012) and Gupta et al. (2016) illustrate how fog and edge computing extend cloud-native benefits closer to users, reducing latency for IoT and real-time applications. The integration of AI into orchestration workflows also sparked reflection on how predictive scaling and policy enforcement could further reduce operational overheads.</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> In financial services, these principles directly apply to scaling transaction-processing systems and analytics platforms. For example, containerising microservices that handle compliance checks could improve resilience while Kubernetes ensures they are dynamically scaled based on demand. AI-driven orchestration adds further value by anticipating workload spikes, which is critical for trading platforms where milliseconds matter.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> I plan to experiment with Kubernetes deployments that integrate policy-as-code to enforce compliance while leveraging AI models for predictive scaling. Additionally, I aim to apply 12-Factor principles when reviewing internal applications, ensuring portability and resilience remain embedded in future cloud-native solutions.</p>
 
-  <h4 class="activity">References:</h4>
-  <ul class="references">
-    <li>Bonomi, F., Milito, R., Zhu, J. and Addepalli, S. (2012) 'Fog computing and its role in the internet of things', <em>Proceedings of the First Edition of the MCC Workshop on Mobile Cloud Computing</em>, Helsinki, 17 August. New York: ACM, pp. 13–16. doi:10.1145/2342509.2342513.</li>
-    <li>Gupta, H., Dastjerdi, A.V., Ghosh, S.K. and Buyya, R. (2016) 'iFogSim: A toolkit for modeling and simulation of resource management techniques in internet of things, edge and fog computing environments', <em>Software: Practice and Experience</em>, 47(9), pp. 1275–1296. doi:10.1002/spe.2509.</li>
-    <li>Hamzaoui, I., Duthil, B., Courboulay, V. and Medromi, H. (2024) 'A topical review on container-based cloud revolution: multi-directional challenges, and future trends', <em>SN Computer Science</em>, 5(416). doi:10.1007/s42979-024-02763-y.</li>
-    <li>Wiggins, A. (2017) <em>The twelve-factor app</em>. Available at: <a href="https://12factor.net" target="_blank" rel="noopener noreferrer">https://12factor.net</a> (Accessed: 6 September 2025).</li>
-  </ul>
-</div>
+                    <h4 class="activity">References:</h4>
+                    <ul class="references">
+                        <li>Bonomi, F., Milito, R., Zhu, J. and Addepalli, S. (2012) 'Fog computing and its role in the internet of things', <em>Proceedings of the First Edition of the MCC Workshop on Mobile Cloud Computing</em>, Helsinki, 17 August. New York: ACM, pp. 13–16. doi:10.1145/2342509.2342513.</li>
+                        <li>Gupta, H., Dastjerdi, A.V., Ghosh, S.K. and Buyya, R. (2016) 'iFogSim: A toolkit for modeling and simulation of resource management techniques in internet of things, edge and fog computing environments', <em>Software: Practice and Experience</em>, 47(9), pp. 1275–1296. doi:10.1002/spe.2509.</li>
+                        <li>Hamzaoui, I., Duthil, B., Courboulay, V. and Medromi, H. (2024) 'A topical review on container-based cloud revolution: multi-directional challenges, and future trends', <em>SN Computer Science</em>, 5(416). doi:10.1007/s42979-024-02763-y.</li>
+                        <li>Wiggins, A. (2017) <em>The twelve-factor app</em>. Available at: <a href="https://12factor.net" target="_blank" rel="noopener noreferrer">https://12factor.net</a> (Accessed: 6 September 2025).</li>
+                    </ul>
+                </div>
 
-      <!-- Unit 6 -->
-<div class="unit">
-  <p class="unit-title">Unit 6: Hybrid Cloud Solutions (Hybrid, Fog, Edge Computing)</p>
-  
-  <p class="reading-title">Required Reading:</p>
-  <p>Cybersecurity Framework (NIST) — Website (Essential)</p>
-  <p>Bonomi, F. et al. (2012) Fog Computing and its Role in the Internet of Things — MCC Workshop.</p>
-  <p>Gupta, H. et al. (2016) iFogSim: A Toolkit for Modelling Resource Management in IoT, Edge and Fog.</p>
-  
-  <p class="reading-title">Recommended Reading:</p>
-  <p>Toward Security Quantification of Serverless Computing — Article (Digital copy available online)</p>
-  <p>Hamzaoui, I. et al. (2024) A Topical Review on Container-Based Cloud: Challenges and Trends — SN Computer Science.</p>
-  
-  <p class="reading-title">Additional Reading:</p>
-  <p><em>Cloud Security and Privacy</em> — Book (O'Reilly)</p>
+                <!-- Unit 6 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 6: Hybrid Cloud Solutions (Hybrid, Fog, Edge Computing)</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Cybersecurity Framework (NIST) — Website (Essential)</p>
+                    <p>Bonomi, F. et al. (2012) Fog Computing and its Role in the Internet of Things — MCC Workshop.</p>
+                    <p>Gupta, H. et al. (2016) iFogSim: A Toolkit for Modelling Resource Management in IoT, Edge and Fog.</p>
+                    
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p>Toward Security Quantification of Serverless Computing — Article (Digital copy available online)</p>
+                    <p>Hamzaoui, I. et al. (2024) A Topical Review on Container-Based Cloud: Challenges and Trends — SN Computer Science.</p>
+                    
+                    <p class="reading-title">Additional Reading:</p>
+                    <p><em>Cloud Security and Privacy</em> — Book (O'Reilly)</p>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="lecturecast">Seminar: AI-Driven Cloud Computing and Cloud Design Tools</p>
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">🏆 Team Project: Cloud Infrastructure and Framework Report</h5>
-    <p style="margin: 5px 0;">This team-based project assessed understanding of foundational cloud computing concepts, 
-    service models, deployment types, and infrastructure design, as introduced in weeks 1–6. 
-    The task required collaboration to evaluate a cloud infrastructure framework, focusing 
-    on both theoretical understanding and applied design.</p>
-    <p style="margin: 5px 0;"><strong>Grade Achieved:</strong> <span style="color:#1e90ff; font-weight:600;">Distinction</span></p>
-    <a href="projects/Module%206/Development%20Team%20Project.html">Development Team Project: Cloud Infrastructure and Framework Report (Distinction)</a>
-  </p>
-  <p class="coursework">
-    <strong>Workshop:</strong> Draft a reference architecture where OpenStack runs on-prem for regulated/low-latency workloads, while AWS handles elastic analytics and global distribution. Map trust zones, data flows, and control planes. Identify lock-in risks and propose controls.
-  </p>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Seminar: AI-Driven Cloud Computing and Cloud Design Tools</p>
+                    <div class="assessment-highlight">
+                        <div class="assessment-title">🏆 Team Project: Cloud Infrastructure and Framework Report</div>
+                        <div class="assessment-description">This team-based project assessed understanding of foundational cloud computing concepts, service models, deployment types, and infrastructure design, as introduced in weeks 1–6. The task required collaboration to evaluate a cloud infrastructure framework, focusing on both theoretical understanding and applied design.</div>
+                        <p style="margin: 5px 0;"><strong>Grade Achieved:</strong> <span style="color:#1e90ff; font-weight:600;">Distinction</span></p>
+                        <a href="projects/Module%206/Development%20Team%20Project.html" class="assessment-link">Development Team Project: Cloud Infrastructure and Framework Report (Distinction)</a>
+                    </div>
+                    <p class="coursework">
+                        <strong>Workshop:</strong> Draft a reference architecture where OpenStack runs on-prem for regulated/low-latency workloads, while AWS handles elastic analytics and global distribution. Map trust zones, data flows, and control planes. Identify lock-in risks and propose controls.
+                    </p>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> This week focused on AI-driven cloud computing and cloud design tools. The lecturecast explored how AI enhances automation, security, and cost optimisation across cloud environments. We examined practical applications such as dynamic resource allocation, predictive fault detection, and compliance monitoring. The seminar also compared scripting approaches (Bash, Python, Terraform) with GUI-based tools (Azure Portal, AWS Console), weighing flexibility against accessibility. Finally, we discussed how AI-driven automation is reshaping administrator roles, shifting emphasis towards governance, strategy, and architecture (Bonomi et al., 2012; Hamzaoui et al., 2024).</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> I found AI's role in proactive fault detection particularly valuable, as predictive analytics can prevent downtime in financial services where resilience is critical (Gupta et al., 2016). Similarly, AI-driven security tools such as Microsoft Sentinel strengthen incident response and support compliance with ISO 27001. Reflecting on scripting versus GUI tools, I realised that while GUIs remain useful for troubleshooting, scripting and Infrastructure-as-Code pipelines are indispensable for standardisation at scale. The shift in administrator responsibilities stood out: rather than reducing demand, AI expands the skill set required, emphasising governance, AIOps, and cross-team collaboration (NIST, 2018).</p>
-  
-  <p class="reflection"><strong>Application:</strong> In my current role, AI-based cost optimisation tools like AWS Compute Optimizer could directly reduce cloud expenditure, while self-healing Kubernetes clusters would strengthen service continuity. Continuous compliance monitoring would support regulatory obligations such as FCA and GDPR. By combining scripting for automation with GUI tools for ad-hoc use, our team can balance efficiency with accessibility for less technical colleagues.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> I plan to develop stronger scripting expertise in Python and Terraform to extend automation and integrate CI/CD pipelines. I also aim to experiment with AIOps platforms that embed AI into observability and compliance monitoring, ensuring greater resilience and governance in multi-cloud deployments. Building these skills will prepare me for hybrid roles that combine technical architecture, automation, and AI-driven governance.</p>
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> This week focused on AI-driven cloud computing and cloud design tools. The lecturecast explored how AI enhances automation, security, and cost optimisation across cloud environments. We examined practical applications such as dynamic resource allocation, predictive fault detection, and compliance monitoring. The seminar also compared scripting approaches (Bash, Python, Terraform) with GUI-based tools (Azure Portal, AWS Console), weighing flexibility against accessibility. Finally, we discussed how AI-driven automation is reshaping administrator roles, shifting emphasis towards governance, strategy, and architecture (Bonomi et al., 2012; Hamzaoui et al., 2024).</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> I found AI's role in proactive fault detection particularly valuable, as predictive analytics can prevent downtime in financial services where resilience is critical (Gupta et al., 2016). Similarly, AI-driven security tools such as Microsoft Sentinel strengthen incident response and support compliance with ISO 27001. Reflecting on scripting versus GUI tools, I realised that while GUIs remain useful for troubleshooting, scripting and Infrastructure-as-Code pipelines are indispensable for standardisation at scale. The shift in administrator responsibilities stood out: rather than reducing demand, AI expands the skill set required, emphasising governance, AIOps, and cross-team collaboration (NIST, 2018).</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> In my current role, AI-based cost optimisation tools like AWS Compute Optimizer could directly reduce cloud expenditure, while self-healing Kubernetes clusters would strengthen service continuity. Continuous compliance monitoring would support regulatory obligations such as FCA and GDPR. By combining scripting for automation with GUI tools for ad-hoc use, our team can balance efficiency with accessibility for less technical colleagues.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> I plan to develop stronger scripting expertise in Python and Terraform to extend automation and integrate CI/CD pipelines. I also aim to experiment with AIOps platforms that embed AI into observability and compliance monitoring, ensuring greater resilience and governance in multi-cloud deployments. Building these skills will prepare me for hybrid roles that combine technical architecture, automation, and AI-driven governance.</p>
 
-  <h4 class="activity">References:</h4>
-  <ul class="references">
-    <li>Bonomi, F., Milito, R., Zhu, J. and Addepalli, S. (2012) 'Fog computing and its role in the internet of things', <em>Proceedings of the MCC Workshop on Mobile Cloud Computing</em>, pp. 13–16. doi:10.1145/2342509.2342513.</li>
-    <li>Gupta, H., Dastjerdi, A.V., Ghosh, S.K. and Buyya, R. (2016) 'iFogSim: A toolkit for modeling and simulation of resource management techniques in internet of things, edge and fog computing environments', <em>Software: Practice and Experience</em>, 47(9), pp. 1275–1296. doi:10.1002/spe.2509.</li>
-    <li>Hamzaoui, I., Duthil, B., Courboulay, V. and Medromi, H. (2024) 'A topical review on container-based cloud revolution: multi-directional challenges, and future trends', <em>SN Computer Science</em>, 5(416). doi:10.1007/s42979-024-02763-y.</li>
-    <li>NIST (2018) <em>Framework for improving critical infrastructure cybersecurity</em>. National Institute of Standards and Technology. Available at: <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">https://www.nist.gov/cyberframework</a> (Accessed: 6 September 2025).</li>
-  </ul>
-</div>
-      <!-- Unit 7 -->
-<div class="unit">
-  <p class="unit-title">Unit 7: Cloud Security and Compliance</p>
-  
-  <p class="reading-title">Required Reading:</p>
-  <p>Ioana, B. et al. (2017) Survey of Serverless Computing: Current Trends and Open Problems.</p>
-  
-  <p class="reading-title">Recommended Reading:</p>
-  <p>Sharma, S.K. and Kumar, P.B.S. (2024) 'Hybrid IT and Multi-Cloud: An Emerging Trend and Improved Deployment Model', SN Computer Science, 5(1), pp. 1-15.</p>
+                    <h4 class="activity">References:</h4>
+                    <ul class="references">
+                        <li>Bonomi, F., Milito, R., Zhu, J. and Addepalli, S. (2012) 'Fog computing and its role in the internet of things', <em>Proceedings of the MCC Workshop on Mobile Cloud Computing</em>, pp. 13–16. doi:10.1145/2342509.2342513.</li>
+                        <li>Gupta, H., Dastjerdi, A.V., Ghosh, S.K. and Buyya, R. (2016) 'iFogSim: A toolkit for modeling and simulation of resource management techniques in internet of things, edge and fog computing environments', <em>Software: Practice and Experience</em>, 47(9), pp. 1275–1296. doi:10.1002/spe.2509.</li>
+                        <li>Hamzaoui, I., Duthil, B., Courboulay, V. and Medromi, H. (2024) 'A topical review on container-based cloud revolution: multi-directional challenges, and future trends', <em>SN Computer Science</em>, 5(416). doi:10.1007/s42979-024-02763-y.</li>
+                        <li>NIST (2018) <em>Framework for improving critical infrastructure cybersecurity</em>. National Institute of Standards and Technology. Available at: <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">https://www.nist.gov/cyberframework</a> (Accessed: 6 September 2025).</li>
+                    </ul>
+                </div>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="lecturecast">Lecturecast: Cloud-Native Technology and Containerisation</p>
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">🔒 Security Audit Project</h5>
-    <p style="margin: 5px 0;">Perform a security audit of a cloud application deployed on OpenStack using OpenVAS (an open-source vulnerability scanner). Identify security risks and suggest mitigations based on industry standards such as ISO/IEC 27001.</p>
-    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=321918#p634665" target="_blank" rel="noopener noreferrer">Security Audit of OpenStack Cloud Applications Using OpenVAS</a>
-  </p>
+                <!-- Unit 7 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 7: Cloud Security and Compliance</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Ioana, B. et al. (2017) Survey of Serverless Computing: Current Trends and Open Problems.</p>
+                    
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p>Sharma, S.K. and Kumar, P.B.S. (2024) 'Hybrid IT and Multi-Cloud: An Emerging Trend and Improved Deployment Model', SN Computer Science, 5(1), pp. 1-15.</p>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> This week focused on cloud security and compliance, particularly how cloud controls map to frameworks such as ISO 27001, NIST SP 800-53, PCI DSS, and GDPR. The lecturecast explored cloud-native technologies and containerisation, while the coursework involved performing a security audit of an OpenStack deployment using OpenVAS. This highlighted risks such as unpatched services and weak authentication, and how they align with industry standards (ISO, 2022; NIST, 2020; PCI SSC, 2022; European Union, 2016).</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> The OpenVAS audit made me reflect on how technical vulnerabilities directly connect to compliance obligations. ISO/IEC 27001 Annex A.12.6 emphasises vulnerability management, while GDPR Article 32 highlights secure data processing (ISO, 2022; European Union, 2016). NIST SP 800-53 controls such as SI-2 (Flaw Remediation) and AC-2 (Account Management) provided guidance on structured remediation (NIST, 2020). PCI DSS reinforced the need for continuous patching and monitoring to protect cardholder data (PCI SSC, 2022). Overall, the activity showed that audits must not stop at technical fixes, but be interpreted within governance and regulatory frameworks.</p>
-  
-  <p class="reflection"><strong>Application:</strong> In FinTech, where sensitive financial data is at stake, these insights are highly relevant. Regulators expect evidence that vulnerabilities are addressed and compliance demonstrated. Linking cloud controls to ISO 27001, NIST, PCI DSS, and GDPR provides assurance of due diligence. Similarly, the disaster recovery design exercise reinforced how RPO and RTO targets map to ISO 22301, ensuring both resilience and compliance (ISO, 2019). This mapping directly informs operational practices in my role, where audits, compliance reviews, and regulator expectations converge.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> I plan to deepen my knowledge of cloud compliance by experimenting with automated compliance monitoring tools, such as AWS Config and Azure Policy, to map controls continuously against ISO 27001 and GDPR. Developing stronger skills in OpenVAS and other vulnerability management tools will allow me to connect technical findings with compliance requirements more effectively. This will prepare me for governance-driven roles where bridging technical risk and regulatory obligations is critical.</p>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Lecturecast: Cloud-Native Technology and Containerisation</p>
+                    <div class="project-highlight">
+                        <div class="project-title">🔒 Security Audit Project</div>
+                        <div class="project-description">Perform a security audit of a cloud application deployed on OpenStack using OpenVAS (an open-source vulnerability scanner). Identify security risks and suggest mitigations based on industry standards such as ISO/IEC 27001.</div>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=321918#p634665" target="_blank" rel="noopener noreferrer" class="project-link">Security Audit of OpenStack Cloud Applications Using OpenVAS</a>
+                    </div>
 
-  <h4 class="activity">References:</h4>
-  <ul class="references">
-    <li>European Union (2016) <em>Regulation (EU) 2016/679 of the European Parliament and of the Council (General Data Protection Regulation)</em>. Official Journal of the European Union, L119, pp. 1–88.</li>
-    <li>International Organization for Standardization (ISO) (2019) <em>ISO 22301:2019 Security and resilience – Business continuity management systems – Requirements</em>. Geneva: ISO.</li>
-    <li>International Organization for Standardization (ISO) (2022) <em>ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection – Information security management systems – Requirements</em>. Geneva: ISO.</li>
-    <li>National Institute of Standards and Technology (NIST) (2020) <em>Security and Privacy Controls for Information Systems and Organizations (NIST SP 800-53, Rev. 5)</em>. Gaithersburg: U.S. Department of Commerce.</li>
-    <li>PCI Security Standards Council (PCI SSC) (2022) <em>Payment Card Industry Data Security Standard: Requirements and Security Assessment Procedures (v4.0)</em>. Wakefield, MA: PCI SSC.</li>
-  </ul>
-</div>
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> This week focused on cloud security and compliance, particularly how cloud controls map to frameworks such as ISO 27001, NIST SP 800-53, PCI DSS, and GDPR. The lecturecast explored cloud-native technologies and containerisation, while the coursework involved performing a security audit of an OpenStack deployment using OpenVAS. This highlighted risks such as unpatched services and weak authentication, and how they align with industry standards (ISO, 2022; NIST, 2020; PCI SSC, 2022; European Union, 2016).</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> The OpenVAS audit made me reflect on how technical vulnerabilities directly connect to compliance obligations. ISO/IEC 27001 Annex A.12.6 emphasises vulnerability management, while GDPR Article 32 highlights secure data processing (ISO, 2022; European Union, 2016). NIST SP 800-53 controls such as SI-2 (Flaw Remediation) and AC-2 (Account Management) provided guidance on structured remediation (NIST, 2020). PCI DSS reinforced the need for continuous patching and monitoring to protect cardholder data (PCI SSC, 2022). Overall, the activity showed that audits must not stop at technical fixes, but be interpreted within governance and regulatory frameworks.</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> In FinTech, where sensitive financial data is at stake, these insights are highly relevant. Regulators expect evidence that vulnerabilities are addressed and compliance demonstrated. Linking cloud controls to ISO 27001, NIST, PCI DSS, and GDPR provides assurance of due diligence. Similarly, the disaster recovery design exercise reinforced how RPO and RTO targets map to ISO 22301, ensuring both resilience and compliance (ISO, 2019). This mapping directly informs operational practices in my role, where audits, compliance reviews, and regulator expectations converge.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> I plan to deepen my knowledge of cloud compliance by experimenting with automated compliance monitoring tools, such as AWS Config and Azure Policy, to map controls continuously against ISO 27001 and GDPR. Developing stronger skills in OpenVAS and other vulnerability management tools will allow me to connect technical findings with compliance requirements more effectively. This will prepare me for governance-driven roles where bridging technical risk and regulatory obligations is critical.</p>
 
-<!-- Unit 8 -->
-<div class="unit">
-  <p class="unit-title">Unit 8: Disaster Recovery and Business Continuity</p>
-  
-  <p class="reading-title">Required Reading:</p>
-  <p>Carson, R. and Rodrick, M. (2024) <em>Business Continuity and Disaster Recovery</em>. Packt Publishing. Chapters 2–3.</p>
-  <p>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments,' <em>Journal of Cloud Computing</em>, 13, pp. 1–15.</p>
-  
-  <p class="reading-title">Recommended Reading:</p>
-  <p>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments,' Journal of Cloud Computing, (13), pp.1-15.</p>
-  
-  <p class="reading-title">Seminar: Cloud-Native Technologies and Hybrid Cloud Solutions</p>
+                    <h4 class="activity">References:</h4>
+                    <ul class="references">
+                        <li>European Union (2016) <em>Regulation (EU) 2016/679 of the European Parliament and of the Council (General Data Protection Regulation)</em>. Official Journal of the European Union, L119, pp. 1–88.</li>
+                        <li>International Organization for Standardization (ISO) (2019) <em>ISO 22301:2019 Security and resilience – Business continuity management systems – Requirements</em>. Geneva: ISO.</li>
+                        <li>International Organization for Standardization (ISO) (2022) <em>ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection – Information security management systems – Requirements</em>. Geneva: ISO.</li>
+                        <li>National Institute of Standards and Technology (NIST) (2020) <em>Security and Privacy Controls for Information Systems and Organizations (NIST SP 800-53, Rev. 5)</em>. Gaithersburg: U.S. Department of Commerce.</li>
+                        <li>PCI Security Standards Council (PCI SSC) (2022) <em>Payment Card Industry Data Security Standard: Requirements and Security Assessment Procedures (v4.0)</em>. Wakefield, MA: PCI SSC.</li>
+                    </ul>
+                </div>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">🔄 Disaster Recovery Plan</h5>
-    <p style="margin: 5px 0;">Design and implement a Disaster Recovery (DR) plan for a cloud-based infrastructure on OpenStack. Simulate a failure scenario and perform a recovery operation using open-source backup tools such as Bacula or Duplicity.</p>
-    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=322914#p636946" target="_blank" rel="noopener noreferrer">Disaster Recovery (DR) Design for OpenStack</a>
-  </p>
+                <!-- Unit 8 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 8: Disaster Recovery and Business Continuity</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Carson, R. and Rodrick, M. (2024) <em>Business Continuity and Disaster Recovery</em>. Packt Publishing. Chapters 2–3.</p>
+                    <p>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments,' <em>Journal of Cloud Computing</em>, 13, pp. 1–15.</p>
+                    
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments,' Journal of Cloud Computing, (13), pp.1-15.</p>
+                    
+                    <p class="reading-title">Seminar: Cloud-Native Technologies and Hybrid Cloud Solutions</p>
 
-  <div class="seminar-preparation">
-    <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Seminar Preparation</h5>
-    <ul style="margin: 5px 0; padding-left: 20px;">
-      <li>How does the 12-Factor App methodology support cloud-native development?</li>
-      <li>In what situations would a business benefit from using Kubernetes for container orchestration?</li>
-      <li>What are the main advantages and challenges of hybrid cloud and edge computing?</li>
-      <li>How can organisations address the issue of data sovereignty in hybrid cloud environments?</li>
-    </ul>
-  </div>
+                    <h4 class="activity">Activity:</h4>
+                    <div class="project-highlight">
+                        <div class="project-title">🔄 Disaster Recovery Plan</div>
+                        <div class="project-description">Design and implement a Disaster Recovery (DR) plan for a cloud-based infrastructure on OpenStack. Simulate a failure scenario and perform a recovery operation using open-source backup tools such as Bacula or Duplicity.</div>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=322914#p636946" target="_blank" rel="noopener noreferrer" class="project-link">Disaster Recovery (DR) Design for OpenStack</a>
+                    </div>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> This week focused on disaster recovery (DR) and business continuity, highlighting how cloud-based strategies can achieve resilience objectives. The readings (Carson and Rodrick, 2024; Zheng et al., 2024) emphasised the need to define Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO), then design DR solutions that balance cost, performance, and compliance. The coursework activity reinforced this by simulating recovery on OpenStack using open-source tools such as Bacula or Duplicity.</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> I reflected on how DR is not only a technical requirement but also a governance obligation. ISO 22301 provides a framework for business continuity management, while ISO/IEC 27001 and GDPR require demonstrable resilience and data protection (ISO, 2019; ISO, 2022; European Union, 2016). In practice, I recognised that achieving a low RTO/RPO involves trade-offs: tighter objectives improve resilience but increase cost and complexity. The OpenStack exercise showed how open-source tools can provide flexibility, but they also demand strong operational discipline to avoid misconfiguration risks.</p>
-  
-  <p class="reflection"><strong>Application:</strong> In the FinTech sector, regulators such as the FCA require firms to demonstrate robust DR and continuity strategies. For example, ensuring payment processing systems can recover within 1 hour (RTO) and limiting data loss to minutes (RPO) is vital to customer trust and compliance. Using multi-cloud patterns, such as active-active replication between AWS and Azure, could enhance resilience while mitigating vendor lock-in. The activity also showed that DR must integrate with broader compliance frameworks, linking directly to audits and governance reporting.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> I plan to expand my knowledge of DRaaS (Disaster Recovery as a Service) providers such as Zerto and Veeam, while also exploring how policy-as-code can embed RTO/RPO objectives into infrastructure-as-code pipelines. This will prepare me to design DR strategies that are not only technically effective but also compliant, auditable, and aligned with ISO 22301 standards.</p>
+                    <div class="seminar-preparation">
+                        <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Seminar Preparation</h5>
+                        <ul style="margin: 5px 0; padding-left: 20px;">
+                            <li>How does the 12-Factor App methodology support cloud-native development?</li>
+                            <li>In what situations would a business benefit from using Kubernetes for container orchestration?</li>
+                            <li>What are the main advantages and challenges of hybrid cloud and edge computing?</li>
+                            <li>How can organisations address the issue of data sovereignty in hybrid cloud environments?</li>
+                        </ul>
+                    </div>
 
-  <h4 class="activity">References:</h4>
-  <ul class="references">
-    <li>Carson, R. and Rodrick, M. (2024) <em>Business Continuity and Disaster Recovery</em>. Packt Publishing.</li>
-    <li>European Union (2016) <em>Regulation (EU) 2016/679 (GDPR)</em>. Official Journal of the European Union, L119, pp. 1–88.</li>
-    <li>International Organization for Standardization (ISO) (2019) <em>ISO 22301:2019 Security and resilience – Business continuity management systems – Requirements</em>. Geneva: ISO.</li>
-    <li>International Organization for Standardization (ISO) (2022) <em>ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection – Information security management systems – Requirements</em>. Geneva: ISO.</li>
-    <li>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments', <em>Journal of Cloud Computing</em>, 13, pp. 1–15.</li>
-  </ul>
-</div>
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> This week focused on disaster recovery (DR) and business continuity, highlighting how cloud-based strategies can achieve resilience objectives. The readings (Carson and Rodrick, 2024; Zheng et al., 2024) emphasised the need to define Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO), then design DR solutions that balance cost, performance, and compliance. The coursework activity reinforced this by simulating recovery on OpenStack using open-source tools such as Bacula or Duplicity.</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> I reflected on how DR is not only a technical requirement but also a governance obligation. ISO 22301 provides a framework for business continuity management, while ISO/IEC 27001 and GDPR require demonstrable resilience and data protection (ISO, 2019; ISO, 2022; European Union, 2016). In practice, I recognised that achieving a low RTO/RPO involves trade-offs: tighter objectives improve resilience but increase cost and complexity. The OpenStack exercise showed how open-source tools can provide flexibility, but they also demand strong operational discipline to avoid misconfiguration risks.</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> In the FinTech sector, regulators such as the FCA require firms to demonstrate robust DR and continuity strategies. For example, ensuring payment processing systems can recover within 1 hour (RTO) and limiting data loss to minutes (RPO) is vital to customer trust and compliance. Using multi-cloud patterns, such as active-active replication between AWS and Azure, could enhance resilience while mitigating vendor lock-in. The activity also showed that DR must integrate with broader compliance frameworks, linking directly to audits and governance reporting.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> I plan to expand my knowledge of DRaaS (Disaster Recovery as a Service) providers such as Zerto and Veeam, while also exploring how policy-as-code can embed RTO/RPO objectives into infrastructure-as-code pipelines. This will prepare me to design DR strategies that are not only technically effective but also compliant, auditable, and aligned with ISO 22301 standards.</p>
 
-<!-- Unit 9 -->
-<div class="unit">
-  <p class="unit-title">Unit 9: Cloud Migration and Integration Strategies</p>
-  
-  <p class="reading-title">Required Reading:</p>
-  <p>Dunbar, W. (2024) Vendor-Locked DevOps Strategies. Association for Computing Machinery.</p>
-  
-  <p class="reading-title">Recommended Reading:</p>
-  <p>Ferrag, M. A. and Maglaras, L. (2024) 'Research trends in deep learning and machine learning for cloud computing security: a systematic review', Artificial Intelligence Review, 57(1), pp. 1-66.</p>
+                    <h4 class="activity">References:</h4>
+                    <ul class="references">
+                        <li>Carson, R. and Rodrick, M. (2024) <em>Business Continuity and Disaster Recovery</em>. Packt Publishing.</li>
+                        <li>European Union (2016) <em>Regulation (EU) 2016/679 (GDPR)</em>. Official Journal of the European Union, L119, pp. 1–88.</li>
+                        <li>International Organization for Standardization (ISO) (2019) <em>ISO 22301:2019 Security and resilience – Business continuity management systems – Requirements</em>. Geneva: ISO.</li>
+                        <li>International Organization for Standardization (ISO) (2022) <em>ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection – Information security management systems – Requirements</em>. Geneva: ISO.</li>
+                        <li>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments', <em>Journal of Cloud Computing</em>, 13, pp. 1–15.</li>
+                    </ul>
+                </div>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="lecturecast">Lecturecast: Hybrid Cloud Solutions</p>
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">📊 Database Migration Project</h5>
-    <p style="margin: 5px 0;">Migrate a database from a local machine to an OpenStack cloud environment using MySQL and Percona XtraBackup</p>
-    <a href="projects/Module%206/DB_Migration_Discussion_Post.pdf" target="_blank" rel="noopener noreferrer">Database Migration Discussion Post</a>
-  </p>
-  <p class="coursework">
-    <a href="assets/Unit9_HybridCloud_Migration_Large.png" target="_blank" rel="noopener noreferrer">View Hybrid Cloud Architecture Diagram (OpenStack → Azure/AWS with Percona XtraBackup)</a>
-  </p>
+                <!-- Unit 9 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 9: Cloud Migration and Integration Strategies</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Dunbar, W. (2024) Vendor-Locked DevOps Strategies. Association for Computing Machinery.</p>
+                    
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p>Ferrag, M. A. and Maglaras, L. (2024) 'Research trends in deep learning and machine learning for cloud computing security: a systematic review', Artificial Intelligence Review, 57(1), pp. 1-66.</p>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> This week focused on hybrid cloud solutions and practical migration exercises. The lecturecast on Hybrid Cloud highlighted design patterns where OpenStack integrates with public clouds for elasticity and compliance (Maurer, 2021). The formative coursework involved migrating a MySQL database to OpenStack using Percona XtraBackup. Attempting this on Windows exposed constraints with tooling support, requiring workarounds such as staging backups through Linux-based environments to achieve minimal downtime. The readings further explored cloud security through deep learning (Zhou et al., 2023) and the strategic trade-offs between cloud-agnostic and vendor-locked DevOps approaches (Dunbar, 2024).</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> I reflected on how hybrid cloud design requires balancing control and flexibility. Maurer (2021) emphasised governance and workload placement, while the migration exercise reinforced that technical constraints—like limited Windows support for Percona tools—can shape architecture choices. The workaround demonstrated resilience but also highlighted risks of misconfiguration. The article on machine learning in cloud security showed how predictive models can strengthen proactive defence, while the vendor lock-in piece illustrated that even cloud-agnostic aspirations come with trade-offs, often requiring more expertise and cost (Dunbar, 2024). This reminded me that migrations and hybrid strategies must align with both compliance and operational realities.</p>
-  
-  <p class="reflection"><strong>Application:</strong> In financial services, migrating core databases demands both data consistency and near-zero downtime. Using tools like Percona XtraBackup is relevant, but production environments would require clustering, replication, and automated failover. Hybrid solutions also provide opportunities to isolate sensitive workloads on OpenStack while leveraging cloud elasticity for analytics. AI-driven monitoring, as described by Zhou et al. (2023), could further secure these deployments. At the same time, vendor-locked tooling such as Azure DevOps may accelerate pipelines but needs conscious governance to prevent strategic dependency.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> I plan to test database migrations using Linux-native environments to minimise workarounds and experiment with hybrid models that blend OpenStack with AWS or Azure. I also intend to explore AIOps platforms for predictive security and evaluate cloud-agnostic orchestration tools like Kubernetes against vendor-locked CI/CD to balance flexibility and integration. Building these skills will prepare me for architecting resilient, compliant, and strategically balanced hybrid environments.</p>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Lecturecast: Hybrid Cloud Solutions</p>
+                    <div class="project-highlight">
+                        <div class="project-title">📊 Database Migration Project</div>
+                        <div class="project-description">Migrate a database from a local machine to an OpenStack cloud environment using MySQL and Percona XtraBackup</div>
+                        <a href="projects/Module%206/DB_Migration_Discussion_Post.pdf" target="_blank" rel="noopener noreferrer" class="project-link">Database Migration Discussion Post</a>
+                    </div>
+                    <p class="coursework">
+                        <a href="assets/Unit9_HybridCloud_Migration_Large.png" target="_blank" rel="noopener noreferrer">View Hybrid Cloud Architecture Diagram (OpenStack → Azure/AWS with Percona XtraBackup)</a>
+                    </p>
 
-  <h4 class="activity">References:</h4>
-  <ul class="references">
-    <li>Dunbar, W. (2024) 'Vendor-Locked DevOps Strategies', <em>Communications of the ACM</em>. Available at: https://cacm.acm.org/opinion/vendor-locked-devops-strategies/ (Accessed: 23 September 2025).</li>
-    <li>Maurer, T. (2021) <em>How to create Azure Hybrid Cloud Architectures</em>. Microsoft. Available at: https://thomasmaurer.ch/ (Accessed: 23 September 2025).</li>
-    <li>Zhou, Z., Wu, J., Yan, X., and Lin, Y. (2023) 'Research trends in deep learning and machine learning for cloud computing security', <em>Journal of Cloud Computing</em>, 12(1), pp. 1–18.</li>
-  </ul>
-</div>
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> This week focused on hybrid cloud solutions and practical migration exercises. The lecturecast on Hybrid Cloud highlighted design patterns where OpenStack integrates with public clouds for elasticity and compliance (Maurer, 2021). The formative coursework involved migrating a MySQL database to OpenStack using Percona XtraBackup. Attempting this on Windows exposed constraints with tooling support, requiring workarounds such as staging backups through Linux-based environments to achieve minimal downtime. The readings further explored cloud security through deep learning (Zhou et al., 2023) and the strategic trade-offs between cloud-agnostic and vendor-locked DevOps approaches (Dunbar, 2024).</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> I reflected on how hybrid cloud design requires balancing control and flexibility. Maurer (2021) emphasised governance and workload placement, while the migration exercise reinforced that technical constraints—like limited Windows support for Percona tools—can shape architecture choices. The workaround demonstrated resilience but also highlighted risks of misconfiguration. The article on machine learning in cloud security showed how predictive models can strengthen proactive defence, while the vendor lock-in piece illustrated that even cloud-agnostic aspirations come with trade-offs, often requiring more expertise and cost (Dunbar, 2024). This reminded me that migrations and hybrid strategies must align with both compliance and operational realities.</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> In financial services, migrating core databases demands both data consistency and near-zero downtime. Using tools like Percona XtraBackup is relevant, but production environments would require clustering, replication, and automated failover. Hybrid solutions also provide opportunities to isolate sensitive workloads on OpenStack while leveraging cloud elasticity for analytics. AI-driven monitoring, as described by Zhou et al. (2023), could further secure these deployments. At the same time, vendor-locked tooling such as Azure DevOps may accelerate pipelines but needs conscious governance to prevent strategic dependency.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> I plan to test database migrations using Linux-native environments to minimise workarounds and experiment with hybrid models that blend OpenStack with AWS or Azure. I also intend to explore AIOps platforms for predictive security and evaluate cloud-agnostic orchestration tools like Kubernetes against vendor-locked CI/CD to balance flexibility and integration. Building these skills will prepare me for architecting resilient, compliant, and strategically balanced hybrid environments.</p>
 
-<!-- Unit 10 -->
-<div class="unit">
-  <p class="unit-title">Unit 10: Advanced Cloud Technologies (Serverless Computing)</p>
-  
-  <p class="reading-title">Required Reading:</p>
-  <p>Toosi, A.N. et al. (2025) 'Serverless Computing for Next-Generation Application Development', <em>Future Generation Computer Systems</em>, 164, p. 107573.</p>
-  
-  <p class="reading-title">Recommended Reading:</p>
-  <p>Ahmad, S.G. et al. (2023) 'Cost optimization in cloud environment based on task deadline', <em>Journal of Cloud Computing</em>, 12(1), p. 9.</p>
-  
-  <p class="reading-title">Seminar: Cloud Security and Disaster Recovery</p>
-  <p><strong>Seminar Questions:</strong></p>
-  <ul style="margin: 5px 0; padding-left: 20px;">
-    <li>What are the biggest security threats to cloud environments today?</li>
-    <li>How can organisations balance security and compliance in cloud operations?</li>
-    <li>Why is a disaster recovery plan essential for cloud-based applications?</li>
-    <li>How would you design a basic DR plan for a small business using cloud services?</li>
-  </ul>
+                    <h4 class="activity">References:</h4>
+                    <ul class="references">
+                        <li>Dunbar, W. (2024) 'Vendor-Locked DevOps Strategies', <em>Communications of the ACM</em>. Available at: https://cacm.acm.org/opinion/vendor-locked-devops-strategies/ (Accessed: 23 September 2025).</li>
+                        <li>Maurer, T. (2021) <em>How to create Azure Hybrid Cloud Architectures</em>. Microsoft. Available at: https://thomasmaurer.ch/ (Accessed: 23 September 2025).</li>
+                        <li>Zhou, Z., Wu, J., Yan, X., and Lin, Y. (2023) 'Research trends in deep learning and machine learning for cloud computing security', <em>Journal of Cloud Computing</em>, 12(1), pp. 1–18.</li>
+                    </ul>
+                </div>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="lecturecast">Lecturecast: <em>Future Trends in AI and Cloud Computing</em></p>
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">⚡ Serverless Function Development</h5>
-    <p style="margin: 5px 0;">Implement a serverless function using OpenFaaS (an open-source serverless platform). Develop and deploy a simple function (e.g., a greeting service or a calculator) and explore how serverless architecture optimises cloud operations.</p>
-    <p style="margin: 5px 0;">Deliverable: A technical discussion of how you deployed the serverless function using OpenFaaS, along with the function code.</p>
-    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=323361#p637949" target="_blank" rel="noopener noreferrer">OpenFaaS Discussion</a>
-  </p>
-  
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">🔍 JLR & M&S Cloud Incident Analysis</h5>
-    <p style="margin: 5px 0;">During this week, I carried out an independent analysis of the Jaguar Land Rover (JLR) and Marks & Spencer (M&S) cloud incidents to explore the relationship between identity compromise, misconfiguration, and operational disruption. This individual work supported the seminar focus on balancing compliance and security through automation, leveraging cloud-native tools such as Azure Policy, AWS Config, and CSPM/CNAPP frameworks. I also designed a tiered disaster recovery (DR) plan suitable for SMEs, highlighting the trade-off between cost and resilience, and the importance of regularly tested recovery procedures.</p>
-  </p>
+                <!-- Unit 10 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 10: Advanced Cloud Technologies (Serverless Computing)</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Toosi, A.N. et al. (2025) 'Serverless Computing for Next-Generation Application Development', <em>Future Generation Computer Systems</em>, 164, p. 107573.</p>
+                    
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p>Ahmad, S.G. et al. (2023) 'Cost optimization in cloud environment based on task deadline', <em>Journal of Cloud Computing</em>, 12(1), p. 9.</p>
+                    
+                    <p class="reading-title">Seminar: Cloud Security and Disaster Recovery</p>
+                    <p><strong>Seminar Questions:</strong></p>
+                    <ul style="margin: 5px 0; padding-left: 20px;">
+                        <li>What are the biggest security threats to cloud environments today?</li>
+                        <li>How can organisations balance security and compliance in cloud operations?</li>
+                        <li>Why is a disaster recovery plan essential for cloud-based applications?</li>
+                        <li>How would you design a basic DR plan for a small business using cloud services?</li>
+                    </ul>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> This unit reinforced that cloud security depends less on traditional perimeter defences and more on automation, continuous posture management, and identity governance. My personal analysis of JLR and M&S showed that even compliant organisations can suffer operational outages without tested recovery orchestration. Serverless computing, as discussed in Toosi et al. (2025), reduces operational overhead by abstracting infrastructure management, but limitations such as cold starts, state handling, and vendor lock-in must be managed. Integrating serverless functions with managed DR services like AWS Backup and Azure Recovery Vault can strengthen recoverability and operational resilience.</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> The serverless function development provided hands-on experience with event-driven architectures and their implications for cloud operations. The JLR and M&S case studies highlighted how misconfigurations and identity compromises can cascade into operational disruptions, even in well-governed environments. This reinforced the importance of continuous monitoring and automated remediation in modern cloud architectures.</p>
-  
-  <p class="reflection"><strong>Application:</strong> In financial services, serverless architectures can provide cost-effective solutions for event processing and API endpoints while maintaining compliance requirements. The case study analysis demonstrated how proper governance frameworks and automated security controls can prevent similar incidents in regulated environments.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> Unit 10 builds on the security automation and cloud resilience themes from Units 8 and 9. It shows how modern architectures — including serverless and Function-as-a-Service (FaaS) — can complement traditional DR through event-driven recovery and policy-as-code. The key insight is end-to-end resilience: secure configuration, continuous compliance monitoring, and automated failover to maintain continuity across multi-cloud/hybrid environments — vital for future-ready FinTech platforms.</p>
-</div>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Lecturecast: <em>Future Trends in AI and Cloud Computing</em></p>
+                    <div class="project-highlight">
+                        <div class="project-title">⚡ Serverless Function Development</div>
+                        <div class="project-description">Implement a serverless function using OpenFaaS (an open-source serverless platform). Develop and deploy a simple function (e.g., a greeting service or a calculator) and explore how serverless architecture optimises cloud operations.</div>
+                        <p style="margin: 5px 0;">Deliverable: A technical discussion of how you deployed the serverless function using OpenFaaS, along with the function code.</p>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=323361#p637949" target="_blank" rel="noopener noreferrer" class="project-link">OpenFaaS Discussion</a>
+                    </div>
+                    
+                    <div class="project-highlight">
+                        <div class="project-title">🔍 JLR & M&S Cloud Incident Analysis</div>
+                        <div class="project-description">During this week, I carried out an independent analysis of the Jaguar Land Rover (JLR) and Marks & Spencer (M&S) cloud incidents to explore the relationship between identity compromise, misconfiguration, and operational disruption. This individual work supported the seminar focus on balancing compliance and security through automation, leveraging cloud-native tools such as Azure Policy, AWS Config, and CSPM/CNAPP frameworks. I also designed a tiered disaster recovery (DR) plan suitable for SMEs, highlighting the trade-off between cost and resilience, and the importance of regularly tested recovery procedures.</div>
+                    </div>
 
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> This unit reinforced that cloud security depends less on traditional perimeter defences and more on automation, continuous posture management, and identity governance. My personal analysis of JLR and M&S showed that even compliant organisations can suffer operational outages without tested recovery orchestration. Serverless computing, as discussed in Toosi et al. (2025), reduces operational overhead by abstracting infrastructure management, but limitations such as cold starts, state handling, and vendor lock-in must be managed. Integrating serverless functions with managed DR services like AWS Backup and Azure Recovery Vault can strengthen recoverability and operational resilience.</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> The serverless function development provided hands-on experience with event-driven architectures and their implications for cloud operations. The JLR and M&S case studies highlighted how misconfigurations and identity compromises can cascade into operational disruptions, even in well-governed environments. This reinforced the importance of continuous monitoring and automated remediation in modern cloud architectures.</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> In financial services, serverless architectures can provide cost-effective solutions for event processing and API endpoints while maintaining compliance requirements. The case study analysis demonstrated how proper governance frameworks and automated security controls can prevent similar incidents in regulated environments.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> Unit 10 builds on the security automation and cloud resilience themes from Units 8 and 9. It shows how modern architectures — including serverless and Function-as-a-Service (FaaS) — can complement traditional DR through event-driven recovery and policy-as-code. The key insight is end-to-end resilience: secure configuration, continuous compliance monitoring, and automated failover to maintain continuity across multi-cloud/hybrid environments — vital for future-ready FinTech platforms.</p>
+                </div>
 
-   <!-- Unit 11 -->
-<div class="unit">
-  <p class="unit-title">Unit 11: AI and Cloud Computing</p>
+                <!-- Unit 11 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 11: AI and Cloud Computing</p>
 
-  <p class="reading-title">Required Reading:</p>
-  <p><em>Carugati, C. (2023) Competitive Relationship Between Cloud Computing and Generative AI. Bruegel. Chapter 1-3</em> (PDF provided).</p>
+                    <p class="reading-title">Required Reading:</p>
+                    <p><em>Carugati, C. (2023) Competitive Relationship Between Cloud Computing and Generative AI. Bruegel. Chapter 1-3</em> (PDF provided).</p>
 
-  <p class="reading-title">Recommended Reading:</p>
-  <p><em>Alshareef, H.N. (2023) 'Current development, challenges, and future trends in cloud computing: A survey', International Journal of Advanced Computer Science and Applications, 14(3).</em> (PDF provided).</p>
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p><em>Alshareef, H.N. (2023) 'Current development, challenges, and future trends in cloud computing: A survey', International Journal of Advanced Computer Science and Applications, 14(3).</em> (PDF provided).</p>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="lecturecast">Lecturecast: AI in Cloud — Integrating Intelligence into Cloud Infrastructure</p>
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">🤖 AI Model Deployment Project</h5>
-    <p style="margin: 5px 0;">As part of this unit, I completed a practical task to build and deploy a simple image recognition model using <strong>TensorFlow</strong> and <strong>Keras</strong>, hosted on <strong>OpenStack</strong>. The activity demonstrated the integration of AI workloads within a cloud environment, showing how elastic compute and orchestration support scalable model deployment.</p>
-    <p style="margin: 5px 0;">I containerised the inference service with Docker, deployed it to OpenStack, and validated performance through endpoint testing and resource monitoring. Full implementation notes and code are documented on the following project page:</p>
-    <a href="projects/Module 6/ai-openstack.html" target="_blank" rel="noopener noreferrer">AI Model Deployment on OpenStack</a>
-  </p>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Lecturecast: AI in Cloud — Integrating Intelligence into Cloud Infrastructure</p>
+                    <div class="project-highlight">
+                        <div class="project-title">🤖 AI Model Deployment Project</div>
+                        <div class="project-description">As part of this unit, I completed a practical task to build and deploy a simple image recognition model using <strong>TensorFlow</strong> and <strong>Keras</strong>, hosted on <strong>OpenStack</strong>. The activity demonstrated the integration of AI workloads within a cloud environment, showing how elastic compute and orchestration support scalable model deployment.</div>
+                        <p style="margin: 5px 0;">I containerised the inference service with Docker, deployed it to OpenStack, and validated performance through endpoint testing and resource monitoring. Full implementation notes and code are documented on the following project page:</p>
+                        <a href="projects/Module 6/ai-openstack.html" target="_blank" rel="noopener noreferrer" class="project-link">AI Model Deployment on OpenStack</a>
+                    </div>
 
-  <div class="assessment-brief">
-    <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Assessment Brief – Individual Project</h5>
-    <p style="margin: 5px 0;">This project assesses the ability to analyse advanced cloud concepts such as cloud automation, AI integration, hybrid cloud solutions, and emerging cloud trends. Students will produce an executive summary and a detailed assessment report demonstrating strategic thinking and technical understanding of modern cloud infrastructure.</p>
-    
-    <h6 style="color: #333; font-weight: bold; margin: 10px 0 5px 0;">Assessment Tasks:</h6>
-    <ul style="margin: 5px 0; padding-left: 20px;">
-      <li><strong>Executive Summary:</strong> Outline the business needs, proposed cloud solution, and expected outcomes.</li>
-      <li><strong>Cloud Solution Design:</strong> Present a cloud architecture using Infrastructure as Code (e.g., Terraform or Ansible) and explain how it supports scalability, security, and cost-effectiveness.</li>
-      <li><strong>Integration of Advanced Cloud Technologies:</strong> Explain how AI, automation, and hybrid cloud methods enhance the proposed solution.</li>
-      <li><strong>Risk and Compliance Considerations:</strong> Evaluate potential risks (security, compliance) and propose mitigation measures.</li>
-      <li><strong>Future Recommendations:</strong> Suggest future improvements, referencing emerging trends such as edge computing and quantum cloud.</li>
-    </ul>
-    
-    <h6 style="color: #333; font-weight: bold; margin: 10px 0 5px 0;">Evaluation Criteria:</h6>
-    <ul style="margin: 5px 0; padding-left: 20px;">
-      <li><strong>Strategic Insight (25%)</strong> – Demonstrates alignment of cloud strategy with business objectives.</li>
-      <li><strong>Technical Application (25%)</strong> – Applies IaC, AI, and hybrid cloud principles effectively within the solution.</li>
-      <li><strong>Risk Assessment & Compliance (25%)</strong> – Identifies major risks and provides actionable mitigation strategies.</li>
-      <li><strong>Innovation & Future Readiness (25%)</strong> – Shows forward-thinking and innovative recommendations for future trends.</li>
-    </ul>
-  </div>
+                    <div class="assessment-brief">
+                        <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Assessment Brief – Individual Project</h5>
+                        <p style="margin: 5px 0;">This project assesses the ability to analyse advanced cloud concepts such as cloud automation, AI integration, hybrid cloud solutions, and emerging cloud trends. Students will produce an executive summary and a detailed assessment report demonstrating strategic thinking and technical understanding of modern cloud infrastructure.</p>
+                        
+                        <h6 style="color: #333; font-weight: bold; margin: 10px 0 5px 0;">Assessment Tasks:</h6>
+                        <ul style="margin: 5px 0; padding-left: 20px;">
+                            <li><strong>Executive Summary:</strong> Outline the business needs, proposed cloud solution, and expected outcomes.</li>
+                            <li><strong>Cloud Solution Design:</strong> Present a cloud architecture using Infrastructure as Code (e.g., Terraform or Ansible) and explain how it supports scalability, security, and cost-effectiveness.</li>
+                            <li><strong>Integration of Advanced Cloud Technologies:</strong> Explain how AI, automation, and hybrid cloud methods enhance the proposed solution.</li>
+                            <li><strong>Risk and Compliance Considerations:</strong> Evaluate potential risks (security, compliance) and propose mitigation measures.</li>
+                            <li><strong>Future Recommendations:</strong> Suggest future improvements, referencing emerging trends such as edge computing and quantum cloud.</li>
+                        </ul>
+                        
+                        <h6 style="color: #333; font-weight: bold; margin: 10px 0 5px 0;">Evaluation Criteria:</h6>
+                        <ul style="margin: 5px 0; padding-left: 20px;">
+                            <li><strong>Strategic Insight (25%)</strong> – Demonstrates alignment of cloud strategy with business objectives.</li>
+                            <li><strong>Technical Application (25%)</strong> – Applies IaC, AI, and hybrid cloud principles effectively within the solution.</li>
+                            <li><strong>Risk Assessment & Compliance (25%)</strong> – Identifies major risks and provides actionable mitigation strategies.</li>
+                            <li><strong>Innovation & Future Readiness (25%)</strong> – Shows forward-thinking and innovative recommendations for future trends.</li>
+                        </ul>
+                    </div>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> This unit explored how AI and cloud technologies converge to form the foundation of next-generation digital infrastructure. AI models rely heavily on cloud scalability, high-performance storage, and distributed compute frameworks to process large datasets. Conversely, cloud providers embed AI into their operations for predictive maintenance, anomaly detection, and dynamic workload optimisation. My OpenStack activity provided practical insight into how AI can enhance automation and efficiency in a cloud-native environment. Deploying TensorFlow within a virtualised infrastructure emphasised the importance of portability, cost control, and security in AI-driven workloads.</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> The readings highlighted that while AI accelerates innovation, it also increases the risk of vendor lock-in and dependency on hyperscale ecosystems. Balancing performance with transparency and regulatory compliance is therefore essential. I found that using open-source frameworks such as TensorFlow and Keras within OpenStack supports this balance by maintaining architectural independence and data sovereignty. The experience reinforced the need for containerisation, policy-as-code, and continuous monitoring to ensure responsible AI deployment in the cloud.</p>
-  
-  <p class="reflection"><strong>Application:</strong> In my current role, AI-based cost optimisation tools like AWS Compute Optimizer could directly reduce cloud expenditure, while self-healing Kubernetes clusters would strengthen service continuity. Continuous compliance monitoring would support regulatory obligations such as FCA and GDPR. By combining scripting for automation with GUI tools for ad-hoc use, our team can balance efficiency with accessibility for less technical colleagues.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> Unit 11 concludes the module by presenting a forward-looking view of cloud evolution through AI integration. It connects earlier themes of automation, resilience, and compliance from Units 8–10 with intelligent cloud orchestration and data-driven decision-making. The key takeaway is that AI is both a consumer and an enabler of cloud computing — driving smarter, more adaptive, and self-optimising environments. For IT leaders, mastering this intersection will be crucial in architecting ethical, efficient, and future-ready multi-cloud ecosystems.</p>
-</div>
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> This unit explored how AI and cloud technologies converge to form the foundation of next-generation digital infrastructure. AI models rely heavily on cloud scalability, high-performance storage, and distributed compute frameworks to process large datasets. Conversely, cloud providers embed AI into their operations for predictive maintenance, anomaly detection, and dynamic workload optimisation. My OpenStack activity provided practical insight into how AI can enhance automation and efficiency in a cloud-native environment. Deploying TensorFlow within a virtualised infrastructure emphasised the importance of portability, cost control, and security in AI-driven workloads.</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> The readings highlighted that while AI accelerates innovation, it also increases the risk of vendor lock-in and dependency on hyperscale ecosystems. Balancing performance with transparency and regulatory compliance is therefore essential. I found that using open-source frameworks such as TensorFlow and Keras within OpenStack supports this balance by maintaining architectural independence and data sovereignty. The experience reinforced the need for containerisation, policy-as-code, and continuous monitoring to ensure responsible AI deployment in the cloud.</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> In my current role, AI-based cost optimisation tools like AWS Compute Optimizer could directly reduce cloud expenditure, while self-healing Kubernetes clusters would strengthen service continuity. Continuous compliance monitoring would support regulatory obligations such as FCA and GDPR. By combining scripting for automation with GUI tools for ad-hoc use, our team can balance efficiency with accessibility for less technical colleagues.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> Unit 11 concludes the module by presenting a forward-looking view of cloud evolution through AI integration. It connects earlier themes of automation, resilience, and compliance from Units 8–10 with intelligent cloud orchestration and data-driven decision-making. The key takeaway is that AI is both a consumer and an enabler of cloud computing — driving smarter, more adaptive, and self-optimising environments. For IT leaders, mastering this intersection will be crucial in architecting ethical, efficient, and future-ready multi-cloud ecosystems.</p>
+                </div>
 
-    <!-- Unit 12 -->
-<div class="unit">
-  <p class="unit-title">Unit 12: Future Trends in Cloud Computing</p>
+                <!-- Unit 12 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 12: Future Trends in Cloud Computing</p>
 
-  <p class="reading-title">Required Reading:</p>
-  <p>Alsadie, D. (2024) <em>Artificial Intelligence Techniques for Securing Fog Computing Environments: Trends, Challenges, and Future Directions</em> (PDF provided).</p>
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Alsadie, D. (2024) <em>Artificial Intelligence Techniques for Securing Fog Computing Environments: Trends, Challenges, and Future Directions</em> (PDF provided).</p>
 
-  <p class="reading-title">Recommended Reading:</p>
-  <p>Alshareef, H.N. (2023) <em>Current Development, Challenges and Future Trends in Cloud Computing: A Survey</em> (PDF provided).</p>
+                    <p class="reading-title">Recommended Reading:</p>
+                    <p>Alshareef, H.N. (2023) <em>Current Development, Challenges and Future Trends in Cloud Computing: A Survey</em> (PDF provided).</p>
 
-  <h4 class="activity">Activity:</h4>
-  <p class="lecturecast">Seminar: Future Trends in AI and Cloud Computing</p>
-  <p class="coursework">
-    <strong>Seminar Questions:</strong>
-    <ul style="margin: 5px 0; padding-left: 20px;">
-      <li>How is AI expected to shape the future of cloud computing?</li>
-      <li>What role might Blockchain play in enhancing cloud security?</li>
-      <li>Discuss the potential of Quantum Computing in solving complex cloud-based computations.</li>
-      <li>How can IT professionals stay updated with rapidly evolving cloud technologies?</li>
-    </ul>
-  </p>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Seminar: Future Trends in AI and Cloud Computing</p>
+                    <p class="coursework">
+                        <strong>Seminar Questions:</strong>
+                        <ul style="margin: 5px 0; padding-left: 20px;">
+                            <li>How is AI expected to shape the future of cloud computing?</li>
+                            <li>What role might Blockchain play in enhancing cloud security?</li>
+                            <li>Discuss the potential of Quantum Computing in solving complex cloud-based computations.</li>
+                            <li>How can IT professionals stay updated with rapidly evolving cloud technologies?</li>
+                        </ul>
+                    </p>
 
-  <p class="coursework">
-    <h5 style="color: #1e90ff; font-weight: bold; font-size: 1.1em; margin: 10px 0 5px 0;">📚 E-Portfolio Project</h5>
-    <p style="margin: 5px 0;">This e-Portfolio consolidates learning from the entire module, combining reflection, evaluation, and practical application of cloud computing topics.</p>
-    <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=326253#p644171" target="_blank" rel="noopener noreferrer">Group Discussion – Future Trends of AI, Blockchain, and Quantum Computing in Cloud Operations</a>
-  </p>
+                    <div class="project-highlight">
+                        <div class="project-title">📚 E-Portfolio Project</div>
+                        <div class="project-description">This e-Portfolio consolidates learning from the entire module, combining reflection, evaluation, and practical application of cloud computing topics.</div>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=326253#p644171" target="_blank" rel="noopener noreferrer" class="project-link">Group Discussion – Future Trends of AI, Blockchain, and Quantum Computing in Cloud Operations</a>
+                    </div>
 
-  <div class="assessment-brief">
-    <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Assessment Brief – Cloud Operations & Management e-Portfolio</h5>
-    <p style="margin: 5px 0;">This e-Portfolio consolidates learning from the entire module, combining reflection, evaluation, and practical application of cloud computing topics.</p>
-    
-    <h6 style="color: #333; font-weight: bold; margin: 10px 0 5px 0;">Assessment Tasks:</h6>
-    <ul style="margin: 5px 0; padding-left: 20px;">
-      <li><strong>Introduction:</strong> Overview of cloud concepts, including key service models (IaaS, PaaS, SaaS) and deployment types.</li>
-      <li><strong>Weekly Reflections:</strong> Insights on at least five core topics (e.g., cloud-native tools, hybrid solutions, edge computing) and their impact on modern IT practices.</li>
-      <li><strong>Skills Development:</strong> Evidence of technical growth through tools such as Docker, Kubernetes, and Infrastructure as Code.</li>
-      <li><strong>Application to Industry:</strong> Critical evaluation of how cloud principles support real-world operations and innovation in a chosen sector.</li>
-      <li><strong>Future Learning Goals:</strong> Personal roadmap for advancing cloud knowledge, linked to emerging technologies.</li>
-    </ul>
-    
-    <h6 style="color: #333; font-weight: bold; margin: 10px 0 5px 0;">Evaluation Criteria:</h6>
-    <ul style="margin: 5px 0; padding-left: 20px;">
-      <li><strong>Depth of Reflection (25%)</strong> – Quality of insight and understanding.</li>
-      <li><strong>Technical Competency (25%)</strong> – Application of tools and techniques.</li>
-      <li><strong>Industry Relevance (25%)</strong> – Practical linkage to real-world contexts.</li>
-      <li><strong>Forward Planning (25%)</strong> – Clear, achievable future development goals.</li>
-    </ul>
-  </div>
+                    <div class="assessment-brief">
+                        <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Assessment Brief – Cloud Operations & Management e-Portfolio</h5>
+                        <p style="margin: 5px 0;">This e-Portfolio consolidates learning from the entire module, combining reflection, evaluation, and practical application of cloud computing topics.</p>
+                        
+                        <h6 style="color: #333; font-weight: bold; margin: 10px 0 5px 0;">Assessment Tasks:</h6>
+                        <ul style="margin: 5px 0; padding-left: 20px;">
+                            <li><strong>Introduction:</strong> Overview of cloud concepts, including key service models (IaaS, PaaS, SaaS) and deployment types.</li>
+                            <li><strong>Weekly Reflections:</strong> Insights on at least five core topics (e.g., cloud-native tools, hybrid solutions, edge computing) and their impact on modern IT practices.</li>
+                            <li><strong>Skills Development:</strong> Evidence of technical growth through tools such as Docker, Kubernetes, and Infrastructure as Code.</li>
+                            <li><strong>Application to Industry:</strong> Critical evaluation of how cloud principles support real-world operations and innovation in a chosen sector.</li>
+                            <li><strong>Future Learning Goals:</strong> Personal roadmap for advancing cloud knowledge, linked to emerging technologies.</li>
+                        </ul>
+                        
+                        <h6 style="color: #333; font-weight: bold; margin: 10px 0 5px 0;">Evaluation Criteria:</h6>
+                        <ul style="margin: 5px 0; padding-left: 20px;">
+                            <li><strong>Depth of Reflection (25%)</strong> – Quality of insight and understanding.</li>
+                            <li><strong>Technical Competency (25%)</strong> – Application of tools and techniques.</li>
+                            <li><strong>Industry Relevance (25%)</strong> – Practical linkage to real-world contexts.</li>
+                            <li><strong>Forward Planning (25%)</strong> – Clear, achievable future development goals.</li>
+                        </ul>
+                    </div>
 
-  <p class="coursework">
-    <strong>Topic:</strong> Discuss the future trends of AI, Blockchain, and Quantum Computing in cloud operations. Emphasise how open-source projects like <strong>TensorFlow</strong>, <strong>Hyperledger</strong>, and <strong>Qiskit</strong> are driving innovation in these fields.
-  </p>
+                    <p class="coursework">
+                        <strong>Topic:</strong> Discuss the future trends of AI, Blockchain, and Quantum Computing in cloud operations. Emphasise how open-source projects like <strong>TensorFlow</strong>, <strong>Hyperledger</strong>, and <strong>Qiskit</strong> are driving innovation in these fields.
+                    </p>
 
-  <p class="coursework">
-    In this week's forum, I explored how AI, Blockchain, and Quantum Computing are redefining the future of cloud operations. The readings by Alsadie (2024) and Alshareef (2023) highlighted how the convergence of these technologies will enhance scalability, transparency, and security in distributed computing environments. Open-source frameworks such as TensorFlow, Hyperledger, and Qiskit play a central role by democratising access to cutting-edge innovation, enabling practitioners and researchers to experiment, collaborate, and build interoperable cloud ecosystems.
-  </p>
+                    <p class="coursework">
+                        In this week's forum, I explored how AI, Blockchain, and Quantum Computing are redefining the future of cloud operations. The readings by Alsadie (2024) and Alshareef (2023) highlighted how the convergence of these technologies will enhance scalability, transparency, and security in distributed computing environments. Open-source frameworks such as TensorFlow, Hyperledger, and Qiskit play a central role by democratising access to cutting-edge innovation, enabling practitioners and researchers to experiment, collaborate, and build interoperable cloud ecosystems.
+                    </p>
 
-  <h4 class="activity">Reflective Thinking:</h4>
-  <p class="reflection"><strong>Summary:</strong> This unit concluded the module with a forward-looking perspective on how AI, Blockchain, and Quantum Computing will reshape cloud operations. It underscored the need for continuous learning and ethical awareness as automation, data sovereignty, and computational power evolve. My key takeaway is that open-source collaboration will be the catalyst for responsible innovation — ensuring that future clouds remain secure, transparent, and inclusive.</p>
-  
-  <p class="reflection"><strong>Reflection:</strong> Alsadie (2024) emphasised that AI techniques such as Explainable AI (XAI), federated learning, and lightweight models are crucial for securing fog and edge environments where latency and resource constraints pose challenges. I found this particularly relevant to enterprise cloud operations, as it mirrors the trend toward decentralised intelligence within hybrid architectures. AI's role in anomaly detection, predictive optimisation, and adaptive encryption demonstrates how the next generation of cloud platforms will be both intelligent and autonomous.</p>
-  
-  <p class="reflection"><strong>Application:</strong> Alshareef (2023) introduced the "Triumvirate" of AI, IoT, and Blockchain as a foundation for future digital ecosystems. Blockchain's immutable ledger provides transparency and trust in multi-cloud transactions, while AI improves efficiency and automation. Meanwhile, Quantum Computing promises transformative performance gains for encryption, predictive analytics, and optimisation, but also challenges existing cryptographic methods—requiring a focus on post-quantum security. Open-source frameworks such as Qiskit allow IT professionals to simulate and experiment with quantum algorithms in preparation for this emerging landscape.</p>
-  
-  <p class="reflection"><strong>Forward Planning:</strong> As an IT leader, I aim to deepen my knowledge of TensorFlow for AI-driven operations, Hyperledger for blockchain-based governance, and Qiskit for quantum-safe computing to architect resilient multi-cloud ecosystems. This will prepare me for governance-driven roles where bridging technical risk and regulatory obligations is critical.</p>
-</div>
-
+                    <h4 class="activity">Reflective Thinking:</h4>
+                    <p class="reflection"><strong>Summary:</strong> This unit concluded the module with a forward-looking perspective on how AI, Blockchain, and Quantum Computing will reshape cloud operations. It underscored the need for continuous learning and ethical awareness as automation, data sovereignty, and computational power evolve. My key takeaway is that open-source collaboration will be the catalyst for responsible innovation — ensuring that future clouds remain secure, transparent, and inclusive.</p>
+                    
+                    <p class="reflection"><strong>Reflection:</strong> Alsadie (2024) emphasised that AI techniques such as Explainable AI (XAI), federated learning, and lightweight models are crucial for securing fog and edge environments where latency and resource constraints pose challenges. I found this particularly relevant to enterprise cloud operations, as it mirrors the trend toward decentralised intelligence within hybrid architectures. AI's role in anomaly detection, predictive optimisation, and adaptive encryption demonstrates how the next generation of cloud platforms will be both intelligent and autonomous.</p>
+                    
+                    <p class="reflection"><strong>Application:</strong> Alshareef (2023) introduced the "Triumvirate" of AI, IoT, and Blockchain as a foundation for future digital ecosystems. Blockchain's immutable ledger provides transparency and trust in multi-cloud transactions, while AI improves efficiency and automation. Meanwhile, Quantum Computing promises transformative performance gains for encryption, predictive analytics, and optimisation, but also challenges existing cryptographic methods—requiring a focus on post-quantum security. Open-source frameworks such as Qiskit allow IT professionals to simulate and experiment with quantum algorithms in preparation for this emerging landscape.</p>
+                    
+                    <p class="reflection"><strong>Forward Planning:</strong> As an IT leader, I aim to deepen my knowledge of TensorFlow for AI-driven operations, Hyperledger for blockchain-based governance, and Qiskit for quantum-safe computing to architect resilient multi-cloud ecosystems. This will prepare me for governance-driven roles where bridging technical risk and regulatory obligations is critical.</p>
+                </div>
 
             </div>
 
