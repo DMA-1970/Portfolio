@@ -247,6 +247,98 @@
             font-size: 0.9em;
         }
 
+        /* Enhanced project styling */
+        .project-highlight {
+            background: rgba(30, 144, 255, 0.1);
+            border: 1px solid rgba(30, 144, 255, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-highlight:hover {
+            background: rgba(30, 144, 255, 0.15);
+            border-color: rgba(30, 144, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+        }
+
+        .project-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1e90ff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .project-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+
+        /* Enhanced assessment styling */
+        .assessment-highlight {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-highlight:hover {
+            background: rgba(255, 107, 53, 0.15);
+            border-color: rgba(255, 107, 53, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+        }
+
+        .assessment-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .assessment-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .assessment-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-link:hover {
+            color: #ff6b35;
+            text-decoration: underline;
+        }
+
         .summary {
             background: rgba(255, 255, 255, 0.05);
             border-left: 3px solid rgba(255, 255, 255, 0.2);
@@ -404,7 +496,11 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p><a href="projects/User Participation in the Risk Management Process.pdf" target="_blank">User Participation in the Risk Management Process</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">👥 User Participation Analysis</div>
+                                <div class="project-description">Comprehensive analysis of user participation in the risk management process</div>
+                                <a href="projects/User Participation in the Risk Management Process.pdf" target="_blank" class="project-link">View User Participation Analysis</a>
+                            </div>
                             <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629" target="_blank">Response on Ilyas Demirtas' Post</a></p>
                             <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=254918#p475241" target="_blank">Response on Sameer Saleem's Post (Original Post)</a></p>
                             <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452572" target="_blank">Response to Tobias Zeier</a></p>
@@ -446,8 +542,13 @@
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
                             <p>Seminar: Threat Modelling Exercises</p>
-                            <p><a href="projects/Risk Modelling/Threat Model.pptx" target="_blank">Threat Modelling Exercises</a></p>
-                            <p><a href="Bank Threats.adt" target="_blank">ADT Model</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">🛡️ Threat Modelling Exercises</div>
+                                <div class="project-description">Practical threat modelling exercises and ADT model development</div>
+                                <a href="projects/Risk Modelling/Threat Model.pptx" target="_blank" class="project-link">View Threat Modelling Presentation</a>
+                                <br>
+                                <a href="Bank Threats.adt" target="_blank" class="project-link">Download ADT Model</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -465,11 +566,21 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p><a href="projects/Applicable Frameworks for Different Organisations.pdf" target="_blank">Applicable Frameworks for Different Organisations</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">📋 Security Frameworks Analysis</div>
+                                <div class="project-description">Analysis of applicable frameworks for different organizations</div>
+                                <a href="projects/Applicable Frameworks for Different Organisations.pdf" target="_blank" class="project-link">View Frameworks Analysis</a>
+                            </div>
                             <p>Lecturecast: Security and Risk Management Standards</p>
-                            <p><a href="GDPR.html" target="_blank">GDPR Case Study</a></p>
-                            <p><a href="Use of CCTV footage in a disciplinary process_Original.pdf" target="_blank">Original Complaint</a></p>
-                            <p><a href="Use of CCTV footage in a disciplinary process_Response.pdf" target="_blank">Assessment and Reflection</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">⚖️ GDPR Case Study</div>
+                                <div class="project-description">Comprehensive GDPR case study with original complaint and assessment</div>
+                                <a href="GDPR.html" target="_blank" class="project-link">View GDPR Case Study</a>
+                                <br>
+                                <a href="Use of CCTV footage in a disciplinary process_Original.pdf" target="_blank" class="project-link">Original Complaint</a>
+                                <br>
+                                <a href="Use of CCTV footage in a disciplinary process_Response.pdf" target="_blank" class="project-link">Assessment and Reflection</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -487,7 +598,12 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p><a href="projects/Module2/PamperedPetsReport_FINAL.pdf" target="_blank">Development Team Project</a> <span class="grade">(Grade: Distinction)</span></p>
+                            <div class="assessment-highlight">
+                                <div class="assessment-title">🏢 Development Team Project</div>
+                                <div class="assessment-description">Comprehensive team project on security and risk management standards</div>
+                                <a href="projects/Module2/PamperedPetsReport_FINAL.pdf" target="_blank" class="assessment-link">View PamperedPets Report</a>
+                                <span class="grade">(Grade: Distinction)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -524,7 +640,11 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p><a href="projects/QRM.html" target="_blank">QRM Activity</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">📊 Quantitative Risk Modelling</div>
+                                <div class="project-description">Implementation and analysis of quantitative risk models</div>
+                                <a href="projects/QRM.html" target="_blank" class="project-link">View QRM Activity</a>
+                            </div>
                             <p>Seminar: Quantitative Risk Modelling</p>
                             <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=254918#p475241" target="_blank">Response on Sameer Saleem's post</a></p>
                             <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253279#p475224" target="_blank">Response on Tobias Zeier's post</a></p>
@@ -545,7 +665,12 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p><a href="projects/Module2/DAbiodun_12696259 Executive summary.pdf" target="_blank">Individual Project: Executive Summary</a> <span class="grade">(Grade: Distinction)</span></p>
+                            <div class="assessment-highlight">
+                                <div class="assessment-title">📝 Individual Project: Executive Summary</div>
+                                <div class="assessment-description">Comprehensive executive summary on risk, business continuity and disaster recovery</div>
+                                <a href="projects/Module2/DAbiodun_12696259 Executive summary.pdf" target="_blank" class="assessment-link">View Executive Summary</a>
+                                <span class="grade">(Grade: Distinction)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -565,7 +690,11 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p><a href="projects/DR Solutions Design and Review.pptx" target="_blank">DR Solutions Design and Review</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">☁️ DR Solutions Design and Review</div>
+                                <div class="project-description">Comprehensive disaster recovery solutions design and review for cloud environments</div>
+                                <a href="projects/DR Solutions Design and Review.pptx" target="_blank" class="project-link">View DR Solutions Presentation</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -590,7 +719,11 @@
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
                             <p>Lecturecast: Future Trends</p>
-                            <p><a href="projects/Executive Summary/index.html" target="_blank">Executive Summary</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">🔮 Executive Summary</div>
+                                <div class="project-description">Comprehensive executive summary on future trends in security and risk management</div>
+                                <a href="projects/Executive Summary/index.html" target="_blank" class="project-link">View Executive Summary</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -601,7 +734,11 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p>End of Module Assignment: e-Portfolio Submission <span class="grade">(Grade: Distinction)</span></p>
+                            <div class="assessment-highlight">
+                                <div class="assessment-title">📚 End of Module Assignment: e-Portfolio Submission</div>
+                                <div class="assessment-description">Comprehensive e-portfolio submission consolidating all learning from the module</div>
+                                <span class="grade">(Grade: Distinction)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
