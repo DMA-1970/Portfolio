@@ -249,6 +249,98 @@
             font-size: 0.9em;
         }
 
+        /* Enhanced project styling */
+        .project-highlight {
+            background: rgba(30, 144, 255, 0.1);
+            border: 1px solid rgba(30, 144, 255, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-highlight:hover {
+            background: rgba(30, 144, 255, 0.15);
+            border-color: rgba(30, 144, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+        }
+
+        .project-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1e90ff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .project-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+
+        /* Enhanced assessment styling */
+        .assessment-highlight {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-highlight:hover {
+            background: rgba(255, 107, 53, 0.15);
+            border-color: rgba(255, 107, 53, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+        }
+
+        .assessment-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .assessment-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .assessment-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-link:hover {
+            color: #ff6b35;
+            text-decoration: underline;
+        }
+
         .summary {
             background: rgba(255, 255, 255, 0.05);
             border-left: 3px solid #64748b;
@@ -470,12 +562,16 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=295963#p571798" target="_blank">Summative Collaborative Discussion</a> <span class="grade">(Grade: Merit)</span></p>
+                            <div class="assessment-highlight">
+                                <div class="assessment-title">💬 Summative Collaborative Discussion</div>
+                                <div class="assessment-description">Digital transformation and enterprise architecture discussion</div>
+                                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=295963#p571798" target="_blank" class="assessment-link">View Discussion</a>
+                                <span class="grade">(Grade: Merit)</span>
+                            </div>
                             <p>Lecturecast: Enterprise Data Architecture</p>
                         </div>
                     </div>
                 </div>
-
 
                 <div class="unit">
                     <h3 class="unit-title">Unit 6: Emerging Technologies and Data Valuation</h3>
@@ -506,13 +602,21 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p><a href="projects/Enterprise Data Report - Case Analysis/EnterpriseDataReport.html" target="_blank">Summative Assignment: Enterprise Data Report - Case Analysis</a> <span class="grade">(Grade: Distinction)</span></p>
-                            <p><a href="projects/Module5/DAbiodun_12696259.docx" target="_blank">Emerging Technologies – Digital Conversion and Transformation</a></p>
+                            <div class="assessment-highlight">
+                                <div class="assessment-title">📊 Summative Assignment: Enterprise Data Report - Case Analysis</div>
+                                <div class="assessment-description">Comprehensive enterprise data report with case analysis</div>
+                                <a href="projects/Enterprise Data Report - Case Analysis/EnterpriseDataReport.html" target="_blank" class="assessment-link">View Enterprise Data Report</a>
+                                <span class="grade">(Grade: Distinction)</span>
+                            </div>
+                            <div class="project-highlight">
+                                <div class="project-title">📝 Emerging Technologies – Digital Conversion and Transformation</div>
+                                <div class="project-description">Analysis of emerging technologies in digital transformation</div>
+                                <a href="projects/Module5/DAbiodun_12696259.docx" target="_blank" class="project-link">Download Document</a>
+                            </div>
                             <p>Coursework: Evaluate the article Fleckenstein, M., Obaidi, A,& Tryfona, N. (2023) A Review of Data Valuation Approaches and Building and Scoring a Data Valuation Model, and present a summary of what you consider to be the advantages and disadvantages of the data valuation model. The word count limit is 1,000 words. Submit your work to the portal.</p>
                         </div>
                     </div>
                 </div>
-
 
                 <div class="unit">
                     <h3 class="unit-title">Unit 11: Big Data Analytics and AI Trends</h3>
@@ -529,12 +633,16 @@
                     <div class="activity-section">
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
-                            <p><a href="projects/Module5/Summative Assignment/ESIR.html" target="_blank">Summative Assignment: Enterprise Data Executive Summary and Implementation Report</a> <span class="grade">(Grade: Distinction)</span></p>
+                            <div class="assessment-highlight">
+                                <div class="assessment-title">📈 Summative Assignment: Enterprise Data Executive Summary and Implementation Report</div>
+                                <div class="assessment-description">Comprehensive executive summary and implementation report for enterprise data</div>
+                                <a href="projects/Module5/Summative Assignment/ESIR.html" target="_blank" class="assessment-link">View Executive Summary and Implementation Report</a>
+                                <span class="grade">(Grade: Distinction)</span>
+                            </div>
                             <p>Coursework: Compare and contrast the key characteristics of Clouds, Data Warehouse and Lakes.</p>
                         </div>
                     </div>
                 </div>
-
 
                 <div class="unit">
                     <h3 class="unit-title">Units 4-10: Data Analytics and GDPR Compliance</h3>
@@ -544,7 +652,11 @@
                         <div class="activity-item">
                             <p>Data Analytics Tools (Unified Modelling Language)</p>
                             <p>Business Analysis (Value of Data/IP Strategy)</p>
-                            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=300317#p583370" target="_blank">Collaborative Discussion 2</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">💬 Collaborative Discussion 2</div>
+                                <div class="project-description">Data analytics and business intelligence discussion</div>
+                                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=300317#p583370" target="_blank" class="project-link">View Discussion</a>
+                            </div>
                             <p>Compliance, Governance, Ethics and Regulatory Frameworks</p>
                             <p>Business Intelligence and Enterprise Resource Planning</p>
                             <p>GDPR Principles and Implementation</p>
@@ -570,8 +682,16 @@
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
                             <p>Lecturecast: Blockchain: Emergent Technology in Data Management</p>
-                            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309291#p605511" target="_blank">Create an ERP Conceptual Model/Diagram</a></p>
-                            <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309152#p605525" target="_blank">Respond to peers' posts</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">🏗️ Create an ERP Conceptual Model/Diagram</div>
+                                <div class="project-description">Enterprise Resource Planning conceptual model development</div>
+                                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309291#p605511" target="_blank" class="project-link">View ERP Model</a>
+                            </div>
+                            <div class="project-highlight">
+                                <div class="project-title">💬 Respond to peers' posts</div>
+                                <div class="project-description">Peer engagement and discussion responses</div>
+                                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309152#p605525" target="_blank" class="project-link">View Responses</a>
+                            </div>
                         </div>
                     </div>
                 </div>
