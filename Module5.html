@@ -173,11 +173,11 @@
         }
 
         .unit-title {
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.3em;
-            font-weight: 700;
+            font-weight: 600;
             color: #ffffff;
             margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
         }
 
         .reading-section {
@@ -193,8 +193,8 @@
         }
 
         .reading-list p {
-            font-size: 0.9em;
-            line-height: 1.6;
+            font-size: 0.95em;
+            line-height: 1.8;
             color: #b8c5e0;
             margin-bottom: 8px;
             padding-left: 15px;
@@ -204,7 +204,7 @@
 
         .reading-list p:before {
             content: '•';
-            color: #64748b;
+            color: #8095b8;
             position: absolute;
             left: 0;
         }
@@ -232,14 +232,14 @@
         }
 
         .activity-item a:hover {
-            color: #f97316;
+            color: #ffffff;
             text-decoration: underline;
         }
 
         .activity-item p {
             color: #b8c5e0;
             font-size: 0.95em;
-            line-height: 1.6;
+            line-height: 1.8;
             text-align: justify;
         }
 
@@ -341,49 +341,47 @@
             text-decoration: underline;
         }
 
-        .summary {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 3px solid #64748b;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-            color: #b8c5e0;
-            font-size: 0.9em;
-            line-height: 1.7;
-            text-align: justify;
+        /* Seminar preparation styling */
+        .seminar-preparation {
+            font-size: 0.9rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #1e90ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            line-height: 1.5;
         }
 
-        .summary ul {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-
-        .summary li {
-            margin-bottom: 5px;
+        .seminar-preparation h5 {
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 15px 0 10px 0;
         }
 
         /* Navigation links */
         .bottom-navigation {
             display: flex;
             flex-wrap: nowrap;
-            gap: 10px;
+            gap: 8px;
             justify-content: center;
             margin-top: 40px;
+            overflow-x: auto;
         }
 
         .nav-link {
             background: rgba(255, 255, 255, 0.07);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 25px;
             text-decoration: none;
             color: #d4dff5;
-            font-size: 0.9em;
+            font-size: 0.85em;
             font-weight: 400;
             transition: all 0.3s ease;
             display: inline-block;
+            white-space: nowrap;
         }
 
         .nav-link:hover {
@@ -454,247 +452,231 @@
             <!-- Header -->
             <div class="header">
                 <h1>Into Data Science</h1>
-                <p class="module-grade">Overall Module Grade: Distinction</p>
+                <p class="module-grade">Overall Module Grade: [Grade to be added]</p>
             </div>
 
             <!-- Module Content Card -->
             <div class="content-card">
 
+                <!-- Unit 3 -->
                 <div class="unit">
-                    <h3 class="unit-title">Unit 1: Introduction to Data Science</h3>
+                    <p class="unit-title">Unit 3: Data Science and Big Data</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Jager, E. (2023) Getting Started with Enterprise Architecture - A Practical and Pragmatic Approach to Learning the Basics of Enterprise Architecture. Apress. Pages 1-3, 27-33</p>
+                    <p>Minelli, M., Chambers, M. & Dhiraj, A. (2013) Big Data Analytics – Emerging Business Intelligence and Analytics Trends for Today's Businesses. John Wiley & Sons Inc.</p>
+                    
+                    <p class="reading-title">Additional Reading:</p>
+                    <p>Downey, A., Meyer, C. & Elkner, J. (2020) How to think like a computer scientist. Learning with Python. Green Tea Press.</p>
+                    <p>Bellard, F. (2018) Tiny C Compiler Reference Documentation.</p>
+                    <p>GCC Manual. (n.d) Using the GNU Compiler Collection.</p>
+                    <p>FreeCodeCamp. (2019) Sorting Algorithms Explained with Examples in JavaScript, Python, Java, and C++.</p>
 
-                    <div class="reading-section">
-                        <p class="reading-title">Required Reading:</p>
-                        <div class="reading-list">
-                            <p>Janssens, J. (2021) Data Science at the Command Line. O'Reilly Media. Chapter 1</p>
-                            <p>Hero, A., Kar, S., Moura, J., Neil, J., Poor, H. V., Turcotte, M. & Xi, B. (2023) Statistics and Data Science for Cybersecurity. Harvard Data Science Review.</p>
-                            <p>Tebout, B. (2021) The challenges of the convergence of Data, AI, Cloud, Blockchain, IoT and Cybersecurity. European Scientist.</p>
-                        </div>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Lecturecast: Digital Transformation</p>
+                    <p class="coursework">We covered in the lecturecast:</p>
+                    <ul style="margin: 5px 0; padding-left: 20px;">
+                        <li>Evaluate different data storage models and architecture</li>
+                        <li>Examine the characteristics and 4Vs of big data (Volume, Variety, Veracity and Velocity)</li>
+                        <li>Security Implications of Big Data</li>
+                    </ul>
+                </div>
+
+                <!-- Unit 4 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 4: Big Data – Lakes, Data Warehouse, Mining and Clouds</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Jager, E. (2023) Getting Started with Enterprise Architecture - A Practical and Pragmatic Approach to Learning the Basics of Enterprise Architecture. Apress. Pages 1-3, 27-33</p>
+                    <p>Minelli, M., Chambers, M. & Dhiraj, A. (2013) Big Data Analytics – Emerging Business Intelligence and Analytics Trends for Today's Businesses. John Wiley & Sons Inc.</p>
+                    
+                    <p class="reading-title">Additional Reading:</p>
+                    <p>Downey, A., Meyer, C. & Elkner, J. (2020) How to think like a computer scientist. Learning with Python. Green Tea Press.</p>
+                    <p>Bellard, F. (2018) Tiny C Compiler Reference Documentation.</p>
+                    <p>GCC Manual. (n.d) Using the GNU Compiler Collection.</p>
+                    <p>FreeCodeCamp. (2019) Sorting Algorithms Explained with Examples in JavaScript, Python, Java, and C++.</p>
+
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Lecturecast: Digital Transformation</p>
+                    <p class="coursework">We covered in the lecturecast:</p>
+                    <ul style="margin: 5px 0; padding-left: 20px;">
+                        <li>Evaluate different data storage models and architecture</li>
+                        <li>Examine the characteristics and 4Vs of big data (Volume, Variety, Veracity and Velocity)</li>
+                        <li>Security Implications of Big Data</li>
+                    </ul>
+                </div>
+
+                <!-- Unit 5 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 5: Data Analytics and Tools</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Janssens, J. (2021) Data Science at the Command Line. O'Reilly Media. Chapters 3, 4, and 8</p>
+                    <p>Minelli, M., Chambers, M. & Dhiraj, A. (2013) Big Data Analytics – Emerging Business Intelligence and Analytics Trends for Today's Businesses. John Wiley & Sons Inc.</p>
+                    <p>Novicio, T. (2021) 15 Biggest Outsourcing Companies in the World.</p>
+                    <p>Harvard Business Review. (2023) Advancing digital transformation in financial services.</p>
+
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Apply different analytical tools. Identify scenarios where analytical tools could be used. Make the appropriate recommendations in deploying EA.</p>
+                    
+                    <div class="seminar-preparation">
+                        <h5>📋 Seminar Preparation</h5>
+                        <p>Using the (OSEMN) Model analyse the value of data in respect of the 4Vs (Volume, Veracity, Velocity and Variety) of Data for a Business or your organisation.</p>
+                        <p>Discuss your answers in this week's seminar.</p>
                     </div>
 
-                    <div class="reading-section">
-                        <p class="reading-title">Additional Reading:</p>
-                        <div class="reading-list">
-                            <p>EITBOK. (n.d) Guide to the Enterprise IT Body of Knowledge.</p>
-                        </div>
-                    </div>
-
-                    <div class="reading-section">
-                        <p class="reading-title">Seminar:</p>
-                        <div class="reading-list">
-                            <p>Into Data Science - Overview</p>
-                        </div>
-                    </div>
-
-                    <div class="activity-section">
-                        <h4 class="activity-title">Activity:</h4>
-                        <div class="activity-item">
-                            <p>Lecturecast: Theoretical and Fundamental Concepts</p>
-                            <p>Summative Collaborative Discussion</p>
-                            <p>Coursework: List the 4Vs that characterise Big Data and describe 2 (two) example scenarios for each of the Vs. Use references.</p>
-                        </div>
+                    <div class="project-highlight">
+                        <div class="project-title">💬 Collaborative Discussion Week 2</div>
+                        <div class="project-description">Critical Review of "Advancing Digital Transformation in Financial Services" (Harvard Business Review, 2023)</div>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=300317#p583370" target="_blank" rel="noopener noreferrer" class="project-link">View Discussion</a>
                     </div>
                 </div>
 
+                <!-- Unit 6 -->
                 <div class="unit">
-                    <h3 class="unit-title">Unit 2: Enterprise Data Architecture</h3>
+                    <p class="unit-title">Unit 6: Value of Data</p>
+                    
+                    <h4 class="activity">Activity:</h4>
+                    <p class="coursework">Formative Evaluation Task - This is a formative activity and will not count towards the final module grade. We recommend completing this task as it may provide useful experience when dealing with the summative assignments.</p>
+                    
+                    <p class="coursework">Formative Task: Evaluate the article below and present a summary of what you consider to be the advantages and disadvantages of the data valuation model. The word count limit is 1,000 words.</p>
+                    <p class="coursework">Fleckenstein, M., Obaidi, A,& Tryfona, N. (2023) A Review of Data Valuation Approaches and Building and Scoring a Data Valuation Model.</p>
 
-                    <div class="reading-section">
-                        <p class="reading-title">Required Reading:</p>
-                        <div class="reading-list">
-                            <p>Mallmann, G.L., Maçada, A.C.G. & Zimmermann Montesdioca, G.P. (2019) The Social Side of Shadow It and its Impacts. Investigating the Relationship with Social Influence and Social Presence.</p>
-                        </div>
-                    </div>
-
-                    <div class="reading-section">
-                        <p class="reading-title">Additional Reading:</p>
-                        <div class="reading-list">
-                            <p>Godefroid, M., Plattfaut, R. & Niehaves, B. (2021) IT outside of the IT Department: Reviewing Lightweight IT in Times of Shadow IT and IT Consumerization. Wirtschaftsinformatik 2021 Proceedings.</p>
-                            <p>Huber, M., Zimmermann, S., Rentrop, C. & Felden, C. (2017) Integration of Shadow IT Systems with Enterprise Systems: A Literature Review. PACIS 2017 Proceedings.</p>
-                        </div>
-                    </div>
-
-                    <div class="reading-section">
-                        <p class="reading-title">Seminar:</p>
-                        <div class="reading-list">
-                            <p>Enterprise Data Architecture</p>
-                        </div>
-                    </div>
-
-                    <div class="activity-section">
-                        <h4 class="activity-title">Activity:</h4>
-                        <div class="activity-item">
-                            <p>Summative Collaborative Discussion</p>
-                        </div>
+                    <div class="assessment-highlight">
+                        <div class="assessment-title">📊 Summative Assignment: Enterprise Data Report - Case Analysis</div>
+                        <div class="assessment-description">Submit by end of unit 6. Word count is 1,500 words. The assignment is worth 40%.</div>
+                        <p style="margin: 5px 0;">Assignment Description: Read the Road Traffic statistics in the London region report. Critically evaluate the Road Traffic statistics and design an enterprise data analysis strategy for deploying an EDA model for managing the data of road traffic in the London region.</p>
+                        <p style="margin: 5px 0;"><strong>Grade Achieved:</strong> <span style="color:#1e90ff; font-weight:600;">Distinction</span></p>
+                        <a href="projects/Enterprise Data Report - Case Analysis/EnterpriseDataReport.html" target="_blank" rel="noopener noreferrer" class="assessment-link">View Enterprise Data Report</a>
                     </div>
                 </div>
 
+                <!-- Unit 7 -->
                 <div class="unit">
-                    <h3 class="unit-title">Unit 3: Digital Transformation and Enterprise Architecture</h3>
+                    <p class="unit-title">Unit 7: IP Strategy</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>GNU. (n.d) GNU general public license.</p>
+                    <p>Open Source Initative. (n.d) The 3-Clause BSD License.</p>
 
-                    <div class="reading-section">
-                        <p class="reading-title">Required Reading:</p>
-                        <div class="reading-list">
-                            <p>Janssens, J. (2021) Data Science at the Command Line. O'Reilly Media. Chapters 1, 3, and 7</p>
-                            <p>Jager, E. (2023) Getting Started with Enterprise Architecture - A Practical and Pragmatic Approach to Learning the Basics of Enterprise Architecture. Apress. Pages 1-3, Pages 23-26</p>
-                            <p>Downey, A., Meyer, C. & Elkner, J. (2002) How to think like a computer scientist. Learning with Python. Green Tea Press.</p>
-                            <p>Xu, X., Lu, Y., Vogel-Heuser, B. & Wang, L. (2021) Industry 4.0 and Industry 5.0: Inception, conception and perception. Journal of Manufacturing Systems 61(1): 530–535.</p>
-                            <p>Akundi, A., Euresti, D., Luna, S., Ankobiah, W., Lopes, A. & Edinbarough, I. (2022) State of Industry 5.0: Analysis and identification of current research trends. Applied System Innovation 5(1): 27.</p>
-                            <p>Sinha, R. (2019) Analytical Study of Datawarehouse. International Journal of Management, IT & Engineering 8(11).</p>
-                        </div>
-                    </div>
-
-                    <div class="reading-section">
-                        <p class="reading-title">Additional Reading:</p>
-                        <div class="reading-list">
-                            <p>IAENG (2011) Proceedings of the World Congress on Engineering and Computer Science 2011 11. WCECS 2011.</p>
-                            <p>Jefts, R. (2023) Advancing digital transformation in financial services. Harvard Business Review Publishing.</p>
-                        </div>
-                    </div>
-
-                    <div class="reading-section">
-                        <p class="reading-title">Seminar:</p>
-                        <div class="reading-list">
-                            <p>Digital Transformation</p>
-                        </div>
-                    </div>
-
-                    <div class="activity-section">
-                        <h4 class="activity-title">Activity:</h4>
-                        <div class="activity-item">
-                            <div class="assessment-highlight">
-                                <div class="assessment-title">💬 Summative Collaborative Discussion</div>
-                                <div class="assessment-description">Digital transformation and enterprise architecture discussion</div>
-                                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=295963#p571798" target="_blank" class="assessment-link">View Discussion</a>
-                                <span class="grade">(Grade: Merit)</span>
-                            </div>
-                            <p>Lecturecast: Enterprise Data Architecture</p>
-                        </div>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Lecturecast: Unified Modelling Language</p>
+                    
+                    <div class="seminar-preparation">
+                        <h5>📋 Seminar Preparation</h5>
+                        <p>List 2 (two) ways/strategies data as Intellectual Property (IP) could be monetised by providing examples to support choice.</p>
+                        <p>Discuss your answers in this week's seminar.</p>
                     </div>
                 </div>
 
+                <!-- Unit 8 -->
                 <div class="unit">
-                    <h3 class="unit-title">Unit 6: Emerging Technologies and Data Valuation</h3>
+                    <p class="unit-title">Unit 8: Digital Convergence and Transformation</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>Janssens, J. (2021) Data Science at the Command Line. O'Reilly Media. Chapters 3, 5, 7, and 9</p>
+                    
+                    <p class="reading-title">Additional Reading:</p>
+                    <p>Cortada, J. (2021) How the IBM PC Won, Then Lost, the Personal Computer Market.</p>
+                    <p>Torchinsky, J. (2020) How an obscure British PC maker invented ARM and changed the world.</p>
 
-                    <div class="reading-section">
-                        <p class="reading-title">Required Reading:</p>
-                        <div class="reading-list">
-                            <p>Fleckenstein, M., Obaidi, A, & Tryfona N. (2023) A Review of Data Valuation Approaches and Building nd Scoring a Data Valuation Model.</p>
-                            <p>GOV UK. (2023) Road Traffic statistics in the London region.</p>
-                        </div>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Lecturecast: Data Pre-Processing</p>
+                    
+                    <div class="seminar-preparation">
+                        <h5>📋 Seminar Preparation</h5>
+                        <p>Summarise the main points in the Jefts, R. (2023) article 'Advancing digital transformation in financial services' which is available in this week's reading.</p>
+                        <p>Discuss your answers in this week's seminar.</p>
                     </div>
 
-                    <div class="reading-section">
-                        <p class="reading-title">Additional Reading:</p>
-                        <div class="reading-list">
-                            <p>Hryb, D. (2021) Application migration: a step-by-step guide.</p>
-                            <p>Korzeniowski, P. (2017) Build an application migration plan step by step.</p>
-                        </div>
-                    </div>
+                    <p class="coursework">Unit 8 Seminar: Title: Business Analysis (Value of Data/IP Strategy)</p>
+                </div>
 
-                    <div class="reading-section">
-                        <p class="reading-title">Seminar:</p>
-                        <div class="reading-list">
-                            <p>Emerging Technologies – Digital Conversion and Transformation</p>
-                        </div>
-                    </div>
+                <!-- Unit 9 -->
+                <div class="unit">
+                    <p class="unit-title">Unit 9: Compliance, Governance, Ethics, and Regulatory Frameworks</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>European Union. (2016) General Data Protection Regulation (GDPR): Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016.</p>
+                    <p>ASEAN. (2021) Data Management Framework – Data governance and protection throughout the Data Lifecycle.</p>
 
-                    <div class="activity-section">
-                        <h4 class="activity-title">Activity:</h4>
-                        <div class="activity-item">
-                            <div class="assessment-highlight">
-                                <div class="assessment-title">📊 Summative Assignment: Enterprise Data Report - Case Analysis</div>
-                                <div class="assessment-description">Comprehensive enterprise data report with case analysis</div>
-                                <a href="projects/Enterprise Data Report - Case Analysis/EnterpriseDataReport.html" target="_blank" class="assessment-link">View Enterprise Data Report</a>
-                                <span class="grade">(Grade: Distinction)</span>
-                            </div>
-                            <div class="project-highlight">
-                                <div class="project-title">📝 Emerging Technologies – Digital Conversion and Transformation</div>
-                                <div class="project-description">Analysis of emerging technologies in digital transformation</div>
-                                <a href="projects/Module5/DAbiodun_12696259.docx" target="_blank" class="project-link">Download Document</a>
-                            </div>
-                            <p>Coursework: Evaluate the article Fleckenstein, M., Obaidi, A,& Tryfona, N. (2023) A Review of Data Valuation Approaches and Building and Scoring a Data Valuation Model, and present a summary of what you consider to be the advantages and disadvantages of the data valuation model. The word count limit is 1,000 words. Submit your work to the portal.</p>
-                        </div>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="coursework">Unit 9 Seminar: Title: Emerging Technologies – Digital Conversion and Transformation</p>
+                    
+                    <div class="seminar-preparation">
+                        <h5>📋 Seminar Task</h5>
+                        <p>Provide an example for each of the following principles of GDPR at your workplace or any scenario you are familiar with:</p>
+                        <ul style="margin: 5px 0; padding-left: 20px;">
+                            <li>Lawfulness</li>
+                            <li>Fairness and Transparency</li>
+                            <li>Purpose Limitation</li>
+                            <li>Data Minimisation</li>
+                            <li>Accuracy</li>
+                            <li>Storage Limitation</li>
+                            <li>Integrity and Confidentiality</li>
+                            <li>Accountability</li>
+                        </ul>
+                        <p>Discuss your examples in this week's seminar.</p>
                     </div>
                 </div>
 
+                <!-- Unit 10 -->
                 <div class="unit">
-                    <h3 class="unit-title">Unit 11: Big Data Analytics and AI Trends</h3>
+                    <p class="unit-title">Unit 10: Information Technology Infrastructure Library (ITIL) Services Strategy, Design, Transition, Operations, and Improvements</p>
+                    
+                    <p class="reading-title">Required Reading:</p>
+                    <p>TSO. (2020) ITIL Foundation ITIL 4 Edition and HM Government.</p>
+                    
+                    <p class="reading-title">Additional Reading:</p>
+                    <p>Marabelli, M. & Galliers, R.D. (2016) A reflection on information systems strategizing: The role of power and everyday practices. Information Systems Journal 27(3): 347–366.</p>
+                    <p>Grube M. (2018) The impact of SAP on the utilisation of Business Process Management (BPN) maturity models in ERP projects. PhD Thesis, University of Gloucestershire.</p>
 
-                    <div class="reading-section">
-                        <p class="reading-title">Required Reading:</p>
-                        <div class="reading-list">
-                            <p>Minelli, M., Chambers, M. & Dhiraj, A. (2013) Big Data Analytics – Emerging Business Intelligence and Analytics Trends for Today's Businesses. John Wiley & Sons Inc.</p>
-                            <p>Pan, Y. & Zhang, L. (2021) Roles of artificial intelligence in construction engineering and management: A critical review and future trends. Automation in Construction 122(1): 103-517</p>
-                            <p>Siderska, J. (2020) Robotic Process Automation. A driver of digital transformation? Engineering Management in Production and Services 12(2): 21-31</p>
-                        </div>
-                    </div>
-
-                    <div class="activity-section">
-                        <h4 class="activity-title">Activity:</h4>
-                        <div class="activity-item">
-                            <div class="assessment-highlight">
-                                <div class="assessment-title">📈 Summative Assignment: Enterprise Data Executive Summary and Implementation Report</div>
-                                <div class="assessment-description">Comprehensive executive summary and implementation report for enterprise data</div>
-                                <a href="projects/Module5/Summative Assignment/ESIR.html" target="_blank" class="assessment-link">View Executive Summary and Implementation Report</a>
-                                <span class="grade">(Grade: Distinction)</span>
-                            </div>
-                            <p>Coursework: Compare and contrast the key characteristics of Clouds, Data Warehouse and Lakes.</p>
-                        </div>
+                    <h4 class="activity">Activity:</h4>
+                    <p class="lecturecast">Lecturecast: Business Analysis</p>
+                    
+                    <div class="seminar-preparation">
+                        <h5>📋 Unit 10 Seminar</h5>
+                        <p>Title: Compliance, Governance, Ethics, and Regulatory Frameworks</p>
+                        <p>Seminar Task: Your task is to investigate how an organisation could apply these ITIL principles on EDA. Focus on value, think and work holistically, and optimise and automate.</p>
+                        <p>Discuss your answers in this week's seminar.</p>
                     </div>
                 </div>
 
+                <!-- Unit 11 -->
                 <div class="unit">
-                    <h3 class="unit-title">Units 4-10: Data Analytics and GDPR Compliance</h3>
+                    <p class="unit-title">Unit 11: Emerging Technologies and Future Trends</p>
+                    
+                    <div class="project-highlight">
+                        <div class="project-title">📝 Emerging Technologies – Digital Conversion and Transformation</div>
+                        <div class="project-description">Analysis of emerging technologies in digital transformation</div>
+                        <a href="projects/Module5/DAbiodun_12696259.docx" target="_blank" rel="noopener noreferrer" class="project-link">View Digital Transformation Analysis</a>
+                    </div>
 
-                    <div class="activity-section">
-                        <h4 class="activity-title">Key Topics Covered:</h4>
-                        <div class="activity-item">
-                            <p>Data Analytics Tools (Unified Modelling Language)</p>
-                            <p>Business Analysis (Value of Data/IP Strategy)</p>
-                            <div class="project-highlight">
-                                <div class="project-title">💬 Collaborative Discussion 2</div>
-                                <div class="project-description">Data analytics and business intelligence discussion</div>
-                                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=300317#p583370" target="_blank" class="project-link">View Discussion</a>
-                            </div>
-                            <p>Compliance, Governance, Ethics and Regulatory Frameworks</p>
-                            <p>Business Intelligence and Enterprise Resource Planning</p>
-                            <p>GDPR Principles and Implementation</p>
-                            <p>ITIL Framework Application to Enterprise Data Architecture</p>
-                        </div>
+                    <div class="assessment-highlight">
+                        <div class="assessment-title">📊 Summative Assignment: Enterprise Data Executive Summary and Implementation Report</div>
+                        <div class="assessment-description">Comprehensive executive summary and implementation report on enterprise data strategies</div>
+                        <p style="margin: 5px 0;"><strong>Grade Achieved:</strong> <span style="color:#1e90ff; font-weight:600;">Distinction</span></p>
+                        <a href="projects/Module5/Summative Assignment/ESIR.html" target="_blank" rel="noopener noreferrer" class="assessment-link">View Executive Summary and Implementation Report</a>
                     </div>
                 </div>
 
+                <!-- Unit 12 -->
                 <div class="unit">
-                    <h3 class="unit-title">Unit 12: AI Maturity and Enterprise Systems</h3>
-
-                    <div class="reading-section">
-                        <p class="reading-title">Required Reading:</p>
-                        <div class="reading-list">
-                            <p>Jager, E. (2023) Getting Started with Enterprise Architecture - A Practical and Pragmatic Approach to Learning the Basics of Enterprise Architecture. Apress. Pages 47-60</p>
-                            <p>Minelli, M., Chambers, M. & Dhiraj, A. (2013) Big Data Analytics – Emerging Business Intelligence and Analytics Trends for Today's Businesses. John Wiley & Sons Inc.</p>
-                            <p>Wewerka, J. & Reichert, M. (2023) Robotic process automation: A systematic mapping study and classification framework. Enterprise Information Systems 17(2).</p>
-                            <p>Dong, C., Saxena, A., Bick, M. & Sabia, A. (2023) On the Journey to AI Maturity. Understanding the Role of Enterprise Artificial Intelligence Service. AIS Transactions on Enterprise Systems.</p>
-                        </div>
+                    <p class="unit-title">Unit 12: Final Integration and Reflection</p>
+                    
+                    <div class="project-highlight">
+                        <div class="project-title">💬 ERP Conceptual Model/Diagram Discussion</div>
+                        <div class="project-description">Discussion on ERP conceptual models and diagrams</div>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309291#p605511" target="_blank" rel="noopener noreferrer" class="project-link">View ERP Discussion</a>
                     </div>
 
-                    <div class="activity-section">
-                        <h4 class="activity-title">Activity:</h4>
-                        <div class="activity-item">
-                            <p>Lecturecast: Blockchain: Emergent Technology in Data Management</p>
-                            <div class="project-highlight">
-                                <div class="project-title">🏗️ Create an ERP Conceptual Model/Diagram</div>
-                                <div class="project-description">Enterprise Resource Planning conceptual model development</div>
-                                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309291#p605511" target="_blank" class="project-link">View ERP Model</a>
-                            </div>
-                            <div class="project-highlight">
-                                <div class="project-title">💬 Respond to peers' posts</div>
-                                <div class="project-description">Peer engagement and discussion responses</div>
-                                <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309152#p605525" target="_blank" class="project-link">View Responses</a>
-                            </div>
-                        </div>
+                    <div class="project-highlight">
+                        <div class="project-title">💬 Peer Response Discussion</div>
+                        <div class="project-description">Peer response and collaborative discussion</div>
+                        <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309152#p605525" target="_blank" rel="noopener noreferrer" class="project-link">View Peer Response Discussion</a>
                     </div>
                 </div>
+
             </div>
 
             <!-- Navigation Links -->
@@ -711,5 +693,4 @@
         </div>
     </div>
 </body>
-
 </html>
