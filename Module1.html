@@ -247,6 +247,98 @@
             font-size: 0.9em;
         }
 
+        /* Enhanced project styling */
+        .project-highlight {
+            background: rgba(30, 144, 255, 0.1);
+            border: 1px solid rgba(30, 144, 255, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-highlight:hover {
+            background: rgba(30, 144, 255, 0.15);
+            border-color: rgba(30, 144, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+        }
+
+        .project-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1e90ff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .project-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+
+        /* Enhanced assessment styling */
+        .assessment-highlight {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-highlight:hover {
+            background: rgba(255, 107, 53, 0.15);
+            border-color: rgba(255, 107, 53, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+        }
+
+        .assessment-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .assessment-description {
+            color: #b8c5e0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .assessment-link {
+            color: #d4dff5;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .assessment-link:hover {
+            color: #ff6b35;
+            text-decoration: underline;
+        }
+
         .summary {
             background: rgba(255, 255, 255, 0.05);
             border-left: 3px solid rgba(255, 255, 255, 0.2);
@@ -512,7 +604,11 @@
                         <div class="activity-item">
                             <p>Collaborative Discussion</p>
                             <p>Seminar: Improving a Company's Operations</p>
-                            <p><a href="projects/Module 1/AWS costings.pptx">AWS Costings</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">💰 AWS Costings Analysis</div>
+                                <div class="project-description">Comprehensive cost analysis comparing on-premise, private, and public cloud hosting solutions</div>
+                                <a href="projects/Module 1/AWS costings.pptx" class="project-link">View AWS Costings Presentation</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -533,7 +629,12 @@
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
                             <p>Lecturecast: Software Licensing and Open Source</p>
-                            <p><a href="https://github.com/DMA-1970/Portfolio/tree/main/projects/Module%201/Program">Assessment: Individual Programming Exercise</a> <span class="grade">(Grade: Distinction)</span></p>
+                            <div class="project-highlight">
+                                <div class="project-title">💻 Individual Programming Exercise</div>
+                                <div class="project-description">Assessment: Individual Programming Exercise demonstrating practical programming skills</div>
+                                <a href="https://github.com/DMA-1970/Portfolio/tree/main/projects/Module%201/Program" class="project-link">View Programming Exercise</a>
+                                <span class="grade">(Grade: Distinction)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -554,7 +655,11 @@
                         <div class="activity-item">
                             <p>Collaborative Discussion</p>
                             <p>Seminar: Technical Innovations</p>
-                            <p><a href="projects/Module 1/Unit 8 Seminar Grid Template.docx">Unit 8 Seminar Grid Template</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">📊 Innovation Analysis Template</div>
+                                <div class="project-description">Template for analyzing business and technical innovations in large corporations and SMEs</div>
+                                <a href="projects/Module 1/Unit 8 Seminar Grid Template.docx" class="project-link">Download Seminar Grid Template</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -592,8 +697,13 @@
                         <div class="activity-item">
                             <p>Seminar: Strategy and Digital Transformation</p>
                             <p>Using BPMN/UML as the name of the Seminar</p>
-                            <p><a href="projects/Module 1/Introducing a digital process using BPMN.pdf">Introducing a digital process using BPMN</a></p>
-                            <p><a href="projects/Module 1/BPMN.png">Represent your digitalised process, using BPMN/UML notation</a></p>
+                            <div class="project-highlight">
+                                <div class="project-title">🔄 BPMN Digital Process</div>
+                                <div class="project-description">Introducing a digital process using BPMN notation and UML modeling</div>
+                                <a href="projects/Module 1/Introducing a digital process using BPMN.pdf" class="project-link">View BPMN Process Documentation</a>
+                                <br>
+                                <a href="projects/Module 1/BPMN.png" class="project-link">View BPMN Diagram</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -637,7 +747,12 @@
                         <h4 class="activity-title">Activity:</h4>
                         <div class="activity-item">
                             <p>The Great Debate Seminar</p>
-                            <p><a href="projects/Module 1/Individual Presentation.html">Individual Presentation</a> <span class="grade">(Grade: Pass)</span></p>
+                            <div class="assessment-highlight">
+                                <div class="assessment-title">🎤 Individual Presentation</div>
+                                <div class="assessment-description">Final assessment: Individual presentation for The Great Debate seminar</div>
+                                <a href="projects/Module 1/Individual Presentation.html" class="assessment-link">View Individual Presentation</a>
+                                <span class="grade">(Grade: Pass)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
