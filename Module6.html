@@ -488,23 +488,39 @@
 
         /* Seminar preparation styling */
         .seminar-preparation {
-            font-size: 0.9rem;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-left: 3px solid #1e90ff;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1.5rem;
-            line-height: 1.5;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
         }
 
-        .seminar-preparation h2 {
-            font-size: 1.3rem;
-            margin-bottom: 0.6rem;
+        .seminar-preparation:hover {
+            background: rgba(255, 107, 53, 0.15);
+            border-color: rgba(255, 107, 53, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
         }
 
-        .seminar-preparation h3 {
-            font-size: 1.1rem;
-            margin-top: 1rem;
+        .seminar-preparation h5 {
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 15px 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .seminar-preparation ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        .seminar-preparation li {
+            margin-bottom: 5px;
+            color: #b8c5e0;
         }
 
         /* Responsive design */
@@ -583,6 +599,20 @@
                     <p>Rajkumar, B., Broberg, J. and Andrzej, G. (2011) Cloud Computing: Principles and Paradigms</p>
                     
                     <p class="reading-title">Seminar: Introduction to Cloud Computing and Reflection on Learning Goals</p>
+                    <div class="seminar-preparation">
+                        <h5>📋 Seminar Preparation</h5>
+                        <ul>
+                            <li><strong>Topic Outcomes:</strong> Understand the basics of cloud computing models (IaaS, PaaS, SaaS). Reflect on personal learning objectives for the module and set goals. Articulate the differences between cloud service models and their applications. Explore how setting personal learning goals and reflective practice can enhance comprehension of complex concepts in cloud computing.</li>
+                            <li><strong>Seminar Questions:</strong>
+                                <ul style="margin: 5px 0; padding-left: 20px;">
+                                    <li>What are the main differences between IaaS, PaaS, and SaaS? Provide examples of each.</li>
+                                    <li>How can understanding these cloud models impact an organisation's choice of cloud solutions?</li>
+                                    <li>Reflect on your initial goals for this module. What specific areas of cloud computing are you most interested in learning about?</li>
+                                    <li>How do you plan to engage in reflective practice throughout this module to maximise your understanding of cloud concepts?</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
 
                     <h4 class="activity">Activity:</h4>
                     <div class="project-highlight">
@@ -678,20 +708,19 @@
                     <p>Oliveira, R. and Hugo, F. (2021) Practical event-driven microservices architecture. Apress.</p>
                     
                     <p class="reading-title">Seminar: Cloud Architecture Frameworks and Infrastructure as Code (IaC)</p>
-
                     <div class="seminar-preparation">
-                        <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Seminar Preparation – Cloud Architecture and Automation</h5>
-                        <p style="margin: 5px 0;">This section summarises key seminar preparation questions exploring cloud architecture frameworks, Infrastructure as Code (IaC), and the role of automation in scalability and reliability. These questions guided pre-seminar research and reflection for class discussion.</p>
-                        
-                        <h6 style="color: #333; font-weight: bold; margin: 10px 0 5px 0;">Seminar Questions:</h6>
-                        <ul style="margin: 5px 0; padding-left: 20px;">
-                            <li><strong>How does TOGAF help in planning and structuring cloud architecture?</strong></li>
-                            <li><strong>What are the benefits of using Infrastructure as Code (IaC) in cloud environments?</strong></li>
-                            <li><strong>What challenges have you encountered or anticipate when implementing IaC?</strong></li>
-                            <li><strong>In your view, how can automation tools impact the scalability and reliability of cloud systems?</strong></li>
+                        <h5>📋 Seminar Preparation</h5>
+                        <ul>
+                            <li><strong>Topic Outcomes:</strong> Explore TOGAF and Infrastructure as Code (IaC) frameworks and their applications in cloud environments. Discuss the benefits and challenges of automating infrastructure with IaC. Develop an understanding of TOGAF's role in structured cloud architecture. Evaluate the advantages and limitations of IaC in maintaining cloud infrastructure.</li>
+                            <li><strong>Seminar Questions:</strong>
+                                <ul style="margin: 5px 0; padding-left: 20px;">
+                                    <li>How does TOGAF help in planning and structuring cloud architecture?</li>
+                                    <li>What are the benefits of using Infrastructure as Code in cloud environments?</li>
+                                    <li>What challenges have you encountered or anticipate when implementing IaC?</li>
+                                    <li>In your view, how can automation tools impact the scalability and reliability of cloud systems?</li>
+                                </ul>
+                            </li>
                         </ul>
-                        
-                        <p style="margin: 5px 0; font-style: italic;">Preparation involved reviewing TOGAF's architectural development methodology (ADM), examining IaC tools such as Terraform and Ansible, and analysing automation's impact on high-availability deployments within hybrid and multi-cloud environments.</p>
                     </div>
 
                     <h4 class="activity">Activity:</h4>
@@ -776,17 +805,21 @@
                     <p><em>Cloud Security and Privacy</em> — Book (O'Reilly)</p>
 
                     <h4 class="activity">Activity:</h4>
-<p class="lecturecast">Seminar: AI-Driven Cloud Computing and Cloud Design Tools</p>
-
-<div class="seminar-preparation">
-    <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Seminar Preparation</h5>
-    <ul style="margin: 5px 0; padding-left: 20px;">
-        <li>How can AI-based tools improve cloud performance and security?</li>
-        <li>What are some practical applications of AI in cloud management that you've encountered or read about?</li>
-        <li>Discuss the differences between using scripting (e.g., Bash) vs. GUI-based tools for cloud management.</li>
-        <li>How might AI-driven automation affect the role of cloud administrators in the future?</li>
-    </ul>
-</div>
+                    <p class="lecturecast">Seminar: AI-Driven Cloud Computing and Cloud Design Tools</p>
+                    <div class="seminar-preparation">
+                        <h5>📋 Seminar Preparation</h5>
+                        <ul>
+                            <li><strong>Topic Outcomes:</strong> Understand how AI can enhance cloud operations and review the tools used in cloud design. Discuss the practical applications of AI in automating cloud management. Explore AI-driven tools and methods to enhance cloud security, automation, and cost efficiency. Examine the use of scripting and GUI-based tools in cloud setup and management.</li>
+                            <li><strong>Seminar Questions:</strong>
+                                <ul style="margin: 5px 0; padding-left: 20px;">
+                                    <li>How can AI-based tools improve cloud performance and security?</li>
+                                    <li>What are some practical applications of AI in cloud management that you've encountered or read about?</li>
+                                    <li>Discuss the differences between using scripting (e.g., Bash) vs. GUI-based tools for cloud management.</li>
+                                    <li>How might AI-driven automation affect the role of cloud administrators in the future?</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="assessment-highlight">
                         <div class="assessment-title">🏆 Team Project: Cloud Infrastructure and Framework Report</div>
                         <div class="assessment-description">This team-based project assessed understanding of foundational cloud computing concepts, service models, deployment types, and infrastructure design, as introduced in weeks 1–6. The task required collaboration to evaluate a cloud infrastructure framework, focusing on both theoretical understanding and applied design.</div>
@@ -864,22 +897,26 @@
                     <p>Zheng, Y. et al. (2024) 'Optimization model for vehicular network data queries in edge environments,' Journal of Cloud Computing, (13), pp.1-15.</p>
                     
                     <p class="reading-title">Seminar: Cloud-Native Technologies and Hybrid Cloud Solutions</p>
+                    <div class="seminar-preparation">
+                        <h5>📋 Seminar Preparation</h5>
+                        <ul>
+                            <li><strong>Topic Outcomes:</strong> Review cloud-native technologies like the 12-Factor App and Kubernetes. Explore hybrid cloud solutions and the role of Edge Computing. Understand the principles of cloud-native app development and deployment. Evaluate hybrid cloud and edge computing as solutions for modern enterprises with specific needs.</li>
+                            <li><strong>Seminar Questions:</strong>
+                                <ul style="margin: 5px 0; padding-left: 20px;">
+                                    <li>How does the 12-Factor App methodology support cloud-native development?</li>
+                                    <li>In what situations would a business benefit from using Kubernetes for container orchestration?</li>
+                                    <li>What are the main advantages and challenges of hybrid cloud and edge computing?</li>
+                                    <li>How can organisations address the issue of data sovereignty in hybrid cloud environments?</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
 
                     <h4 class="activity">Activity:</h4>
                     <div class="project-highlight">
                         <div class="project-title">🔄 Disaster Recovery Plan</div>
                         <div class="project-description">Design and implement a Disaster Recovery (DR) plan for a cloud-based infrastructure on OpenStack. Simulate a failure scenario and perform a recovery operation using open-source backup tools such as Bacula or Duplicity.</div>
                         <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=322914#p636946" target="_blank" rel="noopener noreferrer" class="project-link">Disaster Recovery (DR) Design for OpenStack</a>
-                    </div>
-
-                    <div class="seminar-preparation">
-                        <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Seminar Preparation</h5>
-                        <ul style="margin: 5px 0; padding-left: 20px;">
-                            <li>How does the 12-Factor App methodology support cloud-native development?</li>
-                            <li>In what situations would a business benefit from using Kubernetes for container orchestration?</li>
-                            <li>What are the main advantages and challenges of hybrid cloud and edge computing?</li>
-                            <li>How can organisations address the issue of data sovereignty in hybrid cloud environments?</li>
-                        </ul>
                     </div>
 
                     <h4 class="activity">Reflective Thinking:</h4>
@@ -950,16 +987,20 @@
                     <p>Ahmad, S.G. et al. (2023) 'Cost optimization in cloud environment based on task deadline', <em>Journal of Cloud Computing</em>, 12(1), p. 9.</p>
                     
                    <p class="reading-title">Seminar: Cloud Security and Disaster Recovery</p>
-
-<div class="seminar-preparation">
-    <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Seminar Preparation</h5>
-    <ul style="margin: 5px 0; padding-left: 20px;">
-        <li>What are the biggest security threats to cloud environments today?</li>
-        <li>How can organisations balance security and compliance in cloud operations?</li>
-        <li>Why is a disaster recovery plan essential for cloud-based applications?</li>
-        <li>How would you design a basic DR plan for a small business using cloud services?</li>
-    </ul>
-</div>
+                    <div class="seminar-preparation">
+                        <h5>📋 Seminar Preparation</h5>
+                        <ul>
+                            <li><strong>Topic Outcomes:</strong> Understand cloud security best practices and the importance of disaster recovery (DR) in cloud environments. Examine compliance requirements such as ISO/IEC 27001 and GDPR. Identify potential security vulnerabilities in cloud systems and discuss strategies to mitigate them. Develop a high-level DR plan that incorporates cloud technologies.</li>
+                            <li><strong>Seminar Questions:</strong>
+                                <ul style="margin: 5px 0; padding-left: 20px;">
+                                    <li>What are the biggest security threats to cloud environments today?</li>
+                                    <li>How can organisations balance security and compliance in cloud operations?</li>
+                                    <li>Why is a disaster recovery plan essential for cloud-based applications?</li>
+                                    <li>How would you design a basic DR plan for a small business using cloud services?</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
 
                     <h4 class="activity">Activity:</h4>
                     <p class="lecturecast">Lecturecast: <em>Future Trends in AI and Cloud Computing</em></p>
@@ -1048,14 +1089,18 @@
 
     <h4 class="activity">Activity:</h4>
     <p class="lecturecast">Seminar: Future Trends in AI and Cloud Computing</p>
-
     <div class="seminar-preparation">
-        <h5 style="color: #ff6b35; font-weight: bold; font-size: 1.1em; margin: 15px 0 10px 0;">📋 Seminar Preparation</h5>
-        <ul style="margin: 5px 0; padding-left: 20px;">
-            <li>How is AI expected to shape the future of cloud computing?</li>
-            <li>What role might Blockchain play in enhancing cloud security?</li>
-            <li>Discuss the potential of Quantum Computing in solving complex cloud-based computations.</li>
-            <li>How can IT professionals stay updated with rapidly evolving cloud technologies?</li>
+        <h5>📋 Seminar Preparation</h5>
+        <ul>
+            <li><strong>Topic Outcomes:</strong> Explore future trends in cloud computing, focusing on the integration of AI, Blockchain, and Quantum Computing. Discuss the potential of these technologies to transform cloud operations. Assess how emerging technologies like AI and quantum computing may impact cloud infrastructure. Predict future developments in cloud computing and their implications for IT professionals.</li>
+            <li><strong>Seminar Questions:</strong>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>How is AI expected to shape the future of cloud computing?</li>
+                    <li>What role might Blockchain play in enhancing cloud security?</li>
+                    <li>Discuss the potential of Quantum Computing in solving complex cloud-based computations.</li>
+                    <li>How can IT professionals stay updated with rapidly evolving cloud technologies?</li>
+                </ul>
+            </li>
         </ul>
     </div>
 
