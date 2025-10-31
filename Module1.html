@@ -8,312 +8,232 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body,html{height:100%;font-family:'Inter',sans-serif;color:#fff;overflow-x:hidden;position:relative;}
+        body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:url('assets/Module1.jpg') no-repeat center center/cover;filter:blur(3px);transform:scale(1.05);z-index:-2;}
+        body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:-1;}
+        .back-btn{position:fixed;top:20px;left:20px;background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:12px 20px;text-decoration:none;color:#d4dff5;transition:all .3s ease;z-index:1000;}
+        .back-btn:hover{background:rgba(255,255,255,0.12);color:#fff;}
+        .overlay{min-height:100vh;display:flex;justify-content:center;padding:80px 20px 40px;}
+        .container{max-width:1000px;width:100%;}
+        .header{text-align:center;margin-bottom:40px;}
+        .header h1{font-family:'Montserrat',sans-serif;font-size:2.8em;font-weight:700;color:#fff;}
+        .module-grade{color:#a8b8d8;margin-top:10px;}
+        .content-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.05);border-radius:20px;padding:35px 40px;margin-bottom:30px;}
+        .unit{margin-bottom:40px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.1);}
+        .unit:last-child{border-bottom:none;}
+        .unit-title{font-family:'Montserrat';font-size:1.3em;font-weight:600;margin-bottom:15px;}
+        .reading-title{font-size:1em;font-weight:600;color:#d4dff5;margin:10px 0;text-decoration:underline;}
+        .reading-list p{font-size:.95em;line-height:1.8;color:#b8c5e0;margin-bottom:8px;}
+        .seminar-preparation{background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.3);border-radius:12px;padding:15px 20px;margin:10px 0;}
+        .seminar-preparation h5{color:#ff6b35;font-weight:bold;margin-bottom:10px;}
+        .activity{color:#fff;font-size:1.05em;margin:14px 0 6px;font-weight:600;}
+        .reflection{color:#b8c5e0;font-size:.9em;line-height:1.7;text-align:justify;margin-bottom:10px;}
+        .reflection strong{color:#fff;}
+        .references{padding-left:20px;}
+        .references li{color:#b8c5e0;font-size:.9em;margin-bottom:5px;}
+        .references a{color:#93c5fd;text-decoration:none;transition:color 0.3s ease;}
+        .references a:hover{color:#60a5fa;text-decoration:underline;}
+        .pdf-link{color:#93c5fd;text-decoration:none;transition:all 0.3s ease;display:inline-block;margin-top:10px;padding-left:20px;}
+        .pdf-link:hover{color:#60a5fa;text-decoration:underline;}
+        .bottom-navigation{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:40px;}
+        .nav-link{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:25px;text-decoration:none;color:#d4dff5;transition:all .3s ease;}
+        .nav-link:hover{background:rgba(255,255,255,0.12);color:#fff;}
 
-        body, html {
-            height: 100%;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: #ffffff;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('assets/Module1.jpg') no-repeat center center/cover;
-            filter: blur(3px);
-            transform: scale(1.05);
-            z-index: -2;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.8);
-            z-index: -1;
-        }
-
-        /* Back button */
-        .back-btn {
-            position: fixed;
-            top: 20px; left: 20px;
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 12px;
-            padding: 12px 20px;
-            text-decoration: none;
-            color: #d4dff5;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .back-btn:hover {
-            background: rgba(255,255,255,0.12);
-            color: #ffffff;
-        }
-
-        /* Layout */
-        .overlay {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 80px 20px 40px;
-        }
-
-        .container {
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        /* Header */
-        .header { text-align: center; margin-bottom: 40px; }
-        .header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.8em;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .module-grade {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: #a8b8d8;
-            margin-bottom: 20px;
-        }
-
-        /* Content cards */
-        .content-card {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 20px;
-            padding: 35px 40px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .content-card:hover {
-            transform: translateY(-2px);
-            background: rgba(255,255,255,0.09);
-        }
-
-        .unit {
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .unit:last-child { border-bottom: none; }
-
-        .unit-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3em;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .reading-title {
-            font-size: 1em;
-            font-weight: 600;
-            color: #d4dff5;
-            text-decoration: underline;
-            margin-bottom: 10px;
-        }
-
-        .reading-list p {
-            font-size: 0.95em;
-            line-height: 1.8;
-            color: #b8c5e0;
-            margin-bottom: 8px;
-            padding-left: 15px;
-            text-align: justify;
-            position: relative;
-        }
-
-        .reading-list p:before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #8095b8;
-        }
-
-        .activity-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1em;
-            font-weight: 600;
-            margin-top: 25px;
-            margin-bottom: 12px;
-        }
-
-        .seminar-preparation {
-            background: rgba(255,107,53,0.1);
-            border: 1px solid rgba(255,107,53,0.3);
-            border-radius: 12px;
-            padding: 15px 20px;
-            margin-top: 10px;
-        }
-
-        .seminar-preparation h5 {
-            color: #ff6b35;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .project-highlight {
-            background: rgba(30,144,255,0.1);
-            border: 1px solid rgba(30,144,255,0.3);
-            border-radius: 12px;
-            padding: 15px 20px;
-            margin: 10px 0;
-        }
-
-        .project-title { font-size: 1.1em; font-weight: bold; color: #1e90ff; margin-bottom: 8px; }
-        .project-description { color: #b8c5e0; font-size: 0.95em; line-height: 1.6; margin-bottom: 8px; }
-        .project-link { color: #d4dff5; text-decoration: none; }
-        .project-link:hover { color: #1e90ff; text-decoration: underline; }
-
-        /* Lecturer Comments Section */
-        .comment-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px;
-            padding: 20px 25px;
-            margin-bottom: 25px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .comment-card:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-2px);
-        }
-
-        .comment-title {
-            font-family: 'Montserrat', sans-serif;
-            color: #d4dff5;
-            margin-bottom: 10px;
-        }
-
-        blockquote {
-            color: #b8c5e0;
-            font-style: italic;
-            line-height: 1.6;
-            border-left: 3px solid rgba(255,255,255,0.2);
-            padding-left: 15px;
-            margin-bottom: 10px;
-        }
-
-        .comment-source {
-            color: #93c5fd;
-            font-size: 0.9em;
-        }
-
-        /* Bottom navigation */
-        .bottom-navigation {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
-        .nav-link {
-            background: rgba(255,255,255,0.07);
-            border: 1px solid rgba(255,255,255,0.12);
-            padding: 8px 16px;
-            border-radius: 25px;
-            text-decoration: none;
-            color: #d4dff5;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link:hover {
-            background: rgba(255,255,255,0.11);
-            color: #ffffff;
-            transform: translateY(-1px);
-        }
+        /* Comment Section */
+        .comment-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 25px;margin-top:15px;margin-bottom:25px;backdrop-filter:blur(10px);transition:all 0.3s ease;}
+        .comment-card:hover{background:rgba(255,255,255,0.08);transform:translateY(-2px);}
+        .comment-title{font-family:'Montserrat',sans-serif;color:#d4dff5;margin-bottom:10px;}
+        blockquote{color:#b8c5e0;font-style:italic;line-height:1.6;border-left:3px solid rgba(255,255,255,0.2);padding-left:15px;margin-bottom:10px;}
+        .comment-source{color:#93c5fd;font-size:0.9em;}
     </style>
 </head>
-
 <body>
-    <a href="index.html" class="back-btn">← Back to Home</a>
+<a href="index.html" class="back-btn">← Back to Home</a>
 
-    <div class="overlay">
-        <div class="container">
-            <div class="header">
-                <h1>Launching into Enterprise IT Management</h1>
-                <p class="module-grade">Overall Module Grade: Merit</p>
-            </div>
+<div class="overlay">
+<div class="container">
+<div class="header">
+<h1>Launching into Enterprise IT Management</h1>
+<p class="module-grade">Overall Module Grade: Merit</p>
+</div>
 
-            <!-- Existing Module Units -->
-            <div class="content-card">
-                <div class="unit">
-                    <h3 class="unit-title">Unit 1: An Introduction to EIT</h3>
-                    <p class="reading-title">Required Reading:</p>
-                    <div class="reading-list">
-                        <p>SFIA. (n.d) List of bodies of knowledge.</p>
-                        <p>Ziemann, J. (2022) Fundamentals of enterprise architecture management: foundations for steering the enterprise-wide digital system.</p>
-                        <p>EITBOK. (n.d) Guide to the Enterprise IT Body of Knowledge.</p>
-                    </div>
-                    <div class="seminar-preparation">
-                        <h5>📋 Seminar Preparation</h5>
-                        <ul>
-                            <li>Review the SFIA BoK and identify the two most relevant for EIT.</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Add your other units here (already included in your original file) -->
-            </div>
+<div class="content-card">
 
-            <!-- Lecturer Comments Section -->
-            <div class="content-card">
-                <h2 style="font-family:'Montserrat',sans-serif;font-weight:700;color:#fff;margin-bottom:25px;">
-                    Lecturer Comments on Module 1 Assessment
-                </h2>
+<!-- ===== UNIT 1 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 1: An Introduction to EIT</h3>
+  <p class="reading-title">Required Reading:</p>
+  <div class="reading-list">
+    <p>SFIA. (n.d) List of bodies of knowledge.</p>
+    <p>Ziemann, J. (2022) Fundamentals of enterprise architecture management: foundations for steering the enterprise-wide digital system. Cham: Springer.</p>
+    <p>EITBOK. (n.d) Guide to the Enterprise IT Body of Knowledge.</p>
+  </div>
+  <div class="seminar-preparation">
+    <h5>📋 Seminar Preparation</h5>
+    <ul>
+      <li>Review SFIA BoK and identify two most relevant to EIT. Be prepared to discuss in seminar.</li>
+    </ul>
+  </div>
+</div>
 
-                <div class="comment-card">
-                    <h4 class="comment-title">Launching into Enterprise IT Management (April 2024) — 
-                        <span style="color:#a8b8d8;">75%</span>
-                    </h4>
-                    <blockquote>
-                        “The code was very well structured and presented, although the commentary file was less so. 
-                        It was good to see the use of quotes but please remember to clean up quoted text as well. 
-                        Nonetheless a very good submission.”
-                    </blockquote>
-                    <p class="comment-source">— Lecturer Feedback, University of Essex Online</p>
-                </div>
+<!-- ===== UNIT 2 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 2: EIT vs. Shadow IT</h3>
+  <p class="reading-title">Required Reading:</p>
+  <div class="reading-list">
+    <p>Mallmann, G.L. et al. (2019) The Social Side of Shadow IT. Hawaii Int. Conf. on System Sciences.</p>
+  </div>
+  <p class="reading-title">Additional Reading:</p>
+  <div class="reading-list">
+    <p>Huber, M. et al. (2017) Integration of Shadow IT Systems with Enterprise Systems. PACIS Proceedings.</p>
+    <p>Godefroid, M. et al. (2021) IT Outside of the IT Department. Innovation Through Information Systems.</p>
+  </div>
+  <div class="seminar-preparation">
+    <h5>📋 Seminar Preparation</h5>
+    <ul>
+      <li>Analyse integration challenges between EIT and SITS (Huber et al., 2017).</li>
+    </ul>
+  </div>
+</div>
 
-                <p style="color:#b8c5e0;font-size:0.9em;margin-top:20px;">
-                    <em>This tutor feedback reflects my early development in the MSc programme, demonstrating 
-                    technical proficiency in programming and structured problem solving, while highlighting areas 
-                    for refinement in academic writing and presentation. It set the foundation for subsequent 
-                    distinction-level work in later modules.</em>
-                </p>
-            </div>
+<!-- ===== UNIT 3 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 3: EIT and Automation</h3>
+  <p class="reading-title">Required Reading:</p>
+  <div class="reading-list">
+    <p>Xu, X. et al. (2021) Industry 4.0 and 5.0. Journal of Manufacturing Systems.</p>
+    <p>Akundi, A. et al. (2022) State of Industry 5.0. Applied System Innovation.</p>
+  </div>
+</div>
 
-            <!-- Navigation -->
-            <div class="bottom-navigation">
-                <a href="index.html" class="nav-link">Back to Home</a>
-                <a href="university-of-essex.html" class="nav-link">University of Essex</a>
-                <a href="Module2.html" class="nav-link">Module 2</a>
-                <a href="Module3.html" class="nav-link">Module 3</a>
-                <a href="Module4.html" class="nav-link">Module 4</a>
-                <a href="Module5.html" class="nav-link">Module 5</a>
-                <a href="Module6.html" class="nav-link">Module 6</a>
-                <a href="Module7.html" class="nav-link">Module 7</a>
-                <a href="links.html" class="nav-link">All Links</a>
-            </div>
-        </div>
-    </div>
+<!-- ===== UNIT 4 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 4: A Comparative Study – Practical Automation Exercises</h3>
+  <p class="reading-title">Required Reading:</p>
+  <div class="reading-list">
+    <p>Downey, A. et al. (2020) How to Think Like a Computer Scientist: Learning with Python. Green Tea Press.</p>
+  </div>
+</div>
+
+<!-- ===== UNIT 5 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 5: Business Systems, Outsourcing and the Cloud</h3>
+  <div class="reading-list">
+    <p>Desfray, P. & Raymond, G. (2014) Modeling Enterprise Architecture with TOGAF. Elsevier.</p>
+  </div>
+</div>
+
+<!-- ===== UNIT 6 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 6: A Cost Comparison Between On-Premise, Private and Public Cloud Hosting</h3>
+  <div class="project-highlight">
+    <div class="project-title">💰 AWS Costings Analysis</div>
+    <div class="project-description">Comprehensive cost analysis comparing hosting solutions.</div>
+    <a href="projects/Module 1/AWS costings.pptx" class="project-link">View AWS Costings Presentation</a>
+  </div>
+</div>
+
+<!-- ===== UNIT 7 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 7: Software Licensing – Commercial vs Open Source</h3>
+  <p class="reading-title">Required Reading:</p>
+  <div class="reading-list">
+    <p>Perzanowski, A. & Schultz, J. (2016) The End of Ownership. MIT Press.</p>
+    <p>GNU. (2007) GNU General Public License.</p>
+    <p>Open Source Initiative. (n.d) The 3-Clause BSD License.</p>
+  </div>
+
+  <div class="project-highlight">
+    <div class="project-title">💻 Individual Programming Exercise</div>
+    <div class="project-description">Assessment: Individual Programming Exercise demonstrating practical coding skills.</div>
+    <a href="https://github.com/DMA-1970/Portfolio/tree/main/projects/Module%201/Program" class="project-link">View Programming Exercise</a>
+    <span style="color:#a8b8d8;font-weight:600;">(Grade: Distinction)</span>
+  </div>
+
+  <!-- Lecturer Comments inserted here -->
+  <div class="comment-card">
+    <h4 class="comment-title">Lecturer Feedback — Individual Programming Exercise (April 2024)</h4>
+    <blockquote>
+      “The student submitted a good set of application/code files that met the requirements. 
+      The code was well structured, and it was nice to see the use of try/catch blocks. 
+      The commentary file was reasonably well structured but messily presented, suggesting it was slightly rushed. 
+      While quoting is encouraged to avoid plagiarism, I recommend cleaning up markup artifacts and critically evaluating sources. 
+      The references were very good and correctly formatted. Overall, a very good submission.”
+    </blockquote>
+    <p class="comment-source">— Module Tutor Feedback, University of Essex Online</p>
+    <p style="color:#b8c5e0;font-size:0.9em;margin-top:10px;">
+      <em>This early module introduced structured programming, research discipline, and academic presentation. 
+      Tutor feedback highlighted the balance between technical accuracy and professional reporting, forming 
+      the foundation for later distinction-level modules like Cloud Operations and Project Management.</em>
+    </p>
+  </div>
+</div>
+
+<!-- ===== UNIT 8 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 8: A Case Study – Investigating Innovations of Large Corporations and SMEs</h3>
+  <div class="project-highlight">
+    <div class="project-title">📊 Innovation Analysis Template</div>
+    <div class="project-description">Template for analysing business and technical innovations in IBM and Acorn.</div>
+    <a href="projects/Module 1/Unit 8 Seminar Grid Template.docx" class="project-link">Download Seminar Grid Template</a>
+  </div>
+</div>
+
+<!-- ===== UNIT 9 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 9: Communications and Digital Transformation</h3>
+  <div class="reading-list">
+    <p>Desfray, P. (2014) Modeling Enterprise Architecture with TOGAF. Elsevier.</p>
+  </div>
+</div>
+
+<!-- ===== UNIT 10 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 10: The Digital Transformation Process</h3>
+  <div class="project-highlight">
+    <div class="project-title">🔄 BPMN Digital Process</div>
+    <div class="project-description">Introducing a digital process using BPMN and UML.</div>
+    <a href="projects/Module 1/Introducing a digital process using BPMN.pdf" class="project-link">View BPMN Process Documentation</a><br>
+    <a href="projects/Module 1/BPMN.png" class="project-link">View BPMN Diagram</a>
+  </div>
+</div>
+
+<!-- ===== UNIT 11 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 11: Future Trends</h3>
+  <div class="reading-list">
+    <p>Pan, Y. & Zhang, L. (2021) Roles of AI in Construction Engineering. Automation in Construction.</p>
+  </div>
+</div>
+
+<!-- ===== UNIT 12 ===== -->
+<div class="unit">
+  <h3 class="unit-title">Unit 12: The Great Debate</h3>
+  <div class="project-highlight">
+    <div class="project-title">🎤 Individual Presentation</div>
+    <div class="project-description">Final seminar presentation exploring the most influential IT trend.</div>
+    <a href="projects/Module 1/Individual Presentation.html" class="project-link">View Individual Presentation</a>
+    <span style="color:#a8b8d8;font-weight:600;">(Grade: Pass)</span>
+  </div>
+</div>
+
+</div> <!-- End of Content Card -->
+
+<!-- Bottom Navigation -->
+<div class="bottom-navigation">
+  <a href="index.html" class="nav-link">Back to Home</a>
+  <a href="university-of-essex.html" class="nav-link">University of Essex</a>
+  <a href="Module2.html" class="nav-link">Module 2</a>
+  <a href="Module3.html" class="nav-link">Module 3</a>
+  <a href="Module4.html" class="nav-link">Module 4</a>
+  <a href="Module5.html" class="nav-link">Module 5</a>
+  <a href="Module6.html" class="nav-link">Module 6</a>
+  <a href="Module7.html" class="nav-link">Module 7</a>
+  <a href="links.html" class="nav-link">All Links</a>
+</div>
+
+</div>
+</div>
 </body>
 </html>
