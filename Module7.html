@@ -8,94 +8,540 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body,html{height:100%;font-family:'Inter',sans-serif;color:#fff;overflow-x:hidden;position:relative;}
-    body::before{
-      content:'';position:fixed;top:0;left:0;right:0;bottom:0;
-      background:url('assets/Module7.jpg') no-repeat center center/cover;
-      filter:blur(3px);transform:scale(1.05);z-index:-2;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    body::after{
-      content:'';position:fixed;top:0;left:0;right:0;bottom:0;
-      background:rgba(0,0,0,0.8);z-index:-1;
+    body, html {
+      height: 100%;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #ffffff;
+      overflow-x: hidden;
+      position: relative;
     }
-    .back-btn{
-      position:fixed;top:20px;left:20px;
-      background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,0.12);
-      border-radius:12px;padding:12px 20px;
-      text-decoration:none;color:#d4dff5;transition:all .3s ease;z-index:1000;
+    /* Blurred background with dark overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('assets/Module7.jpg') no-repeat center center/cover;
+      filter: blur(3px);
+      -webkit-filter: blur(3px);
+      transform: scale(1.05);
+      z-index: -2;
     }
-    .back-btn:hover{background:rgba(255,255,255,0.12);color:#fff;}
-    .overlay{min-height:100vh;display:flex;justify-content:center;padding:80px 20px 40px;}
-    .container{max-width:1000px;width:100%;}
-    .header{text-align:center;margin-bottom:40px;}
-    .header h1{font-family:'Montserrat',sans-serif;font-size:2.8em;font-weight:700;color:#fff;}
-    .module-grade{color:#a8b8d8;margin-top:10px;}
-    .content-card{
-      background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);
-      border:1px solid rgba(255,255,255,0.05);
-      border-radius:20px;padding:35px 40px;margin-bottom:30px;
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: -1;
     }
-    .unit{margin-bottom:40px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.1);}
-    .unit:last-child{border-bottom:none;}
-    .unit-title{font-family:'Montserrat';font-size:1.3em;font-weight:600;margin-bottom:15px;}
-    .reading-title{font-size:1em;font-weight:600;color:#d4dff5;margin:10px 0;text-decoration:underline;}
-    .reading-list p{font-size:.95em;line-height:1.8;color:#b8c5e0;margin-bottom:8px;}
-    .seminar-preparation{
-      background:rgba(255,107,53,0.1);
-      border:1px solid rgba(255,107,53,0.3);
-      border-radius:12px;padding:15px 20px;margin:10px 0;
+    /* Back button styling */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #d4dff5;
+      font-size: 0.95em;
+      font-weight: 400;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .seminar-preparation h5{color:#ff6b35;font-weight:bold;margin-bottom:10px;}
-    .activity{color:#fff;font-size:1.05em;margin:14px 0 6px;font-weight:600;}
-    .reflection{color:#b8c5e0;font-size:.9em;line-height:1.7;text-align:justify;margin-bottom:10px;}
-    .reflection strong{color:#fff;}
-    .references{padding-left:20px;}
-    .references li{color:#b8c5e0;font-size:.9em;margin-bottom:5px;}
-    .references a{color:#93c5fd;text-decoration:none;transition:color 0.3s ease;}
-    .references a:hover{color:#60a5fa;text-decoration:underline;}
-    .pdf-link{color:#93c5fd;text-decoration:none;transition:all 0.3s ease;display:inline-block;margin-top:10px;padding-left:20px;}
-    .pdf-link:hover{color:#60a5fa;text-decoration:underline;}
-    .bottom-navigation{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:40px;}
-    .nav-link{
-      background:rgba(255,255,255,0.07);
-      border:1px solid rgba(255,255,255,0.12);
-      padding:8px 14px;border-radius:25px;
-      text-decoration:none;color:#d4dff5;transition:all .3s ease;
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.11);
+      border-color: rgba(21, 87, 36, 0.4);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 0 12px rgba(21, 87, 36, 0.25),
+                  0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    .nav-link:hover{background:rgba(255,255,255,0.12);color:#fff;}
+    /* Transparent overlay container */
+    .overlay {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 80px 20px 40px;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Main container */
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      animation: slideUp 0.8s ease-out;
+    }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+    }
+    .module-grade {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #a8b8d8;
+      margin-bottom: 20px;
+    }
+    /* Content cards - matching homepage bio style */
+    .content-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 35px 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    .content-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(21, 87, 36, 0.25),
+                  0 8px 32px rgba(0, 0, 0, 0.2);
+      border-color: rgba(21, 87, 36, 0.3);
+      background: rgba(255, 255, 255, 0.09);
+    }
+    /* Unit styling */
+    .unit {
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .unit:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .unit-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    .reading-section {
+      margin-bottom: 20px;
+    }
+    .reading-title {
+      font-size: 1em;
+      font-weight: 600;
+      color: #d4dff5;
+      text-decoration: underline;
+      margin-bottom: 10px;
+    }
+    .reading-list p {
+      font-size: 0.95em;
+      line-height: 1.8;
+      color: #b8c5e0;
+      margin-bottom: 8px;
+      padding-left: 15px;
+      position: relative;
+      text-align: justify;
+    }
+    .reading-list p:before {
+      content: '•';
+      color: #64748b;
+      position: absolute;
+      left: 0;
+    }
+    .activity-section {
+      margin-top: 25px;
+    }
+    .activity-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .activity-item {
+      margin-bottom: 8px;
+    }
+    .activity-item a {
+      color: #d4dff5;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .activity-item a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .activity-item p {
+      color: #b8c5e0;
+      font-size: 0.95em;
+      line-height: 1.8;
+      text-align: justify;
+    }
+    .grade {
+      color: #a8b8d8 !important;
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+    /* Enhanced project styling */
+    .project-highlight {
+      background: rgba(30, 144, 255, 0.1);
+      border: 1px solid rgba(30, 144, 255, 0.3);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin: 10px 0;
+      transition: all 0.3s ease;
+    }
+    .project-highlight:hover {
+      background: rgba(30, 144, 255, 0.15);
+      border-color: rgba(30, 144, 255, 0.5);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+    }
+    .project-title {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #1e90ff;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .project-description {
+      color: #b8c5e0;
+      font-size: 0.95em;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .project-link {
+      color: #d4dff5;
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: all 0.3s ease;
+    }
+    .project-link:hover {
+      color: #1e90ff;
+      text-decoration: underline;
+    }
+    /* Enhanced assessment styling */
+    .assessment-highlight {
+      background: rgba(255, 107, 53, 0.1);
+      border: 1px solid rgba(255, 107, 53, 0.3);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin: 10px 0;
+      transition: all 0.3s ease;
+    }
+    .assessment-highlight:hover {
+      background: rgba(255, 107, 53, 0.15);
+      border-color: rgba(255, 107, 53, 0.5);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+    }
+    .assessment-title {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #ff6b35;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .assessment-description {
+      color: #b8c5e0;
+      font-size: 0.95em;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .assessment-link {
+      color: #d4dff5;
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: all 0.3s ease;
+    }
+    .assessment-link:hover {
+      color: #ff6b35;
+      text-decoration: underline;
+    }
+    /* Seminar preparation styling */
+    .seminar-preparation {
+      background: rgba(255, 107, 53, 0.1);
+      border: 1px solid rgba(255, 107, 53, 0.3);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin: 10px 0;
+      transition: all 0.3s ease;
+    }
+    .seminar-preparation:hover {
+      background: rgba(255, 107, 53, 0.15);
+      border-color: rgba(255, 107, 53, 0.5);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+    }
+    .seminar-preparation h5 {
+      color: #ff6b35;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin: 15px 0 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .seminar-preparation ul {
+      margin: 5px 0;
+      padding-left: 20px;
+    }
+    .seminar-preparation li {
+      margin-bottom: 5px;
+      color: #b8c5e0;
+    }
+    .seminar-preparation p {
+      color: #b8c5e0;
+      font-size: 0.95em;
+      line-height: 1.7;
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+    .seminar-preparation strong {
+      color: #ffffff;
+    }
+    /* Reflection styling */
+    .reflection {
+      color: #b8c5e0;
+      font-size: 0.95em;
+      line-height: 1.7;
+      text-align: justify;
+      margin-bottom: 10px;
+    }
+    .reflection strong {
+      color: #ffffff;
+    }
+    /* References styling */
+    .references {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .references li {
+      color: #b8c5e0;
+      font-size: 0.95em;
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+    .references a {
+      color: #93c5fd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .references a:hover {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+    /* PDF link styling */
+    .pdf-link {
+      color: #93c5fd;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    .pdf-link:hover {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+    /* Summary/Comment styling */
+    .summary {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #b8c5e0;
+      font-size: 0.95em;
+      line-height: 1.8;
+      text-align: justify;
+    }
+    .summary p {
+      margin-bottom: 10px;
+    }
+    .summary p:last-child {
+      margin-bottom: 0;
+    }
+    /* Comment card styling */
+    .comment-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 20px 25px;
+      margin-top: 15px;
+      margin-bottom: 25px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .comment-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+    .comment-title {
+      font-family: 'Montserrat', sans-serif;
+      color: #d4dff5;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+    blockquote {
+      color: #b8c5e0;
+      font-style: italic;
+      line-height: 1.6;
+      border-left: 3px solid rgba(255, 255, 255, 0.2);
+      padding-left: 15px;
+      margin-bottom: 10px;
+    }
+    .comment-source {
+      color: #93c5fd;
+      font-size: 0.9em;
+    }
+    /* General paragraph styling */
+    p {
+      text-align: justify;
+      line-height: 1.8;
+    }
+    /* Navigation links */
+    .bottom-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .nav-link {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 8px 16px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #d4dff5;
+      font-size: 0.9em;
+      font-weight: 400;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.11);
+      border-color: rgba(21, 87, 36, 0.4);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 0 12px rgba(21, 87, 36, 0.25),
+                  0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2.2em;
+      }
+      .content-card {
+        padding: 25px 30px;
+      }
+      .unit-title {
+        font-size: 1.2em;
+      }
+      .overlay {
+        padding: 70px 15px 30px;
+      }
+      .back-btn {
+        top: 15px;
+        left: 15px;
+        padding: 10px 16px;
+        font-size: 0.9em;
+      }
+    }
+    @media (max-width: 480px) {
+      .header h1 {
+        font-size: 1.8em;
+      }
+      .content-card {
+        padding: 20px 25px;
+      }
+      .nav-link {
+        font-size: 0.9em;
+        padding: 10px 20px;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <a href="index.html" class="back-btn">← Back to Home</a>
+  <!-- Back button -->
+  <a href="index.html" class="back-btn">
+    ← Back to Home
+  </a>
 
   <div class="overlay">
     <div class="container">
+      <!-- Header -->
       <div class="header">
         <h1>Research Methods and Professional Practice</h1>
         <p class="module-grade">Overall Module Grade: In Progress</p>
       </div>
 
+      <!-- Module Content Card -->
       <div class="content-card">
-
         <!-- Unit 1 -->
         <div class="unit">
-          <p class="unit-title">Unit 1: Introduction and Ethics in Research</p>
+          <h3 class="unit-title">Unit 1: Introduction and Ethics in Research</h3>
 
-          <p class="reading-title">Required Reading:</p>
-          <div class="reading-list">
-            <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide</em>. Pearson. Chapters 2 (pp. 24–25, 38–40).</p>
-            <p>Correa, N. et al. (2023) 'Worldwide AI ethics: A review of 200 guidelines and recommendations for AI governance.'</p>
-            <p>Finn, M. and Shilton, K. (2023) 'Ethics governance development: The case of the Menlo Report,' <em>Social Studies of Science</em>, 53(3), pp. 315–340.</p>
-            <p>Fjeld, J. et al. (2020) <em>Principled Artificial Intelligence</em>. Berkman Klein Center Research Publication.</p>
+          <div class="reading-section">
+            <p class="reading-title">Required Reading:</p>
+            <div class="reading-list">
+              <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide</em>. Pearson. Chapters 2 (pp. 24–25, 38–40).</p>
+              <p>Correa, N. et al. (2023) 'Worldwide AI ethics: A review of 200 guidelines and recommendations for AI governance.'</p>
+              <p>Finn, M. and Shilton, K. (2023) 'Ethics governance development: The case of the Menlo Report,' <em>Social Studies of Science</em>, 53(3), pp. 315–340.</p>
+              <p>Fjeld, J. et al. (2020) <em>Principled Artificial Intelligence</em>. Berkman Klein Center Research Publication.</p>
+            </div>
           </div>
 
-          <p class="reading-title">Additional Reading:</p>
-          <div class="reading-list">
-            <p>Miller, T. et al. (2012) <em>Ethics in Qualitative Research</em>. 2nd edn. SAGE. Chs 4–6, 10–11.</p>
-            <p>Office for Human Research Protections (2018) <em>The Belmont Report</em>.</p>
+          <div class="reading-section">
+            <p class="reading-title">Additional Reading:</p>
+            <div class="reading-list">
+              <p>Miller, T. et al. (2012) <em>Ethics in Qualitative Research</em>. 2nd edn. SAGE. Chs 4–6, 10–11.</p>
+              <p>Office for Human Research Protections (2018) <em>The Belmont Report</em>.</p>
+            </div>
           </div>
 
           <div class="seminar-preparation">
@@ -104,45 +550,75 @@
             <p>This seminar introduces the module format, assessment requirements, and the ethical foundations underpinning responsible computing research. Students review research topics, discuss reasoning approaches, and clarify project expectations.</p>
           </div>
 
-          <h4 class="activity">Activities:</h4>
-          <ul class="references">
-            <li><strong>Reasoning Quiz:</strong> Identify inductive vs deductive reasoning.</li>
-            <li><strong>e-Portfolio Introduction:</strong> Share academic and career goals.</li>
-            <li><strong>Collaborative Discussion 1:</strong> <em>Codes of Ethics and Professional Conduct</em> – Analyse an ACM case study with reference to the ACM and BCS codes.</li>
-            <li><strong>Reflective Activity 1:</strong> <em>Ethics in Computing in the Age of Generative AI</em> – Analyse AI governance frameworks and ethical responses (1 000 words, formative).</li>
-          </ul>
-          <p><a href="projects/Module%207/Generative%20AI%20Governance%20Reflection.pdf" target="_blank" class="pdf-link">📄 View Reflective Activity 1 PDF</a></p>
+          <div class="activity-section">
+            <h4 class="activity-title">Activities:</h4>
+            <div class="activity-item">
+              <ul class="references">
+                <li><strong>Reasoning Quiz:</strong> Identify inductive vs deductive reasoning.</li>
+                <li><strong>e-Portfolio Introduction:</strong> Share academic and career goals.</li>
+                <li><strong>Collaborative Discussion 1:</strong> <em>Codes of Ethics and Professional Conduct</em> – Analyse an ACM case study with reference to the ACM and BCS codes.</li>
+                <li><strong>Reflective Activity 1:</strong> <em>Ethics in Computing in the Age of Generative AI</em> – Analyse AI governance frameworks and ethical responses (1 000 words, formative).</li>
+              </ul>
+              <p><a href="projects/Module%207/Generative%20AI%20Governance%20Reflection.pdf" target="_blank" class="pdf-link">📄 View Reflective Activity 1 PDF</a></p>
+            </div>
+          </div>
 
-
-          <h4 class="activity">Reflective Thinking:</h4>
-          <p class="reflection"><strong>Summary:</strong> This unit introduces research ethics, professional conduct, and reasoning methods, providing the foundation for academic integrity and ethical decision-making in computing.</p>
-          <p class="reflection"><strong>Reflection:</strong> Engaging with AI ethics literature revealed how global governance perspectives shape responsible innovation. Understanding the ACM and BCS codes reinforced the importance of ethical accountability and professional judgement in research practice. Additionally, exploring sponsor bias in the video was very insightful, as it highlighted the subtle yet significant ways external influences can shape research outcomes and decision-making. Recognising these passive forms of bias is particularly vital from a CIO and governance perspective, where ethical oversight, transparency, and balanced stakeholder influence are essential to ensuring that enterprise technology strategies, data-driven decisions, and AI initiatives remain aligned with professional integrity and societal trust.</p>
+          <div class="activity-section">
+            <h4 class="activity-title">Reflective Thinking:</h4>
+            <div class="activity-item">
+              <p class="reflection"><strong>Summary:</strong> This unit introduces research ethics, professional conduct, and reasoning methods, providing the foundation for academic integrity and ethical decision-making in computing.</p>
+              <p class="reflection"><strong>Reflection:</strong> Engaging with AI ethics literature revealed how global governance perspectives shape responsible innovation. Understanding the ACM and BCS codes reinforced the importance of ethical accountability and professional judgement in research practice. Additionally, exploring sponsor bias in the video was very insightful, as it highlighted the subtle yet significant ways external influences can shape research outcomes and decision-making. Recognising these passive forms of bias is particularly vital from a CIO and governance perspective, where ethical oversight, transparency, and balanced stakeholder influence are essential to ensuring that enterprise technology strategies, data-driven decisions, and AI initiatives remain aligned with professional integrity and societal trust.</p>
+            </div>
+          </div>
         </div>
 
         <!-- Units 2–12 Placeholders -->
-        <div class="unit"><p class="unit-title">Unit 2: [Placeholder]</p></div>
-        <div class="unit"><p class="unit-title">Unit 3: [Placeholder]</p></div>
-        <div class="unit"><p class="unit-title">Unit 4: [Placeholder]</p></div>
-        <div class="unit"><p class="unit-title">Unit 5: [Placeholder]</p></div>
-        <div class="unit"><p class="unit-title">Unit 6: [Placeholder]</p></div>
-        <div class="unit"><p class="unit-title">Unit 7: [Placeholder]</p></div>
-        <div class="unit"><p class="unit-title">Unit 8: [Placeholder]</p></div>
-        <div class="unit"><p class="unit-title">Unit 9: [Placeholder]</p></div>
-        <div class="unit"><p class="unit-title">Unit 10: [Placeholder]</p></div>
-        <div class="unit"><p class="unit-title">Unit 11: [Placeholder]</p></div>
-        <div class="unit"><p class="unit-title">Unit 12: [Placeholder]</p></div>
-
+        <div class="unit">
+          <h3 class="unit-title">Unit 2: [Placeholder]</h3>
+        </div>
+        <div class="unit">
+          <h3 class="unit-title">Unit 3: [Placeholder]</h3>
+        </div>
+        <div class="unit">
+          <h3 class="unit-title">Unit 4: [Placeholder]</h3>
+        </div>
+        <div class="unit">
+          <h3 class="unit-title">Unit 5: [Placeholder]</h3>
+        </div>
+        <div class="unit">
+          <h3 class="unit-title">Unit 6: [Placeholder]</h3>
+        </div>
+        <div class="unit">
+          <h3 class="unit-title">Unit 7: [Placeholder]</h3>
+        </div>
+        <div class="unit">
+          <h3 class="unit-title">Unit 8: [Placeholder]</h3>
+        </div>
+        <div class="unit">
+          <h3 class="unit-title">Unit 9: [Placeholder]</h3>
+        </div>
+        <div class="unit">
+          <h3 class="unit-title">Unit 10: [Placeholder]</h3>
+        </div>
+        <div class="unit">
+          <h3 class="unit-title">Unit 11: [Placeholder]</h3>
+        </div>
+        <div class="unit">
+          <h3 class="unit-title">Unit 12: [Placeholder]</h3>
+        </div>
       </div>
 
+      <!-- Navigation Links -->
       <div class="bottom-navigation">
         <a href="index.html" class="nav-link">Back to Home</a>
+        <a href="university-of-essex.html" class="nav-link">University of Essex</a>
         <a href="Module1.html" class="nav-link">Module 1</a>
         <a href="Module2.html" class="nav-link">Module 2</a>
         <a href="Module3.html" class="nav-link">Module 3</a>
         <a href="Module4.html" class="nav-link">Module 4</a>
         <a href="Module5.html" class="nav-link">Module 5</a>
         <a href="Module6.html" class="nav-link">Module 6</a>
-        <a href="links.html" class="nav-link">All Project Links</a>
+        <a href="links.html" class="nav-link">All Links</a>
       </div>
     </div>
   </div>
