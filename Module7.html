@@ -22,21 +22,28 @@
     }
     /* Blurred background with dark overlay */
     body::before {
-  content: '';
-  position: fixed;
-  ...
-  background: url('assets/Module7.jpg') no-repeat center center/cover;  ← This entire line needs updating
-  filter: blur(3px);  ← Change this line
-  transform: scale(1.05);  ← Change this line
-  ...
-}
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('assets/Module7.jpg') no-repeat center 65% / 85% cover;
+      filter: blur(2px) brightness(1.15);
+      -webkit-filter: blur(2px) brightness(1.15);
+      transform: scale(1.0);
+      z-index: -2;
+    }
     body::after {
-  content: '';
-  position: fixed;
-  ...
-  background: rgba(0, 0, 0, 0.8);  ← Change this line from 0.8 to 0.6
-  ...
-}
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
     /* Back button styling */
     .back-btn {
       position: fixed;
