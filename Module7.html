@@ -21,7 +21,7 @@
       position: relative;
     }
     /* Blurred background with dark overlay */
-    body::before {
+     body::before {
       content: '';
       position: fixed;
       top: 0;
@@ -31,7 +31,7 @@
       background: url('assets/Module7.jpg') no-repeat center center/cover;
       filter: blur(3px);
       -webkit-filter: blur(3px);
-      transform: scale(1.05);
+      transform: scale(0.95);
       z-index: -2;
     }
     body::after {
@@ -41,7 +41,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.65);
       z-index: -1;
     }
     /* Back button styling */
