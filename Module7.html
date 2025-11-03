@@ -21,14 +21,15 @@
       position: relative;
     }
     /* Blurred background with dark overlay */
-    body::before {
+     body::before {
       content: '';
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: url('assets/Module7.jpg') no-repeat center center/cover;
+      background: url('assets/Module7.jpg') no-repeat center center;
+      background-size: 110%;
       filter: blur(3px);
       -webkit-filter: blur(3px);
       transform: scale(0.95);
