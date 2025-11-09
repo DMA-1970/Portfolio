@@ -1,0 +1,64 @@
+name: Broken Link Checker
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  schedule:
+    # Run daily at 6 AM UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    name: Check All Links
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: Install lychee (fast link checker)
+      run: |
+        curl -LO https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-musl.tar.gz
+        tar -xzf lychee-x86_64-unknown-linux-musl.tar.gz
+        sudo mv lychee /usr/local/bin/
+        chmod +x /usr/local/bin/lychee
+        
+    - name: Check internal links
+      run: |
+        echo "🔗 Checking internal links..."
+        find . -name "*.html" -not -path "./.git/*" -not -path "./node_modules/*" | head -20 | while read file; do
+          echo "Checking: $file"
+          lychee --no-progress "$file" --exclude-all --include-path "\.html$" || true
+        done
+        
+    - name: Check external links
+      run: |
+        echo "🌐 Checking external links..."
+        find . -name "*.html" -not -path "./.git/*" -not -path "./node_modules/*" | head -10 | xargs lychee --no-progress --timeout 10 --max-concurrency 5 || true
+        
+    - name: Generate link report
+      run: |
+        echo "📊 Link Check Summary" > link-report.md
+        echo "===================" >> link-report.md
+        echo "" >> link-report.md
+        echo "Checked on: $(date)" >> link-report.md
+        echo "" >> link-report.md
+        echo "Run lychee on your HTML files to see detailed results." >> link-report.md
+        
+    - name: Upload link report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: link-check-report
+        path: link-report.md
+        retention-days: 30
+

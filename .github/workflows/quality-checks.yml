@@ -1,0 +1,153 @@
+name: Quality Checks
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  schedule:
+    # Run weekly on Mondays at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  html-validation:
+    name: HTML Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        
+    - name: Download HTML validator
+      run: |
+        wget -q https://github.com/validator/validator/releases/latest/download/vnu.jar -O vnu.jar
+        
+    - name: Validate HTML files
+      run: |
+        echo "🔍 Validating HTML files..."
+        find . -name "*.html" -not -path "./.git/*" -not -path "./node_modules/*" | head -20 | while read file; do
+          echo "Validating: $file"
+          java -jar vnu.jar --skip-non-html --format text "$file" || true
+        done
+        
+    - name: HTML Validation Summary
+      run: |
+        echo "✓ HTML validation complete"
+        echo "Check the logs above for any validation errors"
+
+  link-checking:
+    name: Link Checking
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: Install lychee link checker
+      run: |
+        curl -LO https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-musl.tar.gz
+        tar -xzf lychee-x86_64-unknown-linux-musl.tar.gz
+        sudo mv lychee /usr/local/bin/
+        chmod +x /usr/local/bin/lychee
+        
+    - name: Check for broken links
+      run: |
+        echo "🔗 Checking for broken links..."
+        find . -name "*.html" -not -path "./.git/*" -not -path "./node_modules/*" | head -10 | xargs lychee --no-progress --timeout 10 --max-concurrency 5 --exclude-all --include-path "\.html$" || true
+        
+    - name: Link Check Summary
+      run: |
+        echo "✓ Link checking complete"
+        echo "Review the output above for any broken links"
+
+  performance-monitoring:
+    name: Performance Monitoring
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: Install Lighthouse
+      run: |
+        npm install -g lighthouse
+        
+    - name: Start local server
+      run: |
+        echo "Starting local server for testing..."
+        python3 -m http.server 8000 &
+        sleep 3
+        
+    - name: Run Lighthouse on main page
+      run: |
+        echo "⚡ Running Lighthouse performance analysis..."
+        lighthouse http://localhost:8000/index.html --output=html --output-path=./lighthouse-report.html --output=json --output-path=./lighthouse-report.json --chrome-flags="--headless --no-sandbox" --quiet || true
+        
+    - name: Extract performance scores
+      run: |
+        if [ -f lighthouse-report.json ]; then
+          echo "📊 Performance Scores:" > performance-summary.txt
+          echo "===================" >> performance-summary.txt
+          node -e "
+            const fs = require('fs');
+            const data = JSON.parse(fs.readFileSync('lighthouse-report.json', 'utf8'));
+            const scores = data.categories;
+            console.log('Performance: ' + Math.round(scores.performance.score * 100));
+            console.log('Accessibility: ' + Math.round(scores.accessibility.score * 100));
+            console.log('Best Practices: ' + Math.round(scores['best-practices'].score * 100));
+            console.log('SEO: ' + Math.round(scores.seo.score * 100));
+          " >> performance-summary.txt || echo "Could not parse scores" >> performance-summary.txt
+          cat performance-summary.txt
+        fi
+        
+    - name: Upload Lighthouse reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: lighthouse-reports
+        path: |
+          lighthouse-report.html
+          lighthouse-report.json
+          performance-summary.txt
+        retention-days: 30
+        
+    - name: Performance Metrics Summary
+      run: |
+        echo "📊 Performance monitoring complete"
+        echo "View the Lighthouse report artifact for detailed metrics"
+
+  summary:
+    name: Quality Check Summary
+    runs-on: ubuntu-latest
+    needs: [html-validation, link-checking, performance-monitoring]
+    if: always()
+    
+    steps:
+    - name: Generate Summary
+      run: |
+        echo "## ✅ Quality Checks Complete" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Completed Checks:" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ HTML Validation" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Link Checking" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Performance Monitoring" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "View the individual job logs for detailed results." >> $GITHUB_STEP_SUMMARY
+

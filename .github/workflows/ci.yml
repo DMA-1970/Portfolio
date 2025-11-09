@@ -15,13 +15,43 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       
-    - name: Validate HTML files
+    - name: Validate repository structure
       run: |
-        echo "Validating repository structure..."
+        echo "🔍 Validating repository structure..."
         echo "✓ Repository checked out successfully"
-        echo "✓ Ready for GitHub Pages deployment"
         
-    - name: Check for broken links (optional)
+    - name: Check HTML files exist
       run: |
-        echo "Add link checking here if needed"
+        echo "📄 Checking for HTML files..."
+        html_count=$(find . -name "*.html" -not -path "./.git/*" | wc -l)
+        echo "Found $html_count HTML files"
+        if [ $html_count -eq 0 ]; then
+          echo "⚠️ Warning: No HTML files found"
+          exit 1
+        fi
+        echo "✓ HTML files found"
+        
+    - name: Check for required files
+      run: |
+        echo "📋 Checking for required files..."
+        if [ -f "index.html" ]; then
+          echo "✓ index.html exists"
+        else
+          echo "⚠️ Warning: index.html not found"
+        fi
+        if [ -f "_config.yml" ]; then
+          echo "✓ _config.yml exists"
+        fi
+        echo "✓ Repository structure validated"
+        
+    - name: File size check
+      run: |
+        echo "📊 Checking file sizes..."
+        find . -type f -size +10M -not -path "./.git/*" | while read file; do
+          echo "⚠️ Large file detected: $file ($(du -h "$file" | cut -f1))"
+        done || echo "✓ No unusually large files detected"
+        
+    - name: Ready for deployment
+      run: |
+        echo "✅ Repository is ready for GitHub Pages deployment"
 
