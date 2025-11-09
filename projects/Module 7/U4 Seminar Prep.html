@@ -1,325 +1,165 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>U4 Seminar Preparation: Ethical Analysis - David Abiodun</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-
-        *{margin:0;padding:0;box-sizing:border-box;}
-
-        body,html{height:100%;font-family:'Inter',sans-serif;color:#fff;overflow-x:hidden;position:relative;}
-
-        body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:url('../../assets/Module7.jpg') no-repeat center center/cover;filter:blur(3px);transform:scale(1.05);z-index:-2;}
-
-        body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:-1;}
-
-        .back-btn{position:fixed;top:20px;left:20px;background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:12px 20px;text-decoration:none;color:#d4dff5;transition:all .3s ease;z-index:1000;}
-
-        .back-btn:hover{background:rgba(255,255,255,0.12);color:#fff;}
-
-        .overlay{min-height:100vh;display:flex;justify-content:center;padding:80px 20px 40px;}
-
-        .container{max-width:1000px;width:100%;}
-
-        .header{text-align:center;margin-bottom:40px;}
-
-        .header h1{font-family:'Montserrat',sans-serif;font-size:2.8em;font-weight:700;color:#fff;}
-
-        .module-grade{color:#a8b8d8;margin-top:10px;}
-
-        .content-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.05);border-radius:20px;padding:35px 40px;margin-bottom:30px;}
-
-        .unit{margin-bottom:40px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.1);}
-
-        .unit:last-child{border-bottom:none;}
-
-        .unit-title{font-family:'Montserrat';font-size:1.3em;font-weight:600;margin-bottom:15px;color:#fff;}
-
-        .reading-title{font-size:1em;font-weight:600;color:#d4dff5;margin:10px 0;text-decoration:underline;}
-
-        .reading-list p{font-size:.95em;line-height:1.8;color:#b8c5e0;margin-bottom:8px;}
-
-        .seminar-preparation{background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.3);border-radius:12px;padding:15px 20px;margin:10px 0;}
-
-        .seminar-preparation h5{color:#ff6b35;font-weight:bold;margin-bottom:10px;}
-
-        .seminar-preparation ul{padding-left:20px;margin-top:10px;}
-
-        .seminar-preparation li{color:#b8c5e0;font-size:.9em;line-height:1.6;margin-bottom:8px;}
-
-        .activity{color:#fff;font-size:1.05em;margin:14px 0 6px;font-weight:600;}
-
-        .reflection{color:#b8c5e0;font-size:.9em;line-height:1.7;text-align:justify;margin-bottom:10px;}
-
-        .reflection strong{color:#fff;}
-
-        .references{padding-left:20px;}
-
-        .references li{color:#b8c5e0;font-size:.9em;margin-bottom:5px;}
-
-        .references a{color:#93c5fd;text-decoration:none;transition:color 0.3s ease;}
-
-        .references a:hover{color:#60a5fa;text-decoration:underline;}
-
-        .pdf-link{color:#93c5fd;text-decoration:none;transition:all 0.3s ease;display:inline-block;margin-top:10px;padding-left:20px;}
-
-        .pdf-link:hover{color:#60a5fa;text-decoration:underline;}
-
-        .bottom-navigation{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:40px;}
-
-        .nav-link{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:25px;text-decoration:none;color:#d4dff5;transition:all .3s ease;}
-
-        .nav-link:hover{background:rgba(255,255,255,0.12);color:#fff;}
-
-        /* Project Highlight Section */
-
-        .project-highlight{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;margin:15px 0;transition:all 0.3s ease;}
-
-        .project-highlight:hover{background:rgba(255,255,255,0.08);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.2);}
-
-        .project-title{font-family:'Montserrat',sans-serif;font-size:1.1em;font-weight:600;color:#fff;margin-bottom:8px;}
-
-        .project-description{color:#b8c5e0;font-size:.9em;line-height:1.6;margin-bottom:12px;}
-
-        .project-link{color:#93c5fd;text-decoration:none;font-size:.95em;transition:all 0.3s ease;display:inline-block;margin-right:15px;}
-
-        .project-link:hover{color:#60a5fa;text-decoration:underline;}
-
-        /* Comment Section */
-
-        .comment-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 25px;margin-top:15px;margin-bottom:25px;backdrop-filter:blur(10px);transition:all 0.3s ease;}
-
-        .comment-card:hover{background:rgba(255,255,255,0.08);transform:translateY(-2px);}
-
-        .comment-title{font-family:'Montserrat',sans-serif;color:#d4dff5;margin-bottom:10px;font-size:1.1em;font-weight:600;}
-
-        blockquote{color:#b8c5e0;font-style:italic;line-height:1.6;border-left:3px solid rgba(255,255,255,0.2);padding-left:15px;margin-bottom:10px;}
-
-        .comment-source{color:#93c5fd;font-size:0.9em;}
-
-        /* Content-specific styles */
-
-        .intro-section{color:#b8c5e0;font-size:.95em;line-height:1.8;margin-bottom:30px;text-align:justify;}
-
-        .question-section{background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.3);border-radius:12px;padding:20px;margin:20px 0;}
-
-        .question-title{color:#ff6b35;font-weight:600;font-size:1.1em;margin-bottom:15px;}
-
-        .question-content{color:#b8c5e0;font-size:.95em;line-height:1.8;text-align:justify;}
-
-        .question-content p{margin-bottom:15px;}
-
-        .critique-item{background:rgba(255,255,255,0.03);border-left:3px solid rgba(255,107,53,0.5);padding:12px 15px;margin-bottom:12px;border-radius:4px;}
-
-        .critique-item strong{color:#fff;font-weight:600;}
-
-        .critique-number{color:#ff6b35;font-weight:600;}
-
-        .answer-section{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;margin:20px 0;}
-
-        .answer-question{color:#d4dff5;font-weight:600;font-size:1.05em;margin-bottom:12px;}
-
-        .answer-content{color:#b8c5e0;font-size:.95em;line-height:1.7;text-align:justify;}
-
-        .author-date{color:#a8b8d8;font-size:0.9em;margin-top:8px;text-align:center;}
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U4 Seminar Preparation: Ethical Analysis - David Abiodun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body,html{height:100%;font-family:'Inter',sans-serif;color:#fff;overflow-x:hidden;position:relative;}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:url('../../assets/Module7.jpg') no-repeat center center/cover;filter:blur(3px);transform:scale(1.05);z-index:-2;}
+body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:-1;}
+.back-btn{position:fixed;top:20px;left:20px;background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:12px 20px;text-decoration:none;color:#d4dff5;transition:all .3s ease;z-index:1000;}
+.back-btn:hover{background:rgba(255,255,255,0.12);color:#fff;}
+.overlay{min-height:100vh;display:flex;justify-content:center;padding:80px 20px 40px;}
+.container{max-width:1000px;width:100%;}
+.header{text-align:center;margin-bottom:40px;}
+.header h1{font-family:'Montserrat',sans-serif;font-size:2.8em;font-weight:700;color:#fff;}
+.module-grade{color:#a8b8d8;margin-top:10px;}
+.content-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.05);border-radius:20px;padding:35px 40px;margin-bottom:30px;}
+.unit{margin-bottom:40px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.unit:last-child{border-bottom:none;}
+.unit-title{font-family:'Montserrat';font-size:1.3em;font-weight:600;margin-bottom:15px;color:#fff;}
+.answer-section{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;margin:20px 0;}
+.answer-question{color:#d4dff5;font-weight:600;font-size:1.05em;margin-bottom:12px;}
+.answer-content{color:#b8c5e0;font-size:.95em;line-height:1.7;text-align:justify;}
+.consequence-section{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;margin:30px 0;}
+.consequence-section h3{color:#ff6b35;font-family:'Montserrat';font-size:1.2em;margin-bottom:12px;}
+.consequence-section ul{padding-left:20px;}
+.consequence-section li{color:#b8c5e0;font-size:.95em;line-height:1.7;margin-bottom:8px;}
+.references{padding-left:20px;}
+.references li{color:#b8c5e0;font-size:.9em;margin-bottom:5px;}
+.references a{color:#93c5fd;text-decoration:none;transition:color 0.3s ease;}
+.references a:hover{color:#60a5fa;text-decoration:underline;}
+.pdf-link{color:#93c5fd;text-decoration:none;transition:all 0.3s ease;display:inline-block;margin-top:10px;padding-left:20px;}
+.pdf-link:hover{color:#60a5fa;text-decoration:underline;}
+.bottom-navigation{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:40px;}
+.nav-link{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:25px;text-decoration:none;color:#d4dff5;transition:all .3s ease;}
+.nav-link:hover{background:rgba(255,255,255,0.12);color:#fff;}
+.author-date{color:#a8b8d8;font-size:0.9em;margin-top:8px;text-align:center;}
+</style>
 </head>
-
 <body>
 
-    <a href="../../Module7.html" class="back-btn">← Back to Module 7</a>
-
-    <div class="overlay">
-
-        <div class="container">
-
-            <div class="header">
-
-                <h1>U4 Seminar Preparation</h1>
-
-                <p class="module-grade">Ethical Analysis: Ricardo–Beth Records Case (GDPR & Professional Codes)</p>
-
-                <p class="author-date">David Abiodun — 08 November 2025</p>
-
-            </div>
-
-            <div class="content-card">
-
-                <!-- Question Section -->
-
-                <div class="unit">
-
-                    <div class="question-section">
-
-                        <div class="question-title">📋 Case Study: Privacy</div>
-
-                        <div class="question-content">
-
-                            <p><strong>Title:</strong> Case Study on Privacy</p>
-
-                            <p>Please read the case below and answer the questions. You need to determine the ethical issues involved with this case.</p>
-
-                            <p><strong>The Case</strong></p>
-
-                            <p>Ricardo works for the records department of his local government as a computer records clerk, where he has access to files of property tax records. For a scientific study, a researcher, Beth, has been granted access to the numerical portion "but not the corresponding names" of some records.</p>
-
-                            <p>Beth finds some information that she would like to use, but she needs the names and addresses corresponding with certain properties. Beth asks Ricardo to retrieve these names and addresses, so she can contact these people for more information and for permission to do further study.</p>
-
-                            <p>Now consider, what are the ethical issues involved in deciding which of these options to pursue?</p>
-
-                            <ul style="margin-top:15px; padding-left:20px;">
-
-                                <li style="margin-bottom:10px; color:#b8c5e0;">If Ricardo is not responsible for determining allowable access, should he release the names and addresses?</li>
-
-                                <li style="margin-bottom:10px; color:#b8c5e0;">Suppose Ricardo were responsible for determining allowable access to the files. What ethical issues would be involved in his deciding whether to grant access to Beth?</li>
-
-                                <li style="margin-bottom:10px; color:#b8c5e0;">Should Beth be allowed to contact the individuals involved? That is, should the Records department release individuals' names to a researcher? What are the ethical issues for the Records department to consider?</li>
-
-                                <li style="margin-bottom:10px; color:#b8c5e0;">Suppose Beth contacts the individuals to ask their permission, and one-third of them respond giving permission, one-third respond denying permission, and one-third do not respond. Beth claims that at least one-half of the individuals are needed to make a valid study. What options are available to Beth?</li>
-
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-               
-                <!-- Refined Answers Section -->
-
-                <div class="unit">
-
-                    <h3 class="unit-title">Answers</h3>
-
-                    <div class="answer-section">
-
-                        <div class="answer-question">1. If Ricardo is not responsible for determining allowable access, should he release the names and addresses?</div>
-
-                        <div class="answer-content">
-
-                            <p>No. Disclosing personally identifiable information (PII) without a lawful basis or delegated authority would breach UK GDPR and the Data Protection Act 2018. It would also violate professional duties of confidentiality and authorised access (ACM 2018; BCS 2023). Ricardo should refuse and escalate to the Data Protection Officer (DPO) or controller representative.</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="answer-section">
-
-                        <div class="answer-question">2. Suppose Ricardo were responsible for determining allowable access to the files. What ethical issues would be involved in his deciding whether to grant access to Beth?</div>
-
-                        <div class="answer-content">
-
-                            <p>He must balance research value against privacy rights and legal constraints. Prior to any disclosure, he should require a Data Sharing Agreement, DPIA, ethics approval, and clear specification of roles (controller/processor). He should apply Public Task (Art. 6(1)(e)) only if purpose compatibility (Art. 6(4)) and Article 89 safeguards are satisfied, and ensure strict data minimisation and security.</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="answer-section">
-
-                        <div class="answer-question">3. Should Beth be allowed to contact the individuals involved? Should the Records Department release individuals' names to a researcher?</div>
-
-                        <div class="answer-content">
-
-                            <p>Not directly. A gatekeeper model is preferable: the Records Department (as controller) contacts individuals on Beth's behalf to invite consent. Releasing names/addresses to Beth would exceed data minimisation without a clear lawful basis and would undermine confidentiality.</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="answer-section">
-
-                        <div class="answer-question">4. What are the ethical issues for the Records Department to consider?</div>
-
-                        <div class="answer-content">
-
-                            <p>Lawfulness and purpose limitation; transparency (appropriate notices); safeguards (pseudonymisation, access controls); accountability (audit trails, staff training, DPO consultation); and data subject rights and retention. Failure risks legal non-compliance and loss of public trust.</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="answer-section">
-
-                        <div class="answer-question">5. If one-third consent, one-third refuse, and one-third do not respond—but at least half are needed for validity—what options are available to Beth?</div>
-
-                        <div class="answer-content">
-
-                            <p>She cannot treat non-response as consent. Options: proceed with consenting data and manage bias (power analysis, weighting); request controller-led reminders; revise design or expand recruitment following ethics approval; or use anonymised/aggregated outputs generated by the controller.</p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- References Section -->
-
-                <div class="unit">
-
-                    <h3 class="unit-title">References</h3>
-
-                    <ul class="references">
-
-                        <li>Association for Computing Machinery (2018) ACM Code of Ethics and Professional Conduct.</li>
-
-                        <li>BCS, The Chartered Institute for IT (2023) Code of Conduct.</li>
-
-                        <li>UK General Data Protection Regulation (UK GDPR) and Data Protection Act 2018.</li>
-
-                        <li>Information Commissioner's Office (ICO) (latest) Guidance on research provisions and data sharing (including Article 89 safeguards).</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-            <!-- Bottom Navigation -->
-
-            <div class="bottom-navigation">
-
-                <a href="../../index.html" class="nav-link">Back to Home</a>
-
-                <a href="../../university-of-essex.html" class="nav-link">University of Essex</a>
-
-                <a href="../../Module2.html" class="nav-link">Module 2</a>
-
-                <a href="../../Module3.html" class="nav-link">Module 3</a>
-
-                <a href="../../Module4.html" class="nav-link">Module 4</a>
-
-                <a href="../../Module5.html" class="nav-link">Module 5</a>
-
-                <a href="../../Module6.html" class="nav-link">Module 6</a>
-
-                <a href="../../Module7.html" class="nav-link">Module 7</a>
-
-                <a href="../../links.html" class="nav-link">All Links</a>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<a href="../../Module7.html" class="back-btn">← Back to Module 7</a>
+
+<div class="overlay">
+<div class="container">
+
+<div class="header">
+<h1>U4 Seminar Preparation</h1>
+<p class="module-grade">Ethical Analysis: Ricardo–Beth Records Case (GDPR & Professional Codes)</p>
+<p class="author-date">David Abiodun — 08 November 2025</p>
+</div>
+
+<div class="content-card">
+
+<!-- Question Section -->
+<div class="unit">
+<div class="question-section">
+<div class="question-title">📋 Case Study: Privacy</div>
+<div class="question-content">
+<p><strong>Title:</strong> Case Study on Privacy</p>
+<p>Please read the case below and answer the questions. You need to determine the ethical issues involved with this case.</p>
+<p><strong>The Case</strong></p>
+<p>Ricardo works for the records department of his local government as a computer records clerk, where he has access to files of property tax records. For a scientific study, a researcher, Beth, has been granted access to the numerical portion “but not the corresponding names” of some records.</p>
+<p>Beth finds some information that she would like to use, but she needs the names and addresses corresponding with certain properties. Beth asks Ricardo to retrieve these names and addresses, so she can contact these people for more information and for permission to do further study.</p>
+<p>Now consider, what are the ethical issues involved in deciding which of these options to pursue?</p>
+<ul style="margin-top:15px; padding-left:20px;">
+<li style="margin-bottom:10px; color:#b8c5e0;">If Ricardo is not responsible for determining allowable access, should he release the names and addresses?</li>
+<li style="margin-bottom:10px; color:#b8c5e0;">Suppose Ricardo were responsible for determining allowable access to the files. What ethical issues would be involved in his deciding whether to grant access to Beth?</li>
+<li style="margin-bottom:10px; color:#b8c5e0;">Should Beth be allowed to contact the individuals involved? That is, should the Records department release individuals' names to a researcher? What are the ethical issues for the Records department to consider?</li>
+<li style="margin-bottom:10px; color:#b8c5e0;">Suppose Beth contacts the individuals to ask their permission, and one-third of them respond giving permission, one-third respond denying permission, and one-third do not respond. Beth claims that at least one-half of the individuals are needed to make a valid study. What options are available to Beth?</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Answers Section -->
+<div class="unit">
+<h3 class="unit-title">Answers</h3>
+
+<div class="answer-section">
+<div class="answer-question">1. If Ricardo is not responsible for determining allowable access, should he release the names and addresses?</div>
+<div class="answer-content">
+<p>No. Disclosing personally identifiable information (PII) without lawful authority breaches <em>UK GDPR</em> and the <em>Data Protection Act 2018</em>. It also violates the ACM (2018) and BCS (2023) codes, which require confidentiality and responsible access. Ricardo should escalate to the Data Protection Officer (DPO) or controller representative.</p>
+</div>
+</div>
+
+<div class="answer-section">
+<div class="answer-question">2. Suppose Ricardo were responsible for determining allowable access to the files. What ethical issues would be involved in his deciding whether to grant access to Beth?</div>
+<div class="answer-content">
+<p>He must balance research value against privacy and legal constraints. Ethical disclosure requires a Data Sharing Agreement, DPIA, ethics approval, and clear controller–processor roles. Lawful basis under <em>Public Task (Art. 6(1)(e))</em> applies only if compatible purpose (<em>Art. 6(4)</em>) and <em>Article 89</em> safeguards are met, with strict data minimisation.</p>
+</div>
+</div>
+
+<div class="answer-section">
+<div class="answer-question">3. Should Beth be allowed to contact the individuals? Should the Records Department release names?</div>
+<div class="answer-content">
+<p>No. The Records Department should act as a gatekeeper, contacting individuals on Beth’s behalf to request consent. Direct release of names and addresses to Beth would exceed purpose limitation and undermine confidentiality.</p>
+</div>
+</div>
+
+<div class="answer-section">
+<div class="answer-question">4. What ethical issues should the Records Department consider?</div>
+<div class="answer-content">
+<p>Lawfulness, fairness, transparency, purpose limitation, and security. The department must apply audit trails, staff training, retention policies, and DPO oversight under <em>UK GDPR Articles 5 and 24</em>. Non-compliance risks legal penalties and loss of public trust.</p>
+</div>
+</div>
+
+<div class="answer-section">
+<div class="answer-question">5. If one-third consent, one-third refuse, and one-third do not respond—but at least half are needed for validity—what options are available to Beth?</div>
+<div class="answer-content">
+<p>Non-response cannot be treated as consent (<em>ICO, 2024</em>). Beth can: proceed with consenting data and adjust analysis; request controller reminders; amend design with new ethics approval; or use anonymised datasets produced by the controller.</p>
+</div>
+</div>
+</div>
+
+<!-- Consequences Section -->
+<div class="unit">
+<div class="consequence-section">
+<h3>⚖️ Consequences of Ethical Breach</h3>
+<ul>
+<li><strong>Legal consequences:</strong> Unauthorised disclosure may result in penalties under <em>UK GDPR Article 83</em>—up to £17.5 million or 4% of annual turnover (<em>ICO, 2024</em>).</li>
+<li><strong>Professional consequences:</strong> Breaches of the <em>ACM (2018)</em> and <em>BCS (2023)</em> codes may lead to disciplinary sanctions or loss of membership.</li>
+<li><strong>Reputational consequences:</strong> Privacy breaches erode public confidence, attract media scrutiny, and threaten institutional credibility.</li>
+<li><strong>Ethical implications:</strong> Violating confidentiality contravenes the <em>Belmont Report (2018)</em> principle of respect for persons and undermines ethical governance.</li>
+</ul>
+</div>
+</div>
+
+<!-- References Section -->
+<div class="unit">
+<h3 class="unit-title">References</h3>
+<ul class="references">
+<li>Association for Computing Machinery (2018) <em>ACM Code of Ethics and Professional Conduct.</em></li>
+<li>BCS, The Chartered Institute for IT (2023) <em>Code of Conduct.</em></li>
+<li>UK General Data Protection Regulation (UK GDPR) and <em>Data Protection Act 2018.</em></li>
+<li>Information Commissioner’s Office (ICO) (2024) <em>Research Provisions and Data Sharing: Article 89 Safeguards and Enforcement Guidance.</em></li>
+<li>The National Commission for the Protection of Human Subjects of Biomedical and Behavioral Research (2018) <em>The Belmont Report: Ethical Principles and Guidelines for Research Involving Human Subjects.</em></li>
+</ul>
+<p><a href="U4 Ethical Analysis.pdf" class="pdf-link" target="_blank">📄 Download PDF: U4 Ethical Analysis.pdf</a></p>
+</div>
+
+</div>
+
+<!-- Bottom Navigation -->
+<div class="bottom-navigation">
+<a href="../../index.html" class="nav-link">Back to Home</a>
+<a href="../../university-of-essex.html" class="nav-link">University of Essex</a>
+<a href="../../Module2.html" class="nav-link">Module 2</a>
+<a href="../../Module3.html" class="nav-link">Module 3</a>
+<a href="../../Module4.html" class="nav-link">Module 4</a>
+<a href="../../Module5.html" class="nav-link">Module 5</a>
+<a href="../../Module6.html" class="nav-link">Module 6</a>
+<a href="../../Module7.html" class="nav-link">Module 7</a>
+<a href="../../links.html" class="nav-link">All Links</a>
+</div>
+
+</div>
+</div>
 </body>
-
 </html>
-
