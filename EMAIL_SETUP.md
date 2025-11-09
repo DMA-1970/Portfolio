@@ -12,22 +12,27 @@ To enable email notifications, you need to add the following secrets to your Git
 
 ### Required Secrets:
 
-- **`SMTP_SERVER`** - Your SMTP server address
-  - Gmail: `smtp.gmail.com`
-  - Outlook: `smtp-mail.outlook.com`
-  - Custom: Your SMTP server address
+- **`SMTP_SERVER`** - Your SMTP server address for david@abiodun.co.uk
+  - **If using Gmail/Google Workspace**: `smtp.gmail.com`
+  - **If using Outlook/Microsoft 365**: `smtp-mail.outlook.com` or `smtp.office365.com`
+  - **If using custom email provider**: Check with your email hosting provider
+  - **Common providers**:
+    - cPanel/WHM: Usually `mail.yourdomain.com` or `smtp.yourdomain.com`
+    - Zoho: `smtp.zoho.com`
+    - FastMail: `smtp.fastmail.com`
 
 - **`SMTP_PORT`** - SMTP port number
-  - Gmail: `587` (TLS) or `465` (SSL)
-  - Outlook: `587`
-  - Custom: Your SMTP port
+  - **Gmail/Google Workspace**: `587` (TLS) or `465` (SSL)
+  - **Outlook/Microsoft 365**: `587` (TLS) or `465` (SSL)
+  - **Most providers**: `587` (TLS/STARTTLS) or `465` (SSL)
 
-- **`SMTP_USERNAME`** - Your email address or SMTP username
-  - Example: `your-email@gmail.com`
+- **`SMTP_USERNAME`** - Your email address
+  - **Use**: `david@abiodun.co.uk`
 
 - **`SMTP_PASSWORD`** - Your email password or app-specific password
-  - For Gmail: Use an [App Password](https://support.google.com/accounts/answer/185833)
-  - For Outlook: Use your password or app password
+  - **Gmail/Google Workspace**: Use an [App Password](https://support.google.com/accounts/answer/185833) (not your regular password)
+  - **Outlook/Microsoft 365**: Use your regular password or app password
+  - **Custom providers**: Usually your regular email password
 
 ## Email Notifications Configured
 

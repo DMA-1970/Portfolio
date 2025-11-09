@@ -161,7 +161,7 @@ jobs:
         password: ${{ secrets.SMTP_PASSWORD }}
         subject: "⚠️ Portfolio Quality Checks Failed"
         to: david@abiodun.co.uk
-        from: GitHub Actions <${{ secrets.SMTP_USERNAME }}>
+        from: Portfolio Monitor <david@abiodun.co.uk>
         body: |
           Hi David,
           

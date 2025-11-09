@@ -39,7 +39,7 @@ jobs:
         password: ${{ secrets.SMTP_PASSWORD }}
         subject: "⚠️ Portfolio Workflow Failed: ${{ github.event.workflow_run.name }}"
         to: david@abiodun.co.uk
-        from: GitHub Actions <${{ secrets.SMTP_USERNAME }}>
+        from: Portfolio Monitor <david@abiodun.co.uk>
         body: |
           Hi David,
           

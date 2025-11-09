@@ -191,7 +191,7 @@ jobs:
         password: ${{ secrets.SMTP_PASSWORD }}
         subject: "Portfolio Traffic Report - ${{ env.TIMESTAMP }}"
         to: david@abiodun.co.uk
-        from: GitHub Actions <${{ secrets.SMTP_USERNAME }}>
+        from: Portfolio Monitor <david@abiodun.co.uk>
         body: |
           Hi David,
           
