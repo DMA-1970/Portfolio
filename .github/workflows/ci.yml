@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup project
+      run: |
+        echo "Add your build/test commands here"
+        # Example: npm install, pip install, etc.
+        
+    - name: Run tests
+      run: |
+        echo "Add your test commands here"
+        # Example: npm test, pytest, etc.
+
