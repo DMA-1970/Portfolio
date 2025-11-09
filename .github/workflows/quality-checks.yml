@@ -150,4 +150,23 @@ jobs:
         echo "- ✅ Performance Monitoring" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "View the individual job logs for detailed results." >> $GITHUB_STEP_SUMMARY
+        
+    - name: Send Email Summary (on failure)
+      if: failure()
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: ${{ secrets.SMTP_SERVER }}
+        server_port: ${{ secrets.SMTP_PORT }}
+        username: ${{ secrets.SMTP_USERNAME }}
+        password: ${{ secrets.SMTP_PASSWORD }}
+        subject: "⚠️ Portfolio Quality Checks Failed"
+        to: david@abiodun.co.uk
+        from: GitHub Actions <${{ secrets.SMTP_USERNAME }}>
+        body: |
+          Hi David,
+          
+          Quality checks have failed on your Portfolio repository.
+          
+          Please check the workflow run for details:
+          https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 

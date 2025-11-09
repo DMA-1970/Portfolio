@@ -169,6 +169,56 @@ jobs:
         git add .github/traffic-logs/ || true
         git diff --staged --quiet || git commit -m "Update traffic logs [skip ci]" || true
         git push || true
+        
+    - name: Prepare Email Content
+      run: |
+        TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+        echo "TIMESTAMP=$TIMESTAMP" >> $GITHUB_ENV
+        if [ -f traffic-summary.md ]; then
+          # Escape HTML for email
+          sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' traffic-summary.md > email-body.txt
+        else
+          echo "No traffic summary available" > email-body.txt
+        fi
+        
+    - name: Send Email Report
+      if: always() && secrets.SMTP_SERVER != ''
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: ${{ secrets.SMTP_SERVER }}
+        server_port: ${{ secrets.SMTP_PORT }}
+        username: ${{ secrets.SMTP_USERNAME }}
+        password: ${{ secrets.SMTP_PASSWORD }}
+        subject: "Portfolio Traffic Report - ${{ env.TIMESTAMP }}"
+        to: david@abiodun.co.uk
+        from: GitHub Actions <${{ secrets.SMTP_USERNAME }}>
+        body: |
+          Hi David,
+          
+          Your Portfolio traffic monitoring report is ready.
+          
+          $(cat traffic-summary.md)
+          
+          ---
+          This is an automated report from your GitHub Actions workflow.
+          View full details: https://github.com/${{ github.repository }}/actions
+        html_body: |
+          <html>
+          <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            <h2 style="color: #0366d6;">Portfolio Traffic Report</h2>
+            <p>Hi David,</p>
+            <p>Your Portfolio traffic monitoring report is ready.</p>
+            <div style="background-color: #f6f8fa; padding: 15px; border-radius: 5px; border-left: 4px solid #0366d6; margin: 20px 0;">
+              <pre style="white-space: pre-wrap; font-family: 'Courier New', monospace; margin: 0;">$(cat traffic-summary.md)</pre>
+            </div>
+            <hr style="border: none; border-top: 1px solid #e1e4e8; margin: 20px 0;">
+            <p style="font-size: 12px; color: #6a737d;">
+              This is an automated report from your GitHub Actions workflow.<br>
+              <a href="https://github.com/${{ github.repository }}/actions" style="color: #0366d6;">View full details on GitHub</a>
+            </p>
+          </body>
+          </html>
+        attachments: traffic-summary.md,traffic-report.md
 
   quick-check:
     name: Quick Traffic Check

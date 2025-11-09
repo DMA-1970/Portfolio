@@ -1,0 +1,67 @@
+name: Email Notifications
+
+on:
+  workflow_run:
+    workflows: ["Quality Checks", "CI", "Traffic Monitor"]
+    types:
+      - completed
+      - failure
+  workflow_dispatch:
+
+jobs:
+  send-notification:
+    name: Send Email Notification
+    runs-on: ubuntu-latest
+    if: |
+      github.event.workflow_run.conclusion == 'failure' ||
+      github.event.workflow_run.conclusion == 'success'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Get Workflow Status
+      id: workflow_status
+      run: |
+        STATUS="${{ github.event.workflow_run.conclusion }}"
+        WORKFLOW="${{ github.event.workflow_run.name }}"
+        echo "status=$STATUS" >> $GITHUB_OUTPUT
+        echo "workflow=$WORKFLOW" >> $GITHUB_OUTPUT
+        echo "run_url=${{ github.event.workflow_run.html_url }}" >> $GITHUB_OUTPUT
+        
+    - name: Send Failure Notification
+      if: github.event.workflow_run.conclusion == 'failure'
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: ${{ secrets.SMTP_SERVER }}
+        server_port: ${{ secrets.SMTP_PORT }}
+        username: ${{ secrets.SMTP_USERNAME }}
+        password: ${{ secrets.SMTP_PASSWORD }}
+        subject: "⚠️ Portfolio Workflow Failed: ${{ github.event.workflow_run.name }}"
+        to: david@abiodun.co.uk
+        from: GitHub Actions <${{ secrets.SMTP_USERNAME }}>
+        body: |
+          Hi David,
+          
+          A workflow has failed on your Portfolio repository.
+          
+          Workflow: ${{ github.event.workflow_run.name }}
+          Status: Failed
+          Run URL: ${{ github.event.workflow_run.html_url }}
+          
+          Please check the workflow run for details.
+        html_body: |
+          <html>
+          <body>
+            <h2 style="color: #d73a49;">⚠️ Workflow Failed</h2>
+            <p>Hi David,</p>
+            <p>A workflow has failed on your Portfolio repository.</p>
+            <ul>
+              <li><strong>Workflow:</strong> ${{ github.event.workflow_run.name }}</li>
+              <li><strong>Status:</strong> <span style="color: #d73a49;">Failed</span></li>
+              <li><strong>Run URL:</strong> <a href="${{ github.event.workflow_run.html_url }}">View Details</a></li>
+            </ul>
+            <p>Please check the workflow run for details.</p>
+          </body>
+          </html>
+
