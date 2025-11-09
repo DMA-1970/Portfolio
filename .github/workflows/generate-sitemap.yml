@@ -1,0 +1,182 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+  schedule:
+    # Regenerate sitemap daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+jobs:
+  generate-sitemap:
+    name: Generate Sitemap
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Generate Sitemap
+      run: |
+        echo "🗺️ Generating sitemap..."
+        
+        BASE_URL="https://dma-1970.github.io/Portfolio"
+        SITEMAP_FILE="SiteMap/sitemap.xml"
+        
+        # Create SiteMap directory
+        mkdir -p SiteMap
+        
+        # Start XML sitemap
+        cat > "$SITEMAP_FILE" << 'EOF'
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        EOF
+        
+        # Find all HTML files and add them to sitemap
+        find . -name "*.html" -not -path "./.git/*" -not -path "./node_modules/*" -not -path "./SiteMap/*" | while read -r file; do
+          # Get relative path
+          RELATIVE_PATH="${file#./}"
+          
+          # Convert to URL path (replace backslashes with forward slashes, remove leading ./)
+          URL_PATH=$(echo "$RELATIVE_PATH" | sed 's|^\./||' | sed 's|\\|/|g')
+          
+          # Get last modified date from git or use current date
+          if git ls-files --error-unmatch "$RELATIVE_PATH" > /dev/null 2>&1; then
+            LAST_MOD=$(git log -1 --format="%Y-%m-%d" -- "$RELATIVE_PATH" 2>/dev/null || date +%Y-%m-%d)
+          else
+            LAST_MOD=$(date +%Y-%m-%d)
+          fi
+          
+          # Determine priority based on file location
+          if [[ "$URL_PATH" == "index.html" ]]; then
+            PRIORITY="1.0"
+            CHANGEFREQ="daily"
+          elif [[ "$URL_PATH" == "cv.html" ]] || [[ "$URL_PATH" == "continuous-development.html" ]]; then
+            PRIORITY="0.9"
+            CHANGEFREQ="weekly"
+          elif [[ "$URL_PATH" == Module*.html ]]; then
+            PRIORITY="0.8"
+            CHANGEFREQ="monthly"
+          else
+            PRIORITY="0.7"
+            CHANGEFREQ="monthly"
+          fi
+          
+          # Add URL to sitemap
+          cat >> "$SITEMAP_FILE" << EOF
+          <url>
+            <loc>${BASE_URL}/${URL_PATH}</loc>
+            <lastmod>${LAST_MOD}</lastmod>
+            <changefreq>${CHANGEFREQ}</changefreq>
+            <priority>${PRIORITY}</priority>
+          </url>
+          EOF
+        done
+        
+        # Close XML sitemap
+        echo "</urlset>" >> "$SITEMAP_FILE"
+        
+        # Count URLs
+        URL_COUNT=$(grep -c "<url>" "$SITEMAP_FILE" || echo "0")
+        echo "✅ Generated sitemap with $URL_COUNT URLs"
+        echo "📄 Sitemap saved to: $SITEMAP_FILE"
+        
+    - name: Generate Sitemap Index (if needed)
+      run: |
+        # Create a simple sitemap index if we have multiple sitemaps in the future
+        echo "Sitemap index not needed for single sitemap"
+        
+    - name: Generate Robots.txt
+      run: |
+        echo "🤖 Generating robots.txt..."
+        
+        cat > "SiteMap/robots.txt" << EOF
+        User-agent: *
+        Allow: /
+        
+        # Sitemap
+        Sitemap: https://dma-1970.github.io/Portfolio/SiteMap/sitemap.xml
+        
+        # Disallow certain paths if needed
+        # Disallow: /private/
+        # Disallow: /test/
+        EOF
+        
+        echo "✅ Generated robots.txt"
+        
+    - name: Create Sitemap README
+      run: |
+        cat > "SiteMap/README.md" << 'EOF'
+        # SiteMap
+        
+        This folder contains the sitemap and robots.txt files for the Portfolio website.
+        
+        ## Files
+        
+        - **sitemap.xml** - XML sitemap containing all pages of the website
+        - **robots.txt** - Robots.txt file for search engine crawlers
+        - **README.md** - This file
+        
+        ## Sitemap Details
+        
+        The sitemap is automatically generated and includes:
+        - All HTML pages in the repository
+        - Last modified dates (from git history)
+        - Priority levels (index.html = 1.0, CV = 0.9, Modules = 0.8, others = 0.7)
+        - Change frequency recommendations
+        
+        ## Automatic Updates
+        
+        The sitemap is automatically regenerated:
+        - On every push to the main branch
+        - Daily at 2 AM UTC
+        - Manually via GitHub Actions
+        
+        ## Usage
+        
+        The sitemap is accessible at:
+        - **Sitemap**: https://dma-1970.github.io/Portfolio/SiteMap/sitemap.xml
+        - **Robots.txt**: https://dma-1970.github.io/Portfolio/SiteMap/robots.txt
+        
+        Search engines will automatically discover and use this sitemap.
+        
+        ## Manual Generation
+        
+        To manually regenerate the sitemap:
+        1. Go to GitHub Actions
+        2. Select "Generate Sitemap" workflow
+        3. Click "Run workflow"
+        EOF
+        
+        echo "✅ Created SiteMap README"
+        
+    - name: Display Sitemap Summary
+      run: |
+        echo "## Sitemap Generation Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        if [ -f SiteMap/sitemap.xml ]; then
+          URL_COUNT=$(grep -c "<url>" SiteMap/sitemap.xml || echo "0")
+          echo "✅ Generated sitemap with **$URL_COUNT URLs**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📄 Files created:" >> $GITHUB_STEP_SUMMARY
+          echo "- \`SiteMap/sitemap.xml\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`SiteMap/robots.txt\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`SiteMap/README.md\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 Sitemap URL: https://dma-1970.github.io/Portfolio/SiteMap/sitemap.xml" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ Sitemap generation failed" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+    - name: Commit Sitemap
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add SiteMap/ || true
+        git diff --staged --quiet || git commit -m "Update sitemap [skip ci]" || true
+        git push || true
+
