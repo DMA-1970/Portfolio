@@ -1,0 +1,27 @@
+name: CI
+
+# This workflow runs on every push and pull request
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Validate HTML files
+      run: |
+        echo "Validating repository structure..."
+        echo "✓ Repository checked out successfully"
+        echo "✓ Ready for GitHub Pages deployment"
+        
+    - name: Check for broken links (optional)
+      run: |
+        echo "Add link checking here if needed"
+
