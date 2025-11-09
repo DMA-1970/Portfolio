@@ -1,1 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ethics in Computing in the Age of Generative AI - David Abiodun</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{margin:0;padding:0;box-sizing:border-box;}
+
+        body,html{height:100%;font-family:'Inter',sans-serif;color:#fff;overflow-x:hidden;position:relative;}
+
+        body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:url('../../assets/Module7.jpg') no-repeat center center/cover;filter:blur(3px);transform:scale(1.05);z-index:-2;}
+
+        body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:-1;}
+
+        .back-btn{position:fixed;top:20px;left:20px;background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:12px 20px;text-decoration:none;color:#d4dff5;transition:all .3s ease;z-index:1000;}
+
+        .back-btn:hover{background:rgba(255,255,255,0.12);color:#fff;}
+
+        .overlay{min-height:100vh;display:flex;justify-content:center;padding:80px 20px 40px;}
+
+        .container{max-width:1000px;width:100%;}
+
+        .header{text-align:center;margin-bottom:40px;}
+
+        .header h1{font-family:'Montserrat',sans-serif;font-size:2.8em;font-weight:700;color:#fff;}
+
+        .module-grade{color:#a8b8d8;margin-top:10px;}
+
+        .content-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.05);border-radius:20px;padding:35px 40px;margin-bottom:30px;}
+
+        .unit{margin-bottom:40px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.1);}
+
+        .unit:last-child{border-bottom:none;}
+
+        .unit-title{font-family:'Montserrat';font-size:1.3em;font-weight:600;margin-bottom:15px;color:#fff;}
+
+        .reading-title{font-size:1em;font-weight:600;color:#d4dff5;margin:10px 0;text-decoration:underline;}
+
+        .reading-list p{font-size:.95em;line-height:1.8;color:#b8c5e0;margin-bottom:8px;}
+
+        .seminar-preparation{background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.3);border-radius:12px;padding:15px 20px;margin:10px 0;}
+
+        .seminar-preparation h5{color:#ff6b35;font-weight:bold;margin-bottom:10px;}
+
+        .seminar-preparation ul{padding-left:20px;margin-top:10px;}
+
+        .seminar-preparation li{color:#b8c5e0;font-size:.9em;line-height:1.6;margin-bottom:8px;}
+
+        .activity{color:#fff;font-size:1.05em;margin:14px 0 6px;font-weight:600;}
+
+        .reflection{color:#b8c5e0;font-size:.95em;line-height:1.8;text-align:justify;margin-bottom:15px;}
+
+        .reflection strong{color:#fff;}
+
+        .references{padding-left:20px;margin-top:20px;}
+
+        .references li{color:#b8c5e0;font-size:.9em;margin-bottom:8px;line-height:1.7;}
+
+        .references a{color:#93c5fd;text-decoration:none;transition:color 0.3s ease;}
+
+        .references a:hover{color:#60a5fa;text-decoration:underline;}
+
+        .pdf-link{color:#93c5fd;text-decoration:none;transition:all 0.3s ease;display:inline-block;margin-top:10px;padding-left:20px;}
+
+        .pdf-link:hover{color:#60a5fa;text-decoration:underline;}
+
+        .bottom-navigation{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:40px;}
+
+        .nav-link{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:25px;text-decoration:none;color:#d4dff5;transition:all .3s ease;}
+
+        .nav-link:hover{background:rgba(255,255,255,0.12);color:#fff;}
+
+        /* Project Highlight Section */
+
+        .project-highlight{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;margin:15px 0;transition:all 0.3s ease;}
+
+        .project-highlight:hover{background:rgba(255,255,255,0.08);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+
+        .project-title{font-family:'Montserrat',sans-serif;font-size:1.1em;font-weight:600;color:#fff;margin-bottom:8px;}
+
+        .project-description{color:#b8c5e0;font-size:.9em;line-height:1.6;margin-bottom:12px;}
+
+        .project-link{color:#93c5fd;text-decoration:none;font-size:.95em;transition:all 0.3s ease;display:inline-block;margin-right:15px;}
+
+        .project-link:hover{color:#60a5fa;text-decoration:underline;}
+
+        /* Comment Section */
+
+        .comment-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 25px;margin-top:15px;margin-bottom:25px;backdrop-filter:blur(10px);transition:all 0.3s ease;}
+
+        .comment-card:hover{background:rgba(255,255,255,0.08);transform:translateY(-2px);}
+
+        .comment-title{font-family:'Montserrat',sans-serif;color:#d4dff5;margin-bottom:10px;font-size:1.1em;font-weight:600;}
+
+        blockquote{color:#b8c5e0;font-style:italic;line-height:1.6;border-left:3px solid rgba(255,255,255,0.2);padding-left:15px;margin-bottom:10px;}
+
+        .comment-source{color:#93c5fd;font-size:0.9em;}
+
+        /* Content-specific styles */
+
+        .intro-section{color:#b8c5e0;font-size:.95em;line-height:1.8;margin-bottom:30px;text-align:justify;}
+
+        .question-section{background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.3);border-radius:12px;padding:20px;margin:20px 0;}
+
+        .question-title{color:#ff6b35;font-weight:600;font-size:1.1em;margin-bottom:15px;}
+
+        .question-content{color:#b8c5e0;font-size:.95em;line-height:1.8;text-align:justify;}
+
+        .response-section{background:rgba(255,255,255,0.03);border-left:3px solid rgba(30,144,255,0.5);padding:20px;margin:20px 0;border-radius:4px;}
+
+        .response-title{color:#1e90ff;font-weight:600;font-size:1.2em;margin-bottom:15px;font-family:'Montserrat',sans-serif;}
+
+        .response-content{color:#b8c5e0;font-size:.95em;line-height:1.8;text-align:justify;}
+
+        .response-content p{margin-bottom:15px;}
+
+        .word-count{color:#a8b8d8;font-size:0.9em;margin-top:20px;font-style:italic;text-align:right;}
+
+        .author-date{color:#a8b8d8;font-size:0.9em;margin-top:8px;text-align:center;}
+
+    </style>
+
+</head>
+
+<body>
+
+    <a href="../../Module7.html" class="back-btn">← Back to Module 7</a>
+
+    <div class="overlay">
+
+        <div class="container">
+
+            <div class="header">
+
+                <h1>Ethics in Computing in the Age of Generative AI</h1>
+
+                <p class="module-grade">e-Portfolio Activity: Unit 1</p>
+
+                <p class="author-date">David Abiodun</p>
+
+            </div>
+
+            <div class="content-card">
+
+                <!-- Question Section -->
+
+                <div class="unit">
+
+                    <div class="question-section">
+
+                        <div class="question-title">📋 Activity Question</div>
+
+                        <div class="question-content">
+
+                            <p>Read Correa et al. (2023) and Deckard (2023).</p>
+
+                            <p>From late 2022, generative AI has taken the world by storm, and there is no field of activity that has not been impacted in some way. This is so much truer for Computer Science, which is where it all began. It is important to realise, however, that AI itself is nothing new, per se; and if the renaissance of the field after the 'winter' of the 1980s has been slow but constant, today there is the need of a different set of rules.</p>
+
+                            <p>In the Correa et al (2023) paper, the authors state that "a lot of work is taking place to define the values and ideas that should guide AI advances. A key challenge, however, lies in establishing a consensus on these values, given the diverse perspectives of various stakeholders worldwide and the abstraction of normative discourse. Researchers and policy makers need better tools to catalogue and compare AI governance documents from around the world and to identify points of divergence and commonality."</p>
+
+                            <p>After reviewing the article and reading how different countries across the world deal with the generative AI revolution, discuss your views on the subject and recommend what you think could be a suitable course of action. You should justify your stance by also reviewing any papers included in this study or other relevant literature (additional links to industry have been provided as 'Other Resources' to the module). Your discussion should also highlight the impact your actions would have on applicable legal, social and professional issues. Please note that there is no right or wrong answer here, this exercise is to help you evaluate the legal, social ethical and professional issues that affect computing professionals in industry.</p>
+
+                            <p><strong>The word count is 1,000 for the reflection piece.</strong> You will have to include this in your e-portfolio, but you can submit it to your tutor for formative feedback before Week 12.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Response Section -->
+
+                <div class="unit">
+
+                    <div class="response-section">
+
+                        <div class="response-title">Generative AI Governance: Building Ethical Consensus Across Borders</div>
+
+                        <div class="response-content">
+
+                            <p>Since late 2022, generative AI has reshaped technology and reignited debates on governance, ethics, and accountability. Its autonomous creation of text, images, and code now challenges established notions of innovation and responsibility. Correa et al. (2023) highlight an "AI ethics boom," emphasising the need for universal values to guide development and regulation. Deckard (2023) emphasises that ethical AI practice should prioritise fairness, transparency, and accountability, and that this necessitates collaboration among technologists, philosophers, and policymakers. This discussion advocates for a globally coordinated, principle-based framework as the best approach.</p>
+
+                            <p>Correa et al. (2023) conducted a meta-analysis of 200 AI governance guidelines from 37 countries, identifying 17 core ethical principles, including transparency, justice, accountability, privacy, and safety. Their findings revealed significant regional disparities—most policies originated from Europe and North America, while Africa, South America, and parts of Asia were underrepresented. This imbalance reflects broader issues of technological hegemony, in which AI standards are predominantly shaped by Western values, often overlooking local priorities such as digital sovereignty and developmental equity. The authors emphasise that while transparency and fairness dominate global discourse, there remains little consensus on implementation or enforcement, as most guidelines exist as soft law rather than binding regulation.</p>
+
+                            <p>This lack of universality creates an ethical "implementation gap." For example, China's AI strategy permits extensive data collection under state oversight, whereas the European Union's forthcoming AI Act prioritises individual rights and explainability (European Commission, 2024). The tension between innovation and regulation, therefore, highlights what Correa et al. call the "abstraction of normative discourse" — many principles are aspirational but lack measurable mechanisms for accountability. Without enforceable tools, principles such as fairness and privacy risk remaining symbolic rather than operational.</p>
+
+                            <p>Deckard (2023) presents a practical, career-oriented perspective on AI ethics, positioning it as an emerging professional discipline that requires both technical competence and ethical literacy. He argues that AI ethicists must combine skills in computer science, philosophy, and social science to interpret and address the societal impacts of AI deployment. This professionalisation aligns with the British Computer Society's (BCS) code of conduct, which mandates integrity, responsibility, and public interest as foundational principles for computing professionals (BCS, 2023).</p>
+
+                            <p>From a social and professional standpoint, Deckard's framework recognises that AI ethics cannot remain theoretical. It requires translation into organisational practice—embedding fairness metrics in algorithms, ensuring human oversight of automated decisions, and fostering cultural awareness of bias and discrimination. He also stresses the importance of communication and collaboration between developers, policymakers, and the public to bridge the gap between ethical intent and real-world governance. This echoes Floridi and Cowls' (2019) call for AI for good—a model where ethical reflection informs design from inception, not as an afterthought.</p>
+
+                            <p>A comparison of national and corporate approaches reveals three paths—self-regulation, state regulation, and multistakeholder collaboration, each varying in enforceability and impact. Binding regulations such as the EU AI Act offer legal clarity but risk slowing innovation, while voluntary frameworks promote flexibility yet lack measurable accountability.</p>
+
+                            <p>A collaborative middle ground may therefore be necessary. Intergovernmental frameworks such as the UNESCO Recommendation on the Ethics of Artificial Intelligence (2021) and the OECD AI Principles (2019) already provide a template for shared accountability. These initiatives emphasise inclusivity, sustainability, and human-centred design principles, resonating with both Correa et al.'s empirical findings and Deckard's ethical guidance. Expanding such frameworks could facilitate alignment among states, corporations, and civil society, thereby establishing a common baseline for trustworthy AI.</p>
+
+                            <p>The implications of generative AI governance extend beyond compliance. Legally, the ambiguity over intellectual property and liability is growing: if an AI-generated work infringes copyright or causes harm, responsibility remains contested (Vinuesa et al., 2020). Socially, unchecked AI use risks amplifying inequality, misinformation, and surveillance. Professionally, computing practitioners are now expected to be custodians of ethical integrity, anticipating and mitigating harm through informed design choices.</p>
+
+                            <p>Deckard's (2023) emphasis on public engagement reinforces that AI ethics must address not only what systems can do, but what they should do. Ethical literacy among developers, policy alignment with human rights, and cross-disciplinary education are therefore critical. Correa et al. (2023) highlight education as one of the 17 global principles—arguing that AI literacy empowers societies to make informed choices about adoption, consent, and oversight. Without such understanding, legal frameworks alone cannot safeguard against misuse or bias.</p>
+
+                            <p>Based on these insights, the most effective course of action would combine principle-based harmonisation with practical accountability mechanisms: (1) Adopt a Global Ethical Baseline, (2) Implement Binding yet Adaptive Regulation, (3) Strengthen Multi-Stakeholder Governance, (4) Mandate Ethical Impact Assessments (EIAs), and (5) Build Ethical Capacity and Education.</p>
+
+                            <p>Policymakers must therefore strike a balance between enabling innovation and protecting rights—a challenge central to the next decade of AI development. As a computing professional, I recognise that these debates also shape my own ethical approach—reinforcing the need to act not only as a technologist but as a responsible steward of public trust.</p>
+
+                            <p>Recent scholarships expose how AI governance reproduces racial and regional inequalities. Fountain (2022) highlights that algorithms trained on biased data encode systemic racism into digital systems, automating existing hierarchies of privilege. Similarly, Kiemde and Kora (2022) and Birhane (2020) describe Africa's exclusion from global AI ethics as a form of digital colonialism, where Western or Chinese technologies dominate African infrastructure and impose external moral frameworks. This imbalance ignores Ubuntu-informed, community-centric ethics, which could promote a more equitable, human-centred AI. Recognising these asymmetries reframes AI ethics not merely as a technical or philosophical issue, but as a global justice imperative.</p>
+
+                            <p>Both Correa et al. (2023) and Deckard (2023) converge on a fundamental insight: ethical AI development requires shared principles grounded in human values, as well as the tools and governance to make them actionable.</p>
+
+                            <p>While global consensus remains elusive, momentum is building toward convergence through frameworks like UNESCO's ethical recommendations and the EU AI Act.</p>
+
+                            <p>The computing profession plays a pivotal role in this transition—ensuring that generative AI systems remain transparent, fair, and accountable to society.</p>
+
+                            <p>Ultimately, the goal is not to restrain innovation but to channel it responsibly, preserving human dignity and trust in a world increasingly shaped by intelligent systems.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Word Count -->
+
+                <div class="word-count">
+
+                    <p>Word Count: 1,023</p>
+
+                </div>
+
+                <!-- References Section -->
+
+                <div class="unit">
+
+                    <h3 class="unit-title">References</h3>
+
+                    <ul class="references">
+
+                        <li>BCS (2023) What are ethics in AI? [Online] Available at: https://www.bcs.org/articles-opinion-and-research/what-are-ethics-in-ai/ (Accessed: 26 October 2025).</li>
+
+                        <li>Birhane, A. (2020) 'Algorithmic colonization of Africa', <em>SCRIPTed</em>, 17(2), pp. 389–409. doi:10.2966/scrip.170220.389.</li>
+
+                        <li>Corrêa, N.K., Galvão, C., Santos, J.W., Del Pino, C., Pinto, E.P., Mambrini, R., Terem, E. and de Oliveira, N. (2023) 'Worldwide AI ethics: A review of 200 guidelines and recommendations for AI governance', <em>Patterns</em>, 4(10), p. 100857. doi:10.1016/j.patter.2023.100857.</li>
+
+                        <li>Deckard, R. (2023) 'What are ethics in AI?', <em>BCS – The Chartered Institute for IT</em>, 3 April. Available at: https://www.bcs.org/articles-opinion-and-research/what-are-ethics-in-ai/ (Accessed: 29 October 2025).</li>
+
+                        <li>European Commission (2024) <em>The Artificial Intelligence Act – Regulation on Artificial Intelligence</em>. Brussels: European Commission.</li>
+
+                        <li>Floridi, L. and Cowls, J. (2019) 'A unified framework of five principles for AI in society', <em>Harvard Data Science Review</em>, 1(1), pp. 1–15. doi:10.1162/99608f92.8cd550d1.</li>
+
+                        <li>Fountain, J.E. (2022) 'The moon, the ghetto and artificial intelligence: Racial inequality and technology', <em>Government Information Quarterly</em>, 39(4), 101725. doi:10.1016/j.giq.2022.101725.</li>
+
+                        <li>Hagendorff, T. (2020) 'The ethics of AI ethics: An evaluation of guidelines', <em>Minds and Machines</em>, 30(1), pp. 99–120. doi:10.1007/s11023-020-09517-8.</li>
+
+                        <li>Kiemde, F. and Kora, A. (2022) 'Towards an ethics of AI in Africa: Role of education', <em>AI and Ethics</em>, 2(3), pp. 467–478. doi:10.1007/s43681-021-00106-8.</li>
+
+                        <li>UNESCO (2021) <em>Recommendation on the Ethics of Artificial Intelligence</em>. Paris: UNESCO.</li>
+
+                        <li>Vinuesa, R., Azizpour, H., Leite, I., Balaam, M., Dignum, V., Domisch, S., Felländer, A., Langhans, S.D., Tegmark, M. and Fuso Nerini, F. (2020) 'The role of artificial intelligence in achieving the Sustainable Development Goals', <em>Nature Communications</em>, 11(1), pp. 1–10. doi:10.1038/s41467-019-14108-y.</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom Navigation -->
+
+            <div class="bottom-navigation">
+
+                <a href="../../index.html" class="nav-link">Back to Home</a>
+
+                <a href="../../university-of-essex.html" class="nav-link">University of Essex</a>
+
+                <a href="../../Module2.html" class="nav-link">Module 2</a>
+
+                <a href="../../Module3.html" class="nav-link">Module 3</a>
+
+                <a href="../../Module4.html" class="nav-link">Module 4</a>
+
+                <a href="../../Module5.html" class="nav-link">Module 5</a>
+
+                <a href="../../Module6.html" class="nav-link">Module 6</a>
+
+                <a href="../../Module7.html" class="nav-link">Module 7</a>
+
+                <a href="../../links.html" class="nav-link">All Links</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
 
