@@ -1,0 +1,188 @@
+name: Traffic Monitor
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+    paths:
+      - '.github/workflows/traffic-monitor.yml'
+
+jobs:
+  monitor-traffic:
+    name: Monitor Portfolio Traffic
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: Get GitHub Repository Traffic
+      id: repo_traffic
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "📊 Checking GitHub repository traffic..."
+        
+        # Get repository views (clones, views, etc.)
+        REPO_NAME="${{ github.repository }}"
+        
+        echo "Repository: $REPO_NAME"
+        echo "Checking traffic data..."
+        
+        # Initialize report
+        echo "# Traffic Report" > traffic-report.md
+        echo "Generated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> traffic-report.md
+        echo "" >> traffic-report.md
+        
+        # Get repository views
+        echo "## Repository Analytics" >> traffic-report.md
+        VIEWS_RESPONSE=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+          -H "Accept: application/vnd.github.v3+json" \
+          "https://api.github.com/repos/$REPO_NAME/traffic/views" 2>/dev/null || echo '{"count":0,"uniques":0}')
+        
+        echo "$VIEWS_RESPONSE" > views.json
+        
+        # Extract views data
+        VIEWS_COUNT=$(echo "$VIEWS_RESPONSE" | grep -o '"count":[0-9]*' | head -1 | sed 's/"count"://' || echo "0")
+        UNIQUE_VIEWS=$(echo "$VIEWS_RESPONSE" | grep -o '"uniques":[0-9]*' | head -1 | sed 's/"uniques"://' || echo "0")
+        
+        echo "📈 Total Views: $VIEWS_COUNT" >> traffic-report.md
+        echo "👥 Unique Visitors: $UNIQUE_VIEWS" >> traffic-report.md
+        
+        # Get repository clones
+        CLONES_RESPONSE=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+          -H "Accept: application/vnd.github.v3+json" \
+          "https://api.github.com/repos/$REPO_NAME/traffic/clones" 2>/dev/null || echo '{"count":0,"uniques":0}')
+        
+        echo "$CLONES_RESPONSE" > clones.json
+        
+        CLONES_COUNT=$(echo "$CLONES_RESPONSE" | grep -o '"count":[0-9]*' | head -1 | sed 's/"count"://' || echo "0")
+        UNIQUE_CLONES=$(echo "$CLONES_RESPONSE" | grep -o '"uniques":[0-9]*' | head -1 | sed 's/"uniques"://' || echo "0")
+        
+        echo "📥 Total Clones: $CLONES_COUNT" >> traffic-report.md
+        echo "👤 Unique Cloners: $UNIQUE_CLONES" >> traffic-report.md
+        echo "" >> traffic-report.md
+        
+    - name: Check Site Uptime
+      run: |
+        echo "🌐 Checking site uptime and response time..."
+        SITE_URL="https://dma-1970.github.io/Portfolio/index.html"
+        
+        echo "" >> traffic-report.md
+        echo "## Site Health Check" >> traffic-report.md
+        
+        # Check if site is up
+        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL" || echo "000")
+        RESPONSE_TIME=$(curl -s -o /dev/null -w "%{time_total}" --max-time 10 "$SITE_URL" || echo "0")
+        CONTENT_SIZE=$(curl -s -o /dev/null -w "%{size_download}" --max-time 10 "$SITE_URL" || echo "0")
+        
+        echo "Status Code: $HTTP_CODE" >> traffic-report.md
+        echo "Response Time: ${RESPONSE_TIME}s" >> traffic-report.md
+        PAGE_SIZE_KB=$(awk "BEGIN {printf \"%.2f\", $CONTENT_SIZE/1024}")
+        echo "Page Size: ${PAGE_SIZE_KB} KB" >> traffic-report.md
+        
+        if [ "$HTTP_CODE" = "200" ]; then
+          echo "✅ Site Status: ONLINE" >> traffic-report.md
+          echo "✅ Site is UP"
+        else
+          echo "❌ Site Status: OFFLINE or ERROR (HTTP $HTTP_CODE)" >> traffic-report.md
+          echo "⚠️ Site may be DOWN or slow (HTTP $HTTP_CODE)"
+        fi
+        echo "" >> traffic-report.md
+        
+    - name: Check Popular Pages
+      run: |
+        echo "📄 Checking popular pages..."
+        echo "## Page Accessibility Check" >> traffic-report.md
+        
+        PAGES=("index.html" "cv.html" "Module1.html" "Module2.html" "Module3.html" "Module4.html" "Module5.html" "Module6.html" "Module7.html" "continuous-development.html")
+        
+        ACCESSIBLE=0
+        TOTAL=${#PAGES[@]}
+        
+        for page in "${PAGES[@]}"; do
+          URL="https://dma-1970.github.io/Portfolio/$page"
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 "$URL" || echo "000")
+          RESPONSE_TIME=$(curl -s -o /dev/null -w "%{time_total}" --max-time 5 "$URL" || echo "0")
+          
+          if [ "$STATUS" = "200" ]; then
+            echo "✅ $page - Accessible (${RESPONSE_TIME}s)" >> traffic-report.md
+            ACCESSIBLE=$((ACCESSIBLE + 1))
+          else
+            echo "❌ $page - HTTP $STATUS" >> traffic-report.md
+          fi
+        done
+        
+        echo "" >> traffic-report.md
+        echo "**Accessibility Score: $ACCESSIBLE/$TOTAL pages**" >> traffic-report.md
+        echo "" >> traffic-report.md
+        
+    - name: Generate Traffic Summary
+      run: |
+        echo "# Traffic Monitor Report" > traffic-summary.md
+        echo "Generated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> traffic-summary.md
+        echo "" >> traffic-summary.md
+        
+        if [ -f traffic-report.md ]; then
+          cat traffic-report.md >> traffic-summary.md
+        fi
+        
+        echo "" >> traffic-summary.md
+        echo "---" >> traffic-summary.md
+        echo "This report is generated automatically every 6 hours." >> traffic-summary.md
+        
+        cat traffic-summary.md
+        
+    - name: Upload Traffic Report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: traffic-report-$(date +%Y%m%d-%H%M%S)
+        path: |
+          traffic-summary.md
+          traffic-report.md
+          views.json
+          clones.json
+        retention-days: 90
+        
+    - name: Create Traffic Log
+      run: |
+        mkdir -p .github/traffic-logs
+        TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+        if [ -f traffic-summary.md ]; then
+          cp traffic-summary.md ".github/traffic-logs/traffic-$TIMESTAMP.md"
+        fi
+        
+    - name: Commit Traffic Logs (if changed)
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .github/traffic-logs/ || true
+        git diff --staged --quiet || git commit -m "Update traffic logs [skip ci]" || true
+        git push || true
+
+  quick-check:
+    name: Quick Traffic Check
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    
+    steps:
+    - name: Quick Site Check
+      run: |
+        echo "🔍 Quick traffic check..."
+        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 "https://dma-1970.github.io/Portfolio/index.html" || echo "000")
+        if [ "$HTTP_CODE" = "200" ]; then
+          echo "✅ Site is accessible"
+        else
+          echo "⚠️ Site check returned HTTP $HTTP_CODE"
+        fi
+
