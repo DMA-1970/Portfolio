@@ -117,7 +117,42 @@ jobs:
           cat performance-summary.txt
         fi
         
-    - name: Upload Lighthouse reports
+    - name: Save Performance Reports to Repository
+      if: always()
+      run: |
+        mkdir -p Reports
+        TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+        DATE_DIR=$(date +%Y/%m)
+        mkdir -p "Reports/performance/$DATE_DIR"
+        
+        # Copy performance reports to Reports folder
+        if [ -f lighthouse-report.html ]; then
+          cp lighthouse-report.html "Reports/performance/$DATE_DIR/lighthouse-report-$TIMESTAMP.html"
+          cp lighthouse-report.html "Reports/performance/latest-report.html"
+        fi
+        
+        if [ -f lighthouse-report.json ]; then
+          cp lighthouse-report.json "Reports/performance/$DATE_DIR/lighthouse-report-$TIMESTAMP.json"
+          cp lighthouse-report.json "Reports/performance/latest-report.json"
+        fi
+        
+        if [ -f performance-summary.txt ]; then
+          cp performance-summary.txt "Reports/performance/$DATE_DIR/performance-summary-$TIMESTAMP.txt"
+          cp performance-summary.txt "Reports/performance/latest-summary.txt"
+        fi
+        
+        echo "Performance reports saved to Reports/performance/$DATE_DIR/"
+        
+    - name: Commit Performance Reports
+      if: always()
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add Reports/ || true
+        git diff --staged --quiet || git commit -m "Add performance report [skip ci]" || true
+        git push || true
+        
+    - name: Upload Lighthouse reports (Artifact)
       uses: actions/upload-artifact@v4
       if: always()
       with:
@@ -131,7 +166,7 @@ jobs:
     - name: Performance Metrics Summary
       run: |
         echo "📊 Performance monitoring complete"
-        echo "View the Lighthouse report artifact for detailed metrics"
+        echo "Reports saved to Reports/performance/ folder in repository"
 
   summary:
     name: Quality Check Summary

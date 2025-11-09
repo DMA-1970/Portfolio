@@ -54,7 +54,31 @@ jobs:
         echo "" >> link-report.md
         echo "Run lychee on your HTML files to see detailed results." >> link-report.md
         
-    - name: Upload link report
+    - name: Save Link Report to Repository
+      if: always()
+      run: |
+        mkdir -p Reports
+        TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+        DATE_DIR=$(date +%Y/%m)
+        mkdir -p "Reports/links/$DATE_DIR"
+        
+        if [ -f link-report.md ]; then
+          cp link-report.md "Reports/links/$DATE_DIR/link-report-$TIMESTAMP.md"
+          cp link-report.md "Reports/links/latest-report.md"
+        fi
+        
+        echo "Link report saved to Reports/links/$DATE_DIR/"
+        
+    - name: Commit Link Reports
+      if: always()
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add Reports/ || true
+        git diff --staged --quiet || git commit -m "Add link check report [skip ci]" || true
+        git push || true
+        
+    - name: Upload link report (Artifact)
       uses: actions/upload-artifact@v4
       if: always()
       with:

@@ -142,7 +142,43 @@ jobs:
         
         cat traffic-summary.md
         
-    - name: Upload Traffic Report
+    - name: Save Reports to Repository
+      run: |
+        mkdir -p Reports
+        TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+        DATE_DIR=$(date +%Y/%m)
+        mkdir -p "Reports/traffic/$DATE_DIR"
+        
+        # Copy reports to Reports folder
+        if [ -f traffic-summary.md ]; then
+          cp traffic-summary.md "Reports/traffic/$DATE_DIR/traffic-summary-$TIMESTAMP.md"
+          cp traffic-summary.md "Reports/traffic/latest-summary.md"
+        fi
+        
+        if [ -f traffic-report.md ]; then
+          cp traffic-report.md "Reports/traffic/$DATE_DIR/traffic-report-$TIMESTAMP.md"
+          cp traffic-report.md "Reports/traffic/latest-report.md"
+        fi
+        
+        if [ -f views.json ]; then
+          cp views.json "Reports/traffic/$DATE_DIR/views-$TIMESTAMP.json"
+        fi
+        
+        if [ -f clones.json ]; then
+          cp clones.json "Reports/traffic/$DATE_DIR/clones-$TIMESTAMP.json"
+        fi
+        
+        echo "Reports saved to Reports/traffic/$DATE_DIR/"
+        
+    - name: Commit Reports to Repository
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add Reports/ || true
+        git diff --staged --quiet || git commit -m "Add traffic report [skip ci]" || true
+        git push || true
+        
+    - name: Upload Traffic Report (Artifact)
       uses: actions/upload-artifact@v4
       if: always()
       with:
@@ -152,23 +188,7 @@ jobs:
           traffic-report.md
           views.json
           clones.json
-        retention-days: 90
-        
-    - name: Create Traffic Log
-      run: |
-        mkdir -p .github/traffic-logs
-        TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-        if [ -f traffic-summary.md ]; then
-          cp traffic-summary.md ".github/traffic-logs/traffic-$TIMESTAMP.md"
-        fi
-        
-    - name: Commit Traffic Logs (if changed)
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .github/traffic-logs/ || true
-        git diff --staged --quiet || git commit -m "Update traffic logs [skip ci]" || true
-        git push || true
+        retention-days: 30
         
     - name: Prepare Email Content
       run: |
