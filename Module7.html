@@ -1,848 +1,2075 @@
 <!DOCTYPE html>
+
+
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Module 7: Research Methods and Professional Practice - David Abiodun</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
   <style>
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body, html {
+
       height: 100%;
+
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
       color: #ffffff;
+
       overflow-x: hidden;
+
       position: relative;
+
     }
+
     body::before {
+
       content: '';
+
       position: fixed;
+
       top: 0;
+
       left: 0;
+
       right: 0;
+
       bottom: 0;
+
       background: url('assets/Module7.jpg') no-repeat center center/cover;
+
       filter: blur(3px);
+
       -webkit-filter: blur(3px);
+
       transform: scale(1.05);
+
       z-index: -2;
+
     }
+
     body::after {
+
       content: '';
+
       position: fixed;
+
       top: 0;
+
       left: 0;
+
       right: 0;
+
       bottom: 0;
+
       background: rgba(0, 0, 0, 0.8);
+
       z-index: -1;
+
     }
+
     .back-btn {
+
       position: fixed;
+
       top: 20px;
+
       left: 20px;
+
       background: rgba(255, 255, 255, 0.08);
+
       backdrop-filter: blur(10px);
+
       border: 1px solid rgba(255, 255, 255, 0.12);
+
       border-radius: 12px;
+
       padding: 12px 20px;
+
       text-decoration: none;
+
       color: #d4dff5;
+
       font-size: 0.95em;
+
       font-weight: 400;
+
       transition: all 0.3s ease;
+
       z-index: 1000;
+
       display: flex;
+
       align-items: center;
+
       gap: 8px;
+
     }
+
     .back-btn:hover {
+
       background: rgba(255, 255, 255, 0.11);
+
       border-color: rgba(21, 87, 36, 0.4);
+
       color: #ffffff;
+
       transform: translateY(-1px);
+
       box-shadow: 0 0 12px rgba(21, 87, 36, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
+
     }
+
     .overlay {
+
       position: relative;
+
       min-height: 100vh;
+
       display: flex;
+
       justify-content: center;
+
       align-items: flex-start;
+
       padding: 80px 20px 40px;
+
       animation: fadeIn 1s ease-in;
+
     }
+
     @keyframes fadeIn {
+
       from { opacity: 0; }
+
       to { opacity: 1; }
+
     }
+
     .container {
+
       max-width: 1000px;
+
       width: 100%;
+
       animation: slideUp 0.8s ease-out;
+
     }
+
     @keyframes slideUp {
+
       from { opacity: 0; transform: translateY(30px); }
+
       to { opacity: 1; transform: translateY(0); }
+
     }
+
     .header {
+
       text-align: center;
+
       margin-bottom: 40px;
+
     }
+
     .header h1 {
+
       font-family: 'Montserrat', sans-serif;
+
       font-size: 2.8em;
+
       font-weight: 700;
+
       margin-bottom: 15px;
+
       background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+
       -webkit-background-clip: text;
+
       -webkit-text-fill-color: transparent;
+
       background-clip: text;
+
       letter-spacing: -1px;
+
     }
+
     .module-grade {
+
       font-size: 1.2em;
+
       font-weight: 600;
+
       color: #a8b8d8;
+
       margin-bottom: 20px;
+
     }
+
     .content-card {
+
       background: rgba(255, 255, 255, 0.08);
+
       backdrop-filter: blur(10px);
+
       border: 1px solid rgba(255, 255, 255, 0.12);
+
       border-radius: 20px;
+
       padding: 35px 40px;
+
       margin-bottom: 30px;
+
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
       transition: all 0.3s ease;
+
     }
+
     .content-card:hover {
+
       transform: translateY(-2px);
+
       box-shadow: 0 0 15px rgba(21, 87, 36, 0.25), 0 8px 32px rgba(0, 0, 0, 0.2);
+
       border-color: rgba(21, 87, 36, 0.3);
+
       background: rgba(255, 255, 255, 0.09);
+
     }
+
     .unit {
+
       margin-bottom: 40px;
+
       padding-bottom: 30px;
+
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
     }
+
     .unit:last-child {
+
       border-bottom: none;
+
       margin-bottom: 0;
+
       padding-bottom: 0;
+
     }
+
     .unit-title {
+
       font-family: 'Montserrat', sans-serif;
+
       font-size: 1.3em;
+
       font-weight: 600;
+
       color: #ffffff;
+
       margin-bottom: 20px;
+
     }
+
     .reading-section {
+
       margin-bottom: 20px;
+
     }
+
     .reading-title {
+
       font-size: 1em;
+
       font-weight: 600;
+
       color: #d4dff5;
+
       text-decoration: underline;
+
       margin-bottom: 10px;
+
     }
+
     .reading-list p {
+
       font-size: 0.95em;
+
       line-height: 1.8;
+
       color: #b8c5e0;
+
       margin-bottom: 8px;
+
       padding-left: 15px;
+
       position: relative;
+
       text-align: justify;
+
     }
+
     .reading-list p:before {
+
       content: '•';
+
       color: #64748b;
+
       position: absolute;
+
       left: 0;
+
     }
+
     .activity-section {
+
       margin-top: 25px;
+
     }
+
     .activity-title {
+
       font-family: 'Montserrat', sans-serif;
+
       font-size: 1.1em;
+
       font-weight: 600;
+
       color: #ffffff;
+
       margin-bottom: 12px;
+
     }
+
     .activity-item {
+
       margin-bottom: 8px;
+
     }
+
     .activity-item a {
+
       color: #d4dff5;
+
       text-decoration: none;
+
       transition: all 0.3s ease;
+
     }
+
     .activity-item a:hover {
+
       color: #ffffff;
+
       text-decoration: underline;
+
     }
+
     .activity-item p {
+
       color: #b8c5e0;
+
       font-size: 0.95em;
+
       line-height: 1.8;
+
       text-align: justify;
+
     }
+
+    .activity-text {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.8;
+
+      text-align: justify;
+
+    }
+
     .grade {
+
       color: #a8b8d8 !important;
+
       font-weight: 600;
+
       font-size: 0.9em;
+
     }
+
     .project-highlight {
+
       background: rgba(30, 144, 255, 0.1);
+
       border: 1px solid rgba(30, 144, 255, 0.3);
+
       border-radius: 12px;
+
       padding: 15px 20px;
+
       margin: 10px 0;
+
       transition: all 0.3s ease;
+
     }
+
     .project-highlight:hover {
+
       background: rgba(30, 144, 255, 0.15);
+
       border-color: rgba(30, 144, 255, 0.5);
+
       transform: translateY(-1px);
+
       box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+
     }
+
     .project-title {
+
       font-size: 1.1em;
+
       font-weight: bold;
+
       color: #1e90ff;
+
       margin-bottom: 8px;
+
       display: flex;
+
       align-items: center;
+
       gap: 8px;
+
     }
+
     .project-description {
+
       color: #b8c5e0;
+
       font-size: 0.95em;
+
       line-height: 1.6;
+
       margin-bottom: 8px;
+
     }
+
     .project-link {
+
       color: #d4dff5;
+
       text-decoration: none;
+
       font-size: 0.9em;
+
       transition: all 0.3s ease;
+
     }
+
     .project-link:hover {
+
       color: #1e90ff;
+
       text-decoration: underline;
+
     }
+
     .assessment-highlight {
+
       background: rgba(255, 107, 53, 0.1);
+
       border: 1px solid rgba(255, 107, 53, 0.3);
+
       border-radius: 12px;
+
       padding: 15px 20px;
+
       margin: 10px 0;
+
       transition: all 0.3s ease;
+
     }
+
     .assessment-highlight:hover {
+
       background: rgba(255, 107, 53, 0.15);
+
       border-color: rgba(255, 107, 53, 0.5);
+
       transform: translateY(-1px);
+
       box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+
     }
+
     .assessment-title {
+
       font-size: 1.1em;
+
       font-weight: bold;
+
       color: #ff6b35;
+
       margin-bottom: 8px;
+
       display: flex;
+
       align-items: center;
+
       gap: 8px;
+
     }
+
     .assessment-description {
+
       color: #b8c5e0;
+
       font-size: 0.95em;
+
       line-height: 1.6;
+
       margin-bottom: 8px;
+
     }
+
     .assessment-link {
+
       color: #d4dff5;
+
       text-decoration: none;
+
       font-size: 0.9em;
+
       transition: all 0.3s ease;
+
     }
+
     .assessment-link:hover {
+
       color: #ff6b35;
+
       text-decoration: underline;
+
     }
+
     .seminar-preparation {
+
       background: rgba(255, 107, 53, 0.1);
+
       border: 1px solid rgba(255, 107, 53, 0.3);
+
       border-radius: 12px;
+
       padding: 15px 20px;
+
       margin: 10px 0;
+
       transition: all 0.3s ease;
+
     }
+
     .seminar-preparation:hover {
+
       background: rgba(255, 107, 53, 0.15);
+
       border-color: rgba(255, 107, 53, 0.5);
+
       transform: translateY(-1px);
+
       box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+
     }
+
     .seminar-preparation h5 {
+
       color: #ff6b35;
+
       font-weight: bold;
+
       font-size: 1.1em;
+
       margin: 15px 0 10px 0;
+
       display: flex;
+
       align-items: center;
+
       gap: 8px;
+
     }
+
     .seminar-preparation ul {
+
       margin: 5px 0;
+
       padding-left: 20px;
+
     }
+
     .seminar-preparation li {
+
       margin-bottom: 5px;
+
       color: #b8c5e0;
+
     }
+
     .seminar-preparation p {
+
       color: #b8c5e0;
+
       font-size: 0.95em;
+
       line-height: 1.7;
+
       margin-bottom: 10px;
+
       text-align: justify;
+
     }
+
     .seminar-preparation strong {
+
       color: #ffffff;
+
     }
+
     .reflection {
+
       color: #b8c5e0;
+
       font-size: 0.95em;
+
       line-height: 1.7;
+
       text-align: justify;
+
       margin-bottom: 10px;
+
       font-style: italic;
+
     }
+
     .reflection strong {
+
       color: #ffffff;
+
       font-style: normal;
+
     }
+
     .references {
+
       padding-left: 20px;
+
       margin-top: 10px;
+
     }
+
     .references li {
+
       color: #b8c5e0;
+
       font-size: 0.95em;
+
       margin-bottom: 8px;
+
       line-height: 1.7;
+
     }
+
     .references a {
+
       color: #93c5fd;
+
       text-decoration: none;
+
       transition: color 0.3s ease;
+
     }
+
     .references a:hover {
+
       color: #60a5fa;
+
       text-decoration: underline;
+
     }
+
     .pdf-link {
+
       color: #93c5fd;
+
       text-decoration: none;
+
       transition: all 0.3s ease;
+
       display: inline-block;
+
       margin-top: 10px;
+
       padding-left: 20px;
+
     }
+
     .pdf-link:hover {
+
       color: #60a5fa;
+
       text-decoration: underline;
+
     }
+
     .summary {
+
       background: rgba(255, 255, 255, 0.05);
+
       border-left: 3px solid rgba(255, 255, 255, 0.2);
+
       padding: 20px;
+
       margin-top: 20px;
+
       border-radius: 0 8px 8px 0;
+
       font-style: italic;
+
       color: #b8c5e0;
+
       font-size: 0.95em;
+
       line-height: 1.8;
+
       text-align: justify;
+
     }
+
     .summary p {
+
       margin-bottom: 10px;
+
     }
+
     .summary p:last-child {
+
       margin-bottom: 0;
+
     }
+
     .comment-card {
+
       background: rgba(255, 255, 255, 0.05);
+
       border: 1px solid rgba(255, 255, 255, 0.08);
+
       border-radius: 16px;
+
       padding: 20px 25px;
+
       margin-top: 15px;
+
       margin-bottom: 25px;
+
       backdrop-filter: blur(10px);
+
       transition: all 0.3s ease;
+
     }
+
     .comment-card:hover {
+
       background: rgba(255, 255, 255, 0.08);
+
       transform: translateY(-2px);
+
     }
+
     .comment-title {
+
       font-family: 'Montserrat', sans-serif;
+
       color: #d4dff5;
+
       margin-bottom: 10px;
+
       font-size: 1.1em;
+
       font-weight: 600;
+
     }
+
     blockquote {
+
       color: #b8c5e0;
+
       font-style: italic;
+
       line-height: 1.6;
+
       border-left: 3px solid rgba(255, 255, 255, 0.2);
+
       padding-left: 15px;
+
       margin-bottom: 10px;
+
     }
+
     .comment-source {
+
       color: #93c5fd;
+
       font-size: 0.9em;
+
     }
+
     p {
+
       text-align: justify;
+
       line-height: 1.8;
+
     }
+
     .bottom-navigation {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 10px;
+
       justify-content: center;
+
       margin-top: 40px;
+
     }
+
     .nav-link {
+
       background: rgba(255, 255, 255, 0.07);
+
       backdrop-filter: blur(10px);
+
       border: 1px solid rgba(255, 255, 255, 0.12);
+
       padding: 8px 16px;
+
       border-radius: 25px;
+
       text-decoration: none;
+
       color: #d4dff5;
+
       font-size: 0.9em;
+
       font-weight: 400;
+
       transition: all 0.3s ease;
+
       display: inline-block;
+
     }
+
     .nav-link:hover {
+
       background: rgba(255, 255, 255, 0.11);
+
       border-color: rgba(21, 87, 36, 0.4);
+
       color: #ffffff;
+
       transform: translateY(-1px);
+
       box-shadow: 0 0 12px rgba(21, 87, 36, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
+
     }
+
     @media (max-width: 768px) {
+
       .header h1 { font-size: 2.2em; }
+
       .content-card { padding: 25px 30px; }
+
       .unit-title { font-size: 1.2em; }
+
       .overlay { padding: 70px 15px 30px; }
+
       .back-btn { top: 15px; left: 15px; padding: 10px 16px; font-size: 0.9em; }
+
     }
+
     @media (max-width: 480px) {
+
       .header h1 { font-size: 1.8em; }
+
       .content-card { padding: 20px 25px; }
+
       .nav-link { font-size: 0.9em; padding: 10px 20px; }
+
     }
+
   </style>
+
 </head>
+
 <body>
+
   <a href="index.html" class="back-btn">← Back to Home</a>
+
   <div class="overlay">
+
     <div class="container">
+
       <div class="header">
+
         <h1>Research Methods and Professional Practice</h1>
+
         <p class="module-grade">Overall Module Grade: In Progress</p>
+
       </div>
+
       <div class="content-card">
+
         <!-- Unit 1 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 1: Introduction and Ethics in Research</h3>
+
           <div class="reading-section">
+
             <p class="reading-title">Required Reading:</p>
+
             <div class="reading-list">
+
               <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide</em>. Pearson. Chapters 2 (pp. 24–25, 38–40).</p>
+
               <p>Correa, N. et al. (2023) 'Worldwide AI ethics: A review of 200 guidelines and recommendations for AI governance.'</p>
+
               <p>Finn, M. and Shilton, K. (2023) 'Ethics governance development: The case of the Menlo Report,' <em>Social Studies of Science</em>, 53(3), pp. 315–340.</p>
+
               <p>Fjeld, J. et al. (2020) <em>Principled Artificial Intelligence</em>. Berkman Klein Center Research Publication.</p>
+
             </div>
+
           </div>
+
           <div class="reading-section">
+
             <p class="reading-title">Additional Reading:</p>
+
             <div class="reading-list">
+
               <p>Miller, T. et al. (2012) <em>Ethics in Qualitative Research</em>. 2nd edn. SAGE. Chs 4–6, 10–11.</p>
+
               <p>Office for Human Research Protections (2018) <em>The Belmont Report</em>.</p>
+
             </div>
+
           </div>
+
           <div class="seminar-preparation">
+
             <h5>🎓 Seminar</h5>
+
             <p><strong>Title:</strong> Introduction to Research Methods and Ethics</p>
+
             <p>This seminar introduces the module format, assessment requirements, and the ethical foundations underpinning responsible computing research. Students review research topics, discuss reasoning approaches, and clarify project expectations.</p>
+
           </div>
+
           <div class="activity-section">
+
             <h4 class="activity-title">Activities:</h4>
+
             <div class="activity-item">
+
               <div class="project-highlight">
+
                 <div class="project-title">📋 Unit 1 Activities</div>
+
                 <div class="project-description">
+
                   <ul class="references">
+
                     <li><strong>Reasoning Quiz:</strong> Identify inductive vs deductive reasoning.</li>
+
                     <li><strong>e-Portfolio Introduction:</strong> Share academic and career goals.</li>
+
                     <li><strong>Collaborative Discussion 1:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=328357#p648120" target="_blank" rel="noopener noreferrer" style="color: #93c5fd; text-decoration: none; transition: color 0.3s ease;"><em>Codes of Ethics and Professional Conduct</em></a> – Analyse an ACM case study with reference to the ACM and BCS codes.</li>
+
                     <li><strong>Reflective Activity 1:</strong> <em>Ethics in Computing in the Age of Generative AI</em> – Analyse AI governance frameworks and ethical responses (1 000 words, formative).</li>
+
                   </ul>
+
                   <p><a href="projects/Module%207/eicitaogai.html" class="project-link">📄 View Reflective Activity 1</a></p>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
+
           <div class="activity-section">
+
             <h4 class="activity-title">Reflective Thinking:</h4>
+
             <div class="activity-item">
+
               <p class="reflection"><strong>Summary:</strong> This unit introduces research ethics, professional conduct, and reasoning methods, providing the foundation for academic integrity and ethical decision-making in computing.</p>
+
               <p class="reflection"><strong>Reflection:</strong> Engaging with AI ethics literature revealed how global governance perspectives shape responsible innovation. Understanding the ACM and BCS codes reinforced the importance of ethical accountability and professional judgement in research practice. Additionally, exploring sponsor bias in the video was very insightful, as it highlighted the subtle yet significant ways external influences can shape research outcomes and decision-making. Recognising these passive forms of bias is particularly vital from a CIO and governance perspective, where ethical oversight, transparency, and balanced stakeholder influence are essential to ensuring that enterprise technology strategies, data-driven decisions, and AI initiatives remain aligned with professional integrity and societal trust.</p>
+
             </div>
+
           </div>
+
         </div>
+
         <!-- Unit 2 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 2: Research Questions, the Literature Review and the Research Proposal</h3>
+
           <div class="reading-section">
+
             <p class="reading-title">Required Reading:</p>
+
             <div class="reading-list">
+
               <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide</em>. Harlow: Pearson. Chapter 1 Introduction p 4. Chapter 1 Section 1.2.2 p 6-8. Chapter 2 Section 2.1 p 17-22. Chapter 2 Section 2.2.1 p 22-24. Chapter 3 Section 3.2 p 44-45. Chapter 3 Section 3.3 p 53-59. Chapter 5 p 90-93. Chapter 5 Section 5.2 p 95-104. Chapter 5 Section 5.6 p 108-112. Chapter 5 Section 5.5 p 106-108.</p>
+
               <p>Healey, M., Matthews, K. and Cook-Sather, A. (2020) <em>Writing about learning and teaching in higher education: Creating and contributing to scholarly conversations across a range of genres</em>. Center for Engaged Learning Open-Access Books, Elon University. Chapter 14.</p>
+
               <p>Boza, T. (2022) How to Write a Literature Review: Six Steps to Get You from Start to Finish.</p>
+
             </div>
+
           </div>
+
           <div class="reading-section">
+
             <p class="reading-title">Additional Reading:</p>
+
             <div class="reading-list">
+
               <p>Kuziemsky, C. and Lau, F. (2016) <em>Handbook of eHealth Evaluation An Evidence-based Approach</em>. Chapter 9.</p>
+
               <p>Marble Jar Channel. (2018) How to write a research paper.</p>
+
               <p>Purdue Online Writing Lab. (no date) Writing a Literature Review.</p>
+
             </div>
+
           </div>
+
           <div class="seminar-preparation">
+
             <p>Discusses how to develop research questions, conduct literature reviews, and create research proposals.</p>
+
           </div>
+
           <div class="activity-section">
+
             <h4 class="activity-title">Activity:</h4>
+
             <div class="activity-item">
+
               <div class="project-highlight">
+
                 <div class="project-title">📚 e-Portfolio Activity: Literature Review and Research Proposal Outlines</div>
+
                 <div class="project-description">
+
                   <p>Enter the following: Start planning your literature review based on your chosen topic from the list provided in unit 1. Your outline of the literature review can be submitted for formative feedback in unit 4 before final submission in unit 7. You can use the guidance document for the outline submission, and to prepare your review.</p>
+
                   <p>You should also take some time to consider your research proposal which could be based around the area you have chosen to investigate in your literature review or the topic of your capstone project (MSc students). Your outline of the proposal can be submitted for formative feedback in unit 8 before final submission in unit 10. Units 8 and 9 will be focussed on analysing data which, along with research methods, will also need to be considered in your presentation.</p>
+
                 </div>
+
               </div>
+
               <div class="project-highlight">
+
                 <div class="project-title">💬 Forum Discussion – Research Ethics and Literature Review</div>
+
                 <div class="project-description">Participated in peer discussions analysing research ethics, reasoning methods, and the practical development of literature reviews. Responses provided constructive feedback, ethical insights, and connections to enterprise governance practices.</div>
+
                 <ul style="margin-top:10px; padding-left:18px; line-height:1.8; list-style:none;">
+
                   <li style="margin-bottom:8px;"><strong>Response to Tasnika Goorhoo:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=329598#p653957" target="_blank" rel="noopener noreferrer" class="project-link">View Discussion</a></li>
+
                   <li style="margin-bottom:8px;"><strong>Response to Jordan Speight:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=329204#p651313" target="_blank" rel="noopener noreferrer" class="project-link">View Discussion</a></li>
+
                   <li style="margin-bottom:8px;"><strong>Response to Ade Putra Tio Aldino:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=329801#p654269" target="_blank" rel="noopener noreferrer" class="project-link">View Discussion</a></li>
+
                 </ul>
+
               </div>
+
             </div>
+
           </div>
+
           <div class="activity-section">
+
             <h4 class="activity-title">Reflective Thinking:</h4>
+
             <div class="activity-item">
+
               <p class="reflection"><strong>Summary:</strong> Unit 2 expanded on Unit 1 by translating ethical and philosophical foundations into applied research design. Dr Navarra (2025) linked the scientific method with professional accountability, showing that rigorous inquiry begins with a clear problem statement, focused literature review, and transparent methodology. Dawson (2015) stressed aligning research questions with measurable objectives, while the Belmont (2018) and Menlo Reports (Finn & Shilton, 2023) outlined ethical obligations in computing, particularly within AI research.</p>
+
               <p class="reflection"><strong>Reflection:</strong> Considering Units 1 and 2 together, I recognised that ethics and methodology are inseparable. The ACM (2018) and BCS (2023) codes emphasise integrity, transparency, and the duty to avoid harm. Correa et al. (2023) and Fjeld et al. (2020) deepened my understanding of AI governance, while Dr Navarra's lecture on reasoning helped me balance deductive precision with inductive openness. From a CIO and governance perspective, I learned that ethical oversight and balanced stakeholder input sustain both organisational integrity and public trust.</p>
+
               <p class="reflection"><strong>Application:</strong> I adopted qualitative and interpretivist methods to identify themes across academic and professional sources, guided by Dawson's (2015) structured approach. Using the <strong>PEER framework (Point, Evidence, Explanation, Relevance)</strong> improved the coherence of my literature review by ensuring each argument was supported, interpreted, and tied back to objectives or ethical principles. Digital tools such as <em>Zotero</em> and <em>Grammarly</em> aided citation accuracy and ethical proofreading, while adherence to <em>Cite Them Right</em> Harvard standards maintained academic integrity and auditability.</p>
+
               <p class="reflection"><strong>Forward Planning:</strong> Building on these foundations, I will integrate the PEER method across future modules to maintain evidence-based reasoning. Guided by Healey et al. (2020) and Boza (2022), I plan to refine my literature review flow and embed validation steps from the Menlo and Belmont frameworks. Treating research ethics as a living governance process will strengthen transparency, reproducibility, and professional excellence throughout my MSc journey.</p>
+
             </div>
+
           </div>
+
           <div class="activity-section">
+
             <h4 class="activity-title">References:</h4>
+
             <ul class="references">
+
               <li>Boza, T. (2022) <em>How to write a literature review: Six steps to get you from start to finish</em>. [Online] Available at: https://www.scribbr.com/dissertation/literature-review/ (Accessed: 2 November 2025).</li>
+
               <li>Correa, N.K., Galvão, C., Santos, J.W., Del Pino, C., Pinto, E.P., Mambrini, R., Terem, E. and de Oliveira, N. (2023) 'Worldwide AI ethics: A review of 200 guidelines and recommendations for AI governance,' <em>Patterns</em>, 4(10), p. 100857. doi: 10.1016/j.patter.2023.100857.</li>
+
               <li>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide</em>. 3rd edn. Harlow: Pearson.</li>
+
               <li>Finn, M. and Shilton, K. (2023) 'Ethics governance development: The case of the Menlo Report,' <em>Social Studies of Science</em>, 53(3), pp. 315–340.</li>
+
               <li>Fjeld, J., Achten, N., Hilligoss, H., Naggy, A. and Srikumar, M. (2020) <em>Principled Artificial Intelligence</em>. Berkman Klein Center Research Publication.</li>
+
               <li>Healey, M., Matthews, K. and Cook-Sather, A. (2020) <em>Writing about Learning and Teaching in Higher Education</em>. Elon University: Center for Engaged Learning.</li>
+
               <li>Office for Human Research Protections (2018) <em>The Belmont Report: Ethical principles and guidelines for the protection of human subjects of research</em>. U.S. Department of Health and Human Services.</li>
+
             </ul>
+
           </div>
+
         </div>
+
         <!-- Unit 3 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 3: Methodology and Research Methods</h3>
+
           <div class="reading-section">
+
             <p class="reading-title">Required Reading:</p>
+
             <div class="reading-list">
+
               <p>Dawson, C. (2015) Chapter 2 Section 2.3 pp. 26–27.</p>
+
               <p>British Research Methodology (2018) <em>Research Design</em>.</p>
+
               <p>University of Liverpool Academic Skills (no date) <em>Introduction to research methods and methodologies</em>.</p>
+
               <p>QuestionPro (2021) <em>What is research?</em></p>
+
               <p>Sage (2021) <em>Sage Research Methods: Methods Map</em>.</p>
+
             </div>
+
           </div>
+
           <div class="reading-section">
+
             <p class="reading-title">Additional Reading:</p>
+
             <div class="reading-list">
+
               <p>Saunders, M., Lewis, P. and Thornhill, A. (2012) <em>Research Methods for Business Students</em>. 6th edn.</p>
+
               <p>QuestionPro (2021) <em>Quantitative Research</em>.</p>
+
               <p>IBM (no date) <em>CRISP-DM Help Overview</em>.</p>
+
               <p>Creswell, J. (2022) <em>What is Mixed Methods Research?</em> University of Michigan.</p>
+
             </div>
+
           </div>
+
           <div class="seminar-preparation">
+
             <h5>📋 Seminar Preparation</h5>
+
             <p><strong>Topic Outcomes:</strong> Explore future trends in cloud computing, focusing on the integration of AI, Blockchain, and Quantum Computing. Discuss the potential of these technologies to transform cloud operations. Assess how emerging technologies like AI and quantum computing may impact cloud infrastructure. Predict future developments in cloud computing and their implications for IT professionals.</p>
+
             <p><a href="projects/Module%207/U3%20Evaluating%20Research%20Design%20and%20Methodology.html" target="_blank" rel="noopener noreferrer" class="project-link">📄 Evaluating Research Design and Methodology</a></p>
+
           </div>
+
           <div class="activity-section">
+
             <h4 class="activity-title">Activities:</h4>
+
             <div class="activity-item">
+
               <div class="project-highlight">
+
                 <div class="project-title">💬 Forum Discussion – Research Ethics and Literature Review</div>
+
                 <div class="project-description">Participated in peer discussions analysing research ethics, reasoning methods, and the practical development of literature reviews. Responses provided constructive feedback, ethical insights, and connections to enterprise governance practices.</div>
+
                 <ul style="margin-top:10px; padding-left:18px; line-height:1.8; list-style:none;">
+
                   <li style="margin-bottom:8px;"><strong>Summary Response:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=328357#p658484" target="_blank" rel="noopener noreferrer" class="project-link">View Discussion</a></li>
+
                 </ul>
+
               </div>
+
             </div>
+
           </div>
+
           <div class="seminar-preparation">
+
             <h5>🎓 Seminar</h5>
-            <p><strong>Title:</strong> Peer Review Activitie</p>
+
+            <p><strong>Title:</strong> Peer Review Activity</p>
+
             <p>Discusses how quantitative, qualitative, and mixed methods are selected and applied.</p>
+
           </div>
+
           <div class="activity-section">
+
             <h4 class="activity-title">Reflective Thinking:</h4>
+
             <div class="activity-item">
+
               <p class="reflection"><strong>Summary:</strong> This week examined <em>Research Design and Methodology</em>, highlighting how design choices affect validity and reliability in computing research. Dawson (2015) and Saunders et al. (2012) outlined exploratory versus conclusive approaches and the use of qualitative, quantitative, and mixed methods. Alasmary et al. (2021) employed a <strong>quantitative experimental design</strong> using precision and recall metrics for phishing detection, while Mittelstadt (2019) adopted a <strong>qualitative interpretive method</strong> to explore ethical implementation in AI. Both studies showed that aligning design with research aims strengthens credibility.</p>
+
               <p class="reflection"><strong>Reflection:</strong> Comparing these approaches demonstrated how rigour and interpretation complement each other. Alasmary et al. (2021) offered statistical evidence, whereas Mittelstadt (2019) revealed practical insights into ethics. This balance reflects my work as an Enterprise Technology Manager, where data-driven security reporting meets governance under ISO 27001 and GDPR. Applying the PEER method reinforced the need for evidence-based reasoning and clear linkage between findings and professional relevance.</p>
+
               <p class="reflection"><strong>Application:</strong> The learning underscored the value of <strong>structured design</strong> in research and enterprise practice. Frameworks such as <em>CRISP-DM</em> (IBM, n.d.) and Saunders et al.'s "research onion" guide transparency and systematic analysis. I will integrate quantitative and qualitative methods to evaluate AI governance and FinTech risk, enhancing both reliability and practical impact.</p>
+
               <p class="reflection"><strong>Forward Planning:</strong> I plan a <strong>mixed-method pilot study</strong> combining a short survey and targeted interviews to refine my data collection and analysis. Using the PEER structure, I will justify each choice and consult <em>Sage Research Methods</em> (2021) and <em>QuestionPro</em> (2021) to ensure rigour and relevance in my final MSc project.</p>
+
               <p class="reflection"><strong>References:</strong><br>
+
               Alasmary, W., Alsubaie, N., Khan, R.U., Alghamdi, T. and Alzahrani, M. (2021) 'Machine learning-based phishing detection: performance evaluation across datasets', <em>IEEE Access</em>, 9, pp. 123456–123470. doi: 10.1109/ACCESS.2021.3056789.<br>
+
               Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> Harlow: Pearson.<br>
+
               IBM (no date) 'CRISP-DM Help Overview'. Available at: https://www.ibm.com/docs/en/spss-modeler/SaaS?topic=dm-crisp-help-overview (Accessed: 7 November 2025).<br>
+
               Mittelstadt, B.D. (2019) 'Principles alone cannot guarantee ethical AI', <em>Nature Machine Intelligence</em>, 1(11), pp. 501–507. doi: 10.1038/s42256-019-0114-4.<br>
+
               QuestionPro (2021) 'What is research?'. Available at: https://www.questionpro.com (Accessed: 7 November 2025).<br>
+
               Saunders, M., Lewis, P. and Thornhill, A. (2012) <em>Research Methods for Business Students.</em> 6th edn. Harlow: Pearson Education Limited.</p>
+
             </div>
+
           </div>
+
         </div>
+
         <!-- Unit 4 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 4: Case Studies, Focus Groups and Observations</h3>
+
           <div class="reading-section">
+
             <p class="reading-title">Required Reading:</p>
+
             <div class="reading-list">
+
               <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> Harlow: Pearson. Chapter 2 Sections 2.4.2 (p. 28), 2.4.3 (pp. 29–31), and 2.4.5 (pp. 37–38).</p>
+
               <p>Priya, A. (2021) 'Case Study Methodology of Qualitative Research: Key Attributes and Navigating the Conundrums in Its Application', <em>Sociological Bulletin, 70</em>(1), pp. 94–110.</p>
+
               <p>Kaplan, B. and Maxwell, J. A. (no date) 'Qualitative Research Methods for Evaluating Computer Information Systems', in Anderson, J. G. and Aydin, C. E (eds) <em>Evaluating the Organizational Impact of Healthcare Information Systems.</em> New York: Springer New York, pp. 30–55.</p>
+
               <p>Wohlin, C. (2021) 'Case Study Research in Software Engineering—It is a Case, and it is a Study, but is it a Case Study?', <em>Information and Software Technology.</em></p>
+
             </div>
+
           </div>
+
           <div class="reading-section">
+
             <p class="reading-title">Additional Reading:</p>
+
             <div class="reading-list">
+
               <p>Farquhar, J. D. (2012) <em>Case Study Research for Business.</em> Sage. Chapters 1–7.</p>
+
               <p>Abramson, C. and Sánchez-Jankowski, M. (2020) 'Conducting Comparative Participant Observation.' <em>Oxford Scholarship Online.</em></p>
+
               <p>Zhang, L. et al. (2023) 'Making Existing Software Quantum Safe: A Case Study on IBM Db2.' <em>Information and Software Technology.</em></p>
+
               <p>Sim, J. and Waterfield, J. (2019) 'Focus Group Methodology: Some Ethical Challenges.' <em>Quality and Quantity.</em></p>
+
               <p>Haye, R., Kyer, B. and Weber, E. (2015) <em>The Case Study Cookbook.</em></p>
+
               <p>Devault, G. (2020) 'What is Market Research Focus Group?'</p>
+
               <p>Fuelcycle (2019) 'The Three Most Common Observation Research Methods.'</p>
-            </div>
-          </div>
-          <div class="activity-section">
-    <h4 class="activity-title">Activity:</h4>
-    <div class="activity-item">
-        <p class="activity-text">
-            This week focuses on case studies, focus groups and observational research. 
-            You are required to read the Ricardo–Beth privacy case and answer the ethical questions 
-            relating to data access, consent, and professional responsibility. These answers should be 
-            added to your e-Portfolio and prepared for discussion during the Friday seminar.<br><br>
 
-            You can also submit a brief outline of your Literature Review by the end of this unit to receive 
-            formative feedback from your tutor. Your submission should only highlight your initial plan, including 
-            the scope, structure, and key themes you intend to explore.
-        </p>
-    </div>
-</div>
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
+            <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on case studies, focus groups and observational research. 
+
+                You are required to read the Ricardo–Beth privacy case and answer the ethical questions 
+
+                relating to data access, consent, and professional responsibility. These answers should be 
+
+                added to your e-Portfolio and prepared for discussion during the Friday seminar.<br><br>
+
+                You can also submit a brief outline of your Literature Review by the end of this unit to receive 
+
+                formative feedback from your tutor. Your submission should only highlight your initial plan, including 
+
+                the scope, structure, and key themes you intend to explore.
+
+              </p>
+
+            </div>
+
+          </div>
+
           <div class="seminar-preparation">
+
             <h5>🎓 Seminar</h5>
+
             <p><strong>Title:</strong> Case Study on Privacy</p>
+
             <p>Explores qualitative methods and triangulation for contextual validity.</p>
+
             <p><a href="projects/Module%207/U4%20Seminar%20Prep.html" target="_blank" rel="noopener noreferrer" class="project-link">📘 View Seminar Preparation</a></p>
+
           </div>
+
           <div class="activity-section">
-    <h4 class="activity-title">Reflective Thinking:</h4>
-    <div class="activity-item">
-        <p class="reflection">
-            <strong>Summary:</strong> This week introduced case studies, focus groups, and observational methods, showing how qualitative designs capture depth and real-world context. The readings highlighted that case studies require contemporary real-life investigation with multiple evidence sources, while focus groups present unique ethical challenges around consent, confidentiality, and participant dynamics.<br><br>
 
-            <strong>Reflection:</strong> Exploring these methods helped me understand how researcher positioning, participant interaction, and context influence data quality. Ethical issues such as over-disclosure and dominance in focus groups closely reflect the realities of stakeholder engagement and sensitive governance discussions in my enterprise IT role.<br><br>
+            <h4 class="activity-title">Reflective Thinking:</h4>
 
-            <strong>Application:</strong> The learning reinforced the importance of aligning research methods to specific aims and embedding strong ethical safeguards throughout the process. I will apply case study principles, focus group ethics, and observational insights to strengthen my capstone methodology and evaluations of AI governance and FinTech risk behaviour.<br><br>
+            <div class="activity-item">
 
-            <strong>Forward Planning:</strong> I plan to create a short case study protocol supported by clear consent procedures, multiple data sources, and triangulation strategies. Consulting Sage Research Methods will help ensure rigour and defensibility in the methodological choices for my MSc project.<br><br>
+              <p class="reflection">
 
-            <strong>Additional Progress:</strong> I also submitted the outline for my literature review this week, ensuring it aligns with Units 1–3 and establishes a clear structure, rationale, and scope. This submission sets a solid foundation for refinement once tutor feedback is received.
-        </p>
-    </div>
-</div>
+                <strong>Summary:</strong> This week introduced case studies, focus groups, and observational methods, showing how qualitative designs capture depth and real-world context. The readings highlighted that case studies require contemporary real-life investigation with multiple evidence sources, while focus groups present unique ethical challenges around consent, confidentiality, and participant dynamics.<br><br>
 
-</div>
-        <!-- Units 5-12 continue with same structure... -->
+                <strong>Reflection:</strong> Exploring these methods helped me understand how researcher positioning, participant interaction, and context influence data quality. Ethical issues such as over-disclosure and dominance in focus groups closely reflect the realities of stakeholder engagement and sensitive governance discussions in my enterprise IT role.<br><br>
+
+                <strong>Application:</strong> The learning reinforced the importance of aligning research methods to specific aims and embedding strong ethical safeguards throughout the process. I will apply case study principles, focus group ethics, and observational insights to strengthen my capstone methodology and evaluations of AI governance and FinTech risk behaviour.<br><br>
+
+                <strong>Forward Planning:</strong> I plan to create a short case study protocol supported by clear consent procedures, multiple data sources, and triangulation strategies. Consulting Sage Research Methods will help ensure rigour and defensibility in the methodological choices for my MSc project.<br><br>
+
+                <strong>Additional Progress:</strong> I also submitted the outline for my literature review this week, ensuring it aligns with Units 1–3 and establishes a clear structure, rationale, and scope. This submission sets a solid foundation for refinement once tutor feedback is received.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
         <!-- Unit 5 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 5: Interviews, Survey Methods and Questionnaire Design</h3>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Required Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> Harlow: Pearson. Chapter 2 Sections 2.4.1 (pp. 27–28) and 2.4.4 (pp. 31–37).</p>
+
+              <p>Boyce, C. and Neale, P. (2006) <em>Conducting In-Depth Interviews: A Guide for Designing and Conducting In-Depth Interviews for Evaluation Input.</em> Pathfinder International.</p>
+
+              <p>QuestionPro (2021) <em>Survey Research</em>.</p>
+
+            </div>
+
+          </div>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Additional Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Saunders, M., Lewis, P. and Thornhill, A. (2012) <em>Research Methods for Business Students</em>. 6th edn. Harlow: Pearson Education Limited.</p>
+
+              <p>Dillman, D. A. et al. (2014) <em>Internet, Phone, Mail, and Mixed-Mode Surveys: The Tailored Design Method</em>. 4th edn. Wiley.</p>
+
+            </div>
+
+          </div>
+
           <div class="seminar-preparation">
-                    <div class="activity-section">
-            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <h5>🎓 Seminar</h5>
+
+            <p><strong>Title:</strong> Interview and Survey Design Workshop</p>
+
+            <p>Focuses on structured interview techniques, questionnaire design principles, and survey administration methods.</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
             <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on interview techniques, survey methods, and questionnaire design. 
+
+                You are required to design a short questionnaire or interview protocol related to your research topic. 
+
+                Consider ethical considerations, question types, and data collection methods. These should be 
+
+                added to your e-Portfolio and prepared for discussion during the Friday seminar.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
               <p class="reflection"><strong>Reflection:</strong> [Insert your Unit 5 reflection.]</p>
+
             </div>
+
           </div>
+
         </div>
+
         <!-- Unit 6 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 6: Quantitative Methods – Descriptive and Inferential Statistics</h3>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Required Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> Harlow: Pearson. Chapter 4.</p>
+
+              <p>Field, A. (2018) <em>Discovering Statistics Using IBM SPSS Statistics</em>. 5th edn. Sage.</p>
+
+            </div>
+
+          </div>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Additional Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Pallant, J. (2020) <em>SPSS Survival Manual: A Step by Step Guide to Data Analysis Using IBM SPSS</em>. 7th edn. Open University Press.</p>
+
+            </div>
+
+          </div>
+
           <div class="seminar-preparation">
+
+            <h5>🎓 Seminar</h5>
+
+            <p><strong>Title:</strong> Descriptive Statistics Workshop</p>
+
+            <p>Covers measures of central tendency, dispersion, and data distribution analysis.</p>
+
+          </div>
+
           <div class="activity-section">
-            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <h4 class="activity-title">Activity:</h4>
+
             <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on descriptive statistics and data analysis techniques. 
+
+                You are required to analyse a provided dataset using descriptive statistical methods. 
+
+                Calculate measures of central tendency, dispersion, and create appropriate visualisations. 
+
+                These analyses should be added to your e-Portfolio and prepared for discussion during the Friday seminar.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
               <p class="reflection"><strong>Reflection:</strong> [Insert your Unit 6 reflection.]</p>
+
             </div>
+
           </div>
+
         </div>
+
         <!-- Unit 7 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 7: Inferential Statistics and Hypothesis Testing</h3>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Required Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> Harlow: Pearson. Chapter 4.</p>
+
+              <p>Field, A. (2018) <em>Discovering Statistics Using IBM SPSS Statistics</em>. 5th edn. Sage.</p>
+
+            </div>
+
+          </div>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Additional Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Pallant, J. (2020) <em>SPSS Survival Manual: A Step by Step Guide to Data Analysis Using IBM SPSS</em>. 7th edn. Open University Press.</p>
+
+            </div>
+
+          </div>
+
           <div class="seminar-preparation">
+
             <h5>🎓 Seminar</h5>
-            <p><strong>Title:</strong> 	Inferential Statistics Workshop</p>
+
+            <p><strong>Title:</strong> Inferential Statistics Workshop</p>
+
             <p>Covers p-values, t-tests, ANOVA, and regression for hypothesis validation.</p>
+
           </div>
+
           <div class="activity-section">
-            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <h4 class="activity-title">Activity:</h4>
+
             <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on inferential statistics and hypothesis testing. 
+
+                You are required to conduct hypothesis tests on a provided dataset, interpret results, 
+
+                and discuss statistical significance. These analyses should be added to your e-Portfolio 
+
+                and prepared for discussion during the Friday seminar.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
               <p class="reflection"><strong>Reflection:</strong> [Insert your Unit 7 reflection.]</p>
+
             </div>
+
           </div>
+
         </div>
+
         <!-- Unit 8 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 8: Data Analysis and Visualisation</h3>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Required Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> Harlow: Pearson. Chapter 4.</p>
+
+              <p>Kirk, A. (2016) <em>Data Visualisation: A Handbook for Data Driven Design</em>. Sage.</p>
+
+            </div>
+
+          </div>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Additional Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Tufte, E. R. (2001) <em>The Visual Display of Quantitative Information</em>. 2nd edn. Graphics Press.</p>
+
+            </div>
+
+          </div>
+
           <div class="seminar-preparation">
+
             <h5>🎓 Seminar</h5>
+
             <p><strong>Title:</strong> Workshop on Presenting Results</p>
+
             <p>Focuses on analytical tools, visual communication, and ethical storytelling.</p>
+
           </div>
+
           <div class="activity-section">
-            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <h4 class="activity-title">Activity:</h4>
+
             <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on data analysis and visualisation techniques. 
+
+                You are required to create visualisations of your research data, ensuring they are 
+
+                clear, accurate, and ethically presented. These visualisations should be added to your 
+
+                e-Portfolio and prepared for discussion during the Friday seminar.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
               <p class="reflection"><strong>Reflection:</strong> [Insert your Unit 8 reflection.]</p>
+
             </div>
+
           </div>
+
         </div>
+
         <!-- Unit 9 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 9: Validity and Generalisability in Research</h3>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Required Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> Harlow: Pearson. Chapter 2.</p>
+
+              <p>Saunders, M., Lewis, P. and Thornhill, A. (2012) <em>Research Methods for Business Students</em>. 6th edn. Harlow: Pearson Education Limited.</p>
+
+            </div>
+
+          </div>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Additional Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Lincoln, Y. S. and Guba, E. G. (1985) <em>Naturalistic Inquiry</em>. Sage.</p>
+
+            </div>
+
+          </div>
+
           <div class="seminar-preparation">
+
+            <h5>🎓 Seminar</h5>
+
+            <p><strong>Title:</strong> Validity and Reliability Workshop</p>
+
             <p>Examines bias control, reliability, and representative sampling.</p>
+
           </div>
+
           <div class="activity-section">
-            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <h4 class="activity-title">Activity:</h4>
+
             <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on validity and generalisability in research. 
+
+                You are required to evaluate the validity and reliability of your research design, 
+
+                considering potential biases and limitations. These evaluations should be added to your 
+
+                e-Portfolio and prepared for discussion during the Friday seminar.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
               <p class="reflection"><strong>Reflection:</strong> [Insert your Unit 9 reflection.]</p>
+
             </div>
+
           </div>
+
         </div>
+
         <!-- Unit 10 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 10: Research Writing</h3>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Required Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> Harlow: Pearson. Chapter 6.</p>
+
+              <p>Healey, M., Matthews, K. and Cook-Sather, A. (2020) <em>Writing about Learning and Teaching in Higher Education</em>. Center for Engaged Learning Open-Access Books, Elon University.</p>
+
+            </div>
+
+          </div>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Additional Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Purdue Online Writing Lab. (no date) <em>Academic Writing</em>.</p>
+
+            </div>
+
+          </div>
+
           <div class="seminar-preparation">
+
             <h5>🎓 Seminar</h5>
+
             <p><strong>Title:</strong> Academic Writing and Structure</p>
+
             <p>Teaches how to write critically, cite correctly, and synthesise evidence effectively.</p>
+
           </div>
+
           <div class="activity-section">
-            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <h4 class="activity-title">Activity:</h4>
+
             <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on research writing and academic communication. 
+
+                You are required to draft sections of your research proposal or literature review, 
+
+                ensuring proper citation, critical analysis, and clear structure. These drafts should be 
+
+                added to your e-Portfolio and prepared for discussion during the Friday seminar.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
               <p class="reflection"><strong>Reflection:</strong> [Insert your Unit 10 reflection.]</p>
+
             </div>
+
           </div>
+
         </div>
+
         <!-- Unit 11 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 11: Going Forward – Professional Development and Your e-Portfolio</h3>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Required Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> Harlow: Pearson. Chapter 7.</p>
+
+            </div>
+
+          </div>
+
           <div class="seminar-preparation">
+
             <h5>🎓 Seminar</h5>
+
             <p><strong>Title:</strong> e-Portfolio Preparation</p>
+
             <p>Encourages integration of research learning outcomes into your professional development.</p>
+
           </div>
+
           <div class="activity-section">
-            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <h4 class="activity-title">Activity:</h4>
+
             <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on professional development and e-portfolio completion. 
+
+                You are required to finalise your e-portfolio entries, ensuring all reflections, activities, 
+
+                and assessments are properly documented and linked to learning outcomes. These should be 
+
+                prepared for final submission and discussion during the Friday seminar.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
               <p class="reflection"><strong>Reflection:</strong> [Insert your Unit 11 reflection.]</p>
+
             </div>
+
           </div>
+
         </div>
+
         <!-- Unit 12 -->
+
         <div class="unit">
+
           <h3 class="unit-title">Unit 12: Project Management and Managing Risk</h3>
-          <div class="seminar-preparation">
-            <h5>🎓 Seminar</h5>
-            <p><strong>Title:</strong> Managing Research Projects and Risks</p>
-            <p>Applies project management and risk assessment principles to academic research delivery.</p>
-          </div>
-          <div class="activity-section">
-            <h4 class="activity-title">Reflective Thinking:</h4>
-            <div class="activity-item">
-              <p class="reflection"><strong>Reflection:</strong> [Final reflection summarising module outcomes.]</p>
+
+          <div class="reading-section">
+
+            <p class="reading-title">Required Reading:</p>
+
+            <div class="reading-list">
+
+              <p>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> Harlow: Pearson. Chapter 8.</p>
+
             </div>
+
           </div>
+
+          <div class="seminar-preparation">
+
+            <h5>🎓 Seminar</h5>
+
+            <p><strong>Title:</strong> Managing Research Projects and Risks</p>
+
+            <p>Applies project management and risk assessment principles to academic research delivery.</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
+            <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on project management and risk management in research. 
+
+                You are required to develop a project plan and risk register for your research project, 
+
+                identifying potential challenges and mitigation strategies. These should be added to your 
+
+                e-Portfolio and prepared for discussion during the Friday seminar.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Reflection:</strong> [Final reflection summarising module outcomes.]</p>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
+
       <!-- References Section -->
+
       <div class="content-card">
+
         <div class="unit">
+
           <h3 class="unit-title">References</h3>
+
           <ul class="references">
+
             <li>Boza, T. (2022) <em>How to Write a Literature Review: Six Steps to Get You from Start to Finish</em>. Scribbr.</li>
+
             <li>British Research Methodology (2018) <em>Research Design</em>.</li>
+
             <li>Creswell, J.W. and Creswell, J.D. (2018) <em>Research Design: Qualitative, Quantitative, and Mixed Methods Approaches</em>. Sage.</li>
+
             <li>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide</em>. 3rd edn. Pearson.</li>
+
             <li>Sage (2021) <em>Sage Research Methods: Methods Map</em>.</li>
+
             <li>Saunders, M., Lewis, P. and Thornhill, A. (2019) <em>Research Methods for Business Students</em>. 8th edn. Pearson.</li>
+
           </ul>
+
         </div>
+
       </div>
+
       <!-- Navigation Links -->
+
       <div class="bottom-navigation">
+
         <a href="index.html" class="nav-link">Back to Home</a>
+
         <a href="university-of-essex.html" class="nav-link">University of Essex</a>
+
         <a href="Module1.html" class="nav-link">Module 1</a>
+
         <a href="Module2.html" class="nav-link">Module 2</a>
+
         <a href="Module3.html" class="nav-link">Module 3</a>
+
         <a href="Module4.html" class="nav-link">Module 4</a>
+
         <a href="Module5.html" class="nav-link">Module 5</a>
+
         <a href="Module6.html" class="nav-link">Module 6</a>
+
         <a href="links.html" class="nav-link">All Links</a>
+
       </div>
+
     </div>
+
   </div>
+
 </body>
+
 </html>
