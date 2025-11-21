@@ -1,1 +1,738 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Inappropriate Use of Surveys – Ethical, Social, Legal and Professional Implications - David Abiodun</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body, html {
+
+      height: 100%;
+
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      color: #ffffff;
+
+      overflow-x: hidden;
+
+      position: relative;
+
+    }
+
+    body::before {
+
+      content: '';
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      right: 0;
+
+      bottom: 0;
+
+      background: url('../../assets/Module7.jpg') no-repeat center center/cover;
+
+      filter: blur(3px);
+
+      -webkit-filter: blur(3px);
+
+      transform: scale(1.05);
+
+      z-index: -2;
+
+    }
+
+    body::after {
+
+      content: '';
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      right: 0;
+
+      bottom: 0;
+
+      background: rgba(0, 0, 0, 0.8);
+
+      z-index: -1;
+
+    }
+
+    .back-btn {
+
+      position: fixed;
+
+      top: 20px;
+
+      left: 20px;
+
+      background: rgba(255, 255, 255, 0.08);
+
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      border-radius: 12px;
+
+      padding: 12px 20px;
+
+      text-decoration: none;
+
+      color: #d4dff5;
+
+      font-size: 0.95em;
+
+      font-weight: 400;
+
+      transition: all 0.3s ease;
+
+      z-index: 1000;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+    }
+
+    .back-btn:hover {
+
+      background: rgba(255, 255, 255, 0.11);
+
+      border-color: rgba(21, 87, 36, 0.4);
+
+      color: #ffffff;
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 0 12px rgba(21, 87, 36, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .overlay {
+
+      position: relative;
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: flex-start;
+
+      padding: 80px 20px 40px;
+
+      animation: fadeIn 1s ease-in;
+
+    }
+
+    @keyframes fadeIn {
+
+      from { opacity: 0; }
+
+      to { opacity: 1; }
+
+    }
+
+    .container {
+
+      max-width: 1000px;
+
+      width: 100%;
+
+      animation: slideUp 0.8s ease-out;
+
+    }
+
+    @keyframes slideUp {
+
+      from { opacity: 0; transform: translateY(30px); }
+
+      to { opacity: 1; transform: translateY(0); }
+
+    }
+
+    .header {
+
+      text-align: center;
+
+      margin-bottom: 40px;
+
+    }
+
+    .header h1 {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 2.5em;
+
+      font-weight: 700;
+
+      margin-bottom: 15px;
+
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+
+      -webkit-background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+
+      background-clip: text;
+
+      letter-spacing: -1px;
+
+    }
+
+    .content-card {
+
+      background: rgba(255, 255, 255, 0.08);
+
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      border-radius: 20px;
+
+      padding: 35px 40px;
+
+      margin-bottom: 30px;
+
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+      transition: all 0.3s ease;
+
+    }
+
+    .content-card:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 0 15px rgba(21, 87, 36, 0.25), 0 8px 32px rgba(0, 0, 0, 0.2);
+
+      border-color: rgba(21, 87, 36, 0.3);
+
+      background: rgba(255, 255, 255, 0.09);
+
+    }
+
+    .section-title {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 1.5em;
+
+      font-weight: 600;
+
+      color: #ffffff;
+
+      margin-bottom: 20px;
+
+      margin-top: 30px;
+
+    }
+
+    .section-title:first-of-type {
+
+      margin-top: 0;
+
+    }
+
+    .question-box {
+
+      background: rgba(30, 144, 255, 0.1);
+
+      border: 1px solid rgba(30, 144, 255, 0.3);
+
+      border-radius: 12px;
+
+      padding: 20px 25px;
+
+      margin: 20px 0;
+
+      transition: all 0.3s ease;
+
+    }
+
+    .question-box:hover {
+
+      background: rgba(30, 144, 255, 0.15);
+
+      border-color: rgba(30, 144, 255, 0.5);
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+
+    }
+
+    .question-title {
+
+      font-size: 1.2em;
+
+      font-weight: bold;
+
+      color: #1e90ff;
+
+      margin-bottom: 12px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+    }
+
+    .question-text {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.8;
+
+      text-align: justify;
+
+    }
+
+    .content-section {
+
+      margin-bottom: 30px;
+
+    }
+
+    .content-section h2 {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 1.3em;
+
+      font-weight: 600;
+
+      color: #ffffff;
+
+      margin-bottom: 15px;
+
+      margin-top: 25px;
+
+    }
+
+    .content-section h2:first-of-type {
+
+      margin-top: 0;
+
+    }
+
+    .content-section h3 {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 1.1em;
+
+      font-weight: 600;
+
+      color: #d4dff5;
+
+      margin-bottom: 12px;
+
+      margin-top: 20px;
+
+    }
+
+    .content-section p {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.8;
+
+      text-align: justify;
+
+      margin-bottom: 15px;
+
+    }
+
+    .content-section ul, .content-section ol {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.8;
+
+      margin-bottom: 15px;
+
+      padding-left: 30px;
+
+    }
+
+    .content-section li {
+
+      margin-bottom: 8px;
+
+      text-align: justify;
+
+    }
+
+    .content-section strong {
+
+      color: #ffffff;
+
+      font-weight: 600;
+
+    }
+
+    .content-section em {
+
+      font-style: italic;
+
+    }
+
+    .doc-link {
+
+      display: inline-block;
+
+      background: rgba(30, 144, 255, 0.15);
+
+      border: 1px solid rgba(30, 144, 255, 0.4);
+
+      border-radius: 8px;
+
+      padding: 12px 20px;
+
+      margin: 15px 0;
+
+      text-decoration: none;
+
+      color: #93c5fd;
+
+      font-size: 0.95em;
+
+      font-weight: 500;
+
+      transition: all 0.3s ease;
+
+    }
+
+    .doc-link:hover {
+
+      background: rgba(30, 144, 255, 0.25);
+
+      border-color: rgba(30, 144, 255, 0.6);
+
+      color: #60a5fa;
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 4px 12px rgba(30, 144, 255, 0.3);
+
+    }
+
+    .references-section {
+
+      background: rgba(255, 255, 255, 0.05);
+
+      border-left: 3px solid rgba(255, 255, 255, 0.2);
+
+      padding: 20px;
+
+      margin-top: 30px;
+
+      border-radius: 0 8px 8px 0;
+
+    }
+
+    .references-section h3 {
+
+      font-family: 'Montserrat', sans-serif;
+
+      color: #d4dff5;
+
+      margin-bottom: 15px;
+
+    }
+
+    .references-section p {
+
+      color: #b8c5e0;
+
+      font-size: 0.9em;
+
+      line-height: 1.7;
+
+      margin-bottom: 10px;
+
+      text-align: justify;
+
+      padding-left: 15px;
+
+      position: relative;
+
+    }
+
+    .references-section p:before {
+
+      content: '•';
+
+      color: #64748b;
+
+      position: absolute;
+
+      left: 0;
+
+    }
+
+    @media (max-width: 768px) {
+
+      .header h1 { font-size: 2em; }
+
+      .content-card { padding: 25px 30px; }
+
+      .section-title { font-size: 1.3em; }
+
+      .overlay { padding: 70px 15px 30px; }
+
+      .back-btn { top: 15px; left: 15px; padding: 10px 16px; font-size: 0.9em; }
+
+    }
+
+    @media (max-width: 480px) {
+
+      .header h1 { font-size: 1.6em; }
+
+      .content-card { padding: 20px 25px; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <a href="../../Module7.html" class="back-btn">← Back to Module 7</a>
+
+  <div class="overlay">
+
+    <div class="container">
+
+      <div class="header">
+
+        <h1>Inappropriate Use of Surveys – Ethical, Social, Legal and Professional Implications</h1>
+
+      </div>
+
+      <div class="content-card">
+
+        <div class="question-box">
+
+          <div class="question-title">📋 Case Study: Inappropriate Use of Surveys</div>
+
+          <div class="question-text">
+
+            <p>In 2018, Cambridge Analytica was in the news in the United Kingdom and the USA (Confessore, 2018) for obtaining and sharing data obtained from millions of Facebook users. They obtained the data through innocuous surveys on Facebook (you may have seen this type of survey and probably participated at times). This is probably the highest profile of surveys used for alternative means and, probably, monetary gains. However, this happens often through various media.</p>
+
+            <p>Consider how exactly this happened and why it was used. Find one or two further examples of inappropriate use of surveys and highlight the impact of all these examples from the various ethical, social, legal and professional standpoints that apply.</p>
+
+            <p>Record your findings in your e-Portfolio. You can also submit your findings to your tutor for formative feedback.</p>
+
+          </div>
+
+        </div>
+
+        <a href="javascript:void(0);" class="doc-link" onclick="const docPath = 'Case Study Inappropriate Use of Surveys.docx'; const fullUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + encodeURIComponent(docPath); window.open('https://view.officeapps.live.com/op/view.aspx?src=' + encodeURIComponent(fullUrl), '_blank');">📄 View Word Document (Opens in Word Web)</a>
+
+        <div class="content-section">
+
+          <h2>1. Introduction</h2>
+
+          <p>Online surveys are widely used to gather opinions, personalise services, and support research. However, several high-profile incidents demonstrate how seemingly harmless survey tools can be misused for large-scale data harvesting, profiling, and manipulation. This entry examines how Cambridge Analytica used Facebook surveys to obtain and exploit user data, identifies further examples of inappropriate survey use, and evaluates the ethical, social, legal, and professional implications of these practices.</p>
+
+        </div>
+
+        <div class="content-section">
+
+          <h2>2. Cambridge Analytica: How the Survey Led to Data Misuse</h2>
+
+          <h3>2.1 Mechanism of the Data Harvesting</h3>
+
+          <p>In 2013, a Facebook app called <em>thisisyourdigitallife</em> was presented as a harmless personality quiz for academic research. Approximately 270,000 users installed the app and completed its survey. At the time, Facebook's API allowed apps to access not only the data of survey participants but also certain data belonging to all of their Facebook friends.</p>
+
+          <p>This loophole enabled the app's developers to harvest data from up to 87 million Facebook users, most of whom had never directly consented. The collected data included public profiles, likes, demographic information, and elements of the users' social graph.</p>
+
+          <h3>2.2 Why the Data Was Used</h3>
+
+          <p>Although framed as academic research, the data was transferred to Cambridge Analytica. Using psychographic modelling based on OCEAN personality traits, the company developed behavioural profiles and deployed them for political micro-targeting during major campaigns such as the 2016 US presidential election (Aagaard, 2023; Carrella et al., 2025).</p>
+
+          <p>The goal was to influence behaviour by identifying individuals' psychological vulnerabilities and targeting them with highly personalised political messages (Bakir, 2020; Hu, 2020).</p>
+
+        </div>
+
+        <div class="content-section">
+
+          <h2>3. Additional Examples of Inappropriate Survey Use</h2>
+
+          <h3>3.1 The myPersonality Facebook App</h3>
+
+          <p>The <em>myPersonality</em> survey app, created by Cambridge University researchers, collected detailed psychometric profiles from millions of users. The data was then shared, often insecurely, with external researchers and industry partners. Poor access controls enabled unauthorised parties to download sensitive datasets, compromising the privacy of over 4 million users. Facebook subsequently banned the app for refusing an audit and for inadequate data protection practices.</p>
+
+          <h3>3.2 Wider Abuse: Mass Suspension of Quiz Apps</h3>
+
+          <p>Following the Cambridge Analytica revelations, Facebook suspended around 200 survey and quiz apps as part of an internal investigation. Many had been using "fun" quizzes to secretly collect extensive personal data. This demonstrated that inappropriate survey use was systemic, not exceptional, and that many apps exploited platform weaknesses to over-collect data (van der Schyff, Flowerday and Furnell, 2020).</p>
+
+        </div>
+
+        <div class="content-section">
+
+          <h2>4. Ethical Implications</h2>
+
+          <p>Survey misuse raises significant ethical concerns:</p>
+
+          <ul>
+
+            <li><strong>Lack of informed consent:</strong> Users were led to believe they were taking part in harmless research or entertainment. Most were unaware their data – and their friends' data – would be used for political profiling (Breuer, Turbah and Rinke, 2021).</li>
+
+            <li><strong>Deception and purpose misrepresentation:</strong> The stated purpose of the surveys did not match the actual intent, violating principles of honesty, autonomy, and respect for persons (Singh et al., 2022; Cilliers and Viljoen, 2020).</li>
+
+            <li><strong>Manipulation and exploitation:</strong> Psychographic targeting exploited individuals' psychological traits, raising questions about undue influence and manipulation.</li>
+
+            <li><strong>Violation of privacy and dignity:</strong> Harvesting data from non-participants (friends) breached core ethical principles of digital rights and user agency (Hanlon, 2023).</li>
+
+          </ul>
+
+        </div>
+
+        <div class="content-section">
+
+          <h2>5. Social Implications</h2>
+
+          <ul>
+
+            <li><strong>Erosion of trust:</strong> Public trust in social media platforms and digital services declined sharply following the scandal. Many users became more sceptical about online data collection (Ho et al., 2023; Aagaard, 2023).</li>
+
+            <li><strong>Impact on democracy:</strong> Micro-targeted political adverts undermined transparency in democratic processes by delivering messages that were not publicly visible or subject to scrutiny (Carrella et al., 2025).</li>
+
+            <li><strong>Digital inequality:</strong> People with lower digital literacy were more likely to engage with these surveys without understanding their implications, contributing to unequal exposure.</li>
+
+            <li><strong>Normalisation of surveillance:</strong> The incidents reinforced a culture where constant data extraction is viewed as unavoidable.</li>
+
+          </ul>
+
+        </div>
+
+        <div class="content-section">
+
+          <h2>6. Legal Implications</h2>
+
+          <ul>
+
+            <li><strong>Data protection violations:</strong> Regulators found that Facebook failed to protect user data and enforce its terms. Fines included £500,000 from the UK ICO and a $5 billion penalty from the US FTC (Huang, 2024).</li>
+
+            <li><strong>GDPR breaches:</strong> The practices contravened GDPR principles, including lawfulness, fairness, transparency, purpose limitation, and data minimisation.</li>
+
+            <li><strong>Accountability and platform obligations:</strong> The incident prompted global scrutiny of tech companies and strengthened the argument for tougher regulation of data-driven platforms (van der Schyff, Flowerday and Furnell, 2020).</li>
+
+            <li><strong>Class-action settlements:</strong> Meta later paid a $725 million settlement for improperly sharing user data.</li>
+
+          </ul>
+
+        </div>
+
+        <div class="content-section">
+
+          <h2>7. Professional Implications</h2>
+
+          <p>Standards such as the ACM Code of Ethics and BCS Code of Conduct emphasise responsibilities to protect user privacy, avoid harm, and ensure transparency.</p>
+
+          <p>Professionally, the case highlights failures to:</p>
+
+          <ul>
+
+            <li>Apply responsible data governance and minimise harm.</li>
+
+            <li>Communicate data usage clearly.</li>
+
+            <li>Implement robust data access controls.</li>
+
+            <li>Ensure that research and development activities align with professional codes and societal expectations (Cilliers and Viljoen, 2020; Breuer, Turbah and Rinke, 2021).</li>
+
+          </ul>
+
+          <p>For computing professionals, the events stress the need for stronger ethical awareness, transparency, and accountability in system design and data collection practices.</p>
+
+        </div>
+
+        <div class="content-section">
+
+          <h2>8. Conclusion</h2>
+
+          <p>These cases demonstrate that survey tools—even those appearing harmless—can be exploited for large-scale data harvesting and behavioural manipulation. The Cambridge Analytica incident, the <em>myPersonality</em> app, and the mass suspension of similar tools collectively highlight the importance of ethical design, informed consent, and strict data governance. From ethical, social, legal, and professional standpoints, the misuse of surveys undermines public trust, violates privacy, threatens democratic processes, and breaches the duties expected of computing professionals.</p>
+
+          <p>Ethical and transparent handling of survey data is essential for maintaining public trust and upholding professional standards in the digital age.</p>
+
+        </div>
+
+        <div class="references-section">
+
+          <h3>References</h3>
+
+          <p>Aagaard, P. (2023) 'Political microtargeting: Towards a pragmatic approach', <em>Internet Policy Review</em>, 12(2), pp. 1–17.</p>
+
+          <p>Bakir, V. (2020) 'Assessing Cambridge Analytica's psychographic profiling and Facebook data usage: Psychological operations or legitimate political campaigning?', <em>Frontiers in Communication</em>, 5, 67.</p>
+
+          <p>Breuer, J., Turbah, S. and Rinke, E.M. (2021) 'Informed consent for linking survey and social media data', <em>IASSIST Quarterly</em>, 45(1), pp. 1–18.</p>
+
+          <p>Carrella, F. et al. (2025) 'Warning people that they are being microtargeted fails to increase advertising scepticism', <em>PNAS Nexus</em>, 4(3), pp. 1–10.</p>
+
+          <p>Cilliers, L. and Viljoen, K. (2020) 'Ethical challenges in online research', <em>SA Journal of Information Management</em>, 22(1), pp. 1–8.</p>
+
+          <p>Hanlon, A. (2023) 'Ethical concerns about social media privacy policies: comprehension, consent and consumer vulnerability', <em>Journal of Marketing Communications</em>, 29(7), pp. 743–762.</p>
+
+          <p>Ho, F.N., Shim, S. et al. (2023) 'The effects of privacy and data breaches on consumers' trust, disclosure and protection behaviour on Facebook', <em>SAGE Open</em>, 13(3), pp. 1–16.</p>
+
+          <p>Huang, K. (2024) 'Performing platform governance: Facebook and the stage management of scandal', <em>New Media & Society</em>, 26(5), pp. 1321–1342.</p>
+
+          <p>Hu, M. (2020) 'Cambridge Analytica's black box', <em>Big Data & Society</em>, 7(2), pp. 1–15.</p>
+
+          <p>Singh, S. et al. (2022) 'Safety and ethical concerns associated with conducting online survey studies with youth', <em>Indian Journal of Psychological Medicine</em>, 44(3), pp. 220–225.</p>
+
+          <p>van der Schyff, K., Flowerday, S. and Furnell, S. (2020) 'Privacy risk and the use of Facebook apps: A gendered perspective', <em>Computers & Security</em>, 97, 101951.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
 
