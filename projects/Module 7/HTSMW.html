@@ -1,1 +1,537 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hypothesis Testing and Summary Measures Worksheet - Module 7 - David Abiodun</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body, html {
+
+      height: 100%;
+
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      color: #ffffff;
+
+      overflow-x: hidden;
+
+      position: relative;
+
+    }
+
+    body::before {
+
+      content: '';
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      right: 0;
+
+      bottom: 0;
+
+      background: url('../../assets/Module7.jpg') no-repeat center center/cover;
+
+      filter: blur(3px);
+
+      -webkit-filter: blur(3px);
+
+      transform: scale(1.05);
+
+      z-index: -2;
+
+    }
+
+    body::after {
+
+      content: '';
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      right: 0;
+
+      bottom: 0;
+
+      background: rgba(0, 0, 0, 0.8);
+
+      z-index: -1;
+
+    }
+
+    .back-btn {
+
+      position: fixed;
+
+      top: 20px;
+
+      left: 20px;
+
+      background: rgba(255, 255, 255, 0.08);
+
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      border-radius: 12px;
+
+      padding: 12px 20px;
+
+      text-decoration: none;
+
+      color: #d4dff5;
+
+      font-size: 0.95em;
+
+      font-weight: 400;
+
+      transition: all 0.3s ease;
+
+      z-index: 1000;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+    }
+
+    .back-btn:hover {
+
+      background: rgba(255, 255, 255, 0.11);
+
+      border-color: rgba(21, 87, 36, 0.4);
+
+      color: #ffffff;
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 0 12px rgba(21, 87, 36, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .overlay {
+
+      position: relative;
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: flex-start;
+
+      padding: 80px 20px 40px;
+
+      animation: fadeIn 1s ease-in;
+
+    }
+
+    @keyframes fadeIn {
+
+      from { opacity: 0; }
+
+      to { opacity: 1; }
+
+    }
+
+    .container {
+
+      max-width: 1000px;
+
+      width: 100%;
+
+      animation: slideUp 0.8s ease-out;
+
+    }
+
+    @keyframes slideUp {
+
+      from { opacity: 0; transform: translateY(30px); }
+
+      to { opacity: 1; transform: translateY(0); }
+
+    }
+
+    .header {
+
+      text-align: center;
+
+      margin-bottom: 40px;
+
+    }
+
+    .header h1 {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 2.8em;
+
+      font-weight: 700;
+
+      margin-bottom: 15px;
+
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+
+      -webkit-background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+
+      background-clip: text;
+
+      letter-spacing: -1px;
+
+    }
+
+    .content-card {
+
+      background: rgba(255, 255, 255, 0.08);
+
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      border-radius: 20px;
+
+      padding: 35px 40px;
+
+      margin-bottom: 30px;
+
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+      transition: all 0.3s ease;
+
+    }
+
+    .content-card:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 0 15px rgba(21, 87, 36, 0.25), 0 8px 32px rgba(0, 0, 0, 0.2);
+
+      border-color: rgba(21, 87, 36, 0.3);
+
+      background: rgba(255, 255, 255, 0.09);
+
+    }
+
+    .unit-title {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 1.3em;
+
+      font-weight: 600;
+
+      color: #ffffff;
+
+      margin-bottom: 20px;
+
+    }
+
+    .activity-section {
+
+      margin-top: 25px;
+
+    }
+
+    .activity-title {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 1.1em;
+
+      font-weight: 600;
+
+      color: #ffffff;
+
+      margin-bottom: 12px;
+
+    }
+
+    .activity-item {
+
+      margin-bottom: 8px;
+
+    }
+
+    .activity-text {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.8;
+
+      text-align: justify;
+
+    }
+
+    p {
+
+      text-align: justify;
+
+      line-height: 1.8;
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      margin-bottom: 15px;
+
+    }
+
+    .project-description {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.6;
+
+      margin-bottom: 8px;
+
+    }
+
+    .project-link {
+
+      color: #93c5fd;
+
+      text-decoration: none;
+
+      font-size: 0.9em;
+
+      transition: all 0.3s ease;
+
+      display: inline-block;
+
+      margin-top: 10px;
+
+    }
+
+    .project-link:hover {
+
+      color: #60a5fa;
+
+      text-decoration: underline;
+
+    }
+
+    .interpretation-section {
+
+      margin-top: 30px;
+
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    }
+
+    .interpretation-title {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 1.1em;
+
+      font-weight: 600;
+
+      color: #ffffff;
+
+      margin-bottom: 15px;
+
+    }
+
+    .interpretation-content {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.8;
+
+      text-align: justify;
+
+      margin-bottom: 20px;
+
+    }
+
+    @media (max-width: 768px) {
+
+      .header h1 { font-size: 2.2em; }
+
+      .content-card { padding: 25px 30px; }
+
+      .unit-title { font-size: 1.2em; }
+
+      .overlay { padding: 70px 15px 30px; }
+
+      .back-btn { top: 15px; left: 15px; padding: 10px 16px; font-size: 0.9em; }
+
+    }
+
+    @media (max-width: 480px) {
+
+      .header h1 { font-size: 1.8em; }
+
+      .content-card { padding: 20px 25px; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <a href="../../Module7.html" class="back-btn">← Back to Module 7</a>
+
+  <div class="overlay">
+
+    <div class="container">
+
+      <div class="header">
+
+        <h1>Hypothesis Testing and Summary Measures Worksheet</h1>
+
+      </div>
+
+      <div class="content-card">
+
+        <div class="activity-section">
+
+          <h3 class="unit-title">Compulsory e-Portfolio Component</h3>
+
+          <div class="activity-item">
+
+            <p class="activity-text">
+
+              Review the additional notes on Inference and then complete the Hypothesis Testing and Summary Measures worksheet in Excel or LibreOffice. The completed worksheets from units 7 and 8 should be included in your e-Portfolio. You will need to provide your interpretation of the results, based on the questions asked and from your analysis of the data. You can complete the worksheets before or after this week's workshop.
+
+            </p>
+
+            <p><a href="Interpretation_E-Portfolio.docx" class="project-link" target="_blank" onclick="openInWordWeb(event, this.href)">📄 View Assignment Document in Word Web (Interpretation_E-Portfolio.docx)</a></p>
+
+            <script>
+
+              function openInWordWeb(event, filePath) {
+
+                // Check if file is accessible via HTTP/HTTPS (hosted online)
+
+                if (filePath.startsWith('http://') || filePath.startsWith('https://')) {
+
+                  event.preventDefault();
+
+                  // Use Office Online viewer for online files
+
+                  window.open('https://view.officeapps.live.com/op/view.aspx?src=' + encodeURIComponent(filePath), '_blank');
+
+                } else {
+
+                  // For local files, try to open in Word Web if available
+
+                  // Otherwise, it will download/open in local Word
+
+                  // To use Word Web with local files, upload to OneDrive/SharePoint and use the shareable link
+
+                  // Example: Replace filePath with: 'https://yourdomain.sharepoint.com/.../Interpretation_E-Portfolio.docx'
+
+                }
+
+              }
+
+            </script>
+
+          </div>
+
+        </div>
+
+        <div class="interpretation-section">
+
+          <h3 class="unit-title">Academic Interpretations</h3>
+
+          <div class="interpretation-content">
+
+            <h4 class="interpretation-title">Academic Interpretation – Summary Measures for Diet A and Diet B (Exa 7.1B)</h4>
+
+            <p>The descriptive statistics for Diets A and B provide an initial comparison of their effectiveness before applying inferential tests. Diet A produced a higher mean weight loss (5.341 kg) than Diet B (3.710 kg), with slightly lower variability, suggesting both greater and more consistent outcomes. These measures highlight early performance differences and demonstrate how summary statistics offer quick, interpretable insights that support further hypothesis testing and informed decision-making.</p>
+
+          </div>
+
+          <div class="interpretation-content">
+
+            <h4 class="interpretation-title">Academic Interpretation – Quartiles and IQR (Exa 7.2B)</h4>
+
+            <p>Examining medians and quartiles adds depth to the descriptive comparison of the two diets. Diet A shows a higher median weight loss (5.642 kg) and a wider IQR (3.285 kg), indicating greater effectiveness and greater variability in outcomes among participants. Diet B's median (3.745 kg) and much smaller IQR (0.976 kg) reflect lower but more tightly clustered results. Overall, the quartile analysis reinforces that Diet A delivers higher weight-loss outcomes, while Diet B produces more consistent but less substantial effects.</p>
+
+          </div>
+
+          <div class="interpretation-content">
+
+            <h4 class="interpretation-title">Academic Interpretation – Brand Preference Analysis Across Two Areas (Exa 7.3D)</h4>
+
+            <p>The brand-preference comparison highlights how categorical data reveal behavioural patterns through frequencies and proportions. In both areas, "Other" brands dominate consumer choices (60% in Area 1; 57.14% in Area 2), indicating limited loyalty to the two main brands. Brand B is more popular in Area 2 (28.57%) than in Area 1 (24.29%), while Brand A remains the least preferred in both regions. These patterns show regional differences in brand presence and reinforce the value of categorical analysis for understanding market segmentation and informing targeted marketing strategies.</p>
+
+          </div>
+
+          <div class="interpretation-content">
+
+            <h4 class="interpretation-title">Academic Interpretation – Exercise 7.2.2 (One-Tailed Test)</h4>
+
+            <p>A one-tailed test was used to evaluate whether Filter Agent 1 achieved lower impurity levels than Agent 2. The sample means supported this direction, and converting the earlier two-tailed p-value (0.018) gives a one-tailed value of approximately 0.009, which is well below the 5% threshold. This provides strong statistical evidence that Filter Agent 1 is more effective. Using a directional test clarifies the conclusion by focusing specifically on whether one agent outperforms the other.</p>
+
+          </div>
+
+          <div class="interpretation-content">
+
+            <h4 class="interpretation-title">Academic Interpretation – Exa 7.6B (Independent Samples t-Test)</h4>
+
+            <p>The independent-samples t-test showed no significant difference in variance between the diets (p = 0.540), allowing the equal-variance approach. Diet A achieved a higher mean weight loss (5.34 kg) than Diet B (3.71 kg), and this difference was statistically significant, t(98) = 3.07, p = 0.0028. These results provide strong evidence that Diet A is more effective, resulting in an average additional loss of approximately 1.63 kg.</p>
+
+          </div>
+
+          <div class="interpretation-content">
+
+            <h4 class="interpretation-title">Academic Interpretation – Exercise 7.2.3 (Independent Samples t-Test: Male vs Female Income)</h4>
+
+            <p>The independent samples t-test assessed whether male cardholders earn more than female cardholders. The F-test showed no significant difference in variance (p = 0.218), supporting the equal-variance assumption. Males had a higher mean income (£52.91k) than females (£44.28k), and the one-tailed p-value (0.0007) indicated strong statistical evidence of this difference. The mean gap of approximately £8.63k reflects a substantial income disparity between the groups.</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
 
