@@ -1,721 +1,1294 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LX92NLZD2F"></script>
+
+    <script>
+
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag(){dataLayer.push(arguments);}
+
+      gtag('js', new Date());
+
+      gtag('config', 'G-LX92NLZD2F');
+
+    </script>
+
     <title>Module 3: Information Technology Service Management - David Abiodun</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
     <style>
+
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
+
         }
 
         body, html {
+
             height: 100%;
+
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
             color: #ffffff;
+
             overflow-x: hidden;
+
             position: relative;
+
         }
 
         /* Blurred background with dark overlay */
+
         body::before {
+
             content: '';
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             right: 0;
+
             bottom: 0;
+
             background: url('assets/Module3.jpg') no-repeat center center/cover;
+
             filter: blur(3px);
+
             -webkit-filter: blur(3px);
+
             transform: scale(1.05);
+
             z-index: -2;
+
         }
 
         body::after {
+
             content: '';
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             right: 0;
+
             bottom: 0;
+
             background: rgba(0, 0, 0, 0.8);
+
             z-index: -1;
+
         }
 
         /* Back button styling */
+
         .back-btn {
+
             position: fixed;
+
             top: 20px;
+
             left: 20px;
+
             background: rgba(255, 255, 255, 0.08);
+
             backdrop-filter: blur(10px);
+
             border: 1px solid rgba(255, 255, 255, 0.12);
+
             border-radius: 12px;
+
             padding: 12px 20px;
+
             text-decoration: none;
+
             color: #d4dff5;
+
             font-size: 0.95em;
+
             font-weight: 400;
+
             transition: all 0.3s ease;
+
             z-index: 1000;
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
+
         }
 
         .back-btn:hover {
+
             background: rgba(255, 255, 255, 0.11);
+
             border-color: rgba(21, 87, 36, 0.4);
+
             color: #ffffff;
+
             transform: translateY(-1px);
-            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25),
-                        0 4px 12px rgba(0, 0, 0, 0.1);
+
+            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
+
         }
 
         /* Transparent overlay container */
+
         .overlay {
+
             position: relative;
+
             min-height: 100vh;
+
             display: flex;
+
             justify-content: center;
+
             align-items: flex-start;
+
             padding: 80px 20px 40px;
+
             animation: fadeIn 1s ease-in;
+
         }
 
         @keyframes fadeIn {
+
             from { opacity: 0; }
+
             to { opacity: 1; }
+
         }
 
         /* Main container */
+
         .container {
+
             max-width: 1000px;
+
             width: 100%;
+
             animation: slideUp 0.8s ease-out;
+
         }
 
         @keyframes slideUp {
+
             from {
+
                 opacity: 0;
+
                 transform: translateY(30px);
+
             }
+
             to {
+
                 opacity: 1;
+
                 transform: translateY(0);
+
             }
+
         }
 
         /* Header */
+
         .header {
+
             text-align: center;
+
             margin-bottom: 40px;
+
         }
 
         .header h1 {
+
             font-family: 'Montserrat', sans-serif;
+
             font-size: 2.8em;
+
             font-weight: 700;
+
             margin-bottom: 15px;
+
             background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+
             -webkit-background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
             background-clip: text;
+
             letter-spacing: -1px;
+
         }
 
         .module-grade {
+
             font-size: 1.2em;
+
             font-weight: 600;
+
             color: #a8b8d8;
+
             margin-bottom: 20px;
+
         }
 
         /* Content cards */
+
         .content-card {
+
             background: rgba(255, 255, 255, 0.08);
+
             backdrop-filter: blur(8px) saturate(100%);
+
             -webkit-backdrop-filter: blur(8px) saturate(100%);
+
             border: 1px solid rgba(255, 255, 255, 0.05);
+
             border-radius: 20px;
+
             padding: 35px 40px;
+
             margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
-                        0 0 20px rgba(255, 255, 255, 0.05) inset;
+
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 20px rgba(255, 255, 255, 0.05) inset;
+
             transition: all 0.3s ease;
+
         }
 
         .content-card:hover {
+
             transform: translateY(-2px);
-            box-shadow: 0 0 15px rgba(21, 87, 36, 0.25),
-                        0 8px 32px rgba(0, 0, 0, 0.2);
+
+            box-shadow: 0 0 15px rgba(21, 87, 36, 0.25), 0 8px 32px rgba(0, 0, 0, 0.2);
+
             border-color: rgba(21, 87, 36, 0.3);
+
             background: rgba(255, 255, 255, 0.02);
+
         }
 
         /* Unit styling */
+
         .unit {
+
             margin-bottom: 40px;
+
             padding-bottom: 30px;
+
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
         }
 
         .unit:last-child {
+
             border-bottom: none;
+
             margin-bottom: 0;
+
             padding-bottom: 0;
+
         }
 
         .unit-title {
+
             font-size: 1.3em;
+
             font-weight: 700;
+
             color: #ffffff;
+
             margin-bottom: 20px;
+
             font-family: 'Montserrat', sans-serif;
+
         }
 
         .reading-section {
+
             margin-bottom: 20px;
+
         }
 
         .reading-title {
+
             font-size: 1em;
+
             font-weight: 600;
+
             color: #d4dff5;
+
             text-decoration: underline;
+
             margin-bottom: 10px;
+
         }
 
         .reading-list p {
+
             font-size: 0.9em;
+
             line-height: 1.6;
+
             color: #b8c5e0;
+
             margin-bottom: 8px;
+
             padding-left: 15px;
+
             position: relative;
+
             text-align: justify;
+
         }
 
         .reading-list p:before {
+
             content: '•';
+
             color: #64748b;
+
             position: absolute;
+
             left: 0;
+
         }
 
         .activity-section {
+
             margin-top: 25px;
+
         }
 
         .activity-title {
+
             font-size: 1.1em;
+
             font-weight: 600;
+
             color: #ffffff;
+
             margin-bottom: 12px;
+
             font-family: 'Montserrat', sans-serif;
+
         }
 
         .activity-item {
+
             margin-bottom: 8px;
+
         }
 
         .activity-item a {
+
             color: #d4dff5;
+
             text-decoration: none;
+
             transition: all 0.3s ease;
+
         }
 
         .activity-item a:hover {
+
             color: #f97316;
+
             text-decoration: underline;
+
         }
 
         .activity-item p {
+
             color: #b8c5e0;
+
             font-size: 0.95em;
+
             line-height: 1.6;
+
             text-align: justify;
+
         }
 
         .grade {
+
             color: #a8b8d8 !important;
+
             font-weight: 600;
+
             font-size: 0.9em;
+
         }
 
         /* Enhanced project styling */
+
         .project-highlight {
+
             background: rgba(30, 144, 255, 0.1);
+
             border: 1px solid rgba(30, 144, 255, 0.3);
+
             border-radius: 12px;
+
             padding: 15px 20px;
+
             margin: 10px 0;
+
             transition: all 0.3s ease;
+
         }
 
         .project-highlight:hover {
+
             background: rgba(30, 144, 255, 0.15);
+
             border-color: rgba(30, 144, 255, 0.5);
+
             transform: translateY(-1px);
+
             box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+
         }
 
         .project-title {
+
             font-size: 1.1em;
+
             font-weight: bold;
+
             color: #1e90ff;
+
             margin-bottom: 8px;
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
+
         }
 
         .project-description {
+
             color: #b8c5e0;
+
             font-size: 0.95em;
+
             line-height: 1.6;
+
             margin-bottom: 8px;
+
         }
 
         .project-link {
+
             color: #d4dff5;
+
             text-decoration: none;
+
             font-size: 0.9em;
+
             transition: all 0.3s ease;
+
         }
 
         .project-link:hover {
+
             color: #1e90ff;
+
             text-decoration: underline;
+
         }
 
         /* Enhanced assessment styling */
+
         .assessment-highlight {
+
             background: rgba(255, 107, 53, 0.1);
+
             border: 1px solid rgba(255, 107, 53, 0.3);
+
             border-radius: 12px;
+
             padding: 15px 20px;
+
             margin: 10px 0;
+
             transition: all 0.3s ease;
+
         }
 
         .assessment-highlight:hover {
+
             background: rgba(255, 107, 53, 0.15);
+
             border-color: rgba(255, 107, 53, 0.5);
+
             transform: translateY(-1px);
+
             box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+
         }
 
         .assessment-title {
+
             font-size: 1.1em;
+
             font-weight: bold;
+
             color: #ff6b35;
+
             margin-bottom: 8px;
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
+
         }
 
         .assessment-description {
+
             color: #b8c5e0;
+
             font-size: 0.95em;
+
             line-height: 1.6;
+
             margin-bottom: 8px;
+
         }
 
         .assessment-link {
+
             color: #d4dff5;
+
             text-decoration: none;
+
             font-size: 0.9em;
+
             transition: all 0.3s ease;
+
         }
 
         .assessment-link:hover {
+
             color: #ff6b35;
+
             text-decoration: underline;
+
         }
 
         /* Seminar preparation styling */
+
         .seminar-preparation {
+
             background: rgba(255, 107, 53, 0.1);
+
             border: 1px solid rgba(255, 107, 53, 0.3);
+
             border-radius: 12px;
+
             padding: 15px 20px;
+
             margin: 10px 0;
+
             transition: all 0.3s ease;
+
         }
 
         .seminar-preparation:hover {
+
             background: rgba(255, 107, 53, 0.15);
+
             border-color: rgba(255, 107, 53, 0.5);
+
             transform: translateY(-1px);
+
             box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+
         }
 
         .seminar-preparation h5 {
+
             color: #ff6b35;
+
             font-weight: bold;
+
             font-size: 1.1em;
+
             margin: 15px 0 10px 0;
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
+
         }
 
         .seminar-preparation ul {
+
             margin: 5px 0;
+
             padding-left: 20px;
+
         }
 
         .seminar-preparation li {
+
             margin-bottom: 5px;
+
             color: #b8c5e0;
+
+        }
+
+        .seminar-preparation p {
+
+            color: #b8c5e0;
+
+            font-size: 0.95em;
+
+            line-height: 1.7;
+
+            margin-bottom: 10px;
+
+            text-align: justify;
+
+        }
+
+        .seminar-preparation strong {
+
+            color: #ffffff;
+
         }
 
         .summary {
+
             background: rgba(255, 255, 255, 0.05);
+
             border-left: 3px solid #64748b;
+
             padding: 20px;
+
             margin-top: 20px;
+
             border-radius: 0 8px 8px 0;
+
             font-style: italic;
+
             color: #b8c5e0;
+
             font-size: 0.9em;
+
             line-height: 1.7;
+
             text-align: justify;
+
         }
 
-        .summary ul {
+        .summary p {
+
+            margin-bottom: 10px;
+
+        }
+
+        .summary p:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+        .comment-source {
+
+            color: #93c5fd;
+
+            font-size: 0.9em;
+
             margin-top: 10px;
-            padding-left: 20px;
-        }
 
-        .summary li {
-            margin-bottom: 5px;
+            font-style: italic;
+
         }
 
         /* Navigation links */
+
         .bottom-navigation {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 10px;
+
             justify-content: center;
+
             margin-top: 40px;
+
         }
 
         .nav-link {
+
             background: rgba(255, 255, 255, 0.07);
+
             backdrop-filter: blur(10px);
+
             border: 1px solid rgba(255, 255, 255, 0.12);
+
             padding: 8px 16px;
+
             border-radius: 25px;
+
             text-decoration: none;
+
             color: #d4dff5;
+
             font-size: 0.9em;
+
             font-weight: 400;
+
             transition: all 0.3s ease;
+
             display: inline-block;
+
             white-space: nowrap;
+
         }
 
         .nav-link:hover {
+
             background: rgba(255, 255, 255, 0.11);
+
             border-color: rgba(21, 87, 36, 0.4);
+
             color: #ffffff;
+
             transform: translateY(-1px);
-            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25),
-                        0 4px 12px rgba(0, 0, 0, 0.1);
+
+            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
+
         }
 
         p {
+
             text-align: justify;
+
             line-height: 1.8;
+
+            color: #b8c5e0;
+
+            font-size: 0.95em;
+
+            margin-bottom: 10px;
+
         }
 
         /* Responsive design */
+
         @media (max-width: 768px) {
+
             .header h1 {
+
                 font-size: 2.2em;
+
             }
 
             .content-card {
+
                 padding: 25px 30px;
+
             }
 
             .unit-title {
+
                 font-size: 1.2em;
+
             }
 
             .overlay {
+
                 padding: 70px 15px 30px;
+
             }
 
             .back-btn {
+
                 top: 15px;
+
                 left: 15px;
+
                 padding: 10px 16px;
+
                 font-size: 0.9em;
+
             }
+
         }
 
         @media (max-width: 480px) {
+
             .header h1 {
+
                 font-size: 1.8em;
+
             }
 
             .content-card {
+
                 padding: 20px 25px;
+
             }
 
             .nav-link {
+
                 font-size: 0.9em;
+
                 padding: 10px 20px;
+
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
+
     <!-- Back button -->
-    <a href="index.html" class="back-btn">
-        ← Back to Home
-    </a>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
 
     <div class="overlay">
+
         <div class="container">
+
             <!-- Header -->
+
             <div class="header">
+
                 <h1>Information Technology Service Management</h1>
+
                 <p class="module-grade">Overall Module Grade: Distinction</p>
+
             </div>
 
             <!-- Module Content Card -->
+
             <div class="content-card">
 
                 <div class="unit">
+
                     <h3 class="unit-title">Unit 1: Introduction to Information Technology Service Management (ITSM)</h3>
 
                     <div class="reading-section">
+
                         <p class="reading-title">Required Reading:</p>
+
                         <div class="reading-list">
-                            <p>Weed-Schertzer, B. (2019) Delivering ITSM for Business Maturity: A Practical Framework. Bingley: Emerald Publishing Limited. Chapter 2.</p>
-                            <p>Pereira, R. et al. (2021) Business process management heuristics in IT service management: a case study for incident management. Computational and mathematical organization theory. 264–301.</p>
-                            <p>Widianto, A. & Subriadi, A. P. (2022) IT service management evaluation method based on content, context, and process approach: A literature review. Procedia Computer Science. 410–419.</p>
+
+                            <p>Weed-Schertzer, B. (2019) <em>Delivering ITSM for Business Maturity: A Practical Framework</em>. Bingley: Emerald Publishing Limited. Chapter 2.</p>
+
+                            <p>Pereira, R. et al. (2021) Business process management heuristics in IT service management: a case study for incident management. <em>Computational and mathematical organization theory</em>. 264–301.</p>
+
+                            <p>Widianto, A. & Subriadi, A. P. (2022) IT service management evaluation method based on content, context, and process approach: A literature review. <em>Procedia Computer Science</em>. 410–419.</p>
+
                         </div>
+
                     </div>
 
                     <div class="reading-section">
+
                         <p class="reading-title">Additional Reading:</p>
+
                         <div class="reading-list">
-                            <p>Isaychenko, D. (2022) Metric-based Service Management. London: The Stationery Office.</p>
+
+                            <p>Isaychenko, D. (2022) <em>Metric-based Service Management</em>. London: The Stationery Office.</p>
+
                         </div>
+
                     </div>
 
                     <div class="seminar-preparation">
+
                         <h5>🎓 Seminar</h5>
+
                         <p><strong>Title:</strong> Introduction to Information Technology Service Management (ITSM)</p>
+
                         <ul>
+
                             <li><strong>Seminar Question:</strong> How can organisations leverage ITSM principles to streamline service delivery, enhance operational efficiency, and improve overall service quality?</li>
-                                <li>Familiarise yourself with ITSM definitions, principles, and key concepts discussed in the lecture.</li>
-                                <li>Review the roles and responsibilities of the Service Desk Manager and Service Manager within ITSM.</li>
-                                <li>Prepare to engage in discussions regarding the benefits and challenges of implementing ITSM frameworks and methodologies in real-world organisational contexts.</li>
-                            </ul>
-                        </div>
+
+                            <li>Familiarise yourself with ITSM definitions, principles, and key concepts discussed in the lecture.</li>
+
+                            <li>Review the roles and responsibilities of the Service Desk Manager and Service Manager within ITSM.</li>
+
+                            <li>Prepare to engage in discussions regarding the benefits and challenges of implementing ITSM frameworks and methodologies in real-world organisational contexts.</li>
+
+                        </ul>
+
                     </div>
 
                     <div class="activity-section">
+
                         <h4 class="activity-title">Activity:</h4>
+
                         <div class="activity-item">
+
                             <p>Review the key concepts of ITSM and answer the following question:</p>
+
                             <p>How does understanding the definition, importance, and key concepts of IT Service Management (ITSM) contribute to effective service delivery and organisational success?</p>
+
                         </div>
+
                     </div>
+
                 </div>
 
                 <div class="unit">
+
                     <h3 class="unit-title">Unit 2: Information Technology Service Management Principles and Processes</h3>
 
                     <div class="reading-section">
+
                         <p class="reading-title">Required Reading:</p>
+
                         <div class="reading-list">
-                            <p>Weed-Schertzer, B. (2019) Delivering ITSM for Business Maturity: A Practical Framework. Bingley: Emerald Publishing Limited. Chapter 3.</p>
-                            <p>Pereira, R., Braga de Vasconcelos, J., Rocha, A. & Bianchi, I. (2021) Business process management heuristics in IT service management: a case study for incident management. Computational and mathematical organization theory. 264–30.</p>
-                            <p>Winkler, T.J., & Wulf, J. (2019) Effectiveness of IT Service Management Capability: Value Co-Creation and Value Facilitation Mechanisms. Journal of Management Information Systems. 639-675.</p>
+
+                            <p>Weed-Schertzer, B. (2019) <em>Delivering ITSM for Business Maturity: A Practical Framework</em>. Bingley: Emerald Publishing Limited. Chapter 3.</p>
+
+                            <p>Pereira, R., Braga de Vasconcelos, J., Rocha, A. & Bianchi, I. (2021) Business process management heuristics in IT service management: a case study for incident management. <em>Computational and mathematical organization theory</em>. 264–301.</p>
+
+                            <p>Winkler, T.J., & Wulf, J. (2019) Effectiveness of IT Service Management Capability: Value Co-Creation and Value Facilitation Mechanisms. <em>Journal of Management Information Systems</em>. 639-675.</p>
+
                         </div>
+
                     </div>
 
                     <div class="reading-section">
+
                         <p class="reading-title">Additional Reading:</p>
+
                         <div class="reading-list">
-                            <p>Sarwar, M. I. et al. (2023) Digital Transformation of Public Sector Governance With IT Service Management-A Pilot Study. IEEE Access. 6490–6512.</p>
+
+                            <p>Sarwar, M. I. et al. (2023) Digital Transformation of Public Sector Governance With IT Service Management-A Pilot Study. <em>IEEE Access</em>. 6490–6512.</p>
+
                         </div>
+
                     </div>
 
                     <div class="activity-section">
+
                         <h4 class="activity-title">Activity:</h4>
+
                         <div class="activity-item">
+
                             <p>Lecturecast</p>
+
                             <p>Unit 2 Case Study: iTech Corporation</p>
+
                         </div>
+
                     </div>
+
                 </div>
 
                 <div class="unit">
+
                     <h3 class="unit-title">Unit 3: Information Technology Service Management Frameworks and Standards</h3>
 
                     <div class="reading-section">
+
                         <p class="reading-title">Required Reading:</p>
+
                         <div class="reading-list">
-                            <p>Weed-Schertzer, B. (2019) Delivering ITSM for Business Maturity: A Practical Framework. Bingley: Emerald Publishing Limited. Chapter 4.</p>
-                            <p>Isaychenko, D. & Demin, P. (2022) Metrics-based IT service management. London: The Stationery Office Ltd.</p>
+
+                            <p>Weed-Schertzer, B. (2019) <em>Delivering ITSM for Business Maturity: A Practical Framework</em>. Bingley: Emerald Publishing Limited. Chapter 4.</p>
+
+                            <p>Isaychenko, D. & Demin, P. (2022) <em>Metrics-based IT service management</em>. London: The Stationery Office Ltd.</p>
+
                             <p>Salehi, A. & Vazife, Z. (2019) The Effect of the Implementation of Information Security Management System (ISMS) and Information Technology Infrastructure Library (ITIL) on the Promotion of Information Systems and Information Technology Services Continues. 225–249.</p>
-                            <p>Kumbakara, N. (2008) Managed IT services: the role of IT standards. Information management & computer security. 336–359.</p>
+
+                            <p>Kumbakara, N. (2008) Managed IT services: the role of IT standards. <em>Information management & computer security</em>. 336–359.</p>
+
                         </div>
+
                     </div>
 
                     <div class="seminar-preparation">
+
                         <h5>🎓 Seminar</h5>
+
                         <p><strong>Title:</strong> Information Technology Service Management Frameworks and Standards</p>
+
                         <ul>
+
                             <li><strong>Seminar Question:</strong> How can organisations leverage ITIL and COBIT frameworks to enhance IT service management practices and align them with business objectives effectively?</li>
-                                <li>Familiarise yourself with the key components and principles of ITIL and COBIT frameworks, including their origins, evolutions, and best practices.</li>
-                                <li>Review case studies or real-world examples of organisations that have successfully implemented ITIL and COBIT frameworks to optimise ITSM practices.</li>
-                                <li>Prepare to participate in comparative analysis discussions, exploring the strengths and weaknesses of different ITSM frameworks and their applicability to diverse organisational contexts.</li>
-                                <li><strong>Seminar Tasks:</strong>
-                                    <ul style="margin: 5px 0; padding-left: 20px;">
-                                        <li>Considering the diverse range of IT Service Management (ITSM) frameworks available, such as ITIL, COBIT, and others, discuss the factors that organizations should consider when selecting a framework for implementation. How might organizational goals, industry regulations, and the complexity of IT infrastructure influence the choice of an ITSM framework? Provide examples to illustrate your points.</li>
-                                        <li>Regulatory compliance is a critical aspect of IT Service Management (ITSM), particularly in industries with stringent data privacy and security requirements. Discuss the challenges organizations may face when striving to achieve compliance with ITSM standards such as ISO/IEC 20000. How can organizations effectively address these challenges and ensure ongoing compliance with regulatory requirements while maintaining operational efficiency and service quality?</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+
+                            <li>Familiarise yourself with the key components and principles of ITIL and COBIT frameworks, including their origins, evolutions, and best practices.</li>
+
+                            <li>Review case studies or real-world examples of organisations that have successfully implemented ITIL and COBIT frameworks to optimise ITSM practices.</li>
+
+                            <li>Prepare to participate in comparative analysis discussions, exploring the strengths and weaknesses of different ITSM frameworks and their applicability to diverse organisational contexts.</li>
+
+                            <li><strong>Seminar Tasks:</strong>
+
+                                <ul style="margin: 5px 0; padding-left: 20px;">
+
+                                    <li>Considering the diverse range of IT Service Management (ITSM) frameworks available, such as ITIL, COBIT, and others, discuss the factors that organizations should consider when selecting a framework for implementation. How might organizational goals, industry regulations, and the complexity of IT infrastructure influence the choice of an ITSM framework? Provide examples to illustrate your points.</li>
+
+                                    <li>Regulatory compliance is a critical aspect of IT Service Management (ITSM), particularly in industries with stringent data privacy and security requirements. Discuss the challenges organizations may face when striving to achieve compliance with ITSM standards such as ISO/IEC 20000. How can organizations effectively address these challenges and ensure ongoing compliance with regulatory requirements while maintaining operational efficiency and service quality?</li>
+
+                                </ul>
+
+                            </li>
+
+                        </ul>
+
                     </div>
 
                     <div class="activity-section">
+
                         <h4 class="activity-title">Activity:</h4>
+
                         <div class="activity-item">
+
                             <div class="assessment-highlight">
-                                <div class="assessment-title">📊  Designing Content Management Databases</div>
+
+                                <div class="assessment-title">📊 Designing Content Management Databases</div>
+
                                 <div class="assessment-description">Comprehensive assignment on designing content management databases for ITSM frameworks</div>
-                                <a href="projects/Module 3/Assignment 1/DAbiodun_12696259 ITSM Assignment 1_Submission.pdf" target="_blank" class="assessment-link">View Assignment 1 Submission</a>
-                                <span class="grade">(Grade: Distinction)</span>
+
+                                <p><a href="projects/Module%203/Assignment%201/DAbiodun_12696259%20ITSM%20Assignment%201_Submission.pdf" target="_blank" class="assessment-link">View Assignment 1 Submission</a></p>
+
+                                <p class="grade">(Grade: Distinction)</p>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
 
                 <div class="unit">
+
                     <h3 class="unit-title">Unit 4: Information Technology Process Automation and DevOps</h3>
 
                     <div class="reading-section">
+
                         <p class="reading-title">Required Reading:</p>
+
                         <div class="reading-list">
-                            <p>Weed-Schertzer, B. (2019) Delivering ITSM for Business Maturity: A Practical Framework. Bingley: Emerald Publishing Limited. Appendix 1.</p>
-                            <p>Viegas, V. & Kuyuch O. (2022). IT Security Controls: A Guide to Corporate Standards and Frameworks.</p>
+
+                            <p>Weed-Schertzer, B. (2019) <em>Delivering ITSM for Business Maturity: A Practical Framework</em>. Bingley: Emerald Publishing Limited. Appendix 1.</p>
+
+                            <p>Viegas, V. & Kuyuch O. (2022). <em>IT Security Controls: A Guide to Corporate Standards and Frameworks</em>.</p>
+
                         </div>
+
                     </div>
 
                     <div class="activity-section">
+
                         <h4 class="activity-title">Activity:</h4>
+
                         <div class="activity-item">
+
                             <p>Discuss the challenges and best practices for transitioning new IT services into production.</p>
+
                         </div>
+
                     </div>
+
                 </div>
 
                 <div class="unit">
+
                     <h3 class="unit-title">Unit 5: Service Operation in ITSM</h3>
 
                     <div class="reading-section">
+
                         <p class="reading-title">Required Reading:</p>
+
                         <div class="reading-list">
-                            <p>Walker, R. (2022) IT Operations and Service Delivery. Cambridge: Cambridge University.</p>
+
+                            <p>Walker, R. (2022) <em>IT Operations and Service Delivery</em>. Cambridge: Cambridge University.</p>
+
                         </div>
+
                     </div>
 
                     <div class="seminar-preparation">
+
                         <h5>🎓 Seminar</h5>
+
                         <p><strong>Title:</strong> Future Trends in Information Technology Service Management</p>
+
                         <ul>
+
                             <li><strong>Seminar Question:</strong> How can organisations effectively leverage emerging technologies such as blockchain and AI-driven ITSM platforms to enhance service delivery and drive innovation in ITSM practices?</li>
-                                <li>Familiarise yourself with the concepts and applications of emerging technologies such as blockchain, edge computing, and quantum computing.</li>
-                                <li>Review case studies or real-world examples of organisations successfully implementing cloud computing and next-gen ITSM platforms to optimise service delivery and improve operational efficiency.</li>
-                                <li>Prepare to engage in discussions on the potential benefits, challenges, and implications of emerging technologies on ITSM practices.</li>
-                                <li><strong>Seminar Tasks:</strong> Complete either (task) 1 or (task) 2:
-                                    <ul style="margin: 5px 0; padding-left: 20px;">
-                                        <li>Develop a proposal for a capstone project, focusing on an ITSM-related topic of your choice. The proposal should include the following: Title and brief description of the project, Clear objectives and research questions, Proposed methodology for data collection and analysis, Expected outcomes and deliverables.</li>
-                                        <li>Develop a career path exploration outline in pursuing careers in ITSM focusing on one of the following: Roles and responsibilities in ITSM, such as IT Service Desk Analyst, IT Service Manager, ITSM Consultant, etc. Professional development opportunities, certifications, and networking strategies for career advancement in ITSM.</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+
+                            <li>Familiarise yourself with the concepts and applications of emerging technologies such as blockchain, edge computing, and quantum computing.</li>
+
+                            <li>Review case studies or real-world examples of organisations successfully implementing cloud computing and next-gen ITSM platforms to optimise service delivery and improve operational efficiency.</li>
+
+                            <li>Prepare to engage in discussions on the potential benefits, challenges, and implications of emerging technologies on ITSM practices.</li>
+
+                            <li><strong>Seminar Tasks:</strong> Complete either (task) 1 or (task) 2:
+
+                                <ul style="margin: 5px 0; padding-left: 20px;">
+
+                                    <li>Develop a proposal for a capstone project, focusing on an ITSM-related topic of your choice. The proposal should include the following: Title and brief description of the project, Clear objectives and research questions, Proposed methodology for data collection and analysis, Expected outcomes and deliverables.</li>
+
+                                    <li>Develop a career path exploration outline in pursuing careers in ITSM focusing on one of the following: Roles and responsibilities in ITSM, such as IT Service Desk Analyst, IT Service Manager, ITSM Consultant, etc. Professional development opportunities, certifications, and networking strategies for career advancement in ITSM.</li>
+
+                                </ul>
+
+                            </li>
+
+                        </ul>
+
                     </div>
 
                     <div class="activity-section">
+
                         <h4 class="activity-title">Activity:</h4>
+
                         <div class="activity-item">
+
                             <p>Service Operation activities and discussions</p>
+
                         </div>
+
                     </div>
+
                 </div>
 
-                                <div class="unit">
+                <div class="unit">
+
                     <h3 class="unit-title">Unit 6: Capstone and Project Presentations</h3>
 
                     <div class="reading-section">
+
                         <p class="reading-title">Required Reading:</p>
+
                         <div class="reading-list">
-                            <p>Gafni, R., Leiba, M. & Sherman, S. (2023) Let's get ready for work – employability skills development in an IS capstone project. Journal of information technology education. 235–261.</p>
-                            <p>Succi, G. (2022) Skills Development Through Agile Capstone Projects. Communications in Computer and Information Science. Switzerland: Springer International Publishing AG.</p>
+
+                            <p>Gafni, R., Leiba, M. & Sherman, S. (2023) Let's get ready for work – employability skills development in an IS capstone project. <em>Journal of information technology education</em>. 235–261.</p>
+
+                            <p>Succi, G. (2022) <em>Skills Development Through Agile Capstone Projects</em>. Communications in Computer and Information Science. Switzerland: Springer International Publishing AG.</p>
+
                         </div>
+
                     </div>
 
                     <div class="activity-section">
+
                         <h4 class="activity-title">Activity:</h4>
+
                         <div class="activity-item">
+
                             <div class="project-highlight">
+
                                 <div class="project-title">🗄️ Schema Attributes</div>
+
                                 <div class="project-description">Detailed schema attributes for CMDB implementation</div>
-                                <a href="projects/Module%203/Assignment%202/DAbiodun_12696259%20CMDB_Schema_Attributes.xlsm" target="_blank" class="project-link">Download Schema Attributes (Excel)</a>
+
+                                <p><a href="projects/Module%203/Assignment%202/DAbiodun_12696259%20CMDB_Schema_Attributes.xlsm" target="_blank" class="project-link">Download Schema Attributes (Excel)</a></p>
+
                             </div>
+
                             <div class="assessment-highlight">
+
                                 <div class="assessment-title">🏗️ Implementation and Demonstration of CMDB</div>
+
                                 <div class="assessment-description">Comprehensive implementation and demonstration of Configuration Management Database</div>
-                                <a href="projects/Module%203/Assignment%202/DAbiodun_12696259_Implementation%20and%20Demonstration%20of%20CMDB.pdf" target="_blank" class="assessment-link">View CMDB Implementation</a>
-                                <span class="grade">(Grade: Distinction 78%)</span>
+
+                                <p><a href="projects/Module%203/Assignment%202/DAbiodun_12696259_Implementation%20and%20Demonstration%20of%20CMDB.pdf" target="_blank" class="assessment-link">View CMDB Implementation</a></p>
+
+                                <p class="grade">(Grade: Distinction 78%)</p>
+
                                 <div class="summary">
+
                                     <p><strong>Knowledge and Understanding of CMDB Implementation:</strong> The student has brilliantly demonstrated the appropriate uses of tools and technologies such as ServiceNow to design and implement the CMDB prototype. With the support of ServiceNow, the student has produced appropriate data schema and sample data which represented configurations, assets, dependencies and relationships. The implemented CMDB has appropriate options to support CRUD, which has been demonstrated through the video demonstration. Overall, the student has demonstrated excellent knowledge and understanding of the CMDB implementation.</p>
-                                    </blockquote>
-                        <p class="comment-source">— Module Tutor Feedback, University of Essex Online</p>
-                        <p style="color:#b8c5e0;font-size:0.9em;margin-top:10px;">
+
                                 </div>
+
+                                <p class="comment-source">— Module Tutor Feedback, University of Essex Online</p>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
 
             </div>
 
             <!-- Navigation Links -->
+
             <div class="bottom-navigation">
+
                 <a href="index.html" class="nav-link">Back to Home</a>
+
                 <a href="university-of-essex.html" class="nav-link">University of Essex</a>
+
                 <a href="Module1.html" class="nav-link">Module 1</a>
+
                 <a href="Module2.html" class="nav-link">Module 2</a>
+
                 <a href="Module4.html" class="nav-link">Module 4</a>
+
                 <a href="Module5.html" class="nav-link">Module 5</a>
+
                 <a href="Module6.html" class="nav-link">Module 6</a>
+
                 <a href="Module7.html" class="nav-link">Module 7</a>
+
                 <a href="links.html" class="nav-link">All Links</a>
+
             </div>
+
         </div>
+
     </div>
+
 </body>
 
 </html>
+
