@@ -26,7 +26,7 @@
 
   </script>
 
-  <title>Charts Worksheet and Analysis - Module 7 - David Abiodun</title>
+  <title>Hypothesis Testing and Summary Measures Worksheet - Module 7 - David Abiodun</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -396,38 +396,6 @@
 
     }
 
-    .chart-image {
-
-      max-width: 100%;
-
-      height: auto;
-
-      border-radius: 8px;
-
-      margin: 20px 0;
-
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-
-      display: block;
-
-    }
-
-    .image-caption {
-
-      color: #a8b8d8;
-
-      font-size: 0.85em;
-
-      font-style: italic;
-
-      text-align: center;
-
-      margin-top: 8px;
-
-      margin-bottom: 25px;
-
-    }
-
     @media (max-width: 768px) {
 
       .header h1 { font-size: 2.2em; }
@@ -464,7 +432,7 @@
 
       <div class="header">
 
-        <h1>Charts Worksheet and Analysis</h1>
+        <h1>Hypothesis Testing and Summary Measures Worksheet</h1>
 
       </div>
 
@@ -478,21 +446,11 @@
 
             <p class="activity-text">
 
-              Charts and Graphical Analysis Worksheet<br><br>
-
-              This worksheet demonstrates the use of graphical techniques, including percentage frequency bar charts and relative frequency histograms, to visualise and interpret both categorical and numerical datasets in Excel. The charts provide clear comparisons between groups and support the identification of key patterns within the data.
+              Review the additional notes on Inference and then complete the Hypothesis Testing and Summary Measures worksheet in Excel or LibreOffice. The completed worksheets from units 7 and 8 should be included in your e-Portfolio. You will need to provide your interpretation of the results, based on the questions asked and from your analysis of the data. You can complete the worksheets before or after this week's workshop.
 
             </p>
 
-            <p><a href="Charts and Graphical Analysis Worksheet.docx" class="project-link" target="_blank" onclick="openInWordWeb(event, this.href)">📄 View Charts and Graphical Analysis Worksheet in Word Web</a></p>
-
-            <p><strong>Excel Worksheets:</strong></p>
-
-            <ul style="margin-top:10px; padding-left:20px; line-height:1.8; color: #b8c5e0;">
-
-              <li style="margin-bottom:8px;"><a href="../SSheets/U8/Charts and Graphical Analysis Worksheet.xlsx" class="project-link" target="_blank" onclick="openInExcelWeb(event, this.href)">📊 Charts and Graphical Analysis Worksheet (Excel)</a></li>
-
-            </ul>
+            <p><a href="Interpretation_E-Portfolio.docx" class="project-link" target="_blank" onclick="openInWordWeb(event, this.href)">📄 View Assignment Document in Word Web (Interpretation_E-Portfolio.docx)</a></p>
 
             <script>
 
@@ -516,33 +474,7 @@
 
                   // To use Word Web with local files, upload to OneDrive/SharePoint and use the shareable link
 
-                  // Example: Replace filePath with: 'https://yourdomain.sharepoint.com/.../Charts and Graphical Analysis Worksheet.docx'
-
-                }
-
-              }
-
-              function openInExcelWeb(event, filePath) {
-
-                // Check if file is accessible via HTTP/HTTPS (hosted online)
-
-                if (filePath.startsWith('http://') || filePath.startsWith('https://')) {
-
-                  event.preventDefault();
-
-                  // Use Office Online viewer for Excel files
-
-                  window.open('https://view.officeapps.live.com/op/view.aspx?src=' + encodeURIComponent(filePath), '_blank');
-
-                } else {
-
-                  // For local files, try to open in Excel Web if available
-
-                  // Otherwise, it will download/open in local Excel
-
-                  // To use Excel Web with local files, upload to OneDrive/SharePoint and use the shareable link
-
-                  // Example: Replace filePath with: 'https://yourdomain.sharepoint.com/.../Charts and Graphical Analysis Worksheet.xlsx'
+                  // Example: Replace filePath with: 'https://yourdomain.sharepoint.com/.../Interpretation_E-Portfolio.docx'
 
                 }
 
@@ -560,45 +492,49 @@
 
           <div class="interpretation-content">
 
-            <h4 class="interpretation-title">Brand Preferences by Demographic Area (Example 8.1D)</h4>
+            <h4 class="interpretation-title">Summary Measures (Example 7.1.1)</h4>
 
-            <p>Percentage frequency bar charts were used to visualise the distribution of brand preferences across demographic areas. By expressing frequencies as percentages, the charts enable direct comparison between groups and clearly illustrate differences in relative preference for each brand.</p>
+            <p>The descriptive statistics for Diets A and B provide an initial comparison of their effectiveness before applying inferential tests. Diet A produced a higher mean weight loss (5.341 kg) than Diet B (3.710 kg), with slightly lower variability, suggesting both greater and more consistent outcomes. These measures highlight early performance differences and demonstrate how summary statistics offer quick, interpretable insights that support further hypothesis testing and informed decision-making.</p>
 
-            <p><a href="https://1drv.ms/x/c/6E77F8217BA0847E/IQC_25zLntgFSYEvlStJBbx8Aelv27zN8XlrarniU2oXUjg?e=EnN5W8" class="project-link" target="_blank" onclick="openInExcelWeb(event, this.href)">📊 View Example 8.1D Excel Worksheet</a></p>
+          </div>
 
-            <h4 class="interpretation-title">Comparison of Brand Preferences Between Areas (Example 8.2D)</h4>
+          <div class="interpretation-content">
 
-            <p>A percentage frequency clustered column chart was constructed to compare breakfast cereal brand preferences between Area 1 and Area 2. The chart displays the relative proportions of respondents selecting Brand A, Brand B, or other brands in each demographic area, enabling direct visual comparison between the two groups.</p>
+            <h4 class="interpretation-title">Quartiles and IQR (Example 7.1.2)</h4>
 
-            <p>The graph shows that, while other brands remain the most popular choice in both areas, the percentages for Brands A and B are higher in Area 2 than in Area 1. Conversely, the proportion of respondents preferring other brands is lower in Area 2. This suggests a stronger preference for the named brands in Area 2 compared with Area 1.</p>
+            <p>Examining medians and quartiles adds depth to the descriptive comparison of the two diets. Diet A shows a higher median weight loss (5.642 kg) and a wider IQR (3.285 kg), indicating greater effectiveness and greater variability in outcomes among participants. Diet B's median (3.745 kg) and much smaller IQR (0.976 kg) reflect lower but more tightly clustered results. Overall, the quartile analysis reinforces that Diet A delivers higher weight-loss outcomes, while Diet B produces more consistent but less substantial effects.</p>
 
-            <p><a href="../SSheets/U8/Exe8.2D.xlsx" class="project-link" target="_blank" onclick="openInExcelWeb(event, this.href)">📊 View Example 8.2D Excel Worksheet</a></p>
+          </div>
 
-            <h4 class="interpretation-title">Diet A</h4>
+          <div class="interpretation-content">
 
-            <p>The relative frequency histogram for Diet A is unimodal and approximately symmetric, with most observations concentrated in the central classes. This suggests that weight loss outcomes under Diet A are relatively consistent across individuals, with few extreme values.</p>
+            <h4 class="interpretation-title">Brand Preference Analysis (Example 7.1.3)</h4>
 
-            <p><a href="https://1drv.ms/x/c/6E77F8217BA0847E/IQCmyzHvIY34R52-Soa14E-nAZce63DXpv6IPlI8vvb7v98?e=KfPcjo" class="project-link" target="_blank" onclick="openInExcelWeb(event, this.href)">📊 View Diet A Excel Worksheet</a></p>
+            <p>The brand-preference comparison highlights how categorical data reveal behavioural patterns through frequencies and proportions. In both areas, "Other" brands dominate consumer choices (60% in Area 1; 57.14% in Area 2), indicating limited loyalty to the two main brands. Brand B is more popular in Area 2 (28.57%) than in Area 1 (24.29%), while Brand A remains the least preferred in both regions. These patterns show regional differences in brand presence and reinforce the value of categorical analysis for understanding market segmentation and informing targeted marketing strategies.</p>
 
-            <h4 class="interpretation-title">Diet B</h4>
+          </div>
 
-            <p>The relative frequency histogram for Diet B is unimodal but exhibits a broader spread of weight-loss outcomes than that of Diet A. This indicates greater variability in individual responses to Diet B, with weight loss distributed more broadly across the class intervals.</p>
+          <div class="interpretation-content">
 
-            <p><a href="../SSheets/U8/Diet B.xlsx" class="project-link" target="_blank" onclick="openInExcelWeb(event, this.href)">📊 View Diet B Excel Worksheet</a></p>
+            <h4 class="interpretation-title">One-Tailed Test (Exercise 7.2.2)</h4>
 
-            <h4 class="interpretation-title">Comparison Interpretation — Diet A vs Diet B</h4>
+            <p>A one-tailed test was used to evaluate whether Filter Agent 1 achieved lower impurity levels than Agent 2. The sample means supported this direction, and converting the earlier two-tailed p-value (0.018) gives a one-tailed value of approximately 0.009, which is well below the 5% threshold. This provides strong statistical evidence that Filter Agent 1 is more effective. Using a directional test clarifies the conclusion by focusing specifically on whether one agent outperforms the other.</p>
 
-            <p>Comparing the two histograms, Diet A shows a more concentrated, approximately symmetric distribution of weight loss, suggesting more consistent outcomes across individuals. In contrast, Diet B shows greater variability, indicating that individual responses to Diet B are less uniform.</p>
+          </div>
 
-            <h4 class="interpretation-title">Additional Reflection: Statistical Inference and Decision-Making</h4>
+          <div class="interpretation-content">
 
-            <p>Alongside descriptive visualisation, this unit also reinforced the logic of statistical inference and hypothesis testing. The inference worksheet clarified the structured process of stating hypotheses, defining significance levels, computing test statistics, and making probabilistic decisions rather than claiming proof. A key insight was that statistical conclusions are always subject to uncertainty, with the risk of Type I and Type II errors forming an inherent part of analytical decision-making.</p>
+            <h4 class="interpretation-title">Independent Samples t-Test (Example 7.2.5)</h4>
 
-            <p>This learning complements the charts worksheet by highlighting the boundary between description and inference. While percentage frequency charts and histograms effectively summarise patterns in the data, inferential tests are required to assess whether observed differences are likely to reflect genuine population effects rather than sampling variation.</p>
+            <p>The independent-samples t-test showed no significant difference in variance between the diets (p = 0.540), allowing the equal-variance approach. Diet A achieved a higher mean weight loss (5.34 kg) than Diet B (3.71 kg), and this difference was statistically significant, t(98) = 3.07, p = 0.0028. These results provide strong evidence that Diet A is more effective, resulting in an average additional loss of approximately 1.63 kg.</p>
 
-            <p>The emphasis on defining hypotheses a priori also reinforced the ethical importance of avoiding data-driven test selection, particularly when presenting results that may influence decisions or interpretations.</p>
+          </div>
 
-            <p>These visual comparisons are descriptive and exploratory, and would need to be supported by inferential testing to determine whether observed differences are statistically significant.</p>
+          <div class="interpretation-content">
+
+            <h4 class="interpretation-title">Independent Samples t-Test: Male vs Female Income (Exercise 7.2.3)</h4>
+
+            <p>The independent samples t-test assessed whether male cardholders earn more than female cardholders. The F-test showed no significant difference in variance (p = 0.218), supporting the equal-variance assumption. Males had a higher mean income (£52.91k) than females (£44.28k), and the one-tailed p-value (0.0007) indicated strong statistical evidence of this difference. The mean gap of approximately £8.63k reflects a substantial income disparity between the groups.</p>
 
           </div>
 
