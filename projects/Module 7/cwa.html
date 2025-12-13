@@ -486,14 +486,6 @@
 
             <p><a href="Charts and Graphical Analysis Worksheet.docx" class="project-link" target="_blank" onclick="openInWordWeb(event, this.href)">📄 View Charts and Graphical Analysis Worksheet in Word Web</a></p>
 
-            <p><strong>Excel Worksheets:</strong></p>
-
-            <ul style="margin-top:10px; padding-left:20px; line-height:1.8; color: #b8c5e0;">
-
-              <li style="margin-bottom:8px;"><a href="../SSheets/U8/Charts and Graphical Analysis Worksheet.xlsx" class="project-link" target="_blank" onclick="openInExcelWeb(event, this.href)">📊 Charts and Graphical Analysis Worksheet (Excel)</a></li>
-
-            </ul>
-
             <script>
 
               function openInWordWeb(event, filePath) {
@@ -522,32 +514,6 @@
 
               }
 
-              function openInExcelWeb(event, filePath) {
-
-                // Check if file is accessible via HTTP/HTTPS (hosted online)
-
-                if (filePath.startsWith('http://') || filePath.startsWith('https://')) {
-
-                  event.preventDefault();
-
-                  // Use Office Online viewer for Excel files
-
-                  window.open('https://view.officeapps.live.com/op/view.aspx?src=' + encodeURIComponent(filePath), '_blank');
-
-                } else {
-
-                  // For local files, try to open in Excel Web if available
-
-                  // Otherwise, it will download/open in local Excel
-
-                  // To use Excel Web with local files, upload to OneDrive/SharePoint and use the shareable link
-
-                  // Example: Replace filePath with: 'https://yourdomain.sharepoint.com/.../Charts and Graphical Analysis Worksheet.xlsx'
-
-                }
-
-              }
-
             </script>
 
           </div>
@@ -564,27 +530,19 @@
 
             <p>Percentage frequency bar charts were used to visualise the distribution of brand preferences across demographic areas. By expressing frequencies as percentages, the charts enable direct comparison between groups and clearly illustrate differences in relative preference for each brand.</p>
 
-            <p><a href="https://1drv.ms/x/c/6E77F8217BA0847E/IQC_25zLntgFSYEvlStJBbx8Aelv27zN8XlrarniU2oXUjg?e=EnN5W8" class="project-link" target="_blank" onclick="openInExcelWeb(event, this.href)">📊 View Example 8.1D Excel Worksheet</a></p>
-
             <h4 class="interpretation-title">Comparison of Brand Preferences Between Areas (Example 8.2D)</h4>
 
             <p>A percentage frequency clustered column chart was constructed to compare breakfast cereal brand preferences between Area 1 and Area 2. The chart displays the relative proportions of respondents selecting Brand A, Brand B, or other brands in each demographic area, enabling direct visual comparison between the two groups.</p>
 
             <p>The graph shows that, while other brands remain the most popular choice in both areas, the percentages for Brands A and B are higher in Area 2 than in Area 1. Conversely, the proportion of respondents preferring other brands is lower in Area 2. This suggests a stronger preference for the named brands in Area 2 compared with Area 1.</p>
 
-            <p><a href="../SSheets/U8/Exe8.2D.xlsx" class="project-link" target="_blank" onclick="openInExcelWeb(event, this.href)">📊 View Example 8.2D Excel Worksheet</a></p>
-
             <h4 class="interpretation-title">Diet A</h4>
 
             <p>The relative frequency histogram for Diet A is unimodal and approximately symmetric, with most observations concentrated in the central classes. This suggests that weight loss outcomes under Diet A are relatively consistent across individuals, with few extreme values.</p>
 
-            <p><a href="https://1drv.ms/x/c/6E77F8217BA0847E/IQCmyzHvIY34R52-Soa14E-nAZce63DXpv6IPlI8vvb7v98?e=KfPcjo" class="project-link" target="_blank" onclick="openInExcelWeb(event, this.href)">📊 View Diet A Excel Worksheet</a></p>
-
             <h4 class="interpretation-title">Diet B</h4>
 
             <p>The relative frequency histogram for Diet B is unimodal but exhibits a broader spread of weight-loss outcomes than that of Diet A. This indicates greater variability in individual responses to Diet B, with weight loss distributed more broadly across the class intervals.</p>
-
-            <p><a href="../SSheets/U8/Diet B.xlsx" class="project-link" target="_blank" onclick="openInExcelWeb(event, this.href)">📊 View Diet B Excel Worksheet</a></p>
 
             <h4 class="interpretation-title">Comparison Interpretation — Diet A vs Diet B</h4>
 
