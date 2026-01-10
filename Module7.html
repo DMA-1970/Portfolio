@@ -2090,7 +2090,13 @@
 
             <div class="activity-item">
 
-              <p class="reflection"><strong>Reflection:</strong> [Insert your Unit 10 reflection.]</p>
+              <p class="reflection"><strong>Summary:</strong> This unit reinforced that effective research writing is structured argumentation, not volume: clear problem framing, defensible methodology, transparent evidence, and explicit limitations, supported by rigorous research integrity and accurate referencing.</p>
+
+              <p class="reflection"><strong>Reflection:</strong> Creating the 15-minute narrated proposal forced me to prioritise what mattered most for assessment—contribution, gap, method, evaluation, ethics, and timeline—while cutting repetition. I initially felt frustrated by the constraint, but it sharpened my judgement: concise delivery can be more rigorous than detailed narration if the logic remains clear and auditable.</p>
+
+              <p class="reflection"><strong>Application:</strong> I applied these principles by tightening repeated regulator and platform references, removing redundant explanations, and converting month-by-month narration into phase-based planning while maintaining the research rationale. I also ensured the transcript remained academically defensible by aligning aims, methods, evaluation criteria, and limitations.</p>
+
+              <p class="reflection"><strong>Forward Planning:</strong> I will adopt a "draft then reduce" workflow and maintain an audit mindset: every claim evidenced, every limitation stated, and every conclusion bounded by the evaluation method. For the capstone, I will strengthen reproducibility through clearer documentation of assumptions, artefact logic, and analysis outputs.</p>
 
             </div>
 
@@ -2287,3 +2293,47 @@
   <script>
     // Scroll position restoration
     (function() {
+      const SCROLL_POSITION_KEY = 'module7_scroll_position';
+      
+      // Save scroll position before page unload
+      window.addEventListener('beforeunload', function() {
+        sessionStorage.setItem(SCROLL_POSITION_KEY, window.pageYOffset || document.documentElement.scrollTop);
+      });
+      
+      // Restore scroll position on page load
+      window.addEventListener('load', function() {
+        const savedPosition = sessionStorage.getItem(SCROLL_POSITION_KEY);
+        if (savedPosition !== null) {
+          // Use requestAnimationFrame for smooth restoration
+          requestAnimationFrame(function() {
+            window.scrollTo({
+              top: parseInt(savedPosition, 10),
+              behavior: 'auto' // Use 'smooth' if you prefer animated scrolling
+            });
+            // Clear the saved position after restoring
+            sessionStorage.removeItem(SCROLL_POSITION_KEY);
+          });
+        }
+      });
+      
+      // Also handle browser back/forward navigation
+      window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+          // Page was loaded from cache (back/forward navigation)
+          const savedPosition = sessionStorage.getItem(SCROLL_POSITION_KEY);
+          if (savedPosition !== null) {
+            requestAnimationFrame(function() {
+              window.scrollTo({
+                top: parseInt(savedPosition, 10),
+                behavior: 'auto'
+              });
+            });
+          }
+        }
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
