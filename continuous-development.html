@@ -22,7 +22,7 @@
             position: relative;
         }
 
-        /* Blurred background with dark overlay - matching homepage */
+        /* Blurred background with dark overlay */
         body::before {
             content: '';
             position: fixed;
@@ -48,7 +48,7 @@
             z-index: -1;
         }
 
-        /* Transparent overlay container - matching homepage */
+        /* Transparent overlay container */
         .overlay {
             position: fixed;
             top: 0;
@@ -85,7 +85,7 @@
             }
         }
 
-        /* Header - matching homepage */
+        /* Header */
         .header {
             text-align: center;
             margin-bottom: 40px;
@@ -103,7 +103,7 @@
             letter-spacing: -1px;
         }
 
-        /* Content section - matching homepage bio style */
+        /* Content section */
         .content-section {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
@@ -152,7 +152,11 @@
             margin-bottom: 0;
         }
 
-        /* Back link - matching homepage style */
+        .certification-list li.ongoing {
+            color: #ff6b35;
+        }
+
+        /* Back link */
         .back-link {
             display: flex;
             justify-content: center;
@@ -221,13 +225,13 @@
             <!-- Certifications Section -->
             <div class="content-section">
                 <ul class="certification-list">
-                    <li>2026 Microsoft Cybersecurity Architect </li>
+                    <li class="ongoing">Ongoing MSc Enterprise IT Management</li>
+                    <li>2026 Microsoft Cybersecurity Architect</li>
                     <li>2024 Microsoft 365 Certified: Fundamentals</li>
                     <li>2024 Microsoft Certified: Information Protection and Compliance Administrator Associate</li>
                     <li>2024 Microsoft Certified: Azure Fundamentals</li>
                     <li>2024 ITIL 4 ® Foundation</li>
-                    <li>Ongoing MSc Enterprise IT Management</li>
-                     <li>2019 Citrix Virtual Apps and Desktops 7 Administration On-Premise and in Citrix Cloud</li>
+                    <li>2019 Citrix Virtual Apps and Desktops 7 Administration On-Premise and in Citrix Cloud</li>
                 </ul>
             </div>
 
