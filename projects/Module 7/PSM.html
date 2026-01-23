@@ -424,6 +424,50 @@
 
     }
 
+    .skills-matrix { margin: 2rem 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+    .skills-matrix .competency-group { margin: 2.5rem 0; }
+
+    .skills-matrix h2 { font-size: 1.8rem; margin: 1.75rem 0 1rem; font-weight: 700; color: #ffffff; font-family: 'Montserrat', sans-serif; }
+
+    .skills-matrix h3 { font-size: 1.15rem; margin: 1.25rem 0 0.75rem; font-weight: 650; color: #e0e7ff; font-family: 'Montserrat', sans-serif; }
+
+    .skills-matrix .table-wrap { overflow-x: auto; border-radius: 10px; margin: 1rem 0; }
+
+    .skills-table { width: 100%; border-collapse: collapse; min-width: 760px; background: rgba(255, 255, 255, 0.05); }
+
+    .skills-table thead th {
+
+      text-align: left; font-weight: 700; padding: 14px 16px;
+
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2); color: #ffffff; background: rgba(255, 255, 255, 0.08);
+
+    }
+
+    .skills-table tbody td {
+
+      vertical-align: top; padding: 14px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: #b8c5e0;
+
+    }
+
+    .skills-table tbody tr:hover { background: rgba(255, 255, 255, 0.08); }
+
+    .skills-table .level { white-space: nowrap; font-weight: 600; color: #93c5fd; }
+
+    .evidence-link { color: #93c5fd; text-decoration: underline; cursor: pointer; font-weight: 600; }
+
+    .evidence-link:hover { color: #60a5fa; }
+
+    details.evidence { display: inline; }
+
+    details.evidence summary { list-style: none; display: inline; cursor: pointer; }
+
+    details.evidence summary::-webkit-details-marker { display: none; }
+
+    .evidence-body { margin-top: 10px; padding: 12px 14px; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; background: rgba(255, 255, 255, 0.05); }
+
+    .evidence-body p { margin: 0; line-height: 1.8; color: #b8c5e0; text-align: justify; }
+
   </style>
 
 </head>
@@ -450,40 +494,439 @@
 
           <p>This page displays the Professional Skills Matrix, extracted from the Excel workbook and presented in a readable format. The matrix tracks professional skills development across various competencies.</p>
 
-          <p><a href="../../../../Masters/Module%207/Professional%20Skills%20Matrix.xlsx" class="project-link" target="_blank">📊 View Original Excel File</a></p>
+          <p><a href="https://dma-1970.github.io/Masters/Module%207/Professional%20Skills%20Matrix.xlsx" class="project-link" target="_blank" onclick="openInExcelWeb(event, this.href)">📊 View Professional Skills Matrix (Excel)</a></p>
+
+          <script>
+
+            function openInExcelWeb(event, filePath) {
+
+              // Check if file is accessible via HTTP/HTTPS (hosted online)
+
+              if (filePath.startsWith('http://') || filePath.startsWith('https://')) {
+
+                event.preventDefault();
+
+                // Use Office Online viewer for online files
+
+                window.open('https://view.officeapps.live.com/op/view.aspx?src=' + encodeURIComponent(filePath), '_blank');
+
+              } else {
+
+                // For local files, try to open in Excel Web if available
+
+                // Otherwise, it will download/open in local Excel
+
+                // To use Excel Web with local files, upload to OneDrive/SharePoint and use the shareable link
+
+                // Example: Replace filePath with: 'https://yourdomain.sharepoint.com/.../Professional Skills Matrix.xlsx'
+
+              }
+
+            }
+
+          </script>
 
         </div>
 
-        <!-- Skills sections will be populated here -->
-        <!-- Copy content from Excel and structure it using the following format: -->
+        <section class="skills-matrix">
 
-        <div class="skills-section">
+          <div class="competency-group">
+            <h2>Professional</h2>
 
-          <h4 class="skill-category">Category Name</h4>
+            <h3>Literacy, Communication, Language Skills</h3>
+            <div class="table-wrap">
+              <table class="skills-table">
+                <thead>
+                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Express information effectively to technical and non-technical audiences</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Communicate complex technical and governance topics clearly to both technical and non-technical stakeholders. This capability has been formally strengthened through MSc modules, particularly Research Methods and Professional Practice, where I applied the PEER framework (Point, Evidence, Explanation, Reflection) to structure arguments. I now translate subjects such as Zero Trust, IAM, DLP, SIEM, and AI governance into business risk language for executive and compliance audiences, ensuring alignment with regulatory and organisational objectives.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Create documents to aid your communication (reports, diagrams, legal descriptions, plans, manuals and charts)</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Produce MSc-level academic and professional documentation, including research reports, governance frameworks, architecture diagrams, CMDB designs, and executive presentations. This capability has been developed through assessed coursework across modules such as Security and Risk Management, Cloud Operations and Management, and Enterprise IT Project Management, where I consistently applied structured methodologies, critical analysis, and formal referencing (achieving distinction-level grades).</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-          <div class="skill-item">
+            <h3>Commercial Awareness</h3>
+            <div class="table-wrap">
+              <table class="skills-table">
+                <thead>
+                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Keep current with tools of the industry, as well as emerging technology</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Maintain current awareness of emerging technologies including AI governance, cloud compliance tooling, DevSecOps, FinOps, and regulatory automation. This capability has been academically strengthened through the Security and Risk Management and Cloud Operations and Management modules, where I critically evaluated modern security tooling, cloud-native governance controls, and automation frameworks. Coursework required analysis of evolving threat landscapes and regulatory technology trends, ensuring continuous alignment between industry developments and academic practice.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Seek opportunites to improve and share knowledge of tools and technoology that may improve productivity</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Actively share knowledge through professional reflection and academic dissemination developed during MSc modules, particularly Research Methods and Professional Practice. Seminar presentations and assessed reflections strengthened my ability to communicate technical insight clearly. This is reinforced by structured peer engagement activities embedded within the programme, supporting collaborative learning and professional knowledge exchange.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Participate in scientific and professional organisations</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Engage with professional computing communities as part of ongoing professional development, informed by reflective practice introduced in Research Methods and Professional Practice. The module emphasised structured CPD planning and professional body engagement aligned to BCS guidelines, reinforcing the importance of continuous learning beyond formal study. I am a member of ISACA and BCS, I also hold professional Microsoft and ITIL Certification.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Emphasise quality, customer satisfaction and fair application of policies.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Apply service quality and governance principles developed through the Information Technology Service Management (ITSM) module. Coursework focused on ITIL practices, continual service improvement, and stakeholder-focused service delivery. These frameworks now inform how I approach service optimisation, regulatory compliance, and customer assurance.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Demonstrate familiriaty with codes of conduct for the Computing field.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Apply professional and ethical frameworks studied in Launching into Enterprise IT Management and Security and Risk Management. Academic case studies required evaluation against BCS and ACM codes of conduct, reinforcing ethical decision-making, accountability, and governance responsibilities within regulated environments.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-            <div class="skill-name">Skill Name</div>
-
-            <div class="skill-description">Description of the skill and how it has been developed or demonstrated.</div>
-
-            <div class="skill-level">Level: [Beginner/Intermediate/Advanced/Expert]</div>
+            <h3>Subject understanding, research, critical thinking, time management</h3>
+            <div class="table-wrap">
+              <table class="skills-table">
+                <thead>
+                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Critically analyse complex ideas in concepts in the field of Computer Science</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Demonstrate advanced critical analysis developed through Security and Risk Management, Cloud Operations and Management, and Research Methods and Professional Practice, where I evaluated cloud architectures, governance frameworks, and quantitative risk models using academic literature. This academic foundation is reinforced in my professional role as an Enterprise Technology Manager, where I assess enterprise security postures, multi-cloud designs, and regulatory control frameworks. Distinction-level academic performance combined with real-world architectural decision-making evidences expert analytical capability.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Recognise inconsistencies and gaps in information, and search for additional information when needed…</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Developed through research appraisal activities in Research Methods and Professional Practice and data validation exercises in Into Data Science, where I critically evaluated sources and identified methodological weaknesses. Professionally, I apply these skills during incident investigations, audits, and control reviews, performing root cause analysis and challenging assumptions in risk models, architecture designs, and compliance reports.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Take responsibility for learning.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Demonstrated sustained independent learning throughout the MSc, including proactively developing skills in Python, data analysis, cloud governance, and cybersecurity architecture. This is evidenced by distinction-level performance across modules, completion of structured assessments, and continuous improvement through tutor feedback and reflective practice.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Proactively manage time and workload.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Strengthened through the Enterprise IT Project Management module, where I applied structured planning (WBS, scheduling, risk controls) to deliver assessed outputs on time. I now apply the same discipline to balance full-time leadership responsibilities with MSc deliverables, ensuring quality and consistency under time constraints.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
           </div>
 
-          <!-- Add more skill items as needed -->
+          <div class="competency-group">
+            <h2>Legal and Ethical</h2>
 
-        </div>
+            <h3>Ethical Awareness</h3>
+            <div class="table-wrap">
+              <table class="skills-table">
+                <thead>
+                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Recognise ethical and social responsibility of computing professional.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Applied ethical reasoning across Security and Risk Management and Research Methods and Professional Practice, including governance implications of AI, privacy, and security controls. This supports responsible decision-making in regulated environments and aligns technical controls with accountability expectations.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Make value judgements in designing and using computer based systems.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Demonstrate sound judgement when selecting cloud security and compliance approaches, balancing risk, usability, and regulatory obligations. This is informed by MSc coursework and professional practice in enterprise technology governance and operational resilience.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Understand and evaluate social impact of professional decisions.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Evaluate the downstream impact of security and governance decisions on users, operational teams, and stakeholders, including privacy implications and fairness. This is reinforced through reflective practice and policy-aware design approaches developed during the MSc.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-        <!-- Add more skill categories as needed -->
+          </div>
 
-      </div>
+          <div class="competency-group">
+            <h2>Social (inc. Teamwork)</h2>
 
-    </div>
+            <h3>Cultural Awareness</h3>
+            <div class="table-wrap">
+              <table class="skills-table">
+                <thead>
+                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Communicate effectively across cultural and professional boundaries</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Demonstrated through cross-functional and stakeholder communication in both academic settings (seminars, assessed discussions) and professional practice, ensuring clarity and alignment across technical, governance, and business perspectives.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-  </div>
+            <h3>Teamwork, Leadership and Resilience, Time Management</h3>
+            <div class="table-wrap">
+              <table class="skills-table">
+                <thead>
+                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Work effectively as part of a team.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Exercised team collaboration through peer engagement and seminar activities within the MSc, and through enterprise delivery responsibilities professionally, ensuring shared outcomes, clear communication, and coordinated execution.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Demonstrate leadership and resilience under pressure.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Strengthened via project-based modules and professional responsibilities requiring delivery under constraints, risk-based prioritisation, and sustained performance during complex technology and compliance initiatives.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-</body>
+            <h3>Creativity, Entrepreneurial, Problem solving, Initiative, Decision Making</h3>
+            <div class="table-wrap">
+              <table class="skills-table">
+                <thead>
+                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Apply creativity and problem solving to complex challenges.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Demonstrated through the design and evaluation of governance and security artefacts (e.g., CMDB design, multi-cloud controls, risk modelling) requiring original synthesis, structured reasoning, and defensible decision-making.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-</html>
+          </div>
 
+          <div class="competency-group">
+            <h2>Technical (Data Science)</h2>
+
+            <h3>IT and Digital, Numeracy</h3>
+            <div class="table-wrap">
+              <table class="skills-table">
+                <thead>
+                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Use digital tools to acquire, manage, analyse and present data.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Developed through Into Data Science and subsequent applied work using Python and analytics workflows to clean, model, and interpret datasets. Outputs were translated into defensible narratives supported by visualisations and structured reporting.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Apply numeracy and quantitative reasoning to problem solving.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Demonstrated through quantitative modelling and statistical analysis tasks in assessed work, including interpretation of results and evaluation of limitations, aligned to MSc-level expectations.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+          <div class="competency-group">
+            <h2>Subject Application</h2>
+
+            <h3>Global Citizen, Teamwork, Leadership, Emotional Intelligence</h3>
+            <div class="table-wrap">
+              <table class="skills-table">
+                <thead>
+                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Actively participate in a range of community activities as an informed citizen</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Engage with professional and learning communities through structured reflection, peer learning, and professional body participation, supporting continuous development and informed contribution to practice.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Decision Making, Initiative, Emotional Intelligence, Ethical Awareness</h3>
+            <div class="table-wrap">
+              <table class="skills-table">
+                <thead>
+                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Make well-reasoned decisions, balancing ethics, risk and stakeholder needs.</td>
+                    <td class="level">Expert</td>
+                    <td>
+                      <details class="evidence">
+                        <summary class="evidence-link">link</summary>
+                        <div class="evidence-body">
+                          <p>Apply risk-based governance and ethical judgement when selecting and implementing enterprise controls, ensuring decisions remain auditable, proportionate, and aligned to regulatory expectations and organisational outcomes.</p>
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+        </section>
