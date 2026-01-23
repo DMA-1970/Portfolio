@@ -432,6 +432,74 @@
 
     }
 
+    .chart-thumbnail-container {
+
+      margin: 15px 0 20px 0;
+
+      text-align: center;
+
+    }
+
+    .chart-thumbnail-link {
+
+      display: inline-block;
+
+      text-decoration: none;
+
+      transition: all 0.3s ease;
+
+      border-radius: 8px;
+
+      overflow: hidden;
+
+      border: 2px solid rgba(255, 255, 255, 0.1);
+
+      background: rgba(255, 255, 255, 0.05);
+
+      padding: 4px;
+
+    }
+
+    .chart-thumbnail-link:hover {
+
+      border-color: rgba(21, 87, 36, 0.4);
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    }
+
+    .chart-thumbnail {
+
+      max-width: 100%;
+
+      height: auto;
+
+      display: block;
+
+      border-radius: 6px;
+
+      max-height: 300px;
+
+      width: auto;
+
+    }
+
+    .chart-thumbnail-caption {
+
+      color: #a8b8d8;
+
+      font-size: 0.85em;
+
+      font-style: italic;
+
+      margin-top: 8px;
+
+      display: block;
+
+    }
+
     .interpretation-section {
 
       margin-top: 30px;
@@ -513,6 +581,10 @@
       .overlay { padding: 70px 15px 30px; }
 
       .back-btn { top: 15px; left: 15px; padding: 10px 16px; font-size: 0.9em; }
+
+      .chart-thumbnail { max-height: 250px; }
+
+      .chart-thumbnail-container[style*="flex"] { flex-direction: column; align-items: center; }
 
     }
 
@@ -602,13 +674,23 @@
 
             <h4 class="interpretation-title">Brand Preferences by Demographic Area (Example 8.1D)</h4>
 
-            <p><a href="Worksheets/Exe 8.1D.jpg" class="inline-image-link" target="_blank">🖼️ View Chart: Exe 8.1D.jpg</a></p>
+            <div class="chart-thumbnail-container">
+              <a href="Worksheets/Exe 8.1D.jpg" class="chart-thumbnail-link" target="_blank">
+                <img src="Worksheets/Exe 8.1D.jpg" alt="Brand Preferences by Demographic Area Chart" class="chart-thumbnail">
+                <span class="chart-thumbnail-caption">Click to view full-size: Exe 8.1D.jpg</span>
+              </a>
+            </div>
 
             <p>Percentage frequency bar charts were used to visualise the distribution of brand preferences across demographic areas. By expressing frequencies as percentages, the charts enable direct comparison between groups and clearly illustrate differences in relative preference for each brand.</p>
 
             <h4 class="interpretation-title">Comparison of Brand Preferences Between Areas (Example 8.2D)</h4>
 
-            <p><a href="Worksheets/Exe 8.2D.jpg" class="inline-image-link" target="_blank">🖼️ View Chart: Exe 8.2D.jpg</a></p>
+            <div class="chart-thumbnail-container">
+              <a href="Worksheets/Exe 8.2D.jpg" class="chart-thumbnail-link" target="_blank">
+                <img src="Worksheets/Exe 8.2D.jpg" alt="Comparison of Brand Preferences Between Areas Chart" class="chart-thumbnail">
+                <span class="chart-thumbnail-caption">Click to view full-size: Exe 8.2D.jpg</span>
+              </a>
+            </div>
 
             <p>A percentage frequency clustered column chart was constructed to compare breakfast cereal brand preferences between Area 1 and Area 2. The chart displays the relative proportions of respondents selecting Brand A, Brand B, or other brands in each demographic area, enabling direct visual comparison between the two groups.</p>
 
@@ -616,26 +698,49 @@
 
             <h4 class="interpretation-title">Diet A</h4>
 
-            <p><a href="Worksheets/Diet A.jpg" class="inline-image-link" target="_blank">🖼️ View Chart: Diet A.jpg</a></p>
+            <div class="chart-thumbnail-container">
+              <a href="Worksheets/Diet A.jpg" class="chart-thumbnail-link" target="_blank">
+                <img src="Worksheets/Diet A.jpg" alt="Diet A Histogram" class="chart-thumbnail">
+                <span class="chart-thumbnail-caption">Click to view full-size: Diet A.jpg</span>
+              </a>
+            </div>
 
             <p>The relative frequency histogram for Diet A is unimodal and approximately symmetric, with most observations concentrated in the central classes. This suggests that weight loss outcomes under Diet A are relatively consistent across individuals, with few extreme values.</p>
 
             <h4 class="interpretation-title">Diet B</h4>
 
-            <p><a href="Worksheets/Diet B.jpg" class="inline-image-link" target="_blank">🖼️ View Chart: Diet B.jpg</a></p>
+            <div class="chart-thumbnail-container">
+              <a href="Worksheets/Diet B.jpg" class="chart-thumbnail-link" target="_blank">
+                <img src="Worksheets/Diet B.jpg" alt="Diet B Histogram" class="chart-thumbnail">
+                <span class="chart-thumbnail-caption">Click to view full-size: Diet B.jpg</span>
+              </a>
+            </div>
 
             <p>The relative frequency histogram for Diet B is unimodal but exhibits a broader spread of weight-loss outcomes than that of Diet A. This indicates greater variability in individual responses to Diet B, with weight loss distributed more broadly across the class intervals.</p>
 
             <h4 class="interpretation-title">Comparison Interpretation — Diet A vs Diet B</h4>
 
-            <p>
-              <a href="Worksheets/Diet A.jpg" class="inline-image-link" target="_blank">🖼️ View Chart: Diet A.jpg</a>
-              <a href="Worksheets/Diet B.jpg" class="inline-image-link" target="_blank" style="margin-left: 10px;">🖼️ View Chart: Diet B.jpg</a>
-            </p>
+            <div class="chart-thumbnail-container" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+              <a href="Worksheets/Diet A.jpg" class="chart-thumbnail-link" target="_blank">
+                <img src="Worksheets/Diet A.jpg" alt="Diet A Histogram" class="chart-thumbnail">
+                <span class="chart-thumbnail-caption">Click to view full-size: Diet A.jpg</span>
+              </a>
+              <a href="Worksheets/Diet B.jpg" class="chart-thumbnail-link" target="_blank">
+                <img src="Worksheets/Diet B.jpg" alt="Diet B Histogram" class="chart-thumbnail">
+                <span class="chart-thumbnail-caption">Click to view full-size: Diet B.jpg</span>
+              </a>
+            </div>
 
             <p>Comparing the two histograms, Diet A shows a more concentrated, approximately symmetric distribution of weight loss, suggesting more consistent outcomes across individuals. In contrast, Diet B shows greater variability, indicating that individual responses to Diet B are less uniform.</p>
 
             <h4 class="interpretation-title">Additional Reflection: Statistical Inference and Decision-Making</h4>
+
+            <div class="chart-thumbnail-container">
+              <a href="Worksheets/Exe 8.3B.jpg" class="chart-thumbnail-link" target="_blank">
+                <img src="Worksheets/Exe 8.3B.jpg" alt="Statistical Inference Worksheet" class="chart-thumbnail">
+                <span class="chart-thumbnail-caption">Click to view full-size: Exe 8.3B.jpg</span>
+              </a>
+            </div>
 
             <p>Alongside descriptive visualisation, this unit also reinforced the logic of statistical inference and hypothesis testing. The inference worksheet clarified the structured process of stating hypotheses, defining significance levels, computing test statistics, and making probabilistic decisions rather than claiming proof. A key insight was that statistical conclusions are always subject to uncertainty, with the risk of Type I and Type II errors forming an inherent part of analytical decision-making.</p>
 
