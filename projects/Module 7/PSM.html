@@ -1,1 +1,489 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google tag (gtag.js) -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LX92NLZD2F"></script>
+
+  <script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-LX92NLZD2F');
+
+  </script>
+
+  <title>Professional Skills Matrix - Module 7 - David Abiodun</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body, html {
+
+      height: 100%;
+
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      color: #ffffff;
+
+      overflow-x: hidden;
+
+      position: relative;
+
+    }
+
+    body::before {
+
+      content: '';
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      right: 0;
+
+      bottom: 0;
+
+      background: url('../../assets/Module7.jpg') no-repeat center center/cover;
+
+      filter: blur(3px);
+
+      -webkit-filter: blur(3px);
+
+      transform: scale(1.05);
+
+      z-index: -2;
+
+    }
+
+    body::after {
+
+      content: '';
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      right: 0;
+
+      bottom: 0;
+
+      background: rgba(0, 0, 0, 0.8);
+
+      z-index: -1;
+
+    }
+
+    .back-btn {
+
+      position: fixed;
+
+      top: 20px;
+
+      left: 20px;
+
+      background: rgba(255, 255, 255, 0.08);
+
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      border-radius: 12px;
+
+      padding: 12px 20px;
+
+      text-decoration: none;
+
+      color: #d4dff5;
+
+      font-size: 0.95em;
+
+      font-weight: 400;
+
+      transition: all 0.3s ease;
+
+      z-index: 1000;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+    }
+
+    .back-btn:hover {
+
+      background: rgba(255, 255, 255, 0.11);
+
+      border-color: rgba(21, 87, 36, 0.4);
+
+      color: #ffffff;
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 0 12px rgba(21, 87, 36, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .overlay {
+
+      position: relative;
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: flex-start;
+
+      padding: 80px 20px 40px;
+
+      animation: fadeIn 1s ease-in;
+
+    }
+
+    @keyframes fadeIn {
+
+      from { opacity: 0; }
+
+      to { opacity: 1; }
+
+    }
+
+    .container {
+
+      max-width: 1200px;
+
+      width: 100%;
+
+      animation: slideUp 0.8s ease-out;
+
+    }
+
+    @keyframes slideUp {
+
+      from { opacity: 0; transform: translateY(30px); }
+
+      to { opacity: 1; transform: translateY(0); }
+
+    }
+
+    .header {
+
+      text-align: center;
+
+      margin-bottom: 40px;
+
+    }
+
+    .header h1 {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 2.8em;
+
+      font-weight: 700;
+
+      margin-bottom: 15px;
+
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+
+      -webkit-background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+
+      background-clip: text;
+
+      letter-spacing: -1px;
+
+    }
+
+    .content-card {
+
+      background: rgba(255, 255, 255, 0.08);
+
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      border-radius: 20px;
+
+      padding: 35px 40px;
+
+      margin-bottom: 30px;
+
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+      transition: all 0.3s ease;
+
+    }
+
+    .content-card:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 0 15px rgba(21, 87, 36, 0.25), 0 8px 32px rgba(0, 0, 0, 0.2);
+
+      border-color: rgba(21, 87, 36, 0.3);
+
+      background: rgba(255, 255, 255, 0.09);
+
+    }
+
+    .unit-title {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 1.3em;
+
+      font-weight: 600;
+
+      color: #ffffff;
+
+      margin-bottom: 20px;
+
+    }
+
+    .skills-section {
+
+      margin-top: 30px;
+
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    }
+
+    .skills-section:first-of-type {
+
+      margin-top: 0;
+
+      padding-top: 0;
+
+      border-top: none;
+
+    }
+
+    .skill-category {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 1.2em;
+
+      font-weight: 600;
+
+      color: #ffffff;
+
+      margin-bottom: 15px;
+
+      margin-top: 25px;
+
+    }
+
+    .skill-category:first-child {
+
+      margin-top: 0;
+
+    }
+
+    .skill-item {
+
+      margin-bottom: 20px;
+
+      padding: 15px;
+
+      background: rgba(255, 255, 255, 0.05);
+
+      border-radius: 8px;
+
+      border-left: 3px solid rgba(21, 87, 36, 0.5);
+
+    }
+
+    .skill-name {
+
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 1.1em;
+
+      font-weight: 600;
+
+      color: #ffffff;
+
+      margin-bottom: 8px;
+
+    }
+
+    .skill-description {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.8;
+
+      text-align: justify;
+
+      margin-bottom: 10px;
+
+    }
+
+    .skill-level {
+
+      color: #93c5fd;
+
+      font-size: 0.9em;
+
+      font-style: italic;
+
+    }
+
+    .project-link {
+
+      color: #93c5fd;
+
+      text-decoration: none;
+
+      font-size: 0.9em;
+
+      transition: all 0.3s ease;
+
+      display: inline-block;
+
+      margin-top: 10px;
+
+    }
+
+    .project-link:hover {
+
+      color: #60a5fa;
+
+      text-decoration: underline;
+
+    }
+
+    p {
+
+      text-align: justify;
+
+      line-height: 1.8;
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      margin-bottom: 15px;
+
+    }
+
+    @media (max-width: 768px) {
+
+      .header h1 { font-size: 2.2em; }
+
+      .content-card { padding: 25px 30px; }
+
+      .unit-title { font-size: 1.2em; }
+
+      .overlay { padding: 70px 15px 30px; }
+
+      .back-btn { top: 15px; left: 15px; padding: 10px 16px; font-size: 0.9em; }
+
+    }
+
+    @media (max-width: 480px) {
+
+      .header h1 { font-size: 1.8em; }
+
+      .content-card { padding: 20px 25px; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <a href="../../Module7.html" class="back-btn">← Back to Module 7</a>
+
+  <div class="overlay">
+
+    <div class="container">
+
+      <div class="header">
+
+        <h1>Professional Skills Matrix</h1>
+
+      </div>
+
+      <div class="content-card">
+
+        <div class="activity-section">
+
+          <h3 class="unit-title">Professional Skills Development</h3>
+
+          <p>This page displays the Professional Skills Matrix, extracted from the Excel workbook and presented in a readable format. The matrix tracks professional skills development across various competencies.</p>
+
+          <p><a href="../../../../Masters/Module%207/Professional%20Skills%20Matrix.xlsx" class="project-link" target="_blank">📊 View Original Excel File</a></p>
+
+        </div>
+
+        <!-- Skills sections will be populated here -->
+        <!-- Copy content from Excel and structure it using the following format: -->
+
+        <div class="skills-section">
+
+          <h4 class="skill-category">Category Name</h4>
+
+          <div class="skill-item">
+
+            <div class="skill-name">Skill Name</div>
+
+            <div class="skill-description">Description of the skill and how it has been developed or demonstrated.</div>
+
+            <div class="skill-level">Level: [Beginner/Intermediate/Advanced/Expert]</div>
+
+          </div>
+
+          <!-- Add more skill items as needed -->
+
+        </div>
+
+        <!-- Add more skill categories as needed -->
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
 
