@@ -26,7 +26,7 @@
 
   </script>
 
-  <title>Professional Skills Matrix - Module 7 - David Abiodun</title>
+  <title>Module 7: Research Methods and Professional Practice - David Abiodun</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -66,7 +66,7 @@
 
       bottom: 0;
 
-      background: url('../../assets/Module7.jpg') no-repeat center center/cover;
+      background: url('assets/Module7.jpg') no-repeat center center/cover;
 
       filter: blur(3px);
 
@@ -178,7 +178,7 @@
 
     .container {
 
-      max-width: 1200px;
+      max-width: 1000px;
 
       width: 100%;
 
@@ -224,6 +224,18 @@
 
     }
 
+    .module-grade {
+
+      font-size: 1.2em;
+
+      font-weight: 600;
+
+      color: #a8b8d8;
+
+      margin-bottom: 20px;
+
+    }
+
     .content-card {
 
       background: rgba(255, 255, 255, 0.08);
@@ -244,23 +256,6 @@
 
     }
 
-    .level-legend-table {
-
-      max-width: 520px;
-
-      margin: 20px 0 10px;
-
-    }
-
-    .level-legend-table th:first-child,
-    .level-legend-table td:first-child {
-
-      width: 120px;
-
-      white-space: nowrap;
-
-    }
-
     .content-card:hover {
 
       transform: translateY(-2px);
@@ -270,6 +265,26 @@
       border-color: rgba(21, 87, 36, 0.3);
 
       background: rgba(255, 255, 255, 0.09);
+
+    }
+
+    .unit {
+
+      margin-bottom: 40px;
+
+      padding-bottom: 30px;
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    }
+
+    .unit:last-child {
+
+      border-bottom: none;
+
+      margin-bottom: 0;
+
+      padding-bottom: 0;
 
     }
 
@@ -287,63 +302,63 @@
 
     }
 
-    .skills-section {
+    .reading-section {
 
-      margin-top: 30px;
-
-      padding-top: 20px;
-
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 20px;
 
     }
 
-    .skills-section:first-of-type {
+    .reading-title {
 
-      margin-top: 0;
-
-      padding-top: 0;
-
-      border-top: none;
-
-    }
-
-    .skill-category {
-
-      font-family: 'Montserrat', sans-serif;
-
-      font-size: 1.2em;
+      font-size: 1em;
 
       font-weight: 600;
 
-      color: #ffffff;
+      color: #d4dff5;
 
-      margin-bottom: 15px;
+      text-decoration: underline;
+
+      margin-bottom: 10px;
+
+    }
+
+    .reading-list p {
+
+      font-size: 0.95em;
+
+      line-height: 1.8;
+
+      color: #b8c5e0;
+
+      margin-bottom: 8px;
+
+      padding-left: 15px;
+
+      position: relative;
+
+      text-align: justify;
+
+    }
+
+    .reading-list p:before {
+
+      content: '•';
+
+      color: #64748b;
+
+      position: absolute;
+
+      left: 0;
+
+    }
+
+    .activity-section {
 
       margin-top: 25px;
 
     }
 
-    .skill-category:first-child {
-
-      margin-top: 0;
-
-    }
-
-    .skill-item {
-
-      margin-bottom: 20px;
-
-      padding: 15px;
-
-      background: rgba(255, 255, 255, 0.05);
-
-      border-radius: 8px;
-
-      border-left: 3px solid rgba(21, 87, 36, 0.5);
-
-    }
-
-    .skill-name {
+    .activity-title {
 
       font-family: 'Montserrat', sans-serif;
 
@@ -353,11 +368,35 @@
 
       color: #ffffff;
 
+      margin-bottom: 12px;
+
+    }
+
+    .activity-item {
+
       margin-bottom: 8px;
 
     }
 
-    .skill-description {
+    .activity-item a {
+
+      color: #d4dff5;
+
+      text-decoration: none;
+
+      transition: all 0.3s ease;
+
+    }
+
+    .activity-item a:hover {
+
+      color: #ffffff;
+
+      text-decoration: underline;
+
+    }
+
+    .activity-item p {
 
       color: #b8c5e0;
 
@@ -367,23 +406,97 @@
 
       text-align: justify;
 
-      margin-bottom: 10px;
+    }
+
+    .activity-text {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.8;
+
+      text-align: justify;
 
     }
 
-    .skill-level {
+    .grade {
 
-      color: #93c5fd;
+      color: #a8b8d8 !important;
+
+      font-weight: 600;
 
       font-size: 0.9em;
 
-      font-style: italic;
+    }
+
+    .grade.distinction {
+
+      color: #22c55e !important;
+
+    }
+
+    .project-highlight {
+
+      background: rgba(30, 144, 255, 0.1);
+
+      border: 1px solid rgba(30, 144, 255, 0.3);
+
+      border-radius: 12px;
+
+      padding: 15px 20px;
+
+      margin: 10px 0;
+
+      transition: all 0.3s ease;
+
+    }
+
+    .project-highlight:hover {
+
+      background: rgba(30, 144, 255, 0.15);
+
+      border-color: rgba(30, 144, 255, 0.5);
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+
+    }
+
+    .project-title {
+
+      font-size: 1.1em;
+
+      font-weight: bold;
+
+      color: #1e90ff;
+
+      margin-bottom: 8px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+    }
+
+    .project-description {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.6;
+
+      margin-bottom: 8px;
 
     }
 
     .project-link {
 
-      color: #93c5fd;
+      color: #d4dff5;
 
       text-decoration: none;
 
@@ -391,17 +504,369 @@
 
       transition: all 0.3s ease;
 
-      display: inline-block;
+    }
+
+    .project-link:hover {
+
+      color: #1e90ff;
+
+      text-decoration: underline;
+
+    }
+
+    .assessment-highlight {
+
+      background: rgba(255, 107, 53, 0.1);
+
+      border: 1px solid rgba(255, 107, 53, 0.3);
+
+      border-radius: 12px;
+
+      padding: 15px 20px;
+
+      margin: 10px 0;
+
+      transition: all 0.3s ease;
+
+    }
+
+    .assessment-highlight:hover {
+
+      background: rgba(255, 107, 53, 0.15);
+
+      border-color: rgba(255, 107, 53, 0.5);
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+
+    }
+
+    .assessment-title {
+
+      font-size: 1.1em;
+
+      font-weight: bold;
+
+      color: #ff6b35;
+
+      margin-bottom: 8px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+    }
+
+    .assessment-description {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.6;
+
+      margin-bottom: 8px;
+
+    }
+
+    .assessment-link {
+
+      color: #d4dff5;
+
+      text-decoration: none;
+
+      font-size: 0.9em;
+
+      transition: all 0.3s ease;
+
+    }
+
+    .assessment-link:hover {
+
+      color: #ff6b35;
+
+      text-decoration: underline;
+
+    }
+
+    .seminar-preparation {
+
+      background: rgba(255, 107, 53, 0.1);
+
+      border: 1px solid rgba(255, 107, 53, 0.3);
+
+      border-radius: 12px;
+
+      padding: 15px 20px;
+
+      margin: 10px 0;
+
+      transition: all 0.3s ease;
+
+    }
+
+    .seminar-preparation:hover {
+
+      background: rgba(255, 107, 53, 0.15);
+
+      border-color: rgba(255, 107, 53, 0.5);
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+
+    }
+
+    .seminar-preparation h5 {
+
+      color: #ff6b35;
+
+      font-weight: bold;
+
+      font-size: 1.1em;
+
+      margin: 15px 0 10px 0;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+    }
+
+    .seminar-preparation ul {
+
+      margin: 5px 0;
+
+      padding-left: 20px;
+
+    }
+
+    .seminar-preparation li {
+
+      margin-bottom: 5px;
+
+      color: #b8c5e0;
+
+    }
+
+    .seminar-preparation p {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.7;
+
+      margin-bottom: 10px;
+
+      text-align: justify;
+
+    }
+
+    .seminar-preparation strong {
+
+      color: #ffffff;
+
+    }
+
+    .reflection {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.7;
+
+      text-align: justify;
+
+      margin-bottom: 10px;
+
+      font-style: italic;
+
+    }
+
+    .reflection strong {
+
+      color: #ffffff;
+
+      font-style: normal;
+
+    }
+
+    .references {
+
+      padding-left: 20px;
 
       margin-top: 10px;
 
     }
 
-    .project-link:hover {
+    .references li {
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      margin-bottom: 8px;
+
+      line-height: 1.7;
+
+    }
+
+    .references a {
+
+      color: #93c5fd;
+
+      text-decoration: none;
+
+      transition: color 0.3s ease;
+
+    }
+
+    .references a:hover {
 
       color: #60a5fa;
 
       text-decoration: underline;
+
+    }
+
+    .pdf-link {
+
+      color: #93c5fd;
+
+      text-decoration: none;
+
+      transition: all 0.3s ease;
+
+      display: inline-block;
+
+      margin-top: 10px;
+
+      padding-left: 20px;
+
+    }
+
+    .pdf-link:hover {
+
+      color: #60a5fa;
+
+      text-decoration: underline;
+
+    }
+
+    .summary {
+
+      background: rgba(255, 255, 255, 0.05);
+
+      border-left: 3px solid rgba(255, 255, 255, 0.2);
+
+      padding: 20px;
+
+      margin-top: 20px;
+
+      border-radius: 0 8px 8px 0;
+
+      font-style: italic;
+
+      color: #b8c5e0;
+
+      font-size: 0.95em;
+
+      line-height: 1.8;
+
+      text-align: justify;
+
+    }
+
+    .summary p {
+
+      margin-bottom: 10px;
+
+    }
+
+    .summary p:last-child {
+
+      margin-bottom: 0;
+
+    }
+
+    .comment-card {
+
+      background: rgba(255, 255, 255, 0.05);
+
+      border: 1px solid rgba(255, 255, 255, 0.08);
+
+      border-radius: 16px;
+
+      padding: 20px 25px;
+
+      margin-top: 15px;
+
+      margin-bottom: 25px;
+
+      backdrop-filter: blur(10px);
+
+      transition: all 0.3s ease;
+
+    }
+
+    .comment-card:hover {
+
+      background: rgba(255, 255, 255, 0.08);
+
+      transform: translateY(-2px);
+
+    }
+
+    .comment-title {
+
+      font-family: 'Montserrat', sans-serif;
+
+      color: #d4dff5;
+
+      margin-bottom: 10px;
+
+      font-size: 1.1em;
+
+      font-weight: 600;
+
+    }
+
+    blockquote {
+
+      color: #b8c5e0;
+
+      font-style: italic;
+
+      line-height: 1.6;
+
+      border-left: 3px solid rgba(255, 255, 255, 0.2);
+
+      padding-left: 15px;
+
+      margin-bottom: 10px;
+
+    }
+
+    .comment-source {
+
+      color: #93c5fd;
+
+      font-size: 0.9em;
+
+    }
+
+    p {
+
+      text-align: justify;
+
+      line-height: 1.8;
 
     }
 
@@ -459,20 +924,6 @@
 
     }
 
-    p {
-
-      text-align: justify;
-
-      line-height: 1.8;
-
-      color: #b8c5e0;
-
-      font-size: 0.95em;
-
-      margin-bottom: 15px;
-
-    }
-
     @media (max-width: 768px) {
 
       .header h1 { font-size: 2.2em; }
@@ -497,57 +948,13 @@
 
     }
 
-    .skills-matrix { margin: 2rem 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-
-    .skills-matrix .competency-group { margin: 2.5rem 0; }
-
-    .skills-matrix h2 { font-size: 1.8rem; margin: 1.75rem 0 1rem; font-weight: 700; color: #ffffff; font-family: 'Montserrat', sans-serif; }
-
-    .skills-matrix h3 { font-size: 1.15rem; margin: 1.25rem 0 0.75rem; font-weight: 650; color: #e0e7ff; font-family: 'Montserrat', sans-serif; }
-
-    .skills-matrix .table-wrap { overflow-x: auto; border-radius: 10px; margin: 1rem 0; }
-
-    .skills-table { width: 100%; border-collapse: collapse; min-width: 760px; background: rgba(255, 255, 255, 0.05); }
-
-    .skills-table thead th {
-
-      text-align: left; font-weight: 700; padding: 14px 16px;
-
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2); color: #ffffff; background: rgba(255, 255, 255, 0.08);
-
-    }
-
-    .skills-table tbody td {
-
-      vertical-align: top; padding: 14px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: #b8c5e0;
-
-    }
-
-    .skills-table tbody tr:hover { background: rgba(255, 255, 255, 0.08); }
-
-    .skills-table .level { white-space: nowrap; font-weight: 600; color: #93c5fd; }
-
-    .evidence-link { color: #93c5fd; text-decoration: underline; cursor: pointer; font-weight: 600; }
-
-    .evidence-link:hover { color: #60a5fa; }
-
-    details.evidence { display: inline; }
-
-    details.evidence summary { list-style: none; display: inline; cursor: pointer; }
-
-    details.evidence summary::-webkit-details-marker { display: none; }
-
-    .evidence-body { margin-top: 10px; padding: 12px 14px; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; background: rgba(255, 255, 255, 0.05); }
-
-    .evidence-body p { margin: 0; line-height: 1.8; color: #b8c5e0; text-align: justify; }
-
   </style>
 
 </head>
 
 <body>
 
-  <a href="../../Module7.html" class="back-btn">← Back to Module 7</a>
+  <a href="index.html" class="back-btn">← Back to Home</a>
 
   <div class="overlay">
 
@@ -555,678 +962,898 @@
 
       <div class="header">
 
-        <h1>Professional Skills Matrix</h1>
+        <h1>Research Methods and Professional Practice</h1>
+
+        <p class="module-grade">Overall Module Grade: In Progress</p>
 
       </div>
 
       <div class="content-card">
 
-        <div class="activity-section">
+        <!-- Unit 1 -->
 
-          <h3 class="unit-title">Professional Skills Development</h3>
+        <div class="unit">
 
-          <p>This page displays the Professional Skills Matrix, extracted from the Excel workbook and presented in a readable format. The matrix tracks professional skills development across various competencies.</p>
+          <h3 class="unit-title">Unit 1: Introduction and Ethics in Research</h3>
 
-          <p><a href="https://1drv.ms/x/c/6E77F8217BA0847E/IQCrsdJAmAdSQosb_MMvByPxAY859UromaeSUDb-vLhCK_Y?e=FnsHjS" class="project-link" target="_blank">View Professional Skills Matrix (Excel)</a></p>
+          <div class="seminar-preparation">
 
-          <div class="table-wrap" style="max-width: 520px; margin-top: 20px;">
-            <table class="skills-table level-legend-table">
-              <thead>
-                <tr><th>Level</th><th>Description</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Aware</td>
-                  <td>General understanding and basic knowledge.</td>
-                </tr>
-                <tr>
-                  <td>Trained</td>
-                  <td>Able to apply knowledge, able to work independently under certain conditions.</td>
-                </tr>
-                <tr>
-                  <td>Proficient</td>
-                  <td>Broad and in-depth knowledge, able to work independently with very little supervision.</td>
-                </tr>
-                <tr>
-                  <td>Expert</td>
-                  <td>Seen as a subject matter expert, able to lead and train others.</td>
-                </tr>
-              </tbody>
-            </table>
+            <h5>🎓 Seminar</h5>
+
+            <p><strong>Title:</strong> Introduction to Research Methods and Ethics</p>
+
+            <p>This seminar introduces the module format, assessment requirements, and the ethical foundations underpinning responsible computing research. Students review research topics, discuss reasoning approaches, and clarify project expectations.</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activities:</h4>
+
+            <div class="activity-item">
+
+              <div class="project-highlight">
+
+                <div class="project-title">📋 Unit 1 Activities</div>
+
+                <div class="project-description">
+
+                  <ul class="references">
+
+                    <li><strong>Reasoning Quiz:</strong> Identify inductive vs deductive reasoning.</li>
+
+                    <li><strong>e-Portfolio Introduction:</strong> Share academic and career goals.</li>
+
+                    <li><strong>Collaborative Discussion 1:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=328357#p648120" target="_blank" rel="noopener noreferrer" style="color: #93c5fd; text-decoration: none; transition: color 0.3s ease;"><em>Codes of Ethics and Professional Conduct</em></a> – Analyse an ACM case study with reference to the ACM and BCS codes.</li>
+
+                    <li><strong>Reflective Activity 1:</strong> <em>Ethics in Computing in the Age of Generative AI</em> – Analyse AI governance frameworks and ethical responses (1 000 words, formative).</li>
+
+                  </ul>
+
+                  <p><a href="projects/Module%207/eicitaogai.html" class="project-link">📄 View Reflective Activity 1</a></p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Summary:</strong> This unit introduces research ethics, professional conduct, and reasoning methods, providing the foundation for academic integrity and ethical decision-making in computing.</p>
+
+              <p class="reflection"><strong>Reflection:</strong> Engaging with AI ethics literature revealed how global governance perspectives shape responsible innovation. Understanding the ACM and BCS codes reinforced the importance of ethical accountability and professional judgement in research practice. Additionally, exploring sponsor bias in the video was very insightful, as it highlighted the subtle yet significant ways external influences can shape research outcomes and decision-making. Recognising these passive forms of bias is particularly vital from a CIO and governance perspective, where ethical oversight, transparency, and balanced stakeholder influence are essential to ensuring that enterprise technology strategies, data-driven decisions, and AI initiatives remain aligned with professional integrity and societal trust.</p>
+
+            </div>
+
           </div>
 
         </div>
 
-        <section class="skills-matrix">
+        <!-- Unit 2 -->
 
-          <div class="competency-group">
-            <h2>Professional</h2>
+        <div class="unit">
 
-            <h3>Literacy, Communication, Language Skills</h3>
-            <div class="table-wrap">
-              <table class="skills-table">
-                <thead>
-                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Express information effectively to technical and non-technical audiences</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Communicate complex technical and governance topics clearly to both technical and non-technical stakeholders. This capability has been formally strengthened through MSc modules, particularly Research Methods and Professional Practice, where I applied the PEER framework (Point, Evidence, Explanation, Reflection) to structure arguments. I now translate subjects such as Zero Trust, IAM, DLP, SIEM, and AI governance into business risk language for executive and compliance audiences, ensuring alignment with regulatory and organisational objectives.</p>
-                          <p style="margin-top: 10px;"><a href="https://1drv.ms/b/c/6E77F8217BA0847E/IQB4CHgxbk6oQ5SI2ZvqeXNRAX8hXlHiIJ_SGwzcmDucz-A?e=Ba8xEs" class="project-link" target="_blank">View Communication Examples</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Create documents to aid your communication (reports, diagrams, legal descriptions, plans, manuals and charts)</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Produce MSc-level academic and professional documentation, including research reports, governance frameworks, architecture diagrams, CMDB designs, and executive presentations. This capability has been developed through assessed coursework across modules such as Security and Risk Management, Cloud Operations and Management, and Enterprise IT Project Management, where I consistently applied structured methodologies, critical analysis, and formal referencing (achieving distinction-level grades).</p>
-                          <p style="margin-top: 10px;"><a href="https://1drv.ms/p/c/6E77F8217BA0847E/IQDKINLNz73QTZHcjRCZyRPhAcQUy8dnVEHcCHEz7rifyWw?e=aCTSn3" class="project-link" target="_blank">View Documentation Examples</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <h3 class="unit-title">Unit 2: Research Questions, the Literature Review and the Research Proposal</h3>
 
-            <h3>Commercial Awareness</h3>
-            <div class="table-wrap">
-              <table class="skills-table">
-                <thead>
-                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Keep current with tools of the industry, as well as emerging technology</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Maintain current awareness of emerging technologies including AI governance, cloud compliance tooling, DevSecOps, FinOps, and regulatory automation. This capability has been academically strengthened through the Security and Risk Management and Cloud Operations and Management modules, where I critically evaluated modern security tooling, cloud-native governance controls, and automation frameworks. Coursework required analysis of evolving threat landscapes and regulatory technology trends, ensuring continuous alignment between industry developments and academic practice.</p>
-                          <p style="margin-top: 10px;"><a href="https://1drv.ms/b/c/6E77F8217BA0847E/IQAt8ay-wzqqT49u5JpRA6TpAWZ76hOeYBfhNV6z7UixU74?e=MkcQPv" class="project-link" target="_blank">View Technology Awareness Examples</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Seek opportunities to improve and share knowledge of tools and technology that may improve productivity</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Actively share knowledge through professional reflection and academic dissemination developed during MSc modules, particularly Research Methods and Professional Practice. Seminar presentations and assessed reflections strengthened my ability to communicate technical insight clearly. This is reinforced by structured peer engagement activities embedded within the programme, supporting collaborative learning and professional knowledge exchange.</p>
-                          <p style="margin-top: 10px;"><a href="COM.jpg" class="project-link" target="_blank">View Evidence Image</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Participate in scientific and professional organisations</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Engage with professional computing communities as part of ongoing professional development, informed by reflective practice introduced in Research Methods and Professional Practice. The module emphasised structured CPD planning and professional body engagement aligned to BCS guidelines, reinforcing the importance of continuous learning beyond formal study. I am a member of BCS, I also hold professional Microsoft and ITIL Certification.</p>
-                          <p style="margin-top: 10px;">
-                            <a href="https://1drv.ms/i/c/6E77F8217BA0847E/IQCdDROzPSgJS4RaA3aD-no0ASDMknW-GRkV2OFsg5MjK04?e=dwp95s" class="project-link" target="_blank">View BCS Membership Email</a><br>
-                            <a href="https://learn.microsoft.com/api/credentials/share/en-us/davidabiodun-9374/5D9C3288D80D9DE1?sharingId=C1AF7CAFA09D2421" class="project-link" target="_blank">Microsoft Certified: Information Protection and Compliance Administrator Associate</a><br>
-                            <a href="https://learn.microsoft.com/api/credentials/share/en-us/davidabiodun-9374/C4A472EB754F38A6?sharingId=C1AF7CAFA09D2421" class="project-link" target="_blank">Microsoft Certified: Azure Fundamentals</a><br>
-                            <a href="https://learn.microsoft.com/api/credentials/share/en-us/davidabiodun-9374/B8F0C0F92807ADE9?sharingId=C1AF7CAFA09D2421" class="project-link" target="_blank">Microsoft 365 Certified: Fundamentals</a><br>
-                            <a href="https://www.credly.com/badges/bf34f58d-0261-41c0-96e5-bf6a92d61d2d/public_url" class="project-link" target="_blank">ITIL 4 Foundation</a>
-                          </p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Emphasise quality, customer satisfaction and fair application of policies.</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Apply service quality and governance principles developed through the Information Technology Service Management (ITSM) module. Coursework focused on ITIL practices, continual service improvement, and stakeholder-focused service delivery. These frameworks now dictate how I approach service optimisation, regulatory compliance, and customer assurance.</p>
-                          <p style="margin-top: 10px;"><a href="https://1drv.ms/i/c/6E77F8217BA0847E/IQA7d6_kNkmnRbODP0WwSUEDAQwGlM0aZEV-k54NPV2SRvA?e=kqx4zN" class="project-link" target="_blank">View Evidence</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Demonstrate familiriaty with codes of conduct for the Computing field.</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Professional and ethical frameworks developed in Launching into Enterprise IT Management and Security and Risk Management were applied through enterprise risk assessments requiring accountable decision-making under uncertainty. In the Pampered Pets case study, ethical judgement prioritised product quality, customer safety, cybersecurity, and business continuity during digitalisation and international expansion. Quantitative risk modelling supported transparent, defensible mitigation decisions, aligning with BCS and ACM principles of public interest, harm minimisation, professional competence, and accountability within a high-impact enterprise context.</p>
-                          <p style="margin-top: 10px;">
-                            <a href="Executive summary_Pampered Pets.pdf" class="project-link" target="_blank">View Pampered Pets Executive Summary</a><br>
-                            <a href="DAbiodun_12696259_EDA Report.pdf" class="project-link" target="_blank">View EDA Report</a><br>
-                            <a href="DAbiodun_12696259_COM1.pdf" class="project-link" target="_blank">FinBankX – Hybrid Multi-Cloud Strategy</a>
-                          </p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="seminar-preparation">
 
-            <h3>Subject understanding, research, critical thinking, time management</h3>
-            <div class="table-wrap">
-              <table class="skills-table">
-                <thead>
-                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Critically analyse complex ideas in concepts in the field of Computer Science</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Advanced critical analysis was developed through Security and Risk Management, Cloud Operations and Management, and Research Methods and Professional Practice, where cloud architectures, governance frameworks, quantitative risk models, and enterprise tools were evaluated using academic literature. This analysis showed that effective enterprise computing decisions require balancing security, resilience, cost, and regulatory compliance rather than optimising individual technologies. These frameworks are applied in professional practice as an Enterprise Technology Manager, informing architectural, cybersecurity, and compliance decisions across the enterprise Azure estate and SaaS platforms such as Egnyte.</p>
-                          <p style="margin-top: 10px;"><a href="DAbiodun_12696259_COM1.pdf" class="project-link" target="_blank">FinBankX – Hybrid Multi-Cloud Strategy</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Recognise inconsistencies and gaps in information, and search for additional information when needed…</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>In the Pampered Pets Monte Carlo risk assessment, a key limitation was the absence of reliable historical data for several risk probabilities, including cybersecurity incidents and automation failures. Recognising that deterministic or assumed values would weaken analytical validity, additional information was sought from industry breach reports, academic risk-modelling literature, and alternative probabilistic approaches. This led to a transition from Excel to Python to support more flexible simulation and clearer representation of uncertainty, with assumptions and limitations explicitly documented. This process strengthened analytical rigour, demonstrated methodological adaptability, and ensured conclusions were transparent, defensible, and appropriate for decision-making under uncertainty.</p>
-                          <p style="margin-top: 10px;"><a href="Executive summary_Pampered Pets.pdf" class="project-link" target="_blank">View Pampered Pets Risk Assessment Summary</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Explore complex real-world problems in a Computing context</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Exploration of complex real-world problems in a computing context was demonstrated through both the Pampered Pets risk assessment and the FinBankX hybrid multi-cloud development project. These activities required integrating technical, regulatory, and organisational constraints to design solutions that were realistic for enterprise adoption rather than purely theoretical. They reinforced the importance of framing problems in terms of business impact, stakeholder needs, and operational feasibility, an approach now applied when evaluating and designing enterprise technology, governance, and security solutions.</p>
-                          <p style="margin-top: 10px;">
-                            <a href="Executive summary_Pampered Pets.pdf" class="project-link" target="_blank">Pampered Pets Risk Assessment Summary</a><br>
-                            <a href="DAbiodun_12696259_COM1.pdf" class="project-link" target="_blank">FinBankX – Hybrid Multi-Cloud Strategy</a>
-                          </p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <p>Discusses how to develop research questions, conduct literature reviews, and create research proposals.</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
+            <div class="activity-item">
+
+              <div class="project-highlight">
+
+                <div class="project-title">📚 e-Portfolio Activity: Literature Review and Research Proposal Outlines</div>
+
+                <div class="project-description">
+
+                  <p>Literature review and research proposal planning are undertaken through topic selection, structured outlining, and early alignment with research methods and data analysis requirements.</p>
+
+                </div>
+
+              </div>
+
+              <div class="project-highlight">
+
+                <div class="project-title">💬 Forum Discussion – Research Ethics and Literature Review</div>
+
+                <div class="project-description">Participate in peer discussions analysing research ethics, reasoning methods, and literature review development, providing constructive feedback, ethical insight, and links to enterprise governance practice.</div>
+
+                <ul style="margin-top:10px; padding-left:18px; line-height:1.8; list-style:none;">
+
+                  <li style="margin-bottom:8px;"><strong>Response to Tasnika Goorhoo:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=329598#p653957" target="_blank" rel="noopener noreferrer" class="project-link">View Discussion</a></li>
+
+                  <li style="margin-bottom:8px;"><strong>Response to Jordan Speight:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=329204#p651313" target="_blank" rel="noopener noreferrer" class="project-link">View Discussion</a></li>
+
+                  <li style="margin-bottom:8px;"><strong>Response to Ade Putra Tio Aldino:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=329801#p654269" target="_blank" rel="noopener noreferrer" class="project-link">View Discussion</a></li>
+
+                </ul>
+
+              </div>
+
             </div>
 
           </div>
 
-          <div class="competency-group">
-            <h2>Legal and Ethical</h2>
+          <div class="activity-section">
 
-            <h3>Comply with the letter and spirit of applicable laws</h3>
-            <h3>Maintain privacy and confidentiality of company, co-worker and customer information</h3>
-            <div class="table-wrap">
-              <table class="skills-table">
-                <thead>
-                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Comply with the letter and spirit of applicable laws</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Ethical and social responsibility as a computing professional is evidenced through feedback on the Development Individual Project, which recognises governance-led architectural decision-making, regulatory compliance, and risk-based prioritisation. The emphasis on data residency, zero-trust security, and alignment with frameworks such as ISO 27001 and NIST CSF reflects an understanding that computing decisions directly affect privacy, trust, and societal impact. Feedback highlighting the need to balance innovation with proportionality further reinforced that responsible computing requires critical judgement, accountability, and consideration of organisational and social consequences, not solely technical capability.</p>
-                          <p style="margin-top: 10px;"><a href="COM_Ethic.jpg" class="project-link" target="_blank">Ethical Governance Evidence</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Maintain privacy and confidentiality of company, co-worker and customer information</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Maintaining privacy and confidentiality was demonstrated through the Development Individual Project (FinBankX), where cloud architectures were designed to enforce data residency, access control, and regulatory compliance in line with GDPR and NDPR requirements. This academic foundation is reinforced by professional experience within international banking and legal environments, where adherence to stringent, cross-jurisdictional confidentiality and regulatory standards is essential to protecting customer, employee, and organisational information.</p>
-                          <p style="margin-top: 10px;"><a href="DAbiodun_12696259_COM1.pdf" class="project-link" target="_blank">FinBankX – Hybrid Multi-Cloud Strategy</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Weekly Reflection – Unit 2</strong></p>
+
+              <p class="reflection">This week deepened my understanding of how ethics and methodology are inseparable in credible research practice. Dr Navarra's session clarified how the scientific method underpins professional accountability, reinforcing the importance of clear problem statements and measurable objectives (Dawson, 2015). Engaging with the Belmont and Menlo Reports strengthened my awareness of ethical obligations in AI and computing research (Finn & Shilton, 2023). Applying the PEER framework improved the structure and criticality of my literature review, ensuring arguments were evidence-led and relevant. This learning has sharpened my governance mindset as a CIO, particularly around transparency, stakeholder trust, and responsible innovation.</p>
+
             </div>
 
           </div>
 
-          <div class="competency-group">
-            <h2>Social (inc. Teamwork)</h2>
+        </div>
 
-            <h3>Cultural Awareness</h3>
-            <div class="table-wrap">
-              <table class="skills-table">
-                <thead>
-                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Act in the best interest of the community at large - Social (Community) Responsibility</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Effective communication across professional and cultural boundaries was demonstrated during the Cloud Operations and Management Development Team Project, where peer feedback recognised reliable contribution, clear coordination, and effective leadership within a diverse team. Reflective feedback on balancing leadership with openness to others’ approaches has strengthened an adaptive communication style, now applied in professional practice by tailoring messages for technical, business, and compliance stakeholders to support shared understanding and collaboration.</p>
-                          <p style="margin-top: 10px;"><a href="COM.jpg" class="project-link" target="_blank">Team Communication Evidence</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <!-- Unit 3 -->
 
-            <h3>Teamwork, Leadership and Resilience, Time Management</h3>
-            <div class="table-wrap">
-              <table class="skills-table">
-                <thead>
-                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Collaborate effectively in diverse teams to achieve team goals</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Effective teamwork was demonstrated through the Enterprise IT Project Management group report, where collaborative planning and coordination resulted in a well-structured submission supported by Gantt charts, WBS tables, resource estimates, and clearly justified design decisions. Feedback recognising the quality of artefacts, coherence of argument, and collective reasoning evidences the ability to work productively within a team to deliver complex project outputs to a high standard.</p>
-                          <p style="margin-top: 10px;"><a href="ENtITPM.jpg" class="project-link" target="_blank">Enterprise IT PM Team Evidence</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Meeting team objectives using teamwork skills</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Independent learning was demonstrated through proactive development of skills in Python, data analysis, cloud governance, and cybersecurity, evidenced by distinction-level performance including the Individual Programming Exercise. Recognising the need to strengthen cybersecurity knowledge for enterprise leadership, this learning extended beyond the curriculum and resulted in passing the Microsoft Cybersecurity Architect examination. Tutor feedback highlighted strong technical implementation while identifying areas for improvement in academic presentation and critical use of sources, which reinforced an iterative, self-directed approach to learning that continues to inform subsequent work.</p>
-                          <p style="margin-top: 10px;">
-                            <a href="../Module%201/Program" class="project-link" target="_blank">Individual Programming Exercise</a><br>
-                            <a href="Programming%20excercise.jpg" class="project-link" target="_blank">Programming Exercise Screenshot</a><br>
-                            <a href="SC-100.jpg" class="project-link" target="_blank">Microsoft Cybersecurity Architect (SC-100) Exam Evidence</a>
-                          </p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Demonstrate skills in leadership and team building</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Proactive time and workload management was developed throughout the MSc, and was further strengthened through the Enterprise IT Project Management module, where structured planning techniques such as work breakdown structures, scheduling, and risk controls were applied to deliver assessed outputs to deadline. Balancing a full-time leadership role, MSc study, professional certification exams, and personal commitments demonstrated that effective prioritisation and forward planning are essential to maintaining quality and managing stress under sustained pressure. These practices are now embedded habits, supporting long-term professional resilience, consistent delivery, and effective management of competing academic, professional, and personal demands.</p>
-                          <p style="margin-top: 10px;"><a href="Project Management.jpg" class="project-link" target="_blank">Project Management Evidence</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Give and receive constructive feedback</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Constructive feedback was embedded throughout MSc group and individual work, where peer and tutor commentary was used to refine reports, presentations, and technical artefacts. I actively sought and acted on feedback to clarify arguments, improve structure, and strengthen critical analysis, while also providing balanced, evidence-based feedback to peers. This reciprocal feedback process has become a core professional habit, supporting continuous improvement, psychological safety, and shared accountability within teams.</p>
-                          <p style="margin-top: 10px;"><a href="COM.jpg" class="project-link" target="_blank">Leadership &amp; Resilience Evidence</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <div class="unit">
 
-            <h3>Creativity, Entrepreneurial, Problem solving, Initiative, Decision Making</h3>
-            <div class="table-wrap">
-              <table class="skills-table">
-                <thead>
-                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Create, discuss and deliver strategies for sustainability for all stakeholders (company, community and environment)</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Strategies for sustainability were developed through the Development Individual Project, where cloud architectures and roadmaps considered long-term organisational viability, regulatory expectations, and environmentally responsible technology adoption, including green cloud principles. This highlighted that sustainable computing requires balancing business performance, stakeholder trust, and environmental impact rather than short-term technical optimisation. These considerations now inform professional practice by embedding sustainability into architectural planning, cost efficiency, and long-term service resilience for organisations and their wider communities.</p>
-                          <p style="margin-top: 10px;"><a href="DAbiodun_12696259_COM1.pdf" class="project-link" target="_blank">FinBankX – Hybrid Multi-Cloud Strategy</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Able to make a decision on a complex matter/scenario using multiple sources of information</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Complex decision-making was demonstrated through enterprise risk and architecture work such as the Pampered Pets Monte Carlo assessment and the FinBankX hybrid multi-cloud proposal, where regulatory, technical, financial, and operational data were evaluated together. Multiple sources—including academic literature, breach statistics, tooling documentation, and stakeholder requirements—were synthesised to select proportionate controls and architectures. This approach is now used professionally to make defensible, well-reasoned decisions in ambiguous situations where competing risks and priorities must be balanced.</p>
-                          <p style="margin-top: 10px;">
-                            <a href="Executive summary_Pampered Pets.pdf" class="project-link" target="_blank">Pampered Pets Risk Assessment Summary</a><br>
-                            <a href="DAbiodun_12696259_COM1.pdf" class="project-link" target="_blank">FinBankX – Hybrid Multi-Cloud Strategy</a>
-                          </p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+          <h3 class="unit-title">Unit 3: Methodology and Research Methods</h3>
+
+          <div class="seminar-preparation">
+
+            <h5>📋 Seminar Preparation</h5>
+
+            <p><strong>Topic Outcomes:</strong> Explore future trends in cloud computing, focusing on the integration of AI, Blockchain, and Quantum Computing. Discuss the potential of these technologies to transform cloud operations. Assess how emerging technologies like AI and quantum computing may impact cloud infrastructure. Predict future developments in cloud computing and their implications for IT professionals.</p>
+
+            <p><a href="projects/Module%207/U3%20Evaluating%20Research%20Design%20and%20Methodology.html" target="_blank" rel="noopener noreferrer" class="project-link">📄 Evaluating Research Design and Methodology</a></p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activities:</h4>
+
+            <div class="activity-item">
+
+              <div class="project-highlight">
+
+                <div class="project-title">💬 Forum Discussion – Research Ethics and Literature Review</div>
+
+                <div class="project-description">Participate in peer discussions analysing research ethics, reasoning methods, and the practical development of literature reviews.</div>
+
+                <ul style="margin-top:10px; padding-left:18px; line-height:1.8; list-style:none;">
+
+                  <li style="margin-bottom:8px;"><strong>Summary Response:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=328357#p658484" target="_blank" rel="noopener noreferrer" class="project-link">View Discussion</a></li>
+
+                </ul>
+
+              </div>
+
             </div>
 
           </div>
 
-          <div class="competency-group">
-            <h2>Technical (Data Science)</h2>
+          <div class="seminar-preparation">
 
-            <h3>IT and Digital, Numeracy</h3>
-            <div class="table-wrap">
-              <table class="skills-table">
-                <thead>
-                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>SQL for database querying</td>
-                    <td class="level">Aware</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>I have basic knowledge of SQL for database querying. I can write simple SELECT statements, apply filters using WHERE clauses, perform basic joins, and sort or aggregate data using ORDER BY, COUNT, and SUM. I use SQL primarily for data validation, reporting, and understanding underlying data structures to support analysis and decision-making.</p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Python Programming</td>
-                    <td class="level">Trained</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>I have trained-level proficiency in Python programming. I can write structured scripts, use core libraries such as pandas and NumPy for data analysis, automate routine tasks, and develop simple data models. I apply Python primarily for academic projects, data processing, and analytical tasks, and I continue to strengthen my skills through practical application and continuous learning.</p>
-                          <p style="margin-top: 10px;">
-                            <a href="../Module%201/Program" class="project-link" target="_blank">Individual Programming Exercise</a><br>
-                            <a href="Programming%20excercise.jpg" class="project-link" target="_blank">Programming Exercise Feedback</a>
-                          </p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Java</td>
-                    <td class="level">Aware</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>I have awareness-level knowledge of Java programming. I understand core concepts such as object-oriented programming, classes, methods, inheritance, and basic exception handling. I can read and interpret simple Java code and understand how applications are structured, while continuing to develop practical experience through learning and experimentation.</p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Python</td>
-                    <td class="level">Trained</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Before starting the programme, I was apprehensive about programming. Through practice-based learning in Launching into Enterprise IT Management (April 2024), I developed strong confidence and trained-level proficiency in Python, including writing structured scripts, using pandas and NumPy, automating tasks, and building simple data models. I apply these skills to academic projects and continue to strengthen them through ongoing practice. Lecturer feedback confirmed that my submitted code met all assessment requirements and was well structured, with effective use of error handling (try/catch blocks). My referencing was also praised for being correctly formatted. While feedback noted improvements were needed in the presentation of my commentary file, this reinforced the importance of clearer academic writing and critical source evaluation. Overall, this assessment marked a significant progression in my technical confidence and capability.</p>
-                          <p style="margin-top: 10px;">
-                            <a href="../Module%201/Program" class="project-link" target="_blank">Individual Programming Exercise</a><br>
-                            <a href="Programming%20excercise.jpg" class="project-link" target="_blank">Programming Exercise Feedback</a>
-                          </p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>noSQL</td>
-                    <td class="level">Aware</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>I have basic awareness of NoSQL databases and understand key differences from relational systems, including common use cases and data models.</p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Scripting Language (Python)</td>
-                    <td class="level">Trained</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>I use Python to automate tasks, process data, and support analysis through simple, reusable scripts.</p>
-                          <p style="margin-top: 10px;">
-                            <a href="../Module%201/Program" class="project-link" target="_blank">Individual Programming Exercise</a><br>
-                            <a href="Programming%20excercise.jpg" class="project-link" target="_blank">Programming Exercise Feedback</a>
-                          </p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Statistical Language (R)</td>
-                    <td class="level">Aware</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>I operate at an aware level with statistical tools such as R. I apply statistical reasoning through Excel modelling and simulation while actively developing further capability.</p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Gits - repository development and maintenance</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Git-based workflows are used for version control of code and documentation, including branching, pull requests, and history review to support collaborative development and auditability. This is demonstrated through the ongoing development and maintenance of my public E-Portfolio and project repositories, where commits, branching strategies, and structured content updates provide a clear audit trail of professional and academic work.</p>
-                          <p style="margin-top: 10px;"><a href="https://dma-1970.github.io/Portfolio/index.html" class="project-link" target="_blank">View Public E-Portfolio (Git-Backed Site)</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Use of conferencing technologies and Moodle (VLE)</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Effective use of conferencing technologies and the Moodle VLE was demonstrated through regular collaboration, presentations, and online learning using Microsoft Teams, Zoom, and Moodle. Rapid familiarisation with Moodle and daily professional use of collaboration tools evidences confident adoption and effective use of digital learning and communication platforms.</p>
-                          <p style="margin-top: 10px;"><a href="Moodle.jpg" class="project-link" target="_blank">Moodle VLE Evidence</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Use of Word Processing tools and Spreadsheets</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Word processing and spreadsheet tools were used extensively to produce structured reports, quantitative risk models, and planning artefacts across modules and professional work. This capability is evidenced by a high-distinction result (91%) in a coursework submission requiring clear written analysis, accurate use of spreadsheets for modelling and planning, and professional presentation of complex information.</p>
-                          <p style="margin-top: 10px;">
-                            <a href="Project Management.jpg" class="project-link" target="_blank">Grade confirmation</a><br>
-                            <a href="ASCENTIA.pdf" class="project-link" target="_blank">ASCENTIA Coursework Submission</a>
-                          </p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Effective use of e-library resource</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Effective use of e-library resources was demonstrated through consistent integration of peer-reviewed academic literature and industry frameworks across assessed coursework. This is evidenced by assessment feedback noting the use of appropriate, up-to-date references and correct academic citation, confirming the ability to source, evaluate, and apply scholarly material to support analysis and decision-making.</p>
-                          <p style="margin-top: 10px;"><a href="Library.jpg" class="project-link" target="_blank">E-Library Usage Evidence</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <h5>🎓 Seminar</h5>
+
+            <p><strong>Title:</strong> Peer Review Activity</p>
+
+            <p>Discusses how quantitative, qualitative, and mixed methods are selected and applied.</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Weekly Reflection – Unit 3</strong></p>
+
+              <p class="reflection">This week examined how research design choices shape validity, reliability, and credibility in computing research. Dawson (2015) and Saunders et al. (2012) clarified how exploratory and conclusive aims determine the use of qualitative, quantitative, or mixed methods. Contrasting Alasmary et al.'s (2021) experimental phishing study with Mittelstadt's (2019) interpretive analysis of AI ethics demonstrated that statistical rigour and contextual insight are complementary. This reflects my professional practice, where metrics-led security reporting must align with governance frameworks such as ISO 27001 and GDPR. Going forward, I will develop a small mixed-method pilot study to strengthen methodological justification for my MSc project.</p>
+
             </div>
 
           </div>
 
-          <div class="competency-group">
-            <h2>Subject Application</h2>
+        </div>
 
-            <h3>Global Citizen, Teamwork, Leadership, Emotional Intelligence</h3>
-            <div class="table-wrap">
-              <table class="skills-table">
-                <thead>
-                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Take into account other people's perspectives</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Taking account of others’ perspectives was demonstrated through collaborative coursework in Enterprise IT Project Management, with group project feedback confirming effective teamwork and openness to alternative viewpoints during planning and delivery. This aligns with professional conduct expectations consistent with BCS principles and is applied in practice by actively listening to diverse perspectives to support inclusive decision-making and balanced governance outcomes.</p>
-                          <p style="margin-top: 10px;"><a href="ENtITPM.jpg" class="project-link" target="_blank">Enterprise IT PM Team Evidence</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Work constructively with differences in viewpoints</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Working constructively with differing viewpoints was demonstrated through team-based coursework in Enterprise IT Project Management, where consensus-building and evidence-based justification were required to deliver a coherent group outcome. This reflects BCS professional conduct principles of respect, objectivity, and professional judgement, and is applied in practice by facilitating balanced dialogue between security, business, and compliance stakeholders to achieve aligned decisions.</p>
-                          <p style="margin-top: 10px;"><a href="ENtITPM.jpg" class="project-link" target="_blank">Enterprise IT PM Team Evidence</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Actively participate in a range of community activities as an informed citizen</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Active participation in community and professional activities has been reinforced through reflective practice in <em>Research Methods and Professional Practice</em>, where continuing professional development (CPD) planning and engagement with professional bodies were required. I actively engage in industry forums, professional networks, and knowledge-sharing platforms, including mentoring peers, contributing thought-leadership content, and participating in professional discussions on emerging technology, governance, and regulatory trends, as evidenced by public contributions such as LinkedIn posts. This sustained engagement demonstrates my informed commitment to the wider professional community and supports continuous learning beyond formal study.</p>
-                          <p style="margin-top: 10px;"><a href="https://www.linkedin.com/posts/david-abiodun-17912a21_itleadership-enterpriseking-cybersecurity-activity-7339934516167254016-JxfH?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAAAR3wm0BcOwCTal22KmxJIYez-18n-e7C50" class="project-link" target="_blank">LinkedIn Thought Leadership Post</a></p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <!-- Unit 4 -->
 
-            <h3>Decision Making, Initiative, Emotional Intelligence, Ethical Awareness</h3>
-            <div class="table-wrap">
-              <table class="skills-table">
-                <thead>
-                  <tr><th>Skill</th><th>Skill Level</th><th>Evidence</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Develop, articulate and clarify your personal values and ethics</td>
-                    <td class="level">Expert</td>
-                    <td>
-                      <details class="evidence">
-                        <summary class="evidence-link">link</summary>
-                        <div class="evidence-body">
-                          <p>Personal values and ethics are reinforced through a sustained commitment to professional standards, governance, and accountability, evidenced by formal certification including Microsoft Certified: Information Protection and Compliance Administrator Associate and successful completion of the SC-100 Cybersecurity Architect examination. These certifications reflect a clear commitment to privacy, regulatory compliance, and ethical security design, demonstrating that professional values are not only articulated but actively maintained through continuous learning and alignment with recognised industry and regulatory expectations.</p>
-                          <p style="margin-top: 10px;">
-                            <a href="https://learn.microsoft.com/api/credentials/share/en-us/davidabiodun-9374/5D9C3288D80D9DE1?sharingId=C1AF7CAFA09D2421" class="project-link" target="_blank">Microsoft Certified: Information Protection and Compliance Administrator Associate</a><br>
-                            <a href="SC-100.jpg" class="project-link" target="_blank">SC-100 Cybersecurity Architect Passing Email</a>
-                          </p>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+        <div class="unit">
+
+          <h3 class="unit-title">Unit 4: Case Studies, Focus Groups and Observations</h3>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
+            <div class="activity-item">
+
+              <div class="project-highlight">
+
+                <div class="project-title">📋 Ricardo–Beth Privacy Case Study</div>
+
+                <div class="project-description">
+
+                  <p>This week focuses on case studies, focus groups and observational research. The requirement is to read the Ricardo–Beth privacy case and answer the ethical questions relating to data access, consent, and professional responsibility. These answers should be added to the e-Portfolio and prepared for discussion during the Friday seminar.</p>
+
+                  <p><a href="projects/Module%207/U4%20Ethical%20Analysis.pdf" class="project-link" target="_blank" rel="noopener noreferrer">📄 View Ricardo–Beth Privacy Case Study</a></p>
+
+                </div>
+
+              </div>
+
+              <div class="project-highlight">
+
+                <div class="project-title">📝 Literature Review Outline Submission</div>
+
+                <div class="project-description">
+
+                  <p>A brief outline of the Literature Review may be submitted by the end of this unit to receive formative feedback from the tutor. The submission should only highlight the initial plan, including the scope, structure, and key themes to be explored.</p>
+
+                  <p><a href="projects/Module%207/DAbiodun_12696259.pdf" class="project-link" target="_blank" rel="noopener noreferrer">📄 View Literature Review Outline Submission</a></p>
+
+                </div>
+
+              </div>
+
             </div>
 
           </div>
 
-        </section>
+          <div class="seminar-preparation">
+
+            <h5>🎓 Seminar</h5>
+
+            <p><strong>Title:</strong> Case Study on Privacy</p>
+
+            <p>Explores qualitative methods and triangulation for contextual validity.</p>
+
+            <p><a href="projects/Module%207/U4%20Seminar%20Prep.html" target="_blank" rel="noopener noreferrer" class="project-link">📘 View Seminar Preparation</a></p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Weekly Reflection – Unit 4</strong></p>
+
+              <p class="reflection">This week introduced qualitative methods including case studies, focus groups, and observation, highlighting their value in capturing real-world context and depth. I learned that case studies rely on multiple evidence sources, while focus groups present ethical challenges around consent, confidentiality, and group dynamics. Reflecting on this, I recognised parallels with stakeholder engagement in my enterprise role, where sensitive governance discussions require careful facilitation. The learning reinforced the importance of aligning methods to research aims and embedding strong ethical safeguards. Going forward, I will develop a short case study protocol supported by clear consent procedures and triangulation, using Sage Research Methods to ensure rigour in my MSc project.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Unit 5 -->
+
+        <div class="unit">
+
+          <h3 class="unit-title">Unit 5: Interviews, Survey Methods and Questionnaire Design</h3>
+
+          <div class="seminar-preparation">
+
+            <h5>📹 Lecturecast</h5>
+
+            <p><strong>Title:</strong> Questionnaire Design</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
+            <div class="activity-item">
+
+              <div class="project-highlight">
+
+                <div class="project-title">📋 Case Study: Inappropriate Use of Surveys</div>
+
+                <div class="project-description">
+
+                  <p>This week focuses on interview techniques, survey methods, and questionnaire design. The requirement is to read the case study on inappropriate use of surveys and analyze the ethical, social, legal and professional implications.</p>
+
+                  <p><a href="projects/Module%207/iouos.html" target="_blank" class="project-link">📄 View Case Study: Inappropriate Use of Surveys – Ethical, Social, Legal and Professional Implications</a></p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Weekly Reflection – Unit 5</strong></p>
+
+              <p class="reflection">This week challenged my assumptions about the simplicity of data collection. I recognised that I had previously underestimated how easily question wording can introduce bias and weaken validity. The case study on unethical survey use also showed how quickly well-intentioned research can cross ethical and legal boundaries when consent, purpose limitation, and transparency are not explicitly stated. Critically, I see a tendency in my own practice to prioritise technical outcomes over methodological discipline. For my capstone, I will therefore prioritise scenario-based evaluation and artefact testing, using practitioner feedback if required, and apply stricter ethical scrutiny to every data decision. This will strengthen my rigour, accountability, and governance mindset.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Unit 6 -->
+
+        <div class="unit">
+
+          <h3 class="unit-title">Unit 6: Quantitative Methods – Descriptive and Inferential Statistics</h3>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
+            <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on descriptive statistics and data analysis techniques. 
+
+                The requirement is to analyse a provided dataset using descriptive statistical methods. 
+
+                Calculate measures of central tendency, dispersion, and create appropriate visualisations. 
+
+                These analyses should be added to the e-Portfolio and prepared for discussion during the Friday seminar.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Weekly Reflection – Unit 6</strong></p>
+
+              <p class="reflection">This week revisited descriptive statistics, including mean, median, mode, range, variance, and standard deviation. Although these concepts felt familiar from early education, I realised I had previously relied on them mechanically rather than analytically. Working through the workbook exposed how outliers distort means and how variation reveals hidden inconsistencies, challenging my assumptions about "average" performance. In my professional role, I often use these measures in reporting, but this unit forced me to question my interpretations more critically. Going forward, I will apply both central tendency and spread before drawing conclusions, strengthening the credibility of my operational analysis and capstone reporting.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Unit 7 -->
+
+        <div class="unit">
+
+          <h3 class="unit-title">Unit 7: Inferential Statistics and Hypothesis Testing</h3>
+
+          <div class="seminar-preparation">
+
+            <h5>🎓 Seminar</h5>
+
+            <p><strong>Title:</strong> Inferential Statistics Workshop</p>
+
+            <p>For this workshop, the requirement is to work through the examples provided on both descriptive statistics and hypothesis testing. Please bring any questions about the analysis to this seminar. The interpretation of results will also be discussed, so thoughts should be prepared.</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
+            <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on inferential statistics and hypothesis testing. 
+
+                The requirement is to conduct hypothesis tests on a provided dataset, interpret results, 
+
+                and discuss statistical significance. These analyses should be added to the e-Portfolio 
+
+                and prepared for discussion during the Friday seminar.
+
+              </p>
+
+              <div class="seminar-preparation">
+                <h5>📹 Lecturecast</h5>
+                <p><strong>Title:</strong> Summary Measures and Inference</p>
+              </div>
+
+              <div class="project-highlight">
+
+                <div class="project-title">📋 Compulsory e-Portfolio Component</div>
+
+                <div class="project-description">
+
+                  <p>Review the additional notes on Inference and then complete the Hypothesis Testing and Summary Measures worksheet in Excel or LibreOffice. The completed worksheets from units 7 and 8 should be included in the e-Portfolio. The requirement is to provide interpretation of the results, based on the questions asked and from the analysis of the data. The worksheets may be completed before or after this week's workshop.</p>
+
+                  <p><a href="projects/Module%207/HTSMW.html" class="project-link">📄 View Hypothesis Testing and Summary Measures Worksheet</a></p>
+
+                </div>
+
+              </div>
+
+              <div class="project-highlight">
+
+                <div class="project-title">💬 Collaborative Discussion – Case Study: Accuracy of Information</div>
+
+                <div class="project-description">
+
+                  <p><strong>Discussion Topic:</strong> Case Study: Accuracy of Information</p>
+
+                  <ul style="margin-top:10px; padding-left:18px; line-height:1.8; list-style:none;">
+
+                    <li style="margin-bottom:8px;"><strong>Initial Post:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=338396#p671813" class="project-link" target="_blank" rel="noopener noreferrer">View Initial Post</a></li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+
+              <div class="assessment-highlight">
+
+                <div class="assessment-title">📝 Literature Review Submission</div>
+
+                <div class="assessment-description">
+
+                  <p>Submit the Literature Review as a graded assignment. Ensure all requirements are met and the document is properly formatted before submission.</p>
+
+                  <p class="grade distinction"><strong>Grade:</strong> Distinction | <a href="projects/Module%207/DAbiodun_12696259.pdf" class="project-link" target="_blank" rel="noopener noreferrer">📄 View Submission</a></p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Weekly Reflection – Unit 7</strong></p>
+
+              <p class="reflection">This week focused on inferential statistics and hypothesis testing, supported by Excel worksheets and a collaborative ethics discussion. Working through the calculations strengthened my understanding of statistical significance and decision thresholds. However, I recognised a tendency to trust numerical outputs too quickly without sufficiently challenging underlying assumptions. The discussion on ethical boundaries between legitimate analytical variation and manipulation was particularly impactful, highlighting how selective reporting can breach professional and regulatory standards. Going forward, I will apply greater critical scrutiny to my analyses, ensuring transparency and full disclosure. Submitting my literature review this week also provided a strong foundation for refining my research methodology based on feedback.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Unit 8 -->
+
+        <div class="unit">
+
+          <h3 class="unit-title">Unit 8: Data Analysis and Visualisation</h3>
+
+          <div class="seminar-preparation">
+
+            <h5>🎓 Seminar</h5>
+
+            <p><strong>Title:</strong> Workshop on Presenting Results</p>
+
+            <p>Focuses on analytical tools, visual communication, and ethical storytelling.</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
+            <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on data analysis and visualisation techniques. 
+
+                The requirement is to create visualisations of the research data, ensuring they are 
+
+                clear, accurate, and ethically presented. These visualisations should be added to the 
+
+                e-Portfolio and prepared for discussion during the Friday seminar.
+
+              </p>
+
+              <div class="project-highlight">
+                <div class="project-title">📋 Compulsory e-Portfolio Component</div>
+                <div class="project-description">
+                  <p>Complete the Charts Worksheet and Analysis exercise. This worksheet demonstrates how different chart types and visualisation choices impact data interpretation and understanding.</p>
+                  <p><a href="projects/Module%207/cwa.html" class="project-link" target="_blank">📄 View Charts Worksheet and Analysis</a></p>
+                </div>
+              </div>
+
+              <div class="project-highlight">
+                <div class="project-title">💬 Collaborative Discussion – Case Study: Accuracy of Information</div>
+                <div class="project-description">
+                  <p><strong>Discussion Topic:</strong> Case Study: Accuracy of Information</p>
+                  <ul style="margin-top:10px; padding-left:18px; line-height:1.8; list-style:none;">
+                    <li style="margin-bottom:8px;"><strong>Response to Mustafa:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=339187#p673697" class="project-link" target="_blank" rel="noopener noreferrer">View Response to Mustafa</a></li>
+                    <li style="margin-bottom:8px;"><strong>Response to Abdulrahman:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=338192#p673705" class="project-link" target="_blank" rel="noopener noreferrer">View Response to Abdulrahman</a></li>
+                    <li style="margin-bottom:8px;"><strong>Response to Jordan:</strong> <a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=338816#p673702" class="project-link" target="_blank" rel="noopener noreferrer">View Response to Jordan</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Weekly Reflection – Unit 8</strong></p>
+
+              <p class="reflection">This unit shifted my focus from methods to data interpretation and visualisation. I learned that data presentation is not neutral; even statistically valid results can mislead through poor chart design or selective emphasis. Seminar examples showed how scaling, bin width, and framing shape interpretation, reinforcing Berenson et al.'s (2015) argument that visuals influence meaning as much as numbers. The worksheet highlighted this practically, where different histogram constructions altered conclusions about consistency. I also recognised interpretive bias in qualitative coding, requiring reflexivity and transparency. Professionally, this aligns with my governance role, where dashboards inform critical decisions. Going forward, I will justify all visual choices and acknowledge their limitations.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Unit 9 -->
+
+        <div class="unit">
+
+          <h3 class="unit-title">Unit 9: Validity and Generalisability in Research</h3>
+
+          <div class="seminar-preparation">
+
+            <h5>🎥 Lecturecast</h5>
+
+            <p><strong>Title:</strong> Validity and Generalisation</p>
+
+            <p>Explores internal and external validity, generalisability, and the implications of bias and design choices for research credibility.</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
+            <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on validity and generalisability in research. 
+
+                The requirement is to strengthen the ability to evaluate whether research findings are credible within the study context 
+
+                and appropriately generalisable beyond it. Key tasks include reviewing the Lecturecast on validity and generalisation, 
+
+                and applying these concepts through a practical business visualisation exercise.
+
+              </p>
+
+              <div class="project-highlight">
+                <div class="project-title">📋 Compulsory e-Portfolio Component</div>
+                <div class="project-description">
+                  <p>Practising Business Visualisation with Power BI using the starter sales analysis dataset. This activity demonstrates how dashboard structure, aggregation, and chart selection influence the validity of business insights.</p>
+                  <p><a href="projects/Module%207/08-Starter-Sales%20Analysis%20-%20Power%20BI.pdf" class="project-link" target="_blank">📄 View Power BI Starter Sales Analysis (PDF)</a></p>
+                </div>
+              </div>
+
+              <div class="project-highlight">
+                <div class="project-title">💬 Collaborative Discussion – Case Study: Accuracy of Information</div>
+                <div class="project-description">
+                  <p><strong>Discussion Topic:</strong> Case Study: Accuracy of Information</p>
+                  <p><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=338396#p675179" class="project-link" target="_blank" rel="noopener noreferrer">View Summary and Discussion</a></p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Weekly Reflection – Unit 9</strong></p>
+
+              <p class="reflection">This unit strengthened my understanding of validity and generalisability as practical judgements rather than abstract labels. The Lecturecast clarified internal versus external validity and challenged my assumption that generalisation is mainly statistical. I learned that qualitative findings can be transferable when contextualised. The Power BI exercise showed how filters and chart choices can support interpretation or distort meaning, reinforcing that validity applies to communication as data collection. Professionally, this highlights my responsibility to ensure dashboards inform decisions accurately. Going forward, I will document assumptions and bias risks to improve transparency.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Unit 10 -->
+
+        <div class="unit">
+
+          <h3 class="unit-title">Unit 10: Research Writing</h3>
+
+          <div class="seminar-preparation">
+
+            <h5>📹 Lecturecast</h5>
+
+            <p><strong>Title:</strong> Research Writing</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activities:</h4>
+
+            <div class="activity-item">
+
+              <div class="assessment-highlight">
+
+                <div class="assessment-title">📋 e-Research Proposal Presentation</div>
+
+                <div class="assessment-description">
+
+                  <p><strong>Weighting:</strong> 30% | <strong>Duration:</strong> 15-minute presentation + transcript</p>
+
+                  <p>The research proposal presentation critically evaluates the literature, research design, methodology, and data analysis to produce a coherent proposal aligned with the chosen topic or MSc capstone.</p>
+
+                  <p><a href="https://youtu.be/IxFPqs6hD8U" class="project-link" target="_blank">🎥 Watch Presentation Video (YouTube)</a></p>
+
+                  <p><a href="projects/Module%207/DAbiodun_12696259.pdf" class="project-link" target="_blank">📄 View Transcript (PDF)</a></p>
+
+                  <p class="grade distinction"><strong>Grade:</strong> Distinction</p>
+
+                </div>
+
+              </div>
+
+              <div class="project-highlight">
+
+                <div class="project-title">📋 e-Portfolio Activity: Statistical Worksheet Submissions</div>
+
+                <div class="project-description">
+
+                  <p>Submit statistical worksheets for formative feedback. The requirement is to include the worksheets and analyses in the final e-Portfolio submission in Unit 12.</p>
+
+                </div>
+
+              </div>
+
+              <div class="project-highlight">
+
+                <div class="project-title">📹 Lecturecast: Research Writing</div>
+
+                <div class="project-description">
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Weekly Reflection – Unit 10</strong></p>
+
+              <p class="reflection">This unit reinforced that effective research writing is structured argument, not volume. Producing the 15-minute narrated proposal forced me to prioritise contribution, gap, method, evaluation and ethics, while cutting repetition. Emotionally, I felt a quiet anxiety about accuracy and academic credibility, which drove multiple revisions to refine structure and emphasis. The constraint, though frustrating, improved my judgement and showed that concise delivery can be more rigorous when the logic is auditable. I applied this by consolidating regulatory references and converting detailed timelines into clear phases. Going forward, I will draft then reduce, evidencing every claim and stating limitations explicitly consistently.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Unit 11 -->
+
+        <div class="unit">
+
+          <h3 class="unit-title">Unit 11: Going Forward – Professional Development and Your e-Portfolio</h3>
+
+          <div class="seminar-preparation">
+
+            <h5>🎓 Seminar</h5>
+
+            <p><strong>Title:</strong> e-Portfolio Preparation</p>
+
+            <p>Encourages integration of research learning outcomes into your professional development.</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
+            <div class="activity-item">
+
+              <div class="project-highlight">
+
+                <div class="project-title"><a href="projects/Module%207/PSM.html" class="project-link" target="_blank" style="color: inherit; text-decoration: none;">📋 Professional Skills Matrix</a></div>
+
+                <div class="project-description">
+
+                  <p><a href="projects/Module%207/PSM.html" class="project-link" target="_blank">📊 View Professional Skills Matrix</a></p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Reflection:</strong> [Insert your Unit 11 reflection.]</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Unit 12 -->
+
+        <div class="unit">
+
+          <h3 class="unit-title">Unit 12: Project Management and Managing Risk</h3>
+
+          <div class="seminar-preparation">
+
+            <h5>🎓 Seminar</h5>
+
+            <p><strong>Title:</strong> Managing Research Projects and Risks</p>
+
+            <p>Applies project management and risk assessment principles to academic research delivery.</p>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Activity:</h4>
+
+            <div class="activity-item">
+
+              <p class="activity-text">
+
+                This week focuses on project management and risk management in research. 
+
+                The requirement is to develop a project plan and risk register for the research project, 
+
+                identifying potential challenges and mitigation strategies. These should be added to the 
+
+                e-Portfolio and prepared for discussion during the Friday seminar.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="activity-section">
+
+            <h4 class="activity-title">Reflective Thinking:</h4>
+
+            <div class="activity-item">
+
+              <p class="reflection"><strong>Reflection:</strong> [Final reflection summarising module outcomes.]</p>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
+      <!-- References and Reading Links Section -->
+      <div class="bottom-navigation" style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <a href="projects/Module%207/Reading.html" class="nav-link">📖 Reading</a>
+        <a href="projects/Module%207/References.html" class="nav-link">📚 References</a>
+      </div>
+
+      <!-- Navigation Links -->
+
       <div class="bottom-navigation">
-        <a href="../../index.html" class="nav-link">Back to Home</a>
-        <a href="../../university-of-essex.html" class="nav-link">University of Essex</a>
-        <a href="../../Module1.html" class="nav-link">Module 1</a>
-        <a href="../../Module2.html" class="nav-link">Module 2</a>
-        <a href="../../Module3.html" class="nav-link">Module 3</a>
-        <a href="../../Module4.html" class="nav-link">Module 4</a>
-        <a href="../../Module5.html" class="nav-link">Module 5</a>
-        <a href="../../Module6.html" class="nav-link">Module 6</a>
-        <a href="../../links.html" class="nav-link">All Links</a>
+
+        <a href="index.html" class="nav-link">Back to Home</a>
+
+        <a href="university-of-essex.html" class="nav-link">University of Essex</a>
+
+        <a href="Module1.html" class="nav-link">Module 1</a>
+
+        <a href="Module2.html" class="nav-link">Module 2</a>
+
+        <a href="Module3.html" class="nav-link">Module 3</a>
+
+        <a href="Module4.html" class="nav-link">Module 4</a>
+
+        <a href="Module5.html" class="nav-link">Module 5</a>
+
+        <a href="Module6.html" class="nav-link">Module 6</a>
+
+        <a href="links.html" class="nav-link">All Links</a>
+
       </div>
 
     </div>
 
   </div>
+
+  <script>
+    // Scroll position restoration
+    (function() {
+      const SCROLL_POSITION_KEY = 'module7_scroll_position';
+      
+      // Save scroll position before page unload
+      window.addEventListener('beforeunload', function() {
+        sessionStorage.setItem(SCROLL_POSITION_KEY, window.pageYOffset || document.documentElement.scrollTop);
+      });
+      
+      // Restore scroll position on page load
+      window.addEventListener('load', function() {
+        const savedPosition = sessionStorage.getItem(SCROLL_POSITION_KEY);
+        if (savedPosition !== null) {
+          // Use requestAnimationFrame for smooth restoration
+          requestAnimationFrame(function() {
+            window.scrollTo({
+              top: parseInt(savedPosition, 10),
+              behavior: 'auto' // Use 'smooth' if you prefer animated scrolling
+            });
+            // Clear the saved position after restoring
+            sessionStorage.removeItem(SCROLL_POSITION_KEY);
+          });
+        }
+      });
+      
+      // Also handle browser back/forward navigation
+      window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+          // Page was loaded from cache (back/forward navigation)
+          const savedPosition = sessionStorage.getItem(SCROLL_POSITION_KEY);
+          if (savedPosition !== null) {
+            requestAnimationFrame(function() {
+              window.scrollTo({
+                top: parseInt(savedPosition, 10),
+                behavior: 'auto'
+              });
+            });
+          }
+        }
+      });
+    })();
+  </script>
 
 </body>
 
