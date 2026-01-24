@@ -244,65 +244,20 @@
 
     }
 
-    .skill-level-key {
+    .level-legend-table {
 
-      position: fixed;
+      max-width: 520px;
 
-      right: 24px;
-
-      top: 140px;
-
-      width: 260px;
-
-      background: rgba(15, 23, 42, 0.9);
-
-      border-radius: 16px;
-
-      border: 1px solid rgba(148, 163, 184, 0.4);
-
-      padding: 16px 18px;
-
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-
-      z-index: 900;
-
-      font-size: 0.9em;
+      margin: 20px 0 10px;
 
     }
 
-    .skill-level-key h3 {
+    .level-legend-table th:first-child,
+    .level-legend-table td:first-child {
 
-      font-family: 'Montserrat', sans-serif;
+      width: 120px;
 
-      font-size: 1em;
-
-      margin: 0 0 8px;
-
-      color: #e5e7eb;
-
-    }
-
-    .skill-level-key p {
-
-      margin: 0 0 4px;
-
-      font-size: 0.9em;
-
-      line-height: 1.5;
-
-      color: #cbd5f5;
-
-    }
-
-    .skill-level-key .level-label {
-
-      font-weight: 600;
-
-      color: #93c5fd;
-
-      display: inline-block;
-
-      width: 78px;
+      white-space: nowrap;
 
     }
 
@@ -530,18 +485,6 @@
 
       .back-btn { top: 15px; left: 15px; padding: 10px 16px; font-size: 0.9em; }
 
-      .skill-level-key {
-
-        position: static;
-
-        width: 100%;
-
-        margin: 0 0 16px;
-
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-
-      }
-
     }
 
     @media (max-width: 480px) {
@@ -626,15 +569,33 @@
 
           <p><a href="https://1drv.ms/x/c/6E77F8217BA0847E/IQCrsdJAmAdSQosb_MMvByPxAY859UromaeSUDb-vLhCK_Y?e=FnsHjS" class="project-link" target="_blank">View Professional Skills Matrix (Excel)</a></p>
 
-        </div>
+          <div class="table-wrap" style="max-width: 520px; margin-top: 20px;">
+            <table class="skills-table level-legend-table">
+              <thead>
+                <tr><th>Level</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Aware</td>
+                  <td>General understanding and basic knowledge.</td>
+                </tr>
+                <tr>
+                  <td>Trained</td>
+                  <td>Able to apply knowledge, able to work independently under certain conditions.</td>
+                </tr>
+                <tr>
+                  <td>Proficient</td>
+                  <td>Broad and in-depth knowledge, able to work independently with very little supervision.</td>
+                </tr>
+                <tr>
+                  <td>Expert</td>
+                  <td>Seen as a subject matter expert, able to lead and train others.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-        <aside class="skill-level-key">
-          <h3>Skill Level Key</h3>
-          <p><span class="level-label">Aware</span>General understanding and basic knowledge.</p>
-          <p><span class="level-label">Trained</span>Able to apply knowledge; can work independently under certain conditions.</p>
-          <p><span class="level-label">Proficient</span>Broad, in-depth knowledge; works independently with very little supervision.</p>
-          <p><span class="level-label">Expert</span>Subject matter expert; able to lead and train others.</p>
-        </aside>
+        </div>
 
         <section class="skills-matrix">
 
