@@ -1,1 +1,391 @@
-2b7fb4315cf6a79d73d65f5877438ad7f3ff9823
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Project Links - David Abiodun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Blurred background with dark overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/projectlist.jpg') no-repeat center center/cover;
+            filter: blur(3px);
+            -webkit-filter: blur(3px);
+            transform: scale(1.05);
+            z-index: -2;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+
+        /* Transparent overlay container */
+        .overlay {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            font-weight: 300;
+            color: #b8c5e0;
+            margin-top: 8px;
+        }
+
+        /* Module sections */
+        .module-card {
+            background: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(8px) saturate(100%);
+            -webkit-backdrop-filter: blur(8px) saturate(100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .module-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(21, 87, 36, 0.25),
+                        0 8px 32px rgba(0, 0, 0, 0.2);
+            border-color: rgba(21, 87, 36, 0.3);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .module-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .link-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .link-list li {
+            margin-bottom: 12px;
+        }
+
+        .link-list a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 0.95em;
+        }
+
+        .link-list a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(21, 87, 36, 0.4);
+            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25);
+            transform: translateX(5px);
+        }
+
+        /* Back link */
+        .back-link {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 10;
+        }
+
+        .back-link a {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 12px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(21, 87, 36, 0.4);
+            box-shadow: 0 0 12px rgba(21, 87, 36, 0.25);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .module-card {
+                padding: 20px;
+            }
+
+            .back-link {
+                top: 20px;
+                left: 20px;
+            }
+
+            .overlay {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back-link">
+        <a href="index.html">← Back to Home</a>
+    </div>
+
+    <div class="overlay">
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <h1>All Project Links</h1>
+                <div class="subtitle">Complete portfolio of academic and professional projects</div>
+            </div>
+
+            <!-- Module 1 Section -->
+            <div class="module-card">
+                <div class="module-title">Module 1: Launching into Enterprise IT Management</div>
+                <ul class="link-list">
+                    <li><a href="Module1.html">Module 1 Main Page</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=228967#p409630">Unit 1: Collaborative Learning Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=228967#p413194">Unit 2: Collaborative Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=228967#p416340">Unit 3: Collaborative Discussion (Grade: Distinction)</a></li>
+                    <li><a href="projects/Module 1/AWS costings.pptx">Unit 6: AWS Costings</a></li>
+                    <li><a href="https://github.com/DMA-1970/Portfolio/tree/main/projects/Module%201/Program">Unit 7: Assessment: Individual Programming Exercise (Grade: Distinction)</a></li>
+                    <li><a href="projects/Module 1/Unit 8 Seminar Grid Template.docx">Unit 8: Seminar Grid Template</a></li>
+                    <li><a href="projects/Module 1/Introducing a digital process using BPMN.pdf">Unit 10: Introducing a digital process using BPMN</a></li>
+                    <li><a href="projects/Module 1/BPMN.png">Unit 10: Represent your digitalised process, using BPMN/UML notation</a></li>
+                    <li><a href="projects/Module 1/Individual Presentation.html">Unit 12: Individual Presentation (Grade: Pass)</a></li>
+                </ul>
+            </div>
+
+            <!-- Module 2 Section -->
+            <div class="module-card">
+                <div class="module-title">Module 2: Security and Risk Management</div>
+                <ul class="link-list">
+                    <li><a href="Module2.html">Module 2 Main Page</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310">Unit 1: Collaborative Learning Discussion</a></li>
+                    <li><a href="projects/User Participation in the Risk Management Process.pdf">Unit 2: User Participation in the Risk Management Process</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245614#p451961">Unit 2: Response to Lutero Malunga's Post</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629">Unit 2: Response on Ilyas Demirtas' Post</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580">Unit 2: Response to Tutor</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452572">Unit 2: Response to Tobias Zeier</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=254918#p475241">Unit 2: Response on Samer Saleem's Post</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p457852">Unit 3: Collaborative Discussion Summary</a></li>
+                    <li><a href="projects/Risk Modelling/BA.jpeg">Unit 4: Threat Modelling Exercise: View Threat Model</a></li>
+                    <li><a href="Bank Threats.adt">Unit 4: ADT Threat Model</a></li>
+                    <li><a href="projects/Applicable Frameworks for Different Organisations.pdf">Unit 5: Applicable Frameworks for Different Organisations</a></li>
+                    <li><a href="projects/projects/Pampered Pets_Assumptions.pdf">Unit 6: Security Standards: Assumptions</a></li>
+                    <li><a href="projects/Recommendations for Pampered Pets Standards_Short.pdf">Unit 6: Short Report</a></li>
+                    <li><a href="projects/Recommendations for Pampered Pets Standards_Detailed.pdf">Unit 6: Detailed Report</a></li>
+                    <li><a href="projects/Think Bayes/TB.html">Unit 7: Think Bayes Project</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p470013">Unit 7: Collaborative Discussion 2: Initial Post</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=254918#p475241">Unit 8: Response on Sameer Saleem's Post</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253279#p475224">Unit 8: Response on Tobias Zeier's Post</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p475789">Unit 9: My Summary</a></li>
+                    <li><a href="projects/DR Solutions Design and Review.pptx">Unit 10: DR Solutions Design and Review</a></li>
+                    <li><a href="projects/Executive Summary/index.html">Unit 11: Executive Summary</a></li>
+                    <li><a href="projects/Cloud Computing The Most Influential Security Risk Management Trend for the Next 5 Years.pptx">Unit 12: Cloud Computing The Most Influential Security Risk Management Trend for the Next 5 Years</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309152#p605525">Unit 12: Peer Response Discussion</a></li>
+                    <li><a href="projects/Module2/PamperedPetsReport_FINAL.pdf">Development Team Project (Grade: Distinction)</a></li>
+                    <li><a href="projects/Module2/DAbiodun_12696259 Executive summary.pdf">Individual Project: Executive Summary (Grade: Distinction)</a></li>
+                </ul>
+            </div>
+
+            <!-- Module 3 Section -->
+            <div class="module-card">
+                <div class="module-title">Module 3: Information Technology Service Management</div>
+                <ul class="link-list">
+                    <li><a href="Module3.html">Module 3 Main Page</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310">Unit 1: ITSM Key Concepts Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245614#p451961">Unit 2: ITSM Principles and Processes Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629">Unit 2: iTech Corporation Case Study Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580">Unit 3: ITSM Frameworks and Standards Discussion</a></li>
+                    <li><a href="projects/Module 3/Assignment 1/DAbiodun_12696259 ITSM Assignment 1_Submission.pdf">Unit 3: Assignment 1: Designing Content Management Databases (Grade: Distinction)</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=254918#p475241">Unit 4: Process Automation and DevOps Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p470013">Unit 5: Service Operation Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253279#p475224">Unit 6: Capstone Project Discussion</a></li>
+                    <li><a href="projects/Module 3/Assignment 2/DAbiodun_12696259 CMDB_Schema_Attributes.xlsm">Unit 6: Assignment 2: Schema Attributes</a></li>
+                    <li><a href="projects/Module 3/Assignment 2/DAbiodun_12696259_Implementation and Demonstration of CMDB.pdf">Unit 6: Assignment 2: Implementation and Demonstration of CMDB (Grade: Distinction)</a></li>
+                </ul>
+            </div>
+
+            <!-- Module 4 Section -->
+            <div class="module-card">
+                <div class="module-title">Module 4: Enterprise IT Project Management</div>
+                <ul class="link-list">
+                    <li><a href="Module4.html">Module 4 Main Page</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p450310">Unit 1: Introductory Seminar Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245614#p451961">Unit 2: Requirements Management Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245631#p452629">Unit 2: Gherkin Language Practice Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=245630#p452580">Unit 3: WBS and Scheduling Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=254918#p475241">Unit 3: Forum Discussion Continuation</a></li>
+                    <li><a href="projects/EnterpriseITProjectManagement/groupproject.html">Unit 3: Part 1: Coursework: Group Report (Grade: Distinction)</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p470013">Unit 4: Forecasting and Estimation Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=254918#p475241">Unit 5: Governance and Risk Management Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253279#p475224">Unit 5: Future Trends Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=253581#p475789">Unit 6: Emerging Trends Discussion</a></li>
+                    <li><a href="projects/Module4/IndividualPresentation.html">Unit 6: Coursework: Individual Presentation and Reflection (Grade: Distinction)</a></li>
+                </ul>
+            </div>
+
+            <!-- Module 5 Section -->
+            <div class="module-card">
+                <div class="module-title">Module 5: Into Data Science</div>
+                <ul class="link-list">
+                    <li><a href="Module5.html">Module 5 Main Page</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=295963#p571798">Unit 3: Summative Collaborative Discussion (Grade: Merit)</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=300317#p583370">Unit 5: Collaborative Discussion 2</a></li>
+                    <li><a href="projects/Enterprise Data Report - Case Analysis/EnterpriseDataReport.html">Unit 6: Summative Assignment: Enterprise Data Report - Case Analysis (Grade: Distinction)</a></li>
+                    <li><a href="projects/Module5/DAbiodun_12696259.docx">Unit 6: Emerging Technologies – Digital Conversion and Transformation</a></li>
+                    <li><a href="projects/Module5/Summative Assignment/ESIR.html">Unit 11: Summative Assignment: Enterprise Data Executive Summary and Implementation Report (Grade: Distinction)</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309291#p605511">Unit 12: ERP Conceptual Model/Diagram Discussion</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=309152#p605525">Unit 12: Peer Response Discussion</a></li>
+                </ul>
+            </div>
+
+            <!-- Module 6 Section -->
+            <div class="module-card">
+                <div class="module-title">Module 6: Cloud Operations and Management</div>
+                <ul class="link-list">
+                    <li><a href="Module6.html">Module 6 Main Page</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=311234#p609044">Unit 1: Formative Discussion – AWS vs Google Cloud</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=312915#p611909">Unit 2: Formative Discussion – ROCCA and TOGAF</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=313725#p613967">Unit 3: Discussion – Cloud Design Tool</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=314289#p616083">Unit 3: Response to Peers' Posts</a></li>
+                    <li><a href="projects/Module%206/How%20scripting%20automation%20helps%20cloud%20operations.docx">Unit 4: Formative Activity – Bash Script and Report</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=319988#p630265">Unit 5: Deploying a 12-Factor App to Kubernetes with Minikube</a></li>
+                    <li><a href="projects/Module%206/Development%20Team%20Project.html">Unit 6: Development Team Project – Cloud Infrastructure and Framework Report</a></li>
+                    <li><a href="https://www.nist.gov/cyberframework">Unit 6: NIST Cybersecurity Framework</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=321918#p634665" target="_blank" rel="noopener noreferrer">Unit 7: Security Audit of OpenStack Cloud Applications Using OpenVAS</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=322914#p636946">Unit 8: Disaster Recovery (DR) Design for OpenStack</a></li>
+                    <li><a href="projects/Module%206/DB_Migration_Discussion_Post.pdf">Unit 9: Formative Activity – Database Migration to OpenStack</a></li>
+                    <li><a href="assets/Unit9_HybridCloud_Migration_Large.png">Unit 9: Hybrid Cloud Architecture Diagram (OpenStack → Azure/AWS)</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=323361#p637949">Unit 10: Discussion Forum – OpenFaaS</a></li>
+                    <li><a href="projects/Module%206/ai-openstack.html">Unit 11: AI Model Deployment on OpenStack</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=326253#p644171">Unit 12: Group Discussion – Future Trends of AI, Blockchain, and Quantum Computing in Cloud Operations</a></li>
+                </ul>
+            </div>
+
+            <!-- Module 7 Section -->
+            <div class="module-card">
+                <div class="module-title">Module 7: Research Methods and Professional Practice</div>
+                <ul class="link-list">
+                    <li><a href="Module7.html">Module 7 Main Page</a></li>
+                    <li><a href="projects/Module%207/eicitaogai.html">Unit 1: Reflective Activity 1 - Ethics in Computing in the Age of Generative AI</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=328357#p648120" target="_blank" rel="noopener noreferrer">Unit 1: Collaborative Discussion 1 - Codes of Ethics and Professional Conduct</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=329598#p653957" target="_blank" rel="noopener noreferrer">Unit 2: Response to Tasnika Goorhoo</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=329204#p651313" target="_blank" rel="noopener noreferrer">Unit 2: Response to Jordan Speight</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=329801#p654269" target="_blank" rel="noopener noreferrer">Unit 2: Response to Ade Putra Tio Aldino</a></li>
+                    <li><a href="projects/Module%207/U3%20Evaluating%20Research%20Design%20and%20Methodology.html">Unit 3: Evaluating Research Design and Methodology</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=328357#p658484" target="_blank" rel="noopener noreferrer">Unit 3: Summary Response - Research Ethics and Literature Review</a></li>
+                    <li><a href="projects/Module%207/U4%20Seminar%20Prep.html">Unit 4: Seminar Preparation - Ethical Analysis: Ricardo–Beth Records Case</a></li>
+                    <li><a href="projects/Module%207/iouos.html">Unit 5: Case Study: Inappropriate Use of Surveys – Ethical, Social, Legal and Professional Implications</a></li>
+                    <li><a href="projects/Module%207/HTSMW.html">Unit 7: Hypothesis Testing and Summary Measures Worksheet</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=338396#p671813" target="_blank" rel="noopener noreferrer">Unit 7: Collaborative Discussion - Initial Post (Case Study: Accuracy of Information)</a></li>
+                    <li><a href="projects/Module%207/cwa.html">Unit 8: Charts Worksheet and Analysis</a></li>
+                    <li><a href="projects/SSheets/U8">Unit 8: Link to Excel WorkSheets</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=339187#p673697" target="_blank" rel="noopener noreferrer">Unit 8: Collaborative Discussion - Response to Mustafa</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=338192#p673705" target="_blank" rel="noopener noreferrer">Unit 8: Collaborative Discussion - Response to Abdulrahman</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=338816#p673702" target="_blank" rel="noopener noreferrer">Unit 8: Collaborative Discussion - Response to Jordan</a></li>
+                    <li><a href="projects/Module%207/08-Starter-Sales%20Analysis%20-%20Power%20BI.pdf" target="_blank" rel="noopener noreferrer">Unit 9: Power BI Starter Sales Analysis (PDF)</a></li>
+                    <li><a href="https://www.my-course.co.uk/mod/forum/discuss.php?d=338396#p675179" target="_blank" rel="noopener noreferrer">Unit 9: Collaborative Discussion - Summary</a></li>
+                </ul>
+            </div>
+
+            <!-- Additional Resources -->
+            <div class="module-card">
+                <div class="module-title">Additional Resources</div>
+                <ul class="link-list">
+                    <li><a href="university-of-essex.html">University of Essex</a></li>
+                    <li><a href="https://www.my-course.co.uk">Moodle Learning Platform</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
