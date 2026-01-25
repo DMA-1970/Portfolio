@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 7 References - David Abiodun</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LX92NLZD2F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LX92NLZD2F');
+  </script>
+  <title>Module 7: References - David Abiodun</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body, html {
       height: 100%;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -17,7 +25,6 @@
       overflow-x: hidden;
       position: relative;
     }
-
     body::before {
       content: '';
       position: fixed;
@@ -31,7 +38,6 @@
       transform: scale(1.05);
       z-index: -2;
     }
-
     body::after {
       content: '';
       position: fixed;
@@ -42,7 +48,6 @@
       background: rgba(0, 0, 0, 0.8);
       z-index: -1;
     }
-
     .back-btn {
       position: fixed;
       top: 20px;
@@ -62,7 +67,6 @@
       align-items: center;
       gap: 8px;
     }
-
     .back-btn:hover {
       background: rgba(255, 255, 255, 0.11);
       border-color: rgba(21, 87, 36, 0.4);
@@ -70,7 +74,6 @@
       transform: translateY(-1px);
       box-shadow: 0 0 12px rgba(21, 87, 36, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-
     .overlay {
       position: relative;
       min-height: 100vh;
@@ -80,28 +83,23 @@
       padding: 80px 20px 40px;
       animation: fadeIn 1s ease-in;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
     .container {
       max-width: 1000px;
       width: 100%;
       animation: slideUp 0.8s ease-out;
     }
-
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     .header {
       text-align: center;
       margin-bottom: 40px;
     }
-
     .header h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 2.8em;
@@ -113,7 +111,6 @@
       background-clip: text;
       letter-spacing: -1px;
     }
-
     .content-card {
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px);
@@ -124,53 +121,63 @@
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
     }
-
     .content-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 0 15px rgba(21, 87, 36, 0.25), 0 8px 32px rgba(0, 0, 0, 0.2);
       border-color: rgba(21, 87, 36, 0.3);
       background: rgba(255, 255, 255, 0.09);
     }
-
-    .unit-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.3em;
-      font-weight: 600;
-      color: #ffffff;
+    .references-list {
+      list-style: none;
+      padding: 0;
+    }
+    .references-list li {
       margin-bottom: 20px;
-    }
-
-    .references {
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-
-    .references li {
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid rgba(30, 144, 255, 0.5);
+      border-radius: 4px;
       color: #b8c5e0;
+      line-height: 1.8;
       font-size: 0.95em;
-      margin-bottom: 8px;
-      line-height: 1.7;
     }
-
-    .references a {
-      color: #93c5fd;
+    .references-list li:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-left-color: rgba(30, 144, 255, 0.8);
+    }
+    .bottom-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .nav-link {
+      background: rgba(30, 144, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(30, 144, 255, 0.3);
+      padding: 8px 16px;
+      border-radius: 25px;
       text-decoration: none;
-      transition: color 0.3s ease;
+      color: #d4dff5;
+      font-size: 0.9em;
+      font-weight: 400;
+      transition: all 0.3s ease;
+      display: inline-block;
     }
-
-    .references a:hover {
-      color: #60a5fa;
-      text-decoration: underline;
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.11);
+      border-color: rgba(21, 87, 36, 0.4);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 0 12px rgba(21, 87, 36, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-
     @media (max-width: 768px) {
       .header h1 { font-size: 2.2em; }
       .content-card { padding: 25px 30px; }
-      .unit-title { font-size: 1.2em; }
       .overlay { padding: 70px 15px 30px; }
       .back-btn { top: 15px; left: 15px; padding: 10px 16px; font-size: 0.9em; }
     }
-
     @media (max-width: 480px) {
       .header h1 { font-size: 1.8em; }
       .content-card { padding: 20px 25px; }
@@ -179,40 +186,28 @@
 </head>
 <body>
   <a href="../../Module7.html" class="back-btn">← Back to Module 7</a>
-
   <div class="overlay">
     <div class="container">
       <div class="header">
-        <h1>Module 7 References</h1>
+        <h1>Module 7: References</h1>
+        <p style="font-size: 1.1em; color: #a8b8d8; margin-top: 10px;">Research Methods and Professional Practice</p>
       </div>
-
       <div class="content-card">
-        <div class="unit">
-          <h3 class="unit-title">References</h3>
-          <ul class="references">
-            <li>Alasmary, W., Alsubaie, N., Khan, R.U., Alghamdi, T. and Alzahrani, M. (2021) 'Machine learning-based phishing detection: performance evaluation across datasets', <em>IEEE Access</em>, 9, pp. 123456–123470. doi: 10.1109/ACCESS.2021.3056789.</li>
-            <li>Boza, T. (2022) <em>How to write a literature review: Six steps to get you from start to finish</em>. [Online] Available at: https://www.scribbr.com/dissertation/literature-review/ (Accessed: 2 November 2025).</li>
-            <li>Boza, T. (2022) <em>How to Write a Literature Review: Six Steps to Get You from Start to Finish</em>. Scribbr.</li>
-            <li>British Research Methodology (2018) <em>Research Design</em>.</li>
-            <li>Correa, N.K., Galvão, C., Santos, J.W., Del Pino, C., Pinto, E.P., Mambrini, R., Terem, E. and de Oliveira, N. (2023) 'Worldwide AI ethics: A review of 200 guidelines and recommendations for AI governance,' <em>Patterns</em>, 4(10), p. 100857. doi: 10.1016/j.patter.2023.100857.</li>
-            <li>Creswell, J.W. and Creswell, J.D. (2018) <em>Research Design: Qualitative, Quantitative, and Mixed Methods Approaches</em>. Sage.</li>
-            <li>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide</em>. 3rd edn. Harlow: Pearson.</li>
-            <li>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> Harlow: Pearson.</li>
-            <li>Finn, M. and Shilton, K. (2023) 'Ethics governance development: The case of the Menlo Report,' <em>Social Studies of Science</em>, 53(3), pp. 315–340.</li>
-            <li>Fjeld, J., Achten, N., Hilligoss, H., Naggy, A. and Srikumar, M. (2020) <em>Principled Artificial Intelligence</em>. Berkman Klein Center Research Publication.</li>
-            <li>Healey, M., Matthews, K. and Cook-Sather, A. (2020) <em>Writing about Learning and Teaching in Higher Education</em>. Elon University: Center for Engaged Learning.</li>
-            <li>IBM (no date) 'CRISP-DM Help Overview'. Available at: https://www.ibm.com/docs/en/spss-modeler/SaaS?topic=dm-crisp-help-overview (Accessed: 7 November 2025).</li>
-            <li>Mittelstadt, B.D. (2019) 'Principles alone cannot guarantee ethical AI', <em>Nature Machine Intelligence</em>, 1(11), pp. 501–507. doi: 10.1038/s42256-019-0114-4.</li>
-            <li>Office for Human Research Protections (2018) <em>The Belmont Report: Ethical principles and guidelines for the protection of human subjects of research</em>. U.S. Department of Health and Human Services.</li>
-            <li>QuestionPro (2021) 'What is research?'. Available at: https://www.questionpro.com (Accessed: 7 November 2025).</li>
-            <li>Sage (2021) <em>Sage Research Methods: Methods Map</em>.</li>
-            <li>Saunders, M., Lewis, P. and Thornhill, A. (2012) <em>Research Methods for Business Students.</em> 6th edn. Harlow: Pearson Education Limited.</li>
-            <li>Saunders, M., Lewis, P. and Thornhill, A. (2019) <em>Research Methods for Business Students</em>. 8th edn. Pearson.</li>
-          </ul>
-        </div>
+        <ul class="references-list">
+          <li>Alasmary, H., et al. (2021) Experimental phishing study.</li>
+          <li>Dawson, C. (2015) <em>Projects in Computing and Information Systems: A Student's Guide.</em> 3rd edn. Harlow: Pearson Education.</li>
+          <li>Finn, R.L. and Shilton, K. (2023) 'Ethics and computing research', <em>Communications of the ACM</em>, 66(3), pp. 45-52.</li>
+          <li>Mittelstadt, B. (2019) 'Principles alone cannot guarantee ethical AI', <em>Nature Machine Intelligence</em>, 1(11), pp. 501-507.</li>
+          <li>Project Management Institute (PMI) (2021) <em>A Guide to the Project Management Body of Knowledge (PMBOK® Guide).</em> 7th edn. Newtown Square, PA: Project Management Institute.</li>
+          <li>Saunders, M., Lewis, P. and Thornhill, A. (2012) <em>Research Methods for Business Students.</em> 6th edn. Harlow: Pearson Education.</li>
+        </ul>
+      </div>
+      <div class="bottom-navigation">
+        <a href="../../Module7.html" class="nav-link">Back to Module 7</a>
+        <a href="Reading.html" class="nav-link">Reading</a>
+        <a href="../../index.html" class="nav-link">Back to Home</a>
       </div>
     </div>
   </div>
 </body>
 </html>
-
