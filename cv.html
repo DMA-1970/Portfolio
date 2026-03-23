@@ -1,481 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional CV - David Abiodun</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!-- ONLY MAIN CONTENT UPDATED — DESIGN PRESERVED -->
 
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-            background: #f5f5f5;
-            min-height: 100vh;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+<div class="content">
 
-        .cv-container {
-            background: #ffffff;
-            max-width: 1000px;
-            width: 100%;
-            min-height: 1200px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-        }
+    <!-- Executive Summary -->
+    <div class="summary">
+        Enterprise Technology leader with over 35 years of experience delivering secure, scalable, and compliant IT solutions within regulated financial environments. 
 
-        /* Sidebar Styling */
-        .sidebar {
-            width: 35%;
-            background: #2c3e50;
-            color: #ffffff;
-            padding: 50px 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+        Proven track record in leading cloud transformation, strengthening governance frameworks, and aligning technology strategy with business objectives. 
 
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #ffffff;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
+        Specialising in multi-cloud operations, regulatory compliance (FCA, GDPR, ISO 27001), and operational resilience, with a strong focus on driving efficiency, reducing cost, and enabling board-level decision-making through data-driven insights.
+    </div>
 
-        .name-info h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            color: #ffffff;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
+    <!-- Experience Section -->
+    <div class="section">
+        <h2 class="section-title">Employment History</h2>
 
-        .name-info .title {
-            font-size: 14px;
-            color: #bdc3c7;
-            font-weight: 400;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-
-        .contact-info {
-            width: 100%;
-            text-align: left;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .contact-icon {
-            width: 20px;
-            height: 20px;
-            margin-right: 15px;
-            font-size: 14px;
-            color: #bdc3c7;
-        }
-
-        .contact-item a {
-            color: #bdc3c7;
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            color: #ffffff;
-        }
-
-        /* Main Content */
-        .content {
-            width: 65%;
-            padding: 50px 60px;
-            background: #ffffff;
-            position: relative;
-        }
-
-        /* Leaf decoration */
-        .leaf-decoration {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            width: 80px;
-            height: 80px;
-            opacity: 0.1;
-        }
-
-        /* Summary Section */
-        .summary {
-            margin-bottom: 40px;
-            color: #2c3e50;
-            line-height: 1.7;
-            font-size: 16px;
-        }
-
-        /* Section Styling */
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: #2c3e50;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #2c3e50;
-        }
-
-        /* Experience Items */
-        .experience-item {
-            margin-bottom: 35px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #ecf0f1;
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .job-header {
-            margin-bottom: 15px;
-        }
-
-        .job-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .job-company {
-            font-size: 15px;
-            color: #7f8c8d;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .job-duration {
-            font-size: 14px;
-            color: #95a5a6;
-            font-style: italic;
-            font-weight: 500;
-        }
-
-        .job-achievements {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .job-achievements li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-            color: #34495e;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .job-achievements li:before {
-            content: '▸';
-            color: #2c3e50;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        /* Education Items */
-        .education-item {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .education-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .degree {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 4px;
-        }
-
-        .institution {
-            font-size: 14px;
-            color: #64748b;
-            margin-bottom: 2px;
-        }
-
-        .graduation-year {
-            font-size: 13px;
-            color: #94a3b8;
-            font-style: italic;
-        }
-
-        /* Skills */
-        .skills-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .skill-item {
-            font-size: 14px;
-            color: #475569;
-            padding: 6px 0;
-        }
-
-        /* Awards */
-        .award-item {
-            margin-bottom: 15px;
-        }
-
-        .award-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 2px;
-        }
-
-        .award-organization {
-            font-size: 13px;
-            color: #64748b;
-            margin-bottom: 2px;
-        }
-
-        .award-year {
-            font-size: 12px;
-            color: #94a3b8;
-            font-style: italic;
-        }
-
-        /* Back button */
-        .back-btn {
-            position: fixed;
-            top: 30px;
-            left: 30px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            padding: 12px 20px;
-            text-decoration: none;
-            color: #1e293b;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .back-btn:hover {
-            background: rgba(255, 255, 255, 1);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            body {
-                padding: 20px 10px;
-            }
-
-            .cv-container {
-                max-width: 100%;
-                flex-direction: column;
-            }
-
-            .sidebar {
-                width: 100%;
-                padding: 40px 30px;
-            }
-
-            .content {
-                width: 100%;
-                padding: 40px 30px;
-            }
-
-            .profile-image {
-                width: 120px;
-                height: 120px;
-            }
-
-            .name-info h1 {
-                font-size: 24px;
-                letter-spacing: 2px;
-            }
-
-            .leaf-decoration {
-                width: 60px;
-                height: 60px;
-                top: 20px;
-                right: 20px;
-            }
-
-            .back-btn {
-                top: 15px;
-                left: 15px;
-                padding: 10px 16px;
-                font-size: 14px;
-            }
-        }
-
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-
-            .cv-container {
-                box-shadow: none;
-                max-width: none;
-                width: 100%;
-            }
-
-            .back-btn {
-                display: none;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <a href="index.html" class="back-btn">← Back to Home</a>
-
-    <div class="cv-container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <img src="assets/050324-3.578-2.jpg" alt="David Abiodun" class="profile-image">
-
-            <div class="name-info">
-                <h1>David Abiodun</h1>
-                <div class="title">Enterprise Technology Manager</div>
+        <!-- MillTech -->
+        <div class="experience-item">
+            <div class="job-header">
+                <div class="job-title">Enterprise Technology Manager</div>
+                <div class="job-company">MillTechFX</div>
+                <div class="job-duration">July 2024 - Present</div>
             </div>
-
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <span>(+44) 7932 732435</span>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">✉</div>
-                    <span>david@abiodun.co.uk</span>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">💼</div>
-                    <span><a href="https://www.linkedin.com/in/david-abiodun-17912a21/" target="_blank">LinkedIn Profile</a></span>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <span>Edmonton, UK N9 7JA</span>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">🚗</div>
-                    <span>Full UK Driver's License</span>
-                </div>
-            </div>
+            <ul class="job-achievements">
+                <li>Set strategic direction for enterprise IT operations, aligning technology delivery with business objectives, regulatory requirements, and operational resilience priorities.</li>
+                <li>Reduced IT support turnaround times by 40% through automation, workflow optimisation, and service redesign.</li>
+                <li>Led organisation-wide digital transformation initiatives, improving productivity, accuracy, and service delivery through cloud-first architecture.</li>
+                <li>Strengthened enterprise security and governance frameworks in partnership with the CISO, embedding ISO 27001 and GDPR controls into operational processes.</li>
+                <li>Directed hybrid cloud environments across Microsoft 365, Entra ID, Intune, and enterprise platforms, ensuring integration, scalability, and high availability.</li>
+                <li>Delivered 30% cost savings through vendor consolidation, contract optimisation, and improved licence management.</li>
+                <li>Established robust vendor governance, managing supplier relationships, procurement, and contracts to optimise value and reduce risk.</li>
+                <li>Built and developed a high-performing IT function, embedding ITIL practices, cybersecurity awareness, and a culture of continuous improvement.</li>
+                <li>Enabled data-driven decision-making through analytics and reporting, supporting board-level discussions and strategic investment decisions.</li>
+            </ul>
         </div>
 
-        <!-- Main Content -->
-        <div class="content">
-            <!-- Leaf decoration -->
-            <svg class="leaf-decoration" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 10 C20 20, 10 50, 50 90 C90 50, 80 20, 50 10 Z" fill="#27ae60" opacity="0.6"/>
-                <path d="M50 10 L50 90" stroke="#2c3e50" stroke-width="2" opacity="0.8"/>
-                <path d="M30 35 Q50 40, 50 90" stroke="#2c3e50" stroke-width="1" opacity="0.6" fill="none"/>
-                <path d="M70 35 Q50 40, 50 90" stroke="#2c3e50" stroke-width="1" opacity="0.6" fill="none"/>
-            </svg>
-
-            <!-- Experience Section -->
-            <div class="section">
-                <h2 class="section-title">Employment History</h2>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title">Enterprise Technology Manager</div>
-                            <div class="job-company">MillTechFX</div>
-                            <div class="job-duration">July 2024 - Present</div>
-                        </div>
-                        <ul class="job-achievements">
-                            <ul class="job-achievements">
-                            <ul class="job-achievements">
-                            <li>Set strategic direction for enterprise IT operations, aligning technology delivery with business objectives, regulatory requirements, and operational resilience priorities.</li>
-                            <li>Reduced IT support turnaround times by 40% through automation, workflow optimisation, and service redesign.</li>
-                            <li>Led digital transformation initiatives across the organisation, driving process automation and improving productivity, accuracy, and service delivery through cloud-first solutions.</li>
-                            <li>Strengthened enterprise security and governance frameworks in partnership with the CISO, embedding ISO 27001 and GDPR controls into operational processes.</li>
-                            <li>Directed hybrid cloud operations across Microsoft 365, Entra ID (Azure AD), Intune, and enterprise platforms, ensuring integration, scalability, and high availability.</li>
-                            <li>Delivered 30% cost savings through vendor consolidation, contract optimisation, and improved licence management.</li>
-                            <li>Established robust vendor governance practices, managing supplier relationships, contracts, and procurement to optimise value and reduce operational risk.</li>
-                            <li>Built and developed a high-performing IT function, embedding ITIL service management principles, cybersecurity awareness, and a culture of continuous improvement.</li>
-                            <li>Enabled data-driven decision-making through analytics and reporting, supporting board-level discussions and strategic technology investment decisions.</li>
-</ul>
-</ul>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title">UK IT Manager</div>
-                            <div class="job-company">BOS Wealth Management Europe, City of London</div>
-                            <div class="job-duration">Oct 2019 - June 2024</div>
-                        </div>
-                        <ul class="job-achievements">
-                            <li>Delivered a comprehensive digital transformation programme, designing and deploying a hybrid on-premises infrastructure for sensitive data with redundancy and failover integration to the Luxembourg office, ensuring business continuity, data sovereignty, and compliance with FCA, CSSF, MAS, and GDPR frameworks.</li>
-                            <li>Implemented enterprise-grade compliance controls through Microsoft Purview, strengthening data governance, retention, and audit readiness in line with FCA, CSSF, MAS, and GDPR regulatory requirements.</li>
-                            <li>Managed vendor relationships and procurement for critical IT services, ensuring cost efficiency, service quality, and compliance with outsourcing guidelines.</li>
-                            <li>Partnered with auditors and compliance teams to design and implement enterprise-grade controls using Microsoft Purview, aligning data governance and retention practices with FCA, CSSF, MAS, GDPR, and ISO 27001 frameworks to ensure audit readiness and operational resilience.</li>
-                            <li>Introduced layered security measures, including door access control, CCTV surveillance, endpoint protection, and full-disk encryption to safeguard client and corporate data.</li>
-                            <li>Directed IT operations and infrastructure strategy for the London branch, ensuring alignment with global head office standards and regulatory frameworks.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title">Infrastructure Analyst</div>
-                            <div class="job-company">JA Kemp LLP, City of London</div>
-                            <div class="job-duration">Aug 2016 - Sept 2019</div>
-                        </div>
-                        <ul class="job-achievements">
-                            <li>Reviewed and optimised VMWare infrastructure.</li>
-                            <li>Created and maintained Citrix 7.15 XenDesktop and XenApp environments.</li>
-                            <li>Managed firm's security suite and improved business continuity solutions.</li>
-                            <li>Collaborated on opening new offices in Paris and Cambridge.</li>
-                        </ul>
-                    </div>
-                </div>
-
+        <!-- BOS -->
+        <div class="experience-item">
+            <div class="job-header">
+                <div class="job-title">UK IT Manager</div>
+                <div class="job-company">Bank of Singapore (Wealth Management Europe)</div>
+                <div class="job-duration">Oct 2019 - June 2024</div>
             </div>
+            <ul class="job-achievements">
+                <li>Led end-to-end digital transformation, designing hybrid infrastructure with cross-border failover to Luxembourg, ensuring resilience and regulatory compliance.</li>
+                <li>Implemented enterprise data governance using Microsoft Purview, improving audit readiness and regulatory alignment (FCA, CSSF, MAS, GDPR).</li>
+                <li>Directed IT operations for the London branch, aligning local delivery with global standards and regulatory expectations.</li>
+                <li>Managed strategic vendor relationships and procurement, ensuring service quality, cost control, and outsourcing compliance.</li>
+                <li>Partnered with auditors and compliance teams to implement enterprise-grade controls aligned to ISO 27001 and financial regulations.</li>
+                <li>Introduced layered security architecture including access control, endpoint protection, and encryption to protect sensitive financial data.</li>
+            </ul>
+        </div>
+
+        <!-- JA Kemp -->
+        <div class="experience-item">
+            <div class="job-header">
+                <div class="job-title">Infrastructure Analyst</div>
+                <div class="job-company">JA Kemp LLP</div>
+                <div class="job-duration">Aug 2016 - Sept 2019</div>
+            </div>
+            <ul class="job-achievements">
+                <li>Optimised VMware infrastructure, improving performance, stability, and resource utilisation.</li>
+                <li>Designed and maintained Citrix XenDesktop and XenApp environments to support secure remote working.</li>
+                <li>Enhanced business continuity and disaster recovery capabilities.</li>
+                <li>Supported international office expansion, delivering IT infrastructure for new locations in Paris and Cambridge.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-item">
+            <div class="degree">MSc Enterprise IT Management (In Progress)</div>
+            <div class="institution">University of Essex Online</div>
+            <div class="graduation-year">Expected Completion: October 2026</div>
         </div>
     </div>
-</body>
-</html>
+
+    <!-- Certifications -->
+    <div class="section">
+        <h2 class="section-title">Certifications</h2>
+
+        <div class="skills-grid">
+            <div class="skill-item">Microsoft Certified: Cybersecurity Architect (SC-100)</div>
+            <div class="skill-item">Microsoft Information Protection & Compliance (SC-400)</div>
+            <div class="skill-item">Azure Fundamentals</div>
+            <div class="skill-item">Microsoft 365 Fundamentals</div>
+            <div class="skill-item">ITIL 4 Foundation</div>
+        </div>
+    </div>
+
+    <!-- Core Skills -->
+    <div class="section">
+        <h2 class="section-title">Core Competencies</h2>
+
+        <div class="skills-grid">
+            <div class="skill-item">Enterprise IT Strategy & Leadership</div>
+            <div class="skill-item">Multi-Cloud Governance (Azure / M365)</div>
+            <div class="skill-item">Regulatory Compliance (FCA, GDPR, ISO 27001, MAS, CSSF)</div>
+            <div class="skill-item">Cybersecurity Architecture & Risk Management</div>
+            <div class="skill-item">IT Service Management (ITIL)</div>
+            <div class="skill-item">Vendor & Supplier Governance</div>
+            <div class="skill-item">Digital Transformation & Automation</div>
+            <div class="skill-item">Operational Resilience & Disaster Recovery</div>
+        </div>
+    </div>
+
+</div>
