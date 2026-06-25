@@ -57,8 +57,9 @@
             height: 100%;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
+            padding: 40px 20px;
+            overflow-y: auto;
             animation: fadeIn 1s ease-in;
         }
 
@@ -156,6 +157,80 @@
             color: #ff6b35;
         }
 
+        /* Education / certification entries */
+        .education-item {
+            padding-bottom: 14px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .degree {
+            font-size: 1em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 3px;
+        }
+
+        .institution {
+            font-size: 0.9em;
+            font-weight: 400;
+            color: #a8b8d8;
+            margin-bottom: 2px;
+            line-height: 1.6;
+        }
+
+        .graduation-year {
+            font-size: 0.85em;
+            color: #6ee7b7;
+            font-style: italic;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            margin: 28px 0 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .focus-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+
+        .focus-list li {
+            font-size: 0.95em;
+            line-height: 1.8;
+            color: #d4dff5;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .focus-list li:before {
+            content: '▸';
+            color: #6ee7b7;
+            position: absolute;
+            left: 0;
+        }
+
+        .cpd-summary {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #d4dff5;
+            font-weight: 300;
+            margin: 24px 0 0;
+        }
+
         /* Back link */
         .back-link {
             display: flex;
@@ -224,15 +299,71 @@
 
             <!-- Certifications Section -->
             <div class="content-section">
-                <ul class="certification-list">
-    <li class="ongoing">MSc Enterprise IT Management (In Progress – Expected 2026)</li>
-    <li>2026 Microsoft Certified: Cybersecurity Architect Expert (SC-100)</li>
-    <li>2026 Microsoft Certified: Identity and Access Administrator Associate (SC-300)</li>
-    <li>2024 Microsoft Certified: Information Protection and Compliance Administrator Associate (SC-400)</li>
-    <li>2024 ITIL 4 ® Foundation</li>
-    <li>2024 Microsoft Certified: Azure Fundamentals (AZ-900)</li>
-    <li>2024 Microsoft Certified: Microsoft 365 Fundamentals (MS-900)</li>
-</ul>
+
+                <div class="education-item">
+                    <div class="degree">MSc Enterprise IT Management</div>
+                    <div class="institution">University of Essex Online</div>
+                    <div class="graduation-year">Completion Expected 2026</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">Microsoft Certified: Cybersecurity Architect Expert (SC-100)</div>
+                    <div class="graduation-year">2026</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">Microsoft Certified: Identity and Access Administrator Associate (SC-300)</div>
+                    <div class="graduation-year">2026</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">Microsoft Certified: Information Protection and Compliance Administrator Associate (SC-400)</div>
+                    <div class="graduation-year">2024</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">Microsoft Certified: Azure Fundamentals (AZ-900)</div>
+                    <div class="graduation-year">2024</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">Microsoft Certified: Microsoft 365 Fundamentals (MS-900)</div>
+                    <div class="graduation-year">2024</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">ITIL® 4 Foundation</div>
+                    <div class="graduation-year">2024</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">A2 Certificate of Competency (Drone Pilot)</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">Professional Memberships</div>
+                    <div class="institution">
+                        ISACA<br>
+                        BCS – The Chartered Institute for IT<br>
+                        IEEE Student Member
+                    </div>
+                </div>
+
+                <p class="cpd-summary">I believe continuous professional development is fundamental to effective technology leadership. By combining academic research, industry-recognised certifications, professional memberships, and practical enterprise experience, I continue to strengthen my expertise in cloud governance, cybersecurity, operational resilience, enterprise architecture, and regulatory compliance.</p>
+
+                <h2 class="section-title">Current Areas of Focus</h2>
+
+                <ul class="focus-list">
+                    <li>Multi-cloud governance</li>
+                    <li>AI governance and responsible AI adoption</li>
+                    <li>Operational resilience</li>
+                    <li>Enterprise architecture</li>
+                    <li>Cybersecurity strategy</li>
+                    <li>Identity and access management</li>
+                    <li>Regulatory compliance (FCA, ISO 27001, DORA, GDPR)</li>
+                    <li>Data sovereignty and cloud assurance</li>
+                </ul>
+
             </div>
 
             <!-- Back Link -->
