@@ -11,15 +11,14 @@
   <style>
     :root {
       --bg: #06111f;
-      --panel: rgba(9, 25, 42, 0.76);
-      --panel-strong: rgba(13, 33, 53, 0.92);
-      --line: rgba(156, 211, 255, 0.2);
-      --text: #eef7ff;
-      --muted: #b5c9d9;
-      --blue: #74c9ff;
-      --blue-strong: #2aa7ef;
+      --panel: rgba(255, 255, 255, 0.08);
+      --panel-strong: rgba(255, 255, 255, 0.11);
+      --line: rgba(255, 255, 255, 0.18);
+      --text: #ffffff;
+      --muted: #b8c5e0;
+      --accent: #77ddb6;
+      --accent-strong: #45b98a;
       --orange: #ffb15c;
-      --green: #77ddb6;
       --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
       --radius: 22px;
     }
@@ -97,7 +96,7 @@
       padding: 0.75rem 0.9rem;
       border: 1px solid var(--line);
       border-radius: 16px;
-      background: rgba(4, 18, 32, 0.72);
+      background: rgba(255, 255, 255, 0.08);
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
     }
@@ -131,7 +130,8 @@
     .nav-links a:focus-visible {
       border-color: var(--line);
       color: var(--text);
-      background: rgba(116, 201, 255, 0.1);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 12px rgba(21, 87, 36, 0.25);
     }
 
     .hero {
@@ -153,7 +153,7 @@
 
     .eyebrow {
       margin: 0 0 0.8rem;
-      color: var(--blue);
+      color: var(--accent);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.14em;
@@ -169,11 +169,15 @@
     h1 {
       max-width: 840px;
       margin-bottom: 1rem;
-      font-size: clamp(2.35rem, 6.4vw, 5.3rem);
-      letter-spacing: -0.045em;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    h1 span { color: var(--blue); }
+    h1 span { color: var(--accent); -webkit-text-fill-color: var(--accent); }
 
     .lead {
       max-width: 760px;
@@ -186,12 +190,18 @@
     .hero-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.5rem; }
 
     .button {
-      color: #06111f;
-      background: var(--blue);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--line);
     }
 
     .button:hover,
-    .button:focus-visible { transform: translateY(-2px); background: #a8dcff; }
+    .button:focus-visible {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(21, 87, 36, 0.4);
+      box-shadow: 0 0 16px rgba(21, 87, 36, 0.3);
+    }
 
     .button.secondary {
       border-color: var(--line);
@@ -204,7 +214,7 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 1.5rem;
-      background: linear-gradient(160deg, rgba(20, 64, 94, 0.92), rgba(7, 25, 42, 0.9));
+      background: rgba(255, 255, 255, 0.09);
     }
 
     .scope-card h2 { margin-bottom: 0.75rem; font-size: 1.25rem; }
@@ -235,7 +245,7 @@
     }
 
     .metric { padding: 1.25rem; }
-    .metric strong { display: block; color: var(--blue); font-family: "Montserrat", sans-serif; font-size: clamp(1.7rem, 4vw, 2.6rem); }
+    .metric strong { display: block; color: var(--accent); font-family: "Montserrat", sans-serif; font-size: clamp(1.7rem, 4vw, 2.6rem); }
     .metric span { color: var(--muted); font-size: 0.88rem; }
 
     .section {
@@ -268,7 +278,7 @@
       cursor: pointer;
     }
 
-    .filter[aria-pressed="true"] { color: #06111f; background: var(--blue); }
+    .filter[aria-pressed="true"] { color: #06111f; background: var(--accent); }
 
     .projects {
       display: grid;
@@ -295,7 +305,7 @@
       position: absolute;
       inset: 0 auto 0 0;
       width: 4px;
-      background: var(--blue-strong);
+      background: var(--accent-strong);
     }
 
     .project[data-state="active"]::before { background: var(--orange); }
@@ -308,7 +318,7 @@
       flex: 0 0 auto;
       padding: 0.35rem 0.55rem;
       border-radius: 999px;
-      color: var(--green);
+      color: var(--accent);
       background: rgba(119, 221, 182, 0.11);
       font-size: 0.72rem;
       font-weight: 800;
@@ -320,7 +330,7 @@
     .project p strong { color: var(--text); }
 
     .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
-    .tag { padding: 0.35rem 0.5rem; border: 1px solid var(--line); border-radius: 8px; color: #cce8fa; font-size: 0.73rem; }
+    .tag { padding: 0.35rem 0.5rem; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); font-size: 0.73rem; }
 
     .additional-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
     .additional-item { padding: 0.9rem 1rem; border: 1px solid var(--line); border-radius: 14px; color: var(--muted); background: rgba(255, 255, 255, 0.035); }
@@ -465,7 +475,7 @@
 
           <article class="project" data-state="active">
             <div class="project-top"><h3>17th-floor workplace expansion</h3><span class="status">In progress</span></div>
-            <p><strong>My role:</strong> I direct the enterprise technology architecture and delivery supporting the expansion of MillTech's London office. My remit includes supplier coordination, network and connectivity provision, end-user technology, meeting-room capability, security controls and operational readiness.</p>
+            <p><strong>My role:</strong> I direct the enterprise technology architecture and delivery supporting the expansion of MillTech's London office. My remit includes supplier coordination, network and connectivity provision, end-user technology, audio-visual fit-out, meeting-room capability, security controls and operational readiness.</p>
             <p><strong>Expected value:</strong> Enable business growth and increased workplace capacity without disrupting live operations, while maintaining a secure, scalable and consistent employee technology experience.</p>
             <div class="tags"><span class="tag">Workplace technology</span><span class="tag">AV and collaboration</span><span class="tag">Supplier delivery</span></div>
           </article>
@@ -548,6 +558,13 @@
               <p><strong>My role:</strong> I designed and managed a follow-the-sun support model across locations, teams and handover points.</p>
               <p><strong>Impact:</strong> Extended service coverage and strengthened continuity for a globally distributed banking operation.</p>
               <div class="tags"><span class="tag">Global support</span><span class="tag">Service management</span><span class="tag">Operating model</span></div>
+            </article>
+
+            <article class="project" data-state="delivered">
+              <div class="project-top"><h3>Secure printing</h3><span class="status">Completed</span></div>
+              <p><strong>My role:</strong> I designed the secure printing solution and dealt directly with the supplier on selection and implementation.</p>
+              <p><strong>Impact:</strong> Reduced the risk of sensitive documents being left unattended or accessed by the wrong person, strengthening data protection across the office.</p>
+              <div class="tags"><span class="tag">Secure printing</span><span class="tag">Data protection</span><span class="tag">Supplier management</span></div>
             </article>
           </div>
         </div>
