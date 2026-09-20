@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected enterprise technology projects delivered or led by David Abiodun across global banking, professional services, infrastructure, cyber security, workplace delivery and AI governance.">
+  <title>Professional Projects | David Abiodun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06111f;
+      --panel: rgba(9, 25, 42, 0.76);
+      --panel-strong: rgba(13, 33, 53, 0.92);
+      --line: rgba(156, 211, 255, 0.2);
+      --text: #eef7ff;
+      --muted: #b5c9d9;
+      --blue: #74c9ff;
+      --blue-strong: #2aa7ef;
+      --orange: #ffb15c;
+      --green: #77ddb6;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Blurred background with dark overlay — matches links.html / index.html */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('assets/projectlist.jpg') no-repeat center center/cover;
+      filter: blur(3px);
+      -webkit-filter: blur(3px);
+      transform: scale(1.05);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: -1;
+    }
+
+    a { color: inherit; }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      z-index: 100;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      background: #fff;
+      color: #09223a;
+      font-weight: 700;
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    .shell {
+      position: relative;
+      width: min(1180px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.25rem 0 4rem;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0.75rem;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(4, 18, 32, 0.72);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+    .nav-links a,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 160ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      border-color: var(--line);
+      color: var(--text);
+      background: rgba(116, 201, 255, 0.1);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .glass {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+    }
+
+    .hero-copy { padding: clamp(1.5rem, 5vw, 4.4rem); }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.12;
+    }
+
+    h1 {
+      max-width: 840px;
+      margin-bottom: 1rem;
+      font-size: clamp(2.35rem, 6.4vw, 5.3rem);
+      letter-spacing: -0.045em;
+    }
+
+    h1 span { color: var(--blue); }
+
+    .lead {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      line-height: 1.75;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.5rem; }
+
+    .button {
+      color: #06111f;
+      background: var(--blue);
+    }
+
+    .button:hover,
+    .button:focus-visible { transform: translateY(-2px); background: #a8dcff; }
+
+    .button.secondary {
+      border-color: var(--line);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .scope-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.5rem;
+      background: linear-gradient(160deg, rgba(20, 64, 94, 0.92), rgba(7, 25, 42, 0.9));
+    }
+
+    .scope-card h2 { margin-bottom: 0.75rem; font-size: 1.25rem; }
+    .scope-card p { margin: 0; color: var(--muted); line-height: 1.65; }
+
+    .scope-list {
+      display: grid;
+      gap: 0.65rem;
+      margin: 1.4rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scope-list li {
+      padding: 0.75rem 0.8rem;
+      border-left: 3px solid var(--orange);
+      border-radius: 0 10px 10px 0;
+      color: #e9f5ff;
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.9rem;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+
+    .metric { padding: 1.25rem; }
+    .metric strong { display: block; color: var(--blue); font-family: "Montserrat", sans-serif; font-size: clamp(1.7rem, 4vw, 2.6rem); }
+    .metric span { color: var(--muted); font-size: 0.88rem; }
+
+    .section {
+      margin-top: 1rem;
+      padding: clamp(1.3rem, 4vw, 2.2rem);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-heading h2 { margin-bottom: 0.25rem; font-size: clamp(1.55rem, 4vw, 2.45rem); }
+    .section-heading p { max-width: 640px; margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .filter {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .filter[aria-pressed="true"] { color: #06111f; background: var(--blue); }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .employer-block + .employer-block { margin-top: 1.8rem; }
+    .employer-heading { margin-bottom: 0.9rem; }
+    .employer-heading h3 { margin-bottom: 0.3rem; font-size: 1.3rem; }
+    .employer-heading p { max-width: 760px; margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .project::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--blue-strong);
+    }
+
+    .project[data-state="active"]::before { background: var(--orange); }
+    .project[hidden] { display: none; }
+
+    .project-top { display: flex; align-items: start; justify-content: space-between; gap: 0.7rem; }
+    .project h3 { margin-bottom: 0.55rem; font-size: 1.05rem; }
+
+    .status {
+      flex: 0 0 auto;
+      padding: 0.35rem 0.55rem;
+      border-radius: 999px;
+      color: var(--green);
+      background: rgba(119, 221, 182, 0.11);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    [data-state="active"] .status { color: var(--orange); background: rgba(255, 177, 92, 0.11); }
+    .project p { margin: 0.55rem 0; color: var(--muted); font-size: 0.91rem; line-height: 1.65; }
+    .project p strong { color: var(--text); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+    .tag { padding: 0.35rem 0.5rem; border: 1px solid var(--line); border-radius: 8px; color: #cce8fa; font-size: 0.73rem; }
+
+    .additional-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
+    .additional-item { padding: 0.9rem 1rem; border: 1px solid var(--line); border-radius: 14px; color: var(--muted); background: rgba(255, 255, 255, 0.035); }
+    .additional-item strong { display: block; margin-bottom: 0.2rem; color: var(--text); }
+
+    .closing {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1.4rem;
+      margin-top: 1rem;
+      padding: 1.5rem;
+    }
+
+    .closing h2 { margin-bottom: 0.45rem; }
+    .closing p { max-width: 800px; margin: 0; color: var(--muted); line-height: 1.65; }
+
+    footer { padding: 2rem 0 0; color: var(--muted); font-size: 0.82rem; text-align: center; }
+
+    @media (max-width: 900px) {
+      .hero, .projects, .closing { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .additional-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-heading { align-items: start; flex-direction: column; }
+    }
+
+    @media (max-width: 620px) {
+      .shell { width: min(100% - 1rem, 1180px); }
+      .nav { position: static; align-items: flex-start; flex-direction: column; }
+      .metrics, .additional-grid { grid-template-columns: 1fr; }
+      .hero-copy, .scope-card, .section { border-radius: 16px; }
+      h1 { font-size: 2.45rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to projects</a>
+  <div class="shell">
+    <nav class="nav" aria-label="Portfolio navigation">
+      <a class="brand" href="index.html">David Abiodun</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="university-of-essex.html">MSc portfolio</a>
+        <a href="links.html">All links</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="glass hero-copy">
+        <p class="eyebrow">Professional project portfolio</p>
+        <h1>Enterprise technology that delivers <span>business value</span></h1>
+        <p class="lead">Selected projects I delivered, led, designed or oversaw across global banking, professional services, service transformation, infrastructure, cyber security, operational resilience, workplace expansion and responsible AI.</p>
+        <div class="hero-actions">
+          <a class="button" href="#projects">View selected projects</a>
+          <a class="button secondary" href="index.html">Return to portfolio</a>
+        </div>
+      </div>
+      <aside class="glass scope-card" aria-label="Leadership scope">
+        <div>
+          <p class="eyebrow">Leadership scope</p>
+          <h2>From hands-on engineering to enterprise accountability</h2>
+          <p>I combine technical depth with responsibility for service, security, compliance, cost, suppliers, people and business change.</p>
+        </div>
+        <ul class="scope-list">
+          <li>Enterprise Technology operating model</li>
+          <li>Regulated security and compliance controls</li>
+          <li>Cross-border infrastructure and workplace delivery</li>
+          <li>AI governance and product partnership</li>
+        </ul>
+      </aside>
+    </header>
+
+    <section class="metrics" aria-label="Selected results">
+      <div class="glass metric"><strong>83% → 99%</strong><span>SLA performance</span></div>
+      <div class="glass metric"><strong>35%</strong><span>Approximate cloud cost reduction</span></div>
+      <div class="glass metric"><strong>40%</strong><span>Approximate administration effort saved</span></div>
+      <div class="glass metric"><strong>2</strong><span>Active workplace expansion programmes</span></div>
+    </section>
+
+    <main id="main">
+      <section class="glass section" id="projects">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selected case studies</p>
+            <h2>Projects with enterprise impact</h2>
+            <p>Selected work across MillTech, Bank of Singapore and JA Kemp. Each card separates delivered outcomes from active work and reflects my actual role—delivery, leadership, design or oversight.</p>
+          </div>
+          <div class="filters" aria-label="Filter projects">
+            <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter" type="button" data-filter="delivered" aria-pressed="false">Delivered</button>
+            <button class="filter" type="button" data-filter="active" aria-pressed="false">Active</button>
+          </div>
+        </div>
+
+        <div class="projects">
+          <article class="project" data-state="delivered">
+            <div class="project-top"><h3>In-house Enterprise Technology operating model</h3><span class="status">Operational</span></div>
+            <p><strong>My role:</strong> I led and delivered the transition from outsourced support to an accountable internal Enterprise Technology capability.</p>
+            <p><strong>Impact:</strong> Established 1st–3rd line ownership, strengthened institutional knowledge and helped raise SLA performance from 83% to 99%.</p>
+            <div class="tags"><span class="tag">Operating model</span><span class="tag">People leadership</span><span class="tag">Service performance</span></div>
+          </article>
+
+          <article class="project" data-state="delivered">
+            <div class="project-top"><h3>Cloud cost optimisation</h3><span class="status">Operational</span></div>
+            <p><strong>My role:</strong> I led or directly oversaw Azure right-sizing and reserved-capacity decisions.</p>
+            <p><strong>Impact:</strong> Reduced recurring cloud cost by approximately 35% while retaining the capacity required by the business.</p>
+            <div class="tags"><span class="tag">Microsoft Azure</span><span class="tag">FinOps</span><span class="tag">Commercial value</span></div>
+          </article>
+
+          <article class="project" data-state="delivered">
+            <div class="project-top"><h3>Joiner, mover and leaver automation</h3><span class="status">Operational</span></div>
+            <p><strong>My role:</strong> I designed, delivered and oversaw automation for onboarding, provisioning and access retirement.</p>
+            <p><strong>Impact:</strong> Reduced selected administrative effort by approximately 40% while improving consistency and access-removal control.</p>
+            <div class="tags"><span class="tag">Microsoft Entra ID</span><span class="tag">Automation</span><span class="tag">Identity lifecycle</span></div>
+          </article>
+
+          <article class="project" data-state="delivered">
+            <div class="project-top"><h3>Identity and endpoint security uplift</h3><span class="status">Controlled rollout</span></div>
+            <p><strong>My role:</strong> I delivered or directly oversaw identity protection, MFA, password controls, application consent governance and a staged Microsoft Defender for Endpoint rollout.</p>
+            <p><strong>Impact:</strong> Improved visibility and protection while using pilot groups, telemetry and an Audit–Warn–Block model to control operational risk.</p>
+            <div class="tags"><span class="tag">Entra ID</span><span class="tag">Intune</span><span class="tag">Defender XDR</span></div>
+          </article>
+
+          <article class="project" data-state="active">
+            <div class="project-top"><h3>Privileged access with Admin By Request</h3><span class="status">In progress</span></div>
+            <p><strong>My role:</strong> I am leading implementation and governance for time-limited, justified and auditable administrator elevation.</p>
+            <p><strong>Expected value:</strong> Reduce standing privilege and improve accountability while removing avoidable friction for legitimate user tasks.</p>
+            <div class="tags"><span class="tag">Least privilege</span><span class="tag">Guardrails</span><span class="tag">User experience</span></div>
+          </article>
+
+          <article class="project" data-state="active">
+            <div class="project-top"><h3>New York office and SOC 2 readiness</h3><span class="status">In progress</span></div>
+            <p><strong>My role:</strong> I am the technical contact and am leading or overseeing secure office technology delivery, suppliers, evidence and operational handover.</p>
+            <p><strong>Expected value:</strong> Support international growth with consistent enterprise controls and audit readiness.</p>
+            <div class="tags"><span class="tag">International delivery</span><span class="tag">SOC 2</span><span class="tag">Business growth</span></div>
+          </article>
+
+          <article class="project" data-state="active">
+            <div class="project-top"><h3>17th-floor workplace expansion</h3><span class="status">In progress</span></div>
+            <p><strong>My role:</strong> I am leading or overseeing connectivity, end-user technology, meeting-room capability, suppliers, security and readiness.</p>
+            <p><strong>Expected value:</strong> Enable business growth and a consistent workplace experience in the expanded office.</p>
+            <div class="tags"><span class="tag">Workplace technology</span><span class="tag">AV and collaboration</span><span class="tag">Supplier delivery</span></div>
+          </article>
+
+          <article class="project" data-state="active">
+            <div class="project-top"><h3>Enterprise AI governance</h3><span class="status">In progress</span></div>
+            <p><strong>My role:</strong> I lead the enterprise AI governance remit, including guardrails, decision rights, risk assessment, usage visibility and responsible adoption.</p>
+            <p><strong>Expected value:</strong> Enable useful AI adoption without unmanaged compliance, security, data or cost exposure.</p>
+            <div class="tags"><span class="tag">Responsible AI</span><span class="tag">Risk and compliance</span><span class="tag">Executive reporting</span></div>
+          </article>
+
+          <article class="project" data-state="active">
+            <div class="project-top"><h3>AI Score product partnership</h3><span class="status">In progress</span></div>
+            <p><strong>My role:</strong> I lead or oversee MillTech's contribution of enterprise requirements, compliance insight, product feedback and practical control scenarios.</p>
+            <p><strong>Expected value:</strong> Help shape a useful guardrail and controls product while strengthening accountable AI adoption internally.</p>
+            <div class="tags"><span class="tag">Product partnership</span><span class="tag">AI controls</span><span class="tag">Regulatory insight</span></div>
+          </article>
+
+          <article class="project" data-state="delivered">
+            <div class="project-top"><h3>Egnyte and legacy-service consolidation</h3><span class="status">Completed</span></div>
+            <p><strong>My role:</strong> I delivered or directly oversaw tenant consolidation, the MGIL Egnyte decommission, Exchange closure and required data continuity.</p>
+            <p><strong>Impact:</strong> Reduced platform fragmentation, removed legacy operational dependencies and simplified governance.</p>
+            <div class="tags"><span class="tag">Egnyte</span><span class="tag">Microsoft Exchange</span><span class="tag">Data migration</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="glass section" aria-labelledby="earlier-delivery-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Earlier global delivery</p>
+            <h2 id="earlier-delivery-heading">Infrastructure, resilience and international operations</h2>
+            <p>Programmes delivered before MillTech that demonstrate sustained ownership of regulated infrastructure, global support, security improvement and office technology.</p>
+          </div>
+        </div>
+
+        <div class="employer-block">
+          <div class="employer-heading">
+            <h3>Bank of Singapore</h3>
+            <p>Cross-border banking infrastructure, resilience, workplace technology and global service delivery.</p>
+          </div>
+          <div class="projects">
+            <article class="project" data-state="delivered">
+              <div class="project-top"><h3>London–Luxembourg resilient hybrid infrastructure</h3><span class="status">Completed</span></div>
+              <p><strong>My role:</strong> I directly oversaw the replacement of the on-premises estate and delivery of redundancy between London and Luxembourg as part of the hybrid build.</p>
+              <p><strong>Impact:</strong> Established a more resilient cross-border platform with recovery capability and reduced dependency on ageing infrastructure.</p>
+              <div class="tags"><span class="tag">Hybrid infrastructure</span><span class="tag">Resilience</span><span class="tag">London and Luxembourg</span></div>
+            </article>
+
+            <article class="project" data-state="delivered">
+              <div class="project-top"><h3>Office refurbishment and audio-visual workplace fit-out</h3><span class="status">Completed</span></div>
+              <p><strong>My role:</strong> I delivered or directly oversaw the technology fit-out for the refurbished office, including workplace and audio-visual equipment.</p>
+              <p><strong>Impact:</strong> Provided a modern, supportable working environment aligned with the organisation's operational and collaboration needs.</p>
+              <div class="tags"><span class="tag">Workplace technology</span><span class="tag">Audio-visual systems</span><span class="tag">Office refurbishment</span></div>
+            </article>
+
+            <article class="project" data-state="delivered">
+              <div class="project-top"><h3>COVID operational resilience and remote-working support</h3><span class="status">Completed</span></div>
+              <p><strong>My role:</strong> I managed the technology resilience and continuity response required to support banking operations during COVID-19.</p>
+              <p><strong>Impact:</strong> Helped maintain secure access, user support and operational continuity during a period of significant disruption.</p>
+              <div class="tags"><span class="tag">Business continuity</span><span class="tag">Remote working</span><span class="tag">Operational resilience</span></div>
+            </article>
+
+            <article class="project" data-state="delivered">
+              <div class="project-top"><h3>OCBC and Bank of Singapore infrastructure integration</h3><span class="status">Completed</span></div>
+              <p><strong>My role:</strong> I oversaw back-end infrastructure integration between OCBC and Bank of Singapore, coordinating dependencies, controls and service impact.</p>
+              <p><strong>Impact:</strong> Supported more coherent banking infrastructure and service delivery across the combined environment.</p>
+              <div class="tags"><span class="tag">Infrastructure integration</span><span class="tag">Regulated banking</span><span class="tag">Service transition</span></div>
+            </article>
+
+            <article class="project" data-state="delivered">
+              <div class="project-top"><h3>Follow-the-sun global IT support model</h3><span class="status">Operational</span></div>
+              <p><strong>My role:</strong> I designed and managed a follow-the-sun support model across locations, teams and handover points.</p>
+              <p><strong>Impact:</strong> Extended service coverage and strengthened continuity for a globally distributed banking operation.</p>
+              <div class="tags"><span class="tag">Global support</span><span class="tag">Service management</span><span class="tag">Operating model</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="employer-block">
+          <div class="employer-heading">
+            <h3>JA Kemp</h3>
+            <p>Progressive infrastructure modernisation, security and compliance improvement, and international office delivery.</p>
+          </div>
+          <div class="projects">
+            <article class="project" data-state="delivered">
+              <div class="project-top"><h3>Server estate modernisation</h3><span class="status">Completed</span></div>
+              <p><strong>My role:</strong> I planned and delivered the progressive replacement and modernisation of the server estate over time.</p>
+              <p><strong>Impact:</strong> Reduced dependency on ageing systems and improved reliability, supportability and technology currency.</p>
+              <div class="tags"><span class="tag">Server infrastructure</span><span class="tag">Lifecycle management</span><span class="tag">Modernisation</span></div>
+            </article>
+
+            <article class="project" data-state="delivered">
+              <div class="project-top"><h3>Workplace security and compliance uplift</h3><span class="status">Completed</span></div>
+              <p><strong>My role:</strong> I strengthened technical controls and supporting practices across the working environment.</p>
+              <p><strong>Impact:</strong> Improved the firm's security posture and helped maintain a more controlled, compliant operating environment.</p>
+              <div class="tags"><span class="tag">Security controls</span><span class="tag">Compliance</span><span class="tag">Risk reduction</span></div>
+            </article>
+
+            <article class="project" data-state="delivered">
+              <div class="project-top"><h3>Cambridgeshire and Munich office build-outs</h3><span class="status">Completed</span></div>
+              <p><strong>My role:</strong> I delivered or directly supported the technology workstreams for office build-outs in Cambridgeshire and Munich.</p>
+              <p><strong>Impact:</strong> Enabled two locations with operational technology, connectivity and workplace services ready for occupation.</p>
+              <div class="tags"><span class="tag">International offices</span><span class="tag">Workplace delivery</span><span class="tag">Munich</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="glass section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Additional delivery</p>
+            <h2>Breadth behind the case studies</h2>
+          </div>
+        </div>
+        <div class="additional-grid">
+          <div class="additional-item"><strong>Purview DLP and labels</strong>Information protection policy and controlled rollout.</div>
+          <div class="additional-item"><strong>DR and business continuity</strong>Biannual testing, RTO/RPO review and recovery improvement.</div>
+          <div class="additional-item"><strong>Telephony consolidation</strong>Platform, recording, supplier and compliance coordination.</div>
+          <div class="additional-item"><strong>RBAC and Egnyte permissions</strong>Clearer role models, ownership and access review.</div>
+          <div class="additional-item"><strong>Passkeys pilot</strong>Phishing-resistant authentication with usability evidence.</div>
+          <div class="additional-item"><strong>Asset and Intune integration</strong>Stronger lifecycle records, reconciliation and auditability.</div>
+          <div class="additional-item"><strong>Hardware standardisation</strong>Reduced variation across endpoint and dock profiles.</div>
+          <div class="additional-item"><strong>Procurement controls</strong>Bechtle credit and finance portal; less ad hoc purchasing.</div>
+          <div class="additional-item"><strong>Ransomware and data controls</strong>Dropbox blocking, alerting and endpoint protection.</div>
+        </div>
+      </section>
+
+      <section class="glass closing">
+        <div>
+          <p class="eyebrow">Leadership direction</p>
+          <h2>Head of Enterprise Technology / Director of Enterprise IT</h2>
+          <p>This portfolio demonstrates sustained accountability across infrastructure modernisation, cross-border banking technology, operations, architecture, cyber security, compliance, commercial stewardship, suppliers, people, international workplace expansion and AI governance—while retaining the technical depth to deliver personally where required.</p>
+        </div>
+        <a class="button" href="index.html">Explore the full portfolio</a>
+      </section>
+    </main>
+
+    <footer>David Abiodun · Enterprise Technology Leadership · Updated September 2026</footer>
+  </div>
+
+  <script>
+    const buttons = [...document.querySelectorAll(".filter")];
+    const projects = [...document.querySelectorAll(".project")];
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+        projects.forEach((project) => {
+          project.hidden = filter !== "all" && project.dataset.state !== filter;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
