@@ -158,38 +158,17 @@
             margin-bottom: 0;
         }
 
-        .docs-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .doc-card {
-            display: block;
-            text-decoration: none;
-            color: #ffffff;
+        .viewer-section {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid rgba(255, 255, 255, 0.16);
             border-radius: 16px;
             padding: 28px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            margin-bottom: 24px;
             box-shadow:
                 0 8px 30px rgba(0, 0, 0, 0.12),
                 0 0 20px rgba(255, 255, 255, 0.04) inset;
-        }
-
-        .doc-card:hover {
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.11);
-            border-color: rgba(21, 87, 36, 0.35);
-            box-shadow:
-                0 0 18px rgba(21, 87, 36, 0.26),
-                0 14px 36px rgba(0, 0, 0, 0.18);
         }
 
         .doc-label {
@@ -207,13 +186,27 @@
             font-weight: 600;
             line-height: 1.4;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 16px;
         }
 
-        .doc-desc {
-            font-size: 0.95rem;
+        .viewer-frame {
+            width: 100%;
+            height: 85vh;
+            min-height: 500px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 12px;
+            background: #1a1f2b;
+        }
+
+        .viewer-fallback {
+            margin-top: 12px;
+            font-size: 0.9rem;
             font-weight: 300;
             color: #c2cde4;
+        }
+
+        .viewer-fallback a {
+            color: #93c5fd;
         }
 
         .quick-links {
@@ -271,12 +264,12 @@
                 line-height: 1.75;
             }
 
-            .doc-card {
-                padding: 24px;
+            .viewer-section {
+                padding: 20px;
             }
 
-            .docs-grid {
-                grid-template-columns: 1fr;
+            .viewer-frame {
+                height: 70vh;
             }
         }
 
@@ -320,18 +313,22 @@
                 </p>
             </section>
 
-            <section class="docs-grid">
-                <a href="projects/Module%208/AMCAF_Dissertation.pdf" class="doc-card" target="_blank" rel="noopener noreferrer">
-                    <div class="doc-label">Dissertation</div>
-                    <div class="doc-title">AMCAF: Automated Multi-Cloud Compliance Assurance Framework</div>
-                    <div class="doc-desc">Full written submission (PDF)</div>
-                </a>
+            <section class="viewer-section">
+                <div class="doc-label">Dissertation</div>
+                <div class="doc-title">AMCAF: Automated Multi-Cloud Compliance Assurance Framework</div>
+                <iframe class="viewer-frame" src="projects/Module%208/AMCAF_Dissertation.pdf" title="AMCAF Dissertation"></iframe>
+                <div class="viewer-fallback">
+                    Viewer not loading? <a href="projects/Module%208/AMCAF_Dissertation.pdf" target="_blank" rel="noopener noreferrer">Open the dissertation in a new tab</a>.
+                </div>
+            </section>
 
-                <a href="projects/Module%208/DAbiodun_12696259_Presentation.pptx" class="doc-card">
-                    <div class="doc-label">Presentation</div>
-                    <div class="doc-title">AMCAF Capstone Presentation</div>
-                    <div class="doc-desc">Project presentation (PowerPoint)</div>
-                </a>
+            <section class="viewer-section">
+                <div class="doc-label">Presentation</div>
+                <div class="doc-title">AMCAF Capstone Presentation</div>
+                <iframe class="viewer-frame" src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fdma-1970.github.io%2FPortfolio%2Fprojects%2FModule%208%2FDAbiodun_12696259_Presentation.pptx" title="AMCAF Capstone Presentation"></iframe>
+                <div class="viewer-fallback">
+                    Viewer not loading? <a href="projects/Module%208/DAbiodun_12696259_Presentation.pptx" target="_blank" rel="noopener noreferrer">Open the presentation in a new tab</a>.
+                </div>
             </section>
 
             <nav class="quick-links">
