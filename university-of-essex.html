@@ -132,7 +132,7 @@
 
         .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-bottom: 30px;
         }
@@ -270,6 +270,12 @@
             box-shadow: 0 0 14px rgba(21, 87, 36, 0.22);
         }
 
+        @media (max-width: 992px) {
+            .modules-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .overlay {
                 padding: 28px 15px 24px;
@@ -397,6 +403,13 @@
                     <div class="module-title">Research Methods and Professional Practice</div>
                     <div class="module-period">October 2025</div>
                     <span class="module-grade grade-distinction">Distinction</span>
+                </a>
+
+                <a href="Module8.html" class="module-card">
+                    <div class="module-number">Module 8</div>
+                    <div class="module-title">MSc Computing Project</div>
+                    <div class="module-period">January 2026</div>
+                    <span class="module-grade grade-merit">Merit</span>
                 </a>
             </section>
 
