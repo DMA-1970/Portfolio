@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LX92NLZD2F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LX92NLZD2F');
+    </script>
+    <title>Module 8: MSc Computing Project - David Abiodun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            min-height: 100%;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            background-color: #0b0f17;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: url('assets/US.jpg') no-repeat center center / cover;
+            filter: blur(3px);
+            -webkit-filter: blur(3px);
+            transform: scale(1.05);
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.78);
+            z-index: -1;
+        }
+
+        .overlay {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 20px 30px;
+            animation: fadeIn 0.9s ease-in;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 36px;
+            padding: 0 16px;
+        }
+
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -1px;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #b8c5e0;
+            letter-spacing: 0.3px;
+        }
+
+        .grade-banner {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: rgba(37, 99, 235, 0.22);
+            color: #e0e7ff;
+            border: 1px solid rgba(37, 99, 235, 0.45);
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.25);
+        }
+
+        .intro-section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 20px;
+            padding: 34px 38px;
+            margin-bottom: 36px;
+            box-shadow: 0 10px 34px rgba(0, 0, 0, 0.22);
+            transition: all 0.3s ease;
+        }
+
+        .intro-section:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(21, 87, 36, 0.32);
+            box-shadow:
+                0 0 16px rgba(21, 87, 36, 0.22),
+                0 10px 34px rgba(0, 0, 0, 0.22);
+        }
+
+        .intro-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .intro-section p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: #d8e1f2;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .doc-card {
+            display: block;
+            text-decoration: none;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.12),
+                0 0 20px rgba(255, 255, 255, 0.04) inset;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.11);
+            border-color: rgba(21, 87, 36, 0.35);
+            box-shadow:
+                0 0 18px rgba(21, 87, 36, 0.26),
+                0 14px 36px rgba(0, 0, 0, 0.18);
+        }
+
+        .doc-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #8ea2c4;
+            margin-bottom: 8px;
+        }
+
+        .doc-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .doc-desc {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: #c2cde4;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 8px;
+        }
+
+        .quick-links a {
+            text-decoration: none;
+            color: #d8e1f2;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .quick-links a:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(21, 87, 36, 0.3);
+            box-shadow: 0 0 14px rgba(21, 87, 36, 0.22);
+        }
+
+        @media (max-width: 768px) {
+            .overlay {
+                padding: 28px 15px 24px;
+            }
+
+            .header {
+                margin-bottom: 28px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.05rem;
+            }
+
+            .intro-section {
+                padding: 26px 24px;
+            }
+
+            .intro-section p {
+                font-size: 1rem;
+                line-height: 1.75;
+            }
+
+            .doc-card {
+                padding: 24px;
+            }
+
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.9rem;
+            }
+
+            .quick-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .quick-links a {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <header class="header">
+                <h1>Module 8: MSc Computing Project</h1>
+                <div class="subtitle">AMCAF &mdash; Automated Multi-Cloud Compliance Assurance Framework</div>
+                <div><span class="grade-banner">Grade: Merit</span></div>
+            </header>
+
+            <section class="intro-section">
+                <h2>About the Project</h2>
+                <p>
+                    My capstone project, submitted in January 2026, addresses a practical problem facing regulated financial institutions: demonstrating consistent compliance across multi-cloud environments where AWS, Azure, and GCP implement equivalent security and governance controls in technically different ways.
+                </p>
+                <p>
+                    The Automated Multi-Cloud Compliance Assurance Framework (AMCAF) is a provider-agnostic, rule-based validation engine developed using Design Science Research methodology. It translates regulatory obligations &mdash; including DORA, FCA PS21/3, UK GDPR, ISO 27001, NIST CSF, CSSF 22/806, NDPR, MAS TRM, PCI DSS v4.0, and SOC 2 &mdash; into 20 technology-neutral control objectives, maps them to their equivalent technical implementations across cloud providers, and validates live configurations against those controls to produce structured, auditable compliance evidence.
+                </p>
+                <p>
+                    The dissertation and accompanying presentation below set out the research motivation, the framework's four-layer architecture, and the evaluation of its reliability and practical utility in a regulated financial services context.
+                </p>
+            </section>
+
+            <section class="docs-grid">
+                <a href="projects/Module%208/AMCAF_Dissertation.pdf" class="doc-card" target="_blank" rel="noopener noreferrer">
+                    <div class="doc-label">Dissertation</div>
+                    <div class="doc-title">AMCAF: Automated Multi-Cloud Compliance Assurance Framework</div>
+                    <div class="doc-desc">Full written submission (PDF)</div>
+                </a>
+
+                <a href="projects/Module%208/DAbiodun_12696259_Presentation.pptx" class="doc-card">
+                    <div class="doc-label">Presentation</div>
+                    <div class="doc-title">AMCAF Capstone Presentation</div>
+                    <div class="doc-desc">Project presentation (PowerPoint)</div>
+                </a>
+            </section>
+
+            <nav class="quick-links">
+                <a href="university-of-essex.html">Back to University of Essex</a>
+                <a href="index.html">Back to Home</a>
+                <a href="cv.html">Professional CV</a>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
