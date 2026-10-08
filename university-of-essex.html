@@ -138,15 +138,16 @@
         }
 
         .module-card {
-            display: block;
+            display: flex;
+            flex-direction: column;
             text-decoration: none;
             color: #ffffff;
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid rgba(255, 255, 255, 0.16);
-            border-radius: 16px;
-            padding: 28px;
+            border-radius: 14px;
+            padding: 18px;
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
@@ -190,55 +191,59 @@
         }
 
         .module-number {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            color: #8ea2c4;
-            margin-bottom: 8px;
+            color: #9fb3d6;
+            margin-bottom: 6px;
         }
 
         .module-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
-            line-height: 1.4;
+            line-height: 1.35;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .module-period {
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             font-weight: 300;
             color: #c2cde4;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .module-grade {
             display: inline-block;
-            padding: 6px 14px;
+            align-self: flex-start;
+            margin-top: auto;
+            padding: 5px 12px;
             border-radius: 999px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 600;
         }
 
         .grade-distinction {
-            background: rgba(52, 211, 153, 0.14);
-            color: #86efac;
-            border: 1px solid rgba(52, 211, 153, 0.28);
+            background: rgba(52, 211, 153, 0.26);
+            color: #a7ffce;
+            border: 1px solid rgba(52, 211, 153, 0.5);
+            box-shadow: 0 0 10px rgba(52, 211, 153, 0.22);
         }
 
         .grade-merit {
-    background: rgba(37, 99, 235, 0.22);
-    color: #e0e7ff;
-    border: 1px solid rgba(37, 99, 235, 0.45);
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.25);
-}
+            background: rgba(59, 130, 246, 0.3);
+            color: #eaf1ff;
+            border: 1px solid rgba(59, 130, 246, 0.55);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.28);
+        }
 
         .grade-progress {
-            background: rgba(96, 165, 250, 0.14);
-            color: #93c5fd;
-            border: 1px solid rgba(96, 165, 250, 0.28);
+            background: rgba(96, 165, 250, 0.26);
+            color: #bddcff;
+            border: 1px solid rgba(96, 165, 250, 0.5);
+            box-shadow: 0 0 10px rgba(96, 165, 250, 0.22);
         }
 
         .quick-links {
@@ -303,7 +308,7 @@
             }
 
             .module-card {
-                padding: 24px;
+                padding: 16px;
             }
         }
 
