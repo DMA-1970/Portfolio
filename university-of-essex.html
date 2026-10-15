@@ -214,14 +214,6 @@
             margin-top: 4px;
         }
 
-        .section-heading {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 18px;
-        }
-
         .stats-row {
             display: flex;
             gap: 20px;
@@ -293,6 +285,18 @@
             font-weight: 300;
         }
 
+        .grades-table td a {
+            color: #9ec9ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .grades-table td a:hover {
+            color: #c7e0ff;
+            text-decoration: underline;
+        }
+
         .badge {
             display: inline-block;
             padding: 5px 14px;
@@ -330,113 +334,6 @@
             font-style: italic;
         }
 
-        .modules-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .module-card {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            border-radius: 14px;
-            padding: 18px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow:
-                0 8px 30px rgba(0, 0, 0, 0.12),
-                0 0 20px rgba(255, 255, 255, 0.04) inset;
-        }
-
-        .module-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.05) 0%,
-                rgba(255, 255, 255, 0.01) 100%
-            );
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .module-card:hover::before {
-            opacity: 1;
-        }
-
-        .module-card:hover {
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.11);
-            border-color: rgba(21, 87, 36, 0.35);
-            box-shadow:
-                0 0 18px rgba(21, 87, 36, 0.26),
-                0 14px 36px rgba(0, 0, 0, 0.18);
-        }
-
-        .module-number,
-        .module-title,
-        .module-period,
-        .module-grade {
-            position: relative;
-            z-index: 1;
-        }
-
-        .module-number {
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: #9fb3d6;
-            margin-bottom: 6px;
-        }
-
-        .module-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.35;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .module-period {
-            font-size: 0.8rem;
-            font-weight: 300;
-            color: #c2cde4;
-            margin-bottom: 12px;
-        }
-
-        .module-grade {
-            display: inline-block;
-            align-self: flex-start;
-            margin-top: auto;
-            padding: 5px 12px;
-            border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .grade-distinction {
-            background: #166534;
-            color: #FFFFFF;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
-
-        .grade-merit {
-            background: #86EFAC;
-            color: #14532D;
-            border: 1px solid rgba(20, 83, 45, 0.18);
-        }
-
         .quick-links {
             display: flex;
             flex-wrap: wrap;
@@ -464,12 +361,6 @@
             background: rgba(255, 255, 255, 0.12);
             border-color: rgba(21, 87, 36, 0.3);
             box-shadow: 0 0 14px rgba(21, 87, 36, 0.22);
-        }
-
-        @media (max-width: 992px) {
-            .modules-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 768px) {
@@ -503,10 +394,6 @@
                 line-height: 1.75;
             }
 
-            .module-card {
-                padding: 16px;
-            }
-
             .qual-note {
                 font-size: 0.8rem;
             }
@@ -534,10 +421,6 @@
         @media (max-width: 480px) {
             .header h1 {
                 font-size: 1.9rem;
-            }
-
-            .modules-grid {
-                grid-template-columns: 1fr;
             }
 
             .quick-links {
@@ -614,42 +497,42 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Enterprise IT Project Management</td>
+                                <td><a href="Module4.html">Enterprise IT Project Management</a></td>
                                 <td><span class="badge badge-distinction">89%</span></td>
                                 <td><span class="badge badge-distinction">Distinction</span></td>
                             </tr>
                             <tr>
-                                <td>Cloud Operations and Management</td>
+                                <td><a href="Module6.html">Cloud Operations and Management</a></td>
                                 <td><span class="badge badge-distinction">82%</span></td>
                                 <td><span class="badge badge-distinction">Distinction</span></td>
                             </tr>
                             <tr>
-                                <td>Security and Risk Management</td>
+                                <td><a href="Module2.html">Security and Risk Management</a></td>
                                 <td><span class="badge badge-distinction">81%</span></td>
                                 <td><span class="badge badge-distinction">Distinction</span></td>
                             </tr>
                             <tr>
-                                <td>Information Technology Service Management</td>
+                                <td><a href="Module3.html">Information Technology Service Management</a></td>
                                 <td><span class="badge badge-distinction">75%</span></td>
                                 <td><span class="badge badge-distinction">Distinction</span></td>
                             </tr>
                             <tr>
-                                <td>Intro to Data Science</td>
+                                <td><a href="Module5.html">Intro to Data Science</a></td>
                                 <td><span class="badge badge-distinction">74%</span></td>
                                 <td><span class="badge badge-distinction">Distinction</span></td>
                             </tr>
                             <tr>
-                                <td>Research Methods and Professional Practice</td>
+                                <td><a href="Module7.html">Research Methods and Professional Practice</a></td>
                                 <td><span class="badge badge-distinction">70%</span></td>
                                 <td><span class="badge badge-distinction">Distinction</span></td>
                             </tr>
                             <tr>
-                                <td>MSc Computing Project &mdash; AMCAF</td>
+                                <td><a href="Module8.html">MSc Computing Project &mdash; AMCAF</a></td>
                                 <td><span class="badge badge-merit">68.4%</span></td>
                                 <td><span class="badge badge-merit">Merit</span></td>
                             </tr>
                             <tr>
-                                <td>Launching into Enterprise IT Management</td>
+                                <td><a href="Module1.html">Launching into Enterprise IT Management</a></td>
                                 <td><span class="badge badge-merit">64.6%</span></td>
                                 <td><span class="badge badge-merit">Merit</span></td>
                             </tr>
@@ -742,65 +625,6 @@
                 <p>
                     The programme further strengthened my ability to translate complex technology and regulatory requirements into practical enterprise strategies that support business growth, resilience and effective risk management.
                 </p>
-            </section>
-
-            <h2 class="section-heading">Module Pages</h2>
-            <section class="modules-grid">
-                <a href="Module1.html" class="module-card">
-                    <div class="module-number">Module 1</div>
-                    <div class="module-title">Launching into Enterprise IT Management</div>
-                    <div class="module-period">April 2024</div>
-                    <span class="module-grade grade-merit">Merit &middot; 64.6%</span>
-                </a>
-
-                <a href="Module2.html" class="module-card">
-                    <div class="module-number">Module 2</div>
-                    <div class="module-title">Security and Risk Management</div>
-                    <div class="module-period">July 2024</div>
-                    <span class="module-grade grade-distinction">Distinction &middot; 81%</span>
-                </a>
-
-                <a href="Module3.html" class="module-card">
-                    <div class="module-number">Module 3</div>
-                    <div class="module-title">Information Technology Service Management</div>
-                    <div class="module-period">October 2024</div>
-                    <span class="module-grade grade-distinction">Distinction &middot; 75%</span>
-                </a>
-
-                <a href="Module4.html" class="module-card">
-                    <div class="module-number">Module 4</div>
-                    <div class="module-title">Enterprise IT Project Management</div>
-                    <div class="module-period">January 2025</div>
-                    <span class="module-grade grade-distinction">Distinction &middot; 89%</span>
-                </a>
-
-                <a href="Module5.html" class="module-card">
-                    <div class="module-number">Module 5</div>
-                    <div class="module-title">Into Data Science</div>
-                    <div class="module-period">April 2025</div>
-                    <span class="module-grade grade-distinction">Distinction &middot; 74%</span>
-                </a>
-
-                <a href="Module6.html" class="module-card">
-                    <div class="module-number">Module 6</div>
-                    <div class="module-title">Cloud Operations and Management</div>
-                    <div class="module-period">July 2025</div>
-                    <span class="module-grade grade-distinction">Distinction &middot; 82%</span>
-                </a>
-
-                <a href="Module7.html" class="module-card">
-                    <div class="module-number">Module 7</div>
-                    <div class="module-title">Research Methods and Professional Practice</div>
-                    <div class="module-period">October 2025</div>
-                    <span class="module-grade grade-distinction">Distinction &middot; 70%</span>
-                </a>
-
-                <a href="Module8.html" class="module-card">
-                    <div class="module-number">Module 8</div>
-                    <div class="module-title">MSc Computing Project</div>
-                    <div class="module-period">January 2026</div>
-                    <span class="module-grade grade-merit">Merit &middot; 68.4%</span>
-                </a>
             </section>
 
             <section class="intro-section">
