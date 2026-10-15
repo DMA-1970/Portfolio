@@ -130,6 +130,206 @@
             margin-bottom: 0;
         }
 
+        .intro-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .intro-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #d8e1f2;
+            margin: 22px 0 10px;
+        }
+
+        .intro-section ul {
+            margin: 0 0 16px 22px;
+            color: #d8e1f2;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.85;
+        }
+
+        .intro-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .intro-section ul:last-child {
+            margin-bottom: 0;
+        }
+
+        .mark-pill {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            background: #86EFAC;
+            color: #14532D;
+            margin-bottom: 16px;
+        }
+
+        .prototype-note {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #9fb3d6;
+        }
+
+        .qual-status {
+            margin-top: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qual-line {
+            font-size: 1rem;
+            color: #d8e1f2;
+            font-weight: 300;
+        }
+
+        .qual-pill {
+            display: inline-block;
+            padding: 8px 22px;
+            border-radius: 999px;
+            background: rgba(22, 101, 52, 0.4);
+            border: 1px solid rgba(22, 101, 52, 0.7);
+            color: #d7ffe4;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 0 14px rgba(22, 101, 52, 0.25);
+        }
+
+        .qual-note {
+            font-size: 0.85rem;
+            color: #9fb3d6;
+            font-weight: 300;
+            max-width: 640px;
+            line-height: 1.6;
+            margin-top: 4px;
+        }
+
+        .section-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 18px;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 28px;
+        }
+
+        .stat-card {
+            flex: 1 1 160px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 16px;
+            padding: 24px 16px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #b8c5e0;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-weight: 600;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            margin-bottom: 24px;
+        }
+
+        .grades-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            min-width: 520px;
+        }
+
+        .grades-table th,
+        .grades-table td {
+            padding: 14px 18px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .grades-table th {
+            background: rgba(255, 255, 255, 0.08);
+            color: #b8c5e0;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.6px;
+        }
+
+        .grades-table td {
+            color: #e4e9f5;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 300;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .badge-distinction {
+            background: #166534;
+            color: #FFFFFF;
+        }
+
+        .badge-merit {
+            background: #86EFAC;
+            color: #14532D;
+        }
+
+        .award-line {
+            text-align: center;
+        }
+
+        .award-line strong {
+            display: block;
+            font-size: 1.15rem;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 6px;
+        }
+
+        .award-note {
+            font-size: 0.85rem;
+            color: #9fb3d6;
+            font-weight: 300;
+            font-style: italic;
+        }
+
         .modules-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -226,24 +426,15 @@
         }
 
         .grade-distinction {
-            background: rgba(52, 211, 153, 0.26);
-            color: #a7ffce;
-            border: 1px solid rgba(52, 211, 153, 0.5);
-            box-shadow: 0 0 10px rgba(52, 211, 153, 0.22);
+            background: #166534;
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .grade-merit {
-            background: rgba(59, 130, 246, 0.3);
-            color: #eaf1ff;
-            border: 1px solid rgba(59, 130, 246, 0.55);
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.28);
-        }
-
-        .grade-progress {
-            background: rgba(96, 165, 250, 0.26);
-            color: #bddcff;
-            border: 1px solid rgba(96, 165, 250, 0.5);
-            box-shadow: 0 0 10px rgba(96, 165, 250, 0.22);
+            background: #86EFAC;
+            color: #14532D;
+            border: 1px solid rgba(20, 83, 45, 0.18);
         }
 
         .quick-links {
@@ -307,8 +498,36 @@
                 line-height: 1.75;
             }
 
+            .intro-section ul {
+                font-size: 1rem;
+                line-height: 1.75;
+            }
+
             .module-card {
                 padding: 16px;
+            }
+
+            .qual-note {
+                font-size: 0.8rem;
+            }
+
+            .stats-row {
+                gap: 14px;
+            }
+
+            .stat-card {
+                flex: 1 1 100px;
+                padding: 18px 12px;
+            }
+
+            .stat-value {
+                font-size: 1.8rem;
+            }
+
+            .grades-table th,
+            .grades-table td {
+                padding: 12px 14px;
+                font-size: 0.88rem;
             }
         }
 
@@ -340,82 +559,277 @@
             <header class="header">
                 <h1>University of Essex</h1>
                 <div class="subtitle">MSc Enterprise IT Management</div>
+                <div class="qual-status">
+                    <div class="qual-line">University of Essex Online &middot; Programme Completed: September 2026</div>
+                    <div class="qual-pill">6 Distinctions &middot; 2 Merits</div>
+                    <div class="qual-line">Anticipated Overall Degree Classification: <strong>Distinction</strong></div>
+                    <div class="qual-note">
+                        All eight module results have been confirmed. The University Exam Board will formally ratify the award and degree classification on 3&ndash;4 December 2026, with official confirmation expected on 18 December 2026.
+                    </div>
+                </div>
             </header>
 
             <section class="intro-section">
                 <p>
-                    I am completing an MSc in Enterprise IT Management at the University of Essex Online, where I have combined over two decades of enterprise technology leadership with rigorous academic research in governance, cloud computing, cybersecurity, and digital transformation.
+                    I successfully completed my MSc in Enterprise IT Management at the University of Essex Online in September 2026, combining over two decades of enterprise technology leadership with rigorous postgraduate research in governance, cloud computing, cybersecurity, operational resilience and digital transformation.
                 </p>
                 <p>
-                    The programme has strengthened my ability to bridge practical enterprise delivery with evidence-based frameworks for governance, risk management, operational resilience, and cloud operations. It has reinforced my approach to designing secure, scalable, and compliant technology environments that align with both business objectives and regulatory expectations.
+                    The programme strengthened my ability to bridge practical enterprise technology delivery with evidence-based frameworks for governance, risk management, regulatory compliance and technology strategy. It reinforced my approach to designing secure, scalable and resilient technology environments that align with business objectives and regulatory expectations.
                 </p>
                 <p>
-                    My research focuses on multi-cloud governance and compliance assurance within regulated financial institutions. Through the design of the Automated Multi-Cloud Compliance Assurance Framework (AMCAF), I have explored how regulatory control objectives can be consistently mapped and validated across heterogeneous cloud platforms to improve transparency, auditability, and compliance assurance while reducing governance complexity.
+                    Throughout the programme, I achieved six Distinctions and two Merits across eight assessed modules, reflecting consistent academic performance while maintaining my professional responsibilities in enterprise technology leadership.
                 </p>
                 <p>
-                    Throughout the programme, I have consistently achieved distinction-level results across multiple modules, applying academic research directly to enterprise technology challenges encountered within regulated financial services. This combination of professional practice and academic study has further strengthened my expertise in cloud governance, cybersecurity, operational resilience, and enterprise technology strategy.
+                    My academic work drew extensively on experience within internationally regulated financial services, including environments subject to the Financial Conduct Authority (FCA), Monetary Authority of Singapore (MAS) and Luxembourg's Commission de Surveillance du Secteur Financier (CSSF).
                 </p>
                 <p>
-                    Alongside my studies, I have served as a Student Representative since October 2024, representing my cohort, facilitating communication between students and faculty, and contributing to the continuous improvement of the student learning experience.
+                    The combination of postgraduate research and practical enterprise leadership has further strengthened my capabilities in technology governance, cloud strategy, cybersecurity, operational resilience and digital transformation.
                 </p>
             </section>
 
+            <section class="intro-section">
+                <h2 style="margin-bottom: 20px;">Academic Performance</h2>
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-value">6</div>
+                        <div class="stat-label">Distinctions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">2</div>
+                        <div class="stat-label">Merits</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">89%</div>
+                        <div class="stat-label">Highest Module Mark</div>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Module</th>
+                                <th>Grade</th>
+                                <th>Classification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Enterprise IT Project Management</td>
+                                <td><span class="badge badge-distinction">89%</span></td>
+                                <td><span class="badge badge-distinction">Distinction</span></td>
+                            </tr>
+                            <tr>
+                                <td>Cloud Operations and Management</td>
+                                <td><span class="badge badge-distinction">82%</span></td>
+                                <td><span class="badge badge-distinction">Distinction</span></td>
+                            </tr>
+                            <tr>
+                                <td>Security and Risk Management</td>
+                                <td><span class="badge badge-distinction">81%</span></td>
+                                <td><span class="badge badge-distinction">Distinction</span></td>
+                            </tr>
+                            <tr>
+                                <td>Information Technology Service Management</td>
+                                <td><span class="badge badge-distinction">75%</span></td>
+                                <td><span class="badge badge-distinction">Distinction</span></td>
+                            </tr>
+                            <tr>
+                                <td>Intro to Data Science</td>
+                                <td><span class="badge badge-distinction">74%</span></td>
+                                <td><span class="badge badge-distinction">Distinction</span></td>
+                            </tr>
+                            <tr>
+                                <td>Research Methods and Professional Practice</td>
+                                <td><span class="badge badge-distinction">70%</span></td>
+                                <td><span class="badge badge-distinction">Distinction</span></td>
+                            </tr>
+                            <tr>
+                                <td>MSc Computing Project &mdash; AMCAF</td>
+                                <td><span class="badge badge-merit">68.4%</span></td>
+                                <td><span class="badge badge-merit">Merit</span></td>
+                            </tr>
+                            <tr>
+                                <td>Launching into Enterprise IT Management</td>
+                                <td><span class="badge badge-merit">64.6%</span></td>
+                                <td><span class="badge badge-merit">Merit</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="award-line">
+                    <strong>Anticipated Overall Award: MSc with Distinction</strong>
+                    <div class="award-note">Subject to formal University Exam Board ratification in December 2026.</div>
+                </div>
+            </section>
+
+            <section class="intro-section">
+                <h2>Dissertation Research &mdash; AMCAF</h2>
+                <h3 style="margin-top: 0;">Automated Multi-Cloud Compliance Assurance Framework</h3>
+                <div class="mark-pill">Final Confirmed Dissertation Mark: 68.4% &mdash; Merit</div>
+                <p>
+                    My postgraduate research focused on the complexities of maintaining consistent governance, risk management and regulatory compliance across heterogeneous cloud environments within regulated financial institutions.
+                </p>
+                <p>
+                    Using Design Science Research methodology, I designed and developed the Automated Multi-Cloud Compliance Assurance Framework (AMCAF), a research-led prototype exploring how regulatory control objectives can be consistently mapped, assessed and validated across multiple cloud platforms.
+                </p>
+                <p>
+                    The framework incorporates provider-specific data collection, automated control checks, cross-platform compliance mapping and structured reporting to support improved transparency, auditability and evidence-based compliance assurance.
+                </p>
+
+                <h3>Cloud Platforms</h3>
+                <ul>
+                    <li>Microsoft Azure, including Microsoft Entra ID</li>
+                    <li>Amazon Web Services (AWS)</li>
+                    <li>Google Cloud Platform (GCP)</li>
+                </ul>
+
+                <h3>Research Focus</h3>
+                <ul>
+                    <li>Multi-cloud governance and compliance assurance</li>
+                    <li>Automated security and regulatory control validation</li>
+                    <li>Identity and access management</li>
+                    <li>Encryption and data protection</li>
+                    <li>Security logging, monitoring and incident management</li>
+                    <li>Regulatory control mapping</li>
+                    <li>Evidence collection and auditability</li>
+                    <li>Cloud operational resilience</li>
+                    <li>Reducing governance complexity across heterogeneous cloud environments</li>
+                </ul>
+
+                <h3>Regulatory and Governance Frameworks</h3>
+                <p>The research considered regulatory and governance requirements relevant to international financial services, including:</p>
+                <ul>
+                    <li>Digital Operational Resilience Act (DORA)</li>
+                    <li>Financial Conduct Authority (FCA) regulatory expectations</li>
+                    <li>UK General Data Protection Regulation (UK GDPR)</li>
+                    <li>ISO/IEC 27001</li>
+                    <li>NIST Cybersecurity Framework</li>
+                    <li>Monetary Authority of Singapore (MAS) Technology Risk Management Guidelines</li>
+                    <li>Luxembourg CSSF regulatory requirements</li>
+                    <li>PCI DSS and SOC 2 control considerations</li>
+                </ul>
+
+                <h3>Research Contribution</h3>
+                <p>
+                    AMCAF demonstrates how structured automation can support more consistent assessment of regulatory control objectives across cloud platforms, identify compliance gaps and produce evidence suitable for governance and audit review.
+                </p>
+                <p>
+                    The research reinforces the importance of integrating cybersecurity, governance and operational resilience into enterprise cloud strategy rather than treating compliance as a separate or retrospective activity.
+                </p>
+                <p class="prototype-note">
+                    AMCAF is a research prototype. Its capabilities and compliance outputs are not independently certified or production-proven.
+                </p>
+            </section>
+
+            <section class="intro-section">
+                <h2>Bridging Academic Research and Enterprise Leadership</h2>
+                <p>
+                    Throughout the programme, I applied postgraduate research directly to practical technology challenges encountered within internationally regulated financial services.
+                </p>
+                <p>
+                    The MSc complemented over two decades of professional experience spanning enterprise infrastructure, cloud services, cybersecurity, IT service management, technology governance and digital transformation.
+                </p>
+                <h3 style="margin-top: 20px;">Key areas of development included:</h3>
+                <ul>
+                    <li><strong>Enterprise Technology Strategy:</strong> Aligning technology investment, architecture and service delivery with organisational objectives.</li>
+                    <li><strong>Cybersecurity and Identity Governance:</strong> Strengthening identity management, access controls, security architecture and organisational resilience.</li>
+                    <li><strong>Cloud Governance:</strong> Developing approaches to multi-cloud compliance, cost optimisation and secure cloud operations.</li>
+                    <li><strong>Regulatory Compliance:</strong> Applying governance principles within environments subject to FCA, MAS, CSSF and wider international regulatory expectations.</li>
+                    <li><strong>Operational Resilience:</strong> Integrating risk management, service continuity and technology recovery into enterprise operations.</li>
+                    <li><strong>Digital Transformation:</strong> Applying evidence-based approaches to technology modernisation, process automation and organisational change.</li>
+                    <li><strong>Technology Leadership:</strong> Combining strategic governance, operational accountability and technical delivery.</li>
+                </ul>
+                <p>
+                    The programme further strengthened my ability to translate complex technology and regulatory requirements into practical enterprise strategies that support business growth, resilience and effective risk management.
+                </p>
+            </section>
+
+            <h2 class="section-heading">Module Pages</h2>
             <section class="modules-grid">
                 <a href="Module1.html" class="module-card">
                     <div class="module-number">Module 1</div>
                     <div class="module-title">Launching into Enterprise IT Management</div>
                     <div class="module-period">April 2024</div>
-                    <span class="module-grade grade-merit">Merit</span>
+                    <span class="module-grade grade-merit">Merit &middot; 64.6%</span>
                 </a>
 
                 <a href="Module2.html" class="module-card">
                     <div class="module-number">Module 2</div>
                     <div class="module-title">Security and Risk Management</div>
                     <div class="module-period">July 2024</div>
-                    <span class="module-grade grade-distinction">Distinction</span>
+                    <span class="module-grade grade-distinction">Distinction &middot; 81%</span>
                 </a>
 
                 <a href="Module3.html" class="module-card">
                     <div class="module-number">Module 3</div>
                     <div class="module-title">Information Technology Service Management</div>
                     <div class="module-period">October 2024</div>
-                    <span class="module-grade grade-distinction">Distinction</span>
+                    <span class="module-grade grade-distinction">Distinction &middot; 75%</span>
                 </a>
 
                 <a href="Module4.html" class="module-card">
                     <div class="module-number">Module 4</div>
                     <div class="module-title">Enterprise IT Project Management</div>
                     <div class="module-period">January 2025</div>
-                    <span class="module-grade grade-distinction">Distinction</span>
+                    <span class="module-grade grade-distinction">Distinction &middot; 89%</span>
                 </a>
 
                 <a href="Module5.html" class="module-card">
                     <div class="module-number">Module 5</div>
                     <div class="module-title">Into Data Science</div>
                     <div class="module-period">April 2025</div>
-                    <span class="module-grade grade-distinction">Distinction</span>
+                    <span class="module-grade grade-distinction">Distinction &middot; 74%</span>
                 </a>
 
                 <a href="Module6.html" class="module-card">
                     <div class="module-number">Module 6</div>
                     <div class="module-title">Cloud Operations and Management</div>
                     <div class="module-period">July 2025</div>
-                    <span class="module-grade grade-distinction">Distinction</span>
+                    <span class="module-grade grade-distinction">Distinction &middot; 82%</span>
                 </a>
 
                 <a href="Module7.html" class="module-card">
                     <div class="module-number">Module 7</div>
                     <div class="module-title">Research Methods and Professional Practice</div>
                     <div class="module-period">October 2025</div>
-                    <span class="module-grade grade-distinction">Distinction</span>
+                    <span class="module-grade grade-distinction">Distinction &middot; 70%</span>
                 </a>
 
                 <a href="Module8.html" class="module-card">
                     <div class="module-number">Module 8</div>
                     <div class="module-title">MSc Computing Project</div>
                     <div class="module-period">January 2026</div>
-                    <span class="module-grade grade-merit">Merit</span>
+                    <span class="module-grade grade-merit">Merit &middot; 68.4%</span>
                 </a>
+            </section>
+
+            <section class="intro-section">
+                <h2>Student Representative | October 2024 &ndash; 2026</h2>
+                <p>
+                    Alongside my postgraduate studies, I served as a Student Representative, representing my cohort and facilitating constructive communication between students and academic staff.
+                </p>
+                <p>
+                    The role involved contributing student perspectives, supporting engagement and participating in efforts to improve the postgraduate learning experience.
+                </p>
+                <p>
+                    This responsibility complemented my professional leadership experience and reinforced the importance of communication, stakeholder engagement and continuous improvement.
+                </p>
+            </section>
+
+            <section class="intro-section">
+                <h2>A Milestone in Continued Professional Development</h2>
+                <p>
+                    Completing the MSc Enterprise IT Management represents a significant milestone in my professional and academic development.
+                </p>
+                <p>
+                    Undertaking postgraduate study alongside full-time enterprise technology leadership responsibilities required sustained discipline, research and commitment.
+                </p>
+                <p>
+                    The experience has reinforced my commitment to continuous learning, evidence-based leadership and the development of secure, resilient and well-governed enterprise technology environments.
+                </p>
+                <p>
+                    It also strengthens my preparation for senior technology leadership responsibilities, particularly within internationally regulated financial services organisations where technology strategy, cybersecurity, operational resilience and regulatory accountability are increasingly interconnected.
+                </p>
             </section>
 
             <nav class="quick-links">
